@@ -97,6 +97,13 @@ In the author's words (translated from Spanish): "The key of what I want to expo
 - **First person singular ("I")** *(proposal; changed from the earlier "we")*. A single human author is accountable. "We" in an AI-assisted paper could read as naming the AI as a co-author, which COPE and publisher policies do not allow.
 - Do not tailor the paper to one journal yet. The target journal will be chosen from `paper/journals.md`. Note where to cut for a 3,000–4,000-word version.
 
+## Target venue (author's preferences)
+
+- The author wants the greatest possible impact, in a scientific, international venue.
+- The author is new to the field and doubts Nature or Science would accept the paper, but wants them seriously considered.
+- The submission strategy is in `paper/submission_strategy.md`; the list of venues is in `paper/journals.md`.
+- If the strategy recommends a specific format (for example a shorter Perspective or a companion short piece), the outline should say how the full essay maps onto it.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
