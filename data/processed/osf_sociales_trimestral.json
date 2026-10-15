@@ -1,0 +1,191 @@
+[
+ {
+  "trimestre": "2020-T1",
+  "inicio": "2020-01-01",
+  "psyarxiv": 1132,
+  "socarxiv": 408,
+  "edarxiv": 79
+ },
+ {
+  "trimestre": "2020-T2",
+  "inicio": "2020-04-01",
+  "psyarxiv": 1814,
+  "socarxiv": 696,
+  "edarxiv": 275
+ },
+ {
+  "trimestre": "2020-T3",
+  "inicio": "2020-07-01",
+  "psyarxiv": 1695,
+  "socarxiv": 565,
+  "edarxiv": 82
+ },
+ {
+  "trimestre": "2020-T4",
+  "inicio": "2020-10-01",
+  "psyarxiv": 1607,
+  "socarxiv": 566,
+  "edarxiv": 78
+ },
+ {
+  "trimestre": "2021-T1",
+  "inicio": "2021-01-01",
+  "psyarxiv": 1760,
+  "socarxiv": 693,
+  "edarxiv": 74
+ },
+ {
+  "trimestre": "2021-T2",
+  "inicio": "2021-04-01",
+  "psyarxiv": 1795,
+  "socarxiv": 720,
+  "edarxiv": 50
+ },
+ {
+  "trimestre": "2021-T3",
+  "inicio": "2021-07-01",
+  "psyarxiv": 1659,
+  "socarxiv": 597,
+  "edarxiv": 51
+ },
+ {
+  "trimestre": "2021-T4",
+  "inicio": "2021-10-01",
+  "psyarxiv": 1519,
+  "socarxiv": 619,
+  "edarxiv": 68
+ },
+ {
+  "trimestre": "2022-T1",
+  "inicio": "2022-01-01",
+  "psyarxiv": 1625,
+  "socarxiv": 539,
+  "edarxiv": 57
+ },
+ {
+  "trimestre": "2022-T2",
+  "inicio": "2022-04-01",
+  "psyarxiv": 1540,
+  "socarxiv": 577,
+  "edarxiv": 60
+ },
+ {
+  "trimestre": "2022-T3",
+  "inicio": "2022-07-01",
+  "psyarxiv": 1574,
+  "socarxiv": 617,
+  "edarxiv": 50
+ },
+ {
+  "trimestre": "2022-T4",
+  "inicio": "2022-10-01",
+  "psyarxiv": 1560,
+  "socarxiv": 505,
+  "edarxiv": 50
+ },
+ {
+  "trimestre": "2023-T1",
+  "inicio": "2023-01-01",
+  "psyarxiv": 1694,
+  "socarxiv": 569,
+  "edarxiv": 75
+ },
+ {
+  "trimestre": "2023-T2",
+  "inicio": "2023-04-01",
+  "psyarxiv": 1648,
+  "socarxiv": 576,
+  "edarxiv": 94
+ },
+ {
+  "trimestre": "2023-T3",
+  "inicio": "2023-07-01",
+  "psyarxiv": 1638,
+  "socarxiv": 554,
+  "edarxiv": 86
+ },
+ {
+  "trimestre": "2023-T4",
+  "inicio": "2023-10-01",
+  "psyarxiv": 1742,
+  "socarxiv": 600,
+  "edarxiv": 69
+ },
+ {
+  "trimestre": "2024-T1",
+  "inicio": "2024-01-01",
+  "psyarxiv": 1712,
+  "socarxiv": 572,
+  "edarxiv": 64
+ },
+ {
+  "trimestre": "2024-T2",
+  "inicio": "2024-04-01",
+  "psyarxiv": 1744,
+  "socarxiv": 566,
+  "edarxiv": 90
+ },
+ {
+  "trimestre": "2024-T3",
+  "inicio": "2024-07-01",
+  "psyarxiv": 1631,
+  "socarxiv": 517,
+  "edarxiv": 69
+ },
+ {
+  "trimestre": "2024-T4",
+  "inicio": "2024-10-01",
+  "psyarxiv": 1639,
+  "socarxiv": 515,
+  "edarxiv": 57
+ },
+ {
+  "trimestre": "2025-T1",
+  "inicio": "2025-01-01",
+  "psyarxiv": 1687,
+  "socarxiv": 490,
+  "edarxiv": 63
+ },
+ {
+  "trimestre": "2025-T2",
+  "inicio": "2025-04-01",
+  "psyarxiv": 2147,
+  "socarxiv": 692,
+  "edarxiv": 87
+ },
+ {
+  "trimestre": "2025-T3",
+  "inicio": "2025-07-01",
+  "psyarxiv": 2651,
+  "socarxiv": 957,
+  "edarxiv": 173
+ },
+ {
+  "trimestre": "2025-T4",
+  "inicio": "2025-10-01",
+  "psyarxiv": 2263,
+  "socarxiv": 949,
+  "edarxiv": 246
+ },
+ {
+  "trimestre": "2026-T1",
+  "inicio": "2026-01-01",
+  "psyarxiv": 2167,
+  "socarxiv": 1143,
+  "edarxiv": 279
+ },
+ {
+  "trimestre": "2026-T2",
+  "inicio": "2026-04-01",
+  "psyarxiv": 2183,
+  "socarxiv": 1196,
+  "edarxiv": 415
+ },
+ {
+  "trimestre": "2026-T3",
+  "inicio": "2026-07-01",
+  "psyarxiv": 2081,
+  "socarxiv": 1324,
+  "edarxiv": 370
+ }
+]

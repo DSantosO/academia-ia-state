@@ -1,0 +1,590 @@
+<style>
+.pc { display: grid; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.pc-head { display: grid; gap: var(--cds-gap-xs); }
+.pc-title { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.15; text-wrap: balance; }
+.pc-take { margin: 0; max-width: 72ch; font-size: var(--cds-font-size-body); color: var(--color-fg-muted); min-height: 1.4em; }
+.pc .pc-num { font-weight: var(--cds-font-weight-medium); color: var(--color-fg); }
+.pc-sec { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.pc-note { margin: 0; max-width: 75ch; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pc-block { display: grid; gap: var(--cds-gap-sm); min-width: 0; }
+.pc-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); gap: var(--cds-gap-md); }
+.pc-tile { display: grid; gap: var(--cds-gap-xs); align-content: start; min-width: 0; padding: var(--cds-pad-md); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.pc-tile-label { display: flex; align-items: center; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pc-swatch { flex: none; width: 0.625rem; height: 0.625rem; border-radius: 50%; }
+.pc-tile-value { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.1; min-height: 1.1em; }
+.pc-tile-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.pc-card { display: grid; gap: var(--cds-gap-sm); align-content: start; min-width: 0; padding: var(--cds-pad-lg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.pc-card-title { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.pc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--cds-gap-md); }
+.pc-chart { position: relative; min-height: 250px; }
+.pc-mini { position: relative; min-height: 180px; }
+.pc-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-md); margin: 0; padding: 0; list-style: none; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pc-legend li { display: flex; align-items: center; gap: var(--cds-gap-xs); }
+.pc-key { flex: none; width: 1rem; height: 0; border-top: 2px solid; border-radius: 1px; }
+.pc svg { display: block; overflow: visible; }
+.pc-ticks text { fill: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.pc-gridlines line { stroke: var(--cds-chart-grid); stroke-width: 1; }
+.pc-axisline { stroke: var(--cds-chart-axis); stroke-width: 1; }
+.pc-event { stroke: var(--cds-chart-reference); stroke-width: 1; stroke-dasharray: 4 3; }
+.pc-event-text { fill: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.pc-cross { stroke: var(--cds-chart-axis); stroke-width: 1; }
+.pc-dot { stroke: var(--color-panel); stroke-width: 2; }
+.pc-hit { fill: transparent; }
+.pc-hit:focus { outline: none; }
+.pc-hit:focus-visible { stroke: var(--cds-chart-axis); stroke-width: 1; }
+.pc-tip { position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none; white-space: nowrap; padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); }
+.pc-tip-date { margin-bottom: 2px; color: var(--cds-text-secondary); }
+.pc-tip-row { display: flex; align-items: center; gap: var(--cds-gap-xs); font-variant-numeric: tabular-nums; }
+.pc-tip-row .pc-tip-val { margin-left: auto; padding-left: var(--cds-gap-sm); font-weight: var(--cds-font-weight-medium); }
+.pc-table-box { max-height: 28rem; overflow: auto; }
+.pc-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.pc-table th, .pc-table td { padding: var(--cds-pad-xs) var(--cds-pad-sm); text-align: right; white-space: nowrap; border-bottom: 1px solid var(--color-border-line); }
+.pc-table th:first-child, .pc-table td:first-child { text-align: left; }
+.pc-table thead th { position: sticky; top: 0; z-index: 1; background: var(--color-panel); color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); }
+.pc-table tbody th { font-weight: var(--cds-font-weight-medium); }
+.pc-notes-list { display: grid; gap: var(--cds-gap-xs); margin: 0; padding-left: 1.1rem; max-width: 80ch; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pc .pc-notes-list b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.pc-fail { display: flex; align-items: center; justify-content: center; gap: var(--cds-gap-xs); min-height: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pc-fail::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-bad); }
+.pc [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+.pc [data-dash-source-state=empty] { color: transparent; }
+</style>
+
+<div class="pc" id="preprints-por-campo">
+  <header class="pc-head" id="resumen">
+    <h1 class="pc-title">Preprints por campo</h1>
+    <p class="pc-take dash-skeleton" id="resumen-texto"></p>
+  </header>
+
+  <section class="pc-block" id="cambios" aria-labelledby="cambios-titulo">
+    <h2 class="pc-sec" id="cambios-titulo">Último año frente a 2022</h2>
+    <p class="pc-note" id="cambios-ventana">Preprints nuevos de los cuatro trimestres más recientes frente al total de 2022.</p>
+    <div class="pc-tiles">
+      <article class="pc-tile" id="cambio-fisica">
+        <div class="pc-tile-label"><span class="pc-swatch" data-color="0"></span>Física</div>
+        <div class="pc-tile-value dash-skeleton" data-source="cambio_vs_2022" data-field="cambio" data-where="campo=fisica"></div>
+        <div class="pc-tile-sub"><span class="dash-skeleton" data-source="cambio_vs_2022" data-field="ultimos_4" data-where="campo=fisica"></span> preprints · <span class="dash-skeleton" data-source="cambio_vs_2022" data-field="anio_2022" data-where="campo=fisica"></span> en 2022</div>
+      </article>
+      <article class="pc-tile" id="cambio-matematicas">
+        <div class="pc-tile-label"><span class="pc-swatch" data-color="1"></span>Matemáticas</div>
+        <div class="pc-tile-value dash-skeleton" data-source="cambio_vs_2022" data-field="cambio" data-where="campo=matematicas"></div>
+        <div class="pc-tile-sub"><span class="dash-skeleton" data-source="cambio_vs_2022" data-field="ultimos_4" data-where="campo=matematicas"></span> preprints · <span class="dash-skeleton" data-source="cambio_vs_2022" data-field="anio_2022" data-where="campo=matematicas"></span> en 2022</div>
+      </article>
+      <article class="pc-tile" id="cambio-biologia">
+        <div class="pc-tile-label"><span class="pc-swatch" data-color="2"></span>Biología</div>
+        <div class="pc-tile-value dash-skeleton" data-source="cambio_vs_2022" data-field="cambio" data-where="campo=biologia"></div>
+        <div class="pc-tile-sub"><span class="dash-skeleton" data-source="cambio_vs_2022" data-field="ultimos_4" data-where="campo=biologia"></span> preprints · <span class="dash-skeleton" data-source="cambio_vs_2022" data-field="anio_2022" data-where="campo=biologia"></span> en 2022</div>
+      </article>
+      <article class="pc-tile" id="cambio-medicina">
+        <div class="pc-tile-label"><span class="pc-swatch" data-color="3"></span>Medicina</div>
+        <div class="pc-tile-value dash-skeleton" data-source="cambio_vs_2022" data-field="cambio" data-where="campo=medicina"></div>
+        <div class="pc-tile-sub"><span class="dash-skeleton" data-source="cambio_vs_2022" data-field="ultimos_4" data-where="campo=medicina"></span> preprints · <span class="dash-skeleton" data-source="cambio_vs_2022" data-field="anio_2022" data-where="campo=medicina"></span> en 2022</div>
+      </article>
+      <article class="pc-tile" id="cambio-ciencias-sociales">
+        <div class="pc-tile-label"><span class="pc-swatch" data-color="4"></span>Ciencias sociales</div>
+        <div class="pc-tile-value dash-skeleton" data-source="cambio_vs_2022" data-field="cambio" data-where="campo=ciencias_sociales"></div>
+        <div class="pc-tile-sub"><span class="dash-skeleton" data-source="cambio_vs_2022" data-field="ultimos_4" data-where="campo=ciencias_sociales"></span> preprints · <span class="dash-skeleton" data-source="cambio_vs_2022" data-field="anio_2022" data-where="campo=ciencias_sociales"></span> en 2022</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pc-card" id="indice">
+    <h2 class="pc-card-title">Evolución por campo (2022 = 100)</h2>
+    <p class="pc-note">Preprints nuevos de cada trimestre frente a la media trimestral de 2022 del mismo campo. Así se comparan ritmos de crecimiento aunque los volúmenes sean muy distintos. La línea gris es informática, solo como referencia.</p>
+    <ul class="pc-legend" id="indice-leyenda" aria-label="Leyenda"></ul>
+    <div class="pc-chart dash-skeleton" id="indice-grafico" data-source="indice_2022"></div>
+  </section>
+
+  <section class="pc-block" id="por-campo" aria-labelledby="por-campo-titulo">
+    <h2 class="pc-sec" id="por-campo-titulo">Preprints nuevos por trimestre</h2>
+    <p class="pc-note">Cada gráfico tiene su propia escala. La línea vertical marca el lanzamiento de ChatGPT (30 de noviembre de 2022).</p>
+    <div class="pc-grid">
+      <article class="pc-card" id="campo-fisica">
+        <h3 class="pc-card-title">Física</h3>
+        <p class="pc-note">arXiv: astrofísica, materia condensada, altas energías, física cuántica, nuclear, relatividad y física general.</p>
+        <div class="pc-mini dash-skeleton" id="barras-fisica" data-source="trimestral" data-campo="fisica" data-color="0"></div>
+      </article>
+      <article class="pc-card" id="campo-matematicas">
+        <h3 class="pc-card-title">Matemáticas</h3>
+        <p class="pc-note">arXiv: archivo de matemáticas.</p>
+        <div class="pc-mini dash-skeleton" id="barras-matematicas" data-source="trimestral" data-campo="matematicas" data-color="1"></div>
+      </article>
+      <article class="pc-card" id="campo-biologia">
+        <h3 class="pc-card-title">Biología</h3>
+        <p class="pc-note">bioRxiv: preprints nuevos, sin revisiones.</p>
+        <div class="pc-mini dash-skeleton" id="barras-biologia" data-source="trimestral" data-campo="biologia" data-color="2"></div>
+      </article>
+      <article class="pc-card" id="campo-medicina">
+        <h3 class="pc-card-title">Medicina</h3>
+        <p class="pc-note">medRxiv: preprints nuevos, sin revisiones.</p>
+        <div class="pc-mini dash-skeleton" id="barras-medicina" data-source="trimestral" data-campo="medicina" data-color="3"></div>
+      </article>
+      <article class="pc-card" id="campo-ciencias-sociales">
+        <h3 class="pc-card-title">Ciencias sociales</h3>
+        <p class="pc-note">PsyArXiv, SocArXiv y EdArXiv (solo primeras versiones) más arXiv economía y finanzas.</p>
+        <div class="pc-mini dash-skeleton" id="barras-ciencias-sociales" data-source="trimestral" data-campo="ciencias_sociales" data-color="4"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pc-card" id="tabla">
+    <h2 class="pc-card-title">Datos por trimestre</h2>
+    <p class="pc-note">Preprints nuevos por trimestre. Ciencias sociales es la suma de las cuatro columnas que la siguen.</p>
+    <div class="pc-table-box">
+      <table class="pc-table" data-source="trimestral" data-row-key="trimestre">
+        <thead>
+          <tr>
+            <th scope="col" data-field="trimestre">Trimestre</th>
+            <th scope="col" data-field="fisica">Física</th>
+            <th scope="col" data-field="matematicas">Matemáticas</th>
+            <th scope="col" data-field="biologia">Biología</th>
+            <th scope="col" data-field="medicina">Medicina</th>
+            <th scope="col" data-field="ciencias_sociales">Ciencias sociales</th>
+            <th scope="col" data-field="psyarxiv">PsyArXiv</th>
+            <th scope="col" data-field="socarxiv">SocArXiv</th>
+            <th scope="col" data-field="edarxiv">EdArXiv</th>
+            <th scope="col" data-field="econ_finanzas">arXiv economía y finanzas</th>
+            <th scope="col" data-field="informatica">Informática</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="pc-card" id="notas">
+    <h2 class="pc-card-title">Cómo leer estos datos</h2>
+    <ul class="pc-notes-list">
+      <li><b>Qué se cuenta.</b> Preprints nuevos por trimestre. En arXiv, envíos nuevos por archivo principal, sin reemplazos ni listados cruzados. En bioRxiv y medRxiv, artículos nuevos sin revisiones. En PsyArXiv, SocArXiv y EdArXiv, solo primeras versiones.</li>
+      <li><b>Un preprint no es una publicación.</b> El uso de preprints cambia mucho entre campos: es casi universal en física y matemáticas, parcial en biología y medicina, y minoritario en ciencias sociales, donde domina la psicología. Compara la evolución de cada campo, no los volúmenes entre campos.</li>
+      <li><b>Ciencias sociales es una muestra pequeña.</b> Faltan SSRN y RePEc, los mayores repositorios de economía y ciencias sociales, porque no se pudieron obtener recuentos trimestrales fiables.</li>
+      <li><b>Rupturas conocidas.</b> La COVID-19 disparó medRxiv en 2020. arXiv cambió sus normas entre octubre de 2025 y febrero de 2026 (artículos de revisión en informática, aval de autores nuevos, versión completa en inglés). Septiembre de 2026 es su mes con más envíos, justo antes del límite de envíos por persona que entró en vigor el 1 de octubre de 2026. SocArXiv exigió ORCID y derivó las humanidades a otro repositorio en noviembre de 2025. Desde principios de 2025, OSF registra cada versión como un registro aparte; aquí solo cuentan las primeras.</li>
+      <li><b>Sumas de arXiv.</b> Algunas categorías de arXiv son alias entre dos archivos (por ejemplo, física matemática), así que una pequeña parte de los artículos cuenta en dos campos.</li>
+      <li><b>Coincidir en el tiempo no prueba la causa.</b> Un aumento posterior a ChatGPT no demuestra por sí solo un efecto de la IA: en el mismo periodo cambiaron normas, financiación y la adopción de preprints.</li>
+    </ul>
+    <p class="pc-note">Datos descargados el 15 de octubre de 2026. El trimestre en curso no se muestra.</p>
+  </section>
+</div>
+
+<script>
+dash.calc('trimestral', {
+  inputs: ['arxiv_campos', 'biorxiv_medrxiv', 'osf_sociales'],
+  title: 'Preprints por campo y trimestre',
+  description: 'Une las tres fuentes por trimestre; ciencias sociales suma PsyArXiv, SocArXiv, EdArXiv y arXiv economía y finanzas.',
+  fn: (arxiv_campos, biorxiv_medrxiv, osf_sociales) => {
+    const bio = new Map(biorxiv_medrxiv.map((r) => [r.trimestre, r]));
+    const osf = new Map(osf_sociales.map((r) => [r.trimestre, r]));
+    return arxiv_campos
+      .filter((a) => bio.has(a.trimestre) && osf.has(a.trimestre))
+      .map((a) => {
+        const b = bio.get(a.trimestre);
+        const o = osf.get(a.trimestre);
+        return {
+          trimestre: a.trimestre,
+          inicio: a.inicio,
+          fisica: Number(a.fisica),
+          matematicas: Number(a.matematicas),
+          biologia: Number(b.biorxiv),
+          medicina: Number(b.medrxiv),
+          ciencias_sociales: Number(o.psyarxiv) + Number(o.socarxiv) + Number(o.edarxiv) + Number(a.econ_finanzas),
+          psyarxiv: Number(o.psyarxiv),
+          socarxiv: Number(o.socarxiv),
+          edarxiv: Number(o.edarxiv),
+          econ_finanzas: Number(a.econ_finanzas),
+          informatica: Number(a.informatica),
+        };
+      })
+      .sort((p, q) => (p.trimestre < q.trimestre ? -1 : 1));
+  },
+});
+
+dash.calc('indice_2022', {
+  inputs: ['trimestral'],
+  title: 'Índice por campo, 2022 = 100',
+  description: 'Preprints de cada trimestre divididos por la media trimestral de 2022 del mismo campo, por cien.',
+  fn: (trimestral) => {
+    const campos = ['fisica', 'matematicas', 'biologia', 'medicina', 'ciencias_sociales', 'informatica'];
+    const de2022 = trimestral.filter((r) => r.trimestre.startsWith('2022-'));
+    if (!de2022.length) return [];
+    const media = Object.fromEntries(campos.map((k) => [k, de2022.reduce((s, r) => s + r[k], 0) / de2022.length]));
+    return trimestral.map((r) => ({
+      trimestre: r.trimestre,
+      inicio: r.inicio,
+      ...Object.fromEntries(campos.map((k) => [k, (100 * r[k]) / media[k]])),
+    }));
+  },
+});
+
+dash.calc('cambio_vs_2022', {
+  inputs: ['trimestral'],
+  title: 'Último año frente a 2022',
+  description: 'Suma de los cuatro trimestres más recientes de cada campo frente a su total de 2022.',
+  fn: (trimestral) => {
+    const campos = ['fisica', 'matematicas', 'biologia', 'medicina', 'ciencias_sociales', 'informatica'];
+    const ultimos = trimestral.slice(-4);
+    const de2022 = trimestral.filter((r) => r.trimestre.startsWith('2022-'));
+    if (ultimos.length < 4 || !de2022.length) return [];
+    return campos.map((campo) => {
+      const ultimos_4 = ultimos.reduce((s, r) => s + r[campo], 0);
+      const anio_2022 = de2022.reduce((s, r) => s + r[campo], 0);
+      return { campo, desde: ultimos[0].trimestre, hasta: ultimos[3].trimestre, ultimos_4, anio_2022, cambio: ultimos_4 / anio_2022 - 1 };
+    });
+  },
+});
+
+const ES = d3.formatLocale({ decimal: ',', thousands: ' ', grouping: [3], currency: ['', ''] });
+const fInt = ES.format(',.0f');
+const fIdx = ES.format('.0f');
+const fPct = (v) => (v < 0 ? '−' : '+') + ES.format('.0f')(Math.abs(v) * 100) + ' %';
+const fCompacto = (v) => (v >= 1000 ? ES.format(',~f')(v / 1000) + ' mil' : fInt(v));
+const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const etiquetaTrim = (t) => { const [y, n] = t.split('-T'); return `T${n} ${y}`; };
+const mesInicio = (t) => { const [y, n] = t.split('-T').map(Number); return `${MESES[(n - 1) * 3]} ${y}`; };
+const mesFin = (t) => { const [y, n] = t.split('-T').map(Number); return `${MESES[n * 3 - 1]} ${y}`; };
+const fechaDe = (inicio, dm, dia) => { const [y, m] = inicio.split('-').map(Number); return new Date(Date.UTC(y, m - 1 + dm, dia)); };
+const CAMPOS = [
+  { key: 'fisica', name: 'Física', lower: 'física' },
+  { key: 'matematicas', name: 'Matemáticas', lower: 'matemáticas' },
+  { key: 'biologia', name: 'Biología', lower: 'biología' },
+  { key: 'medicina', name: 'Medicina', lower: 'medicina' },
+  { key: 'ciencias_sociales', name: 'Ciencias sociales', lower: 'ciencias sociales' },
+];
+const REFERENCIA = { key: 'informatica', name: 'Informática (referencia)' };
+const CHATGPT = new Date(Date.UTC(2022, 10, 30));
+const NORMAS_ARXIV = new Date(Date.UTC(2025, 9, 31));
+const FUENTES = ['arxiv_campos', 'biorxiv_medrxiv', 'osf_sociales'];
+const COLUMNAS_TABLA = ['fisica', 'matematicas', 'biologia', 'medicina', 'ciencias_sociales', 'psyarxiv', 'socarxiv', 'edarxiv', 'econ_finanzas', 'informatica'];
+let enlaceAbierto = false;
+
+function estadoFuentes() {
+  const st = FUENTES.map((id) => dash.data(id).status);
+  if (st.every((s) => s === 'ok')) return 'ok';
+  if (st.some((s) => s === 'error' || s === 'declined' || s === 'connect' || s === 'missing')) return 'error';
+  return 'loading';
+}
+
+function medirTexto(svg, textos) {
+  const g = svg.append('g').attr('class', 'pc-ticks').attr('visibility', 'hidden');
+  let max = 0;
+  for (const t of textos) {
+    const n = g.append('text').text(t).node();
+    max = Math.max(max, n.getComputedTextLength());
+  }
+  g.remove();
+  return Math.ceil(max);
+}
+
+function crearTooltip(box) {
+  const tip = document.createElement('div');
+  tip.className = 'pc-tip';
+  tip.hidden = true;
+  box.append(tip);
+  return tip;
+}
+
+function colocarTooltip(box, tip, xPx, yPx) {
+  tip.hidden = false;
+  const bw = box.clientWidth;
+  const tw = tip.offsetWidth;
+  let left = xPx + 12;
+  if (left + tw > bw) left = Math.max(0, xPx - tw - 12);
+  tip.style.left = `${left}px`;
+  tip.style.top = `${Math.max(0, yPx)}px`;
+}
+
+function filaTooltip(color, nombre, valor) {
+  const row = document.createElement('div');
+  row.className = 'pc-tip-row';
+  if (color) {
+    const key = document.createElement('span');
+    key.className = 'pc-key';
+    key.style.borderTopColor = color;
+    row.append(key);
+  }
+  const name = document.createElement('span');
+  name.textContent = nombre;
+  const val = document.createElement('span');
+  val.className = 'pc-tip-val';
+  val.textContent = valor;
+  row.append(name, val);
+  return row;
+}
+
+function dibujarLeyenda() {
+  const ul = document.getElementById('indice-leyenda');
+  const items = CAMPOS.map((c, i) => ({ name: c.name, color: dash.colors[i] })).concat([{ name: REFERENCIA.name, color: 'var(--cds-chart-muted)' }]);
+  ul.replaceChildren(...items.map((it) => {
+    const li = document.createElement('li');
+    const key = document.createElement('span');
+    key.className = 'pc-key';
+    key.style.borderTopColor = it.color;
+    const name = document.createElement('span');
+    name.textContent = it.name;
+    li.append(key, name);
+    return li;
+  }));
+}
+
+function dibujarIndice(box, filas) {
+  box.classList.remove('dash-skeleton');
+  box.replaceChildren();
+  if (!filas.length) return;
+  const W = Math.max(280, Math.floor(box.clientWidth));
+  const H = W < 560 ? 250 : 320;
+  const series = [{ ...REFERENCIA, color: 'var(--cds-chart-muted)', ref: true }].concat(CAMPOS.map((c, i) => ({ ...c, color: dash.colors[i] })));
+  const pts = filas.map((r) => ({ ...r, fecha: fechaDe(r.inicio, 1, 15) }));
+  const valores = pts.flatMap((r) => series.map((s) => r[s.key])).filter((v) => Number.isFinite(v));
+  const y = d3.scaleLinear([Math.min(80, d3.min(valores)), d3.max(valores)], [1, 0]).nice();
+  const ticksY = y.ticks(5);
+  const svg = d3.select(box).append('svg')
+    .attr('width', '100%')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('role', 'img')
+    .attr('aria-label', 'Índice de preprints nuevos por campo y trimestre, con 2022 igual a 100');
+  const m = { l: medirTexto(svg, ticksY.map(fIdx)) + 10, r: 14, t: 24, b: 26 };
+  y.range([H - m.b, m.t]);
+  const x = d3.scaleUtc([fechaDe(filas[0].inicio, 0, 1), fechaDe(filas[filas.length - 1].inicio, 3, 1)], [m.l, W - m.r]);
+
+  svg.append('g').attr('class', 'pc-gridlines').selectAll('line').data(ticksY).join('line')
+    .attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d));
+  svg.append('g').attr('class', 'pc-ticks').selectAll('text').data(ticksY).join('text')
+    .attr('x', m.l - 8).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end').text((d) => fIdx(d));
+  svg.append('line').attr('class', 'pc-axisline').attr('x1', m.l).attr('x2', W - m.r).attr('y1', H - m.b).attr('y2', H - m.b);
+  if (y.domain()[0] <= 100 && y.domain()[1] >= 100) {
+    svg.append('line').attr('class', 'pc-axisline').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(100)).attr('y2', y(100));
+  }
+  const anios = d3.utcYear.range(x.domain()[0], x.domain()[1]);
+  svg.append('g').attr('class', 'pc-gridlines').selectAll('line').data(anios).join('line')
+    .attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', H - m.b).attr('y2', H - m.b + 4);
+  svg.append('g').attr('class', 'pc-ticks').selectAll('text').data(anios).join('text')
+    .attr('x', (d) => (x(d) + x(d3.min([d3.utcYear.offset(d, 1), x.domain()[1]]))) / 2)
+    .attr('y', H - m.b + 17).attr('text-anchor', 'middle').text((d) => String(d.getUTCFullYear()));
+
+  for (const ev of [{ fecha: CHATGPT, texto: 'ChatGPT' }, { fecha: NORMAS_ARXIV, texto: 'Normas de arXiv' }]) {
+    if (ev.fecha < x.domain()[0] || ev.fecha > x.domain()[1]) continue;
+    const xe = x(ev.fecha);
+    svg.append('line').attr('class', 'pc-event').attr('x1', xe).attr('x2', xe).attr('y1', m.t - 8).attr('y2', H - m.b);
+    const derecha = xe > W * 0.7;
+    svg.append('text').attr('class', 'pc-event-text').attr('x', xe + (derecha ? -4 : 4)).attr('y', m.t - 10)
+      .attr('text-anchor', derecha ? 'end' : 'start').text(ev.texto);
+  }
+
+  for (const s of series) {
+    const linea = d3.line().defined((d) => Number.isFinite(d[s.key])).x((d) => x(d.fecha)).y((d) => y(d[s.key]));
+    svg.append('path').attr('d', linea(pts)).attr('fill', 'none').style('stroke', s.color)
+      .attr('stroke-width', s.ref ? 1.5 : 2).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round');
+  }
+
+  const cruz = svg.append('line').attr('class', 'pc-cross').attr('y1', m.t).attr('y2', H - m.b).attr('visibility', 'hidden');
+  const capaPuntos = svg.append('g').attr('visibility', 'hidden');
+  const puntos = series.map((s) => capaPuntos.append('circle').attr('class', 'pc-dot').attr('r', 4).style('fill', s.color));
+  const tip = crearTooltip(box);
+  const escala = () => box.clientWidth / W;
+  let actual = pts.length - 1;
+  const mostrar = (i) => {
+    actual = i;
+    const d = pts[i];
+    const xi = x(d.fecha);
+    cruz.attr('x1', xi).attr('x2', xi).attr('visibility', 'visible');
+    capaPuntos.attr('visibility', 'visible');
+    series.forEach((s, j) => {
+      const v = d[s.key];
+      puntos[j].attr('cx', xi).attr('cy', Number.isFinite(v) ? y(v) : -10);
+    });
+    const fecha = document.createElement('div');
+    fecha.className = 'pc-tip-date';
+    fecha.textContent = etiquetaTrim(d.trimestre);
+    const orden = series.slice(1).concat(series.slice(0, 1));
+    tip.replaceChildren(fecha, ...orden.map((s) => filaTooltip(s.color, s.name, Number.isFinite(d[s.key]) ? fIdx(d[s.key]) : '—')));
+    colocarTooltip(box, tip, xi * escala(), m.t * escala());
+  };
+  const ocultar = () => {
+    cruz.attr('visibility', 'hidden');
+    capaPuntos.attr('visibility', 'hidden');
+    tip.hidden = true;
+  };
+  const centro = d3.bisector((d) => d.fecha).center;
+  svg.append('rect').attr('class', 'pc-hit').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b)
+    .attr('tabindex', 0).attr('aria-label', 'Recorre los trimestres con las flechas izquierda y derecha')
+    .on('pointermove', (ev) => mostrar(centro(pts, x.invert(d3.pointer(ev)[0]))))
+    .on('pointerleave', ocultar)
+    .on('focus', () => mostrar(actual))
+    .on('blur', ocultar)
+    .on('keydown', (ev) => {
+      if (ev.key === 'ArrowLeft') { ev.preventDefault(); mostrar(Math.max(0, actual - 1)); }
+      if (ev.key === 'ArrowRight') { ev.preventDefault(); mostrar(Math.min(pts.length - 1, actual + 1)); }
+    });
+}
+
+function dibujarBarras(box, filas, campo, color) {
+  box.classList.remove('dash-skeleton');
+  box.replaceChildren();
+  if (!filas.length) return;
+  const W = Math.max(240, Math.floor(box.clientWidth));
+  const H = 180;
+  const y = d3.scaleLinear([0, d3.max(filas, (r) => r[campo])], [1, 0]).nice();
+  const ticksY = y.ticks(3);
+  const svg = d3.select(box).append('svg')
+    .attr('width', '100%')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('role', 'img')
+    .attr('aria-label', `Preprints nuevos por trimestre: ${CAMPOS.find((c) => c.key === campo).lower}`);
+  const m = { l: medirTexto(svg, ticksY.map(fCompacto)) + 8, r: 4, t: 18, b: 22 };
+  y.range([H - m.b, m.t]);
+  const x = d3.scaleBand(filas.map((r) => r.trimestre), [m.l, W - m.r]).paddingInner(0.25).paddingOuter(0.1);
+  const bw = Math.min(x.bandwidth(), 24);
+  const off = (x.bandwidth() - bw) / 2;
+
+  svg.append('g').attr('class', 'pc-gridlines').selectAll('line').data(ticksY.filter((t) => t > 0)).join('line')
+    .attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d));
+  svg.append('g').attr('class', 'pc-ticks').selectAll('text').data(ticksY).join('text')
+    .attr('x', m.l - 6).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end').text((d) => fCompacto(d));
+
+  const barras = svg.append('g').selectAll('rect').data(filas).join('rect')
+    .attr('x', (r) => x(r.trimestre) + off).attr('width', bw)
+    .attr('y', (r) => y(r[campo])).attr('height', (r) => Math.max(0, y(0) - y(r[campo])))
+    .attr('rx', Math.min(3, bw / 2)).style('fill', color);
+  svg.append('line').attr('class', 'pc-axisline').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0));
+
+  const porAnio = d3.groups(filas, (r) => r.trimestre.slice(0, 4));
+  const paso = x.step() * 4;
+  const cada = paso < 34 ? 2 : 1;
+  svg.append('g').attr('class', 'pc-ticks').selectAll('text').data(porAnio.filter((g, i) => i % cada === 0)).join('text')
+    .attr('x', ([, rs]) => (x(rs[0].trimestre) + x(rs[rs.length - 1].trimestre) + x.bandwidth()) / 2)
+    .attr('y', H - m.b + 15).attr('text-anchor', 'middle').text(([anio]) => anio);
+
+  const i4 = filas.findIndex((r) => r.trimestre === '2022-T4');
+  if (i4 >= 0 && i4 < filas.length - 1) {
+    const xe = x(filas[i4].trimestre) + x.bandwidth() + (x.step() - x.bandwidth()) / 2;
+    svg.append('line').attr('class', 'pc-event').attr('x1', xe).attr('x2', xe).attr('y1', m.t - 6).attr('y2', y(0));
+    svg.append('text').attr('class', 'pc-event-text').attr('x', xe - 3).attr('y', m.t - 8).attr('text-anchor', 'end').text('ChatGPT');
+  }
+
+  const tip = crearTooltip(box);
+  const escala = () => box.clientWidth / W;
+  const mostrar = (ev, r) => {
+    barras.style('opacity', (b) => (b === r ? 1 : 0.45));
+    const fecha = document.createElement('div');
+    fecha.className = 'pc-tip-date';
+    fecha.textContent = etiquetaTrim(r.trimestre);
+    tip.replaceChildren(fecha, filaTooltip(null, 'Preprints', fInt(r[campo])));
+    colocarTooltip(box, tip, (x(r.trimestre) + x.bandwidth() / 2) * escala(), Math.max(0, y(r[campo]) - 40) * escala());
+  };
+  const ocultar = () => { barras.style('opacity', 1); tip.hidden = true; };
+  svg.append('g').selectAll('rect').data(filas).join('rect')
+    .attr('class', 'pc-hit')
+    .attr('x', (r) => x(r.trimestre) - (x.step() - x.bandwidth()) / 2).attr('width', x.step())
+    .attr('y', m.t).attr('height', y(0) - m.t)
+    .on('pointerenter', mostrar).on('pointermove', mostrar).on('pointerleave', ocultar);
+}
+
+function dibujarTabla(filas) {
+  const tbody = document.querySelector('#tabla tbody');
+  tbody.replaceChildren(...filas.slice().reverse().map((r) => {
+    const tr = document.createElement('tr');
+    tr.dataset.key = r.trimestre;
+    const th = document.createElement('th');
+    th.scope = 'row';
+    th.textContent = etiquetaTrim(r.trimestre);
+    tr.append(th);
+    for (const c of COLUMNAS_TABLA) {
+      const td = document.createElement('td');
+      td.textContent = Number.isFinite(r[c]) ? fInt(r[c]) : '—';
+      tr.append(td);
+    }
+    return tr;
+  }));
+}
+
+function escribirResumen(el, cambios) {
+  const campos = cambios.filter((r) => r.campo !== REFERENCIA.key);
+  const nombre = Object.fromEntries(CAMPOS.map((c) => [c.key, c.lower]));
+  const menor = campos.reduce((a, b) => (b.cambio < a.cambio ? b : a));
+  const mayor = campos.reduce((a, b) => (b.cambio > a.cambio ? b : a));
+  const cifra = (r) => {
+    const b = document.createElement('b');
+    b.className = 'pc-num';
+    b.dataset.source = 'cambio_vs_2022';
+    b.dataset.field = 'cambio';
+    b.dataset.where = `campo=${r.campo}`;
+    b.textContent = fPct(r.cambio);
+    return b;
+  };
+  const periodo = `entre ${mesInicio(menor.desde)} y ${mesFin(menor.hasta)}`;
+  const todos = campos.every((r) => r.cambio > 0);
+  el.classList.remove('dash-skeleton');
+  el.replaceChildren(
+    todos ? `En todos los campos hubo más preprints ${periodo} que en 2022: desde ` : `Frente a 2022, ${periodo} los cambios van desde `,
+    cifra(menor), ` en ${nombre[menor.campo]} hasta `, cifra(mayor), ` en ${nombre[mayor.campo]}.`,
+  );
+}
+
+function escribirTarjetas(cambios) {
+  const porCampo = new Map(cambios.map((r) => [r.campo, r]));
+  document.querySelectorAll('.pc-tile [data-source="cambio_vs_2022"]').forEach((el) => {
+    const r = porCampo.get(el.dataset.where.split('=')[1]);
+    el.classList.remove('dash-skeleton');
+    if (!r) { el.textContent = '—'; return; }
+    const f = el.dataset.field;
+    el.textContent = f === 'cambio' ? fPct(r.cambio) : fInt(r[f]);
+  });
+  if (cambios.length) {
+    document.getElementById('cambios-ventana').textContent =
+      `Preprints nuevos entre ${mesInicio(cambios[0].desde)} y ${mesFin(cambios[0].hasta)} frente al total de 2022.`;
+  }
+}
+
+function pintarMuestras() {
+  document.querySelectorAll('.pc-swatch[data-color]').forEach((el) => { el.style.background = dash.colors[Number(el.dataset.color)]; });
+}
+
+function marcarFallo(el) {
+  el.classList.remove('dash-skeleton');
+  if (el.classList.contains('pc-chart') || el.classList.contains('pc-mini')) {
+    const d = document.createElement('div');
+    d.className = 'pc-fail';
+    d.textContent = 'No se pudo cargar';
+    el.replaceChildren(d);
+  } else {
+    el.textContent = '—';
+  }
+}
+
+function marcarCarga(el) {
+  el.classList.add('dash-skeleton');
+  el.replaceChildren();
+}
+
+dash.onData(() => {
+  pintarMuestras();
+  dibujarLeyenda();
+  const estado = estadoFuentes();
+  const T = dash.data('trimestral');
+  const I = dash.data('indice_2022');
+  const C = dash.data('cambio_vs_2022');
+  const graficos = [...document.querySelectorAll('.pc-chart, .pc-mini')];
+  const textos = [...document.querySelectorAll('#resumen-texto, .pc-tile [data-source="cambio_vs_2022"]')];
+  const tbody = document.querySelector('#tabla tbody');
+  const listo = estado === 'ok' && T.status === 'ok' && I.status === 'ok' && C.status === 'ok';
+  if (!listo) {
+    tbody.replaceChildren();
+    const fallo = estado === 'error' || [T, I, C].some((d) => d.status === 'error');
+    graficos.concat(textos).forEach(fallo ? marcarFallo : marcarCarga);
+    return;
+  }
+  const filas = T.data;
+  const desde2020 = (rs) => rs.filter((r) => r.trimestre >= '2020-T1');
+  escribirResumen(document.getElementById('resumen-texto'), C.data);
+  escribirTarjetas(C.data);
+  dibujarIndice(document.getElementById('indice-grafico'), desde2020(I.data));
+  document.querySelectorAll('.pc-mini').forEach((box) => {
+    dibujarBarras(box, desde2020(filas), box.dataset.campo, dash.colors[Number(box.dataset.color)]);
+  });
+  dibujarTabla(desde2020(filas));
+  if (!enlaceAbierto) {
+    enlaceAbierto = true;
+    const destino = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (destino) { destino.scrollIntoView(); dash.setLink(destino.id); }
+  }
+});
+</script>
