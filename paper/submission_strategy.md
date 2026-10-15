@@ -1,330 +1,298 @@
 # Submission strategy
 
-*Prepared on 15 October 2026 for a sole author affiliated with EMBL and UPF.*
+*Prepared on 15 October 2026 for a sole author affiliated with EMBL and UPF, and updated the same day after the prior-work check (`research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`).*
 
 *Verification: venue facts were checked on each venue's own pages on 15 Oct 2026. Exceptions are marked **(search summary)**: science.org, pnas.org, cell.com and link.springer.com blocked automated access, so for those the source is a search-engine summary of the venue's own page or the parallel venue notes.*
 
-*Evidence and quotes are in two notes files:*
-- *`research_notes/AI academia essay evidence gaps/5_submission_strategy.md` (strategy);*
-- *`research_notes/AI academia essay evidence gaps/4_journal_venues.md` (venue breadth).*
+*Evidence and quotes are in three notes files in `research_notes/AI academia essay evidence gaps/`:*
+- *`5_submission_strategy.md` (strategy; §8 covers this update);*
+- *`4_journal_venues.md` (venue breadth);*
+- *`3_testing_acceleration_hypothesis.md` (the test design).*
 
-*This document builds on `paper/journals.md` and departs from it in two places, explained in "Where this differs from journals.md". The odds below are my judgements from the evidence, not published rates: no journal publishes acceptance rates for opinion formats. The scale is:*
+*No journal publishes acceptance rates for opinion formats, so the odds below are my judgements from the evidence. The scale is:*
 - ***high:*** *more likely than not;*
 - ***medium:*** *a real chance;*
 - ***low:*** *possible but unlikely;*
 - ***very low:*** *a long shot.*
 
+## What changed after the prior-work check
+
+**Three new pieces overlap the essay.**
+- **Blekhman (2026), "What is biology research for?"**, a *PLOS Biology* Perspective published on 15 October 2026. It makes the essay's core point for biologists: generative AI "has broken this already-flawed proxy completely" and "paper counts are meaningless". Its competing-interests line reads "RB is a member of PLOS Biology's editorial board". [PLOS Biology](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3004075)
+  - **Consequence:** a PLOS Biology Essay built on the same premise is now unlikely. PLOS Biology moves from second to third on the essay ladder, and only as an explicit extension of Blekhman.
+- **Huang, Hu, Zhang & Lin (2026), "AI can widen science — but only if institutions stop rewarding the already measurable"**, a *Nature* Comment published on 29 September 2026. It states the essay's §4b claim ("acceleration, not exploration") and blames incentives. [Nature](https://www.nature.com/articles/d41586-026-02961-z)
+  - **Consequence:** I drop the Nature Perspective enquiry. The odds for an NHB Perspective fall to low.
+  - **Consequence:** the Nature Correspondence should reply to Huang et al., not to Braun.
+- **Fourie (2026, arXiv)** already says peer review is "rationed, not priced". It was written with Claude Code and Codex, in a division of labour close to yours. (via 6_closest_prior_work.md)
+  - **Consequence:** the rationing argument must cite Fourie. The process record must be pitched as *better documentation*, not as a first.
+
+**What still belongs to the essay** (see the brief's new "Positioning" section):
+- reading the caps as **rationing** that restores scarcity by decree;
+- a **test** that separates incentives from the pull of data-rich problems;
+- the **split between internal and external drivers** of narrowing;
+- **legitimacy is irrelevant** to the mechanism;
+- a **documented process record**.
+
+**What the strategy now recommends:**
+1. Send the Correspondence as a reply to Huang et al.
+2. Make **EMBO Reports Science & Society** the first target for the essay. None of the new pieces is in that venue.
+3. **A new option, probably the highest-impact one:** run the test as a Registered Report. Nature Human Behaviour accepts secondary analyses of existing data if you have not yet looked at the data.
+
 ## Recommendation
 
-Lead with one claim: even accountable, disclosed, well-made AI use breaks a system whose signals of merit depend on scarcity, and this paper is the documented example. Publish that claim once in a peer-reviewed venue, as a condensed version of about 3,800 words written for your own life-science community, and post the full essay of about 7,000 words with its process record as a citable Zenodo preprint. This month, send a Nature Correspondence of under 200 words replying to Robert Braun's Nature Comment of 1 September on accountability. It is the only Nature door open to you, and it is cheap and timely, but it reaches few readers. Then take the condensed essay up a short, fast ladder: an optional presubmission enquiry for a Nature Perspective, then a Nature Human Behaviour Perspective, a PLOS Biology Essay and an EMBO Reports Science & Society article. None of these charges a fee on its standard route (not stated explicitly for Nature Perspectives), all accept disclosed AI-assisted drafting, and all normally give a first answer within about a week, so aiming high costs little time; the real risk is a rejection after full review. Before any of this, record what the paper cost to make in time and money. Without those figures "the paper as its own exhibit" is an anecdote, and Nature-family journals have already published several opinion pieces on AI in science this year, so the figures are what will make yours stand out. Finally, do not run a second, full-length specialist-journal track in parallel: in a paper about a system that counts papers, two peer-reviewed versions of one argument hand the irony critique to every reviewer.
+The prior-work check changes where your effort pays off most. The essay's premise has now been published in *Nature* (Huang et al., 29 Sep), and so has its "acceleration, not exploration" hypothesis; for biologists the premise also appeared in *PLOS Biology* today (Blekhman). A well-argued essay alone is therefore an opinion piece in a crowded field, with modest odds at top venues, whatever its quality. What remains yours is narrower and stronger. You read NIH's cap, arXiv's rules and conference quotas together as rationing that restores scarcity by decree. You have a test that separates incentives from the pull of data-rich problems. You split the internal and external drivers of narrowing, and you have a documented process record. This week, send a Nature Correspondence of under 200 words that replies to Huang et al. with the rationing point and the test. Before touching any data, write a time-stamped preregistration of the test; it is cheap and makes the design yours. Publish the repositioned essay once, condensed to about 3,500 words. Start with EMBO Reports Science & Society, which is fast, free, open access and untouched by the new pieces. Go to PLOS Biology only after an enquiry that presents the essay as an explicit extension of Blekhman. Post the full essay and the process record on Zenodo. If you can give it several months of computational work, run the test as a Registered Report. That empirical paper, not the essay, is now your realistic route to Nature-portfolio impact. It is also the best answer to the irony critique, because it adds evidence rather than one more opinion.
 
-## Where this differs from journals.md
+## The empirical option: run the test
 
-1. **Order.** `journals.md` puts PLOS Biology first. I put Nature Human Behaviour (NHB) first for three reasons:
-   - Its Perspective has the same length band as the PLOS Essay (3,000–4,000 words), so no rewrite is needed between the two.
-   - Its median time to a first decision is 6 days.
-   - An acceptance there is worth more.
+**The design** (from `3_testing_acceleration_hypothesis.md` §5):
+- **Basic comparison:** a within-author difference-in-differences around November 2022. Treatment is the intensity of LLM use; the outcome is exploration, measured by distance from the author's own earlier work and by topics new to the author. Reference-based outcomes are primary.
+- **The triple difference:** that comparison is run again across incentive intensity:
+  - career stage;
+  - evaluation regimes that count publications;
+  - short- versus long-horizon funding;
+  - field crowding.
+- **Predictions:** if incentives drive narrowing, AI users narrow more where counting is harsher. If AI simply goes where data are, the effect tracks data availability instead.
+- **Data:** the OpenAlex snapshot is free and updated quarterly, and Semantic Scholar offers embeddings.
+- **Novelty:** that note and the prior-work check both found **no study** that runs this incentive-heterogeneity test.
 
-   Use the `journals.md` order instead in either of two cases: you value open-access reach and speed over prestige, or EMBL's open-access office says a subscription-only publication conflicts with EMBL policy (see Next steps).
-2. **One track, not two.** `journals.md` runs a full-length paper in Minerva alongside the life-science piece, as a distinct text. I recommend a single peer-reviewed home plus the full preprint. A specialist article should come later, and only if it adds something genuinely new, such as a full test design for the acceleration hypothesis.
+**Venues that fit, verified on their own pages:**
+- **Nature Human Behaviour, Registered Report.** "We also welcome submissions proposing secondary analyses of existing data sets, provided that the authors have had no prior access to the data in question." Protocols are "provisionally accepted for publication before ... data analysis ... commences". [NHB content types](https://www.nature.com/nathumbehav/content)
+- **PLOS Biology, Preregistered Research Article.** These are "peer reviewed prior to conducting experiments, data collection or analysis" and "provisionally accepted". [PLOS Biology](https://journals.plos.org/plosbiology/s/what-we-publish)
+- **PLOS Biology, Meta-Research Article.** For work that explores "the systems that evaluate and reward individual scientists or institutions". [PLOS Biology](https://journals.plos.org/plosbiology/s/what-we-publish)
+- **Precedents:** comparable empirical work has landed at the top. Hao et al. (2026) is in *Nature*, Kusumegi et al. (2025) in *Science*, and Liang et al. (2025) in *NHB*.
 
-## Submission ladder
+**Impact compared with the essay: much higher, if the design holds.**
+- Empirical papers on this topic are cited and covered far more than opinion pieces. Kusumegi et al. had 81 citations within ten months; Hanson et al. have 293.
+- An empirical paper is judged on data and methods, so being outside the field matters less.
+- A Registered Report makes a null result publishable. That matters, because early evidence points the other way: Zheng et al. (2026) report *more* entry into new fields after 2022, and Kusumegi et al. find more diverse citations among adopters.
+- The test could therefore falsify §4b. It would still be a contribution.
 
-The table summarises the order. Odds are for this author, with this paper, today.
+**Effort: high.** My estimate is several months of part-time work for a computationally skilled researcher; this is a judgement, not a sourced figure. The work involves:
+- disambiguating authors at scale;
+- measuring LLM use without the known detector biases;
+- building reference-based exploration measures;
+- coding incentive regimes;
+- handling the threats listed in note 3: selection, detection timing, the productivity confound, text compression, COVID, and arXiv's 2025–26 rule changes.
 
-| Step | Venue and format | Length to prepare | Odds | AI policy | Cost | First decision |
+EMBL's computing resources make this feasible. Scientometrics reviewers will be demanding.
+
+**Risks:**
+- **Scooping.** Several well-resourced groups work on this data (Evans, Yin and Ginsparg, Zou, Teplitskiy).
+- **Prior access.** The "no prior access" rule means you must not explore the data before submitting Stage 1.
+- **Timeliness.** The essay loses currency while the study runs.
+
+**Verdict.** If you can commit the time, do both. The short essay and the Correspondence carry the rationing argument and *announce* the test now. The Registered Report carries the evidence later. A Registered Report is a distinct contribution, so it does not feed the "one more paper" critique the way a second essay would.
+
+**If you do not have the months, skip the empirical paper.** Present the test as a box in the essay and offer it to the field.
+
+**An empirical study is a new decision about authorship.** The single-author choice was made for the essay. For an empirical paper, a scientometrics co-author would raise the odds considerably.
+
+## Submission ladder for the essay (condensed to about 3,500 words)
+
+| Step | Venue and format | Length | Odds | AI policy | Cost | First decision |
 |---|---|---|---|---|---|---|
-| 0 | **Nature Correspondence** (companion) | <200 words, ≤2 refs | Low–medium | Compatible: LLM use in a footnote | None stated | Silence after 3 weeks means no |
-| 1 | **Nature Perspective**: presubmission enquiry only (optional) | Synopsis plus 300–500-word outline; the article itself <7,000 words, ≤150 refs | Very low | Compatible (Springer Nature "Amber" tier, with disclosure) | No fee on the subscription route (n.v. for Perspectives) | Enquiry answer "usually within two working days" |
-| 2 | **Nature Human Behaviour Perspective** | 3,000–4,000 words, ~100 refs | Low–medium | Compatible (Amber) | Free: subscription route only | Median 6 days |
-| 3 | **PLOS Biology Essay** (presubmission email first) | ~3,500–4,000 words, ~30–60 refs, ≤3–4 display items | Medium | Compatible; must say how outputs were validated | Free (magazine) | ~6 days on average; review ~42 days |
-| 4 | **EMBO Reports Science & Society** (enquiry through eJP) | ≤3,500 words, **≤15 refs** | Medium | Presumed compatible (Springer Nature platform) | No APC for this type | Median 5 days |
-| 5 | **eLife Feature** (pitch by email) | <2,000 words, ≤20 refs | Medium | Compatible; describe in Methods | Free | Not stated |
-| 6 | **Minerva**, full length (only if the ladder fails, or later as a distinct paper) | 8,000–10,000 words incl. refs | Medium | Compatible; document in Methods "or a suitable alternative part" | Free subscription route, or OA via EMBL DEAL or UPF quota | Median 9 days |
+| 1 | **EMBO Reports, Science & Society** (enquiry through eJP) | ≤3,500 words, **≤15 refs** | Medium | Presumed compatible (Springer Nature platform) | No APC for this type | Median 5 days |
+| 2 | **PLOS Biology Essay**, only as an extension of Blekhman, after an email enquiry | ~3,500–4,000 words, 30–60 refs | Low–medium (was medium) | Compatible; must describe how outputs were validated | Free (magazine) | ~6 days; review ~42 days |
+| 3 | **NHB Perspective**, only if you are *not* doing the Registered Report | 3,000–4,000 words, ~100 refs | Low (was low–medium) | Compatible (Springer Nature "Amber" tier, with disclosure) | Free, but subscription-only | Median 6 days |
+| 4 | **eLife Feature** (pitch by email) | <2,000 words, ≤20 refs | Medium | Compatible; describe in Methods | Free | Not stated |
+| 5 | **Minerva**, full length (fallback) | 8,000–10,000 words incl. refs | Medium | Compatible; document in Methods "or a suitable alternative part" | Free subscription route; OA via EMBL DEAL or UPF quota | Median 9 days |
+| — | ~~Nature Perspective enquiry~~ | — | Dropped | — | — | — |
 
-### Step 1: Nature Perspective, presubmission enquiry only (optional)
+### Step 1: EMBO Reports, Science & Society
 
-**Why it is on the ladder**
-- It is the only Nature format that takes the essay at its full length.
-- Perspectives "follow the same formatting guidelines as Reviews": "generally less than 7,000 words" with "no more than 150 references", and they are peer-reviewed. Your draft already fits.
-- An enquiry costs a synopsis and about two working days. [Nature: other submissions](https://www.nature.com/nature/for-authors/other-subs); [presubmission enquiries](https://www.nature.com/nature/for-authors/presub)
-
-**Odds: very low.**
-- Nature accepts "only about 8%" of submissions, and "most submissions are declined without being sent out for peer review". [Editorial criteria](https://www.nature.com/nature/for-authors/editorial-criteria-and-processes)
-- "Most [Reviews and Perspectives] are commissioned."
-- Nature has already published closely related pieces:
-  - Messeri & Crockett's Perspective (2024) and their Comment (May 2026);
-  - Hao et al. (2026);
-  - Braun's Comment (September 2026).
-- A single-author normative essay from outside the field, without new data, would have to make an unusually strong case. Send the enquiry only if your time-and-cost figures are striking.
-
-**Format.** Submit a synopsis "with an indication of the proposed depth of coverage" and "a 300-500 word outline" that makes "the case succinctly for publication in a topical, interdisciplinary journal".
-
-**AI policy.** Springer Nature's framework covers "Extensive copy editing or writing support" and "Drafting explanatory summaries". Both are "Permitted with human oversight, verification, and transparency through disclosure". Presenting AI-generated "hypotheses, analyses or conclusions ... as human-derived" is not permitted. [Nature Portfolio AI policy](https://www.nature.com/nature-portfolio/editorial-policies/ai)
-
-**Cost.** No charge on the subscription route. EMBL's Nature deal covers gold OA for "primary research articles" only. [EMBL agreements](https://www.embl.org/about/info/szilard-library/open-access/open-access-agreements-with-publishers/)
-
-**Time.** An answer to the enquiry within about two working days. If invited, a full review takes months.
-
-### Step 2: Nature Human Behaviour Perspective (first formal submission)
-
-**Why it is on the ladder**
-- It is the highest-prestige door that takes unsolicited essays.
-- Your argument about incentives and signals of merit is a behavioural argument, so it sits squarely in scope.
-- NHB has a JIF of 17.5, had 5.5 million downloads in 2025, and has a median of 6 days to a first decision. [NHB metrics](https://www.nature.com/nathumbehav/journal-impact)
-- A Perspective is "a forum for authors to discuss models and ideas from a personal viewpoint ... opinionated but ... balanced". [NHB content types](https://www.nature.com/nathumbehav/content)
-
-**Odds: low–medium.**
-- For: the format is open, NHB has published on AI and academic writing (Hu 2026), and an EMBL affiliation reads as serious.
-- Against: reviewers will be metascience or social-science specialists, and the topic is crowded. If NHB prefers a shorter piece, its Comment (≤1,800 words, ≤10 refs) is an alternative.
-
-**Format.** 3,000–4,000 words, "approximately 100 references", peer-reviewed.
-
-**AI policy.** Compatible (as in step 1).
-
-**Cost.** Free. Non-primary content "can only be published using the subscription-based publishing route". That also means it sits behind a paywall: you gain prestige and lose reach.
-
-**Check with EMBL first.** EMBL's open-science policy (IP71) applies to "research articles". It requires a preprint and CC BY open access in Europe PMC "immediately upon publication". Ask EMBL's open-science office (OSIM) whether a peer-reviewed essay counts. If it does, start at step 3. [EMBL IP71](https://www.embl.org/documents/wp-content/uploads/2021/12/Internal_Policy_IP71_Open_Science_and_Open_Access_Pub03122021_Rev01072025.pdf)
-
-**Time.** Median 6 days to first decision. A rejection after review costs about 2–3 months.
-
-**Alternative.** If your field is computational or machine learning, consider a Nature Machine Intelligence Perspective (3,000–4,000 words, JIF 29.8, median 10 days to first decision) as a substitute for NHB. [NMI content types](https://www.nature.com/natmachintell/content)
-
-### Step 3: PLOS Biology Essay
-
-**Why it is on the ladder**
-- Your own community reads it, and it is open access under CC BY.
-- It is peer-reviewed and free to publish ("There is no publication fee for magazine articles").
-- It has a strong meta-research identity and has recently published Bietti et al. (2026), on large language models and scientists' critical thinking. [PLOS Biology: what we publish](https://journals.plos.org/plosbiology/s/what-we-publish)
+**Why it is first now**
+- It is the European life-science forum on research policy and culture.
+- Its recent AI pieces take other angles: "Gen AI and research integrity: Where to now?" (2025) and "Peer-review ownership in the AI era" (2026). None of the new close pieces appeared there.
+- It is open access, has no APC for this article type, and decides fast: median 5 days to first decision, corrected JIF 6.4. (via 4_journal_venues.md)
 
 **Odds: medium.**
-- "Most magazine articles are comissioned ... but we do publish some unsolicted content", and the journal invites presubmission enquiries.
-- Essays should "take an imaginative approach to a provocative question". Your thesis is exactly that.
+- Review is editor-led ("may be peer-reviewed at the editors' discretion"), and working scientists are its normal authors.
+- But the premise is now everywhere, so the first paragraph must say what is new: rationing by decree, and the test.
 
-**Format.** "~3,500-4,000 words", "~30-60" references, "up to 3-4" display items. The "How this paper was made" box counts as one display item.
+**Format**
+- ≤3,500 words and **≤15 references**. The full bibliography lives in the preprint.
+- Presubmission enquiries go through eJP only. "Presubmission enquiries sent via email will not be considered." (via 4_journal_venues.md)
 
-**AI policy.** Compatible. PLOS asks for three things: "the name(s) of any tools used", how they were used, and "how the user evaluated the validity of the tool's outputs". Your verification record answers the last one directly. [PLOS AI policy](https://journals.plos.org/plosbiology/s/ethical-publishing-practice)
+**A 15-reference core** (suggested; adapt):
+- Blekhman 2026; Huang et al. 2026; Fourie 2026; Hansen 2026; Manabu 2026; Gartenberg et al. 2026;
+- the *Nature* editorial of 25 Mar 2026;
+- Kusumegi et al. 2025; Hao et al. 2026;
+- NIH NOT-OD-25-132; arXiv's 2025–26 policies;
+- Hanson et al. 2024; Smaldino & McElreath 2016;
+- one source on the external driver (e.g. Brzostowicki 2026);
+- your Zenodo record.
 
-**Cost.** Free. EMBL's PLOS deal also covers all PLOS journals (2025–26).
+**EMBL and EMBO.** EMBL "was created in 1974 as a 'Special Project' of EMBC ... Today, EMBL is an independent organization", separate from EMBO. (search summary) An EMBL affiliation is not in itself a competing interest (my reading). Declare any EMBO roles.
 
-**Time.** A presubmission reply is typically quick (n.v.). Once submitted, there is "an initial decision within 6 days on average, and peer-review takes 42 days on average". [PLOS Biology journal information](https://journals.plos.org/plosbiology/s/journal-information)
+### Step 2: PLOS Biology, only as an extension of Blekhman
 
-### Step 4: EMBO Reports, Science & Society
+**Why it is still on the ladder.** Your own community reads it. It is open access and free for magazine articles. The Blekhman piece shows the editors want this debate.
 
-**Why it is on the ladder**
-- It is the European life-science community's forum on research policy and culture.
-- It has recently published "Gen AI and research integrity: Where to now?" (2025) and "Peer-review ownership in the AI era" (2026).
-- It is open access, free, and fast: median 5 days to first decision, corrected JIF 6.4. (via 4_journal_venues.md)
+**Why the odds dropped to low–medium**
+- They published the premise today, from a member of their own editorial board.
+- Editors rarely run a second essay on the same thesis within months unless it clearly advances it.
 
-**Odds: medium.** These are the best odds per week spent. Review is editor-led ("may be peer-reviewed at the editors' discretion"), and working scientists are its usual authors.
+**How to pitch it.** Send a presubmission email to biology_editors@plos.org. Say that Blekhman predicts evaluation will fall back on "older, cruder proxies, such as journal prestige". Argue that the institutional fallback already under way is a different one: rationing by decree. Then add the test.
 
-**Format.** ≤3,500 words and **≤15 references**, which is severe. The full bibliography has to live in the preprint. Presubmission enquiries go through eJP only: "Presubmission enquiries sent via email will not be considered." (via 4_journal_venues.md)
+**Alternative form: a Formal Comment.** These are "peer-reviewed and indexed in PubMed", run to 1,000 words, and "are considered exclusively by invitation". Ask at plosbiology@plos.org. But the format is described as being for "research findings associated with specific articles", so it may not apply to a Perspective. Ask first. Pursue one PLOS piece, not both. [PLOS Biology: what we publish](https://journals.plos.org/plosbiology/s/what-we-publish)
 
-**AI policy.** Presumed compatible: it is on the Springer Nature platform and no EMBO-specific rule was found.
+**AI policy and timing**
+- PLOS requires disclosure of "the name(s) of any tools used", how they were used, and "how the user evaluated the validity of the tool's outputs". [PLOS AI policy](https://journals.plos.org/plosbiology/s/ethical-publishing-practice)
+- Decisions take about 6 days on average, and review about 42 days. [Journal information](https://journals.plos.org/plosbiology/s/journal-information)
 
-**EMBL and EMBO.** EMBL was founded in 1974 as a "Special Project" of EMBC, and "Today, EMBL is an independent organization", separate from EMBO. (search summary) An EMBL affiliation is not in itself a competing interest (my reading). Declare any EMBO membership, fellowship, funding or advisory role.
+### Step 3: NHB Perspective, only if you are not doing the Registered Report
 
-**Cost.** "There is currently no APC for other article types." (via 4_journal_venues.md)
+**Odds: low.**
+- The format is open: 3,000–4,000 words, about 100 references, peer reviewed. [NHB content types](https://www.nature.com/nathumbehav/content)
+- But Huang et al. in *Nature* already carries the incentive claim. NHB editors would see the test as the contribution, and the natural home for a test is a Registered Report.
+- If you go empirical, save NHB for that paper and do not spend it on the essay.
 
-**Time.** Median 5 days to first decision.
+**Before submitting, check with EMBL.** EMBL's open-science policy (IP71) applies to "research articles". NHB non-primary content is subscription-only. Ask EMBL's open-science office (OSIM) whether an essay counts. [EMBL IP71](https://www.embl.org/documents/wp-content/uploads/2021/12/Internal_Policy_IP71_Open_Science_and_Open_Access_Pub03122021_Rev01072025.pdf)
 
-### Step 5: eLife Feature
+### Steps 4 and 5: eLife Feature and Minerva
 
-**Why it is on the ladder.** It reaches life scientists, is free, and accepts pitches by email to features@elifesciences.org. [eLife author instructions](https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html)
+**eLife Feature**
+- Format: "below 2000 words, two display items ... and 20 references".
+- No fee. Pitch by email to features@elifesciences.org. [eLife](https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html)
+- **Odds: medium.** The format is too short to carry the test, so the piece would lose much of its depth.
 
-**Odds: medium.** It is a natural venue for a pitch about research culture.
+**Minerva** (fallback for the full essay)
+- **Format and reach:** 8,000–10,000 words including references, double-blind review, JIF 2.9. Reach is low outside science studies. (via `journals.md`)
+- **Odds: medium.**
+- **Use it if:** steps 1–4 all fail, or you want the five-section argument peer-reviewed at full length.
 
-**Format.** "Below 2000 words, two display items ... and 20 references".
-
-**Trade-off.** The format is too short to carry the argument for acceleration over exploration, so the paper loses most of its depth.
-
-### Step 6: Minerva, full length (fallback, or a later and distinct paper)
-
-**Why it is on the ladder.**
-- Its remit covers the "institutions in science, higher education and research".
-- Specialists in research evaluation read it.
-- It takes 8,000–10,000 words including references and uses double-blind review. JIF 2.9; median 9 days to first decision. (via `journals.md`)
-
-**Odds: medium.**
-
-**Reach.** Low outside science studies.
-
-**Cost.** Free on the subscription route, or open access through EMBL's Springer Nature DEAL or UPF's CRUE/CSUC quota.
-
-**When to use it.** Only if steps 2–4 all fail, or later as a separate paper with a new contribution.
-
-**Avoid as lead targets:**
-- **Cell Press titles, including Patterns.** Elsevier's policy, updated June 2026, allows AI "in a limited, supportive way" and lists "Generating sections of a manuscript without genuine intellectual contribution" as inappropriate. That is a grey zone for drafting by agents. [Elsevier AI policy](https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals)
+**Still avoid:**
+- **Cell Press titles.** Elsevier's "limited, supportive" wording is a grey zone for drafting by agents.
 - **Issues in Science and Technology, Times Higher Education and SocArXiv**, which reject AI-drafted text.
-- **MDPI and Frontiers**, as `journals.md` explains.
+- **MDPI and Frontiers.**
 
 ## The Nature/Science question
 
-**The honest answer.** At Nature, the realistic door is a **Correspondence**. At Science, it is a **Letter** or, as a long shot, the **editorial page**. Neither will carry the essay. The realistic way to reach a Nature-family audience with the argument itself is **Nature Human Behaviour** (or Nature Machine Intelligence or Nature Computational Science).
+**The honest answer has changed.** In 2026 Nature's magazine sections have already covered the essay's thesis from several angles:
+- the 25 Mar Editorial on AI papers and the effort–value link;
+- Zhang's World View (22 Jun);
+- Messeri & Crockett's Comment (19 May);
+- Braun's Comment (1 Sep);
+- Huang et al.'s Comment (29 Sep).
 
-### Nature
+**Nature**
+- **Comment, World View and Opinion stay closed:** "Unsolicited contributions are not accepted." [Nature: other submissions](https://www.nature.com/nature/for-authors/other-subs)
+- **The Perspective enquiry, which was very low before, is now not worth sending.**
+- **Correspondence is the one open door, and it now has a better target** (next section). It brings a Nature-branded marker of the argument but little reach: recent examples drew 1,300–5,700 accesses, and Huang et al.'s Comment itself had 2,685 by 15 Oct. [Nature metrics](https://www.nature.com/articles/d41586-026-02961-z/metrics)
 
-**Closed to you:**
-- **Comment and World View:** "Unsolicited contributions are not accepted. Comments, Book Reviews and World Views are part of a commission-only section". [Nature: other submissions](https://www.nature.com/nature/for-authors/other-subs)
-- **Opinion:** "commissioned by the Opinion Editor ... Unsolicited contributions are not considered." [Presubmission enquiries](https://www.nature.com/nature/for-authors/presub)
-- **Pitching the Comment editors is not a submission route.** You can email information, and editors commission authors they know. Messeri & Crockett went from a 2024 Perspective to a 2026 Comment.
+**Science**
+- **The editorial page** remains a very long shot. It takes 720 words, no references, exclusive. Thorp: "We don't take most of what we get." [Thorp](https://www.science-forever.com/p/what-we-look-for-in-editorials-for)
+- **Letters** need something "published in Science in the past 3 months" or a recent event of general interest. I verified no recent Science piece to hang a Letter on. (search summary)
 
-**Open:**
-- **Correspondence.** Under 200 words, ≤2 references, ≤4 authors, sent by email to correspondence@nature.com. "If you have not heard from us after 3 weeks, please presume that we cannot publish your submission." The door is real: 7 of the 12 Correspondences (2024–26) returned by a nature.com search for "AI peer review" had a single author. Reach is small: recent examples drew 1,300–5,700 article accesses.
-- **Perspective.** By synopsis (step 1).
-- **Careers section.** It "welcomes suggestions" at naturecareers@nature.com. This is a possible angle on what it was like to build a paper with AI agents. It reaches widely but is not peer-reviewed; format n.v.
+**PNAS.** Opinions of about 1,500–2,000 words accept proposals and are screened with Pangram, an AI-text detector. This remains an alternative, not a lead. (search summary)
 
-### Science (all search summary except Thorp)
+**The realistic route to Nature-family impact is now empirical.** An NHB Registered Report is the main option. Nature or Science are possible only if the result is striking, as with Hao et al. (*Nature*) and Kusumegi et al. (*Science*).
 
-- **Letters.** Up to 300 words, on "material published in Science in the past 3 months or ... recent events that are of general interest". The October 2026 submission caps at arXiv and at AI conferences could count as recent events. A Letter is only worth sending if a suitable Science piece or event gives you a hook.
-- **Editorial page.** Holden Thorp writes: "The limit is 720 words." "We don't allow references." "It has to be an exclusive piece for Science." "Although we mostly publish pieces that we have commissioned, we take a close look at everything that comes in unsolicited." "We don't take most of what we get." [Thorp, 5 June 2024](https://www.science-forever.com/p/what-we-look-for-in-editorials-for)
-  - Odds: very low, but a 720-word piece is cheap to write.
-  - It must be exclusive, so it competes with the Nature Correspondence: choose one.
-- **Policy Forum and Perspectives.** Rules not verified. They are not recommended for a single author from outside the field.
-- **AI policy.** Disclose writing assistance in the cover letter and the acknowledgments. Editors "may decline to move forward with manuscripts if AI is used inappropriately".
+## The companion short piece: reply to Huang et al.
 
-### PNAS (search summary)
+**Why Huang et al. rather than Braun**
+- Nature's Correspondence page sets **no time limit** for responses. It states only that silence after 3 weeks means no.
+- Huang et al. is two weeks old; Braun is six weeks old. Two Correspondences on the same theme (Hutchinson, 29 Sep; Motoki, 6 Oct) have appeared since Braun's Comment; whether they reply to it is not verified, because they are paywalled.
+- More importantly, Huang et al. make exactly the claim your test addresses. Their recommendations seen so far (subsidising new data infrastructure; no longer penalising pivots) correspond to the two rival explanations, data affordance and incentives. Your test tells which lever matters.
 
-- Opinions run to about 1,500–2,000 words. "All authors are welcome to submit proposals", and pieces are reviewed by at least one member of the US National Academy of Sciences.
-- PNAS screens submissions with Pangram, an AI-text detector. Your disclosure covers this, but expect scrutiny.
-- Fees were not verified. A reasonable alternative to NHB, but not a lead.
+**The point to make, in under 200 words with two references** (Huang et al., plus NIH's notice or Nature's 15 Oct news on arXiv's cap):
+1. Huang et al. ask institutions to stop rewarding the already measurable.
+2. So far institutions have rationed instead. NIH caps applicants at six a year, arXiv at two submissions a month, and AI conferences use quotas. This restores scarcity by decree and leaves what is rewarded untouched.
+3. Whether incentives or the pull of data-rich problems drive narrowing can be tested: compare AI adopters' exploration where counting is harsher (untenured researchers, publication-counting regimes, short grant cycles) with where it is softer. That is a triple difference with open bibliometric data, and it says which of their levers to pull.
 
-### How to use the Nature door
+**Mechanics**
+- Nature allows "further citations ... for fact-checking purposes", so add links for the caps.
+- Read Huang et al. in full first. The prior-work check saw only two of their three recommendations.
+- Write it yourself; if you use AI, add the required one-line footnote.
+- **Send by 23 Oct. If you have not heard by about 13 Nov, it is declined.**
 
-Use the Correspondence as a dated, Nature-branded marker of the argument, not as your impact vehicle. If it is published, cite it in later cover letters.
+**Holding back the preprint.** Nature says "An article making a similar point to the Correspondence should not be published in another outlet until the Correspondence is published". Hold the public preprint until the Correspondence is decided.
 
-## The companion short-piece plan
+**Output cap**
+- Without the empirical study: one Correspondence, one essay, one preprint.
+- With it: add the Registered Report, which is the only further paper that adds evidence.
+- Say so in the paper.
 
-**What to send.** A Nature Correspondence replying to Braun, "Who is responsible when AI helps to write science?" (Nature, 1 Sep 2026). Its standfirst argues that "the deeper challenge is preserving accountability for scholarly work". [Braun 2026](https://www.nature.com/articles/d41586-026-02686-z)
+## How the essay maps onto the 3,500-word version
 
-**Your reply in three moves:**
-1. Accountability is necessary but not sufficient.
-2. Even fully accountable, disclosed AI use makes papers, reviews and grant applications almost free to produce. The system's signals of merit rest on scarcity, and NIH already caps investigators at six applications a year.
-3. Assessment bodies, not authors, must change what they count.
-
-**Mechanics:**
-- One citation to Braun, one to Kusumegi et al. (2025) or Hao et al. (2026).
-- Write it yourself. If you use AI, add the required one-line footnote.
-- Read the Correspondences by Hutchinson (29 Sep 2026) and Motoki (6 Oct 2026) first, and do not repeat them.
-
-**When.** Send it by **23 October**. If you have not heard by **13 November**, it is declined.
-
-**Holding back the preprint.** Nature says "An article making a similar point to the Correspondence should not be published in another outlet until the Correspondence is published". Hold the public preprint until the Correspondence is decided. A journal *submission* is not publication, so preparing the essay meanwhile is fine.
-
-**If the Correspondence fails:**
-- Do not chase another short piece unless it makes a genuinely distinct point.
-- One option, if your field is machine learning: a **Nature Machine Intelligence Comment** (1,500–2,000 words, ≤15 refs) on the October 2026 submission caps at arXiv and AI conferences, read as rationing rather than reform.
-- After acceptance of the main essay, an **LSE Impact Blog** summary (800–1,200 words; declared AI use allowed, "wholly AI-generated content" not) is a good dissemination channel. It is not a publication.
-
-**Overall cap.** One short piece, one peer-reviewed essay, one preprint. Say so in the paper. It is your best answer to the irony critique.
-
-## How the full essay maps onto the 3,800-word version
-
-| Full essay | Condensed (NHB, PLOS, EMBO) | Correspondence |
+| Full essay | EMBO Reports version (~3,500 words) | Correspondence |
 |---|---|---|
-| §1 How the system works, pre-AI strain | ~400 words: Hanson et al. (2024) and the incentive literature, with counter-evidence (Fanelli) in one sentence | — |
-| §2 AI makes what is counted almost free, even with good use | ~1,100 words: **the core** (Kusumegi; the NIH cap; the review load; AI-written reviews) | The thesis sentence |
-| §4 Acceleration, not exploration; governance | ~1,100 words: Hao et al.; the hypothesis box on how to test it; DORA and CoARA are voluntary and pre-AI, and the AI rules stop at disclosure | — |
-| §3 The ideal | ~400 words, as the payoff (Sourati & Evans; OpenScholar) | — |
-| §5 Corporate concentration | ~300 words or one paragraph pointing to the preprint | — |
-| Box: How this paper was made | ~250 words, with time and cost, archived log DOI and COI note | Footnote |
-| References (~150) | NHB ~100; PLOS 30–60; **EMBO 15** | 2 |
+| §1 The system and its pre-AI strain | ~300 words: shared premise, citing Blekhman, Hansen, Manabu, Gartenberg et al. and the *Nature* editorial | — |
+| §2 Cheap outputs; legitimacy is irrelevant | ~800 words: the three scarcities, including the time it takes to master a literature | — |
+| §4c, rewritten as **rationing** | ~800 words: NIH cap, arXiv's rules of Oct 2025, May 2026 and Oct 2026, conference quotas; extends Fourie; pricing as the counter-proposal | Point 2 |
+| §4a–b, acceleration and **the test** | ~800 words plus a box: Huang et al. as the claim, Hao et al. as the evidence, the triple difference (preregistration DOI if done) | Point 3 |
+| §5 Two drivers (internal and external) | ~400 words | — |
+| §3 The ideal | ~200 words as the payoff, or cut | — |
+| Box: How this paper was made | ~250 words: time, cost, record DOI, the Anthropic note; presented as documentation, not a first | Footnote |
+
+**Wording note:** call the test "discriminating" rather than "decisive". Incentive intensity can correlate with how data-rich a field is, and reviewers will say so.
 
 ## Next steps
 
 | When | What |
 |---|---|
-| **By 23 Oct 2026** | Read Braun (2026), Messeri & Crockett (2026), the Hutchinson and Motoki Correspondences, Manabu (2026, *PSE*), Hansen (2026, *RIPR*), Bietti et al. (2026, *PLOS Biol.*) and the two EMBO Reports pieces. Write and send the **Nature Correspondence**. |
-| By 23 Oct | Email **EMBL OSIM** (osim@embl.org, per `journals.md`) with three questions: does IP71 cover a peer-reviewed essay; is NHB's subscription-only route acceptable; does EMBL have AI guidance for authors? Ask UPF's research office the AI question too. No public EMBL or UPF rule on AI authorship was found. |
-| By 30 Oct | Compile the **time-and-cost record**: hours, agent runs, money spent, number of drafts. This is the paper's strongest datum and the hook for every pitch. |
-| 26 Oct–13 Nov | Do the final author revision of the full essay. Cut the 3,800-word version. Export and archive the process record (git history, agent instructions, verification logs). Draft the cover letter. |
-| ~2–6 Nov (optional) | **Nature Perspective enquiry**, but only if the time-and-cost figures are striking. Expect an answer within about two working days. |
-| ~13–16 Nov | Once the Correspondence is decided, post the **full essay and record on Zenodo** (DOI). Ask MetaArXiv moderators whether they take disclosed AI-drafted essays. Submit to **NHB** (Perspective). |
-| Late Nov–Dec | If NHB declines, email a **PLOS Biology** presubmission enquiry (biology_editors@plos.org), then submit. |
-| Jan–Feb 2027 | If PLOS declines, send an **EMBO Reports** enquiry through eJP and submit. |
-| Spring 2027 | Watch for the **Metascience 2027** call (Montreal, 14–16 June 2027). Present the paper as a case with its production data. |
-| At acceptance | Contact the **EMBL Press Office** (media@embl.org; there are site contacts, including for Barcelona) and UPF communications. Propose an EMBL News feature. Consider the **EMBL Science and Society Conference** (Heidelberg, 30 Nov–1 Dec 2027). |
+| **By 23 Oct 2026** | Read Huang et al. in full, plus Blekhman, Fourie, Hutchinson and Motoki. Write and send the **Nature Correspondence**. Email **EMBL OSIM** (osim@embl.org, per `journals.md`) with two questions: does IP71 cover a peer-reviewed essay, and are there AI guidelines for authors? **Decide whether to go empirical.** |
+| By 30 Oct | Compile the **time-and-cost record**. If going empirical, write a **time-stamped preregistration** of the triple-difference design *before* touching any data, because NHB's "no prior access" rule applies. |
+| 26 Oct–13 Nov | Finish the repositioned full essay. Cut the 3,500-word EMBO version. Archive the process record. Draft the cover letter. |
+| ~13–16 Nov | Once the Correspondence is decided, post the **full essay and record on Zenodo**. Send an **EMBO Reports** presubmission enquiry through eJP, then submit. |
+| Dec 2026–Feb 2027 | If EMBO declines: PLOS Biology enquiry (as a Blekhman extension), then eLife, then Minerva. |
+| Nov 2026–Mar 2027, if empirical | Write the Stage 1 Registered Report (rationale, hypotheses, design, analysis plan, robustness and placebo checks) for **NHB**, or a PLOS Biology Preregistered Research Article. |
+| Spring 2027 | **Metascience 2027** (Montreal, 14–16 June; call not yet published). Present the design, or the Stage 1 protocol if accepted. |
+| At each acceptance | Contact the **EMBL Press Office** (media@embl.org) and UPF communications. Do not solicit media before acceptance (Nature Portfolio policy). |
 
-**Media.** Do not pitch journalists before acceptance. The Nature Portfolio "strongly discourage[s] ... direct solicitation of media coverage" of submitted work. Answering questions about a preprint is allowed, but such coverage "may reduce or pre-empt coverage ... at the time of publication". [Press policy](https://www.nature.com/nature-portfolio/editorial-policies/press-and-embargo-policies)
+### Presubmission enquiry angle
 
-This rule descends from the NEJM's 1969 Ingelfinger rule. The risk is a "scientist lets AI write paper" story about a stunt rather than an argument, as happened with the GPT-3 "paper about itself" in 2022. Agree the framing with the EMBL Press Office before any coverage.
-
-**Preprint servers:**
-- Not SocArXiv before acceptance: its 2026 policy rejects "Generating text which is used verbatim (including whole paragraphs and sections)" and "Superficial, high-level theory synthesis". [SocArXiv AI policy](https://socopen.org/ai-policy/)
-- Not arXiv's computer-science categories: position papers there now need prior peer-reviewed acceptance. [arXiv, 31 Oct 2025](https://blog.arxiv.org/2025/10/31/attention-authors-updated-practice-for-review-articles-and-position-papers-in-arxiv-cs-category/)
-- Not bioRxiv, which excludes essays (search summary).
-
-These policies are themselves evidence for your thesis, so cite them in the box. Do not submit to these servers just to be rejected; that would be a stunt.
-
-### Presubmission enquiry angle (adapt per venue)
-
-> Can a carefully made, fully disclosed AI-assisted paper still be part of the problem? I argue that it can. Academic evaluation infers merit from scarce things: the effort of writing, reviewers' time, and the years it takes to master a literature. AI makes the outputs that are counted almost free to produce, even when it is used well. This manuscript is the case. Under my direction, AI agents searched and checked the literature and drafted text. I set the thesis, structure and judgements and revised everything. The paper took [X hours] and [€Y], and the full process record is public [DOI]. I propose a ~3,800-word [Perspective/Essay] that sets out the mechanism, drawing on Kusumegi et al. (2025), Hao et al. (2026) and NIH's 2025 cap of six applications per investigator. It also states a testable hypothesis, that scientists use AI to accelerate rather than to explore, and says what assessment bodies would have to change.
+> Recent pieces argue that AI breaks the link between effort and merit (Blekhman, *PLOS Biology*, 2026) and that incentives steer it towards exploiting familiar work (Huang et al., *Nature*, 2026). I take two further steps. First, the institutional response so far is rationing: NIH's cap of six applications per investigator, arXiv's monthly limit and conference quotas restore scarcity by decree while leaving what is counted unchanged. Extending Fourie (2026), I argue that pricing or redesign would do better. Second, the incentive explanation can be tested against its main rival, that AI simply flows to data-rich problems, with a triple difference that compares AI adopters' exploration across harsher and softer counting regimes [preregistered: DOI]. The essay was made with AI agents under my direction and documents its own production ([hours], [€], record DOI).
 
 ### Cover letter: five bullets
 
-- **The claim, against the current debate.** Most commentary asks how to keep AI use accountable, as Braun did in Nature in 2026. I argue that accountability is not enough: even transparent, well-made AI use breaks a system whose signals of merit rely on scarcity.
-- **The mechanism and a test.** The essay links Kusumegi et al. (2025), Hao et al. (2026), NIH's six-application cap and AI-written peer reviews into one mechanism. It states a falsifiable hypothesis, that AI is used to accelerate rather than to explore, with a box on how to test it.
-- **The manuscript is the evidence.** It was made with AI agents under my direction and is disclosed under [journal]'s AI policy [cite the section]. The complete process record is archived [DOI], and the production time and cost are reported in the text.
-- **The vantage point.** I am a working life scientist at EMBL and UPF, outside metascience, writing for the community that produces most papers. A full ~7,000-word version with about 150 verified references is available as a preprint [DOI].
-- **Disclosures.**
-  - A related Correspondence is under consideration at, or has been published in, Nature. There are no other submissions.
+- **What it adds** to Blekhman (2026), Huang et al. (2026), Fourie (2026) and Gartenberg et al. (2026): the institutional response is rationing by decree, not reform of what is counted.
+- **A discriminating test.** A triple difference by the strength of metric incentives separates the incentive explanation from the pull of data-rich problems [preregistration DOI].
+- **Legitimacy is irrelevant to the mechanism.** Honest, disclosed use erodes three scarcities: writing effort, reviewer time and the time it takes to master a literature.
+- **A documented case.** The paper was made with AI agents under my direction and is disclosed under [journal]'s policy. The process record is archived [DOI], with time and cost reported. This is better documentation of a practice others have also disclosed (e.g. Fourie 2026), not a first.
+- **Vantage point and disclosures.**
+  - I am a life scientist at EMBL and UPF, outside metascience.
+  - A related Correspondence is with *Nature*.
+  - EMBL and EMBO are separate organisations; list any EMBO roles.
   - Transparency note: the paper was drafted with Claude (Anthropic) and discusses Anthropic's data policy.
-  - For EMBO Reports: EMBL and EMBO are separate organisations; list any EMBO roles.
 
 ## What would change the recommendation
 
-- **A co-author from metascience, STS or research evaluation.** You have decided against one. Such a co-author would raise the odds at Nature Perspective, NHB and Research Evaluation, and would make Science's Policy Forum worth trying (its rules were not verified). But it would turn "I" into "we", complicate the CRediT statement, and blur the single accountable human at the centre of the design.
-- **Your field.**
-  - Computational biology or machine learning: Nature Machine Intelligence or Nature Computational Science move up and can replace NHB.
-  - Wet-lab biology: EMBO Reports and eLife move up.
-  - Behavioural or social science: NHB is the clear first choice, and the Nature Perspective enquiry becomes more plausible.
-- **OSIM's answer on IP71.** If subscription-only publication is a problem, start at PLOS Biology, which is the `journals.md` order.
-- **The time-and-cost figures.**
-  - If they are striking (for example, a publishable essay in days for tens of euros), send the Nature enquiry and lead with NHB.
-  - If they are unremarkable or missing, skip Nature and start at PLOS Biology or EMBO Reports.
-- **Speed over prestige.** Go straight to EMBO Reports, with its 5-day median first decision and editor-led review.
-- **You want the full five-section argument peer-reviewed rather than condensed.** Make Minerva the main venue and the life-science piece the companion: the scholarly track in `journals.md`. Accept the lower reach.
-- **Career evaluation.** If your career evaluation (ANECA *sexenios*) needs indexed articles, prefer the peer-reviewed article types (Perspective, Essay) over Comments and Correspondence. How ANECA treats these types was not verified.
-- **A fitting special issue.** A call on AI and research assessment in a reputable journal could change the plan. None was open on 15 Oct 2026. The closest, in the *Journal of Research on Technology in Education* (abstracts due 15 Nov 2026), is about educational research.
+- **No time for data work.** Skip the empirical option and keep the test as a box. The essay and Correspondence plan stands, and the essay's ceiling is EMBO Reports or PLOS Biology.
+- **A co-author.**
+  - For an empirical study, a scientometrics co-author raises the odds at NHB and PNAS, and at Nature or Science if the results are striking.
+  - For the essay, a co-author would still change the single-author design.
+- **Someone runs the test first.** Then the essay's second contribution weakens. Keep the rationing synthesis and cite them.
+- **The Huang Correspondence.** If it is published, cite it in every later cover letter. If it is declined, the PLOS Formal Comment enquiry becomes the short-piece alternative, provided the points do not repeat.
+- **OSIM's answer on IP71.** If subscription-only publication is a problem, it only matters for the NHB steps.
+- **Your field.** If computational or machine learning, the empirical route is the obvious choice, and NMI or NCS become alternatives to NHB. If wet-lab biology, EMBO Reports and eLife fit best.
+- **A new Nature or Science piece on caps or rationing.** Reply to that instead.
+- **The time-and-cost figures.** If they are striking, lead every pitch with them.
+- **Career evaluation (ANECA).** If it matters, prefer peer-reviewed article types. A Registered Report is the strongest of these.
 
 ## Key sources (accessed 15 Oct 2026)
 
-**Nature**
-- [Other submission types](https://www.nature.com/nature/for-authors/other-subs)
-- [Presubmission enquiries](https://www.nature.com/nature/for-authors/presub)
-- [Editorial criteria](https://www.nature.com/nature/for-authors/editorial-criteria-and-processes)
+**New prior work**
+- [Blekhman 2026, PLOS Biology](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3004075)
+- [Huang et al. 2026, Nature](https://www.nature.com/articles/d41586-026-02961-z)
+- [Nature Editorial, 25 Mar 2026](https://www.nature.com/articles/d41586-026-00934-w)
+- [Fourie 2026](https://arxiv.org/abs/2607.13844)
+
+**Nature and Nature Human Behaviour**
+- [Nature other submissions](https://www.nature.com/nature/for-authors/other-subs)
 - [Nature Portfolio AI policy](https://www.nature.com/nature-portfolio/editorial-policies/ai)
-- [Preprint policy](https://www.nature.com/nature-portfolio/editorial-policies/preprints-conference-proceedings)
-- [Press and embargo policy](https://www.nature.com/nature-portfolio/editorial-policies/press-and-embargo-policies)
+- [Nature press and embargo policy](https://www.nature.com/nature-portfolio/editorial-policies/press-and-embargo-policies)
+- [NHB content types (including Registered Reports)](https://www.nature.com/nathumbehav/content)
 
-**Nature-portfolio journals**
-- [NHB content types](https://www.nature.com/nathumbehav/content) · [NHB metrics](https://www.nature.com/nathumbehav/journal-impact)
-- [NMI content types](https://www.nature.com/natmachintell/content)
-- [NCS content types](https://www.nature.com/natcomputsci/content)
+**PLOS Biology**
+- [What we publish (Formal Comments, Preregistered and Meta-Research Articles)](https://journals.plos.org/plosbiology/s/what-we-publish)
+- [PLOS AI policy](https://journals.plos.org/plosbiology/s/ethical-publishing-practice)
 
-**Science and PNAS**
-- [Thorp on Science editorials](https://www.science-forever.com/p/what-we-look-for-in-editorials-for)
-- [Science editorial policies (search summary)](https://www.science.org/content/page/science-journals-editorial-policies)
-- [PNAS submission guidelines (search summary)](https://www.pnas.org/author-center/submitting-your-manuscript)
-
-**Life-science journals**
-- [PLOS Biology: what we publish](https://journals.plos.org/plosbiology/s/what-we-publish) · [PLOS AI policy](https://journals.plos.org/plosbiology/s/ethical-publishing-practice)
-- [eLife author instructions](https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html)
+**Other venues and policies**
 - [EMBO Reports guidelines](https://link.springer.com/journal/44319/submission-guidelines)
-- [Elsevier AI policy](https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals)
-
-**EMBL**
+- [eLife](https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html)
 - [EMBL IP71](https://www.embl.org/documents/wp-content/uploads/2021/12/Internal_Policy_IP71_Open_Science_and_Open_Access_Pub03122021_Rev01072025.pdf)
 - [EMBL OA agreements](https://www.embl.org/about/info/szilard-library/open-access/open-access-agreements-with-publishers/)
-- [EMBL Science and Society Conference 2027](https://www.embl.org/about/info/course-and-conference-office/events/sns27-01/)
-
-**Preprints and conferences**
+- [Thorp on Science editorials](https://www.science-forever.com/p/what-we-look-for-in-editorials-for)
 - [SocArXiv AI policy](https://socopen.org/ai-policy/)
-- [arXiv, 31 Oct 2025](https://blog.arxiv.org/2025/10/31/attention-authors-updated-practice-for-review-articles-and-position-papers-in-arxiv-cs-category/)
 - [Metascience 2027](https://metascience.info/)
-
-**Recent Nature pieces on the topic**
-- [Braun 2026](https://www.nature.com/articles/d41586-026-02686-z)
-- [Messeri & Crockett 2026](https://www.nature.com/articles/d41586-026-01557-x)
-- [Hutchinson 2026](https://www.nature.com/articles/d41586-026-03055-6)
-- [Motoki 2026](https://www.nature.com/articles/d41586-026-03175-z)

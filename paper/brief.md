@@ -138,6 +138,25 @@ The outline must therefore:
 - mark the cuts for the ~3,800-word version, and further cuts down to 3,500 words and 15 references for EMBO Reports;
 - state the single point the Correspondence would make.
 
+### Update after the prior-work check (15 Oct 2026; supersedes items 2 and 4 above)
+
+- **Revised essay ladder** (about 3,500 words):
+  1. EMBO Reports Science & Society (≤3,500 words, ≤15 references). This is now the primary submission.
+  2. PLOS Biology, framed as an extension of Blekhman 2026.
+  3. NHB Perspective, only if the author does not go empirical.
+  4. eLife Feature.
+  5. Minerva at full length, as a fallback.
+
+  The Nature Perspective enquiry is dropped: Nature has covered the thesis five times in 2026.
+- **Correspondence:** reply to Huang et al. (Nature Comment, 29 Sep 2026), not to Braun.
+  - Send by about 23 Oct 2026.
+  - The author must read Huang et al. in full first.
+  - Hold the preprint until the Correspondence is decided.
+- **Empirical option (author to decide):** run the discriminating triple-difference test as a Registered Report, at NHB or as a PLOS Biology preregistered or meta-research article. This is probably the highest-impact path, and it takes months.
+  - Registered Reports require *no prior access to the data* used for the test, so preregister before exploring them.
+  - The other chat's descriptive arXiv and bioRxiv counts should be kept separate from the test's data, or declared.
+- **Wording:** call the test "discriminating", not "decisive", because incentive strength can correlate with how data-rich a field is.
+
 ## Positioning after the prior-work check (coordinator's adjustments, 15 Oct 2026)
 
 Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`. The author's thesis and five-section structure stay. What changes is which claims the essay presents as its own contribution.

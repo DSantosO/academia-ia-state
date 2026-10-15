@@ -1,6 +1,6 @@
 # Submission strategy for the AI-and-academia essay: odds, impact, sequencing and disclosure
 
-*All pages were accessed on 2026-10-15. Direct fetches worked for nature.com, journals.plos.org, the eLife author instructions, elsevier.com, embl.org, socopen.org, metascience.info and think.taylorandfrancis.com. Four sites blocked automated access: science.org and pnas.org (Cloudflare challenge), link.springer.com (client challenge) and cell.com. For those, details come either from search-engine summaries of the venue's own pages, labelled "(search summary)", or from the parallel venue notes `4_journal_venues.md`, labelled "(via 4_journal_venues.md)". web.archive.org was unreachable. The Altmetric API now requires a key, so Altmetric scores were read from Nature's own article-metrics pages. OpenAlex returned HTTP 429 after the first queries. Citation counts are OpenAlex values on 2026-10-15. Author profile: sole author, affiliated with EMBL (probably Barcelona) and Universitat Pompeu Fabra, probably in the life sciences or computational biology, outside metascience and STS (coordinator update, 15 Oct). This file covers depth and strategy. Breadth (20–25 venues) is in `4_journal_venues.md` and `paper/journals.md`.*
+*All pages were accessed on 2026-10-15. Direct fetches worked for nature.com, journals.plos.org, the eLife author instructions, elsevier.com, embl.org, socopen.org, metascience.info and think.taylorandfrancis.com. Four sites blocked automated access: science.org and pnas.org (Cloudflare challenge), link.springer.com (client challenge) and cell.com. For those, details come either from search-engine summaries of the venue's own pages, labelled "(search summary)", or from the parallel venue notes `4_journal_venues.md`, labelled "(via 4_journal_venues.md)". web.archive.org was unreachable. The Altmetric API now requires a key, so Altmetric scores were read from Nature's own article-metrics pages. OpenAlex returned HTTP 429 after the first queries. Citation counts are OpenAlex values on 2026-10-15. Author profile: sole author, affiliated with EMBL (probably Barcelona) and Universitat Pompeu Fabra, probably in the life sciences or computational biology, outside metascience and STS (coordinator update, 15 Oct). This file covers depth and strategy. Breadth (20–25 venues) is in `4_journal_venues.md` and `paper/journals.md`. **Update (15 Oct 2026, later the same day):** §8 was added after the prior-work check (`6_closest_prior_work.md`). Where §1–§7 conflict with §8 (Correspondence target, the Nature Perspective enquiry, PLOS Biology and NHB odds, and essay order), §8 governs.*
 
 ## 1. Which doors are realistically open to this author, and what are the odds by tier?
 
@@ -426,3 +426,102 @@ The main risks, in order:
 ### Gaps
 - No primary Clarivate or Frontiers source was retrieved.
 - No evidence was found on how editors treat openly AI-drafted opinion pieces in practice. This is untested territory.
+
+## 8. What changes after the prior-work check (Blekhman 2026; Huang et al. 2026; Fourie 2026)?
+
+### Takeaway
+The essay's premise is now published in the author's own field and venue: Blekhman, a *PLOS Biology* Perspective of 15 Oct 2026 whose author sits on that journal's editorial board. Its §4b hypothesis is published in *Nature*: Huang et al., Comment, 29 Sep 2026.
+
+**Consequences for the plan:**
+- Odds fall for a premise-led PLOS Biology Essay and for any Nature-family Perspective. The Nature Perspective enquiry is no longer worth sending.
+- The Correspondence should reply to Huang et al. Nature states no response-time limit, but Huang is two weeks old, and their two recommendations map onto the two rival explanations the test separates.
+- EMBO Reports, untouched by the new pieces, becomes the essay's first target.
+- The highest-impact option is to *run* the triple-difference test. NHB's Registered Report format explicitly accepts secondary analyses of existing data when authors have had no prior access. PLOS Biology offers Preregistered Research Articles and Meta-Research Articles.
+
+### Cited Findings
+**Blekhman (2026)**
+- PLOS Biology record: "What is biology research for?"; article type "Perspective"; published 15 Oct 2026; University of Chicago. Competing interests: "RB is a member of PLOS Biology's editorial board." — [PLOS Biology](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3004075)
+- Content, from the full read in 6_closest_prior_work.md:
+  - "Generative AI has broken this already-flawed proxy completely."
+  - It proposes to "acknowledge that paper counts are meaningless".
+  - It predicts a fallback to "older, cruder proxies, such as journal prestige and impact factor".
+  - Source: [doi:10.1371/journal.pbio.3004075](https://doi.org/10.1371/journal.pbio.3004075) (via 6_closest_prior_work.md)
+
+**PLOS Biology formats**
+- **Formal Comments** "are intended to provide a formal outlet for the discussion and interpretation of research findings associated with specific articles published in PLOS Biology. They are designed to ensure that readers obtain a balanced view of a scientific or meta-scientific/policy question, especially in areas of debate/controversy." They "are peer-reviewed and indexed in PubMed". They "are considered exclusively by invitation"; enquiries go to plosbiology@plos.org. Length is 1,000 words, and the response from the original authors 700. — [PLOS Biology: what we publish](https://journals.plos.org/plosbiology/s/what-we-publish)
+- **Preregistered Research Articles** "are peer reviewed prior to conducting experiments, data collection or analysis" and are "provisionally accepted". — same page
+- **Meta-Research Articles** "explore the systems that evaluate and reward individual scientists or institutions in new and novel ways". — same page
+
+**Huang et al. (2026)**
+- Nature record: "AI can widen science — but only if institutions stop rewarding the already measurable"; type "Comment"; dated 2026-09-29; authors Guowei Huang, Xiang Hu, Pengsong Zhang and Zhicheng Lin.
+- Standfirst: "Funders, journals and universities must reward the creation of new scientific terrain, not just the efficient mining of old ground."
+- Reach by 15 Oct: 2,685 accesses; Altmetric 37.
+- Sources: [Nature](https://www.nature.com/articles/d41586-026-02961-z); [metrics](https://www.nature.com/articles/d41586-026-02961-z/metrics)
+- Content, from the partial read in 6_closest_prior_work.md:
+  - "The problem is not technological, but institutional".
+  - They also invoke data: "funding systems overwhelmingly reward the downstream exploitation of existing data".
+  - Recommendations seen: subsidise new data infrastructure; stop penalising pivots. The third was not seen.
+
+**Other 2026 Nature pieces on the theme**
+- Nature Editorial, 25 Mar 2026: 51k accesses, Altmetric 50. — [metrics](https://www.nature.com/articles/d41586-026-00934-w/metrics)
+- Xizhe Zhang, World View, 22 Jun 2026: 5,182 accesses, Altmetric 58. — [Nature](https://www.nature.com/articles/d41586-026-01954-2); [metrics](https://www.nature.com/articles/d41586-026-01954-2/metrics)
+
+**Timing rules**
+- Nature's Correspondence page states no time window for responses. Its only timing statements are "If you have not heard from us after 3 weeks, please presume that we cannot publish your submission" and a request for an alternative contact if the author will be away "in the 4 weeks after submission". — [Nature: other submissions](https://www.nature.com/nature/for-authors/other-subs)
+- By contrast, Science Letters address "material published in Science in the past 3 months". — [Science information for authors (search summary)](https://www.science.org/content/page/science-information-authors)
+
+**Fourie (2026)**
+- "Review is therefore rationed, not priced."
+- Disclosure: "Anthropic's Claude Code and OpenAI's Codex assisted with derivations, drafting, literature search, computational verification and adversarial review."
+- Source: [arXiv:2607.13844](https://arxiv.org/abs/2607.13844) (via 6_closest_prior_work.md)
+
+**NHB Registered Reports**
+- "We also welcome submissions proposing secondary analyses of existing data sets, provided that the authors have had no prior access to the data in question." Protocols are "provisionally accepted for publication before data collection (or data analysis, for submissions involving secondary analyses of existing datasets) commences." — [NHB content types](https://www.nature.com/nathumbehav/content)
+
+**The test design** (3_testing_acceleration_hypothesis.md §5)
+- Design A: a within-author difference-in-differences around Nov 2022. Treatment is continuous LLM-use intensity; outcomes are reference- and embedding-based exploration.
+- Triple difference by career stage, evaluation regime, funder horizon and field crowding.
+- Data: the OpenAlex snapshot is free and updated quarterly; Semantic Scholar offers SPECTER2.
+- Threats: selection, detector error, timing artefact, productivity confound, text compression, COVID and LLM-as-topic shocks, and arXiv's 2025–26 rules.
+- "**Not found:** a preregistered within-author difference-in-differences with exposure timing independent of output, exploration outcomes based on reference lists, and an incentive-heterogeneity test."
+- Contrary early evidence: Zheng et al. (2026) report increases in exploration (descriptive); Kusumegi et al. report more diverse citations.
+- Source: via 3_testing_acceleration_hypothesis.md
+
+**The prior-work verdict** (6_closest_prior_work.md Q4–Q5)
+- New: the test of P2 and the P3 synthesis (rationing).
+- New only in emphasis or decomposition: P1 and P4.
+- Already made: the core premise, the P2 claim and P5.
+- The "paper as its own example" has precedents (Osmanovic Thunström; Cotton et al.; Porsdam Mann et al.; Agents4Science; Fourie; Manabu).
+
+### Inferences
+- **PLOS Biology.** For a premise-led Essay, odds fall from medium to **low–medium**. The editors published the premise on 15 Oct from a member of their own board, and a second essay on the same thesis within months is unlikely unless it clearly advances it.
+  - A response *building on* Blekhman is a plausible fit only if it leads with what Blekhman lacks: rationing by decree as the fallback that is already happening (he predicts a fallback to prestige), and the test.
+  - The Formal Comment is the format designed for debate. But it is "exclusively by invitation" and framed around "research findings", so ask before writing. Pursue at most one PLOS piece.
+- **NHB and Nature.**
+  - The Nature Perspective enquiry, already very low, is no longer worth sending. Nature's 2026 magazine sections have covered the thesis five times (Editorial, World View, and the Comments by Messeri & Crockett, Braun and Huang et al.).
+  - The NHB Perspective falls to **low**. Keep NHB for a Registered Report if the author goes empirical: a Perspective proposing the same test would pre-empt it.
+- **Correspondence target: Huang et al. over Braun.**
+  - It is more recent: 16 days old against 44 on 15 Oct.
+  - It is the claim the test addresses. Huang's two recommendations correspond to the two rival explanations, so the test says which lever to pull.
+  - The rationing point answers their call for institutions to "stop rewarding the already measurable": institutions have rationed instead.
+  - Hutchinson's and Motoki's Correspondences already sit near Braun's thread. Whether they reply to Braun is unverified; they are paywalled.
+- **Essay order.** EMBO Reports Science & Society first (medium), then PLOS Biology as a Blekhman extension (low–medium), then NHB Perspective only if not going empirical (low), then eLife Feature (medium), then Minerva (fallback).
+- **The empirical option, impact against effort.**
+  - *Impact:* far higher. Empirical work on this topic lands in top venues (Hao et al. in *Nature*; Kusumegi et al. in *Science*; Liang et al. in *NHB*) and is cited more. Being outside the field weighs less when work is judged on data. A Registered Report makes a null publishable, which matters because early evidence (Zheng; Kusumegi) points against §4b.
+  - *Effort:* months of computational work by my judgement, unsourced: disambiguation, LLM-use measurement, reference-based outcomes, coding of incentive regimes and robustness checks.
+  - *Risks:* scooping by groups already using these data; the "no prior access" rule (no exploratory analysis before Stage 1); timeliness of the essay.
+  - *Verdict:* if the author can commit the time, do both: a short essay plus Correspondence now, and a Registered Report later. A test that adds evidence answers the irony critique rather than feeding it.
+  - The single-author decision covered the essay. An empirical paper reopens the co-author question: a scientometrician would raise its odds.
+- **Wording.** Call the test "discriminating", not "decisive". Incentive intensity can correlate with how data-rich a field is, and reviewers will say so.
+- **EMBL obligations for an empirical paper.** IP71 clearly applies, because it is a research article: a preprint first, then immediate CC BY open access.
+  - The EMBL–Nature Portfolio deal covers gold OA for "primary research articles" in Nature and "32 Nature research journals". Whether NHB is among them was not verified.
+  - EMBL's PLOS flat fee covers all 14 PLOS journals.
+  - Sources: [EMBL IP71](https://www.embl.org/documents/wp-content/uploads/2021/12/Internal_Policy_IP71_Open_Science_and_Open_Access_Pub03122021_Rev01072025.pdf); [EMBL OA agreements](https://www.embl.org/about/info/szilard-library/open-access/open-access-agreements-with-publishers/)
+
+### Gaps
+- Huang et al.'s third recommendation, and the Hutchinson and Motoki Correspondences, were not read.
+- Whether PLOS Biology would invite a Formal Comment on a Perspective, as opposed to a research article.
+- NHB Registered Report review times, and how "no prior access" is judged for public bibliographic data the author may have touched for other purposes.
+- Whether NHB is among the "32 Nature research journals" in EMBL's Nature Portfolio deal.
+- The effort estimate for the empirical study is a judgement; no source.
+- The field moves weekly (Blekhman and the arXiv-cap news both appeared on 15 Oct). Re-run the prior-work search before each submission.
