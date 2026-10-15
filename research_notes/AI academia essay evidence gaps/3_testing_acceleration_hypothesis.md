@@ -77,7 +77,7 @@ No study yet links *measured individual use of generative AI for research tasks*
 ### Cited Findings
 
 **(a) AI as a research method**
-- **[S] Hao et al. (2026)** — see Q1.
+- **[S] Hao et al. (2026)** — see Q1. — [DOI](https://doi.org/10.1038/s41586-025-09922-y)
 - **[S/N] Bianchini, S., Müller, M. & Pelletier, P. (2022).** Artificial intelligence in science: an emerging general method of invention. *Research Policy* 51(10): 104604.
   - **Published abstract.** Neural-network AI is diffusing across the sciences as an emerging "general method of invention", with "a prominent impact on scientific discovery, but a high degree of uncertainty and ambiguity associated with this impact". — [DOI](https://doi.org/10.1016/j.respol.2022.104604); [OpenAlex abstract](https://api.openalex.org/works/doi:10.1016/j.respol.2022.104604)
   - **2020 preprint ("Deep Learning in Science") [PREPRINT].** In health sciences, "DL adoption is negatively correlated with re-combinatorial novelty, but positively correlated with expectation as well as variance of citation performance". It also finds "a transition from interdisciplinary DL applications to disciplinary research within application domains". — [arXiv:2009.01575](https://arxiv.org/abs/2009.01575)
@@ -223,7 +223,7 @@ No study yet links *measured individual use of generative AI for research tasks*
   - Non-native speakers spend more effort on reading, writing and presenting in English.
   - Language barriers deter them from attending or presenting at conferences.
   - — [DOI](https://doi.org/10.1371/journal.pbio.3002184)
-- **[C]** In the LLM era, gains for non-English-speaking contexts appear in Filimonovic et al. (2025) and Zheng et al. (2026), above.
+- **[C]** In the LLM era, gains for non-English-speaking contexts appear in Filimonovic et al. (2025) and Zheng et al. (2026), above. — [Filimonovic et al.](https://arxiv.org/abs/2510.02408); [Zheng et al.](https://arxiv.org/abs/2607.20923)
   - Safari & Babaei (2026) find the **opposite** sign for semantic novelty in non-English-dominant affiliations. — [arXiv:2603.22510](https://arxiv.org/abs/2603.22510)
 - **[C] Ludwig, J. & Mullainathan, S. (2024).** Machine learning as a tool for hypothesis generation. *QJE* 139(2): 751–827.
   - A procedure for producing "novel, interpretable hypotheses" from high-dimensional data, applied to judges' jailing decisions.
@@ -407,7 +407,7 @@ Together these give the hypothesis a strong theoretical prior.
   - Bornmann, Tekles, Zhang & Ye (2019): validation of novelty indicators against F1000Prime. *J. Informetrics* 13(4): 100979; a corrigendum was published in 2024. — [DOI](https://doi.org/10.1016/j.joi.2019.100979); [corrigendum](https://doi.org/10.1016/j.joi.2024.101544)
   - Shibayama, Yin & Matsumoto (2021): word-embedding distance between cited references, validated against self-reported novelty. *PLOS ONE* 16(7): e0254034; a correction was published. — [DOI](https://doi.org/10.1371/journal.pone.0254034); [correction](https://doi.org/10.1371/journal.pone.0341474)
 - **Novelty measured in the text itself.** Arts, S., Melluso, N. & Veugelers, R. (2025) use NLP to detect new ideas in publication text, validated on Nobel-winning papers versus review articles. *Review of Economics and Statistics*. — [DOI](https://doi.org/10.1162/rest_a_01561)
-- **Disruption (CD index).** Funk & Owen-Smith (2017); the variant-choice advice of Leibel & Bornmann (2024); the time biases identified by Petersen et al. and Macher et al.; and Leahey et al.'s finding that new *methods* score as more disruptive. — see Q3
+- **Disruption (CD index).** Funk & Owen-Smith (2017); the variant-choice advice of Leibel & Bornmann (2024); the time biases identified by Petersen et al. and Macher et al.; and Leahey et al.'s finding that new *methods* score as more disruptive. Details are in Q3. — [Funk & Owen-Smith](https://doi.org/10.1287/mnsc.2015.2366); [Leibel & Bornmann](https://doi.org/10.1007/s11192-023-04873-5); [Petersen et al.](https://doi.org/10.1016/j.joi.2024.101605); [Macher et al.](https://doi.org/10.1016/j.respol.2024.104992); [Leahey et al.](https://doi.org/10.1177/00031224231168074)
 - **Interdisciplinarity:**
   - Stirling (2007), the general diversity framework (variety, balance, disparity). *J. R. Soc. Interface* 4(15): 707–719. — [DOI](https://doi.org/10.1098/rsif.2007.0213)
   - Porter & Rafols (2009), measuring and mapping interdisciplinarity in six fields over time. *Scientometrics* 81(3): 719–745. — [DOI](https://doi.org/10.1007/s11192-008-2197-2)
