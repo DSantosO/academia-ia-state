@@ -15,7 +15,11 @@ Estudio del estado de la academia (publicaciones, ayudas y becas) y del impacto 
 
 ## Preprints nuevos por trimestre (desde 2020-T1)
 
-`data/processed/preprints_por_campo_trimestral.csv` tiene una fila por trimestre completo.
+`data/processed/preprints_por_campo_trimestral.csv` tiene una fila por trimestre completo. `scripts/plot_static.py` genera estas dos figuras (requiere matplotlib):
+
+![Índice de preprints nuevos por campo, 2022 = 100](docs/figures/indice_por_campo.png)
+
+![Preprints nuevos por trimestre y campo](docs/figures/preprints_por_campo_trimestral.png)
 
 | Columna | Fuente | Qué cuenta |
 |---|---|---|
