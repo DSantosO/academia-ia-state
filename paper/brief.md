@@ -97,6 +97,13 @@ In the author's words (translated from Spanish): "The key of what I want to expo
 - **First person singular ("I")** *(proposal; changed from the earlier "we")*. A single human author is accountable. "We" in an AI-assisted paper could read as naming the AI as a co-author, which COPE and publisher policies do not allow.
 - Do not tailor the paper to one journal yet. The target journal will be chosen from `paper/journals.md`. Note where to cut for a 3,000–4,000-word version.
 
+## Authorship (author's decisions)
+
+- **Single author.** The author will write the paper alone, with no co-author.
+- **Affiliations:** EMBL (European Molecular Biology Laboratory) and UPF (Universitat Pompeu Fabra, Barcelona).
+- **Field:** not stated. It is probably life sciences or computational biology; confirm before the paper says anything about the author's field.
+- **Framing:** the author is an outsider to metascience and science studies, but an insider to academia, working at a leading international research institute. If the paper mentions this, it does so in the "How this paper was made" box *(proposal)*.
+
 ## Target venue (author's preferences)
 
 - The author wants the greatest possible impact, in a scientific, international venue.
