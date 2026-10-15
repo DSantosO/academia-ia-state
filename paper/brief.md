@@ -111,6 +111,33 @@ In the author's words (translated from Spanish): "The key of what I want to expo
 - The submission strategy is in `paper/submission_strategy.md`; the list of venues is in `paper/journals.md`.
 - If the strategy recommends a specific format (for example a shorter Perspective or a companion short piece), the outline should say how the full essay maps onto it.
 
+### Working plan from the strategy (15 Oct 2026; the author has not yet confirmed it)
+
+1. **Write one master text:** the full essay, ≤7,000 words, which also fits a Nature Perspective synopsis enquiry. It goes on Zenodo as a preprint, together with the process record. Timing:
+   - after the Nature Correspondence (item 4) is published, or after 3 weeks without a reply;
+   - SocArXiv bans AI-written paragraphs and arXiv's computer-science categories need prior peer review, so neither is used.
+2. **Make one condensed version (~3,800 words) and submit it once.** The ladder:
+   - optional Nature Perspective synopsis enquiry →
+   - Nature Human Behaviour Perspective →
+   - PLOS Biology Essay →
+   - EMBO Reports Science & Society (≤3,500 words, 15 references) →
+   - eLife Feature →
+   - Minerva at full length, as a fallback only.
+
+   Whether NHB or PLOS Biology goes first depends on EMBL's open-science policy (IP71); the author must ask EMBL's open-science office (OSIM).
+3. **No parallel second paper.** Two peer-reviewed versions of one argument would invite the irony critique. Both the journal researcher and the strategist agree; the coordinator agrees too.
+4. **Optional Nature Correspondence** (<200 words, ≤2 references), replying to Braun's Nature Comment of 1 Sep 2026 on accountability, by about 23 Oct 2026. The Correspondence rule is that a similar point must not appear elsewhere until it is published.
+5. **Positioning.** The field is crowded. The paper must cite and set itself apart from:
+   - Hansen 2026 (RIPR, "Symbolic scarcity and epistemic waste");
+   - Manabu 2026 (Postdigital Science and Education, "The Machine Consumes Itself");
+   - the 2026 Nature pieces by Messeri & Crockett, Braun, Hutchinson and Motoki (see `research_notes/.../5_submission_strategy.md` and `6_closest_prior_work.md`).
+6. **The time-and-cost record is essential.** Without it, the "paper as its own example" is only an anecdote. The author must log their own hours; compute costs can be taken from the session records.
+
+The outline must therefore:
+- structure the full essay (≤7,000 words);
+- mark the cuts for the ~3,800-word version, and further cuts down to 3,500 words and 15 references for EMBO Reports;
+- state the single point the Correspondence would make.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
