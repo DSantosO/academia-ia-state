@@ -1,6 +1,6 @@
 # Journals and outlets for an English-language position paper on AI and the academic system
 
-*Pages were accessed on 2026-10-15 unless a finding says otherwise. "Not verified" means the page could not be retrieved, or it was retrieved but did not state the detail. Taylor & Francis (tandfonline.com), Wiley Online Library, MIT Press Direct, Cell Press, Royal Society Publishing and science.org all returned HTTP 403 to automated access. Details for those venues come from search-engine result summaries and are labelled "(search summary)". The CSIC journal platform (redc.revistas.csic.es) failed with a TLS error and then HTTP 503. AI-policy classes follow the coordinator's scheme: (a) allows AI-generated text with disclosure; (b) restricts it, for example to language editing only or by requiring editor permission; (c) prohibits AI-generated text.*
+*Pages were accessed on 2026-10-15 unless a finding says otherwise. "Not verified" means the page could not be retrieved, or it was retrieved but did not state the detail. Taylor & Francis (tandfonline.com), Wiley Online Library, MIT Press Direct, Cell Press, Royal Society Publishing and science.org all returned HTTP 403 to automated access. Details for those venues come from search-engine result summaries and are labelled "(search summary)". The CSIC journal platform (redc.revistas.csic.es) failed with a TLS error and then HTTP 503. AI-policy classes follow the coordinator's scheme: (a) allows AI-generated text with disclosure; (b) restricts it, for example to language editing only or by requiring editor permission; (c) prohibits AI-generated text. A later update established that the author is the sole author, affiliated with EMBL (probably EMBL Barcelona) and Universitat Pompeu Fabra, and works in the life sciences or computational biology. §9 covers the APC routes through UPF and EMBL and the life-science venues; the §8 ranking reflects that update.*
 
 ## 1. Which venues fit the paper, in which article type and at what length, and do they take unsolicited submissions?
 
@@ -198,7 +198,7 @@ The national CRUE-CSIC read-and-publish agreements cover hybrid journals of Spri
 ### Inferences
 - The Springer hybrid journals (Minerva, PSE, Higher Education, Scientometrics, AI & Society, P&T) are the only strong-fit venues where a Spanish author can typically publish gold OA at no personal cost. This depends on the institution's remaining annual quota.
 - For OUP, T&F and SAGE hybrids, the realistic route is subscription publication plus self-archiving. Each journal's self-archiving terms were not checked here.
-- HSSC (€1,590) and RIPR (€2,190) would need institutional or project funds.
+- CRUE does not cover HSSC (€1,590) or RIPR (€2,190). With EMBL as the corresponding affiliation, EMBL's central APC budget covers APCs in fully-OA journals (§9). Eligibility for a non-research article type is not stated.
 
 ### Gaps
 - Whether any SAGE or T&F institutional deal covers the author's specific university was not checked, because the author's institution is unknown.
@@ -456,7 +456,11 @@ arXiv CS (cs.CY, cs.DL) will now consider a position paper only after it has pas
 ## 8. Credibility risks and ranked recommendation
 
 ### Takeaway
-MDPI and Frontiers titles should be avoided as a matter of credibility. The paper criticises volume-driven, APC-funded mega-journal publishing, and MDPI titles have faced Web of Science delisting. EPI's paid fast track (£2,500, paid reviewers) carries a similar, if milder, tension. The ranked recommendation for the full paper is Minerva, then Postdigital Science and Education, then Research Evaluation (or Science and Public Policy as an alternative). All are class (a), Springer and OUP, and refereed. Condensed spin-offs suit HSSC, PLOS Biology, NHB, EMBO Reports and Big Data & Society.
+MDPI and Frontiers titles should be avoided as a matter of credibility. The paper criticises volume-driven, APC-funded mega-journal publishing, and MDPI titles have faced Web of Science delisting. EPI's paid fast track (£2,500, paid reviewers) carries a similar, if milder, tension. Given the author's EMBL/UPF life-science affiliation (§9), the recommendation runs on two tracks.
+- **Track A (full paper, 6,000–8,000 words):** Minerva, then Postdigital Science and Education, then Research Evaluation or Science and Public Policy.
+- **Track B (a distinct ~4,000-word essay for life scientists):** a PLOS Biology Essay, then EMBO Reports Science & Society, then a Nature-portfolio Perspective or Comment (NHB, Nature Computational Science, Nature Machine Intelligence or Nature Biotechnology).
+
+All of these are class (a). HSSC, RIPR and Big Data & Society become cost-feasible if EMBL is the corresponding affiliation, because EMBL's central budget covers fully-OA APCs.
 
 ### Cited Findings
 - In March 2023 Clarivate delisted about 50 journals from Web of Science, including two MDPI titles (IJERPH and JRFM) and 19 Hindawi titles. IJERPH had a 2022 impact factor of 4.614 and "published about 17,000 articles that year". — [Chemistry World (search summary)](https://chemistryworld.com/news/sanctioning-of-50-journals-raises-concerns-over-special-issues-in-mega-journals/4017315.article); [InfoDocket summary of Science news (search summary)](https://www.infodocket.com/2023/03/28/report-fast-growing-open-access-journals-stripped-of-coveted-impact-factors/)
@@ -465,9 +469,14 @@ MDPI and Frontiers titles should be avoided as a matter of credibility. The pape
 
 ### Inferences
 - **MDPI and Frontiers**: publishing a critique of metric-driven, high-volume publishing in an MDPI or Frontiers title would invite the charge of performative contradiction from referees and readers. Treat these as a credibility risk and do not submit there. This is the coordinator's requested flag; no Frontiers-specific evidence was gathered.
-- **Ranking, full paper (6,000–8,000 words)**:
-  1. **Minerva**. Fit: §1, §2 and §4 strongly, with §3 and §5 as policy implications. Refereed (double-blind). JIF 2.9; Scopus Q1. CRUE-covered OA. Class (a). Median first decision 9 days.
-  2. **Postdigital Science and Education**. Covers all five sections. Shows proven openness to reflexive human–AI writing. CRUE-covered. Class (a). It needs explicit differentiation from Manabu 2026, and its WoS status should be checked.
+- **Overall top 3 for this author** (updated after the EMBL/UPF information):
+  1. **PLOS Biology Essay.** About 3,500–4,000 words, so a condensed version. Refereed, no fee, class (a). It has recent essays on LLMs and scientific writing, and it reaches the author's own community. Start with a presubmission enquiry.
+  2. **Minerva**, for the full paper.
+  3. **EMBO Reports Science & Society** (≤3,500 words, no APC). This is the fallback for item 1. Postdigital Science and Education is the fallback for item 2.
+  - Items 1 and 2 can run in parallel only as distinct texts, with each editor told about the other manuscript.
+- **Ranking, full paper (track A, 6,000–8,000 words)**:
+  1. **Minerva**. Fit: §1, §2 and §4 strongly, with §3 and §5 as policy implications. Refereed (double-blind). JIF 2.9; Scopus Q1. OA free via EMBL DEAL (refereed paper) or UPF's CSUC Springer quota. Class (a). Median first decision 9 days.
+  2. **Postdigital Science and Education**. Covers all five sections. Shows proven openness to reflexive human–AI writing. OA free via EMBL DEAL or UPF's CSUC quota. Class (a). It needs explicit differentiation from Manabu 2026, and its WoS status should be checked.
   3. **Research Evaluation**, as an Article or uninvited discussion paper. Fit: §1, §2 and §4. SSCI JIF 2.7. Class (a), with disclosure also in the cover letter. The subscription route is free. **Science and Public Policy** is the alternative if §5 (geopolitics of knowledge infrastructure) is foregrounded.
 - **Down-ranked**:
   - AI & Society is class (b), and its preprint similarity concern applies.
@@ -476,8 +485,94 @@ MDPI and Frontiers titles should be avoided as a matter of credibility. The pape
   - The T&F venues are unverified at journal level.
   - Synthese, eLife, QSS and Scientometrics are poor format fits.
   - HSSC is a strong fit but costs a €1,590 APC that CRUE does not cover. It remains the best home for a 4,000-word Comment version.
-- **Submission order**: Minerva, then PSE, then Research Evaluation or SPP. Fast Springer desk decisions make the higher-standing option cheap to try first. Never submit in parallel. Condensed spin-offs should each carry a distinct argument (for example, §5 alone as an HSSC Comment or BDS Commentary, or §3 as a PLOS Biology Essay or ISR Commentary), and the overlap should be disclosed to editors so they are not treated as redundant publication.
+- **Ranking, life-science essay (track B, about 3,000–4,000 words)**:
+  1. PLOS Biology Essay.
+  2. EMBO Reports Science & Society.
+  3. A Nature Human Behaviour Perspective (3,000–4,000 words), or a Nature Computational Science or Nature Machine Intelligence Perspective if §3 and §5 lead. See §9 for the formats.
+- **Submission order**: Track A runs Minerva, then PSE, then Research Evaluation or SPP. Track B runs a PLOS Biology presubmission enquiry, then EMBO Reports, then a Nature-portfolio Perspective. Fast Springer desk decisions make the higher-standing option cheap to try first. Never submit the same text in parallel. Condensed spin-offs should each carry a distinct argument (for example, §5 alone as an HSSC Comment or BDS Commentary, or §3 as a PLOS Biology Essay or ISR Commentary), and the overlap should be disclosed to editors so they are not treated as redundant publication.
 
 ### Gaps
 - No primary Clarivate or Frontiers source was retrieved. The MDPI delisting facts rest on search summaries of Chemistry World and Science coverage.
-- The author's institutional CRUE quota and any T&F or SAGE deal at their university were not checked.
+- UPF's remaining 2026 CRUE/CSUC APC quota was not checked. See §9 for the EMBL and UPF routes.
+
+## 9. Author-specific: what the UPF and EMBL agreements cover, and which life-science venues fit
+
+### Takeaway
+The author has two separate funding routes, and eligibility follows the corresponding author's affiliation.
+- **UPF** adheres to the CSUC/CRUE-CSIC Springer Nature agreement for 2025–2027. It allocates APCs by quota and does not cover every journal.
+- **EMBL (all sites, including Barcelona)** offers more:
+  - DEAL with Springer Nature and Wiley (2024–2028): hybrid OA is free, and fully OA journals get 20% off, with the rest paid from EMBL's central APC budget. DEAL applies only to "original research, peer-reviewed papers, and reviews", and Nature-branded journals are excluded.
+  - Elsevier: hybrid free; fully OA 20% off.
+  - PLOS: a flat fee covering all PLOS journals (2025–2026).
+  - Nature Portfolio: primary research articles only.
+  - Under the Open Science Policy in force from 1 July 2025, EMBL's central budget covers APCs in fully OA journals. Its rights-retention route allows CC-BY deposit of the accepted manuscript in Europe PMC with no embargo.
+
+Life-science formats checked:
+- Nature Biotechnology: Perspective ≤3,000 words.
+- Nature Methods: Perspective ≤6,000 words, Comment ≤~2,000 words.
+- Nature Computational Science: Perspective ≤4,000 words.
+- Nature Machine Intelligence: Perspective 3,000–4,000 words, Comment 1,500–2,000 words.
+- Molecular Systems Biology: has no APC for non-research types.
+
+These add to PLOS Biology, EMBO Reports and eLife (§1).
+
+### Cited Findings
+- **CSUC Springer Nature agreement (2025–2027)**:
+  - "INSTITUCIONS ADHERIDES: UB, UAB, UPC, UPF, UdL, UdG, URV, UOC, URL, UVic-UCC, UIB, UJI i IRTA".
+  - Beneficiaries are "Autors de correspondència d'articles acceptats per ser publicats per l'editorial i que pertanyin a una institució participant de l'acord en el moment de l'acceptació de la publicació".
+  - "Aquest acord no inclou la totalitat de les revistes publicades per aquesta editorial". Publishing is "segons l'assignació d'Article Processing Charges (APC) corresponent".
+  - Source: [CSUC, SpringerNature fact sheet (April 2025)](https://www.csuc.cat/sites/default/files/2025-04/SpringerNature.pdf)
+- Springer Nature's Spain agreements page lists "Universitat Pompeu Fabra". — [Springer Nature OA agreements, Spain](https://www.springernature.com/gp/open-science/oa-agreements/spain)
+- Springer Nature's Germany agreements page lists "European Molecular Biology Laboratory (EMBL) Barcelona" and the other EMBL sites. — [Springer Nature OA agreements, Germany](https://www.springernature.com/gp/open-science/oa-agreements/germany)
+- **EMBL and DEAL**:
+  - "EMBL has joined the two successfully negotiated DEAL agreements with Wiley and Springer Nature ... valid for the period 2024 – 2028".
+  - "For the period 2024 – 2028 APCs for papers published in hybrid OA journals will be covered by the EMBL Szilárd Library. 20% reduction in APCs for papers submitted in fully/gold OA journals. The remaining costs are covered by the central APC budget or, if applicable, by a grant."
+  - "Nature-branded journals and magazines ... are not included."
+  - "Only original research, peer-reviewed papers, and reviews can make use of the agreement."
+  - "The submitting corresponding author of the paper needs to be affiliated to EMBL".
+  - Source: [EMBL Szilárd Library, DEAL agreement](https://www.embl.org/about/info/szilard-library/open-access/open-access-agreements-with-publishers/deal-agreement/)
+- **EMBL's other agreements**:
+  - Elsevier: "publish Open Access for free (Hybrid) or with a 20% discount (fully Open Access journals)".
+  - Nature Portfolio: "EMBL authors can publish their accepted primary research articles gold OA in Nature and in 32 Nature research journals".
+  - PLOS: "The EMBL Szilárd Library pays an annual flat fee to finance EMBL researchers' publications in all 14 of the publisher's journals – there is no upper article limit" (contract years 2025–2026).
+  - AAAS: "This agreement does not include a publication component."
+  - MDPI: a 30% discount. Frontiers: a 10% discount.
+  - No Taylor & Francis, SAGE or OUP agreement appears on the list.
+  - Source: [EMBL Szilárd Library, OA agreements with publishers](https://www.embl.org/about/info/szilard-library/open-access/open-access-agreements-with-publishers/)
+- **EMBL Open Science Policy** (effective 1 July 2025):
+  - It names three routes: "Transformative Agreements" ("A paper must have an EMBL corresponding author to be eligible"); fully OA journals, for which "EMBL's central APC budget will continue to cover the Article Processing Charges"; and rights retention.
+  - The rights-retention route is to "Publish the Version of Record behind a paywall and deposit the Author Accepted Manuscript with a CC-BY licence into Europe PMC at the time of publication, with no embargo".
+  - Suggested acknowledgement and cover-letter text: "For the purpose of Open Access, a CC-BY public copyright licence has been applied to the present document and will be applied to all subsequent versions up to the Author Accepted Manuscript arising from this submission."
+  - Source: [EMBL Rights Retention Strategy](https://www.embl.org/about/info/open-science/rights-retention-strategy-at-embl/)
+- **EMBL deposit rule**: EMBL-affiliated authors "are obliged to make the article available in Europe PMC no later than six months after official publication". "Where EMBL pays the article processing charges (APCs) using CC-BY is obligatory." — [Open Access at EMBL](https://www.embl.org/about/info/szilard-library/open-access/open-access-at-embl/)
+- **Nature Biotechnology**:
+  - Perspective: "Length – up to 3,000 words", up to 50 references; "Perspectives are peer reviewed". It suits authors "advocating a controversial position".
+  - Comment: "the scientific, commercial, ethical, legal, societal, or political issues surrounding research"; "typically 1-4 pages"; up to 15 references; "Peer review is at the editors' discretion".
+  - Correspondence: 300–800 words.
+  - Source: [Nature Biotechnology content types](https://www.nature.com/nbt/content)
+- **Nature Methods**:
+  - Perspective: "Main text – up to 6,000 words". "Perspectives are often commissioned by the journal, but the editors also welcome presubmission inquiries".
+  - Comment: covers issues "surrounding methods development in life sciences research"; "typically no more than 2,000 words"; presubmission inquiries welcome.
+  - Source: [Nature Methods content types](https://www.nature.com/nmeth/content)
+- **Nature Computational Science**: Perspective "up to 4,000 words", up to 100 references, peer reviewed. Comment "typically 1-3 pages", with peer review at the editors' discretion. — [Nature Computational Science content types](https://www.nature.com/natcomputsci/content)
+- **Nature Machine Intelligence**: Perspective "Main text – 3,000-4,000 words", peer reviewed. Comment "1,500-2,000 words", with peer review at the editors' discretion. — [Nature Machine Intelligence content types](https://www.nature.com/natmachintell/content)
+- **Molecular Systems Biology (EMBO Press)**:
+  - "Most front matter articles are commissioned by the editors. However, we do accept proposals". Comments "are usually commissioned but may also be submitted". Opinion pieces are "Commissioned by editors" (≤1,600 words).
+  - Presubmission enquiries go through eJP only. — [MSB submission guidelines](https://link.springer.com/journal/44320/submission-guidelines)
+  - The APC (€7,028) "applies to Research Articles, Methods and Reports. There is currently no APC for other article types." — [MSB fees](https://link.springer.com/journal/44320/how-to-publish-with-us)
+- **BioEssays (Wiley)**: a search summary of a CIRAD journal directory gives the sections "Insights & Perspectives, Prospects & Overviews ... and Thoughts & Opinion". "Papers in BioEssays are primarily commissioned ... you can send an enquiry to the Editor-in-Chief". Word limits were not verified, because Wiley returns 403. — [CIRAD Où publier, BioEssays (search summary)](https://ou-publier.cirad.fr/en/node/4277)
+- **AI policy of the Nature-portfolio life-science titles**: class (a), under the same Springer Nature risk framework quoted in §2. — [Nature Portfolio AI policy](https://www.nature.com/nature-portfolio/editorial-policies/ai)
+
+### Inferences
+- Make EMBL the corresponding affiliation for Springer Nature hybrids (Minerva, PSE), Wiley, Elsevier, PLOS and fully-OA journals (HSSC, RIPR, BDS, Patterns). Use UPF only where EMBL rules exclude the article type and the journal is on the CSUC list with quota left.
+- For a refereed article in Minerva or PSE, DEAL's "peer-reviewed papers" wording probably applies. A non-refereed Comment would not qualify, but those formats are mostly free anyway. Confirm with EMBL's Open Science office (OSIM, osim@embl.org).
+- For OUP, T&F and SAGE hybrids (Research Evaluation, SPP, AiR, SSS, ST&HV, ISR), neither EMBL nor UPF has a deal. Use EMBL's rights-retention route. Whether each journal accepts the rights-retention statement was not verified.
+- For the life-science track, the PLOS Biology Essay fits best. It is refereed, free, class (a), has recently published on LLMs and scientific writing, and accepts unsolicited essays after a presubmission enquiry. EMBO Reports Science & Society comes next. Nature Computational Science and Nature Machine Intelligence Perspectives suit a version led by §3 (AI for exploration) or §5 (AI infrastructure). A Nature Biotechnology Comment suits §5's commercial-concentration argument. Nature Methods covers only methods-development issues, so it fits poorly.
+- EMBL discounts MDPI (30%) and Frontiers (10%), which is itself an illustration of the incentive problem the paper discusses. The avoid recommendation in §8 stands.
+
+### Gaps
+- UPF Library's own 2026 list of agreements (Elsevier, Wiley and others) and its remaining quota. No UPF page was found.
+- Whether EMBL's central APC budget covers non-research article types, such as an HSSC or RIPR Comment.
+- Whether non-primary content in Nature Biotechnology, Nature Methods, Nature Computational Science and Nature Machine Intelligence can be published OA. Only NHB states that it cannot.
+- BioEssays word limits and article types, and PLOS Computational Biology article types (its "what we publish" URL returned 404).
+- Whether EMBL has its own guidance on AI use for authors. Not checked.
