@@ -580,10 +580,213 @@ Europe's best model (Mistral Large 4) trails the frontier by about 20 ECI points
 
 ---
 
-## Q9. Implications for the paper: defensible wording
+## Q9. Testing the claim "China is betting on very efficient models that are not yet as powerful but consume much less"
 
 ### Takeaway
-The contrast holds for **weights, licences (for some labs), price and open-model adoption**. It fails for **data openness, transparency and freedom from state control**, and it is eroding at the Chinese flagship level in 2026. Any "who leads" sentence must be dated and multi-tracker.
+**Partly right, but it needs reframing.**
+- **"Very efficient":** true for training compute and architecture. Chinese labs reach about 4–9 months behind the frontier with roughly 1/30 to 1/50 of the compute of the largest US training runs. They pioneered or popularised fine-grained sparse MoE (3–5% of parameters active per token), multi-head latent attention (MLA), FP8 training at scale, and sparse, linear and hybrid attention.
+- **"Not yet as powerful":** accurate on capability indices (about 9 ECI points, or 4–9 months; Q7). Less so on human-preference rankings (2.4–2.8%).
+- **"Consume much less" is not established:**
+  - Per-token API prices are lower for many Chinese models. But per-task cost depends on how many tokens a model emits, and in Oct 2026 several Chinese flagships cost *more* per Artificial Analysis task than US "small" models at the same score.
+  - The best-known energy-per-query study estimates DeepSeek-R1 on DeepSeek's own servers among the *most* energy-intensive models per query, mainly because of hosting hardware and data centres.
+  - Chinese frontier models grew to 1–2.8 trillion total parameters in 2026.
+  - Aggregate demand rises with efficiency (the Jevons paradox), and China is building out compute too.
+- **Efficiency is not uniquely Chinese.** US labs also ship sparse MoE and cheap fast tiers that match the best Chinese models on ECI. The difference is one of emphasis, of necessity under export controls, and above all of **openness**: Chinese labs publish efficient *weights* that others can self-host.
+
+### Cited Findings
+**Architecture: sparse MoE and attention efficiency** (HF model cards, accessed 2026-10-15) [primary unless noted]:
+- **DeepSeek**
+  - **DeepSeek-V3:** "671B total parameters with 37B activated for each token … adopts Multi-head Latent Attention (MLA) and DeepSeekMoE". "we design an FP8 mixed precision training framework and, for the first time, validate the feasibility and effectiveness of FP8 training on an extremely large-scale model." — [HF DeepSeek-V3](https://huggingface.co/deepseek-ai/DeepSeek-V3); [arXiv 2412.19437](https://arxiv.org/abs/2412.19437)
+  - **DeepSeek-V3.2:** "DeepSeek Sparse Attention (DSA) … substantially reduces computational complexity while preserving model performance, specifically optimized for long-context scenarios." — [HF DeepSeek-V3.2](https://huggingface.co/deepseek-ai/DeepSeek-V3.2)
+  - **DeepSeek-V4:** Pro is 1.6T total / 49B activated; Flash is 284B / 13B, with FP4+FP8 mixed weights. Hybrid Compressed Sparse plus Heavily Compressed Attention means that at 1M-token context, "DeepSeek-V4-Pro requires only 27% of single-token inference FLOPs and 10% of KV cache compared with DeepSeek-V3.2". It uses the Muon optimiser and more than 32T training tokens. — [HF DeepSeek-V4-Pro](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)
+- **Moonshot Kimi**
+  - **Kimi K2:** 1T total / 32B activated, trained with the Muon optimiser. — [HF Kimi-K2-Instruct](https://huggingface.co/moonshotai/Kimi-K2-Instruct)
+  - **Kimi K3:** 2.8T total / **104B activated**, with 69 "KDA" plus 24 gated-MLA attention layers, and "MXFP4 weights / MXFP8 activations (quantization-aware training)". — [HF Kimi-K3](https://huggingface.co/moonshotai/Kimi-K3)
+- **Alibaba Qwen:** Qwen3-235B-A22B (2025) → Qwen3.5-397B-A17B (Feb 2026) → **Qwen3.8-2.4T-A95B** (Aug 2026). Qwen3.8 uses hybrid "Gated DeltaNet" linear attention plus gated attention, with 512 experts (10 routed + 1 shared) and multi-token prediction. — [HF Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B)
+- **Zhipu GLM-4.5:** 355B total / 32B active; GLM-4.5-Air 106B / 12B. FP8 inference needs 8×H100 or 4×H200 (GLM-4.5) and 2×H100 or 1×H200 (Air). — [HF GLM-4.5](https://huggingface.co/zai-org/GLM-4.5)
+- **MiniMax**
+  - **MiniMax-M1:** 456B total / 45.9B activated, a "hybrid Mixture-of-Experts (MoE) architecture combined with a lightning attention mechanism … compared to DeepSeek R1, M1 consumes 25% of the FLOPs at a generation length of 100K tokens" (vendor claim). — [HF MiniMax-M1-80k](https://huggingface.co/MiniMaxAI/MiniMax-M1-80k)
+  - **MiniMax-M3:** ~428B / ~23B activated. Its "MiniMax Sparse Attention … delivers 9× prefill and 15× decode speedups compared to M2 at 1M context, reducing per-token compute to 1/20" (vendor claim). — [HF MiniMax-M3](https://huggingface.co/MiniMaxAI/MiniMax-M3)
+- **Xiaomi MiMo-V2.6-Pro:** 1.02T total / 42B activated. — [HF MiMo-V2.6-Pro-RL](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL)
+- **US open MoEs for comparison**
+  - **gpt-oss-120b:** 117B total / 5.1B active. "post-trained with MXFP4 quantization … making gpt-oss-120b run on a single 80GB GPU … and the gpt-oss-20b model run within 16GB of memory." gpt-oss-20b is 21B / 3.6B. — [HF gpt-oss-120b](https://huggingface.co/openai/gpt-oss-120b)
+  - **Llama 4:** Maverick is about 401.6B total (safetensors count) with 17B active and 128 experts. Scout is about 108.6B with 17B active and 16 experts. — [HF Llama-4-Maverick](https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct) (parameter counts from the HF API; README gated)
+  - **Meta Muse Spark Open:** 816B / 42B active. — [VentureBeat](https://venturebeat.com/technology/meta-unveils-muse-spark-open-the-new-top-u-s-open-weights-model-and-it-runs-on-two-paired-mac-desktops) [secondary]
+- **Active/total ratios (my computation from the figures above).** Chinese and US sparse MoEs sit in the **same range of about 3–9%**:
+
+  | Origin | Model | Active / total |
+  |---|---|---|
+  | China | DeepSeek-V3 | 5.5% |
+  | China | DeepSeek-V4-Pro | 3.1% |
+  | China | DeepSeek-V4-Flash | 4.6% |
+  | China | Kimi K2 | 3.2% |
+  | China | Kimi K3 | 3.7% |
+  | China | Qwen3.8 | 4.0% |
+  | China | GLM-4.5 | 9.0% |
+  | China | MiniMax-M3 | 5.4% |
+  | China | MiMo-V2.6-Pro | 4.1% |
+  | US | gpt-oss-120b | 4.4% |
+  | US | Llama 4 Maverick | 4.2% |
+  | US | Muse Spark Open | 5.1% |
+- **USCC's assessment:**
+  - DeepSeek "did not introduce the mixture-of-experts (MOE) architecture" but "popularized the use of large-scale MOE architectures in open frontier models". "Both MOE and chain-of-thought are now standard for leading frontier models".
+  - Chinese innovation reflects "a vibrant research and development (R&D) ecosystem but also necessity, as compute constraints drive experimentation with alternatives to scaling". — [USCC, 23 Mar 2026](https://www.uscc.gov/sites/default/files/2026-03/Two_Loops--How_Chinas_Open_AI_Strategy_Reinforces_Its_Industrial_Dominance.pdf) [primary]
+
+**Training compute and cost:**
+- **DeepSeek-V3 technical report** [primary] — [arXiv 2412.19437 (HTML)](https://arxiv.org/html/2412.19437)
+  - GPU hours: pre-training 2,664K, context extension 119K, post-training 5K, for a total of **2,788K H800 GPU-hours**.
+  - "Assuming the rental price of the H800 GPU is $2 per GPU hour, our total training costs amount to only $5.576M."
+  - **Caveat in the report itself:** "Note that the aforementioned costs include only the official training of DeepSeek-V3, excluding the costs associated with prior research and ablation experiments on architectures, algorithms, or data."
+  - Trained on "a cluster equipped with 2048 NVIDIA H800 GPUs".
+  - The report notes H800 limits, for example that "the accumulation precision of FP8 GEMM on NVIDIA H800 GPUs is limited to retaining around 14 bits".
+- **External estimate:** SemiAnalysis estimates about 50,000 Hopper GPUs, "total server CapEx for DeepSeek is ~$1.6B", plus about USD 944M in operating costs. The USD 6M is "just the GPU cost of the pre-training run". — [SemiAnalysis, 31 Jan 2025](https://newsletter.semianalysis.com/p/deepseek-debates) [primary]
+- **R1 reinforcement learning:** about USD 294K (512 H800s, ~80 h) on top of the base model, per the *Nature* supplementary material. — [Scientific American](https://www.scientificamerican.com/article/secrets-of-chinese-ai-model-deepseek-revealed-in-landmark-paper) [search-summary]
+- **Epoch AI model database** (all_ai_models.csv, downloaded 2026-10-15; my computations) [primary dataset] — [Epoch data](https://epoch.ai/data/all_ai_models.csv)
+  - DeepSeek-V3: 3.3×10^24 FLOP (2.788M H800-hours; Epoch cost estimate USD 5.39M in 2023 dollars).
+  - **Largest Chinese training runs:** Kimi K3 2.0×10^25 (confidence "Speculative"), Qwen3-Max 1.5×10^25 ("Speculative"), DeepSeek-V4-Pro 9.7×10^24 ("Likely"). GLM-5 is 6.8×10^24, with training hardware recorded as **Huawei Ascend 910C** ("Likely").
+  - **Largest US runs:** GPT-6 Astra 9.4×10^26 ("Likely", GB200), Grok 4 5×10^26 ("Speculative"), GPT-4.5 3.8×10^26.
+  - **Ratio of largest US to largest Chinese run: about 33× in 2025 and about 47× in 2026.** Many US frontier models have undisclosed compute (e.g., Claude, Gemini).
+  - gpt-oss-120b, at 4.9×10^24, is at DeepSeek-V3 scale.
+- USCC Table 1 (2025) likewise compares Grok 4 at 5×10^26 FLOP with Qwen3-Max at 1.5×10^25. — [USCC](https://www.uscc.gov/sites/default/files/2026-03/Two_Loops--How_Chinas_Open_AI_Strategy_Reinforces_Its_Industrial_Dominance.pdf) [primary]
+
+**API prices** (OpenRouter models API, USD per 1M input/output tokens, accessed 2026-10-15) [primary] — [OpenRouter API](https://openrouter.ai/api/v1/models). Prices vary by provider.
+
+| Group | Model | Input | Output |
+|---|---|---|---|
+| US frontier | Claude Opus 5.5 | 4 | 20 |
+| US frontier | Claude Fable 5.1 | 10 | 50 |
+| US frontier | GPT-6 Astra | 10 | 50 |
+| US frontier | GPT-6.1 Sol | 2 | 10 |
+| US frontier | Gemini 4 Argon | 2 | 10 |
+| US frontier | Meta Muse Wonder | 4 | 20 |
+| Chinese | DeepSeek V4.1 Flash | 0.15 | 0.60 |
+| Chinese | DeepSeek V4 Pro | 0.36 | 0.72 |
+| Chinese | MiMo-V2.6-Pro | 0.43 | 0.87 |
+| Chinese | MiniMax-M3 | 0.30 | 1.20 |
+| Chinese | GLM-5.3 | 0.08 | 4.80 |
+| Chinese | Qwen3.8-2.4T | 2 | 6 |
+| Chinese | Kimi K3 | 0.40 | 15 |
+| US small tier | Claude Haiku 5.5 | 0.10 | 0.50 |
+| US small tier | GPT-6 Luna | 0.10 | 0.50 |
+| US small tier | Gemini 3.8 Flash | 0.83 | 4.12 |
+| US small tier | gpt-oss-120b | 0.15 | 0.60 |
+
+**Per-task cost.** These are Artificial Analysis "Cost per Task" values on its Intelligence Index (v4.3.2), which reflects both price and verbosity. I extracted them from the page data on 2026-10-15 [primary, with caveats in Gaps] — [AA leaderboard](https://artificialanalysis.ai/leaderboards/models). Index score first, then USD per task.
+- **About 52–56 (no Chinese model reaches this band):**
+  - Claude Opus 5.5 (xhigh): 56.0, $3.46
+  - GPT-6 Astra (max): 52.7, $3.26
+  - Gemini 4 Argon (high): 52.6, $1.99
+  - GPT-6.1 Sol (max): 51.8, $0.72
+- **About 42–46:**
+  - MiMo-V2.6-Pro (open): 46.3, **$0.13**
+  - Qwen3.8 Max (closed): 45.4, **$5.41**
+  - GLM-5.3 (max): 44.8, $2.01
+  - Step 5 Preview: 43.7, $1.03
+  - Kimi K3 (max): 43.6, **$2.00**
+  - Claude Haiku 5.5 (max): 43.4, **$0.21**
+  - Claude Opus 5.5 (low): 42.3, $0.55
+  - GPT-6.1 Sol (low): 42.1, **$0.13**
+- **About 38–42:**
+  - GLM-5.3-Flash: 41.8, $0.28
+  - Gemini 3.8 Flash (high): 40.9, $1.24
+  - DeepSeek V4.1 Flash (max): 39.5, $0.27
+  - Muse Spark Open: 38.9, $0.84
+  - MiMo-V2.6-Flash: 37.9, $0.06
+
+**Cost comparisons from other sources:**
+- CAISI (2025): one US reference model was 35% cheaper than the best DeepSeek model for similar performance.
+- CAISI (2026): DeepSeek V4 was cheaper than GPT-5.4 mini on 5 of 7 benchmarks, ranging from 53% cheaper to 41% more expensive. — [NIST 2025](https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks), [NIST 2026](https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro) [primary]
+
+**US small closed models vs the best Chinese models on ECI** (accessed 2026-10-15) [primary] — [Epoch CSV](https://epoch.ai/data/eci_scores.csv)
+- Claude Haiku 5.5 **158.98** (Oct 2026), Gemini 3.7/3.8 Flash 157.2, GPT-6 Luna 156.31.
+- Kimi K3 157.42, DeepSeek V4.1 Flash 155.57.
+
+**Price decline is an industry-wide trend.** Epoch finds the price of reaching a fixed performance level fell "9x to 900x per year" depending on the task, with the fastest drops most recent. — [Epoch, LLM inference price trends](https://epoch.ai/data-insights/llm-inference-price-trends) [search-summary]
+
+**Energy** (Jegham et al., "How Hungry is AI? Benchmarking Energy, Water, and Carbon Footprint of LLM Inference", arXiv:2505.09598, v1 14 May 2025, v6 24 Nov 2025). Estimates are built from public API performance data, company-specific environmental multipliers and *inferred* hardware configurations, i.e. modelled rather than metered [primary] — [arXiv abstract](https://arxiv.org/abs/2505.09598), [HTML v6](https://arxiv.org/html/2505.09598v6)
+- **Energy per query (Wh, short / medium / long prompt):**
+
+  | Model and host | Short | Medium | Long |
+  |---|---|---|---|
+  | DeepSeek-R1, DeepSeek's own servers | 19.25 | 24.60 | **29.08** |
+  | DeepSeek-R1, Azure | 2.35 | 4.33 | 7.41 |
+  | DeepSeek-V3, DeepSeek's own servers | 2.78 | 8.86 | 13.16 |
+  | DeepSeek-V3, Azure | 0.74 | 2.17 | 3.70 |
+  | o3 | 1.18 | 5.15 | 12.22 |
+  | GPT-4.1 nano | 0.21 | 0.58 | 0.83 |
+  | Claude 3.7 Sonnet | 0.95 | 2.99 | 5.67 |
+
+- Azure-hosted versions use "over 70% less energy". The gap is attributed to "inefficiencies in their data centers, including higher PUE, suboptimal cooling technologies" and less efficient hardware, *not* to model design.
+- R1 on DeepSeek's servers uses about 65× the energy of the most efficient model on long prompts.
+- The paper explicitly invokes the Jevons paradox: "As per-task efficiency improves, total AI usage expands far more rapidly, amplifying net resource consumption."
+
+**Aggregate demand**
+- IEA *Energy and AI* (Apr 2025):
+  - Data centres used about 415 TWh in 2024 (about 1.5% of global electricity), with the **US at 45%, China 25% and Europe 15%**.
+  - Demand is projected to reach **about 945 TWh by 2030**. The US accounts for the largest share of growth, followed by China. — [IEA news release](https://www.iea.org/news/ai-is-set-to-drive-surging-electricity-demand-from-data-centres-while-offering-the-potential-to-transform-how-the-energy-sector-works) [search-summary; exec summary returned HTTP 403]
+- Satya Nadella responded to DeepSeek with "Jevons paradox strikes again!" (27 Jan 2025). — [Fortune](https://fortune.com/2025/01/27/microsoft-ceo-satya-nadella-deepseek-optimism-jevons-paradox) [search-summary]
+
+**China's own compute build-out**
+- Alibaba pledged at least **RMB 380 billion (about USD 53B) over three years** for cloud and AI infrastructure on 24 Feb 2025, more than its AI and cloud spending of the previous decade. — [SCMP](https://scmp.com/tech/big-tech/article/3299858/alibaba-commits-us53-billion-ai-infrastructure-largest-private-computing-project) [search-summary]
+- At the Apsara conference (Sep 2025), CEO Eddie Wu said Alibaba would increase this but gave no new figure. — [SCMP](https://www.scmp.com/tech/big-tech/article/3326624/alibaba-boost-ai-spending-china-tech-giant-sees-agi-new-start), [TechNode](https://technode.com/2025/09/24/alibaba-pitches-qwen-as-android-of-the-ai-era-advances-us52b-infrastructure-plan) [search-summary]
+- Z.ai restricted new GLM coding-plan subscriptions citing compute limits (early 2026). — [MIT Technology Review](https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/) [secondary]
+
+**Cause: choice, or forced by export controls?**
+- DeepSeek founder Liang Wenfeng (Waves interview, before Jul 2024, via AFP): "Money has never been the problem we face; it's the embargo on high-end chips." — [AFP via Prothom Alo](https://en.prothomalo.com/business/global/mj5l9kiuwb) [search-summary]
+- The FT (Aug 2025) reported that Chinese authorities encouraged DeepSeek to train R2 on Huawei Ascend. Failed training runs delayed R2, so DeepSeek reverted to Nvidia for training and kept Ascend for inference. — [TrendForce](https://www.trendforce.com/news/2025/08/14/news-deepseek-r2-model-launch-reportedly-delayed-amid-huawei-ascend-chip-hurdles/), [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/deepseek-reportedly-urged-by-chinese-authorities-to-train-new-model-on-huawei-hardware-after-multiple-failures-r2-training-to-switch-back-to-nvidia-hardware-while-ascend-gpus-handle-inference) [search-summary; single anonymous-source chain]
+- CSIS: export controls limit chips and global inference capacity, and "Open-weight releases reduce that burden because third-party providers and local users supply much of the serving compute". — [CSIS, 2 Jul 2026](https://www.csis.org/analysis/what-know-about-chinese-ai-models) [primary]
+- Liu Zhiyuan (Tsinghua): "Compute and energy are real constraints for any deployment", which helps explain the push toward smaller models. — [MIT Technology Review](https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/) [secondary]
+
+**Universities self-hosting**
+- **Epoch (15 Aug 2025):** open models runnable on a single consumer GPU "typically match the capabilities of frontier models after an average lag between 6-12 months".
+  - Size thresholds assume 4-bit weights: ≤28B parameters (RTX 4090 era) and ≤40B (RTX 5090 era).
+  - Lags by benchmark: GPQA 7.4 months, MMLU-Pro 7.3, AA Index 6.3, Arena 12.4.
+  - Epoch warns that small open models are more likely to be benchmark-optimised. — [Epoch](https://epoch.ai/data-insights/consumer-gpu-model-gap) [primary]
+- **Oct 2026 example:** Qwen3.8-27B (27.8B dense parameters, Apache 2.0) scores **ECI 151.55 vs GPT-5's 150.0** (Aug 2025).
+  - It is within Epoch's ≤40B consumer-GPU threshold.
+  - But on AA's agentic-heavy index it scores only 33.7 vs 58 for the top model. — [Epoch CSV](https://epoch.ai/data/eci_scores.csv), [HF API](https://huggingface.co/api/models/Qwen/Qwen3.8-27B), [AA](https://artificialanalysis.ai/leaderboards/models) [primary]
+- **Frontier-class Chinese open weights are cluster-scale:** DeepSeek-V4-Pro 1.6T, Kimi K3 2.8T and Qwen3.8 2.4T total parameters. A reported 1.56 TB Kimi K3 download. — [MLQ](https://mlq.ai/news/moonshot-releases-156-tb-kimi-k3-weights-under-a-custom-commercial-license/) [search-summary]
+- **Chinese universities' 2025 local deployments** of full DeepSeek R1/V3 (671B) [search-summary] — [China News, 26 Feb 2025](https://www.chinanews.com/edu/2025/02-26/10374773.shtml), [The Paper](https://m.thepaper.cn/newsDetail_forward_30174463)
+  - Shanghai Jiao Tong University ran it on a fully domestic Huawei Ascend stack.
+  - Renmin University and Peking University also deployed it, and Tsinghua, Zhejiang, Southeast, Wuhan, BNU and others announced uses.
+  - The stated rationale: data must not leave the institution ("数据不出域"), and closed models cannot be privately delivered or are costly.
+
+### Inferences
+- **"Efficient" is accurate on training compute and architecture.** Frontier-adjacent results with 1/30 to 1/50 of the largest US training compute is the most robust part of the author's claim. The open publication of these techniques (MLA, FP8, DSA, linear and hybrid attention) is a genuine contribution.
+- **"Not yet as powerful" is accurate on capability indices** (4–9 months; about 9 ECI points; 12 AA points between the best open model and the top). It is overstated on Arena (2.4–2.8%).
+- **"Consume much less" should be dropped or heavily qualified.**
+  - Lower **per-token prices** do not mean lower **per-task** cost or energy: verbose reasoning, hosting hardware and data-centre efficiency dominate.
+  - The only systematic per-query energy estimates put DeepSeek's own deployment among the worst. The same model on Azure was about 70–75% lower.
+  - Chinese 2026 flagships are among the largest models by total parameters.
+  - National demand is rising regardless (Jevons; Alibaba's capex; China at 25% of global data-centre electricity in 2024).
+- **Cause:** the evidence supports **necessity plus strategy**, not an ideological "bet on efficiency".
+  - Necessity: export controls on chips, plus state pressure to use domestic Ascend chips.
+  - Strategy: open weights reward models that others can run cheaply.
+- **Kind vs emphasis.** US labs use the same sparse-MoE recipe (gpt-oss and Llama 4 at about 4% active) and sell small tiers (Haiku, Luna, Flash) that match the best Chinese models on ECI at similar or lower per-token prices. The real difference is emphasis and **disclosure**: Chinese labs publish efficient frontier-adjacent weights and architectures, while US labs keep their efficient frontier models closed.
+- **For universities:**
+  - Small dense or sparse open models that fit one GPU reach the closed frontier of about 6–12 months earlier (Epoch). Qwen3.8-27B ≈ GPT-5 on ECI is a concrete 2026 example.
+  - Running *frontier-class* open weights (0.7–2.8T parameters) needs a multi-GPU cluster or national supercomputing centre. That is feasible for consortia, or for well-funded universities as Chinese universities showed in 2025.
+  - The governance-relevant property is **self-hostability and data control**, not efficiency per se.
+
+**Suggested wording (efficiency):**
+> "Chinese labs have pushed hard on training efficiency, a push driven as much by US chip export controls as by choice. Sparse 'mixture-of-experts' designs activate only a few percent of their parameters per token, and techniques such as low-precision (FP8) training and compressed or sparse attention have let firms like DeepSeek, Moonshot and Alibaba come within roughly four to nine months of the US frontier using a small fraction (on Epoch AI's estimates, a thirtieth to a fiftieth) of the largest US training budgets. Their models are typically cheaper per token, and because many are released as open weights, smaller versions now run on a single high-end GPU with capabilities close to those of US frontier models of about a year earlier. That puts capable, self-hosted AI within reach of university IT departments, and frontier-class versions within reach of national computing centres. But 'efficient' should not be read as 'consumes less': energy per answer depends heavily on how many tokens a reasoning model generates and on the data centre that serves it, US labs pursue the same efficiencies in their 'small' models, and cheaper AI has so far increased total demand rather than reduced it."
+
+### Gaps
+- **Jegham et al. evidence status.** It is an arXiv preprint (6 versions; peer-review status not verified), and its energy figures are modelled estimates based on inferred hardware, not metered. No 2026 study of energy per *task* for current US vs Chinese frontier models was found.
+- **AA per-task costs:**
+  - They were parsed from embedded page data; at least one record (an un-suffixed "Claude Opus 5.5") was mis-parsed and excluded.
+  - Values depend on which provider prices AA uses: for example, AA lists Kimi K3 at $3/$15 while an OpenRouter provider lists $0.40/$15.
+  - Re-check on artificialanalysis.ai before quoting.
+- **Compute disclosure and ratios.** Training compute for Claude and Gemini frontier models is undisclosed, so the "30–50×" ratio compares against the largest *known* US runs. Epoch marks Kimi K3 and Qwen3-Max compute as "Speculative".
+- **Aggregate demand data.** No verified 2026 figure was found for China's total AI-compute energy use or for Alibaba's revised capex. The 480 bn RMB figure is unconfirmed.
+- **Secondary token-verbosity claims were not used.** Examples: "Kimi K2.5 used ~89M output tokens vs 14M for Claude Sonnet 4.6", and "GPT-5.6 used ~1/9 of DeepSeek V4's tokens". These come from blogs citing AA and were not verified.
+
+---
+
+## Q10. Implications for the paper: defensible wording
+
+### Takeaway
+The contrast holds for **weights, licences (for some labs), training-compute efficiency, per-token price and open-model adoption**. It fails for **data openness, transparency, freedom from state control, and "consumes much less"** (energy and per-task cost are not established to be lower). It is also eroding at the Chinese flagship level in 2026. Any "who leads" sentence must be dated and multi-tracker.
 
 ### Cited Findings
 See Q1–Q7. The key anchors are:
@@ -608,6 +811,10 @@ See Q1–Q7. The key anchors are:
 > "As of October 2026, independent trackers place a handful of US firms (Anthropic, OpenAI, Google and, on some measures, Meta) at the frontier, with the lead rotating between them on a scale of weeks. Anthropic's Claude Opus 5.5 tops Epoch AI's Capabilities Index (statistically tied with OpenAI's GPT-6 models) and Artificial Analysis's index, while Google's Gemini 4 Argon tops the Arena human-preference leaderboard. The best Chinese and best open-weight models trail by roughly four to nine months on capability indices (Epoch; NIST CAISI), although on human-preference rankings the gap is under 3%."
 
 Avoid "by far". If the author wants to emphasise Claude, the defensible form is "among the strongest models on current independent benchmarks", with dates.
+
+**On efficiency** (full suggested paragraph in Q9): say "trained with a fraction of the compute and cheaper per token", **not** "consume much less". Present the efficiency drive as shaped by export controls as well as choice, and note that US labs pursue the same techniques in their small models. For the university angle, the robust claim is that **open weights make self-hosting possible**:
+- Single-GPU open models now match the closed frontier of about 6–12 months earlier (Epoch).
+- Frontier-class open weights need cluster-scale hardware.
 
 **For the governance section:** China's 2020 decree banning cash-per-SCI-paper rewards and SCI-based hiring, its 2026 abolition of the CAS journal ranking, and the AI+ plan's call to count open-source contributions in faculty evaluation are a real precedent for top-down metric change. Pair it with the evidence that early implementation was largely symbolic (Shu et al., *Minerva* 2022) and that discretion shifted power to senior gatekeepers (*Higher Education* 2025).
 
