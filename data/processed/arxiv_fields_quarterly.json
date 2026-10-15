@@ -1,0 +1,218 @@
+[
+ {
+  "quarter": "2020-Q1",
+  "start": "2020-01-01",
+  "physics": 15554,
+  "mathematics": 9432,
+  "econ_finance": 451,
+  "computer_science": 12426
+ },
+ {
+  "quarter": "2020-Q2",
+  "start": "2020-04-01",
+  "physics": 17927,
+  "mathematics": 10176,
+  "econ_finance": 661,
+  "computer_science": 15338
+ },
+ {
+  "quarter": "2020-Q3",
+  "start": "2020-07-01",
+  "physics": 17878,
+  "mathematics": 9675,
+  "econ_finance": 604,
+  "computer_science": 14488
+ },
+ {
+  "quarter": "2020-Q4",
+  "start": "2020-10-01",
+  "physics": 18181,
+  "mathematics": 9808,
+  "econ_finance": 765,
+  "computer_science": 17036
+ },
+ {
+  "quarter": "2021-Q1",
+  "start": "2021-01-01",
+  "physics": 16479,
+  "mathematics": 9492,
+  "econ_finance": 813,
+  "computer_science": 15775
+ },
+ {
+  "quarter": "2021-Q2",
+  "start": "2021-04-01",
+  "physics": 17055,
+  "mathematics": 9616,
+  "econ_finance": 757,
+  "computer_science": 17888
+ },
+ {
+  "quarter": "2021-Q3",
+  "start": "2021-07-01",
+  "physics": 16921,
+  "mathematics": 9351,
+  "econ_finance": 687,
+  "computer_science": 15911
+ },
+ {
+  "quarter": "2021-Q4",
+  "start": "2021-10-01",
+  "physics": 18495,
+  "mathematics": 9700,
+  "econ_finance": 652,
+  "computer_science": 16901
+ },
+ {
+  "quarter": "2022-Q1",
+  "start": "2022-01-01",
+  "physics": 16822,
+  "mathematics": 9375,
+  "econ_finance": 672,
+  "computer_science": 16445
+ },
+ {
+  "quarter": "2022-Q2",
+  "start": "2022-04-01",
+  "physics": 16572,
+  "mathematics": 9264,
+  "econ_finance": 711,
+  "computer_science": 17679
+ },
+ {
+  "quarter": "2022-Q3",
+  "start": "2022-07-01",
+  "physics": 17135,
+  "mathematics": 9598,
+  "econ_finance": 648,
+  "computer_science": 16786
+ },
+ {
+  "quarter": "2022-Q4",
+  "start": "2022-10-01",
+  "physics": 18223,
+  "mathematics": 10015,
+  "econ_finance": 692,
+  "computer_science": 19174
+ },
+ {
+  "quarter": "2023-Q1",
+  "start": "2023-01-01",
+  "physics": 16900,
+  "mathematics": 9585,
+  "econ_finance": 751,
+  "computer_science": 18248
+ },
+ {
+  "quarter": "2023-Q2",
+  "start": "2023-04-01",
+  "physics": 17607,
+  "mathematics": 9999,
+  "econ_finance": 739,
+  "computer_science": 22977
+ },
+ {
+  "quarter": "2023-Q3",
+  "start": "2023-07-01",
+  "physics": 18030,
+  "mathematics": 9828,
+  "econ_finance": 735,
+  "computer_science": 20954
+ },
+ {
+  "quarter": "2023-Q4",
+  "start": "2023-10-01",
+  "physics": 19501,
+  "mathematics": 10587,
+  "econ_finance": 792,
+  "computer_science": 24793
+ },
+ {
+  "quarter": "2024-Q1",
+  "start": "2024-01-01",
+  "physics": 18280,
+  "mathematics": 11065,
+  "econ_finance": 942,
+  "computer_science": 25985
+ },
+ {
+  "quarter": "2024-Q2",
+  "start": "2024-04-01",
+  "physics": 19149,
+  "mathematics": 10739,
+  "econ_finance": 874,
+  "computer_science": 28162
+ },
+ {
+  "quarter": "2024-Q3",
+  "start": "2024-07-01",
+  "physics": 19278,
+  "mathematics": 10466,
+  "econ_finance": 875,
+  "computer_science": 26919
+ },
+ {
+  "quarter": "2024-Q4",
+  "start": "2024-10-01",
+  "physics": 20787,
+  "mathematics": 11172,
+  "econ_finance": 974,
+  "computer_science": 29960
+ },
+ {
+  "quarter": "2025-Q1",
+  "start": "2025-01-01",
+  "physics": 19991,
+  "mathematics": 10834,
+  "econ_finance": 1030,
+  "computer_science": 30907
+ },
+ {
+  "quarter": "2025-Q2",
+  "start": "2025-04-01",
+  "physics": 20630,
+  "mathematics": 11080,
+  "econ_finance": 1020,
+  "computer_science": 35422
+ },
+ {
+  "quarter": "2025-Q3",
+  "start": "2025-07-01",
+  "physics": 22185,
+  "mathematics": 11722,
+  "econ_finance": 1181,
+  "computer_science": 34472
+ },
+ {
+  "quarter": "2025-Q4",
+  "start": "2025-10-01",
+  "physics": 23872,
+  "mathematics": 12589,
+  "econ_finance": 1347,
+  "computer_science": 36023
+ },
+ {
+  "quarter": "2026-Q1",
+  "start": "2026-01-01",
+  "physics": 22346,
+  "mathematics": 12636,
+  "econ_finance": 1134,
+  "computer_science": 39256
+ },
+ {
+  "quarter": "2026-Q2",
+  "start": "2026-04-01",
+  "physics": 25089,
+  "mathematics": 14592,
+  "econ_finance": 1229,
+  "computer_science": 48190
+ },
+ {
+  "quarter": "2026-Q3",
+  "start": "2026-07-01",
+  "physics": 27871,
+  "mathematics": 20923,
+  "econ_finance": 1493,
+  "computer_science": 48674
+ }
+]

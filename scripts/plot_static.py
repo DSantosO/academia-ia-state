@@ -124,7 +124,7 @@ def header(fig, title, subtitle, y=0.95):
     fig.text(0.05, y - 0.045, subtitle, fontsize=10, color=INK2, ha="left")
 
 
-def line_chart(path, x, series, title, subtitle, fmt, ylim, base, end_fmt):
+def line_chart(path, x, series, title, subtitle, fmt, ylim, base, end_fmt, note=None):
     fig, ax = plt.subplots(figsize=(10, 6.2), dpi=160)
     fig.patch.set_facecolor(SURFACE)
     style(ax)
@@ -150,6 +150,8 @@ def line_chart(path, x, series, title, subtitle, fmt, ylim, base, end_fmt):
     events(ax, ylim[1], EVENTS)
     header(fig, title, subtitle)
     fig.text(0.05, 0.02, SOURCES, fontsize=7.5, color=MUTED, ha="left")
+    if note:
+        fig.text(0.05, 0.045, note, fontsize=8, color=INK2, ha="left")
     fig.savefig(path, facecolor=SURFACE)
     plt.close(fig)
 
@@ -167,7 +169,9 @@ def field_charts(repo, out):
     line_chart(os.path.join(out, "fig1_index_by_field.png"), x, idx,
                "New preprints by field (index, 2022 = 100)",
                "Each quarter relative to the field's 2022 quarterly average. Q1 2020 – Q3 2026.",
-               lambda t: f"{t:.0f}", (40, top * 1.06), 100, lambda v: f"{v:.0f}")
+               lambda t: f"{t:.0f}", (40, top * 1.06), 100, lambda v: f"{v:.0f}",
+               note="Medicine's 2022 base is low: COVID-19 research crowded out other medRxiv preprints in "
+                    "2020–2022, which inflates its index.")
 
     yoy = [(k, n, c, [vals[k][i] / vals[k][i - 4] - 1 for i in range(4, len(rows))]) for k, n, c in order]
     lo = min(min(s[3]) for s in yoy)
@@ -176,7 +180,8 @@ def field_charts(repo, out):
                "Year-on-year growth of new preprints by field",
                "Each quarter compared with the same quarter a year earlier. Q1 2021 – Q3 2026.",
                lambda t: "0%" if abs(t) < 1e-9 else f"{t:+.0%}", (min(lo, 0) - 0.05, hi + 0.08), 0,
-               lambda v: f"{v:+.0%}")
+               lambda v: f"{v:+.0%}",
+               note="medRxiv opened in June 2019, so medicine's early-2021 growth compares against its first months.")
 
     panels = FIELDS + [REF]
     fig, axes = plt.subplots(2, 3, figsize=(12, 6.8), dpi=150)
