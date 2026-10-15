@@ -138,6 +138,44 @@ The outline must therefore:
 - mark the cuts for the ~3,800-word version, and further cuts down to 3,500 words and 15 references for EMBO Reports;
 - state the single point the Correspondence would make.
 
+## Positioning after the prior-work check (coordinator's adjustments, 15 Oct 2026)
+
+Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`. The author's thesis and five-section structure stay. What changes is which claims the essay presents as its own contribution.
+
+**Present as shared ground and cite generously; do not claim these as new:**
+- The core premise (AI breaks the link between effort and merit; the system was already strained). Cite:
+  - Hansen 2026 (RIPR);
+  - Manabu 2026 (PSE);
+  - Blekhman 2026 (PLOS Biology Perspective, published 15 Oct 2026);
+  - Gartenberg et al. 2026 (Organization Science);
+  - the Nature Editorial of 25 Mar 2026;
+  - Hanneke et al. 2026 (BISE editorial);
+  - Kusumegi et al. 2025;
+  - Parrilla 2023.
+- "Acceleration, not exploration" (§4b). Huang, Hu, Zhang & Lin (Nature Comment, 29 Sep 2026) state it almost word for word. The author's hypothesis stands, but present it as a view others now share. **The contribution is the decisive test:** a triple difference by the strength of metric incentives, which separates the incentive explanation from the "AI goes where data are" explanation.
+- The vision depending on open tools (§3/§5). Cite Spirling, Palmer et al., and the Nature feature on local models.
+- **The paper as its own example.** Precedents exist:
+  - Osmanovic Thunström 2022;
+  - Cotton et al. 2023;
+  - Porsdam Mann et al. 2023;
+  - Agents4Science 2025;
+  - the Sakana AI Scientist;
+  - Fourie 2026, which was written with Claude Code and Codex in a similar division of labour;
+  - Manabu 2026.
+
+  Present this paper's process record (git history, time and cost, verification steps, the Anthropic conflict of interest) as better documentation, never as a first.
+
+**What the essay can claim as its contribution** (no "first" claims; use hedged wording):
+1. **Legitimacy is irrelevant to the mechanism.** The breakdown needs no misuse. Treat the time it takes to master a literature as one of the gatekeeping signals that disappears.
+2. **Rationing.** Read the system's responses together (NIH's cap of six applications, arXiv's rules of Oct 2025, May 2026 and Oct 2026, conference caps) as rationing that restores scarcity by decree instead of reforming what is counted. Hansen 2026 is the foil: Hansen wants to abolish scarcity. Fourie 2026 says review is "rationed, not priced".
+3. **Two drivers of narrowing:** internal (academic incentives) and external (corporate concentration of the tools and of chat data). Each has been argued separately; the split appears to be new.
+4. **The decisive test** for the incentive explanation (Box 2).
+5. **A documented, reproducible process record** as evidence of what one evening of AI-assisted work now produces.
+
+**Update §4c.** "Limited to disclosure rules" is out of date. There are now binding caps and proposals for fees and AI triage; these are the rationing evidence.
+
+**Use** the draft 163-word contribution paragraph in the note as the starting point.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
