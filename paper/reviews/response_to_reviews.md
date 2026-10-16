@@ -442,10 +442,10 @@ These were decided by the author, not proposed by the review. They are recorded 
 - **Hosseini et al. 2026** (*Research Evaluation*), on "distinctly human contributions": in contribution 2 of ¶0.3, and in the EMBO positioning paragraph and reference list.
 - **Lovén 2026 and Ma 2026,** on verification as the new scarce resource: in Box 1, where the record shows that remedy's limit.
 
-**11. The process record is partial, and Box 1 says so.** A NeurIPS 2026 workshop audit found that git captured only 21.8% of one repository's narrative trace (Wu et al. 2026). Box 1 adds that this record includes the decision log kept in the brief, and that it too is partial. EMBO Box 2 says the same in one sentence (ref. 15).
+**11. The process record is partial, and Box 1 says so.** A NeurIPS 2026 workshop audit found that only 21.8% of one repository's narrative trace remained visible in its current version (Wu et al. 2026; corrected in the final verification, C4). Box 1 adds that this record includes the decision log kept in the brief, and that it too is partial. EMBO Box 2 says the same in one sentence (ref. 15).
 
 **12. The within-field contrasts are Figure 5 of the master** (companion commit 6021b3a; caption from the README's "Figure 8" section, with the caveats that much of bioinformatics is itself AI research, that experiment is a small series, and that the divergence dates from 2025–2026, not before). Figure 5 replaces the [FIGURE PENDING] note. It is first cited in ¶2.8b, after Figures 3 and 4, so the numbering follows first citation.
-- **Pending figure fix:** in Figures 3–5 and S1, the year ticks sit at mid-year, so the ChatGPT marker (30 November 2022) appears just right of the "2022" label. The companion session has been asked to move the ticks to 1 January.
+- **Figure fix applied:** the year ticks of Figures 3–5 and S1 now sit on 1 January, and every marker is drawn at its exact date (companion commit cb56c25; copied in 199f5bb).
 
 ---
 
@@ -476,7 +476,7 @@ These were decided by the author, not proposed by the review. They are recorded 
 - **Butler (2003):** cut. It was sourced from memory and the audit could not verify it (R04).
 - **Fanelli's "mistaken":** verified.
 - **Thakkar et al.:** "updated", not "improved" (the sentence was later cut for length).
-- **NIH and detectors:** ¶2.4 no longer implies that NIH uses detectors.
+- **NIH and detectors:** superseded by the final verification (C1). NOT-OD-25-132 says NIH "will continue to employ the latest technology in detection of AI-generated content", so ¶2.4 now says NIH uses detection technology.
 - **arXiv's computer-science rule:** shows that texts shaped like syntheses became cheap, not mastery (¶2.5).
 - **¶4b.1:** "has support", not "well founded".
 - **Shah:** cited for fairer quotas (Table 1; Section 6 seeds).
@@ -557,7 +557,7 @@ The cost, about US$153 by 01:30, comes from the session's cost record as relayed
   - Messeri & Crockett 2026 and Motoki 2026 (¶4b.1);
   - NIH's simplified review framework (¶4c.2b);
   - Bhargava et al. (¶4c.3b);
-  - the primary source of arXiv's endorsement rule (Table 1 note; Figure 4).
+  - the primary source of arXiv's endorsement rule (Table 1 note; Figure 4). Resolved in the final verification: arXiv blog, 10 Dec 2025 (cited as arXiv 2025b).
 - **[CITATION NEEDED]:**
   - Lamont (¶1.3);
   - pre-AI rationing (¶4c.2b; Table 1).
@@ -611,7 +611,7 @@ The EMBO version has no [RECHECK] markers and one [CITATION NEEDED] (pre-AI rati
 - EMBO Press's AI policy and preprint policy, whether boxes count towards the 3,500 words, and the reference style;
 - the ERC's and your national funders' AI guidance (EMBO "Rationing is not reform");
 - the bioRxiv growth rates (10–13% a year since 2023), which research note 8 calculated from bioRxiv's statistics API;
-- the corrected figures, once the companion session moves the year ticks to 1 January.
+- the corrected figures (done: year ticks on 1 January, companion commit cb56c25).
 
 **Get outside eyes:**
 - a person, or a tool not made by Anthropic, to check the Anthropic passages (Section 5, Figure 2, Box 1) against the primary pages;
@@ -652,7 +652,7 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
    - SocArXiv's AI policy (updated 28 September 2026);
    - NIH NOT-OD-25-132;
    - the Chinese thesis-detector rules (CCTV 2026);
-   - arXiv's endorsement rule for new mathematics authors (Figure 4; primary source still to find).
+   - arXiv's endorsement rule for new mathematics authors (Figure 4; primary source found in the final verification: arXiv blog, 10 Dec 2025).
 4. **Chat-data policies** (¶5.2, ¶5.2b, Figure 2, Box 1):
    - Anthropic's consumer terms and retention;
    - Google's activity default;
@@ -729,7 +729,7 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
 | M37 | "hundreds of review articles every month" | Table 1 (arXiv computer-science row) | arXiv (2025) | as M36 | §4.2 |
 | M38 | "incontrovertible evidence that the authors did not check the results of LLM generation" | Table 1 (May 2026 row) | Thomas G. Dietterich, chair of arXiv's computer-science section, X thread of 14 May 2026 | https://x.com/tdietterich/status/2055000956144935055 ; as quoted by Ha (2026), https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work , and Cole (2026), https://www.404media.co/new-arxiv-rules-ai-generated-papers-ban/ | R40, R79. Only the thread's first post could be read; check the full thread. ¶4c.2 now paraphrases it. |
 | M39 | "superficial, high-level theory synthesis" | Table 1 (SocArXiv row) | SocArXiv (2026), AI policy | https://socopen.org/ai-policy/ | §4.2. The source capitalises "Superficial". |
-| M40 | "The rapid rate of growth in submissions, while exciting, has begun to strain the review system" | Table 1 (ICLR 2027 row) | ICLR 2027 Author Guide | https://iclr.cc/Conferences/2027/AuthorGuide | R82 |
+| M40 | "The rapid rate of growth in submissions, while exciting, has begun to strain the review system" | Table 1 (ICLR 2027 row) | ICLR 2027 Author Guide | https://iclr.cc/Conferences/2027/AuthorGuidelines | R82 |
 | M41 | "stopgap" | Table 1 (arXiv, 1 Oct 2026 row) | arXiv (2026), blog | https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/ | O-05 |
 | M42 | "unsustainable rate of submissions at EMNLP'26" | Table 1 (ACL row) | ACL (2026), Sustainable Reviewing Policy | https://www.aclweb.org/portal/node/14591 ; https://aclrollingreview.org/sustainable-reviewing-2026 | R81 |
 | M43 | "Peer review is the scarcest resource of a conference … generative AI tools now make it possible to produce far more manuscripts than the community can carefully evaluate" | Table 1 (AISTATS 2027 row) | AISTATS 2027 call for papers | https://virtual.aistats.org/Conferences/2027/CallForPapers | R83. The ellipsis joins two passages; check their order and the omission. |
@@ -782,9 +782,9 @@ These are listed so the verification pass can skip them, or check only what is n
 | SocArXiv | https://socopen.org/ai-policy/ |
 | Chinese universities | CCTV via ScienceNet, https://news.sciencenet.cn/htmlnews/2026/5/565116.shtm |
 | TMLR | https://jmlr.org/tmlr/editorial-policies.html ; the start date and growth figures come from Singh Chawla 2026a |
-| ICLR 2027 | https://iclr.cc/Conferences/2027/AuthorGuide and /CallForPapers |
+| ICLR 2027 | https://iclr.cc/Conferences/2027/AuthorGuidelines and /CallForPapers |
 | arXiv, all categories | arXiv blog, 1 Oct 2026 (URL as M41) |
 | ACL Rolling Review | URLs as M42 |
 | AISTATS 2027 | URL as M43 |
 
-The Table 1 note also cites Elazar & Antoniak (https://arxiv.org/abs/2601.17036, v2) and the endorsement rule, which still lacks a primary source.
+The Table 1 note also cites Elazar & Antoniak (https://arxiv.org/abs/2601.17036, v2) and the endorsement rule (primary source: arXiv blog, 10 Dec 2025, found in the final verification).
