@@ -4,6 +4,15 @@
 
 ## Working titles
 
+**Author's proposal (16 Oct):** "Generative AI is making current scientific metrics obsolete".
+
+**Defensible variants that keep the claim:**
+- **Is generative AI making publication counts obsolete? Evidence from preprint servers, 2020–2026** (recommended)
+- Generative AI is eroding publication counts as a measure of scientific work: evidence from [N] preprints
+- Publication counts are losing their meaning: AI-era growth concentrates where experiments are not the bottleneck
+
+Earlier options:
+
 1. When writing is cheap: generative AI accelerates scientific output where experiments are not the bottleneck
 2. Generative AI is changing what publication counts measure: evidence from preprint servers, 2020–2026
 3. Theory, computation and existing data: where generative AI has accelerated scientific output
