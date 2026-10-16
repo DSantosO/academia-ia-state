@@ -12,15 +12,15 @@ WORD COUNTS (computed by build_v2.py; HTML comments, headings, figure legends an
 |---|---|---|
 | Introduction | 885 | 955 |
 | Materials and methods | 2,742 | 3,008 |
-| Results | 0 | 0 |
+| Results | 1,663 | 1,727 |
 | Discussion | 0 | 0 |
 | Conclusions | 0 | 0 |
-| **Main text (Introduction to Conclusions)** | **3,627** | **3,963** |
+| **Main text (Introduction to Conclusions)** | **5,290** | **5,690** |
 
 Abstract: 288 words of prose (288 raw); PLOS ONE limit 300.
-Figure legends in the main text: 0 words. Tables in the main text: 0 words.
-References: 50 in the main list; SI lists: .
-Markers: [AUTHOR] 22, [ANALYSIS PENDING] 9, [RECHECK] 2.
+Figure legends in the main text: 799 words. Tables in the main text: 743 words.
+References: 52 in the main list; SI lists: .
+Markers: [AUTHOR] 22, [ANALYSIS PENDING] 19, [RECHECK] 2.
 -->
 
 <!--
@@ -174,7 +174,107 @@ I used Claude (Anthropic), via Claude Code [AUTHOR: model and version], between 
 
 ## Results
 
-<!-- RESULTS TO BE WRITTEN -->
+### Overview of counts
+
+New preprints rose in every field from 2022 to 2026, but not in the same way (Fig 1). From January–September 2022 to the same months of 2026, bioRxiv grew 1.53-fold, more than the six physics archives of the within-field contrast (1.33-fold) and less than mathematics (1.71-fold). Year-on-year growth was steady on bioRxiv (9–13% a year in 2023–2026), whereas the six physics archives grew by 0%, 6% and 6% in 2023–2025 and by 19% in 2026; medRxiv without COVID-19 preprints grew by 27%, 21% and 22% in 2024–2026. In arXiv mathematics, September 2026 alone had 8,360 new papers, against 5,903 in August [ANALYSIS PENDING: re-dating by first-version submission, and January–August versions of every 2026 estimate].
+
+**Fig 1. New preprints by field, indexed to 2022.** Quarterly new preprints (first versions), each series divided by its mean quarterly count in 2022 (2022 = 100), January 2020 to September 2026; the number in each legend entry is the index for July–September 2026. Physics: new submissions to the 13 arXiv physics archives, by primary archive. Mathematics: arXiv math. Computer science: arXiv cs, shown for reference; it includes AI research itself. Biology: bioRxiv. Medicine: medRxiv, excluding preprints that mention COVID-19 or SARS-CoV-2 in the title or abstract. Social sciences: first versions on PsyArXiv, SocArXiv and EdArXiv plus arXiv econ and q-fin, shown for reference only (Methods). Dashed vertical lines mark the release of ChatGPT (30 November 2022), arXiv's rule on review and position papers in computer science (31 October 2025) and arXiv's cap of two submissions per submitter per month (1 October 2026); they are dates for reference, not estimated break points or causes. Indexing to 2022 favours series whose 2022 count was low, such as medicine and biology; departures from each series' own trend are reported in the text. The figure was made with plotting code written by an AI agent (Claude, Anthropic, via Claude Code) under the author's direction (Methods, Use of AI tools).
+
+### Within-field contrasts (H1)
+
+The pre-specified within-field tests did not support H1 (Table 1; Fig 2). Relative to 2022, the January–September 2026 rate ratio of non-experimental to experimental work was 1.14 (95% CI 1.00–1.30; Holm-adjusted p = 0.11) in physics, 1.08 (1.03–1.14; p = 0.01) in biology and 0.99 (0.88–1.10; p = 0.82) in medicine. With the planned Bonferroni-adjusted intervals only the biology contrast excludes 1 (1.02–1.16), so H1 fails the rule that it needs support in all three fields. Measured against the in-space placebos, which capture the heterogeneity between archives and categories that the model intervals omit, none of the contrasts stands out.
+
+**Table 1. Pre-specified within-field contrasts: estimates and checks.**
+
+| | C1 physics: theory / experiment | C2 biology: computational / wet lab | C3 medicine: public dataset / other |
+|---|---|---|---|
+| New preprints per month, 2026 (A; B) | 1,484; 142 | 698; 1,994 | 100; 1,292 |
+| 2026 vs 2022: rate ratio (95% CI) | 1.14 (1.00–1.30) | 1.08 (1.03–1.14) | 0.99 (0.88–1.10) |
+| Holm-adjusted p; Bonferroni 98.3% CI | 0.11; 0.97–1.34 | 0.01; 1.02–1.16 | 0.82; 0.86–1.13 |
+| Minimum detectable rate ratio, 80% power (α = 0.05; α/3) | 1.21; 1.25 | 1.08; 1.09 | 1.17; 1.20 |
+| Event study, 2023; 2024; 2025 | 1.08; 1.11; 1.08 | 0.97; 0.94; 0.98 | 0.99; 0.97; 0.92 |
+| Pre-period coefficients beyond 0.9–1.1 | 2020: 1.25; 2021: 1.19 | 2019: 1.24 | 2020: 0.88 |
+| 2026 vs 2019 (95% CI) | 1.05 (0.90–1.23) | 0.87 (0.80–0.95) | 0.98 (0.84–1.15) |
+| 2026 vs planned baseline (approximate) | 1.05 | 1.02 | 1.03 |
+| Trend-adjusted, 2026 (95% CI) | 0.98 (0.72–1.33) | 1.48 (1.06–2.07) | 0.85 (0.60–1.19) |
+| Leave-one-out range (component dropped) | 1.03 (nucl-ex) to 1.43 (hep-ex) | 0.93 (bioinformatics) to 1.14 (genomics) | – |
+| Negative controls | hep-ex / nucl-ex 1.39 (1.19–1.64); six theory pairs 0.85–1.06 | – | – |
+| In-space placebos at least as extreme (percentile of the contrast) | 61% of 153 archive pairs (39th) | 19.7% of 462 wet-lab half-splits (80th) | not defined |
+| Reading | Inconclusive | Fragile | Null |
+
+Rate ratio of group A to group B relative to 2022, from Poisson pseudo-maximum-likelihood models with month fixed effects and group-specific calendar-month effects; values above 1 mean that the non-experimental group grew faster. 95% CIs are Driscoll–Kraay intervals, which measure within-year uncertainty only. Bonferroni intervals and detectable effects at α/3 were computed from the reported standard errors. Planned baseline: unweighted mean of the event-study coefficients over 2017–2022 (C1) or 2019–2022 (C2, C3), not a model estimate. Trend-adjusted: departure from the extrapolated pre-2023 relative trend, reported as a sensitivity analysis only. Theory pairs: hep-th / hep-ph 1.02, hep-th / gr-qc 0.87, hep-th / nucl-th 0.91, hep-ph / gr-qc 0.85, hep-ph / nucl-th 0.89, gr-qc / nucl-th 1.06. All estimates are in S5 Table.
+
+**Fig 2. Within-field contrasts.** (A–C) Quarterly new preprints, 2022 = 100, for groups within a field that differ in how much of the work is experimental. (A) arXiv physics, by primary archive: theory (hep-th, hep-ph, gr-qc, nucl-th) and experiment (hep-ex, nucl-ex); the experimental series is small (about 430 papers a quarter in 2026). (B) bioRxiv version-1 preprints: computational (bioinformatics, systems biology, genomics), wet lab (twelve categories; Methods) and all other categories; COVID-19 preprints are included. (C) medRxiv, excluding COVID-19: preprints whose title or abstract names a public dataset or design that recurs in formulaic papers (NHANES, UK Biobank, Global Burden of Disease, Mendelian randomisation, FAERS, MIMIC, SEER, BRFSS) and all other preprints. (D) Rate ratio of group A to group B in each year relative to 2022 (theory / experiment, computational / wet lab, public dataset / other), from a Poisson pseudo-maximum-likelihood model with month fixed effects and group-specific calendar-month effects; bars are 95% Driscoll–Kraay confidence intervals, which omit year-level and between-category variation; logarithmic scale; 2026*, January–September. Dashed vertical lines in A–C as in Fig 1. The figure was made with plotting code written by an AI agent (Claude, Anthropic, via Claude Code) under the author's direction (Methods, Use of AI tools).
+
+The physics contrast is inconclusive rather than null. Its interval touches 1, the test could detect only rate ratios of about 1.21 or more, and the contrast fails its negative controls: the two experimental archives diverged from each other (hep-ex / nucl-ex 1.39) more than theory diverged from experiment, and 61% of all pairs of arXiv archives diverged at least as much. The estimate rests on nucl-ex, a small archive whose January–September count barely changed in a decade (323 papers in 2016, 346 in 2026); without it the ratio is 1.03. The 2020 and 2021 coefficients exceed the 2026 value, and the most closely paired archives, hep-ph and hep-ex, grew alike in 2026 (18% and 14%). The 2026 change in the log ratio of theory to experiment (+0.08) lay within the spread of the 2017–2025 changes (standard deviation 0.10); comparing each group's growth with its own historical range instead would set a stable series against a volatile one [51].
+
+The biology contrast is nominally significant but fragile. It equals its own minimum detectable effect, 19.7% of random splits of the wet-lab categories diverged at least as much, and it rests on bioinformatics, 63% of the computational group in 2026: without bioinformatics the ratio is 0.93, because genomics and systems biology grew more slowly in 2026 (7% and 5%) than the wet-lab categories (8%). The contrast reverses against 2019 (0.87), because the computational categories were already losing ground before ChatGPT, as wet-lab fields adopted bioRxiv and surged with COVID-19 research in 2020. Its 2026 movement is mainly a wet-lab slowdown, from 13% growth in 2025 to 8% in 2026, while computational growth held at 20% and 18%, with bioinformatics accelerating from 22% to 27% [ANALYSIS PENDING: bioinformatics split by AI/ML topic] [ANALYSIS PENDING: bioRxiv categories without COVID-19 preprints].
+
+The medicine contrast is null and excludes increases of more than about 10%. Among preprints without COVID-19, those naming a listed dataset grew 2.47-fold from January–September 2022 to the same months of 2026 and other preprints 2.51-fold, and since 2023 they grew 1.91-fold and 1.88-fold. It is a weak test of H1, however: the flag records a mention, not a design, and the comparison group is itself largely secondary-data research [ANALYSIS PENDING: validation of the regular expressions, a title-only COVID-19 filter and a pre-declared extended dataset list]. The second clause of H1, that AI shows in the writing but much less in the output of experimental work, is examined with the markers below.
+
+### Distribution of output among authors (H2)
+
+In theoretical physics, output grew in every class of authors in 2026, fastest at the top (Fig 3). Ranked on their combined output in the third quarters of 2025 and 2026, the top 1% of authors increased their fractional output by 44%, the next 9% by 37% and the bottom 90% by 21%, against 26% overall, and the bottom 90% contributed 54% of the increase. In earlier pairs of years the bottom 90% had grown by between −0.7% and 8.1%. The namesake-robust variant gave 50%, 33% and 20%. The top 1%'s share of fractional output rose from 5.86% to 6.52%, 0.82 percentage points above its 2019–2022 trend (0.53–1.10; namesake-robust 0.73), while the top 10%'s share stayed at its trend (−0.30; −1.11 to 0.50). Growth in theoretical physics was therefore broad-based but concentrating. Whether the authors behind it were established before 2023 cannot be judged from name strings. Small-team experimental papers were too few for these measures to be informative (top-1% share, 0.13 percentage points above trend; −7.08 to 7.34).
+
+**Fig 3. Concentration of output among authors in theoretical physics.** arXiv hep-th, hep-ph, gr-qc and nucl-th (primary category), papers with at most 50 authors; authors are matched by name strings, because arXiv has no author identifiers. (A) Share of fractional output (each paper divided equally among its authors) produced by the top 1% of active authors in each quarter. (B) Share of papers with at least one author who has five or more papers in the group that quarter, a fixed-threshold measure that rises mechanically with volume. Solid lines, all author names; dashed lines, namesake-robust (full first names only, with the 1% most frequent surnames removed). (C) Growth in fractional output between the third quarters (July–September) of consecutive years, by author class. Authors are ranked by their combined output in the two years compared (top 1%, next 9%, bottom 90%; ties at a class boundary are shared), which avoids regression to the mean. Black bars, all authors; under proportional growth, every class would grow at the black-bar rate. The grey background marks pairs that end before ChatGPT's release, which show how far the classes diverge by chance. The dashed vertical line in A and B marks the release of ChatGPT. Panels for mathematics will be added [ANALYSIS PENDING: maths H2]. The figure was made with plotting code written by an AI agent (Claude, Anthropic, via Claude Code) under the author's direction (Methods, Use of AI tools).
+
+For mathematics, the decomposition is pending [ANALYSIS PENDING: maths H2]. The share of papers with an author name posting five or more mathematics papers in a quarter rose from 5.3% in the third quarter of 2025 to 18.1% a year later (1.8% to 5.9% in the namesake-robust variant; S3 Table), but this share rises mechanically when everyone produces more and when more papers share common names, so it cannot separate broad from concentrated growth. As a cross-section, papers without such an author grew by 56% (from 10,271 to 16,013), two-thirds of the 8,716 additional papers, and the number of distinct author names rose by 41% and fractional output per name by 28%.
+
+### AI-assisted writing (H3)
+
+AI-associated style words rose in every group, experimental groups included (Fig 4; Table 2). In 2024, the year from which the word list was built, marker rates were 2.56 times their 2019–2022 level in computational bioRxiv categories, 2.15 times in wet-lab categories, 2.17 in arXiv theory, 2.13 in arXiv experiment and 2.73 on medRxiv. Within fields the rise did not differ detectably in 2024: the ratio of rises was 1.18 (0.98–1.42; p = 0.08) for computational against wet-lab biology and 1.00 (0.81–1.22) for theory against experiment. In 2025 and 2026 the rise in experimental physics exceeded that in theory (0.75; 0.61–0.91 and 0.60–0.95), but rates in these years are weak lower bounds. Computational categories started from a higher baseline (38.6 against 27.7 words per 100 abstracts), as Kobak et al. found for computational fields [15], but rose by a similar factor. On arXiv, at least 10.8% of 2024 abstracts in theory and 6.1% in experiment were processed with LLMs. No equivalence margin was set in advance [52], so "similar" here means no detectable difference: the 2024 intervals allow differences of about 20% in physics and 40% in biology.
+
+**Fig 4. AI-associated style words by group.** Core marker words per 100 abstracts, relative to each group's 2019–2022 mean. The core words are the 261 style words of Kobak et al. [15] that appeared in fewer than 0.5% of bioRxiv and medRxiv abstracts in 2019–2022. bioRxiv: version-1 preprints posted in March and September of each year; medRxiv: all version-1 preprints; arXiv: papers with primary category in the physics theory or experiment archives; bioRxiv and medRxiv exclude COVID-19 preprints; 2026*, January–September (bioRxiv, March and September). The list was built from 2024 text, and its fall after 2024 reflects, at least in part, newer models and authors avoiding words now read as signs of LLM text; values after 2024 are therefore lower bounds on LLM-assisted writing. The markers date changes in style; they do not identify causes. Mathematics will be added [ANALYSIS PENDING: maths H3 markers]. The figure was made with plotting code written by an AI agent (Claude, Anthropic, via Claude Code) under the author's direction (Methods, Use of AI tools).
+
+**Table 2. AI-associated style words (H3): rise by group and comparisons between groups.**
+
+| Group or comparison | 2019–2022 | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |
+|---|---|---|---|---|---|
+| *Marker rate (words per 100 abstracts) and rise* | | | | | |
+| bioRxiv computational | 38.6 | ×1.89 | ×2.56 | ×2.41 | ×1.64 |
+| bioRxiv wet lab | 27.7 | ×1.52 | ×2.15 | ×2.30 | ×1.57 |
+| bioRxiv mixed | 31.0 | ×1.53 | ×1.96 | ×2.07 | ×1.44 |
+| medRxiv | 26.6 | ×1.70 | ×2.73 | ×2.70 | ×1.87 |
+| arXiv physics theory | 15.0 | ×1.55 | ×2.17 | ×2.34 | ×2.05 |
+| arXiv physics experiment | 11.7 | ×1.52 | ×2.13 | ×2.95 | ×2.57 |
+| *Ratio of rises (95% CI)* | | | | | |
+| bioRxiv computational / wet lab | – | 1.19 (0.99–1.43) | 1.18 (0.98–1.42) | 1.04 (0.86–1.25) | 1.03 (0.86–1.24) |
+| arXiv theory / experiment | – | 0.96 (0.79–1.18) | 1.00 (0.81–1.22) | 0.75 (0.61–0.91) | 0.75 (0.60–0.95) |
+| arXiv physics / bioRxiv | – | 0.96 (0.83–1.11) | 0.89 (0.77–1.03) | 1.05 (0.91–1.21) | 1.36 (1.17–1.57) |
+| arXiv experiment / bioRxiv | – | 0.76 (0.45–1.27) | 1.02 (0.61–1.71) | 1.32 (0.79–2.21) | 1.45 (0.87–2.44) |
+| *Lower bound on LLM-processed abstracts* | | | | | |
+| arXiv physics theory | 13.5%ᵃ | 4.9% | 10.8% | 13.8% | 11.2% |
+| arXiv physics experiment | 10.2%ᵃ | 3.1% | 6.1% | 14.2% | 11.4% |
+
+Marker rate: distinct core marker words per 100 titles and abstracts (Methods); rises are relative to the group's 2019–2022 mean. Ratios of rises: ordinary least squares on monthly log ratios relative to 2019–2022, with t intervals; comparisons involving bioRxiv use the 16 sampled months (March and September). Marker words drifted after 2024, and differently by corpus, so 2024 is the year for comparisons. ᵃ Share of abstracts with at least one core word in 2019–2022; lower bounds use a counterfactual extrapolated from the 2019–2022 trend.
+
+The marker rise did not predict output growth. Across 27 bioRxiv categories and arXiv archives in 2023–2026, output growth was unrelated to the change in marker rate (coefficient 0.0005; −0.0016 to 0.0026), and its interaction with experimental work was positive (0.0037; 0.0000 to 0.0073; p = 0.049), the opposite of the sign H1 predicted; within bioRxiv the interaction was 0.0011 (−0.0023 to 0.0045). Markers for mathematics are pending [ANALYSIS PENDING: maths H3 markers]. Within arXiv physics, the second clause of H1 is not supported: experimental groups showed at least as large a rise in markers as theory and, in hep-ex, a departure of output from trend as large as theory's (below).
+
+### Departures from trend and the comparison between servers (exploratory)
+
+Against their own 2015–2022 trends, arXiv physics and mathematics accelerated in 2025–2026, while bioRxiv and PubMed did not (Table 3). In 2026, 14 of the 18 arXiv archives stood at least 1.25 times their trends, among them experimental particle physics (hep-ex 1.37; 1.12–1.67) and lattice gauge theory (hep-lat 1.39); the exceptions were nucl-ex (1.00), q-fin (1.03), physics (1.06) and cs (1.15), whose trend was 21% a year. arXiv's quantitative-biology archive stood at 1.26 although its January–September count fell by 7% from 2025. Mathematics ranked fifth of the 18 archives (rank p = 0.28).
+
+**Table 3. Departures from the pre-2023 trend by field (exploratory).**
+
+| Series | Trend per year | 2024 | 2025 | 2026 (Jan–Sep) |
+|---|---|---|---|---|
+| Physics (13 arXiv archives) | 2.9% | 1.05 (1.02–1.08) | 1.14 (1.10–1.18) | 1.32 (1.24–1.39) |
+| Mathematics (arXiv math) | 2.9% | 1.04 (0.98–1.11) | 1.08 (1.02–1.14) | 1.48 (1.26–1.73) |
+| Computer science (arXiv cs) | 21.0% | 1.00 (0.88–1.14) | 1.02 (0.88–1.18) | 1.15 (0.97–1.37) |
+| Biology (bioRxiv, trend from 2018) | 12.4% | 0.91 (0.78–1.06) | 0.92 (0.75–1.12) | 0.91 (0.71–1.15) |
+| Biomedicine (PubMed, quarterly) | 5.6% | 0.90 (0.85–0.96) | 0.95 (0.88–1.02) | 0.93 (0.86–1.01) |
+| Medicine (medRxiv without COVID-19)ᵃ | 48.5% | 0.74 (0.56–0.97) | 0.60 (0.41–0.88) | 0.50 (0.30–0.80) |
+| Social sciencesᵃ | 18.5% | 0.74 (0.61–0.91) | 0.83 (0.64–1.08) | 0.83 (0.62–1.11) |
+
+Ratio of observed to trend-expected counts (95% CI), from Poisson pseudo-maximum-likelihood models with a linear trend, calendar-month effects and an indicator for April 2020 to March 2021, fitted to pre-2023 data from 2015 (arXiv), 2018 (bioRxiv) or 2019 (medRxiv, social sciences); Newey–West intervals. The counterfactual is each series' own extrapolated trend, not a level shared across series. ᵃ Trend dominated by the adoption of a new server; not interpreted. Archives, 2026: math-ph 1.81, nucl-th 1.58, quant-ph 1.54, nlin 1.52, math 1.48, hep-lat 1.39, hep-ex 1.37, astro-ph 1.34, stat 1.33, cond-mat 1.30, hep-ph 1.28, hep-th 1.28, gr-qc 1.26, q-bio 1.26, cs 1.15, physics 1.06, q-fin 1.03, nucl-ex 1.00; the largest departures are in archives whose pre-2023 trend was falling (math-ph −4.3%, nucl-th −2.5% and nlin −1.1% a year).
+
+These departures compare each series with its own extrapolated trend, and bioRxiv's trend of 12% a year was fitted to years in which the server was still being adopted; in levels, bioRxiv grew more than the physics archives tested. What is specific to arXiv is the acceleration in 2026: relative to bioRxiv, the six physics archives gained 7% from 2025 to 2026 (1.07; 0.99–1.16), theory 8% (1.08; 0.99–1.17) and experiment 2% (1.02; 0.93–1.11). Meanwhile, the marker rise in 2024 was similar on the two servers (arXiv physics against bioRxiv 0.89; 0.77–1.03; experiment 1.02; 0.61–1.71). Output did not follow measured AI-assisted writing on either server.
+
+The break tests cannot date the acceleration, because their admissible window ends before 2025; the slope break they place in physics in November 2024 (p = 0.001) lies at its edge. The yearly departures place most of the acceleration in 2025–2026 for physics and in 2026 for mathematics. The synthetic control replicated Nee et al.'s figure for mathematics [12]: 11.9% above its counterfactual in January–September 2026 (rank p = 0.05, the minimum attainable; 10.1% with a pre-period ending in November 2022), against their 11.9% for January–August on list entries. The agreement is not like for like. The monthly gap was near zero in January–April and reached 0.31 and 0.40 log points in August and September, so without September the excess is about 8%, and three donors had larger raw gaps in the placebo runs (cs 22.1%, stat 18.7%, econ 16.7%). The estimate is mathematics' excess over an accelerating arXiv, concentrated in a few months, not an effect of AI.
+
+### Small-team papers in experimental particle physics (exploratory)
+
+One further observation, made after the tests above, motivated the pre-registered test. Queries of INSPIRE-HEP during internal review (16 October 2026; S2 Appendix) found that primary hep-ex records with at most 10 authors and no collaboration nearly doubled from January–September 2024 to the same months of 2026 (from 187 to 366), accounting for 185 of the 205 records added since 2022, while papers with more than 300 authors rose by 4%. Of 60 such records from 2026 that were not conference papers, sampled at random and classified from titles and abstracts by a single unblinded coder (an AI agent in a reviewer role), 18 were simulation or future-facility studies, 17 machine-learning or AI methods, 7 statistical or software methods, 6 reviews or talk write-ups, 5 instrumentation papers, 4 reanalyses of existing data, 2 concept studies and 1 a report of new measurements. The growth of hep-ex may therefore lie mostly in papers that need no new data, but these counts are unvalidated [ANALYSIS PENDING: INSPIRE] and serve only to motivate the test [ANALYSIS PENDING: pre-registered test].
 
 ## Discussion
 
@@ -240,5 +340,7 @@ I used Claude (Anthropic), via Claude Code [AUTHOR: model and version], between 
 48. Abadie A, Diamond A, Hainmueller J. Synthetic control methods for comparative case studies: estimating the effect of California's tobacco control program. J Am Stat Assoc. 2010;105(490):493–505. doi:10.1198/jasa.2009.ap08746
 49. Andrews DWK. Tests for parameter instability and structural change with unknown change point. Econometrica. 1993;61(4):821–856. doi:10.2307/2951764
 50. INSPIRE-HEP. REST API documentation [Internet] [cited 2026 Oct 16]. Available from: https://github.com/inspirehep/rest-api-doc
+51. Gelman A, Stern H. The difference between "significant" and "not significant" is not itself statistically significant. Am Stat. 2006;60(4):328–331. doi:10.1198/000313006X152649
+52. Lakens D. Equivalence tests: a practical primer for t tests, correlations, and meta-analyses. Soc Psychol Personal Sci. 2017;8(4):355–362. doi:10.1177/1948550617697177
 
 <!-- SI FILES START -->
