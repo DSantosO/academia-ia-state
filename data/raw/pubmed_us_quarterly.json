@@ -1,0 +1,188 @@
+[
+ {
+  "quarter": "2019-Q1",
+  "journal_article": 287498,
+  "us_affiliation": 54808,
+  "non_us": 232690
+ },
+ {
+  "quarter": "2019-Q2",
+  "journal_article": 292072,
+  "us_affiliation": 56102,
+  "non_us": 235970
+ },
+ {
+  "quarter": "2019-Q3",
+  "journal_article": 282473,
+  "us_affiliation": 54946,
+  "non_us": 227527
+ },
+ {
+  "quarter": "2019-Q4",
+  "journal_article": 296337,
+  "us_affiliation": 56796,
+  "non_us": 239541
+ },
+ {
+  "quarter": "2020-Q1",
+  "journal_article": 297244,
+  "us_affiliation": 58075,
+  "non_us": 239169
+ },
+ {
+  "quarter": "2020-Q2",
+  "journal_article": 325171,
+  "us_affiliation": 65212,
+  "non_us": 259959
+ },
+ {
+  "quarter": "2020-Q3",
+  "journal_article": 359267,
+  "us_affiliation": 73887,
+  "non_us": 285380
+ },
+ {
+  "quarter": "2020-Q4",
+  "journal_article": 351945,
+  "us_affiliation": 71761,
+  "non_us": 280184
+ },
+ {
+  "quarter": "2021-Q1",
+  "journal_article": 358997,
+  "us_affiliation": 75902,
+  "non_us": 283095
+ },
+ {
+  "quarter": "2021-Q2",
+  "journal_article": 361589,
+  "us_affiliation": 75416,
+  "non_us": 286173
+ },
+ {
+  "quarter": "2021-Q3",
+  "journal_article": 365581,
+  "us_affiliation": 75301,
+  "non_us": 290280
+ },
+ {
+  "quarter": "2021-Q4",
+  "journal_article": 349560,
+  "us_affiliation": 68635,
+  "non_us": 280925
+ },
+ {
+  "quarter": "2022-Q1",
+  "journal_article": 353978,
+  "us_affiliation": 70349,
+  "non_us": 283629
+ },
+ {
+  "quarter": "2022-Q2",
+  "journal_article": 358169,
+  "us_affiliation": 71084,
+  "non_us": 287085
+ },
+ {
+  "quarter": "2022-Q3",
+  "journal_article": 360796,
+  "us_affiliation": 69430,
+  "non_us": 291366
+ },
+ {
+  "quarter": "2022-Q4",
+  "journal_article": 367240,
+  "us_affiliation": 69663,
+  "non_us": 297577
+ },
+ {
+  "quarter": "2023-Q1",
+  "journal_article": 364664,
+  "us_affiliation": 71006,
+  "non_us": 293658
+ },
+ {
+  "quarter": "2023-Q2",
+  "journal_article": 351605,
+  "us_affiliation": 70687,
+  "non_us": 280918
+ },
+ {
+  "quarter": "2023-Q3",
+  "journal_article": 338659,
+  "us_affiliation": 67943,
+  "non_us": 270716
+ },
+ {
+  "quarter": "2023-Q4",
+  "journal_article": 334312,
+  "us_affiliation": 66058,
+  "non_us": 268254
+ },
+ {
+  "quarter": "2024-Q1",
+  "journal_article": 362801,
+  "us_affiliation": 70572,
+  "non_us": 292229
+ },
+ {
+  "quarter": "2024-Q2",
+  "journal_article": 351004,
+  "us_affiliation": 68996,
+  "non_us": 282008
+ },
+ {
+  "quarter": "2024-Q3",
+  "journal_article": 367169,
+  "us_affiliation": 72075,
+  "non_us": 295094
+ },
+ {
+  "quarter": "2024-Q4",
+  "journal_article": 358281,
+  "us_affiliation": 67972,
+  "non_us": 290309
+ },
+ {
+  "quarter": "2025-Q1",
+  "journal_article": 390716,
+  "us_affiliation": 72671,
+  "non_us": 318045
+ },
+ {
+  "quarter": "2025-Q2",
+  "journal_article": 380110,
+  "us_affiliation": 71378,
+  "non_us": 308732
+ },
+ {
+  "quarter": "2025-Q3",
+  "journal_article": 412884,
+  "us_affiliation": 78306,
+  "non_us": 334578
+ },
+ {
+  "quarter": "2025-Q4",
+  "journal_article": 410537,
+  "us_affiliation": 74951,
+  "non_us": 335586
+ },
+ {
+  "quarter": "2026-Q1",
+  "journal_article": 406218,
+  "us_affiliation": 74253,
+  "non_us": 331965
+ },
+ {
+  "quarter": "2026-Q2",
+  "journal_article": 428667,
+  "us_affiliation": 78613,
+  "non_us": 350054
+ },
+ {
+  "quarter": "2026-Q3",
+  "journal_article": 402399,
+  "us_affiliation": 73342,
+  "non_us": 329057
+ }
+]

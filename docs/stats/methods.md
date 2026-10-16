@@ -249,6 +249,83 @@ Consequences:
    - *Why arXiv only.* bioRxiv and medRxiv were aggregated by word, not by abstract, so their share with any marker
      is not available.
 
+## Round-1 review analyses
+
+Requested by the four round-1 reviews (statistics, scientometrics, experimental science, PLOS editor). Implemented in
+`scripts/stats_round1.py` (results in `data/processed/stats/round1_tests.json` and the last section of `results.md`).
+
+**P1a. Announcement vs submission.** An arXiv identifier records the month a paper was announced, not submitted.
+- *The OAI `created` field is not the first-version date.* In the OAI-PMH arXiv format served by `oaipmh.arxiv.org`,
+  `created` is the submission date of the latest version. For example, 1902.06571 has `created` 2019-05-01, the date of
+  its v2; its v1 was submitted on 18 February 2019 (arXiv abstract page). It equals the first-version date only for
+  papers that were never revised.
+- *First-version dates.* For revised papers announced from January 2024, the first-version submission date is the
+  arXiv API's `published` field (`scripts/fetch_arxiv_v1_dates.py`).
+- *Measures.* Growth over January–August, January–September, Q3, September and the trailing twelve months, dating
+  papers by announcement or by first-version submission. Also the share of papers announced in a month that were
+  submitted in an earlier month, by month (holds and spill-overs).
+
+**P1b. A clean physics base year.**
+- *Removed papers.* Snowmass 2021 white papers and inputs to the 2026 update of the European Strategy for Particle
+  Physics. They are identified by "Snowmass", "European Strategy", "ESPP" or "strategy for particle physics" in the
+  title, abstract or comments, and subtracted from the monthly archive counts by announcement month.
+- *Re-estimated contrasts.* C1 and its variants: theory without gr-qc (which includes gravitational-wave experiment),
+  hep-ph vs hep-ex, hep-th vs hep-ex, and gr-qc vs experiment.
+
+**P1c. Estimands and inference.**
+- *Bases.* Every contrast is estimated against 2022, against the pooled 2017–2019 (arXiv), and against pooled
+  2017–2019 plus 2022 (bioRxiv and medRxiv: 2019, and 2019 plus 2022).
+- *Acceleration.* The 2026/2025 ratio, using the coefficients' covariance.
+- *Slope change.* The change in the slope of the deseasonalised log ratio after December 2022 and after November 2024,
+  with a Newey–West interval and an AR(1) parametric-bootstrap p-value.
+- *Inference.* The in-space placebo p-value is the primary inference: the share of the 153 pairs of arXiv archives
+  (C1 and its variants), or of the 462 halvings of the wet-lab categories (C2), whose 2026 log ratio is at least as
+  far from zero, with one added to numerator and denominator. Also reported is the 2026 coefficient divided by the
+  standard deviation of the pre-2022 year coefficients. Driscoll–Kraay intervals miss year-level shocks: four of the
+  thirteen pre-2022 year coefficients of C1–C3 have p < 0.05 (C1 2020 and 2021, C2 2019, C3 2020).
+
+**P1d. Break tests.** sup-Wald tests with 5% trimming (the 15% trimming used before could not place a break after
+December 2024), and Wald tests at three fixed dates (December 2022, November 2024, November 2025). All p-values come
+from 999 AR(1) parametric-bootstrap draws.
+
+**P1e. Funding shock.**
+- *PubMed.* Journal articles per quarter by entry date, with and without a US affiliation: `usa[ad] OR "united
+  states"[ad]`, matching any author's affiliation.
+- *bioRxiv.* Version-1 preprints from 2022 by the corresponding author's institution (API field
+  `author_corresponding_institution`), classified as US, non-US or unknown by `scripts/classify_country.py`. The
+  classifier uses explicit countries, US states and cities, and named institutions. In a random sample of 150
+  classified records from 2022, all 150 labels were correct; this check was made by the AI assistant, not by a person.
+- *Model.* Event study of US vs non-US counts, base 2023–2024.
+
+**P1f. Genre** (maths and the six HEP/nuclear archives only).
+- *Classes.* Keywords in the comments, title or abstract assign each paper to one class, checked in this order:
+  white paper (also Snowmass, European Strategy, roadmap, community input), proceedings (comments: proceedings,
+  conference, workshop, talk, contribution to, PoS, school), thesis, and review (title or comments: review, survey,
+  lecture notes, tutorial, primer, chapter, handbook). Everything else is a research article.
+- *Excluded archives.* cond-mat, astro-ph and quant-ph are excluded until the pre-registration of the held-out test
+  on those archives is committed.
+
+**P1g. List entries.** Field departures and the archive ranking re-estimated with new submissions plus cross-lists,
+the unit of Nee, Zhong & Ni (2026).
+
+**P2 (maths) sensitivity.**
+- July–August windows, which leave out the September 2026 spike.
+- Authors already active in the field in 2019–2024 only, which removes newcomers. arXiv's endorsement change of late
+  2025 affects newcomers most.
+- List entries (cross-listed papers included) instead of primary-category papers.
+
+**P3. medRxiv flags.**
+- *COVID-19 filter.* Title only vs title or abstract.
+- *Public-dataset list.* The list is extended with the four datasets of Spick et al. that it lacked: FinnGen, CHARLS,
+  CDC WONDER and TriNetX.
+- *Re-estimation.* C3 is re-estimated under each definition.
+- *Coding sample.* A random sample of flagged preprints per rule (`scripts/sample_flags.py`). The coding sheet with
+  DOIs is in `docs/stats/validation/`.
+
+**P5. Disclosure control.** No statistic describing fewer than ten authors is released: counts, shares, intervals,
+tests and decomposition classes based on fewer than ten authors are blanked in `heavy_producers.json` and shown as
+"<10 authors".
+
 ## Analyses tried and dropped
 
 - **Share of the change contributed by heavy producers defined in the later period.** Our first version credited the
@@ -262,5 +339,6 @@ Consequences:
 - **Trend-adjusted C2 as a headline estimate.** Dropped because its 2019–2022 pre-trend mixes late adoption of
   bioRxiv by wet-lab fields with the COVID-19 surge, and extrapolating it is not credible. It is reported only as a
   sensitivity analysis.
+- **OAI `created` as the first-version date.** Our first dating used it; it is the latest version's date (P1a).
 - **Field-level trend models for medRxiv and the social sciences.** Kept but flagged: their 2019–2022 trends reflect
   adoption of new servers, so departures from them are not interpretable as changes in output.

@@ -89,7 +89,8 @@ def p2(lines, h):
               "Authors matched by normalised name strings (arXiv has no author identifiers). Namesake-robust: full first "
               "names only, the 1% most frequent surnames removed. Physics excludes papers with more than 50 authors "
               "(collaboration papers, which otherwise dominate author counts). Experimental physics has only about 300 "
-              "such papers a quarter and very few authors with full first names, so only its all-names version is shown.",
+              "such papers a quarter and very few authors with full first names, so only its all-names version is shown. "
+              "No statistic describing fewer than ten authors is shown (\"<10 authors\").",
               "", "**Levels and departures from the 2019–2022 trend** (quarterly series; OLS on a linear trend, "
               "quarter effects and 2023–2026 year dummies, Newey–West 95% CI, in percentage points):", "",
               "| Group | Names | Measure | Q3 2022 | Q3 2025 | Q3 2026 | 2026 departure from trend (pp) |",
@@ -106,7 +107,8 @@ def p2(lines, h):
                 t = (v.get("trend_departure") or {}).get(mkey)
                 dep = f"{t['2026']['pp']:+.2f} [{t['2026']['lo']:+.2f}, {t['2026']['hi']:+.2f}], p = {t['2026']['p']:.2g}" \
                     if t and "2026" in t else "n/a"
-                cell = lambda k: pct(q[k][mkey], 2) if k in q and q[k].get(mkey) is not None else "n/a"  # noqa: E731
+                cell = lambda k: pct(q[k][mkey], 2) if k in q and q[k].get(mkey) is not None else (  # noqa: E731
+                    "<10 authors" if k in q and q[k].get("suppressed_lt10_authors") else "n/a")
                 lines.append(f"| {glab} | {vlab} | {mlab} | {cell('2022-Q3')} | {cell('2025-Q3')} | {cell('2026-Q3')} "
                              f"| {dep} |")
     lines += ["", "**Who produced the growth?** Change in fractional output between the third quarters of consecutive "
@@ -125,12 +127,12 @@ def p2(lines, h):
             for pair, d in h[g][vname].get("decomposition", {}).items():
                 if "Q3" not in pair:
                     continue
-                gr = lambda x: f"{100 * x:+.1f}%" if x is not None else "n/a"  # noqa: E731
-                sh = " / ".join(f"{100 * d[k]['share_of_change']:.0f}%" if d[k]["share_of_change"] is not None
+                gr = lambda x: f"{100 * x:+.1f}%" if x is not None else "<10 authors"  # noqa: E731
+                sh = " / ".join(f"{100 * d[k]['share_of_change']:.0f}%" if d[k].get("share_of_change") is not None
                                 and abs(d["growth"] or 0) >= 0.03 else "–" for k in ("top1pct", "next9pct", "bottom90pct"))
                 lines.append(f"| {glab} | {vlab} | {pair.replace('-Q3', '').replace('_to_', '→')} | {gr(d['growth'])} | "
-                             f"{gr(d['top1pct']['growth'])} | {gr(d['next9pct']['growth'])} | "
-                             f"{gr(d['bottom90pct']['growth'])} | {sh} |")
+                             f"{gr(d['top1pct'].get('growth'))} | {gr(d['next9pct'].get('growth'))} | "
+                             f"{gr(d['bottom90pct'].get('growth'))} | {sh} |")
     lines += ["", "Shares of the change are omitted (–) when total growth is below 3%, where they are unstable.", "",
               "**January–August windows** (comparable with Nee, Zhong & Ni 2026):", ""]
     for g, glab in groups:
@@ -142,10 +144,11 @@ def p2(lines, h):
             ja = h[g][vname]["jan_aug"]
             if "2025-JanAug" in ja and "2026-JanAug" in ja:
                 a, b = ja["2025-JanAug"], ja["2026-JanAug"]
+                f = lambda x, d=1: pct(x, d) if x is not None else "<10 authors"  # noqa: E731
                 lines.append(f"- {glab}, {vlab}: papers {a['papers']:,} → {b['papers']:,}; with a heavy producer "
-                             f"{pct(a['share_papers_with_heavy_author'])} → {pct(b['share_papers_with_heavy_author'])}; "
-                             f"authors ≥5 {pct(a['share_authors_ge5'], 2)} → {pct(b['share_authors_ge5'], 2)}; "
-                             f"top-1% share {pct(a['top1pct_share_of_output'])} → {pct(b['top1pct_share_of_output'])}")
+                             f"{f(a['share_papers_with_heavy_author'])} → {f(b['share_papers_with_heavy_author'])}; "
+                             f"authors ≥5 {f(a['share_authors_ge5'], 2)} → {f(b['share_authors_ge5'], 2)}; "
+                             f"top-1% share {f(a['top1pct_share_of_output'])} → {f(b['top1pct_share_of_output'])}")
     lines.append("")
 
 
@@ -204,6 +207,126 @@ def p3(lines, m):
     lines.append("")
 
 
+def ci3(d, digits=2):
+    return f"{d['rr']:.{digits}f} [{d['lo']:.{digits}f}, {d['hi']:.{digits}f}]"
+
+
+def r1(lines, r):
+    lines += ["## Round-1 review analyses (confounds of the field-level finding)", "",
+              "Generated from `data/processed/stats/round1_tests.json` (`scripts/stats_round1.py`). Item labels follow the "
+              "consolidated review request.", ""]
+    e = r.get("estimands")
+    if e:
+        lines += ["### P1c. Estimands and inference for the within-field contrasts", "",
+                  "Rate ratio of group A to group B in 2026 relative to the stated base (Poisson event study, Driscoll–Kraay "
+                  "95% CI); the 2026/2025 ratio (acceleration); the placebo p-value (share of the 153 pairs of arXiv "
+                  "archives, or of the 462 halvings of the wet-lab categories, whose 2026 ratio is at least as far from 1); "
+                  "and the 2026 coefficient against the spread of the pre-2022 year coefficients (z).", "",
+                  "| Contrast | Base | 2026 | 2026 / 2025 | Placebo p | Year-shock z (p) |", "|---|---|---|---|---|---|"]
+        for name, v in e.items():
+            if not isinstance(v, dict) or "by_base" not in v:
+                continue
+            for b, bb in v["by_base"].items():
+                ev, z = bb["event_study"], bb["year_shock_calibration_2026"]
+                lines.append(f"| {name} | {b} | {ci3(ev['2026'])} | {ci3(ev['2026_vs_2025'])} | "
+                             f"{v['placebo_p_2026']:.2f} | " if "placebo_p_2026" in v and b == "2022" else
+                             f"| {name} | {b} | {ci3(ev['2026'])} | {ci3(ev['2026_vs_2025'])} | – | ")
+                lines[-1] += (f"{z['z']:.2f} ({z['p_normal']:.2f}) |" if z else "– |")
+        lines += ["", "Change in the slope of the deseasonalised log ratio after a known date (per year; Newey–West CI; "
+                  "AR(1) bootstrap p):", ""]
+        for name, v in e.items():
+            if isinstance(v, dict) and "slope_change_after_2022_12" in v:
+                a, b = v["slope_change_after_2022_12"], v["slope_change_after_2024_11"]
+                lines.append(f"- {name}: after Dec 2022 {100 * a['slope_change_per_year']:+.1f}% "
+                             f"[{100 * a['lo']:+.1f}, {100 * a['hi']:+.1f}], p = {a['p_bootstrap']:.3f}; after Nov 2024 "
+                             f"{100 * b['slope_change_per_year']:+.1f}% [{100 * b['lo']:+.1f}, {100 * b['hi']:+.1f}], "
+                             f"p = {b['p_bootstrap']:.3f} (pre-2023 slope {100 * a['pre_slope_per_year']:+.1f}% a year)")
+        lines.append("")
+    b = r.get("breaks")
+    if b:
+        lines += ["### P1d. Break tests that can see 2025–2026", "",
+                  "Deseasonalised log series (fields) or log ratios (contrasts). Unknown date: sup-Wald with 5% trimming "
+                  "(candidates up to the stated month). Known dates: Wald tests at December 2022, November 2024 and "
+                  "November 2025. AR(1) parametric-bootstrap p-values (999 draws).", "",
+                  "| Series | Slope break (unknown date) | Level break (unknown date) | Slope: Dec 2022 / Nov 2024 / Nov 2025 (p) |",
+                  "|---|---|---|---|"]
+        for name, v in b.items():
+            su, lu = v["slope_unknown_trim5"], v["level_unknown_trim5"]
+            kn = " / ".join(f"{x['p_bootstrap']:.3f}" for x in v["slope_known"].values())
+            lines.append(f"| {name} | {su['break_month']} (p = {su['p_bootstrap']:.3f}; last candidate "
+                         f"{su['last_candidate']}) | {lu['break_month']} (p = {lu['p_bootstrap']:.3f}) | {kn} |")
+        lines.append("")
+    c = r.get("crosslists")
+    if c:
+        lines += ["### P1g. New submissions vs list entries (new + cross-lists)", "",
+                  "| Field | 2026 departure from 2015–2022 trend, new | New + cross-lists |", "|---|---|---|"]
+        for f, v in c["fields"].items():
+            lines.append(f"| {f} | {ci3(v['new']['2026'])} | {ci3(v['new_plus_cross']['2026'])} |")
+        lines += ["", f"Mathematics' rank among arXiv archives (placebo p): new {c['archives']['new']['math_rank_p']:.2f}; "
+                  f"new + cross-lists {c['archives']['new_plus_cross']['math_rank_p']:.2f}.", ""]
+    f = r.get("funding")
+    if f:
+        pm = f["pubmed_us_vs_non_us"]
+        lines += ["### P1e. Funding shock: US vs non-US", "",
+                  "PubMed journal articles with at least one US affiliation vs the rest (quarterly; rate ratio relative to "
+                  "the stated base):", "",
+                  f"- base 2023–2024: 2025 {ci3(pm['base_2023_2024']['2025'])}; 2026 {ci3(pm['base_2023_2024']['2026'])}; "
+                  f"2026/2025 {ci3(pm['base_2023_2024']['2026_vs_2025'])}; pre-period: " +
+                  "; ".join(f"{y} {pm['base_2023_2024'][y]['rr']:.3f}" for y in ("2019", "2020", "2021", "2022")),
+                  f"- US share of journal articles: " + ", ".join(f"{q} {100 * v:.1f}%" for q, v in pm["us_share"].items()
+                                                                if q.endswith("Q3")), ""]
+        for k, v in f.items():
+            if k.startswith("biorxiv_"):
+                lines.append(f"- {k} (base 2023–2024): 2025 {ci3(v['base_2023_2024']['2025'])}; 2026 "
+                             f"{ci3(v['base_2023_2024']['2026'])}; US share by year: " +
+                             ", ".join(f"{y} {100 * x:.1f}%" for y, x in v["us_share_by_year"].items()))
+        lines.append("")
+    o = r.get("oai")
+    if o:
+        lines += ["### P1b. Snowmass 2021 and European Strategy inputs; C1 variants", "",
+                  "| Archive | Snowmass share, Jan–Sep 2022 | European Strategy share, Jan–Sep 2025 |", "|---|---|---|"]
+        for a, v in o["snowmass_espp"].items():
+            lines.append(f"| {a} | {pct(v['snowmass_share_2022'])} ({v['snowmass_jan_sep_2022']}) | "
+                         f"{pct(v['espp_share_2025'])} ({v['espp_jan_sep_2025']}) |")
+        lines += ["", "Contrasts after removing those papers (2026 rate ratio):", ""]
+        for name, v in o["clean_physics"].items():
+            if "base_2022" in v:
+                lines.append(f"- {name}: base 2022 {ci3(v['base_2022']['2026'])}; base 2017–2019 "
+                             f"{ci3(v['base_2017_2019']['2026'])}")
+        hx = o["clean_physics"]["hep-ex_field_model"]
+        lines += [f"- hep-ex, 2026 departure from trend: raw {ci3(hx['raw']['2026'])}; without Snowmass and European "
+                  f"Strategy papers {ci3(hx['without_snowmass_espp']['2026'])}", "",
+                  "### P1f. Genres (maths and the six HEP/nuclear archives only)", "",
+                  "Genre from keywords in the comments, title or abstract (white papers; proceedings; theses; reviews, "
+                  "lectures and chapters); everything else is a research article.", ""]
+        for g, v in o["genre"].items():
+            gc = v["genre_counts"]
+            share = "; ".join(f"{y[:4]}: " + ", ".join(f"{k} {100 * n / sum(c.values()):.1f}%" for k, n in sorted(c.items())
+                                                       if k != "research") for y, c in gc.items() if y[:4] in ("2022", "2025", "2026"))
+            fa, fr = v["field_model_2019_2026"]["all"]["2026"], v["field_model_2019_2026"]["research_only"]["2026"]
+            ga, gr_ = v["all"]["growth"], v["research_only"]["growth"]
+            lines.append(f"- {g}: genre shares (Jan–Sep) {share}. Growth Jan–Sep 2025 → 2026: all {100 * ga['jan_sep']:+.1f}%, "
+                         f"research only {100 * gr_['jan_sep']:+.1f}%. 2026 departure from the 2019–2022 trend: all "
+                         f"{ci3(fa)}, research only {ci3(fr)}")
+        lines.append("")
+    d = r.get("dating")
+    if d:
+        lines += ["### P1a. Announcement vs first-version submission", "",
+                  f"First-version dates known for {pct(d['v1_known_share_2024_on'])} of papers announced from January 2024 "
+                  "(OAI `created` is the latest version's date; revised papers' v1 dates come from the arXiv API).", "",
+                  "| Group | Dating | Jan–Aug | Jan–Sep | Q3 | September | Trailing 12 months |", "|---|---|---|---|---|---|---|"]
+        for g, v in d["groups"].items():
+            for k, lab in (("by_identifier", "announcement"), ("by_v1_submission", "v1 submission")):
+                gg = v[k]["growth"]
+                lines.append(f"| {g} | {lab} | " + " | ".join(f"{100 * gg[x]:+.1f}%" for x in
+                                                                ("jan_aug", "jan_sep", "q3", "sep", "trailing12")) + " |")
+        lines += ["", "Share of papers announced in a month that were submitted in an earlier month:", ""]
+        for g, v in d["groups"].items():
+            sh = v["share_submitted_in_an_earlier_month"]
+            lines.append(f"- {g}: " + ", ".join(f"{m} {100 * x:.0f}%" for m, x in sh.items() if m >= "2025-07"))
+        lines.append("")
+
+
 def main(repo):
     d = os.path.join(repo, "data/processed/stats")
     lines = ["# Results (generated by scripts/report_stats.py)", "",
@@ -214,6 +337,8 @@ def main(repo):
         p2(lines, json.load(open(os.path.join(d, "heavy_producers.json"))))
     if os.path.exists(os.path.join(d, "marker_tests.json")):
         p3(lines, json.load(open(os.path.join(d, "marker_tests.json"))))
+    if os.path.exists(os.path.join(d, "round1_tests.json")):
+        r1(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
     os.makedirs(os.path.join(repo, "docs/stats"), exist_ok=True)
     open(os.path.join(repo, "docs/stats/results.md"), "w").write("\n".join(lines) + "\n")
     print("written docs/stats/results.md", len(lines), "lines")

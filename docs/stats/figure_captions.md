@@ -1,7 +1,10 @@
 # Figure captions (PLOS ONE format)
 
 Captions go in the manuscript, directly after the paragraph that first cites each figure. The figure files are
-`docs/figures/plos/Fig1.tif` to `Fig4.tif` (PDF and SVG copies alongside).
+`docs/figures/plos/Fig1.tif` to `Fig4.tif` (PDF and SVG copies alongside). Text is 8–11 pt in Liberation Sans, which
+has the same metrics as Arial; `scripts/plot_plos.py` uses Arial itself when it is installed, so re-running it on a
+machine with Arial gives Arial text without any layout change. Each caption ends with the AI-use disclosure the
+journal's policy asks for.
 
 **Fig 1. Preprints by field, indexed to 2022.**
 Quarterly new preprints by field, each divided by its mean quarterly count in 2022 (2022 = 100), January 2020 to
@@ -18,6 +21,8 @@ Dashed vertical lines mark, from left to right, the release of ChatGPT (30 Novem
 articles in computer science (31 October 2025), the release of Claude Opus 5 (24 July 2026) and arXiv's submission cap
 (1 October 2026). They mark dates for reference; they are not estimated break points or causes.
 
+The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.
+
 **Fig 2. Within-field contrasts.**
 (A–C) Quarterly new preprints, 2022 = 100, for groups within a field that differ in how much of the work is
 experimental.
@@ -32,6 +37,8 @@ experimental.
 public dataset / other), from a Poisson pseudo-maximum-likelihood model with month fixed effects and group-specific
 calendar-month effects. Bars are 95% Driscoll–Kraay confidence intervals; logarithmic scale. 2026*: January–September.
 Dashed vertical lines in A–C as in Fig 1.
+
+The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.
 
 **Fig 3. Concentration of output among authors in mathematics and theoretical physics.**
 (A) Share of fractional output (each paper divided equally among its authors) produced by the top 1% of active authors
@@ -50,6 +57,8 @@ the classes diverge by chance.
 Physics theory is hep-th, hep-ph, gr-qc and nucl-th (primary category), papers with at most 50 authors. Authors are
 matched by name strings, because arXiv has no author identifiers.
 
+The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.
+
 **Fig 4. AI-associated style words by group.**
 Core marker words per 100 abstracts, relative to each group's 2019–2022 mean. The core words are the 261 "style" words
 of Kobak et al. (2025) that appeared in fewer than 0.5% of bioRxiv and medRxiv abstracts in 2019–2022.
@@ -62,3 +71,5 @@ of Kobak et al. (2025) that appeared in fewer than 0.5% of bioRxiv and medRxiv a
 The word list was built from 2024 text. Its fall after 2024 reflects, at least in part, changes in vocabulary: newer
 models and authors avoiding words now read as signs of LLM text. Values after 2024 are therefore lower bounds on
 LLM-assisted writing. The markers date changes in style; they do not identify causes.
+
+The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.

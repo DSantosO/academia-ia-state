@@ -47,7 +47,9 @@ def norm(s):
     return re.sub(r"[^a-z ]", " ", s).split()
 
 
-def load(files, group_of):
+def load(files, group_of, on="primary"):
+    """group_of is applied to the primary category (on="primary") or to the list of all categories (on="any", which
+    counts cross-listed papers too: arXiv list entries)."""
     papers = {}
     for fn in files:
         with gzip.open(fn, "rt", encoding="utf-8") as f:
@@ -56,7 +58,7 @@ def load(files, group_of):
                 m = re.fullmatch(r"(\d{2})(\d{2})\.\d{4,5}", r.get("id") or "")
                 if not m or not r.get("categories") or m.group(1) + m.group(2) < "1901":
                     continue
-                g = group_of(r["categories"][0])
+                g = group_of(r["categories"][0] if on == "primary" else r["categories"])
                 if not g or r["id"] in papers:
                     continue
                 month = f"20{m.group(1)}-{m.group(2)}"
@@ -99,6 +101,9 @@ def per_quarter(papers, key, keep=lambda a: True, threshold=5):
             "share_authors_ge10": sum(v >= 10 for v in cnt.values()) / active if active else None,
             "share_authors_ge15": sum(v >= 15 for v in cnt.values()) / active if active else None,
             "authors_ge5": sum(v >= 5 for v in cnt.values()),
+            "authors_ge10": sum(v >= 10 for v in cnt.values()),
+            "authors_ge15": sum(v >= 15 for v in cnt.values()),
+            "top1pct_authors": max(1, active // 100) if active else 0,
             "_cnt": cnt, "_frac": frac, "_names": names,
         }
     return out
@@ -128,6 +133,8 @@ def contribution(stats, a, b, threshold=5):
     total_change = sum(fb.values()) - sum(fa.values())
     heavy = {n for n, v in cb.items() if v >= threshold}
     top = set(sorted(fb, key=fb.get, reverse=True)[: max(1, len(fb) // 100)])
+    if min(len(heavy), len(top)) < MIN_CELL:
+        return {"suppressed_lt10_authors": True}
     ch = lambda s: sum(fb.get(n, 0) for n in s) - sum(fa.get(n, 0) for n in s)  # noqa: E731
     return {"fractional_output_a": sum(fa.values()), "fractional_output_b": sum(fb.values()),
             "change": total_change,
@@ -165,7 +172,11 @@ def decomposition(stats, a, b):
     for k, w in member.items():
         ws = {x: w(x) for x in comb}
         oa, ob = sum(ws[x] * v for x, v in fa.items()), sum(ws[x] * v for x, v in fb.items())
-        out[k] = {"authors": sum(ws.values()), "output_a": oa, "output_b": ob, "growth": ob / oa - 1 if oa else None,
+        n_auth = sum(ws.values())
+        if n_auth < MIN_CELL:
+            out[k] = {"authors": None, "suppressed_lt10_authors": True}
+            continue
+        out[k] = {"authors": n_auth, "output_a": oa, "output_b": ob, "growth": ob / oa - 1 if oa else None,
                   "share_of_combined_output": (oa + ob) / (total_a + total_b),
                   "share_of_change": (ob - oa) / (total_b - total_a) if total_b != total_a else None}
     return out
@@ -189,6 +200,30 @@ def trend_departure(stats, measure, last_pre="2022-Q4"):
     return {"pre_trend_pp_per_year": float(m.params[1]),
             **{str(y_): {"pp": float(m.params[5 + i]), "lo": float(ci[5 + i, 0]), "hi": float(ci[5 + i, 1]),
                          "p": float(m.pvalues[5 + i])} for i, y_ in enumerate(years)}}
+
+
+MIN_CELL = 10  # disclosure control: no statistic describing fewer than ten authors is released
+
+
+def suppress(stats):
+    """Blank every statistic that describes fewer than MIN_CELL authors (counts, shares, intervals)."""
+    for v in stats.values():
+        sup = []
+        for t in ("ge5", "ge10", "ge15"):
+            if v.get(f"authors_{t}") is not None and v[f"authors_{t}"] < MIN_CELL:
+                for k in (f"authors_{t}", f"share_authors_{t}", f"share_authors_{t}_ci"):
+                    if k in v:
+                        v[k] = None
+                sup.append(f"authors_{t}")
+        if v.get("authors_ge5") is None:  # papers with a heavy producer describe the same few authors
+            v["share_papers_with_heavy_author"] = None
+            v["share_papers_with_heavy_author_ci"] = None
+        if v.get("top1pct_authors", MIN_CELL) < MIN_CELL:
+            v["top1pct_share_of_output"] = None
+            sup.append("top1pct")
+        if sup:
+            v["suppressed_lt10_authors"] = sup
+    return stats
 
 
 def clean(stats):
@@ -217,15 +252,17 @@ def analyse(papers, label):
         for a, b, st in (("2025-Q3", "2026-Q3", q), ("2025-JanAug", "2026-JanAug", janaug)):
             if a in st and b in st and st[a]["active_authors"] and st[b]["active_authors"]:
                 A, B = st[a], st[b]
+                ok5 = min(A["authors_ge5"], B["authors_ge5"]) >= MIN_CELL
+                ok10 = min(A["authors_ge10"], B["authors_ge10"]) >= MIN_CELL
                 tests[f"{a}_vs_{b}"] = {
                     "per_paper": two_prop(round(A["share_papers_with_heavy_author"] * A["papers"]), A["papers"],
-                                          round(B["share_papers_with_heavy_author"] * B["papers"]), B["papers"]),
+                                          round(B["share_papers_with_heavy_author"] * B["papers"]), B["papers"])
+                    if ok5 else None,
                     "authors_ge5": two_prop(A["authors_ge5"], A["active_authors"], B["authors_ge5"],
-                                            B["active_authors"]),
-                    "authors_ge10": two_prop(round(A["share_authors_ge10"] * A["active_authors"]), A["active_authors"],
-                                             round(B["share_authors_ge10"] * B["active_authors"]),
-                                             B["active_authors"])}
-        res[vname] = {"quarterly": clean(q), "jan_aug": clean(janaug), "tests": tests}
+                                            B["active_authors"]) if ok5 else None,
+                    "authors_ge10": two_prop(A["authors_ge10"], A["active_authors"], B["authors_ge10"],
+                                             B["active_authors"]) if ok10 else None}
+        res[vname] = {"quarterly": clean(suppress(q)), "jan_aug": clean(suppress(janaug)), "tests": tests}
         if "2025-Q3" in q and "2026-Q3" in q:
             res[vname]["contribution_Q3_2025_to_Q3_2026"] = contribution(q, "2025-Q3", "2026-Q3")
         # symmetric decomposition for every pair of consecutive years (Q3 and January-August); pre-2023 pairs are
@@ -239,6 +276,28 @@ def analyse(papers, label):
         res[vname]["trend_departure"] = {m: trend_departure(q, m) for m in (
             "share_papers_with_heavy_author", "share_authors_ge5", "top1pct_share_of_output",
             "top10pct_share_of_output")}
+        # sensitivity, 2025 -> 2026 only: (i) July-August, leaving out the September 2026 spike; (ii) authors already
+        # active in the group in 2019-2024, which removes newcomers, whom arXiv's endorsement change of late 2025
+        # affects most
+        sens = {}
+        julaug = per_quarter([p for p in papers if p["month"][5:] in ("07", "08")], lambda p: p["month"][:4] + "-JulAug",
+                             keep)
+        if "2025-JulAug" in julaug and "2026-JulAug" in julaug:
+            sens["julaug_decomposition"] = decomposition(julaug, "2025-JulAug", "2026-JulAug")
+        est = {a[0] for p in papers if p["month"] <= "2024-12" for a in p["authors"] if keep(a)}
+        keep_est = lambda a, keep=keep: keep(a) and a[0] in est  # noqa: E731
+        recent = [p for p in papers if p["month"] >= "2025-01"]
+        for wname, sel, key in (("Q3", lambda p: p["month"][5:] in ("07", "08", "09"), lambda p: p["quarter"]),
+                                ("JanAug", lambda p: p["month"][5:] <= "08", lambda p: p["month"][:4] + "-JanAug")):
+            st = per_quarter([p for p in recent if sel(p)], key, keep_est)
+            a, b = (f"2025-{wname}", f"2026-{wname}") if wname == "JanAug" else ("2025-Q3", "2026-Q3")
+            if a in st and b in st:
+                sens[f"established_authors_{wname}"] = {
+                    "decomposition": decomposition(st, a, b),
+                    "top1pct_share_of_output": {k: st[k]["top1pct_share_of_output"] for k in (a, b)
+                                                if st[k]["top1pct_authors"] >= MIN_CELL},
+                    "fractional_output": {k: sum(st[k]["_frac"].values()) for k in (a, b)}}
+        res[vname]["sensitivity_2025_2026"] = sens
     print(label, "papers:", len(papers), flush=True)
     return res
 
@@ -250,6 +309,10 @@ def main():
     if "maths" in specs:
         ps = load(specs["maths"].split(","), lambda c: "maths" if c.startswith("math.") else None)
         results["maths"] = analyse(ps, "maths")
+        # list entries (cross-listed papers included), the unit of Nee, Zhong & Ni (2026)
+        ps = load(specs["maths"].split(","), lambda cs: "maths" if any(c.startswith("math.") for c in cs) else None,
+                  on="any")
+        results["maths_list_entries"] = analyse(ps, "maths list entries")
     if "physics" in specs:
         files = specs["physics"].split(",")
         grp = lambda c: "theory" if c in THEORY else "experiment" if c in EXPERIMENT else None  # noqa: E731
