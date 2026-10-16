@@ -1,6 +1,8 @@
-# Pre-registration Amendment 1 (DRAFT, needs the author's approval): better measures for H1
+# Pre-registration Amendment 1 (ACTIVE): better measures for H1
 
-*Drafted 16 Oct 2026. The author wrote: "H1 requires a bit more work and analysis. I am not sure if it is right but we should find better measures." This amendment adds tests that measure experimental dependence at the level of individual papers, instead of assuming it from archive or category labels. It becomes active only when the author approves it and a commit removes "DRAFT" from the title. Until then, no paper-level classification of bioRxiv, medRxiv or arXiv subcategories may be analysed by growth.*
+*Drafted 16 Oct 2026. The author wrote: "H1 requires a bit more work and analysis. I am not sure if it is right but we should find better measures." This amendment adds tests that measure experimental dependence at the level of individual papers, instead of assuming it from archive or category labels. The author approved it in chat on 16 Oct 2026 ("sí, apruebo la enmienda"), and this commit activates it. At activation, no paper-level classification of bioRxiv, medRxiv or arXiv subcategories has been analysed by growth.*
+
+*Note on validation: the human validation must be done by people (the author, plus any colleagues), not by an AI. An AI validating the AI classifier would be circular and would not meet PLOS's requirement that the authors validate AI outputs.*
 
 ## What changes, and why
 
