@@ -9,7 +9,8 @@
 - the internal review (`paper/reviews/referee_report.md`; issue numbers below follow it);
 - the completed citation audit (`paper/reviews/citation_audit.md`; R, O and CN numbers follow it);
 - the author's decisions of 16 October 2026 (`paper/brief.md`, and messages relayed by the coordinator);
-- the author's companion analysis (`paper/figures/README_companion_analysis.md`, commit 41f795d).
+- the author's companion analysis (`paper/figures/README_companion_analysis.md`): commit 41f795d for Figures 3 and 4, and commit 6021b3a for the within-field contrasts (Figure 5);
+- research notes 7 (recommendations) and 8 (field differences), in `research_notes/AI academia essay evidence gaps/`.
 
 **Who wrote this.** An AI agent (Claude, Anthropic) wrote this response and the revision. It is the same model family that drafted the essay and wrote the review, and the author has not yet read the revision. Each point below gives three things: what was done (accepted, partly accepted or declined), where, and one line of reasoning. Paragraph IDs (¶) are those of draft 2 of the master, which are listed in its header comment. EMBO locations are given by section heading.
 
@@ -21,10 +22,10 @@
 
 | Output | Limit | Now | Notes |
 |---|---|---|---|
-| Master, main text with Boxes 1–2 | 7,000 words | 6,977 | Counts the empty Section 6 at its reserve of 700 words. The empty Section 4d has no text and no reserve. Headroom is 23 words, so the [AUTHOR] passages need offsetting cuts (the cheapest are listed in the file's header). |
-| Master, references | none | 149 | Draft 1 had 173. |
-| EMBO version, main text with both boxes | 3,500 words | 2,969 | Counts Recommendations at its reserve of 350 words. Headroom is 531 words. |
-| EMBO version, references | 15 | 15 | Two preprints. |
+| Master, main text with Boxes 1–2 | 7,000 words | 6,982 | Counts the empty Section 6 at its reserve of 700 words. The empty Section 4d has no text and no reserve. Headroom is 18 words, so the [AUTHOR] passages need offsetting cuts (the cheapest are listed in the file's header). |
+| Master, references | none | 153 | Draft 1 had 173. |
+| EMBO version, main text with both boxes | 3,500 words | 3,154 | Counts Recommendations at its reserve of 350 words. Headroom is 346 words. |
+| EMBO version, references | 15 | 15 | Two preprints. Hosseini et al. replaced Asai et al. on 16 October. |
 | EMBO version, standfirst | about 60 words | 63 | |
 | Correspondence, text | under 200 words | 186 | The title adds 10 words. |
 | Correspondence, references | 2 | 2 | |
@@ -47,22 +48,25 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
    - Box 1 gives the real process record: times, cost and the reading-depth tally.
    - It records who did what, and justifies the proprietary tool in a slot for the author.
    - The CRediT statement is corrected, and "independently" is deleted.
-4. **The author's companion data are used** (Figures 3 and 4 in the master; Figures 1 and 2 in the EMBO version).
+4. **The author's companion data are used** (Figures 3, 4 and 5 in the master; Figures 1 and 2 in the EMBO version).
    - In arXiv mathematics, the share of papers with an author posting five or more a quarter rose from 5.3% to 19.3%.
    - The rise comes from hundreds of established authors, so the reply to the review's "tail" objection no longer rests on argument alone.
+   - **Field differences** (research note 8; Figure 5): biology has grown as much as physics since 2022 and parts from it only in 2026. Output accelerates where the rest of the work is also cheap (theory, computation, existing data). So experimental biology is less affected so far, possibly with a later onset; it is not immune.
 5. **The EMBO version is a rewrite on "rationing is not reform".** It opens with the NIH cap and leads with the life sciences, the written layer and the contributions.
-6. **Six author decisions are applied** (Section 3 below):
+6. **The author's decisions are applied** (Section 3 below):
    - a misuse subsection;
    - an extended engagement with Blekhman;
    - the mathematics panel as the key figure;
    - Kusumegi et al.'s output gain dropped;
    - an empty Section 4d for a critique of DORA and CoARA;
-   - a Section 6, Recommendations, still to be written, with words reserved.
+   - a Section 6, Recommendations, still to be written, with words reserved, whose seeds point to research note 7;
+   - the field differences, worded at the strength of the evidence;
+   - the closest work added (Hosseini et al.; Lovén; Ma), and the partiality of the process record stated (Wu et al.).
 
    The author's field is now also stated.
 7. **The texture is changed.**
    - Citations are down from about 250 to about 160 in the master's main text: about one every 39 words, against one every 27.
-   - Direct quotations in the main text and boxes are down from about 70 to 27.
+   - Direct quotations in the main text and boxes are down from about 70 to 25.
    - The machine rhythm is broken up (R2-7).
 
 ---
@@ -90,7 +94,8 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
   - Suchak et al.: moved out of the fraud paragraph into the grey zone of the misuse subsection (¶2.9; EMBO "Misuse is the visible tip"), as formulaic output that "needs no fraud";
   - NIH as the lead (EMBO) and Kobak et al. for prevalence (both versions);
   - bioRxiv and medRxiv volumes from the companion analysis (¶2.8, Figure 3; EMBO Figure 1): biology +50% over 2022 and +10% year on year; medicine, without COVID-19 papers, +139%;
-  - the experimental bottleneck, in Blekhman's terms (¶2.8; EMBO);
+  - the experimental biologist's objection, now answered with data (¶2.8b; EMBO "The cost was the signal", paragraph 4). Biologists write with AI as much as physicists, but bioRxiv shows no 2026 break, and within fields output accelerates where the rest of the work is cheap (Figure 5). Where no new experiment is needed, biomedicine surges: medRxiv preprints naming a public dataset grew 2.3-fold, against 1.6-fold overall;
+  - the experimental bottleneck, in Blekhman's terms (¶2.8b; EMBO);
   - one sentence on tiered conference caps (EMBO opening).
 - **Why:** readers recognise an argument through their own field. Experimentalists would reject "papers almost free to produce".
 - **Partly open:**
@@ -104,14 +109,14 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
   - the cost: about US$153 by 01:30, subagents included;
   - the reading-depth tally;
   - who did what.
-- **Box 2 (EMBO)** gives the same figures in 246 words.
+- **Box 2 (EMBO)** gives the same figures in 248 words, and says that the record is partial.
 - **AI-use statement:** it says what the tool did, and leaves the validation sentence to the author.
 - **CRediT:** "Writing – original draft" is no longer claimed.
 - **Why:** referees will check the disclosure first.
 - **Open:** EMBO Press's current AI policy was not checked here (author action, Section 8).
 
 **E5. A 15-reference essay must be carried by argument.** *Accepted.*
-- **EMBO references:** the list follows the review's Synthesis §4 with one swap. Asai et al. (checkable synthesis, the one exit that does not lead to rationing) replaces Hanneke et al., whose distinction between evaluation and production stays in the master (¶0.3).
+- **EMBO references:** the list follows the review's Synthesis §4 with one swap. Hosseini et al. (2026), the closest prior work on invisible effort (research note 7), replaces Hanneke et al., whose distinction between evaluation and production stays in the master (¶0.3). Asai et al., in the first EMBO draft's list, is now cited through the extended version (ref. 15).
 - **Trackers:** cut. ¶5.5 is gone; ¶5.4 no longer gives the compute ratio or the human-preference ranking; the EMBO version has none.
 - **Conference caps:**
   - In the master, Table 1's rows were rebuilt from each venue's own call (audit R80–R83).
@@ -149,21 +154,23 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
   - "I reached it independently" is deleted.
 - **Additions:**
   - Adeyeye (¶1.3; SSRN abstract only, marked [RECHECK]);
-  - Nee et al. (¶2.8);
+  - Nee et al. (¶2.8; verified by research note 8);
   - Messeri & Crockett 2026 and Motoki 2026 (¶4b.1; titles only, marked [RECHECK]);
-  - Hutchinson (Box 1).
+  - Hutchinson (Box 1);
+  - Hosseini et al. 2026 (¶0.3; EMBO opening, paragraph 2), the closest prior work on invisible effort;
+  - Lovén 2026 and Ma 2026 (Box 1), on verification as the new scarce resource.
 - **Dropped:** Hakobyan was added and then cut for length.
 - **Why:** a metascience referee checks each claim of novelty against these works first.
 - **Open:** Manabu's body is still unread, so only claims in his abstract are used (¶0.2; EMBO). The author should read the PDF through EMBL or UPF.
 
 **R1-2. Two mechanisms merged.** *Accepted.*
 - **Where:**
-  - ¶2.7 (information) and ¶2.8 (congestion);
+  - ¶2.7 (information) and ¶2.8–¶2.8b (congestion);
   - ¶1.3, on differential cost;
   - the standfirst ("the damage does not depend on misuse");
   - EMBO, "The cost was the signal".
 - **"Invisible", not "gone":** ¶2.7 says the signals have not disappeared, only the differences in cost on which they relied.
-- **Congestion:** now partly evidenced by the companion data (¶2.8): "At arXiv, congestion is no longer hypothetical; elsewhere it remains a conditional claim."
+- **Congestion:** now partly evidenced by the companion data (¶2.8–¶2.8b): "At arXiv, congestion is no longer hypothetical; in experimental biology it has yet to show."
 - **Why:** this is the hinge of the thesis. The information claim holds by construction; the congestion claim needed evidence.
 
 **R1-3. The rationing category is loose and its scope unmeasured.** *Accepted, except (c), which needs sources.*
@@ -172,6 +179,7 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
 - **(d)** A cap restores a little information: which six applications an investigator thinks best (¶4c.2b; EMBO).
 - **(e)** Automated evaluation is the fourth answer (¶4c.3b; EMBO "Rationing is not reform"; Figure 1c).
 - **(f)** Those who ration are mostly not those who count (¶4c.2b; EMBO).
+- **Pricing (¶4c.3):** "refundable deposits" are restored. The equity point is now sourced to Hanneke et al.'s sentence on waivers. Both are confirmed in their full text (research note 7). Fourie is cited for his diagnosis only, not as a proposer of fees.
 - **(c) Rationing predates AI.** This is stated in ¶4c.2b and the caption of Table 1, but marked [CITATION NEEDED]. The IJCAI, CVPR, ERC and NSF precedents are not in the research notes, and the rules forbid supplying them from memory.
   - Table 1's title now reads 2025–2026, and its caption notes arXiv's limit on active submissions, in place since 2024.
   - Whether NIH's simplified review framework changed what NIH counts is marked [RECHECK] in ¶4c.2b; it is not in the notes either.
@@ -182,7 +190,7 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
 - **(b)** §4 is retitled "Is AI narrowing science, and can governance redirect it?", which covers Section 4c as well. The roadmap is gone.
 - **(c)** Kusumegi et al.: superseded by the author's decision (Section 3, item 4).
 - **(d)** ¶2.1 now says that detectors "measure style rather than purpose", and that much use is permitted.
-- **(e)** The distribution shift: the argument is replaced by the companion analysis of authors (Figure 4) and Nee et al. arXiv's cap was announced and applied on the same day, so September 2026 has no rush ahead of the cap.
+- **(e)** The distribution shift: the argument is replaced by the companion analysis of authors (Figure 4) and Nee et al.; the within-field contrasts (Figure 5) add where the growth comes from. arXiv's cap was announced and applied on the same day, so September 2026 has no rush ahead of the cap.
 - **(f)** Zheng et al.'s result is turned into a prediction in Box 2: the fields that movers enter should be more concentrated.
 - **(g)** Galdin & Silbert are dropped for length; Cowgill et al. lead (¶2.2).
 - **Why:** the essay promises to say how strong the evidence is, so it must do so evenly.
@@ -249,7 +257,7 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
 
 **R2-4. §3 is disconnected from evaluation.** *Mostly accepted.*
 - **Hook:** Blekhman's five goals open Section 3 (author's decision).
-- **(a)** Evidence levels are stated for Swanson ("stayed marginal"), OpenScholar ("on its benchmark") and the pivot evidence.
+- **(a)** Evidence levels are stated for Swanson ("stayed marginal"), OpenScholar ("on its benchmark"; the Asai et al. quotation is now a paraphrase) and the pivot evidence.
 - **(b)** Checkable synthesis also serves evaluators (¶3.3; EMBO "What AI could do").
 - **(c)** The illusion of understanding (¶3.3, citing Messeri & Crockett 2024).
 - **(d)** ¶3.6 now points forward to Section 4.
@@ -258,7 +266,7 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
 
 **R2-5. §5 is off the thesis and quick to date.** *Mostly accepted; the heading is partly declined.*
 - **(a)** §5 is rebuilt around the three-level map (¶5.6) and around confidentiality and appropriation (¶5.2b).
-- **(b)** Trackers are removed: ¶5.5 is cut; in this pass ¶5.4 lost the compute ratio and the human-preference ranking. ¶5.1 keeps one dated, unquantified clause.
+- **(b)** Trackers are removed: ¶5.5 is cut; ¶5.4 lost the compute ratio, the human-preference ranking and the per-token prices; and ¶5.1 lost its clause on capability trackers.
 - **(c) Corrections:**
   - Apple (¶5.2; Figure 2 caption);
   - X: now only in Figure 2, and about public posts, not chats;
@@ -282,7 +290,7 @@ All counts are by script: tokens containing a letter, digit, €, $ or &, with H
 - **Why:** affordance needed a place, and the external mechanism does not depend on ownership.
 
 **R2-7. Citation-carried prose with a machine rhythm.** *Largely accepted.*
-- **(a) Density:** about 160 citations and 27 direct quotations in the master's main text and boxes. The median sentence is 19 words (was 21), and the 90th percentile is 40 words (was 47).
+- **(a) Density:** about 160 citations and 25 direct quotations in the master's main text and boxes. The median sentence is 19 words (was 21), and the 90th percentile is 40 words (was 47).
 - **(b) The claims register:** it goes to the Zenodo record (Data availability).
 - **(c) Rhythm:**
   - the paragraph-final maxims are varied;
@@ -309,12 +317,12 @@ These were decided by the author, not proposed by the review. They are recorded 
   - **Real research loses its signal too:** ¶0.3, ¶2.7; EMBO opening.
   - **Rationing is the fallback, not prestige:** ¶0.3, ¶4c.5.
   - **The caps are brakes, crude ones,** answering his "no brakes": ¶4c.2b; EMBO.
-  - **Field-level data:** ¶2.8; Figures 3 and 4.
+  - **Field-level data:** ¶2.8–¶2.8b; Figures 3–5.
 - **Section 3's hook:** his five goals of biology research.
-- **Tao (2026):** cited via Blekhman, marked [RECHECK].
+- **Tao (2026):** verified by research note 8 (arXiv:2608.16753v1, an essay from his ICM 2026 lecture). Its abstract has no output data, so it is no longer cited for the mathematics surge. ¶3.1 cites it only as the parallel to Blekhman's question.
 
 **2. Misuse subsection, "Misuse is the visible tip".**
-- **Where:** the end of Section 2 (¶2.9–¶2.10, 242 words) and the EMBO version (121 words).
+- **Where:** the end of Section 2 (¶2.9–¶2.10, 244 words) and the EMBO version (124 words). Suchak et al.'s count of 190 runs only to 9 October 2024, and both versions now say so (research note 8).
 - **The argument:**
   - misuse is real and well documented;
   - the grey zone of formulaic output (Suchak et al.);
@@ -361,12 +369,12 @@ These were decided by the author, not proposed by the review. They are recorded 
   - the proposals of Blekhman, Hansen and Fourie;
   - an index of the others' proposals that Section 4c analyses.
 - **Reference budget:** the EMBO seeds note that the version is already at 15 references.
-- **Not yet in the repository:** the research note on recommendations (`7_recommendations.md`).
+- **Research note 7 is now done:** a menu of 24 recommendations, a shortlist S1–S7, and draft text of about 630 words (master) and 290 words (EMBO). Both placeholders point to it ("Seeds: see research note 7"). Section 6 itself waits for the author's own recommendations.
 - **Trims made to fund the reserve in the master:**
   - draft 1's ¶4c.4 (China) reduced to one clause in ¶4c.1, which also removes the unverifiable Shu et al. quotation (R47);
   - ¶5.4 compressed;
-  - smaller cuts in ¶0.2, ¶2.1, ¶2.4, ¶2.5, ¶2.8, ¶3.2, ¶4a.1, ¶4b.1, ¶4b.2, ¶4c.2, ¶4c.2b, ¶4c.3, ¶4c.3b, ¶4c.5, ¶5.1, ¶5.2, ¶5.7 and Box 1;
-  - 12 references that were no longer cited were removed (Section 7).
+  - smaller cuts across ¶0.2 to ¶5.7 and in both boxes, each noted in the paragraph's comment. Among them: the sentence on Thakkar et al.'s review-feedback trial (¶2.3), the closing sentence of ¶2.7, Wiley's licensing figure (¶5.3), per-token prices (¶5.4) and the tracker clause (¶5.1);
+  - 16 references that were no longer cited were removed (Section 7).
 
 **6. Section 4d, "What DORA and CoARA miss": empty.**
 - **Where:**
@@ -380,22 +388,64 @@ These were decided by the author, not proposed by the review. They are recorded 
   - **Obsolete:** DORA's remedy assumes that an output reflects the work behind it, and that evaluators have time to read it. Generative AI breaks both assumptions.
 - **Suggested friendly version:** DORA and CoARA are right about what to stop counting, but their remedy, read more, assumes a reading capacity that AI-era volume consumes. Draft 2's ¶4c.1 already states the second half ("reform depends on the resource that AI-era volume consumes"). Section 4d could develop that point rather than oppose the movements.
 - **Sentences to reconcile when Section 4d is written:**
-  - **¶4c.1:** it reports that Utrecht University changed practice (Woolston 2021) and that the European Commission found engagement "broad and growing". "Never applied" contradicts both. "Rarely applied where it counts, in hiring and promotion" would fit the evidence better, once that evidence is verified (McKiernan et al. 2019 and the other items in the brief are not yet checked).
+  - **¶4c.1:** it reports that Utrecht University changed practice (Woolston 2021) and that the European Commission found engagement "broad and growing". "Never applied" contradicts both; the approved wording below does not.
   - **EMBO "Rationing is not reform", paragraph 4:** it says "The reform movements are the natural allies."
   - **The Section 6 seed:** "Count less, read what is counted" is CoARA's programme.
 
   These stay as they are for now, as instructed.
-- **Word budget:** none was reserved. In the master, any text in Section 4d needs offsetting cuts (headroom is 23 words); the EMBO version has 531 words of headroom.
+- **Approved wording** (coordinator, 16 October): wherever the text says or implies that DORA or CoARA were not applied, write "largely unimplemented where measured, and mostly unmeasured". The evidence (research note 7, Q5) is to be verified before use:
+  - the Journal Impact Factor appears in the review, promotion and tenure documents of 40% of research-intensive US and Canadian institutions, 87% of them supportive (McKiernan et al. 2019);
+  - publication counts appear in 95% of biomedical promotion guidelines (Rice et al. 2020);
+  - no study compares signatories with non-signatories.
+
+  Neither draft says or implies "never applied", so no sentence was changed. The wording and the evidence are recorded in the comments of both placeholders.
+- **Word budget:** none was reserved. In the master, any text in Section 4d needs offsetting cuts (headroom is 18 words); the EMBO version has 346 words of headroom.
 
 **7. The author's field: physics and biology.**
 - **Where:** stated in ¶0.3b ("a researcher in physics and biology, an insider to academic evaluation and an outsider to metascience") and in the EMBO opening, paragraph 2. Draft 1's "[AUTHOR: field]" slot had been dropped in draft 2.
-- **Field differences:** the existing wording is kept while a research pass checks the author's view that biology is feeling this less than other fields:
-  - bioRxiv +10% year on year against +78% for mathematics;
-  - Blekhman's experimental-bottleneck point;
-  - Hao et al.'s "a major impacting factor".
+- **Field differences, applied from research note 8** (its "What the essay can say" paragraph and sentence list) and from the companion analysis's within-field contrasts:
+  - **The verdict:** the author's view holds for output, not for writing, and for experimental work, not for biology or biomedicine as a whole. The essays therefore say "experimental biology is less affected so far, which may mean a later onset rather than immunity".
+  - **¶2.8b (master; new):**
+    - since 2022 biology has grown no less than physics, and the fields part only in 2026;
+    - bioRxiv has grown 10–13% a year since 2023 with no break, although biologists write with LLMs about as much as physicists (Lin & Zhu 2025; Holzwarth et al. 2026);
+    - the mechanism: AI cheapens the steps that need only text, code or existing data and can be checked cheaply, and experiments cost what they did;
+    - within fields (Figure 5), theoretical physics grew by 20% in 2026, far outside its range since 2017, while experiment stayed within its own; computational biology has outgrown wet-lab biology only since 2025, mostly in bioinformatics, much of which is itself AI research;
+    - where no experiment is needed, biomedicine surges: nine heavily mined open health datasets tripled their publications between 2022 and 2025 (Spick et al. 2026), and medRxiv preprints naming a public dataset grew 2.3-fold, against 1.6-fold overall.
+  - **EMBO:** the same contrast is in "The cost was the signal", paragraph 4. It answers the experimental biologist's objection that the review raised. The within-field contrast is one sentence there, because the version has no third figure slot.
+  - **Other fixes from note 8:**
+    - Suchak's 190 runs to 9 October 2024;
+    - Nee et al.'s reference is completed, and its figure (about 12% above the counterfactual, January–August 2026) is in ¶2.8;
+    - Tao is used only as a parallel to Blekhman's question;
+    - the EMBO sentence "most of this is ordinary use, such as language editing" is deleted, because Kobak et al. cannot tell editing from generation;
+    - bioRxiv's 2022 base is noted in the figure captions;
+    - "checkable results" is added to the technology's pull (¶5.6).
+  - **Not applied:**
+    - Liang et al.'s preprint identifier: no Liang 2024 or 2025 entry remains in either draft, so there is nothing to correct;
+    - Holzwarth et al. in ¶2.1: it was optional, and is used in ¶2.8b instead;
+    - Maupin et al. (17-fold redundant NHANES papers): left out for length;
+    - Gartenberg et al.'s 42% and the biomedical letters (Cancellario et al.) for "elsewhere": left out for length.
+  - **To check:** the 10–13% a year is research note 8's own calculation from bioRxiv's statistics API, cited as "bioRxiv 2026"; confirm it or have the companion analysis report it.
 - **Pending:** confirm the wording of the field.
 
 **8. Quotations and Table 1 get a final verification pass.** Appendix A lists every direct quotation in the three outputs, with location, speaker and source URL. Table 1's Source column gives the primary source of each row; the URLs are in the master's reference list (Appendix A.4).
+
+**9. The recommendations research (research note 7) is applied where the coordinator asked.**
+- **Pointer:** both Recommendations placeholders now say "Seeds: see research note 7 (shortlist S1–S7 and draft text)", and the seed lists are kept.
+- **¶4c.3, pricing:**
+  - "refundable deposits" is restored;
+  - the [CITATION NEEDED] on fees and poorer researchers is replaced by Hanneke et al.'s sentence on waivers;
+  - both are in the full text of Hanneke et al. 2026 (KIT repository copy, https://publikationen.bibliothek.kit.edu/1000195177), which is now noted in the reference;
+  - Hanneke et al.'s "screening signal" quotation is also confirmed there, but is not restored, for length.
+- **Fourie** is cited for his diagnosis only ("rationed, not priced"), never as a proposer of fees. His second paper, on submission fees at economics journals, is not needed and is not cited.
+
+**10. The closest work is now cited.**
+- **Hosseini et al. 2026** (*Research Evaluation*), on "distinctly human contributions": in contribution 2 of ¶0.3, and in the EMBO positioning paragraph and reference list.
+- **Lovén 2026 and Ma 2026,** on verification as the new scarce resource: in Box 1, where the record shows that remedy's limit.
+
+**11. The process record is partial, and Box 1 says so.** A NeurIPS 2026 workshop audit found that git captured only 21.8% of one repository's narrative trace (Wu et al. 2026). Box 1 adds that this record includes the decision log kept in the brief, and that it too is partial. EMBO Box 2 says the same in one sentence (ref. 15).
+
+**12. The within-field contrasts are Figure 5 of the master** (companion commit 6021b3a; caption from the README's "Figure 8" section, with the caveats that much of bioinformatics is itself AI research, that experiment is a small series, and that the divergence dates from 2025–2026, not before). Figure 5 replaces the [FIGURE PENDING] note. It is first cited in ¶2.8b, after Figures 3 and 4, so the numbering follows first citation.
+- **Pending figure fix:** in Figures 3–5 and S1, the year ticks sit at mid-year, so the ChatGPT marker (30 November 2022) appears just right of the "2022" label. The companion session has been asked to move the ticks to 1 January.
 
 ---
 
@@ -414,7 +464,7 @@ These were decided by the author, not proposed by the review. They are recorded 
 | R1-1, R1-3e | Hakobyan (2026) added, then cut. | Length; its claim rested on an abstract that was not audited. |
 | R1-4g | Galdin & Silbert dropped. | Length; Cowgill et al. carry the point with a peer-reviewed experiment. |
 | R1-6 | Section 4d will critique DORA and CoARA. | Author's decision (Section 3, item 6). |
-| Synthesis §4 | Hanneke et al. replaced by Asai et al. among the EMBO references. | Checkable synthesis is the one exit that does not lead to rationing; Hanneke's distinction is kept in the master. |
+| Synthesis §4 | Hanneke et al. replaced by Hosseini et al. among the EMBO references (Asai et al. held the slot in the first EMBO draft). | Hosseini et al. is the closest prior work on invisible effort; Hanneke's distinction is kept in the master. |
 | Synthesis §6 | The conclusion no longer ranks proposals. | The proposals moved to Section 6 (author's decision); the conclusion keeps the asymmetry ending. |
 
 ---
@@ -425,12 +475,12 @@ These were decided by the author, not proposed by the review. They are recorded 
 - **Quan et al.:** worded as in the abstract (O-08).
 - **Butler (2003):** cut. It was sourced from memory and the audit could not verify it (R04).
 - **Fanelli's "mistaken":** verified.
-- **Thakkar et al.:** "updated", not "improved".
+- **Thakkar et al.:** "updated", not "improved" (the sentence was later cut for length).
 - **NIH and detectors:** ¶2.4 no longer implies that NIH uses detectors.
 - **arXiv's computer-science rule:** shows that texts shaped like syntheses became cheap, not mastery (¶2.5).
 - **¶4b.1:** "has support", not "well founded".
 - **Shah:** cited for fairer quotas (Table 1; Section 6 seeds).
-- **Pricing hedge:** the performative hedge is gone; the claim now carries [CITATION NEEDED] for a study on article-processing charges.
+- **Pricing hedge:** the performative hedge is gone, and the claim is now sourced to Hanneke et al.'s sentence on waivers.
 - **"None changes how researchers are counted":** applied (¶4c.5).
 - **Lock-in:** softened to "the more they favour the incumbents" (¶4c.5).
 - **"By rule":** used in Table 1.
@@ -487,14 +537,15 @@ The cost, about US$153 by 01:30, comes from the session's cost record as relayed
 - **R54, O-21, R59 and R60** (compute ratio, human-preference ranking, tracker history): moot. These passages were cut, and no tracker numbers remain.
 - **R57 (one Alibaba flagship went proprietary):** applied, but without the model's name, under the rule against model identifiers.
 - **Xu (2026), the end of the CAS journal table (§4.3):** dropped. The source (sfdora.org) could not be read.
-- **Hanneke et al.'s "screening signal" and "refundable deposits" (§4.3):** dropped. Neither was found in the readable sources.
+- **Hanneke et al.'s "screening signal" and "refundable deposits" (§4.3):** both are now confirmed in the full text (KIT repository copy; research note 7). "Refundable deposits" is restored in ¶4c.3. The screening-signal quotation is confirmed but not restored, for length.
 - **Microsoft (2024) blog:** not added. The audit said to add it only after reading it, and microsoft.com returned 403. The Microsoft FAQ is cited instead, with "dates as reported" and R87.
 - **OpenAI (n.d.):** removed. The pages could not be read.
 - **Russo vs Russo Latona:** the first author's name differs between Crossref and arXiv. This is left as an [AUTHOR] note in the reference list.
 - **References the audit verified but draft 2 no longer cites:** removed for length. In this pass they were:
   - Bianchi et al. 2025; Dell'Acqua et al. 2026; Hakobyan 2026; Hatch & Curry 2020; Kapoor & Narayanan 2025;
   - Liang et al. 2025; Lu et al. 2024; Porsdam Mann et al. 2023; Shu et al. 2022;
-  - Storey 2026; UKRI 2024; Xizhe Zhang 2026.
+  - Storey 2026; UKRI 2024; Xizhe Zhang 2026;
+  - Bornmann et al. 2021; OpenRouter 2026; Singh Chawla 2026b; Thakkar et al. 2025.
 
   Several more were removed earlier in draft 2.
 
@@ -502,7 +553,6 @@ The cost, about US$153 by 01:30, comes from the session's cost record as relayed
 - **Unverifiable:** R86, R87 and R89 (Figure 2 caption).
 - **Draft-2 text the audit did not check (descriptive [RECHECK: …] notes):**
   - Adeyeye (¶1.3);
-  - companion fig. 7 (no publication version yet), Nee et al. and Tao (all ¶2.8);
   - Lin 2025 (¶2.9);
   - Messeri & Crockett 2026 and Motoki 2026 (¶4b.1);
   - NIH's simplified review framework (¶4c.2b);
@@ -510,9 +560,10 @@ The cost, about US$153 by 01:30, comes from the session's cost record as relayed
   - the primary source of arXiv's endorsement rule (Table 1 note; Figure 4).
 - **[CITATION NEEDED]:**
   - Lamont (¶1.3);
-  - pre-AI rationing (¶4c.2b; Table 1);
-  - a study on article-processing charges (¶4c.3).
-- **Incomplete reference entries:** Adeyeye, Bhargava et al., Hutchinson, Motoki and Nee et al. still need initials or titles.
+  - pre-AI rationing (¶4c.2b; Table 1).
+
+  The article-processing-charges item is resolved by Hanneke et al.; the [RECHECK] notes on Nee et al., Tao and the companion's fig. 7 are gone (the first two verified by research note 8; the fig. 7 clause cut).
+- **Incomplete reference entries:** Adeyeye, Bhargava et al., Hosseini et al., Hutchinson, Lovén, Ma, Motoki and Wu et al. still need initials or titles.
 
 The EMBO version has no [RECHECK] markers and one [CITATION NEEDED] (pre-AI rationing).
 
@@ -544,8 +595,8 @@ The EMBO version has no [RECHECK] markers and one [CITATION NEEDED] (pre-AI rati
 - name, site and email.
 
 **Write the new sections:**
-- Section 6 (Recommendations), in your own words, from the seeds and the coming research note;
-- Section 4d, after deciding its content. Keep within the budgets: the master has 23 words of headroom.
+- Section 6 (Recommendations), in your own words, from the seeds and research note 7;
+- Section 4d, after deciding its content, using the approved wording ("largely unimplemented where measured, and mostly unmeasured") once McKiernan et al. 2019 and Rice et al. 2020 are verified. Keep within the budgets: the master has 18 words of headroom.
 
 **Read:**
 - Huang et al. in full (before sending the Correspondence);
@@ -558,7 +609,9 @@ The EMBO version has no [RECHECK] markers and one [CITATION NEEDED] (pre-AI rati
 - the incomplete reference entries;
 - the [CITATION NEEDED] items, if you know sources you have read;
 - EMBO Press's AI policy and preprint policy, whether boxes count towards the 3,500 words, and the reference style;
-- the ERC's and your national funders' AI guidance (EMBO "Rationing is not reform").
+- the ERC's and your national funders' AI guidance (EMBO "Rationing is not reform");
+- the bioRxiv growth rates (10–13% a year since 2023), which research note 8 calculated from bioRxiv's statistics API;
+- the corrected figures, once the companion session moves the year ticks to 1 January.
 
 **Get outside eyes:**
 - a person, or a tool not made by Anthropic, to check the Anthropic passages (Section 5, Figure 2, Box 1) against the primary pages;
@@ -581,13 +634,11 @@ The EMBO version has no [RECHECK] markers and one [CITATION NEEDED] (pre-AI rati
 
 This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each item in the week of submission, because each can change without notice. Model names are omitted here, as in the drafts; the audit file has the figures.
 
-1. **Capability trackers and prices** (¶5.1, ¶5.4, ¶5.7):
-   - that the top position on Epoch AI's capability index still changes hands within weeks;
+1. **Capability trackers** (¶5.4, ¶5.7):
    - Epoch AI's estimate that Chinese models trail by about seven months (data insight of 2 January 2026);
-   - OpenRouter's per-token prices, which moved between 15 and 16 October;
    - Epoch AI's 6–12-month lag for small open models.
 
-   The tracker scores, the compute ratio and the human-preference ranking are no longer in the text.
+   The tracker scores, the leader on the capability index, the compute ratio, the human-preference ranking and the per-token prices are no longer in the text.
 2. **Counts:**
    - CoARA signatories (994 on 16 October 2026; ¶4c.1);
    - arXiv monthly submissions (40,363 for September 2026 is fixed, but later months may be cited);
@@ -613,12 +664,12 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
    - Proton.
 5. **Litigation and licensing:**
    - the Bartz settlement (first payments expected by 15 November 2026);
-   - Wiley's licensing income (The Bookseller 2024).
+   - Wiley's licensing deals (The Bookseller 2024).
 6. **Publication status of preprints still cited:**
    - Fourie (v3), Bao et al. (v3), Burtch (v3), Zheng et al., Payan et al., Shah, Castellacci et al., Chesterman & Loy, Dunivin;
-   - Shen & Wang, Thakkar et al., Jegham et al., Lopez-Lira & Seyfi, Atasu;
+   - Shen & Wang, Jegham et al., Lopez-Lira & Seyfi, Atasu;
    - Elazar & Antoniak: accepted at Findings of EMNLP 2026; add pages and DOI when published;
-   - draft-2 additions: Adeyeye, Nee et al., Tao, Lin.
+   - draft-2 additions: Adeyeye, Nee et al., Tao, Lin, Lin & Zhu, Holzwarth et al., Lovén, Ma, and Wu et al. (a workshop paper).
 7. **Versions of record:**
    - Blekhman: it was an uncorrected proof when read. Re-check "there are no brakes on the system", "paper counts are meaningless" and the five goals.
    - Hao et al.: check "appears to be a major impacting factor" and "remain almost unrelated" in the *Nature* Supplementary Information, not only arXiv v4.
@@ -626,8 +677,10 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
 8. **Reports:** the AI Index 2026 (Stanford HAI) and the Stanford CRFM transparency index. If newer editions appear, say which one is cited.
 9. **Companion data** (added to the audit's list):
    - preprint counts were retrieved on 15 October 2026, and a re-pull would complete October and open a new quarter;
-   - keep or update the commit reference (41f795d);
-   - confirm fig. 7 of the companion analysis (the acceleration in computer science outside AI research) before it is cited as published.
+   - the within-field counts (commit 6021b3a) were retrieved on 16 October 2026;
+   - keep or update the commit references (41f795d; 6021b3a);
+   - the bioRxiv yearly growth rates (bioRxiv 2026) come from its statistics API and should be re-pulled;
+   - fig. 7 of the companion analysis (computer science outside AI research) is no longer cited.
 
 ---
 
@@ -646,7 +699,6 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
 | M5 | "a relatively small number of Principal Investigators" | ¶2.4; Table 1 (NIH row) | NIH 2025 | as M3 | O-16 |
 | M6 | "Writing a plausible manuscript is now largely rule-based …; judging one is not" | ¶2.5 | Fourie (2026), arXiv preprint | https://arxiv.org/abs/2607.13844 (v3) | R16. The ellipsis replaces a self-citation, "(Fourie, 2026b)". |
 | M7 | "alien" | ¶3.2 | Sourati & Evans (2023), *Nature Human Behaviour* | https://doi.org/10.1038/s41562-023-01648-z | Not audited; a one-word term ("alien" hypotheses). |
-| M8 | "do not claim that LM-based systems can fully automate scientific literature synthesis" | ¶3.3 | Asai et al. (2026), *Nature*, Limitations | https://doi.org/10.1038/s41586-025-10072-4 | O-04. The source reads "we do not claim…". |
 | M9 | "can now traverse unfamiliar literature faster" | ¶3.5 | Huang, Hu, Zhang & Lin (2026), *Nature* Comment | https://doi.org/10.1038/d41586-026-02961-z (print PDF) | R19 |
 | M10 | "necessarily more preliminary" | ¶4a.1 | Hao, Xu, Li & Evans (2026), *Nature* | https://doi.org/10.1038/s41586-025-09922-y ; author version https://arxiv.org/abs/2412.07727v4 | R22 (arXiv v4). Check the *Nature* text. |
 | M11 | "cannot fully identify the causal linkage between AI adoption and scientific impact" | ¶4a.1 | Hao et al. (2026) | as M10 | R22. The source reads "we cannot…" and says it of the whole study. |
@@ -661,8 +713,7 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
 | M20 | "broad and growing" | ¶4c.1 | European Commission, DG Research and Innovation, news item, 25 Jun 2026 | https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-study-assesses-progress-reforming-research-assessment-2026-06-25_en | O-03 |
 | M21 | "perceived double standard" | ¶4c.2b | Singh Chawla (2026a), *Nature Index* (the journalist's words, not a critic's) | https://doi.org/10.1038/d41586-026-03153-5 | O-02 |
 | M22 | "there are no brakes on the system" | ¶4c.2b | Blekhman (2026), *PLOS Biology* | https://doi.org/10.1371/journal.pbio.3004075 | Read in full from the publisher's XML (uncorrected proof). Re-check against the version of record. |
-| M23 | "A journal that keeps its stamp scarce by rejecting what it cannot read is not thereby protecting the stamp's value" | ¶4c.3 | Fourie (2026) | as M6 | R43 |
-| M24 | "AI support, not AI bans" | ¶4c.3b; Section 6 seeds | Xuegong Zhang (2026), *Nature* (words from the title) | https://doi.org/10.1038/d41586-026-02631-0 | Not audited |
+| M24 | "AI support, not AI bans" | Section 6 seeds (moved out of ¶4c.3b for length) | Xuegong Zhang (2026), *Nature* (words from the title) | https://doi.org/10.1038/d41586-026-02631-0 | Not audited |
 | M25 | "a tendency towards greater market concentration" | ¶5.1 | Korinek & Vipra (2025), *Economic Policy* | https://doi.org/10.1093/epolic/eiae057 | O-17. Checked against the NBER abstract only; check the journal text. |
 | M26 | "On" (the state of the training toggle) | ¶5.2; Box 1 (Conflict of interest); Figure 2 caption | Field (2025), *The Verge* | https://www.theverge.com/anthropic/767507/anthropic-user-data-consumers-ai-models-training-privacy | A secondary source (review, part 5, C10). Confirm against Anthropic's own pages if possible. |
 | M27 | "I do not want Claude to start telling people my research results" | ¶5.2b | A researcher quoted by Brzostowicki (2026), *Nature* technology feature | https://doi.org/10.1038/d41586-026-03227-4 | §4.2. Name the speaker if the article does. |
@@ -672,7 +723,7 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
 | M31 | "Stop punishing pivots" | Section 6 seeds | Huang et al. (2026), heading of recommendation 2 | as M9 | R38 |
 | M32 | "exploratory grants that have extended evaluation horizons" | Section 6 seeds | Huang et al. (2026) | as M9 | R38, O-14. The source reads "funders must create exploratory grants that have…". |
 | M33 | "Reward innovation, not just output" | Section 6 seeds | Huang et al. (2026), heading of recommendation 3 | as M9 | R38 |
-| M34 | "rationed, not priced" | Section 6 seeds | Fourie (2026) | as M6 | R43. The source reads "Review is therefore rationed, not priced". |
+| M34 | "rationed, not priced" | ¶4c.3; Section 6 seeds | Fourie (2026) | as M6 | R43. The source reads "Review is therefore rationed, not priced". |
 | M35 | "enabled Principal Investigators to submit more than 40 distinct applications in a single application submission round" | Table 1 (NIH row) | NIH 2025 | as M3 | A shorter form of M3 |
 | M36 | "unmanageable influx" | Table 1 (arXiv computer-science row) | arXiv (2025), blog | https://blog.arxiv.org/2025/10/31/attention-authors-updated-practice-for-review-articles-and-position-papers-in-arxiv-cs-category/ | Table 1 rows checked against primary sources (R78) |
 | M37 | "hundreds of review articles every month" | Table 1 (arXiv computer-science row) | arXiv (2025) | as M36 | §4.2 |
@@ -685,6 +736,8 @@ This is the audit's list (its §7), adapted to draft 2. Re-pull or re-read each 
 | M44 | "NOT intended for" | Data and process availability | bioRxiv FAQ | https://www.biorxiv.org/about/FAQ | R71, CN4 |
 | M45 | "permitted with human oversight, verification, and transparency through disclosure" | Data and process availability | Nature Portfolio, AI editorial policy (the "Amber" tier) | https://www.nature.com/nature-portfolio/editorial-policies/ai | O-20 |
 | M46 | "how the user evaluated the validity of the tool's outputs" | Data and process availability | PLOS, *PLOS Biology* ethical publishing practice | https://journals.plos.org/plosbiology/s/ethical-publishing-practice | §4.2 |
+
+Rows M8 (Asai et al.) and M23 (Fourie's sentence on the journal's stamp) were removed in the last pass: the first is now a paraphrase, and the second was cut from ¶4c.3. The IDs of the other rows are unchanged.
 
 ### A.2 EMBO version (`paper/draft_embo.md`)
 
