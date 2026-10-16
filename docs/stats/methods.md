@@ -351,7 +351,7 @@ human validation") and Deviation 2 (sampled classification, design in `scripts/n
 - *Blind batches.* Within each domain the papers are put in random order and given pseudonymous ids
   (`classifier_batches.py split --blind`). DOIs and arXiv identifiers encode the posting month, and date-ordered
   batches would tie any batch-to-batch drift in the classifier to calendar time, which is the axis of the tests.
-- *Test–retest.* The first 14 medRxiv batches (700 papers) and the 200 bioRxiv/medRxiv validation papers were first
+- *Test–retest.* The first 18 medRxiv batches (900 papers) and the 200 bioRxiv/medRxiv validation papers were first
   classified in date-ordered, DOI-keyed batches. Those labels were superseded by the blind runs before any label was
   analysed; they are used only to measure agreement between runs (`scripts/classifier_retest.py`).
 

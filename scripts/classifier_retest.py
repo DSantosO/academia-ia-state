@@ -1,8 +1,8 @@
 """Test-retest agreement of the ND/NN/U classifier: the same papers classified in two separate runs.
 
-The first runs on the medRxiv samples (batches 001-020 of the date-ordered, DOI-keyed split) and on the 200 bioRxiv
-and medRxiv papers of the validation sheet were superseded by blind runs (pseudonymous ids, random order); the
-superseded labels are used only here. Agreement between runs measures how stable the labels are when the batch
+The first runs on the medRxiv samples (18 batches of the date-ordered, DOI-keyed split, 900 papers) and on the 200
+bioRxiv and medRxiv papers of the validation sheet were superseded by blind runs (pseudonymous ids, random order);
+the superseded labels are used only here. Agreement between runs measures how stable the labels are when the batch
 composition and order change; it says nothing about accuracy, which the human validation measures.
 Inputs: CSV or gzip CSV files with columns id,label; with --map, a CSV pseudonym,id that turns the second file's
 ids into the first file's ids (a prefix such as "medrxiv:" is ignored when matching).

@@ -57,3 +57,7 @@ precision and recall per class, by domain).
 |---|---|
 | `sealed/key.csv.gz` | (added when the file is committed) |
 | `sealed/model_labels.csv.gz` | (added when the file is committed) |
+| `sealed/nd_model_labels_medrxiv.csv.gz` | `6b59301db05da6c36dc4081e520641fa6dd661a421b428b90f5746cd4da165f0` |
+
+The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
+too, because a few papers on the sheet may also be in those samples.
