@@ -226,6 +226,16 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
 
    Sources are in `research_notes/AI disruption of academia literature/4_governance_and_reform.md` and `paper/reviews/citation_audit.md`.
 
+   **The author's position for §4d (16 Oct):** the critique is not about DORA's intentions. DORA has become obsolete without ever having been applied. The coordinator's reading of the two halves:
+   - **Never applied.** Thirteen years on, journal-level metrics still drive evaluation. Evidence still to be verified:
+     - McKiernan et al. 2019 (eLife), on mentions of the Journal Impact Factor in promotion and tenure documents;
+     - later studies of these documents and surveys;
+     - ANECA's use of journal quartiles until its 2023 reform;
+     - CoARA's uneven progress;
+     - no outcome study showing that DORA signatories changed how they hire.
+   - **Obsolete.** DORA targets *journal-level* proxies and asks evaluators to judge each output on its merits. Its remedy assumes two things that generative AI breaks: that the output reflects the work behind it, and that evaluators have time to read it.
+   - **Link to Blekhman.** He predicts AI will reverse DORA's progress. The author's sharper point is that there was little progress to reverse.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
