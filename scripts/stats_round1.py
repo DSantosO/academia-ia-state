@@ -15,6 +15,7 @@ Sections (each writes its own key of data/processed/stats/round1_tests.json; run
               data/processed/arxiv_paper_flags.csv.gz.
   dating      identifier (announcement) month vs first-version submission month, 2024-2026 (P1a)
   medrxiv_flags  C3 with the title-only COVID-19 filter and with Spick et al.'s four missing datasets (P3)
+  inspire     pre-registration section 10 (exploratory): INSPIRE-HEP classes from curated metadata (no AI)
 Usage: python3 scripts/stats_round1.py [repo_dir] [section ...] [--oai OAI_DIR]
 """
 import csv
@@ -334,6 +335,95 @@ def section_medrxiv_flags(repo):
     return out
 
 
+INSPIRE_EXP_CATS = {"Experiment-HEP", "Experiment-Nucl"}
+NON_RESEARCH_DOCS = {"conference paper", "proceedings", "review", "thesis", "lectures", "book", "book chapter",
+                     "activity report", "note"}
+
+
+def inspire_classes(r, variant="main"):
+    """ND-INSPIRE: a research article in an experimental INSPIRE category, linked to an accelerator experiment or a
+    collaboration, without prospect or sensitivity wording; NN-INSPIRE: everything else in scope.
+    Variants: no_link (link not required), title_prospect (prospect wording in the title only), no_prospect (wording
+    ignored), primary_exp (experimental = primary arXiv category hep-ex or nucl-ex instead of INSPIRE category)."""
+    docs = set(filter(None, r["document_type"].split(";"))) | set(filter(None, r["publication_type"].split(";")))
+    research = "article" in docs and not (docs & NON_RESEARCH_DOCS)
+    cats = set(filter(None, r["inspire_categories"].split(";")))
+    exp = (r["primary"] in ("hep-ex", "nucl-ex")) if variant == "primary_exp" else bool(cats & INSPIRE_EXP_CATS)
+    linked = True if variant == "no_link" else bool(r["experiments"] or r["collaborations"])
+    if variant == "no_prospect":
+        prospect = False
+    elif variant == "title_prospect":
+        prospect = r["prospect_title"] == "1"
+    else:
+        prospect = r["prospect_title_abstract"] == "1"
+    return "ND" if research and exp and linked and not prospect else "NN"
+
+
+def section_inspire(repo):
+    """Pre-registration section 10 (exploratory): departures from the pre-2023 trend in 2025-2026 by INSPIRE class,
+    overall and within hep-ex and nucl-ex, by collaboration size and by document type."""
+    path = os.path.join(repo, "data/raw/inspire_hep_records.csv.gz")
+    if not os.path.exists(path):
+        return None
+    recs = [r for r in csv.DictReader(gzip.open(path, "rt")) if "2017-01" <= r["date"][:7] <= LAST]
+    ms = ym_range("2017-01", LAST)
+
+    def series(keep):
+        c = Counter(r["date"][:7] for r in recs if keep(r))
+        return [c.get(m, 0) for m in ms]
+
+    def dep(y):
+        if min(y) <= 0:
+            return None
+        fm = field_model(y, ms)
+        return {k: fm[k] for k in ("2023", "2024", "2025", "2026")} | {"trend_per_year": fm["trend_per_year"]}
+
+    def rrr(a, b, year):
+        """Ratio of NN to ND departures (independent fits; conservative if common shocks correlate them)."""
+        if not a or not b:
+            return None
+        la, lb = math.log(a[year]["rr"]), math.log(b[year]["rr"])
+        sa = (math.log(a[year]["hi"]) - math.log(a[year]["lo"])) / 3.92
+        sb = (math.log(b[year]["hi"]) - math.log(b[year]["lo"])) / 3.92
+        d, se = la - lb, math.sqrt(sa * sa + sb * sb)
+        return {"rr": math.exp(d), "lo": math.exp(d - 1.96 * se), "hi": math.exp(d + 1.96 * se)}
+
+    out = {"n_records": len(recs), "by_primary": dict(Counter(r["primary"] for r in recs)), "classes": {}}
+    scopes = {"all_six": lambda r: True, "hep-ex": lambda r: r["primary"] == "hep-ex",
+              "nucl-ex": lambda r: r["primary"] == "nucl-ex", "hep-ex+nucl-ex": lambda r: r["primary"] in ("hep-ex", "nucl-ex")}
+    for variant in ("main", "no_link", "title_prospect", "no_prospect", "primary_exp"):
+        for sname, sk in scopes.items():
+            nd = dep(series(lambda r: sk(r) and inspire_classes(r, variant) == "ND"))
+            nn = dep(series(lambda r: sk(r) and inspire_classes(r, variant) == "NN"))
+            n_nd = sum(1 for r in recs if sk(r) and inspire_classes(r, variant) == "ND")
+            out["classes"][f"{variant}__{sname}"] = {
+                "n_ND": n_nd, "n_NN": sum(1 for r in recs if sk(r)) - n_nd, "ND": nd, "NN": nn,
+                "RRR_NN_vs_ND": {y: rrr(nn, nd, y) for y in ("2025", "2026")}}
+    # collaboration size and document type, hep-ex + nucl-ex
+    exp = lambda r: r["primary"] in ("hep-ex", "nucl-ex")  # noqa: E731
+    size = lambda r: (None if r["author_count"] == "" else "le10" if int(r["author_count"]) <= 10 else  # noqa: E731
+                      "11to300" if int(r["author_count"]) <= 300 else "gt300")
+    out["by_author_count_hep-ex_nucl-ex"] = {b: {"n": sum(1 for r in recs if exp(r) and size(r) == b),
+                                                 "departure": dep(series(lambda r, b=b: exp(r) and size(r) == b))}
+                                             for b in ("le10", "11to300", "gt300")}
+    doc = lambda r: ("research_article" if inspire_classes(r, "no_prospect") in ("ND", "NN") and "article" in  # noqa: E731
+                     r["document_type"] and not (set(r["document_type"].split(";")) & NON_RESEARCH_DOCS) else
+                     (r["document_type"].split(";")[0] or "unknown"))
+    types = Counter(doc(r) for r in recs if exp(r))
+    out["by_document_type_hep-ex_nucl-ex"] = {t: {"n": n, "departure": dep(series(lambda r, t=t: exp(r) and doc(r) == t))}
+                                              for t, n in types.most_common(6)}
+    # Snowmass 2021 (2022 base) and European Strategy inputs (2025)
+    out["snowmass_espp_by_year"] = {y: {"snowmass": sum(1 for r in recs if r["date"][:4] == y and r["snowmass"] == "1"),
+                                        "european_strategy": sum(1 for r in recs if r["date"][:4] == y and
+                                                                 r["european_strategy"] == "1"),
+                                        "all": sum(1 for r in recs if r["date"][:4] == y)}
+                                    for y in sorted({r["date"][:4] for r in recs})}
+    out["without_snowmass_espp"] = {
+        "hep-ex+nucl-ex": dep(series(lambda r: exp(r) and r["snowmass"] != "1" and r["european_strategy"] != "1")),
+        "all_six": dep(series(lambda r: r["snowmass"] != "1" and r["european_strategy"] != "1"))}
+    return out
+
+
 # ---------------------------------------------------------------- arXiv paper-level flags (OAI)
 SNOWMASS = re.compile(r"snowmass", re.I)
 ESPP = re.compile(r"european strategy|\bESPP|\bESPPU\b|strategy for particle physics", re.I)
@@ -535,7 +625,7 @@ def main():
     out = json.load(open(path)) if os.path.exists(path) else {}
     funcs = {"estimands": section_estimands, "breaks": section_breaks, "crosslists": section_crosslists,
              "funding": section_funding, "oai": lambda r: section_oai(r, oai), "dating": lambda r: section_dating(r, oai),
-             "medrxiv_flags": section_medrxiv_flags}
+             "medrxiv_flags": section_medrxiv_flags, "inspire": section_inspire}
     for s in sections:
         print("section", s, flush=True)
         out[s] = funcs[s](repo)
