@@ -28,7 +28,7 @@ INK, INK2, MUTED, GRID, AXIS = "#000000", "#404040", "#7f7f7f", "#e3e3e3", "#9a9
 OI = {"blue": "#0072B2", "vermillion": "#D55E00", "green": "#009E73", "orange": "#E69F00", "purple": "#CC79A7",
       "grey": "#999999", "sky": "#56B4E9", "black": "#000000"}
 EVENTS = [(dt.date(2022, 11, 30), "ChatGPT"), (dt.date(2025, 10, 31), "arXiv CS review rule"),
-          (dt.date(2026, 7, 24), "Claude Opus 5"), (dt.date(2026, 10, 1), "arXiv cap")]
+          (dt.date(2026, 10, 1), "arXiv cap")]
 FONT = "Arial" if any("Arial" in f.name for f in fm.fontManager.ttflist) else "Liberation Sans"
 
 

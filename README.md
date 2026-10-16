@@ -105,7 +105,7 @@ Salidas en `data/processed/`:
     - versión completa en inglés;
     - límite de 2 envíos al mes por persona, anunciado y aplicado el 1 de octubre de 2026.
   - SocArXiv exigió ORCID y derivó las humanidades a otro repositorio en noviembre de 2025.
-- **Hitos marcados en los gráficos.** ChatGPT (30 nov 2022), cambios de normas de arXiv (31 oct 2025), Claude Opus 4.6 (5 feb 2026), Claude Opus 5 (24 jul 2026) y el límite de envíos de arXiv (1 oct 2026). El gráfico mensual de matemáticas marca además el anuncio de OpenAI sobre la conjetura de las distancias unitarias (20 may 2026). Las versiones para publicación solo marcan ChatGPT, las normas de arXiv (incluido el límite de envíos) y Claude Opus 5. Otros laboratorios lanzaron modelos en los mismos meses: los marcadores indican fechas, no causas.
+- **Hitos marcados en los gráficos.** ChatGPT (30 nov 2022), cambios de normas de arXiv (31 oct 2025), Claude Opus 4.6 (5 feb 2026), Claude Opus 5 (24 jul 2026) y el límite de envíos de arXiv (1 oct 2026). El gráfico mensual de matemáticas marca además el anuncio de OpenAI sobre la conjetura de las distancias unitarias (20 may 2026). Las versiones para publicación solo marcan ChatGPT y las normas de arXiv (incluido el límite de envíos); no marcan lanzamientos de modelos. Otros laboratorios lanzaron modelos en los mismos meses: los marcadores indican fechas, no causas.
 - **Aviso: límite de envíos de arXiv.** Desde el 1 de octubre de 2026 arXiv acepta como máximo dos envíos al mes por persona (el límite de tres envíos pendientes a la vez ya existía). Los recuentos de arXiv desde el cuarto trimestre de 2026 no son comparables con los anteriores; los gráficos y el panel lo indican con la línea «arXiv cap» y una nota.
 
 ## Regenerar los datos

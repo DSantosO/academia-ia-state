@@ -1,7 +1,7 @@
 """Publication versions of figures 1, 4 and 5 for the essay (no titles; captions live in the text).
 
 Writes docs/figures/paper/<name>_{85mm,175mm}.{svg,pdf,png} (PNG at 300 dpi) from data/processed.
-Markers: ChatGPT, arXiv rule changes and Claude Opus 5 only. Colours: Okabe-Ito (colour-blind safe).
+Markers: ChatGPT and dated arXiv rule changes only (no model releases). Colours: Okabe-Ito (colour-blind safe).
 Usage: python3 scripts/plot_paper.py [repo_dir]   (needs matplotlib)
 """
 import csv
@@ -35,12 +35,10 @@ SHORT = {"medicine_medrxiv_no_covid": "Medicine excl. COVID-19", "biology_biorxi
 FIELD_EVENTS = [
     (dt.date(2022, 11, 30), "ChatGPT"),
     (dt.date(2025, 10, 31), "arXiv CS review rule"),
-    (dt.date(2026, 7, 24), "Claude Opus 5"),
     (dt.date(2026, 10, 1), "arXiv cap"),
 ]
 MATH_EVENTS = [
     (dt.date(2025, 12, 10), "arXiv math endorsement rule"),
-    (dt.date(2026, 7, 24), "Claude Opus 5"),
     (dt.date(2026, 10, 1), "arXiv cap"),
 ]
 
