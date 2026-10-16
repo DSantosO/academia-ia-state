@@ -176,6 +176,10 @@ Fig. 1; the arXiv rule markers apply to panel b only.
   - oncology +22%.
 - *Flat subjects:* public and global health +3%, genetic and genomic medicine +3%, infectious diseases +1%.
 - *Public datasets:* preprints naming one in title or abstract (NHANES, UK Biobank, Global Burden of Disease, Mendelian randomisation, FAERS, MIMIC, SEER, BRFSS):
-  - 405 in January–September 2022 (5.0% of new preprints) and 915 in January–September 2026 (6.9%);
-  - that is ×2.3, against ×1.6 for all new preprints;
-  - shares in 2026 are highest in intensive care (24%, MIMIC), genetic and genomic medicine (23%), cardiovascular medicine (14%), epidemiology (13%) and nutrition (12%).
+  - among non-COVID preprints their share is flat: 7.4% in 2019, 7.3% in 2022 and 7.2% in January–September 2026;
+  - **correction:** an earlier version of this note reported a rise from 5.0% to 6.9% (×2.3 against ×1.6 for all
+    preprints). That rise came from dividing by all preprints including COVID-19 ones, which shrank after 2021;
+  - shares in January–September 2026 are highest in intensive care (24%, mostly MIMIC; 8% in 2022), genetic and
+    genomic medicine (23%), epidemiology (14%; 18% in 2022), cardiovascular medicine (14%) and endocrinology (12%).
+  - The formal contrast (public-dataset vs other non-COVID preprints, C3 in `docs/stats/results.md`) finds no
+    divergence in any year since 2022.

@@ -138,7 +138,7 @@ def medrxiv_fig(repo, out):
     ax2.set_ylim(0, None)
     ax2.set_xlim(dt.date(2020, 1, 1), dt.date(2026, 11, 1))
     ps.year_axis(ax2, 2020, 2026)
-    ax2.set_title("Share naming a public dataset (all new preprints)", loc="left", fontsize=10.5, color=ps.INK,
+    ax2.set_title("Share naming a public dataset (non-COVID preprints)", loc="left", fontsize=10.5, color=ps.INK,
                   pad=34)
     ax2.text(0, 1.02, "NHANES, UK Biobank, GBD, Mendelian randomisation,\nFAERS, MIMIC, SEER or BRFSS in title or abstract",
              transform=ax2.transAxes, fontsize=8, color=ps.INK2, va="bottom")

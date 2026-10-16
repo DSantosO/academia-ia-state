@@ -99,8 +99,8 @@ def category_table(papers, covid, public, group_of):
             "covid_share_2020": round(sum(covid[c].get(f"2020-Q{i}", 0) for i in range(1, 5)) / max(1, sum(
                 covid[c].get(f"2020-Q{i}", 0) + s.get(f"2020-Q{i}", 0) for i in range(1, 5))), 4),
             "public_dataset_share_2022": round(sum(pub.get(f"2022-Q{i}", 0) for i in range(1, 5)) / all22, 4)
-            if all22 else "",
-            "public_dataset_share_q1q3_2026": round(q123(pub, 2026) / all26, 4) if all26 else "",
+            if all22 and any(pub.values()) else "",
+            "public_dataset_share_q1q3_2026": round(q123(pub, 2026) / all26, 4) if all26 and any(pub.values()) else "",
         })
     return sorted(rows, key=lambda r: -r["papers_q1q3_2026"])
 
@@ -132,13 +132,29 @@ def main(repo):
 
     med, med_cov, med_pub = load_rxiv(os.path.join(raw, "medrxiv_category_monthly.csv"))
     rows += series_rows("medrxiv_all_excl_covid", sum_cats(med, set(med)), first="2019-Q3")  # opened June 2019
-    write(os.path.join(out, "medrxiv_categories_growth.csv"), category_table(med, med_cov, med_pub, lambda c: ""))
+    # public-dataset shares among non-COVID preprints, from the text-feature harvest (harvest_rxiv_text_features.py):
+    # a denominator that includes COVID-19 preprints makes the share rise spuriously as COVID research fades
+    pub_nc, n_nc = defaultdict(lambda: defaultdict(int)), defaultdict(lambda: defaultdict(int))
+    for r in csv.DictReader(open(os.path.join(raw, "medrxiv_text_main.csv"))):
+        q = quarter(r["month"])
+        if q <= LAST:
+            pub_nc[r["category"]][q] += int(r["public_noncovid"])
+            n_nc[r["category"]][q] += int(r["papers_noncovid"])
+    table = category_table(med, med_cov, med_pub, lambda c: "")
+    for row in table:
+        c = row["category"]
+        d22 = sum(n_nc[c].get(f"2022-Q{i}", 0) for i in range(1, 5))
+        d26 = q123(n_nc[c], 2026)
+        row["public_dataset_share_2022"] = round(sum(pub_nc[c].get(f"2022-Q{i}", 0) for i in range(1, 5)) / d22, 4) \
+            if d22 else ""
+        row["public_dataset_share_q1q3_2026"] = round(q123(pub_nc[c], 2026) / d26, 4) if d26 else ""
+    write(os.path.join(out, "medrxiv_categories_growth.csv"), table)
     pub_rows = []
-    for q in sorted({q for c in med for q in med[c] if q >= "2019-Q3"}):
-        allp = sum(med[c].get(q, 0) + med_cov[c].get(q, 0) for c in med)
-        pubq = sum(med_pub[c].get(q, 0) for c in med)
-        pub_rows.append({"quarter": q, "start": start(q), "papers_all": allp, "public_dataset": pubq,
-                         "public_dataset_share": round(pubq / allp, 4) if allp else ""})
+    for q in sorted({q for c in n_nc for q in n_nc[c] if q >= "2019-Q3"}):
+        n = sum(n_nc[c].get(q, 0) for c in n_nc)
+        k = sum(pub_nc[c].get(q, 0) for c in pub_nc)
+        pub_rows.append({"quarter": q, "start": start(q), "papers_noncovid": n, "public_dataset_noncovid": k,
+                         "public_dataset_share": round(k / n, 4) if n else ""})
     write(os.path.join(out, "medrxiv_public_dataset_quarterly.csv"), pub_rows)
 
     arch = defaultdict(lambda: defaultdict(int))
