@@ -15,7 +15,7 @@ Panel publicado en Claude: https://claude.ai/artifact/TnuLTHyf9AnkWdJxBQPC58 (pr
 
 Cálculos definidos en la página:
 
-- `quarterly` une las tres fuentes.
+- `quarterly` une las tres fuentes por campo (`arxiv_fields`, `biorxiv_medrxiv` y `osf_social`).
 - `index_2022` divide cada trimestre por la media trimestral de 2022 del mismo campo.
 - `yoy_growth` compara cada trimestre con el mismo trimestre del año anterior.
 - `change_vs_2022` compara los cuatro trimestres más recientes con el total de 2022.
@@ -23,4 +23,4 @@ Cálculos definidos en la página:
 
 ## Actualizar
 
-Regenera los datos con los scripts de `scripts/` (ver el README principal) y pide a Claude que suba los tres JSON nuevos al panel.
+Regenera los datos con los scripts de `scripts/` (ver el README principal) y pide a Claude que suba al panel los cuatro archivos nuevos.
