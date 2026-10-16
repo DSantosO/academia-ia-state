@@ -1,4 +1,4 @@
-<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 26ce2eb (companion analysis session). -->
+<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 0e239cd (companion analysis session). -->
 # Statistical methods (PLOS ONE analysis)
 
 Written to be pasted into the article's Methods section. Every model below is implemented in `scripts/` and every

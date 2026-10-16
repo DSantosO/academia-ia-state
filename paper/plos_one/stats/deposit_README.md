@@ -1,4 +1,4 @@
-<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 26ce2eb (companion analysis session). -->
+<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 0e239cd (companion analysis session). -->
 # Data and code for "Publication counts after generative AI" (working title)
 
 This folder describes the deposit-ready package: aggregate data, the scripts that produce them and every reported

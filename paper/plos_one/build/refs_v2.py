@@ -27,7 +27,7 @@ R.update({
 
 # --- data sources, platform documentation ---
 R.update({
-"arXivStats": "arXiv. Submission statistics by archive and year [Internet] " + ACC + ". Available from: https://arxiv.org/year/<archive>/<year>",
+"arXivStats": "arXiv. Yearly submission statistics, one page per archive and year (for example, hep-th in 2025) [Internet] " + ACC + ". Available from: https://arxiv.org/year/hep-th/2025",
 "arXivAPITerms": "arXiv. Terms of use for arXiv APIs [Internet] " + ACC + ". Available from: https://info.arxiv.org/help/api/tou.html",
 "arXivRobots": "arXiv. robots.txt [Internet] " + ACC + ". Available from: https://arxiv.org/robots.txt",
 "arXivAvailability": "arXiv. Availability of submissions [Internet] " + ACC + ". Available from: https://info.arxiv.org/help/availability.html",
@@ -36,7 +36,7 @@ R.update({
 "bioRxivFAQ": "bioRxiv. Frequently asked questions [Internet]. Cold Spring Harbor Laboratory " + ACC + ". Available from: https://www.biorxiv.org/about/FAQ",
 "medRxivAbout": "medRxiv. About medRxiv [Internet] " + ACC + ". Available from: https://www.medrxiv.org/content/about-medrxiv",
 "INSPIREAPI": "INSPIRE-HEP. REST API documentation [Internet] " + ACC + ". Available from: https://github.com/inspirehep/rest-api-doc",
-"OSFTerms": "Center for Open Science. OSF terms of use [Internet] " + ACC + ". Available from: https://osf.io/terms-of-use/",
+"OSFTerms": "Center for Open Science. Terms of use [Internet] " + ACC + ". Available from: https://github.com/CenterForOpenScience/cos.io/blob/master/TERMS_OF_USE.md",
 "Pruller2025": "Pruller J, Mockridge J, Vousden G. Expectations for Mendelian randomization research in PLOS One. PLoS One. 2025;20(11):e0337199.",
 })
 

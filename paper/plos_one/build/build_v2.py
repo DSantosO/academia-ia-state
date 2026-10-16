@@ -174,7 +174,8 @@ def main(src, dst):
     legends_w = block_words(maintext, "LEGEND")
     tables_w = block_words(maintext, "TABLE")
     rows = "\n".join(f"| {k} | {v[0]:,} | {v[1]:,} |" for k, v in sections.items())
-    pending = sorted(set(re.findall(r"\[ANALYSIS PENDING: ([^\]]*)\]", out)))
+    nocom = re.sub(r"<!--.*?-->", "", out, flags=re.S)  # markers counted outside HTML comments
+    pending = sorted(set(re.findall(r"\[ANALYSIS PENDING: ([^\]]*)\]", nocom)) - {"..."})
     report = (
         "WORD COUNTS (computed by build_v2.py; HTML comments, headings, figure legends and tables excluded).\n"
         "'Prose' also removes the editorial markers ([AUTHOR: ...], [ANALYSIS PENDING: ...], [RECHECK: ...]) and numbered "
@@ -185,8 +186,8 @@ def main(src, dst):
         f"Figure legends in the main text: {legends_w:,} words. Tables in the main text: {tables_w:,} words.\n"
         f"References: {len(order)} in the main list; SI lists: "
         + ", ".join(f"{k} {v}" for k, v in si_counts.items()) + ".\n"
-        f"Markers: [AUTHOR] {out.count('[AUTHOR')}, [ANALYSIS PENDING] {out.count('[ANALYSIS PENDING')}, "
-        f"[RECHECK] {out.count('[RECHECK')}."
+        f"Markers outside HTML comments: [AUTHOR] {nocom.count('[AUTHOR')}, "
+        f"[ANALYSIS PENDING] {nocom.count('[ANALYSIS PENDING')}, [RECHECK] {nocom.count('[RECHECK')}."
     )
     out = out.replace("WORD COUNT: [filled at build time]", report)
     out = re.sub(r"<!--/?(LEGEND|TABLE)-->\n?", "", out)

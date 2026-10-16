@@ -1,4 +1,4 @@
-<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 26ce2eb (companion analysis session). -->
+<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 0e239cd (companion analysis session). -->
 # Figure captions (PLOS ONE format)
 
 Captions go in the manuscript, directly after the paragraph that first cites each figure. The figure files are
@@ -19,8 +19,7 @@ September 2026. The number in each legend entry is the index in July–September
 - Social sciences: first versions on PsyArXiv, SocArXiv and EdArXiv plus arXiv econ and q-fin.
 
 Dashed vertical lines mark, from left to right, the release of ChatGPT (30 November 2022), arXiv's rule on review
-articles in computer science (31 October 2025), the release of Claude Opus 5 (24 July 2026) and arXiv's submission cap
-(1 October 2026). They mark dates for reference; they are not estimated break points or causes.
+articles in computer science (31 October 2025) and arXiv's submission cap (1 October 2026). They mark dates for reference; they are not estimated break points or causes.
 
 The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.
 
