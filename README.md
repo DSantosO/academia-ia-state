@@ -8,6 +8,7 @@ Estudio del estado de la academia (publicaciones, ayudas y becas) y del impacto 
 |---|---|
 | `docs/data-sources-report.md` | Catálogo de fuentes (en inglés): qué mide cada fuente, cobertura histórica, acceso, coste, rupturas conocidas y una estrategia para separar el efecto de los LLM de otros factores. |
 | `docs/research-notes/` | Notas de investigación con todas las citas en las que se basa el informe. Las rutas a `/tmp/...` que aparecen en ellas son de la sesión de trabajo y no se conservan. |
+| `docs/propuesta-graficos.md` | Propuesta para mejorar las gráficas de papers, con las métricas que usa la bibliometría y prototipos (`docs/figures/proposal/`). |
 | `docs/figures/` | Gráficos en inglés (PNG). |
 | `dashboards/preprints-por-campo/` | Código del panel «Preprints by Field». |
 | `data/raw/` | Datos descargados de las fuentes, sin transformar. |
@@ -30,7 +31,7 @@ Estudio del estado de la academia (publicaciones, ayudas y becas) y del impacto 
 | `arxiv_econ_finance` | arXiv | Envíos nuevos con archivo principal econ o q-fin. |
 | `computer_science_reference` | arXiv | Envíos nuevos con archivo principal cs; solo como referencia. |
 
-Los conteos de arXiv salen de las páginas de estadísticas anuales por archivo (`https://arxiv.org/year/<archivo>/<año>`), que dan envíos nuevos y listados cruzados por mes. Solo se usan los envíos nuevos.
+Los conteos de arXiv salen de las páginas de estadísticas anuales por archivo (`https://arxiv.org/year/<archivo>/<año>`), que dan envíos nuevos y listados cruzados por mes. Solo se usan los envíos nuevos. `data/raw/arxiv_archive_monthly.csv` empieza en 2010 para poder estimar tendencias previas; las series trimestrales empiezan en 2020.
 
 ![Índice por campo, 2022 = 100](docs/figures/fig1_index_by_field.png)
 
@@ -92,7 +93,7 @@ Salidas: `data/processed/arxiv_cs_ai_split_quarterly.csv` y `arxiv_cs_categories
 ## Regenerar los datos
 
 ```bash
-scripts/fetch_arxiv_years.sh /tmp/arxiv_years            # páginas anuales por archivo (no se versionan)
+scripts/fetch_arxiv_years.sh /tmp/arxiv_years 2010       # páginas anuales por archivo desde 2010 (no se versionan)
 python3 scripts/parse_arxiv.py /tmp/arxiv_years data/raw/arxiv_archive_monthly.csv
 cp /tmp/arxiv_years/monthly_submissions.csv data/raw/arxiv_monthly_submissions.csv
 scripts/fetch_biorxiv_medrxiv.sh data/raw
@@ -106,6 +107,9 @@ python3 scripts/harvest_arxiv_oai.py --set cs --from 2020-01-01 --min-created 20
 python3 scripts/analyze_cs_ai.py data/processed /tmp/cs.jsonl.gz
 python3 scripts/plot_static.py .                          # requiere matplotlib
 python3 scripts/plot_paper.py .                           # versiones para publicación
+python3 scripts/fetch_pubmed_quarterly.py data/raw/pubmed_edat_quarterly.json   # PubMed por trimestre
+python3 scripts/analyze_trends.py .                       # exceso sobre tendencia y crecimiento por archivo
+python3 scripts/plot_proposal.py .                        # prototipos de la propuesta
 ```
 
 `build_datasets.py` conserva solo trimestres completos, desde 2020-Q1 hasta el último trimestre cerrado antes de la fecha en que se ejecuta. `scripts/osf_check_quarter.py <servidor> <desde> <hasta>` sirve para comprobar a mano un trimestre de OSF.
