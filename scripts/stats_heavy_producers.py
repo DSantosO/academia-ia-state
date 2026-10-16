@@ -14,6 +14,7 @@ Measures by quarter (and for January-August windows, to compare with Nee, Zhong 
   decomposition  change in fractional output between the same window of consecutive years, by author class defined on
               the author's combined output in both years (top 1%, next 9%, bottom 90%). Combined-output classes are
               symmetric in the two years, so they carry no regression-to-the-mean bias; pre-2023 pairs are placebos.
+              Authors tied at a class boundary get fractional membership (the expectation over random tie-breaking).
   trend departure  each quarterly measure regressed on a 2019-2022 linear trend, quarter effects and 2023-2026 year
               dummies (OLS, Newey-West SEs, 4 lags).
   contribution  (kept for reference, not for inference) share of the Q3 2025 -> Q3 2026 change from authors with >=5
@@ -36,7 +37,6 @@ from collections import Counter, defaultdict
 
 import numpy as np
 
-RNG = np.random.default_rng(20261016)
 END = "2026-09"  # last complete month of the harvest (16 October 2026); later months are partial
 THEORY = {"hep-th", "hep-ph", "gr-qc", "nucl-th"}
 EXPERIMENT = {"hep-ex", "nucl-ex"}
@@ -141,21 +141,31 @@ def decomposition(stats, a, b):
     """Change in fractional output between periods a and b by author class, with classes defined on the author's
     combined output in a and b (top 1%, next 9%, rest). Classifying on a + b is symmetric in the two periods, so when
     they are exchangeable each class's expected change is zero: no regression-to-the-mean bias, unlike classes defined
-    on one period. Under proportional (broad-based) growth every class grows at the same rate."""
+    on one period. Under proportional (broad-based) growth every class grows at the same rate.
+    Authors tied at a class boundary share the remaining places equally (fractional membership), which is the
+    expectation over random tie-breaking and makes the result independent of any ordering."""
     fa, fb = stats[a]["_frac"], stats[b]["_frac"]
     comb = Counter(fa)
     comb.update(fb)
-    keys = sorted(comb)
-    RNG.shuffle(keys)  # ties are broken at random: insertion order would put authors active in a above those in b
-    ranked = sorted(keys, key=comb.get, reverse=True)
-    n = len(ranked)
-    classes = {"top1pct": ranked[: max(1, n // 100)], "next9pct": ranked[max(1, n // 100): max(1, n // 10)],
-               "bottom90pct": ranked[max(1, n // 10):]}
+    n = len(comb)
+    vals = sorted(comb.values(), reverse=True)
+
+    def weights(m):
+        """Membership weight in the top m authors."""
+        v = vals[m - 1]
+        above = sum(1 for x in vals if x > v)
+        tied = sum(1 for x in vals if x == v)
+        wt = (m - above) / tied
+        return lambda x: 1.0 if comb[x] > v else wt if comb[x] == v else 0.0
+
+    w1, w10 = weights(max(1, n // 100)), weights(max(1, n // 10))
+    member = {"top1pct": w1, "next9pct": lambda x: w10(x) - w1(x), "bottom90pct": lambda x: 1.0 - w10(x)}
     total_a, total_b = sum(fa.values()), sum(fb.values())
     out = {"total_a": total_a, "total_b": total_b, "growth": total_b / total_a - 1 if total_a else None}
-    for k, members in classes.items():
-        oa, ob = sum(fa.get(x, 0) for x in members), sum(fb.get(x, 0) for x in members)
-        out[k] = {"authors": len(members), "output_a": oa, "output_b": ob, "growth": ob / oa - 1 if oa else None,
+    for k, w in member.items():
+        ws = {x: w(x) for x in comb}
+        oa, ob = sum(ws[x] * v for x, v in fa.items()), sum(ws[x] * v for x, v in fb.items())
+        out[k] = {"authors": sum(ws.values()), "output_a": oa, "output_b": ob, "growth": ob / oa - 1 if oa else None,
                   "share_of_combined_output": (oa + ob) / (total_a + total_b),
                   "share_of_change": (ob - oa) / (total_b - total_a) if total_b != total_a else None}
     return out

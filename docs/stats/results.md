@@ -136,26 +136,26 @@ Authors matched by normalised name strings (arXiv has no author identifiers). Na
 
 | Group | Names | Q3 pair | Total | Top 1% | Next 9% | Bottom 90% | Share of the change: top 1% / next 9% / bottom 90% |
 |---|---|---|---|---|---|---|---|
-| Physics theory, ≤50 authors | all names | 2019→2020 | +5.4% | -12.4% | +8.8% | +5.9% | -15% / 39% / 76% |
-| Physics theory, ≤50 authors | all names | 2020→2021 | -0.8% | -5.9% | +0.2% | -0.7% | – / – / – |
-| Physics theory, ≤50 authors | all names | 2021→2022 | +3.4% | +8.0% | +0.1% | +4.2% | 14% / 0% / 85% |
-| Physics theory, ≤50 authors | all names | 2022→2023 | +3.8% | -1.3% | +3.5% | +4.4% | -2% / 23% / 79% |
-| Physics theory, ≤50 authors | all names | 2023→2024 | +3.6% | +2.9% | -0.6% | +5.2% | 5% / -4% / 99% |
-| Physics theory, ≤50 authors | all names | 2024→2025 | +11.7% | +35.7% | +16.6% | +8.0% | 18% / 34% / 48% |
-| Physics theory, ≤50 authors | all names | 2025→2026 | +26.2% | +47.4% | +36.9% | +20.4% | 12% / 35% / 53% |
-| Physics theory, ≤50 authors | namesake-robust | 2019→2020 | +4.0% | -13.0% | +0.5% | +6.6% | -19% / 3% / 116% |
-| Physics theory, ≤50 authors | namesake-robust | 2020→2021 | +1.8% | +3.1% | +1.6% | +1.8% | – / – / – |
-| Physics theory, ≤50 authors | namesake-robust | 2021→2022 | +1.6% | -4.5% | +0.2% | +2.7% | – / – / – |
-| Physics theory, ≤50 authors | namesake-robust | 2022→2023 | +6.7% | -6.3% | +11.4% | +6.2% | -6% / 41% / 65% |
-| Physics theory, ≤50 authors | namesake-robust | 2023→2024 | +5.1% | -3.9% | +0.3% | +7.6% | -5% / 1% / 103% |
-| Physics theory, ≤50 authors | namesake-robust | 2024→2025 | +10.2% | +55.7% | +12.6% | +6.2% | 27% / 31% / 42% |
-| Physics theory, ≤50 authors | namesake-robust | 2025→2026 | +25.1% | +50.7% | +33.0% | +20.0% | 12% / 33% / 55% |
-| Physics experiment, ≤50 authors | all names | 2019→2020 | -8.6% | -22.0% | -20.5% | +19.5% | 86% / 84% / -70% |
-| Physics experiment, ≤50 authors | all names | 2020→2021 | +9.4% | -3.2% | +26.3% | +5.7% | -10% / 87% / 23% |
-| Physics experiment, ≤50 authors | all names | 2021→2022 | +26.7% | +22.1% | +35.9% | +21.5% | 23% / 47% / 30% |
-| Physics experiment, ≤50 authors | all names | 2022→2023 | -6.1% | -0.1% | -7.4% | -9.4% | 1% / 44% / 56% |
-| Physics experiment, ≤50 authors | all names | 2023→2024 | -6.9% | +7.3% | -33.7% | +11.5% | -33% / 185% / -52% |
-| Physics experiment, ≤50 authors | all names | 2024→2025 | +11.7% | -28.6% | +59.0% | +19.3% | -91% / 129% / 62% |
+| Physics theory, ≤50 authors | all names | 2019→2020 | +5.4% | -11.9% | +7.6% | +6.3% | -15% / 34% / 81% |
+| Physics theory, ≤50 authors | all names | 2020→2021 | -0.8% | -5.1% | +0.2% | -0.7% | – / – / – |
+| Physics theory, ≤50 authors | all names | 2021→2022 | +3.4% | +7.7% | +1.0% | +3.8% | 14% / 7% / 79% |
+| Physics theory, ≤50 authors | all names | 2022→2023 | +3.8% | -0.4% | +1.2% | +5.1% | -1% / 8% / 93% |
+| Physics theory, ≤50 authors | all names | 2023→2024 | +3.6% | +3.4% | -2.5% | +5.9% | 6% / -18% / 112% |
+| Physics theory, ≤50 authors | all names | 2024→2025 | +11.7% | +35.7% | +16.3% | +8.1% | 18% / 34% / 49% |
+| Physics theory, ≤50 authors | all names | 2025→2026 | +26.2% | +43.6% | +37.0% | +20.6% | 11% / 35% / 54% |
+| Physics theory, ≤50 authors | namesake-robust | 2019→2020 | +4.0% | -19.9% | +2.6% | +6.6% | -31% / 16% / 115% |
+| Physics theory, ≤50 authors | namesake-robust | 2020→2021 | +1.8% | +0.9% | +2.2% | +1.7% | – / – / – |
+| Physics theory, ≤50 authors | namesake-robust | 2021→2022 | +1.6% | -4.5% | +0.1% | +2.7% | – / – / – |
+| Physics theory, ≤50 authors | namesake-robust | 2022→2023 | +6.7% | -6.3% | +11.9% | +6.0% | -6% / 43% / 63% |
+| Physics theory, ≤50 authors | namesake-robust | 2023→2024 | +5.1% | -3.9% | +0.2% | +7.6% | -5% / 1% / 104% |
+| Physics theory, ≤50 authors | namesake-robust | 2024→2025 | +10.2% | +56.1% | +12.4% | +6.2% | 27% / 30% / 43% |
+| Physics theory, ≤50 authors | namesake-robust | 2025→2026 | +25.1% | +50.1% | +33.4% | +19.9% | 12% / 34% / 55% |
+| Physics experiment, ≤50 authors | all names | 2019→2020 | -8.6% | -19.2% | -22.1% | +18.0% | 74% / 91% / -65% |
+| Physics experiment, ≤50 authors | all names | 2020→2021 | +9.4% | -4.4% | +27.6% | +5.7% | -14% / 91% / 23% |
+| Physics experiment, ≤50 authors | all names | 2021→2022 | +26.7% | +22.0% | +36.0% | +21.5% | 23% / 47% / 30% |
+| Physics experiment, ≤50 authors | all names | 2022→2023 | -6.1% | -0.2% | -7.3% | -9.4% | 1% / 43% / 56% |
+| Physics experiment, ≤50 authors | all names | 2023→2024 | -6.9% | +9.7% | -35.6% | +12.1% | -43% / 198% / -55% |
+| Physics experiment, ≤50 authors | all names | 2024→2025 | +11.7% | -28.0% | +57.6% | +19.4% | -89% / 127% / 62% |
 | Physics experiment, ≤50 authors | all names | 2025→2026 | +16.7% | +30.0% | +7.6% | +16.3% | 44% / 15% / 41% |
 
 Shares of the change are omitted (–) when total growth is below 3%, where they are unstable.

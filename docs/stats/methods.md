@@ -155,7 +155,8 @@ the 2019–2022 trend, in percentage points.
 **Who produced the growth?** The change in fractional output between the third quarters of consecutive years is
 split by author class.
 - *Classes.* Authors are ranked by their combined fractional output in the two years compared: the top 1%, the next
-  9% and the bottom 90%. Ties are broken at random (fixed seed).
+  9% and the bottom 90%. Authors tied at a class boundary share the remaining places equally (fractional
+  membership, the expectation over random tie-breaking).
 - *Why combined output.* Classes defined on one year select on that year's output, so they carry regression to the
   mean: authors who are heavy producers in the second year will, on average, have produced less in the first even if
   nothing changed. Ranking on the sum of both years is symmetric in the two years, so when the years are exchangeable

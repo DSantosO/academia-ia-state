@@ -45,20 +45,15 @@ python3 scripts/harvest_rxiv_text_features.py biorxiv 2019-03 2026-09 data/raw/b
 for s in math:math physics:hep-th physics:hep-ph physics:gr-qc physics:nucl-th physics:hep-ex physics:nucl-ex; do
   python3 scripts/harvest_arxiv_oai.py --set $s --from 2019-01-01 --min-created 2019-01-01 /tmp/oai_${s/:/_}.jsonl.gz
 done
-python3 scripts/aggregate_arxiv_text.py data/raw/arxiv_text /tmp/oai_*.jsonl.gz
 python3 scripts/fetch_pubmed_quarterly.py data/raw/pubmed_edat_quarterly.json
 python3 scripts/osf_quarterly.py data/raw/osf_quarterly.csv
-# processing and statistics
-python3 scripts/build_datasets.py data
-python3 scripts/stats_within_field.py .
-python3 scripts/stats_fields.py .
-python3 scripts/stats_heavy_producers.py data/processed/stats/heavy_producers.json maths=/tmp/oai_math_math.jsonl.gz physics=/tmp/oai_physics_hep-th.jsonl.gz,/tmp/oai_physics_hep-ph.jsonl.gz,/tmp/oai_physics_gr-qc.jsonl.gz,/tmp/oai_physics_nucl-th.jsonl.gz,/tmp/oai_physics_hep-ex.jsonl.gz,/tmp/oai_physics_nucl-ex.jsonl.gz
-python3 scripts/stats_markers.py .
-python3 scripts/report_stats.py .
-python3 scripts/plot_plos.py .
+# processing, statistics, results.md and figures (about three minutes; with the OAI directory it also rebuilds the
+# heavy-producer statistics and the arXiv text counts)
+scripts/run_all.sh /tmp
 ```
 
-Counts change slightly when the sources revise their records; the data in this package were retrieved on
+Running `scripts/run_all.sh` on the committed data reproduces every file in `data/processed/`, `docs/stats/results.md`
+and `docs/figures/plos/` byte for byte. Counts change slightly when the sources revise their records; the data in this package were retrieved on
 15–16 October 2026. Random seeds are fixed (20261016).
 
 ## Sources and terms of use
