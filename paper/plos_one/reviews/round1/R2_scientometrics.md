@@ -82,7 +82,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
   - The negative control, hep-ex against nucl-ex, is larger: 1.39 [1.19, 1.64].
   - 61% of the 153 pairs of arXiv archives differ at least as much.
   - With 2019 as the base year the ratio is 1.05 [0.90, 1.23].
-  - The event-study ratios for 2020 (1.25) and 2021 (1.19) exceed the 2026 value. Relative to experiment, 2022 was a COVID-affected low year for theory, so it is a poor base year.
+  - The event-study ratios for 2020 (1.25) and 2021 (1.19), when COVID-19 disrupted laboratories, exceed the 2026 value. Those for 2016 (1.10) and 2019 (1.08) come close to it. The 2026 ratio is therefore within the range of pre-ChatGPT fluctuation.
 - **Biology (C2).** The ratio is 1.08 [1.03, 1.14], Holm p = 0.0095.
   - Without bioinformatics it is 0.93 [0.89, 0.97].
   - With a 2019 base it is 0.87 [0.80, 0.95].
@@ -118,7 +118,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
 
 - **Identifiers record announcement.** arXiv assigns the identifier when the paper is announced: "The final arXiv identifier is assigned as part of the automated process when the work is announced" (https://info.arxiv.org/help/availability.html). YYMM is therefore the month of announcement. The per-archive statistics also count announced papers.
 - **Papers were being held in 2026.** arXiv's post of 1 October 2026 (https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/) says that:
-  - a small share of authors delayed other authors' papers "by days or weeks";
+  - a small share of heavy submitters were delaying other authors' papers by days or weeks;
   - rate limiting was already policy before October, applied mostly at moderators' discretion;
   - held submissions can spill into the next month.
 
@@ -186,7 +186,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
 
 - **Preprint adoption.** Wet-lab fields adopted bioRxiv later; bioRxiv itself grew 40% in 2019 (research note 8).
   - The 2019 event-study coefficient, 1.24 [1.14, 1.36], shows computational categories already losing ground relative to wet lab between 2019 and 2022, before ChatGPT. The choice of base year therefore decides the sign of C2.
-  - Funder mandates also shift adoption. Since 1 January 2025 the Gates Foundation has expected the manuscripts it funds "to be shared promptly in the form of a preprint" (https://openaccess.gatesfoundation.org/open-access-policy/). That bears mostly on global health, infectious disease and microbiology.
+  - Funder mandates also shift adoption. Since 1 January 2025 the Gates Foundation has expected that funded manuscripts "shall be shared promptly in the form of a preprint" (https://openaccess.gatesfoundation.org/open-access-policy/). That bears mostly on global health, infectious disease and microbiology.
 - **COVID-19.** The per-category counts include COVID-19 preprints.
   - The draft's shares (5.1% computational, 5.9% wet lab) come from May–June 2022 only, while the reference years before 2022 span the 2020–2021 surge.
   - Even in May–June 2022, COVID-19 preprints were 23% of immunology and 11% of microbiology (my calculation from `data/raw/biorxiv_covid_sample_2022.csv`).
@@ -284,22 +284,40 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
    - Under a per-submitter cap, broad growth predicts stable totals and a falling heavy-producer share.
    - The cap binds submitters, not co-authors, so the test is imperfect.
 
-### M7. H3 rests on rankings across studies and on arXiv q-bio, and the within-biology evidence cited points the other way
+### M7. The draft argues H3 from rankings across studies and from arXiv q-bio; the companion's own marker results should replace that argument
 
 **Location.** The Abstract's "Published estimates put AI-assisted writing in biology on a par with physics"; Introduction (H3); Results (H3); Table 6; Discussion.
 
-**Problem.**
-
+**Problem with the draft's argument.**
 - **"Biology" here is arXiv's quantitative-biology archive.** Lin and Zhu's biology group is q-bio. It is computational and small: 2,655 papers in 2023 against 84,966 in physics, per their Table 1 as recorded in research note 8. It is neither bioRxiv nor wet-lab biology.
 - **The direct bioRxiv evidence is missing.** Liang et al. (*Nat Hum Behav* 2025) analyse bioRxiv, but Table 6 omits their bioRxiv series. Their published values for each corpus were not read; the article is not open access.
 - **The cited within-biology evidence points the other way.** Kobak et al. find computational fields at about 0.20, against at least 0.135 overall. Within biomedicine, then, LLM-assisted writing is commoner in computational fields. That is exactly the confound the within-field contrast was meant to exclude.
 - **Kusumegi et al. are cited selectively.** They estimate that output rose by 36.2% on arXiv, 52.9% on bioRxiv and 59.8% on SSRN after authors adopted LLMs (*Science* 2025;390(6779):1240–1243). The manuscript cites them only for the reversed relationship between complexity and quality. Renault et al. (*PNAS* 2026) argue that this design produces spurious post-adoption dynamics. Both belong in the paper.
 
+**What the companion's marker analysis now shows** (`stats/results.md`, f5ab16e). Marker words are counted per 100 abstracts, against each group's 2019–2022 mean.
+- **bioRxiv, within field.**
+  - Computational categories start higher (38.6 against 27.7 for wet lab) and rose somewhat faster in 2023–2024. The ratio of rates relative to 2022 was 1.22 and 1.17, neither significant.
+  - By 2025–2026 the rises have converged: 1.04 in 2025 and 1.03 [0.83, 1.26] in 2026.
+- **arXiv physics, within field.** Experiment rose at least as much as theory: ×2.95 against ×2.34 in 2025. The ratio of rates in 2026 is 0.89 [0.61, 1.30].
+- **Across servers.** Relative rises are similar on the two servers in 2024–2025, about two- to threefold: bioRxiv groups ×1.96 to ×2.56, arXiv groups ×2.13 to ×2.95. Yet output accelerated only on arXiv.
+
+**What follows.**
+- This is the paper's best evidence for H3. It supports a statement about servers: differences in AI-assisted writing do not explain why arXiv accelerated and bioRxiv did not.
+- Within fields it explains nothing, because output did not diverge within fields either (M1).
+- **Limits to state.**
+  - The word list comes from PubMed.
+  - Its words drift after 2024, as the companion documents, so 2024 is the only clean year for comparisons.
+  - Baseline levels differ by corpus: 11.7–15.0 per 100 abstracts on arXiv against 27.7–38.6 on bioRxiv.
+  - bioRxiv is sampled in March and September only.
+  - The panel regression is ecological, and on arXiv rests on six clusters.
+
 **Fix.**
-1. **Make the marker analysis core.** Run the marker analysis described in `methods.md` by bioRxiv category and arXiv archive.
-   - Add Liang et al.'s distributional estimator as a second method, because Kobak's word list was derived from PubMed.
-2. **Read Liang et al.'s values** for bioRxiv and physics.
-3. **Rewrite the sentence in the Abstract.**
+1. **Rebuild H3 on the new results.** Replace the rankings from other studies (Table 6) with the companion's marker results.
+   - Lead with 2024.
+   - Report each bioRxiv category and arXiv archive, not only the groups.
+   - Keep Table 6 as context only.
+2. **Add a second estimator.** Add Liang et al.'s distributional estimator, which is less tied to PubMed vocabulary, and read their published values for bioRxiv and physics.
+3. **Rewrite the sentence in the Abstract** to rest on the new results.
 4. **Reconcile micro and macro.** Explain how the gains Kusumegi et al. associate with adoption on bioRxiv fit with the absence of any aggregate acceleration there.
 
 ### M8. Server policies, screening and method changes are incompletely documented; the social-science series should be fixed or dropped
@@ -418,7 +436,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
    - If markers are wanted, mark operational events instead, such as arXiv's independence on 1 July 2026.
 7. **Two name normalisations.** H2 reports figures from two normalisations (19.3% in the figure, 19.2% in the script). Use one.
 8. **Precision of the mention patterns.** Report the precision of the AI, Lean and Erdős patterns on 100 random matches.
-   - `\bin Lean\b` and `o[134]` can match text unrelated to AI.
+   - `\bin Lean\b` can match ordinary uses of "lean", and `o[134]` can match tokens unrelated to AI.
    - An AI mention in the comments field may only acknowledge language editing.
 9. **Word boundary.** Add `\b` before `covid`. The effect is negligible (M5).
 10. **Which arXiv count is which.** "40,363 submissions in September 2026" is arXiv's figure for all submissions. The series are announced new papers by primary archive. Say which is used where.
@@ -477,7 +495,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
    - EarthArXiv against physics.ao-ph and physics.geo-ph.
 
    These separate effects specific to arXiv from effects common to a field. (Section 7)
-10. **Run the marker analysis** by category and archive, with two estimators. (M7)
+10. **Extend the marker analysis.** It now exists by group (f5ab16e). Extend it to each bioRxiv category and arXiv archive, make 2024 the main comparison year, and add Liang et al.'s estimator. (M7)
 11. **Track thinness and later outcomes,** by archive and for heavy producers:
     - pages and figures (from the comments field), references and the single-author share;
     - journal publication within twelve months (OpenAlex).
@@ -506,7 +524,11 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
   - the bioRxiv index reproduces from bioRxiv's own statistics;
   - per-archive and OAI growth in mathematics agree.
 - **Replication of Nee et al.'s synthetic control** (11.9%) on primary-only counts, and the comparison across archives that puts it in context.
-- **The heavy-producer analysis:** namesake variants, the breakdown by team size, and an explicit warning that histories are left-censored.
+- **The heavy-producer analysis:**
+  - namesake variants, the breakdown by team size, and an explicit warning that histories are left-censored;
+  - in the companion's update, the exclusion of collaboration papers and the concentration shares;
+  - also in the update, the decomposition of growth on combined output, which avoids regression to the mean; the earlier version, which was biased upward, was dropped.
+- **The marker analysis.** The companion documents the drift of marker words after 2024 instead of reading it as falling LLM use.
 - **The code and record:** readable, modular scripts that output aggregates only, and the process record.
 
 ---
@@ -530,6 +552,13 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
   - bioRxiv stands at 0.91 [0.71, 1.15] and PubMed at 0.93 [0.86, 1.01].
   - medRxiv without COVID-19 grew 27%, 21% and 22% in 2024–2026, with no acceleration.
   - September 2026 spiked on arXiv only (M2).
+- **AI-writing markers do not separate the servers.** They rose by similar factors on arXiv and bioRxiv, and in experimental and non-experimental groups (M7). Differences in AI-assisted writing therefore do not explain the divergence between the servers. That sharpens the question: is it the server or the work?
+- **Heavy producers in physics theory.** Their measures rose modestly above trend:
+  - papers with a heavy producer +2.1 points;
+  - share of fractional output from the top 1% +0.8 points;
+  - the bottom 90% of authors grew 20% between Q3 2025 and Q3 2026.
+
+  The growth is broad, with modest concentration at the top.
 
 ### 7.2 Candidate explanations and how to tell them apart
 
@@ -558,7 +587,8 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
    - includes experimental archives;
    - is absent from bioRxiv, medRxiv and PubMed.
 3. The mathematics anomaly replicates, but it is an excess in mid-2026 on top of an arXiv-wide shift.
-4. A contribution to measurement. Preprint counts are not comparable indicators of production across servers, because the servers differ in:
+4. AI-writing markers rose by similar factors on arXiv and bioRxiv and across groups within each. Writing adoption therefore does not explain the divergence between the servers; this is H3 restated at the level of servers, with its limits (M7).
+5. A contribution to measurement. Preprint counts are not comparable indicators of production across servers, because the servers differ in:
    - how papers are dated;
    - which genres they accept;
    - how they screen submissions;
@@ -567,7 +597,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
 **Nee et al.**
 - **Replication.** Present the 11.9% as an independent replication on a different unit: primary-only counts, against their list entries that include cross-lists.
 - **What the synthetic control identifies.** Its donors are other arXiv archives, and these accelerated too. It therefore estimates mathematics' excess over arXiv, not the effect of AI.
-- **Their framing.** The ranking against trend (rank p = 0.28) and the departures for hep-ex and astro-ph qualify their emphasis on "theoretical and computational research". Their text reports nucl-ex (+2.6%) but not hep-ex.
+- **Their framing.** The ranking against trend (rank p = 0.28) and the departures for hep-ex and astro-ph qualify their emphasis on "theoretical and computational research". According to research note 8, their passage on physics reports nucl-ex (+2.6%) but gives no figure for hep-ex.
 - **The author panel.** Compare it only after harmonising definitions (M3). Their panel shows rising concentration and newcomers among high-output units, which bears directly on H2.
 
 **Qi et al.**
@@ -581,7 +611,7 @@ That would be useful and publishable. H2 and H3 need the checks in Sections 3 an
 
 **What the evaluation argument can keep.**
 - The thesis of the title, that AI "is eroding publication counts as a measure of scientific work", is not tested by these data. Nor is "needs no misuse".
-- A weaker point does follow without H1. arXiv counts rose 30–50% above trend within two years, while bioRxiv and PubMed did not. Counts are therefore not comparable across fields, servers or years, whatever the cause. That is a measurement point evaluators can use.
+- A weaker point does follow without H1. By 2026, arXiv counts in physics and mathematics stood 32% and 48% above their pre-2023 trends, while bioRxiv and PubMed did not rise above theirs. Counts are therefore not comparable across fields, servers or years, whatever the cause. That is a measurement point evaluators can use.
 
 **Suggested titles.**
 - "Where has preprint output accelerated since generative AI? Pre-specified within-field tests across arXiv, bioRxiv and medRxiv"
