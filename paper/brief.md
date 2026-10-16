@@ -236,6 +236,16 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
    - **Obsolete.** DORA targets *journal-level* proxies and asks evaluators to judge each output on its merits. Its remedy assumes two things that generative AI breaks: that the output reflects the work behind it, and that evaluators have time to read it.
    - **Link to Blekhman.** He predicts AI will reverse DORA's progress. The author's sharper point is that there was little progress to reverse.
 
+## Change of main product (16 Oct 2026, author)
+
+- **Main product:** a quantitative research article for **PLOS ONE**.
+  - There is no fee: EMBL's flat-fee agreement covers all PLOS journals, provided EMBL is the corresponding affiliation.
+  - PLOS ONE judges technical soundness, not novelty, and does not accept essays.
+  - The author does not want to pay publication fees.
+- **The essay** goes to Zenodo as a companion preprint. Its thesis ("the system is not prepared for good use of AI") becomes the article's framework in the Introduction and its interpretation in the Discussion (D2).
+- **The article must state explicitly** that experimental sciences show the effect much less. AI is visible in their writing, but barely in the volume of output. This is part of H1, a Results subsection and Discussion D1.
+- **Skeleton and analysis plan:** `paper/plos_one/skeleton.md`.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
