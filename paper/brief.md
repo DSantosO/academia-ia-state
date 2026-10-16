@@ -215,6 +215,16 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
 2. **Add a "Recommendations" section** (§6, before the Conclusion). It draws on a research pass (`research_notes/.../7_recommendations.md`) and on the author's own recommendations, which are still to come. Credit prior proposers: Huang et al. made three recommendations; also Blekhman, Hansen and Fourie.
 3. **Field differences.** The author's field is physics and biology. Their view is that biology is not yet feeling this as much as other fields. Check it against the evidence: `research_notes/.../8_field_differences.md`, plus companion-analysis contrasts (bioRxiv computational vs wet-lab categories; arXiv theory vs experiment archives). Word it at the strength the evidence supports.
 4. **Quotations and Table 1** (the conference and arXiv rules) get a final, careful verification against primary sources after the revision.
+5. **A critique of DORA and CoARA** goes in as §4d, "What DORA and CoARA miss". The author wants it and will discuss the content later, so the section is left EMPTY in both drafts. The referee advised treating them as allies; the critique can be friendly.
+
+   Seed material for that discussion (not in the drafts):
+   - **Voluntary, uneven, pre-AI.** Uptake is voluntary and uneven; the European Commission's 2026 baseline study calls engagement "broad and growing" but progress uneven. Neither framework was designed for generative AI.
+   - **Their remedy assumes reading capacity.** "Count less, read more" assumes reviewers and panels have time to read, and AI-era volume consumes exactly that capacity.
+   - **Attacked from both sides.** Some call the reform administrative capture (Baccini 2025); others call it anti-metric "bibliometric denialism" (Abramo 2024; Torres-Salinas et al. 2023). The reform also has a professionalised evaluation community behind it (Rushforth & Hammarfelt 2023).
+   - **Narrative CVs rest on thin evidence** (Bordignon et al. 2023), and early signs suggest they may disadvantage non-native writers. That disadvantage may now be offset, or reversed, by LLM writing help.
+   - **Plenty of signatures, little evidence of effect.** CoARA has 994 signatories, but there is no study showing that DORA signatories changed how they hire.
+
+   Sources are in `research_notes/AI disruption of academia literature/4_governance_and_reform.md` and `paper/reviews/citation_audit.md`.
 
 ## Sources
 
