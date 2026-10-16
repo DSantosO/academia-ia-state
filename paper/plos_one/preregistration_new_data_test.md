@@ -1,6 +1,6 @@
-# Pre-registration (DRAFT, needs the author's approval): the new-data bottleneck test on held-out arXiv archives
+# Pre-registration (ACTIVE): the new-data bottleneck test on held-out arXiv archives
 
-*Drafted 16 Oct 2026 by the coordinating assistant. It is not active until the author approves it. Approval is recorded by a commit that removes "DRAFT" from the title, and optionally by an OSF registration. No paper-type classification of the held-out archives may be done before then.*
+*Drafted 16 Oct 2026 by the coordinating assistant. The author approved the analysis in chat on 16 Oct 2026 ("Do the abstract analysis"). This commit activates the plan and timestamps it. The author may also register it on OSF [AUTHOR: optional OSF DOI]. At activation, no paper-type classification of the held-out archives has been done.*
 
 ## 1. Background and state of knowledge at registration
 
@@ -38,7 +38,7 @@ The hypothesis is stated in the author's terms: what AI can accelerate is work t
   - reanalysis of existing or public data;
   - prospects or sensitivity studies for future experiments.
 - **Unclear:** excluded from the primary analysis. In a sensitivity analysis it is added to NN.
-- **Classifier:** a large language model with a fixed prompt and codebook (Appendix A, to be added before activation), run at temperature 0. The model name and version are recorded. Every label is stored with the paper ID.
+- **Classifier:** a large language model with the fixed prompt and codebook in Appendix A, run at temperature 0. The model name and version are recorded. Every label is stored with the paper ID.
 - **Validation by the author, a human expert:**
   - The author codes a **stratified random sample of 200 abstracts** from the three archives (2019–2026), blind to the model's labels and to dates.
   - Report Cohen's κ, plus precision and recall per class.
@@ -80,3 +80,49 @@ Every deviation from this plan will be listed and explained in the paper.
 
 - The classifier is an AI model; its use and the author's validation will be disclosed under PLOS policy.
 - This plan was drafted by an AI assistant and approved by the author, who is responsible for it.
+
+## 10. Exploratory companion analysis: INSPIRE-HEP (not confirmatory)
+
+The author proposed using INSPIRE-HEP because its metadata are rich. HEP is where the hypothesis came from, so this analysis is **exploratory**. It is reported separately and never pooled with the confirmatory test.
+
+- **Records:** INSPIRE-HEP records with arXiv e-prints in hep-ex, hep-ph, hep-th, hep-lat, nucl-ex and nucl-th, 2017–2026, dated by v1 submission.
+- **Fields used:**
+  - INSPIRE subject categories (e.g. Experiment-HEP, Phenomenology-HEP, Theory-HEP, Instrumentation, Computing, Experiment-Nucl);
+  - document type (article, conference paper, review, thesis, report);
+  - linked accelerator experiments;
+  - collaborations;
+  - author counts.
+- **Class rules from curated metadata, with no AI classification:**
+  - **ND-INSPIRE:** a research article (not a review, proceedings or thesis) in an experimental category that is linked to an experiment or collaboration and does not match prospect or sensitivity wording.
+  - **NN-INSPIRE:** everything else in scope.
+  - Report the rule variants as sensitivity checks.
+- **Questions:**
+  - Do ND-INSPIRE papers depart from their pre-2023 trend in 2025–2026 less than NN-INSPIRE papers, overall and within hep-ex and nucl-ex?
+  - Report breakdowns by collaboration size (≤10, 11–300, >300 authors) and by document type.
+- **Terms of use:** respect INSPIRE's API rate limits and terms of use.
+
+## Appendix A. Codebook and classifier prompt (fixed at activation)
+
+**Input:** the title, abstract and arXiv comments of one paper. The date and the archive are withheld.
+
+**Prompt (verbatim):**
+
+> Classify this physics or astronomy paper from its title, abstract and comments into exactly one class.
+>
+> ND — The paper reports NEW empirical data obtained by the authors: new measurements, experiments, or observations (including new telescope, satellite or detector observations), or the experimental characterisation of samples or devices the authors made or measured.
+>
+> NN — The paper does NOT report new empirical data. This includes theory or analytic results; numerical calculations or simulations (including first-principles/DFT); computational methods, algorithms, machine-learning methods or software; designs, proposals, or prospect/sensitivity studies for future experiments; reviews, perspectives, white papers or lecture notes; and reanalysis of existing, archival or public data without new data collection by the authors.
+>
+> U — It cannot be determined from the text.
+>
+> Rules:
+> (1) If the paper combines new measurements or observations with theory or simulation, choose ND.
+> (2) Analysis of public or archival datasets (e.g., public survey catalogues, public telescope archives, published databases) is NN unless the authors obtained new observations.
+> (3) Fabricating and measuring a device or sample is ND; designing or simulating one is NN.
+> (4) Answer with only the label: ND, NN or U.
+
+**Validation sheet:**
+- 200 papers, stratified by archive (cond-mat, astro-ph, quant-ph) and by period (2019–2022 vs 2023–2026).
+- Each entry carries a pseudonymous ID, title, abstract and comments.
+- Dates, archives and model labels are withheld.
+- The author codes the papers using the same three classes and rules.
