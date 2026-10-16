@@ -137,3 +137,19 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
 3. **If κ ≥ 0.60 in a domain,** that domain's results stand as confirmatory, with this deviation disclosed.
 4. **If κ < 0.60 in a domain,** that domain's confirmatory results are withdrawn and reported as exploratory only. Any codebook revision made after seeing results will be labelled post hoc.
 5. The paper will report this deviation in full.
+
+## Deviation 2 (recorded 16 Oct 2026, before any growth-by-class analysis)
+
+**What changed:**
+1. **Sampling instead of full classification.** Classifying all papers is not feasible with the available tooling: about 391,000 held-out arXiv papers, 313,000 bioRxiv and 65,000 non-COVID medRxiv papers. Monthly class counts are therefore estimated as the monthly total multiplied by the class share in a stratified random sample.
+   - **Held-out arXiv:** 15 papers per archive-month for 2017–2024 and 40 for 2025–2026, about 6,800 papers. The expected minimum detectable effect for the pooled RRR is about 1.15–1.20.
+   - **bioRxiv and medRxiv (Test A):** the same per-month design, about 3,700 papers.
+   - **Test B:** at least 150 papers per category for 2019–2022, reusing Test A papers that fall in that window. medRxiv categories with fewer than 150 non-COVID papers in 2019–2022 are pooled with their closest category or dropped. The rule is fixed before results.
+   - **Inference:** the bootstrap resamples months *and* redraws the classified sample, so sampling error is carried into the CIs.
+   - **Fractions and seeds:** fixed in the analysis script before any estimate is computed.
+2. **Temperature.** The classifier runs through subagents whose temperature cannot be set, so "temperature 0" cannot be achieved. Each paper is classified once, independently, with the verbatim prompt. Labels are stored and will not be re-drawn.
+3. **Classifier identity.** The classifier is a Claude model (Anthropic), frozen for all runs: [AUTHOR: record the model name and version]. Repository policy prevents model identifiers from being written here.
+4. **Validation frame.** The validation sheet is published in a public repository, so its bioRxiv and medRxiv draws are restricted to papers under Creative Commons licences. arXiv metadata are CC0. This slightly narrows the sampling frame for validation only.
+5. **Blinding.** The key and the model labels for the validation sheet are stored compressed and hash-committed in validation/sealed/. Blinding depends on the author not opening those files before coding.
+
+**Authorisation.** The author's standing instructions of 16 Oct ("as much statistics as we can but with sense"; usage limits removed; "supón que está bien y mañana lo valido") are taken as authorising the full sampled plan, not the cheaper option. The author can revise this choice before results are reported.
