@@ -126,3 +126,14 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
 - Each entry carries a pseudonymous ID, title, abstract and comments.
 - Dates, archives and model labels are withheld.
 - The author codes the papers using the same three classes and rules.
+
+## Deviation 1 (recorded 16 Oct 2026, before any growth-by-class analysis)
+
+**What changed.** The author asked to proceed on the assumption that the classifier is adequate, and to complete the human validation the next day ("supón que está bien y mañana lo valido"). The classification and the confirmatory estimates in this plan will therefore be computed **before** the author's blind validation coding, reversing the order in §4 and §5.
+
+**Safeguards:**
+1. The classifier (model, version and verbatim prompt in Appendix A/B) is frozen as registered and will not be changed after results are seen.
+2. The validation sheet stays blind (no dates, servers or model labels), so the author's coding cannot be steered by the results.
+3. **If κ ≥ 0.60 in a domain,** that domain's results stand as confirmatory, with this deviation disclosed.
+4. **If κ < 0.60 in a domain,** that domain's confirmatory results are withdrawn and reported as exploratory only. Any codebook revision made after seeing results will be labelled post hoc.
+5. The paper will report this deviation in full.
