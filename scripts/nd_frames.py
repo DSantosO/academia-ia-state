@@ -9,7 +9,9 @@ Writes:
   data/processed/nd_samples.csv.gz       design, stratum, paper key (identifiers only)
   data/processed/nd_frame_counts.csv     design, stratum, frame size (monthly totals and category totals)
   WORK_DIR/classifier_input_full.json    unique papers to classify (key, domain, title, abstract, comments)
-Usage: python3 scripts/nd_frames.py HELDOUT_DIR OAI_DIR BIORXIV_PARTS MEDRXIV_PARTS WORK_DIR [repo_dir]
+With --only DESIGN_PREFIX (for example --only medrxiv) only the designs of that server are drawn, from the frames
+available so far; draws are per stratum with fixed seeds, so they are identical to those of the full run.
+Usage: python3 scripts/nd_frames.py HELDOUT_DIR OAI_DIR BIORXIV_PARTS MEDRXIV_PARTS WORK_DIR [repo_dir] [--only X]
 """
 import csv
 import glob
@@ -74,10 +76,12 @@ def rxiv(parts, server):
     return list(out.values())
 
 
-def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo="."):
+def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo=".", only=None):
     os.makedirs(work, exist_ok=True)
-    frames = {"heldout": heldout(heldout_dir), "oai": oai(oai_dir), "biorxiv": rxiv(bio_parts, "biorxiv"),
-              "medrxiv": rxiv(med_parts, "medrxiv")}
+    frames = {"heldout": heldout(heldout_dir) if only in (None, "arxiv") else [],
+              "oai": oai(oai_dir) if only in (None, "arxiv") else [],
+              "biorxiv": rxiv(bio_parts, "biorxiv") if only in (None, "biorxiv") else [],
+              "medrxiv": rxiv(med_parts, "medrxiv") if only in (None, "medrxiv") else []}
     by_key = {p["key"]: p for f in frames.values() for p in f}
     samples, sizes = [], []
 
@@ -87,7 +91,7 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo="."):
             samples.append((design, stratum, k))
 
     # HN
-    for arch in D.HN_ARCHIVES:
+    for arch in (D.HN_ARCHIVES if only in (None, "arxiv") else []):
         grp = defaultdict(list)
         for p in frames["heldout"]:
             if p["archive"] == arch:
@@ -96,6 +100,8 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo="."):
             add("HN", f"{arch}|{m}", grp.get(m, []), D.per_month(m))
     # Test A
     for server, first in (("biorxiv", D.BIO_FIRST), ("medrxiv", D.MED_FIRST)):
+        if only not in (None, server):
+            continue
         grp = defaultdict(list)
         for p in frames[server]:
             grp[p["month"]].append(p)
@@ -119,11 +125,12 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo="."):
             dropped.append((server, c, len(papers)))
             continue
         add(f"B-{server}", c, papers, D.TESTB_N)
-    with gzip.open(os.path.join(repo, "data/processed/nd_samples.csv.gz"), "wt", newline="") as f:
+    suffix = f"_{only}" if only else ""
+    with gzip.open(os.path.join(repo, f"data/processed/nd_samples{suffix}.csv.gz"), "wt", newline="") as f:
         w = csv.writer(f)
         w.writerow(["design", "stratum", "paper_key"])
         w.writerows(samples)
-    with open(os.path.join(repo, "data/processed/nd_frame_counts.csv"), "w", newline="") as f:
+    with open(os.path.join(repo, f"data/processed/nd_frame_counts{suffix}.csv"), "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["design", "stratum", "frame_size"])
         w.writerows(sizes)
@@ -132,10 +139,16 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo="."):
     keys = sorted({k for _, _, k in samples})
     json.dump([{"id": k, "domain": by_key[k]["domain"], "title": by_key[k]["title"], "abstract": by_key[k]["abstract"],
                 "comments": by_key[k]["comments"]} for k in keys],
-              open(os.path.join(work, "classifier_input_full.json"), "w"), ensure_ascii=False)
+              open(os.path.join(work, f"classifier_input_full{suffix}.json"), "w"), ensure_ascii=False)
     print({d: sum(1 for s in samples if s[0] == d) for d in sorted({s[0] for s in samples})}, "unique papers:", len(keys),
           "dropped categories:", len(dropped))
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    args = sys.argv[1:]
+    only = None
+    if "--only" in args:
+        i = args.index("--only")
+        only = args[i + 1]
+        args = args[:i] + args[i + 2:]
+    main(*args, only=only)

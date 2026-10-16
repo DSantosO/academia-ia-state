@@ -1,0 +1,139 @@
+design,stratum,frame_size
+A-medrxiv,2019-07,116
+A-medrxiv,2019-08,113
+A-medrxiv,2019-09,118
+A-medrxiv,2019-10,177
+A-medrxiv,2019-11,191
+A-medrxiv,2019-12,166
+A-medrxiv,2020-01,217
+A-medrxiv,2020-02,237
+A-medrxiv,2020-03,265
+A-medrxiv,2020-04,391
+A-medrxiv,2020-05,465
+A-medrxiv,2020-06,482
+A-medrxiv,2020-07,438
+A-medrxiv,2020-08,401
+A-medrxiv,2020-09,549
+A-medrxiv,2020-10,428
+A-medrxiv,2020-11,464
+A-medrxiv,2020-12,395
+A-medrxiv,2021-01,437
+A-medrxiv,2021-02,415
+A-medrxiv,2021-03,531
+A-medrxiv,2021-04,463
+A-medrxiv,2021-05,469
+A-medrxiv,2021-06,472
+A-medrxiv,2021-07,534
+A-medrxiv,2021-08,424
+A-medrxiv,2021-09,503
+A-medrxiv,2021-10,492
+A-medrxiv,2021-11,465
+A-medrxiv,2021-12,467
+A-medrxiv,2022-01,500
+A-medrxiv,2022-02,533
+A-medrxiv,2022-03,618
+A-medrxiv,2022-04,576
+A-medrxiv,2022-05,642
+A-medrxiv,2022-06,543
+A-medrxiv,2022-07,484
+A-medrxiv,2022-08,536
+A-medrxiv,2022-09,555
+A-medrxiv,2022-10,541
+A-medrxiv,2022-11,647
+A-medrxiv,2022-12,591
+A-medrxiv,2023-01,539
+A-medrxiv,2023-02,650
+A-medrxiv,2023-03,856
+A-medrxiv,2023-04,667
+A-medrxiv,2023-05,739
+A-medrxiv,2023-06,840
+A-medrxiv,2023-07,658
+A-medrxiv,2023-08,843
+A-medrxiv,2023-09,866
+A-medrxiv,2023-10,856
+A-medrxiv,2023-11,822
+A-medrxiv,2023-12,807
+A-medrxiv,2024-01,835
+A-medrxiv,2024-02,858
+A-medrxiv,2024-03,940
+A-medrxiv,2024-04,906
+A-medrxiv,2024-05,1020
+A-medrxiv,2024-06,905
+A-medrxiv,2024-07,920
+A-medrxiv,2024-08,1018
+A-medrxiv,2024-09,1063
+A-medrxiv,2024-10,1075
+A-medrxiv,2024-11,1024
+A-medrxiv,2024-12,954
+A-medrxiv,2025-01,994
+A-medrxiv,2025-02,1027
+A-medrxiv,2025-03,1133
+A-medrxiv,2025-04,1015
+A-medrxiv,2025-05,1149
+A-medrxiv,2025-06,1146
+A-medrxiv,2025-07,1130
+A-medrxiv,2025-08,1298
+A-medrxiv,2025-09,1344
+A-medrxiv,2025-10,1323
+A-medrxiv,2025-11,1156
+A-medrxiv,2025-12,1177
+A-medrxiv,2026-01,1079
+A-medrxiv,2026-02,1154
+A-medrxiv,2026-03,1448
+A-medrxiv,2026-04,1287
+A-medrxiv,2026-05,1251
+A-medrxiv,2026-06,1348
+A-medrxiv,2026-07,1536
+A-medrxiv,2026-08,1337
+A-medrxiv,2026-09,1470
+B-medrxiv,cardiovascular medicine,713
+B-medrxiv,endocrinology,347
+B-medrxiv,epidemiology,1944
+B-medrxiv,gastroenterology,314
+B-medrxiv,genetic and genomic medicine,1607
+B-medrxiv,health informatics,703
+B-medrxiv,hiv aids,344
+B-medrxiv,infectious diseases,1194
+B-medrxiv,neurology,1547
+B-medrxiv,oncology,867
+B-medrxiv,pediatrics,373
+B-medrxiv,psychiatry and clinical psychology,1301
+B-medrxiv,public and global health,1157
+B-medrxiv,radiology and imaging,452
+B-medrxiv,rehabilitation medicine and physical therapy,317
+B-medrxiv-dropped,addiction medicine,149
+B-medrxiv-dropped,allergy and immunology,123
+B-medrxiv-dropped,anesthesia,78
+B-medrxiv-dropped,dentistry and oral medicine,120
+B-medrxiv-dropped,dermatology,104
+B-medrxiv-dropped,emergency medicine,108
+B-medrxiv-dropped,forensic medicine,4
+B-medrxiv-dropped,geriatric medicine,136
+B-medrxiv-dropped,health economics,190
+B-medrxiv-dropped,health policy,179
+B-medrxiv-dropped,health systems and quality improvement,285
+B-medrxiv-dropped,hematology,118
+B-medrxiv-dropped,intensive care and critical care medicine,167
+B-medrxiv-dropped,medical education,137
+B-medrxiv-dropped,medical ethics,41
+B-medrxiv-dropped,nephrology,123
+B-medrxiv-dropped,nursing,82
+B-medrxiv-dropped,nutrition,223
+B-medrxiv-dropped,obstetrics and gynecology,269
+B-medrxiv-dropped,occupational and environmental health,173
+B-medrxiv-dropped,ophthalmology,261
+B-medrxiv-dropped,orthopedics,106
+B-medrxiv-dropped,otolaryngology,114
+B-medrxiv-dropped,pain medicine,118
+B-medrxiv-dropped,palliative medicine,29
+B-medrxiv-dropped,pathology,168
+B-medrxiv-dropped,pharmacology and therapeutics,134
+B-medrxiv-dropped,primary care research,126
+B-medrxiv-dropped,respiratory medicine,234
+B-medrxiv-dropped,rheumatology,163
+B-medrxiv-dropped,sexual and reproductive health,165
+B-medrxiv-dropped,sports medicine,142
+B-medrxiv-dropped,surgery,164
+B-medrxiv-dropped,toxicology,26
+B-medrxiv-dropped,transplantation,72
+B-medrxiv-dropped,urology,72
