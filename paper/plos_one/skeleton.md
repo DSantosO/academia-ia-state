@@ -133,6 +133,47 @@ The data show where this has already happened. Output has accelerated where the 
 - S2–S4: per-category tables and robustness checks.
 - Data and code: Zenodo DOI.
 
+## Novelty check (16 Oct 2026, quick; arXiv abstract pages read)
+
+**Two preprints overlap with this article. Both must be cited.**
+
+**Nee, Zhong & Ni 2026.** "The Generative AI Gold Rush in Theoretical and Computational Research", arXiv:2609.04872 (cs.DL), preprint.
+- Data: 20 arXiv archives, Jan 2018–Aug 2026.
+- Findings:
+  - Using a synthetic control, mathematics is +11.9% above its counterfactual (robustness range 9.6–14.9%).
+  - The growth is broad: 29 of 30 maths categories.
+  - In a maths author panel, the share of authors with ≥5 submissions rose from 2.45% to 3.80%, and the share with ≥10 from 0.21% to 0.49%.
+- Not covered:
+  - no theory-vs-experiment contrast;
+  - no bioRxiv or medRxiv;
+  - no measure of how much AI is used in writing.
+
+**Qi, Cao, Wang, Li & Zhu 2025.** "Does GenAI Rewrite How We Write? An Empirical Study on Two-Million Preprints", arXiv:2510.17882 (cs.CY), preprint.
+- Data: 2.1 million preprints from arXiv, bioRxiv, medRxiv and SocArXiv, 2016–2025, analysed with interrupted time series.
+- Findings: faster submission and revision cycles; a modest rise in linguistic complexity; AI topics growing; "computationally intensive fields benefit more". The authors call LLMs "selective catalysts".
+- Not covered:
+  - no contrasts within a field;
+  - data stop in 2025, so they miss the 2026 break;
+  - no breakdown of how output is distributed across authors.
+
+**What remains new here** (wording to stay hedged):
+1. **Experimental vs non-experimental work within fields:**
+   - physics theory vs experiment;
+   - bioRxiv computational vs wet-lab;
+   - medRxiv public-dataset papers vs the rest.
+
+   This sharpens Qi et al.'s between-field finding into a within-field test of the bottleneck mechanism.
+2. **Use vs output.** AI-assisted writing is widespread, including in experimental fields, yet output accelerates only where experiments do not bind.
+3. **2026 data across servers,** covering the year of the break.
+4. **A per-paper heavy-producer measure** with namesake, team-size, subfield and timing checks. It complements Nee et al.'s author panel; cite it as consistent with theirs.
+5. **The institutional response (rationing)** as context for interpreting the findings.
+
+**Emphasis:**
+- The headline result is the experimental bottleneck (1 and 2). The maths heavy-producer result supports it.
+- Title note: "evidence from 1.9 million preprints" sits close to Qi et al.'s "Two-Million Preprints". Alternatives:
+  - name the fields: "evidence from preprints in physics, mathematics, biology and medicine";
+  - or extend to 2017–2026, which raises N.
+
 ## Next steps
 1. **Novelty check** against Nee et al. 2026 (arXiv:2609.04872) and any 2026 within-field studies.
 2. **Analysis plan** (designs 1–4): exact specifications, inference, placebo dates, power for the small series.
