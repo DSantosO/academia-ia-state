@@ -58,8 +58,15 @@ def style(ax):
         ax.spines[side].set_visible(False)
     ax.spines["bottom"].set_color(AXIS)
     ax.tick_params(colors=INK2, length=0, pad=2)
+    ax.tick_params(axis="x", length=2.5, width=0.6, color=AXIS)  # date ticks mark the start of the period
     ax.grid(axis="y", color=GRID, linewidth=0.5)
     ax.set_axisbelow(True)
+
+
+def year_ticks(ax, first, last, every=1):
+    """Major ticks on 1 January of each year, labelled at the tick (every `every` years)."""
+    ax.set_xticks([dt.date(y, 1, 1) for y in range(first, last + 1)])
+    ax.set_xticklabels([str(y) if (y - first) % every == 0 else "" for y in range(first, last + 1)])
 
 
 def spread(ys, gap):
@@ -136,8 +143,7 @@ def fig1(repo, out, width_mm):
     top = max(e[3] for e in ends)
     ax.set_ylim(40, top * 1.06)
     ax.set_xlim(dt.date(2020, 1, 1), dt.date(2028, 11, 1) if not narrow else dt.date(2026, 12, 1))
-    ax.set_xticks([dt.date(y, 7, 1) for y in range(2020, 2027)])
-    ax.set_xticklabels([str(y) if not narrow or y % 2 == 0 else "" for y in range(2020, 2027)])
+    year_ticks(ax, 2020, 2026, every=2 if narrow else 1)
     ax.spines["bottom"].set_bounds(mdates.date2num(dt.date(2020, 1, 1)), mdates.date2num(dt.date(2026, 10, 15)))
     ax.set_ylabel("Index (2022 = 100)")
     if narrow:  # no room for end labels: a legend below the plot carries names and latest values

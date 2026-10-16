@@ -71,8 +71,7 @@ def static_fig(repo, s, out):
         low = min(min(float(s[g[0]][q]["index_2022"]) for q in s[g[0]] if q >= "2020-Q1") for g in groups)
         ax.set_ylim(min(60, low * 0.95), top * 1.12)
         ax.set_xlim(dt.date(2020, 1, 1), dt.date(2028, 1, 1))
-        ax.set_xticks([dt.date(y, 7, 1) for y in range(2020, 2027)])
-        ax.set_xticklabels([str(y) for y in range(2020, 2027)])
+        ps.year_axis(ax, 2020, 2026)
         ax.spines["bottom"].set_bounds(mdates.date2num(dt.date(2020, 1, 1)), mdates.date2num(dt.date(2026, 10, 1)))
         labels = ps.spread([e[2] for e in ends], (top * 1.12 - 60) * 0.06)
         for (name, c, y_end), y_lab in zip(ends, labels):
@@ -137,6 +136,8 @@ def medrxiv_fig(repo, out):
     ax2.plot(x, [float(r["public_dataset_share"]) for r in pub], color="#eda100", linewidth=2)
     ax2.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t:.0%}"))
     ax2.set_ylim(0, None)
+    ax2.set_xlim(dt.date(2020, 1, 1), dt.date(2026, 11, 1))
+    ps.year_axis(ax2, 2020, 2026)
     ax2.set_title("Share naming a public dataset (all new preprints)", loc="left", fontsize=10.5, color=ps.INK,
                   pad=34)
     ax2.text(0, 1.02, "NHANES, UK Biobank, GBD, Mendelian randomisation,\nFAERS, MIMIC, SEER or BRFSS in title or abstract",
@@ -162,8 +163,7 @@ def paper_fig(repo, s, out, width_mm):
         vals = [float(s[g[0]][q]["index_2022"]) for g in groups for q in s[g[0]] if q >= "2020-Q1"]
         ax.set_ylim(min(60, min(vals) * 0.95), max(vals) * 1.08)
         ax.set_xlim(dt.date(2020, 1, 1), dt.date(2026, 12, 1))
-        ax.set_xticks([dt.date(y, 7, 1) for y in range(2020, 2027)])
-        ax.set_xticklabels([str(y) if y % 2 == 0 else "" for y in range(2020, 2027)])
+        pp.year_ticks(ax, 2020, 2026, every=2 if narrow else 1)
         ax.spines["bottom"].set_bounds(mdates.date2num(dt.date(2020, 1, 1)), mdates.date2num(dt.date(2026, 10, 15)))
         ax.set_ylabel("Index (2022 = 100)")
         handles = [matplotlib.lines.Line2D([], [], color=c, linewidth=1.2, marker="o", markersize=2.5)

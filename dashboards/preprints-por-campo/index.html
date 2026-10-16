@@ -25,6 +25,7 @@
 .pc-ticks text { fill: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
 .pc-gridlines line { stroke: var(--cds-chart-grid); stroke-width: 1; }
 .pc-axisline { stroke: var(--cds-chart-axis); stroke-width: 1; }
+.pc-yeartick line { stroke: var(--cds-chart-axis); stroke-width: 1; }
 .pc-event { stroke: var(--cds-chart-reference); stroke-width: 1; stroke-dasharray: 4 3; }
 .pc-event-text { fill: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
 .pc-cross { stroke: var(--cds-chart-axis); stroke-width: 1; }
@@ -458,10 +459,11 @@ function drawLines(box, rows, opts) {
     svg.append('line').attr('class', 'pc-axisline').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(opts.base)).attr('y2', y(opts.base));
   }
   const years = d3.utcYear.range(x.domain()[0], x.domain()[1]);
-  svg.append('g').attr('class', 'pc-gridlines').selectAll('line').data(years).join('line')
-    .attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', H - m.b).attr('y2', H - m.b + 4);
+  // Year ticks on 1 January, labelled at the tick, so dated markers read against the right year.
+  svg.append('g').attr('class', 'pc-yeartick').selectAll('line').data(years).join('line')
+    .attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', H - m.b).attr('y2', H - m.b + 5);
   svg.append('g').attr('class', 'pc-ticks').selectAll('text').data(years).join('text')
-    .attr('x', (d) => (x(d) + x(d3.min([d3.utcYear.offset(d, 1), x.domain()[1]]))) / 2)
+    .attr('x', (d) => x(d))
     .attr('y', H - m.b + 17).attr('text-anchor', 'middle').text((d) => String(d.getUTCFullYear()));
   drawEvents(svg, events, m.t, H - m.b);
 
@@ -533,6 +535,10 @@ function drawBars(box, rows, key, color) {
   svg.append('line').attr('class', 'pc-axisline').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0));
 
   const byYear = d3.groups(rows, (r) => r.quarter.slice(0, 4));
+  const gap = (x.step() - x.bandwidth()) / 2;
+  svg.append('g').attr('class', 'pc-yeartick').selectAll('line').data(byYear.slice(1)).join('line')
+    .attr('x1', ([, rs]) => x(rs[0].quarter) - gap).attr('x2', ([, rs]) => x(rs[0].quarter) - gap)
+    .attr('y1', y(0)).attr('y2', y(0) + 5);
   const every = x.step() * 4 < 34 ? 2 : 1;
   svg.append('g').attr('class', 'pc-ticks').selectAll('text').data(byYear.filter((g, i) => i % every === 0)).join('text')
     .attr('x', ([, rs]) => (x(rs[0].quarter) + x(rs[rs.length - 1].quarter) + x.bandwidth()) / 2)
@@ -540,7 +546,7 @@ function drawBars(box, rows, key, color) {
 
   const i4 = rows.findIndex((r) => r.quarter === '2022-Q4');
   if (i4 >= 0 && i4 < rows.length - 1) {
-    const xe = x(rows[i4].quarter) + x.bandwidth() + (x.step() - x.bandwidth()) / 2;
+    const xe = x(rows[i4].quarter) - gap + (60 / 92) * x.step(); // 30 Nov 2022: day 60 of the quarter's 92
     svg.append('line').attr('class', 'pc-event').attr('x1', xe).attr('x2', xe).attr('y1', m.t - 6).attr('y2', y(0));
     svg.append('text').attr('class', 'pc-event-text').attr('x', xe - 3).attr('y', m.t - 8).attr('text-anchor', 'end').text('ChatGPT');
   }

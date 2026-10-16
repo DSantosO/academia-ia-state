@@ -10,7 +10,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from plot_static import (AXIS, EVENTS, GRID, INK, INK2, MUTED, SURFACE, events, header, mid, plt,  # noqa: E402
-                         style)
+                         style, year_axis)
 import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.ticker as mticker  # noqa: E402
 
@@ -69,6 +69,7 @@ def trend_panels(data, out):
         ax.set_xlim(dt.date(2015, 1, 1), dt.date(2028, 6, 1))
         ax.set_xticks([dt.date(y, 1, 1) for y in (2015, 2018, 2021, 2024, 2027)])
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+        ax.tick_params(axis="x", length=4, color=AXIS)
         ax.spines["bottom"].set_bounds(mdates.date2num(dt.date(2015, 1, 1)), mdates.date2num(dt.date(2026, 10, 1)))
         e = {b: float(data[(key, b)][-1]["excess"]) for b in [MAIN] + ALT}
         lo, hi = float(main[-1]["excess_lo"]), float(main[-1]["excess_hi"])
@@ -108,8 +109,7 @@ def pscore_chart(data, out):
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: "0%" if abs(t) < 1e-9 else f"{t:+.0%}"))
     ax.set_ylim(-0.3, 1.15)
     ax.set_xlim(dt.date(2021, 4, 1), dt.date(2028, 3, 1))
-    ax.set_xticks([dt.date(y, 7, 1) for y in range(2021, 2027)])
-    ax.set_xticklabels([str(y) for y in range(2021, 2027)])
+    year_axis(ax, 2022, 2026)
     ax.spines["bottom"].set_bounds(mdates.date2num(dt.date(2021, 4, 1)), mdates.date2num(dt.date(2026, 10, 1)))
     fig.subplots_adjust(left=0.08, right=0.98, top=0.76, bottom=0.12)
     events(ax, 1.15, EVENTS)

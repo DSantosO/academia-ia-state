@@ -74,6 +74,25 @@ def style(ax, grid_axis="y"):
     ax.set_axisbelow(True)
 
 
+def year_axis(ax, first, last):
+    """Major ticks on 1 January of each year, labelled at the tick, with visible tick marks."""
+    ax.set_xticks([dt.date(y, 1, 1) for y in range(first, last + 1)])
+    ax.set_xticklabels([str(y) for y in range(first, last + 1)])
+    ax.tick_params(axis="x", length=4, color=AXIS)
+
+
+def quarter_year_axis(ax, quarters):
+    """Bars indexed by quarter: visible ticks at year boundaries, year labels centred on each year's bars."""
+    years = sorted({q[:4] for q in quarters})
+    idx = {y: [i for i, q in enumerate(quarters) if q.startswith(y)] for y in years}
+    ax.set_xticks([idx[y][0] - 0.5 for y in years if quarters[idx[y][0]].endswith("-Q1")])
+    ax.set_xticklabels([])
+    ax.set_xticks([sum(idx[y]) / len(idx[y]) for y in years], minor=True)
+    ax.set_xticklabels(years, minor=True)
+    ax.tick_params(axis="x", which="major", length=4, color=AXIS)
+    ax.tick_params(axis="x", which="minor", length=0, colors=MUTED, labelsize=9)
+
+
 def spread(ys, gap):
     """Nudge label positions apart, keeping their order, so none are closer than `gap`."""
     order = sorted(range(len(ys)), key=lambda i: ys[i])
@@ -140,8 +159,7 @@ def line_chart(path, x, series, title, subtitle, fmt, ylim, base, end_fmt, note=
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: fmt(t)))
     first = x[0].year
     ax.set_xlim(dt.date(first, 1, 1), dt.date(2028, 9, 1))
-    ax.set_xticks([dt.date(y, 7, 1) for y in range(first, 2027)])
-    ax.set_xticklabels([str(y) for y in range(first, 2027)])
+    year_axis(ax, first, 2026)
     ax.spines["bottom"].set_bounds(mdates.date2num(dt.date(first, 1, 1)), mdates.date2num(dt.date(2026, 10, 1)))
     ends = [s[3][-1] for s in series]
     labels_y = spread(ends, (ylim[1] - ylim[0]) * 0.05)
@@ -191,7 +209,7 @@ def field_charts(repo, out):
     fig, axes = plt.subplots(2, 3, figsize=(12, 6.8), dpi=150)
     fig.patch.set_facecolor(SURFACE)
     pos = list(range(len(quarters)))
-    i_chatgpt = quarters.index("2023-Q1") - 0.5
+    i_chatgpt = quarters.index("2022-Q4") - 0.5 + 60 / 92  # 30 Nov 2022: day 60 of the quarter's 92
     for ax, (k, name, c) in zip(axes.flat, panels):
         style(ax)
         v = vals[k]
@@ -202,9 +220,7 @@ def field_charts(repo, out):
         ax.axvline(i_chatgpt, color=MUTED, linewidth=1, linestyle=(0, (4, 3)), zorder=1)
         ax.text(i_chatgpt - 0.4, max(v) * 1.16, "ChatGPT", fontsize=8, color=INK2, ha="right", va="top")
         ax.text(pos[-1], v[-1] + max(v) * 0.03, f"{v[-1]:,}", fontsize=8, color=INK, ha="center", va="bottom")
-        firsts = [i for i, q in enumerate(quarters) if q.endswith("-Q1")]
-        ax.set_xticks([i + 1.5 for i in firsts])
-        ax.set_xticklabels([quarters[i][:4] for i in firsts])
+        quarter_year_axis(ax, quarters)
         ax.set_xlim(-0.8, len(quarters) - 0.2)
         change = sum(v[-4:]) / sum(val for q, val in zip(quarters, v) if q.startswith("2022-")) - 1
         ax.set_title(name.replace(" (medRxiv)", ""), loc="left", fontsize=11, color=INK, pad=14)
@@ -235,6 +251,7 @@ def math_charts(repo, out):
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t:,.0f}"))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b\n%Y"))
     ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 4, 7, 10)))
+    ax.tick_params(axis="x", length=4, color=AXIS)
     ax.set_xlim(dt.date(2024, 12, 20), dt.date(2026, 10, 25))
     for d, v in zip(months, papers):
         if d >= dt.date(2026, 6, 1) or d == dt.date(2025, 9, 15):
@@ -271,6 +288,7 @@ def math_charts(repo, out):
             lambda t, _, s=share, sm=small: (f"{t:.1%}" if sm else f"{t:.0%}") if s else f"{t:.0f}"))
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
         ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
+        ax.tick_params(axis="x", length=4, color=AXIS)
         ax.set_xlim(dt.date(2024, 12, 15), dt.date(2026, 11, 15))
         for d in (dt.date(2026, 2, 5), dt.date(2026, 7, 24), dt.date(2026, 10, 1)):
             ax.axvline(d, color=MUTED, linewidth=1, linestyle=(0, (4, 3)), zorder=1)
@@ -333,9 +351,7 @@ def cs_charts(repo, out):
     ax1.set_ylim(0, max(total) * 1.15)
     ax1.yaxis.set_major_locator(mticker.MaxNLocator(4))
     ax1.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t / 1000:g}k" if t >= 1000 else f"{t:.0f}"))
-    firsts = [i for i, q in enumerate(quarters) if q.endswith("-Q1")]
-    ax1.set_xticks([i + 1.5 for i in firsts])
-    ax1.set_xticklabels([quarters[i][:4] for i in firsts])
+    quarter_year_axis(ax1, quarters)
     ax1.set_xlim(-0.8, len(quarters) - 0.2)
     share = ai[-1] / total[-1]
     ax1.text(pos[-1], total[-1] + max(total) * 0.02, f"AI {share:.0%}", fontsize=8.5, color=INK, ha="center")
@@ -359,8 +375,7 @@ def cs_charts(repo, out):
     top = max(max(s[2]) for s in idx)
     ax2.set_ylim(40, top * 1.12)
     ax2.set_xlim(dt.date(2020, 1, 1), dt.date(2029, 3, 1))
-    ax2.set_xticks([dt.date(y, 7, 1) for y in range(2020, 2027)])
-    ax2.set_xticklabels([str(y) for y in range(2020, 2027)])
+    year_axis(ax2, 2020, 2026)
     ax2.spines["bottom"].set_bounds(mdates.date2num(dt.date(2020, 1, 1)), mdates.date2num(dt.date(2026, 10, 1)))
     ends = [s[2][-1] for s in idx]
     labels_y = spread(ends, (top * 1.12 - 40) * 0.055)
