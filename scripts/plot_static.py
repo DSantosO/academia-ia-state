@@ -322,7 +322,7 @@ def cs_charts(repo, out):
     fig.patch.set_facecolor(SURFACE)
     style(ax1)
     pos = list(range(len(quarters)))
-    ax1.bar(pos, other, width=0.72, color=red, zorder=2, label="Other computer science")
+    ax1.bar(pos, other, width=0.72, color=red, zorder=2, label="CS without AI")
     ax1.bar(pos, ai, width=0.72, bottom=other, color=violet, zorder=2, label="AI research")
     ax1.set_ylim(0, max(total) * 1.15)
     ax1.yaxis.set_major_locator(mticker.MaxNLocator(4))
@@ -333,17 +333,17 @@ def cs_charts(repo, out):
     ax1.set_xlim(-0.8, len(quarters) - 0.2)
     share = ai[-1] / total[-1]
     ax1.text(pos[-1], total[-1] + max(total) * 0.02, f"AI {share:.0%}", fontsize=8.5, color=INK, ha="center")
-    ax1.legend(loc="upper left", frameon=False, fontsize=9, labelcolor=INK2)
-    ax1.set_title("New arXiv computer-science papers per quarter", loc="left", fontsize=11, color=INK, pad=10)
+    handles, labels = ax1.get_legend_handles_labels()
+    ax1.legend(handles[::-1], labels[::-1], loc="upper left", frameon=False, fontsize=9, labelcolor=INK2)
+    ax1.set_title("New arXiv computer-science papers per quarter", loc="left", fontsize=11, color=INK, pad=52)
 
     style(ax2)
     base = lambda v: sum(val for q, val in zip(quarters, v) if q.startswith("2022-")) / 4
-    series = [
-        ("All computer science", MUTED, total, 1.5),
+    series = [  # the two CS series carry colour; physics and mathematics are grey context
+        ("Physics", MUTED, [int(fields[q]["physics"]) for q in quarters], 1.5),
+        ("Mathematics", INK2, [int(fields[q]["mathematics"]) for q in quarters], 1.5),
         ("AI research", violet, ai, 2),
-        ("Computer science without AI", red, other, 2),
-        ("Physics", "#2a78d6", [int(fields[q]["physics"]) for q in quarters], 2),
-        ("Mathematics", "#eb6834", [int(fields[q]["mathematics"]) for q in quarters], 2),
+        ("CS without AI", red, other, 2),
     ]
     idx = [(n, c, [100 * v / base(vals) for v in vals], lw) for n, c, vals, lw in series]
     ax2.axhline(100, color=AXIS, linewidth=1, zorder=1)
@@ -362,9 +362,9 @@ def cs_charts(repo, out):
     for (n, c, ys, lw), y_end, y_lab in zip(idx, ends, labels_y):
         ax2.plot([x[-1] + dt.timedelta(days=8), x_lab - dt.timedelta(days=6)], [y_end, y_lab], color=AXIS, linewidth=0.8)
         ax2.text(x_lab, y_lab, f"{n}  {y_end:.0f}", color=INK, fontsize=9, va="center")
-    ax2.set_title("Index, 2022 = 100", loc="left", fontsize=11, color=INK, pad=10)
-    fig.subplots_adjust(left=0.05, right=0.98, top=0.76, bottom=0.12, wspace=0.12)
-    events(ax2, top * 1.12, EVENTS[:1] + EVENTS[2:])
+    ax2.set_title("Index, 2022 = 100 (physics and mathematics in grey)", loc="left", fontsize=11, color=INK, pad=52)
+    fig.subplots_adjust(left=0.05, right=0.98, top=0.70, bottom=0.12, wspace=0.12)
+    events(ax2, top * 1.12, EVENTS)
     header(fig, "Computer science with and without AI research",
            "AI research = primary category cs.AI, cs.LG, cs.CL, cs.CV, cs.NE or cs.MA, or another CS category whose "
            "title or abstract uses AI/ML vocabulary.", y=0.95)

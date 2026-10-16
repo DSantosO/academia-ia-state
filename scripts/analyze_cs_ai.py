@@ -1,7 +1,7 @@
 """Split new arXiv computer-science papers into AI research and the rest, by quarter (2020 onwards).
 
 Input: gzipped JSON-lines files written by harvest_arxiv_oai.py for the set "cs".
-A paper counts in the quarter of its first version, read from its arXiv identifier (YYMM.NNNNN), and in the
+Only complete quarters are kept. A paper counts in the quarter of its first version, read from its arXiv identifier (YYMM.NNNNN), and in the
 field of its primary (first-listed) category. Three groups:
   ai_categories   primary category is an AI/ML category (AI_CATEGORIES)
   ai_text_other   other CS category, but the title or abstract uses AI/ML vocabulary (AI_TEXT)
@@ -12,6 +12,7 @@ Outputs (data/processed/):
 Usage: python3 scripts/analyze_cs_ai.py out_dir harvest1.jsonl.gz [harvest2.jsonl.gz ...]
 """
 import csv
+import datetime
 import gzip
 import json
 import os
@@ -35,8 +36,14 @@ def quarter_start(q):
     return f"{y}-{3 * (int(n) - 1) + 1:02d}-01"
 
 
+def last_complete_quarter(today):
+    y, n = today.year, (today.month - 1) // 3 + 1
+    return f"{y - 1}-Q4" if n == 1 else f"{y}-Q{n - 1}"
+
+
 def main():
     out_dir, files = sys.argv[1], sys.argv[2:]
+    last = last_complete_quarter(datetime.date.today())
     papers = {}
     for fn in files:
         with gzip.open(fn, "rt", encoding="utf-8") as f:
@@ -48,6 +55,8 @@ def main():
                 if not r["categories"][0].startswith("cs."):
                     continue
                 quarter = f"20{m.group(1)}-Q{(int(m.group(2)) - 1) // 3 + 1}"
+                if quarter > last:
+                    continue
                 text = " ".join(filter(None, [r.get("title"), r.get("abstract")]))
                 papers[r["id"]] = (quarter, r["categories"][0], bool(AI_TEXT.search(text)))
     split = defaultdict(Counter)

@@ -137,6 +137,13 @@ def main():
     res["6_monthly_prolific_share"] = {
         m: round(sum(map(is_prolific, [p for p in papers if p["month"] == m])) /
                  max(1, sum(p["month"] == m for p in papers)), 4) for m in months}
+    top1 = set(ranked[: max(1, len(ranked) // 100)])
+    keep = lambda a: a[2] and a[1] not in top1  # noqa: E731
+    _, cnt_r = prolific_share(papers, quarters, keep=keep)
+    res["6b_monthly_prolific_share_full_names_without_top1pct_surnames"] = {
+        m: round(sum(any(keep(a) and cnt_r[(a[0], p["quarter"])] >= 5 for a in p["authors"])
+                     for p in papers if p["month"] == m) / max(1, sum(p["month"] == m for p in papers)), 4)
+        for m in months}
     json.dump(res, open(out_path, "w"), indent=1)
     print(json.dumps(res, indent=1))
 

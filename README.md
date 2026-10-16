@@ -53,6 +53,23 @@ El mes de cada artículo sale de su identificador (`YYMM.NNNNN`): el campo `<cre
 
 ![Crecimiento por subárea de matemáticas](docs/figures/fig6_math_subfields.png)
 
+`scripts/robustness_math_prolific.py` comprueba el indicador de autores prolíficos frente a homónimos, tamaño de equipo, subárea y fecha (`data/processed/arxiv_math_prolific_robustness.json`).
+
+## Informática con y sin investigación en IA
+
+`scripts/harvest_arxiv_oai.py --set cs` descarga los metadatos de informática desde 2020 y `scripts/analyze_cs_ai.py` separa por trimestre:
+
+- la investigación en IA: categoría principal cs.AI, cs.LG, cs.CL, cs.CV, cs.NE o cs.MA, u otra categoría de informática cuyo título o resumen usa vocabulario de IA o aprendizaje automático;
+- el resto.
+
+Salidas: `data/processed/arxiv_cs_ai_split_quarterly.csv` y `arxiv_cs_categories_quarterly.csv`. Estos totales quedan entre un 5 y un 11 % por debajo de las páginas anuales de arXiv por los alias entre archivos.
+
+![Informática con y sin IA](docs/figures/fig7_cs_without_ai.png)
+
+## Versiones para publicación
+
+`docs/figures/paper/` contiene las figuras 1, 4 y 5 sin título, en SVG, PDF y PNG a 300 dpi y a 85 y 175 mm, con leyendas y notas de métodos (`scripts/plot_paper.py`).
+
 ### Advertencias
 
 - **Un preprint no es una publicación.** La adopción del preprint varía mucho por campo: casi universal en física y matemáticas, parcial en biología y medicina, minoritaria en ciencias sociales. Compara la evolución de cada campo, no los niveles entre campos.
@@ -83,7 +100,11 @@ python3 scripts/osf_quarterly.py data/raw/osf_quarterly.csv   # lento: pagina lo
 python3 scripts/build_datasets.py data
 python3 scripts/harvest_arxiv_oai.py --set math --from 2025-01-01 --min-created 2025-01-01 /tmp/math.jsonl.gz   # lento
 python3 scripts/analyze_math.py data/processed /tmp/math.jsonl.gz
+python3 scripts/robustness_math_prolific.py data/processed/arxiv_math_prolific_robustness.json /tmp/math.jsonl.gz
+python3 scripts/harvest_arxiv_oai.py --set cs --from 2020-01-01 --min-created 2020-01-01 /tmp/cs.jsonl.gz   # lento
+python3 scripts/analyze_cs_ai.py data/processed /tmp/cs.jsonl.gz
 python3 scripts/plot_static.py .                          # requiere matplotlib
+python3 scripts/plot_paper.py .                           # versiones para publicación
 ```
 
 `build_datasets.py` conserva solo trimestres completos, desde 2020-Q1 hasta el último trimestre cerrado antes de la fecha en que se ejecuta. `scripts/osf_check_quarter.py <servidor> <desde> <hasta>` sirve para comprobar a mano un trimestre de OSF.
