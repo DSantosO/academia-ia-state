@@ -261,6 +261,7 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
    - a PLOS ONE academic editor.
 5. **Deliver:** the last version and all reviews.
 6. **Usage limits:** removed by the author.
+7. **Format:** Markdown while drafting and through both review rounds. After the final revision, convert to **LaTeX** using PLOS ONE's official template, with BibTeX references in PLOS's numbered style and the figures. Compile it to check that it builds.
 
 ## Sources
 
