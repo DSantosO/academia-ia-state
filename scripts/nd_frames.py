@@ -1,13 +1,26 @@
 """Sampling frames and samples for the confirmatory ND/NN tests, with the design fixed in nd_design.py.
 
 Frames (text kept outside the repository):
-  held-out arXiv   harvest_arxiv_api_months.py output (cond-mat, astro-ph, quant-ph; first-version month)
+  held-out arXiv   harvest_arxiv_raw.py output HELDOUT_DIR/<archive>.raw.jsonl.gz (cond-mat, astro-ph, quant-ph by
+                   primary category; first-version submission month)
   maths            OAI-PMH harvest (primary math.*; identifier month), for Test B
   HEP/nuclear      OAI-PMH harvests (primary hep-th, hep-ph, gr-qc, nucl-th, hep-ex, nucl-ex; identifier month), Test B
-  bioRxiv/medRxiv  harvest_rxiv_records.py part files (version 1; posting month; medRxiv without COVID-19)
+  bioRxiv/medRxiv  harvest_rxiv_records.py part files (version 1; posting month; medRxiv without COVID-19). bioRxiv
+                   "epidemiology" and "clinical trials" preprints are left out: bioRxiv listed these categories only
+                   until medRxiv opened (January-July 2019, about 95 a month, none afterwards), so keeping them would
+                   put a composition break into the 2019 baseline.
 Writes:
   data/processed/nd_samples.csv.gz       design, stratum, paper key (identifiers only)
   data/processed/nd_frame_counts.csv     design, stratum, frame size (monthly totals and category totals)
+  data/processed/nd_sample_attributes.csv.gz  per sampled paper: announcement month (arXiv identifier month; posting
+                                         month for bioRxiv/medRxiv), number of authors (held-out arXiv only) and genre
+                                         (arXiv: the keyword genres of stats_round1.py; bioRxiv/medRxiv: "review" if
+                                         the title names a review or meta-analysis), for the sensitivity analyses
+  data/processed/nd_category_monthly.csv server, category, month, papers: monthly output by category for the Test B
+                                         outcomes (held-out arXiv subcategories by first-version month, maths
+                                         subcategories by identifier month, bioRxiv and medRxiv by first posting,
+                                         every preprint once, medRxiv without COVID-19); the six HEP/nuclear archives
+                                         come from data/raw/arxiv_archive_monthly.csv
   WORK_DIR/classifier_input_full.json    unique papers to classify (key, domain, title, abstract, comments)
 With --only DESIGN_PREFIX (for example --only medrxiv) only the designs of that server are drawn, from the frames
 available so far; draws are per stratum with fixed seeds, so they are identical to those of the full run.
@@ -16,26 +29,41 @@ Usage: python3 scripts/nd_frames.py HELDOUT_DIR OAI_DIR BIORXIV_PARTS MEDRXIV_PA
 import csv
 import glob
 import gzip
+import io
 import json
 import os
 import re
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import nd_design as D  # noqa: E402
 from harvest_rxiv_categories import COVID_RE  # noqa: E402
+from stats_round1 import classify as genre  # noqa: E402
 from stats_within_field import ym_range  # noqa: E402
+
+BIORXIV_MOVED = {"epidemiology", "clinical trials"}  # bioRxiv categories that moved to medRxiv in mid-2019
+RXIV_REVIEW = re.compile(r"\breview\b|meta-?analy[sz]", re.I)
+
+
+def gz_text(path):
+    """gzip text file with a fixed header time, so that identical content gives identical bytes."""
+    return io.TextIOWrapper(gzip.GzipFile(path, "wb", mtime=0), encoding="utf-8", newline="")
+
+
+def arxiv_month(aid):
+    return f"20{aid[:2]}-{aid[2:4]}"
 
 
 def heldout(dir_):
     out = {}
     for arch in D.HN_ARCHIVES:
-        for line in gzip.open(os.path.join(dir_, f"{arch}.jsonl.gz"), "rt", encoding="utf-8"):
+        for line in gzip.open(os.path.join(dir_, f"{arch}.raw.jsonl.gz"), "rt", encoding="utf-8"):
             r = json.loads(line)
             out[r["id"]] = {"key": "arxiv:" + r["id"], "domain": "arxiv", "archive": arch, "category": r["primary"],
                             "month": r["v1"][:7], "title": r["title"], "abstract": r["abstract"],
-                            "comments": r["comments"]}
+                            "comments": r["comments"], "announce": arxiv_month(r["id"]), "n_authors": r["n_authors"],
+                            "genre": genre(r)}
     return list(out.values())
 
 
@@ -58,7 +86,8 @@ def oai(dir_):
                             else prim, "category": cat, "month": f"20{m.group(1)}-{m.group(2)}",
                             "title": " ".join((r.get("title") or "").split()),
                             "abstract": " ".join((r.get("abstract") or "").split()),
-                            "comments": " ".join((r.get("comments") or "").split())}
+                            "comments": " ".join((r.get("comments") or "").split()), "announce": f"20{m.group(1)}-{m.group(2)}",
+                            "n_authors": "", "genre": genre(r)}
     return list(out.values())
 
 
@@ -70,10 +99,39 @@ def rxiv(parts, server):
                 continue
             if server == "medrxiv" and COVID_RE.search(r["title"] + " " + r["abstract"]):
                 continue
+            if server == "biorxiv" and r["category"] in BIORXIV_MOVED:
+                continue
             out[r["doi"]] = {"key": f"{server}:{r['doi']}", "domain": server, "archive": server,
                              "category": r["category"], "month": r["date"][:7], "title": r["title"],
-                             "abstract": r["abstract"], "comments": ""}
+                             "abstract": r["abstract"], "comments": "", "announce": r["date"][:7], "n_authors": "",
+                             "genre": "review" if RXIV_REVIEW.search(r["title"]) else "research"}
     return list(out.values())
+
+
+def category_months(frames, bio_parts, med_parts, only):
+    """Monthly output by category for the Test B outcomes; bioRxiv and medRxiv count every preprint once, at its
+    first version-1 listing, including the few without an abstract."""
+    c = Counter()
+    for p in frames["heldout"]:
+        c[("arxiv", p["category"], p["month"])] += 1
+    for p in frames["oai"]:
+        if p["archive"] == "math":
+            c[("arxiv", p["category"], p["month"])] += 1
+    for server, parts in (("biorxiv", bio_parts), ("medrxiv", med_parts)):
+        if only not in (None, server):
+            continue
+        first = {}
+        for fn in sorted(glob.glob(os.path.join(parts, "*.csv"))):
+            for r in csv.DictReader(open(fn)):
+                if r["doi"] not in first or r["date"] < first[r["doi"]]["date"]:
+                    first[r["doi"]] = r
+        for r in first.values():
+            if server == "medrxiv" and COVID_RE.search(r["title"] + " " + r["abstract"]):
+                continue
+            if server == "biorxiv" and r["category"] in BIORXIV_MOVED:
+                continue
+            c[(server, r["category"], r["date"][:7])] += 1
+    return sorted((k + (n,) for k, n in c.items() if k[2] <= D.LAST))
 
 
 def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo=".", only=None):
@@ -126,7 +184,7 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo=".", only=None):
             continue
         add(f"B-{server}", c, papers, D.TESTB_N)
     suffix = f"_{only}" if only else ""
-    with gzip.open(os.path.join(repo, f"data/processed/nd_samples{suffix}.csv.gz"), "wt", newline="") as f:
+    with gz_text(os.path.join(repo, f"data/processed/nd_samples{suffix}.csv.gz")) as f:
         w = csv.writer(f)
         w.writerow(["design", "stratum", "paper_key"])
         w.writerows(samples)
@@ -137,6 +195,15 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo=".", only=None):
         for server, c, n in dropped:
             w.writerow([f"B-{server}-dropped", c, n])
     keys = sorted({k for _, _, k in samples})
+    with gz_text(os.path.join(repo, f"data/processed/nd_sample_attributes{suffix}.csv.gz")) as f:
+        w = csv.writer(f)
+        w.writerow(["paper_key", "announce_month", "n_authors", "genre"])
+        for k in keys:
+            w.writerow([k, by_key[k]["announce"], by_key[k]["n_authors"], by_key[k]["genre"]])
+    with open(os.path.join(repo, f"data/processed/nd_category_monthly{suffix}.csv"), "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["server", "category", "month", "papers"])
+        w.writerows(category_months(frames, bio_parts, med_parts, only))
     json.dump([{"id": k, "domain": by_key[k]["domain"], "title": by_key[k]["title"], "abstract": by_key[k]["abstract"],
                 "comments": by_key[k]["comments"]} for k in keys],
               open(os.path.join(work, f"classifier_input_full{suffix}.json"), "w"), ensure_ascii=False)

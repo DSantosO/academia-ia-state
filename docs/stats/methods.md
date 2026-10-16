@@ -259,8 +259,10 @@ Requested by the four round-1 reviews (statistics, scientometrics, experimental 
   `created` is the submission date of the latest version. For example, 1902.06571 has `created` 2019-05-01, the date of
   its v2; its v1 was submitted on 18 February 2019 (arXiv abstract page). It equals the first-version date only for
   papers that were never revised.
-- *First-version dates.* For revised papers announced from January 2024, the first-version submission date is the
-  arXiv API's `published` field (`scripts/fetch_arxiv_v1_dates.py`).
+- *First-version dates.* For papers announced from January 2024, the first-version submission date comes from the
+  arXivRaw records of the OAI-PMH interface, which list every version with its date (`scripts/harvest_arxiv_raw.py`,
+  `scripts/v1_dates_from_raw.py`). The arXiv API (`published` field) answered "429 Rate exceeded" from this
+  environment.
 - *Measures.* Growth over January–August, January–September, Q3, September and the trailing twelve months, dating
   papers by announcement or by first-version submission. Also the share of papers announced in a month that were
   submitted in an earlier month, by month (holds and spill-overs).
@@ -325,6 +327,47 @@ the unit of Nee, Zhong & Ni (2026).
 **P5. Disclosure control.** No statistic describing fewer than ten authors is released: counts, shares, intervals,
 tests and decomposition classes based on fewer than ten authors are blanked in `heavy_producers.json` and shown as
 "<10 authors".
+
+## New-data (ND/NN) tests
+
+The pre-registered test on the held-out arXiv archives (HN) and Amendment 1 (Test A on bioRxiv and medRxiv, Test B
+across categories), with Deviation 1 (estimates computed before the author's blind validation, labelled "pending
+human validation") and Deviation 2 (sampled classification, design in `scripts/nd_design.py`). Frames and samples:
+`scripts/nd_frames.py`; tests: `scripts/stats_nd_tests.py`.
+
+**Frames.**
+- *Held-out arXiv* (cond-mat, astro-ph, quant-ph): OAI-PMH arXivRaw harvests, papers whose primary category is in
+  the archive, dated by first-version submission, January 2017 to September 2026.
+- *bioRxiv and medRxiv:* version-1 records from `api.biorxiv.org/details`, each preprint counted once at its first
+  listing; medRxiv without COVID-19 (title or abstract). The bioRxiv categories "epidemiology" and "clinical trials"
+  are left out: bioRxiv listed them only until medRxiv opened (January–July 2019, about 95 preprints a month, none
+  afterwards), so they would put a composition break into the 2019 baseline. This was fixed before the bioRxiv sample
+  was drawn.
+- *Completeness.* The bioRxiv records match the server's monthly category totals exactly from July 2019 to December
+  2025 (the earlier months differ only by those two categories).
+
+**Classifier runs.**
+- Batches of 50 papers per run, one domain prompt per batch, the label only returned.
+- *Blind batches.* Within each domain the papers are put in random order and given pseudonymous ids
+  (`classifier_batches.py split --blind`). DOIs and arXiv identifiers encode the posting month, and date-ordered
+  batches would tie any batch-to-batch drift in the classifier to calendar time, which is the axis of the tests.
+- *Test–retest.* The first 14 medRxiv batches (700 papers) and the 200 bioRxiv/medRxiv validation papers were first
+  classified in date-ordered, DOI-keyed batches. Those labels were superseded by the blind runs before any label was
+  analysed; they are used only to measure agreement between runs (`scripts/classifier_retest.py`).
+
+**Rules fixed before estimation.**
+- *Test A decision.* Each Test A hypothesis has one unit (its server), so the archive-specific condition of the HN
+  rule does not apply: supported if RRR > 1 with a 95% CI excluding 1; contradicted if RRR < 1 with a CI excluding 1.
+- *Exclusion sensitivities.* Papers excluded in a sensitivity analysis (reviews and white papers from NN; more than
+  50 authors) stay in their stratum's denominator and are counted in neither class, so the estimates are counts of
+  the papers that remain.
+- *Announcement dating (HN).* Each classified paper of a submission-month stratum carries weight N / n (frame size
+  over classified papers) and is counted in its announcement (identifier) month.
+- *Test B outcome.* For each category, a Poisson PML of monthly output on a linear trend, month of year, a 2020–2021
+  indicator, 2023 and 2024 indicators and one indicator for January 2025 – September 2026; the outcome is that
+  indicator's coefficient. Output: held-out subcategories by first-version month from 2017; maths subcategories by
+  identifier month from 2019; the six HEP/nuclear archives by announcement month from 2017
+  (`arxiv_archive_monthly.csv`); bioRxiv from 2019 and medRxiv from July 2019 by first posting.
 
 ## Analyses tried and dropped
 

@@ -18,14 +18,27 @@ papers within each stratum, so sampling and classification noise enter the inter
 Placebo: the same estimand for 2019 (trend from 2017-2018 and 2020-2022). Power: MDE = exp(2.8 x bootstrap SE).
 Decision rule (HN): supported if the pooled RRR > 1 with a 95% CI excluding 1 and the archive-specific RRR > 1 in at
 least 2 of 3 archives; contradicted if the pooled RRR < 1 with a CI excluding 1; otherwise not supported.
-Sensitivity analyses (HN): announcement dating; excluding September 2026; U as NN; excluding reviews and white papers
-from NN (keyword genres of stats_round1.py); excluding papers with more than 50 authors; trend from 2017-2019 only.
+Test A has one unit per test (the server), so the archive-specific condition does not apply and only the first
+condition is used (fixed here before any estimate).
+Sensitivity analyses (HN): announcement dating (identifier month; each classified paper of a submission-month
+stratum carries weight N / n and is counted in its announcement month); excluding September 2026; U as NN; excluding
+reviews and white papers from NN (keyword genres of stats_round1.py); excluding papers with more than 50 authors;
+trend from 2017-2019 only. Test A: the same where they apply (no announcement dating, which is the posting month on
+these servers; no author counts, which the harvested records lack); "reviews" are titles naming a review or
+meta-analysis. Excluded papers stay in each stratum's denominator and are counted in neither class, so the
+estimates are counts of the papers that remain.
 
 Test B: exposure = ND share among classified papers of each category in 2019-2022; outcome = the category's departure
-from its own trend in January 2025 - September 2026 (log ratio, field model with a single post indicator);
-estimand = slope of the outcome on the ND share, servers jointly (server fixed effects) and separately; inference by
+from its own trend in January 2025 - September 2026: Poisson PML of the monthly count on a linear trend, month of year,
+a 2020-2021 indicator, 2023 and 2024 indicators and one post indicator, so the trend comes from the years to 2022.
+Counts (nd_category_monthly*.csv, arxiv_archive_monthly.csv): held-out subcategories by first-version month from 2017;
+maths subcategories by identifier month from 2019; the six HEP/nuclear archives by announcement month from 2017;
+bioRxiv from 2019 and medRxiv (without COVID-19) from July 2019, by first posting.
+Estimand = slope of the outcome on the ND share, servers jointly (server fixed effects) and separately; inference by
 a permutation test shuffling ND shares within server (10,000 permutations) and a bootstrap over categories.
-Usage: python3 scripts/stats_nd_tests.py LABELS_FILE [repo_dir] [--frames WORK_DIR]
+Decision rule: supported if the joint slope is negative with one-sided permutation p < 0.05 and the slope is negative
+in at least 2 of the 3 servers. Sensitivity: U counted as NN in the ND share.
+Usage: python3 scripts/stats_nd_tests.py LABELS_FILE [repo_dir]
 """
 import csv
 import gzip
@@ -68,22 +81,57 @@ def load_samples(repo):
     return rows, sizes
 
 
-def strata(rows, sizes, labels, design, u_as_nn=False, keep=None):
-    """{(unit, month): (N, [labels of classified papers])} for one design."""
+def load_attributes(repo):
+    out = {}
+    for fn in sorted(os.listdir(os.path.join(repo, "data/processed"))):
+        if fn.startswith("nd_sample_attributes") and fn.endswith(".csv.gz"):
+            for r in csv.DictReader(gzip.open(os.path.join(repo, "data/processed", fn), "rt")):
+                out[r["paper_key"]] = r
+    return out
+
+
+def strata(rows, sizes, labels, design, u_as_nn=False, exclude=None):
+    """{(unit, month): (N, [labels of classified papers])} for one design. A paper for which exclude(key, label) is
+    true keeps its place in the denominator but is counted in neither class (label X)."""
     out = {}
     by = defaultdict(list)
     for r in rows:
-        if r["design"] == design and r["paper_key"] in labels and (keep is None or keep(r["paper_key"])):
-            by[r["stratum"]].append(labels[r["paper_key"]])
+        if r["design"] == design and r["paper_key"] in labels:
+            lab = labels[r["paper_key"]]
+            if u_as_nn and lab == "U":
+                lab = "NN"
+            if exclude is not None and exclude(r["paper_key"], lab):
+                lab = "X"
+            by[r["stratum"]].append(lab)
     for (d, st), n in sizes.items():
         if d != design:
             continue
-        unit, month = (st.split("|") + [None])[:2] if "|" in st else (design, st)
-        labs = by.get(st, [])
-        if u_as_nn:
-            labs = ["NN" if x == "U" else x for x in labs]
-        out[(unit, month)] = (n, labs)
+        unit, month = st.split("|") if "|" in st else (design, st)
+        out[(unit, month)] = (n, by.get(st, []))
     return out
+
+
+def counts_by_announcement(rows, sizes, labels, design, attrs):
+    """Estimated counts by announcement month: each classified paper of a stratum (unit, submission month) with frame
+    size N and n classified papers carries weight N / n and is counted in its announcement month."""
+    by = defaultdict(list)
+    for r in rows:
+        if r["design"] == design and r["paper_key"] in labels:
+            by[r["stratum"]].append(r["paper_key"])
+    acc = defaultdict(float)
+    units, months = set(), set()
+    for (d, st), n in sizes.items():
+        if d != design or not by.get(st):
+            continue
+        unit = st.split("|")[0] if "|" in st else design
+        units.add(unit)
+        for k in by[st]:
+            m = attrs[k]["announce_month"]
+            months.add(m)
+            if labels[k] in ("ND", "NN"):
+                acc[(unit, m, labels[k])] += n / len(by[st])
+    return pd.DataFrame([{"unit": u, "month": m, "class": c, "y": acc.get((u, m, c), 0.0)}
+                         for u in sorted(units) for m in sorted(months) for c in ("ND", "NN")])
 
 
 def class_counts(st, resample=False):
@@ -184,33 +232,75 @@ def summarise(point, boots, key=rrr):
             "n_boot": int(len(vals))}
 
 
-def hn_like(rows, sizes, labels, design, units, reps=999, extra=None):
+def hn_like(rows, sizes, labels, design, units, attrs, reps=999):
     st = strata(rows, sizes, labels, design)
     point = fit(class_counts(st))
     res = {"status": STATUS, "pooled": summarise(point, block_bootstrap(st, reps=reps))}
-    by = fit(class_counts(st), pooled=False)
-    res["by_unit"] = {u: math.exp(by[f"post_{u}|NN"] - by[f"post_{u}|ND"]) for u in units
-                      if f"post_{u}|NN" in by and f"post_{u}|ND" in by}
-    res["placebo_2019"] = rrr(fit(class_counts(st), placebo_year=2019))
+    res["n_classified"] = dict(Counter(x for _, labs in st.values() for x in labs))
     p = res["pooled"]
-    res["decision"] = ("supported" if p["rr"] > 1 and p["lo"] > 1 and sum(v > 1 for v in res["by_unit"].values()) >= 2
+    if len(units) > 1:
+        by = fit(class_counts(st), pooled=False)
+        res["by_unit"] = {u: math.exp(by[f"post_{u}|NN"] - by[f"post_{u}|ND"]) for u in units
+                          if f"post_{u}|NN" in by and f"post_{u}|ND" in by}
+        units_ok = sum(v > 1 for v in res["by_unit"].values()) >= 2
+    else:
+        units_ok = True  # one unit: the archive-specific condition does not apply
+    res["placebo_2019"] = rrr(fit(class_counts(st), placebo_year=2019))
+    res["decision"] = ("supported" if p["rr"] > 1 and p["lo"] > 1 and units_ok
                        else "contradicted" if p["rr"] < 1 and p["hi"] < 1 else "not supported")
-    res["sensitivity"] = {
+    sens = {
         "excluding_september_2026": rrr(fit(class_counts(st), post=("2025-01", "2026-08"))),
         "U_as_NN": rrr(fit(class_counts(strata(rows, sizes, labels, design, u_as_nn=True)))),
         "trend_2017_2019_only": rrr(fit(class_counts(st), trend_years={2017, 2018, 2019})),
     }
-    for name, keep in (extra or {}).items():
-        res["sensitivity"][name] = rrr(fit(class_counts(strata(rows, sizes, labels, design, keep=keep))))
+    genres = ("review", "white_paper") if design == "HN" else ("review",)
+    sens["excluding_reviews_from_NN"] = rrr(fit(class_counts(strata(
+        rows, sizes, labels, design, exclude=lambda k, lab: lab == "NN" and attrs[k]["genre"] in genres))))
+    if design == "HN":
+        sens["announcement_dating"] = rrr(fit(counts_by_announcement(rows, sizes, labels, design, attrs)))
+        sens["excluding_over_50_authors"] = rrr(fit(class_counts(strata(
+            rows, sizes, labels, design, exclude=lambda k, lab: int(attrs[k]["n_authors"] or 0) > 50))))
+    res["sensitivity"] = sens
     return res
 
 
-def dose_response(rows, labels, outcomes, perms=10000):
+def departure(counts, first):
+    """Log ratio of observed to trend output in January 2025 - September 2026 for one monthly series."""
+    months = ym_range(first, D.LAST)
+    y = np.array([counts.get(m, 0) for m in months], float)
+    yr = np.array([int(m[:4]) for m in months])
+    mo = np.array([int(m[5:7]) for m in months])
+    X = np.column_stack([np.ones(len(months)), (yr - 2017) + (mo - 1) / 12]
+                        + [(mo == k).astype(float) for k in range(2, 13)]
+                        + [np.isin(yr, [2020, 2021]).astype(float), (yr == 2023).astype(float),
+                           (yr == 2024).astype(float), (yr >= 2025).astype(float)])
+    return float(sm.GLM(y, X, family=sm.families.Poisson()).fit().params[-1])
+
+
+def testb_outcomes(repo):
+    series = defaultdict(dict)
+    for fn in sorted(os.listdir(os.path.join(repo, "data/processed"))):
+        if fn.startswith("nd_category_monthly") and fn.endswith(".csv"):
+            for r in csv.DictReader(open(os.path.join(repo, "data/processed", fn))):
+                series[(r["server"], r["category"])][r["month"]] = int(r["papers"])
+    for r in csv.DictReader(open(os.path.join(repo, "data/raw/arxiv_archive_monthly.csv"))):
+        if r["archive"] in D.TESTB_ARXIV_ARCHIVES:
+            series[("arxiv", r["archive"])][f"{r['year']}-{int(r['month']):02d}"] = int(r["new"])
+    first = {"biorxiv": D.BIO_FIRST, "medrxiv": D.MED_FIRST}
+    out = {}
+    for (server, cat), counts in series.items():
+        f = first.get(server, "2019-01" if cat.startswith("math.") else D.HN_FIRST)
+        out[(server, cat)] = departure(counts, f)
+    return out
+
+
+def dose_response(rows, labels, outcomes, perms=10000, u_as_nn=False):
     """Test B: slope of the 2025-26 departure (log ratio) on the 2019-2022 ND share across categories."""
     cats = []
     for r in rows:
         if r["design"].startswith("B-") and r["paper_key"] in labels:
-            cats.append((r["design"][2:], r["stratum"], labels[r["paper_key"]]))
+            lab = labels[r["paper_key"]]
+            cats.append((r["design"][2:], r["stratum"], "NN" if u_as_nn and lab == "U" else lab))
     share = defaultdict(lambda: [0, 0])
     for server, cat, lab in cats:
         if lab in ("ND", "NN"):
@@ -256,15 +346,21 @@ def main():
     labels = load_labels(args[0])
     repo = args[1] if len(args) > 1 else "."
     rows, sizes = load_samples(repo)
+    attrs = load_attributes(repo)
     out_path = os.path.join(repo, "data/processed/stats/nd_tests.json")
     out = json.load(open(out_path)) if os.path.exists(out_path) else {}
     designs = {r["design"] for r in rows}
     if "A-medrxiv" in designs:
-        out["testA_medrxiv"] = hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"])
+        out["testA_medrxiv"] = hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"], attrs)
     if "A-biorxiv" in designs:
-        out["testA_biorxiv"] = hn_like(rows, sizes, labels, "A-biorxiv", ["A-biorxiv"])
+        out["testA_biorxiv"] = hn_like(rows, sizes, labels, "A-biorxiv", ["A-biorxiv"], attrs)
     if "HN" in designs:
-        out["HN"] = hn_like(rows, sizes, labels, "HN", D.HN_ARCHIVES)
+        out["HN"] = hn_like(rows, sizes, labels, "HN", D.HN_ARCHIVES, attrs)
+    if {"B-arxiv", "B-biorxiv", "B-medrxiv"} <= designs:
+        outcomes = testb_outcomes(repo)
+        out["testB"] = dose_response(rows, labels, outcomes)
+        out["testB"]["sensitivity_U_as_NN"] = {k: v for k, v in dose_response(rows, labels, outcomes, u_as_nn=True)
+                                               .items() if k in ("slope_joint", "p_permutation_one_sided", "by_server")}
     json.dump(out, open(out_path, "w"), indent=1, default=float)
     print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk in ("pooled", "decision", "placebo_2019")}
                       for k, v in out.items()}, indent=1, default=float))

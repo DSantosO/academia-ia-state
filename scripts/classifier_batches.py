@@ -6,7 +6,11 @@ collect: reads OUT_DIR/*_labels.csv written by the classifier runs (id,label), c
          one label in {ND, NN, U}, and writes the gzip CSV LABELS_OUT (id, domain, label).
 The classifier is a large language model run as one sub-agent per batch; each paper is judged on its own with the
 verbatim prompt, and only the label is returned.
-Usage: python3 scripts/classifier_batches.py split CLASSIFIER_INPUT OUT_DIR [batch]
+Blind batches (split ... --blind SEED): within each domain the papers are put in random order and given pseudonymous
+ids (A00001, ... for arXiv; B for bioRxiv; M for medRxiv), so a batch shows neither identifiers nor dates (bioRxiv and
+medRxiv DOIs and arXiv identifiers encode the posting month), and batches do not group papers by date. The mapping is
+written to OUT_DIR/pseudonyms.csv; collect reads it and writes the labels under the original ids.
+Usage: python3 scripts/classifier_batches.py split CLASSIFIER_INPUT OUT_DIR [batch] [--blind SEED]
        python3 scripts/classifier_batches.py collect CLASSIFIER_INPUT OUT_DIR LABELS_OUT
 """
 import csv
@@ -14,6 +18,7 @@ import glob
 import gzip
 import json
 import os
+import random
 import sys
 
 PROMPTS = {
@@ -49,18 +54,33 @@ PROMPTS = {
         "meta-analyses, modelling or simulation. U — cannot tell. Answer only ND, NN or U."),
 }
 
+PREFIX = {"arxiv": "A", "biorxiv": "B", "medrxiv": "M"}
 
-def split(inp, out_dir, batch=50):
+
+def split(inp, out_dir, batch=50, blind=None):
     batch = int(batch)
     os.makedirs(out_dir, exist_ok=True)
     rows = json.load(open(inp))
+    alias = []
     for dom in PROMPTS:
+        sel = [r for r in rows if r["domain"] == dom]
+        if blind is not None:
+            sel = sorted(sel, key=lambda r: r["id"])
+            random.Random(f"{blind}|{dom}").shuffle(sel)
+            names = [f"{PREFIX[dom]}{i + 1:05d}" for i in range(len(sel))]
+            alias += zip(names, [r["id"] for r in sel])
+            sel = [{**r, "id": a} for a, r in zip(names, sel)]
         items = [{"id": r["id"], "title": r["title"], "abstract": r["abstract"],
-                  **({"comments": r["comments"]} if dom == "arxiv" else {})} for r in rows if r["domain"] == dom]
+                  **({"comments": r["comments"]} if dom == "arxiv" else {})} for r in sel]
         for k in range(0, len(items), batch):
             json.dump({"domain": dom, "prompt": PROMPTS[dom], "papers": items[k:k + batch]},
                       open(os.path.join(out_dir, f"{dom}_{k // batch + 1:03d}.json"), "w"), indent=1,
                       ensure_ascii=False)
+    if blind is not None:
+        with open(os.path.join(out_dir, "pseudonyms.csv"), "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["pseudonym", "id"])
+            w.writerows(alias)
     print({d: sum(1 for r in rows if r["domain"] == d) for d in PROMPTS})
 
 
@@ -68,11 +88,15 @@ def collect(inp, out_dir, labels_out):
     rows = json.load(open(inp))
     dom = {r["id"]: r["domain"] for r in rows}
     labels = {}
+    pseud = os.path.join(out_dir, "pseudonyms.csv")
+    real = {r["pseudonym"]: r["id"] for r in csv.DictReader(open(pseud))} if os.path.exists(pseud) else None
     for fn in sorted(glob.glob(os.path.join(out_dir, "*_labels.csv"))):
         for r in csv.reader(open(fn)):
             if not r or r[0] == "id":
                 continue
             pid, lab = r[0].strip(), r[1].strip().upper()
+            if real is not None:
+                pid = real.get(pid, "unknown pseudonym " + pid)
             if pid in labels and labels[pid] != lab:
                 raise SystemExit(f"conflicting labels for {pid}")
             labels[pid] = lab
@@ -89,4 +113,10 @@ def collect(inp, out_dir, labels_out):
 
 
 if __name__ == "__main__":
-    {"split": split, "collect": collect}[sys.argv[1]](*sys.argv[2:])
+    args = sys.argv[2:]
+    kw = {}
+    if "--blind" in args:
+        i = args.index("--blind")
+        kw["blind"] = args[i + 1]
+        args = args[:i] + args[i + 2:]
+    {"split": split, "collect": collect}[sys.argv[1]](*args, **kw)
