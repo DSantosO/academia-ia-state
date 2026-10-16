@@ -1,0 +1,4190 @@
+month,category,new_papers,covid,public_dataset
+2019-06,cardiovascular medicine,2,0,0
+2019-06,dermatology,1,0,0
+2019-06,epidemiology,3,0,0
+2019-06,gastroenterology,1,0,0
+2019-06,genetic and genomic medicine,2,0,0
+2019-06,health informatics,3,0,0
+2019-06,health policy,1,0,0
+2019-06,health systems and quality improvement,2,0,0
+2019-06,infectious diseases,3,0,0
+2019-06,neurology,2,0,0
+2019-06,nutrition,2,0,0
+2019-06,oncology,2,0,0
+2019-06,pain medicine,1,0,0
+2019-06,pediatrics,1,0,0
+2019-06,psychiatry and clinical psychology,3,0,0
+2019-06,rehabilitation medicine and physical therapy,1,0,0
+2019-06,rheumatology,1,0,0
+2019-06,sports medicine,1,0,0
+2019-07,anesthesia,2,0,0
+2019-07,cardiovascular medicine,6,0,0
+2019-07,emergency medicine,1,0,0
+2019-07,endocrinology,2,0,0
+2019-07,epidemiology,23,0,2
+2019-07,gastroenterology,4,0,0
+2019-07,genetic and genomic medicine,2,0,0
+2019-07,health economics,1,0,0
+2019-07,health policy,1,0,0
+2019-07,hiv aids,3,0,0
+2019-07,infectious diseases,9,0,1
+2019-07,intensive care and critical care medicine,1,0,0
+2019-07,medical education,1,0,0
+2019-07,medical ethics,1,0,0
+2019-07,nephrology,1,0,0
+2019-07,neurology,7,0,0
+2019-07,nutrition,4,0,0
+2019-07,obstetrics and gynecology,1,0,0
+2019-07,occupational and environmental health,1,0,0
+2019-07,oncology,3,0,0
+2019-07,ophthalmology,5,0,0
+2019-07,otolaryngology,2,0,0
+2019-07,pathology,2,0,0
+2019-07,pediatrics,2,0,0
+2019-07,psychiatry and clinical psychology,8,0,0
+2019-07,public and global health,8,0,0
+2019-07,radiology and imaging,4,0,0
+2019-07,rehabilitation medicine and physical therapy,1,0,0
+2019-07,respiratory medicine,2,0,0
+2019-07,rheumatology,1,0,0
+2019-07,sexual and reproductive health,1,0,0
+2019-07,sports medicine,3,0,0
+2019-07,surgery,2,0,0
+2019-07,transplantation,1,0,0
+2019-08,addiction medicine,2,0,0
+2019-08,cardiovascular medicine,7,0,2
+2019-08,dermatology,3,0,0
+2019-08,endocrinology,3,0,0
+2019-08,epidemiology,21,0,5
+2019-08,genetic and genomic medicine,6,0,2
+2019-08,geriatric medicine,3,0,0
+2019-08,health economics,1,0,0
+2019-08,health informatics,8,0,0
+2019-08,health policy,3,0,0
+2019-08,hiv aids,6,0,0
+2019-08,infectious diseases,2,0,1
+2019-08,medical education,4,0,0
+2019-08,medical ethics,2,0,1
+2019-08,nephrology,1,0,0
+2019-08,neurology,4,0,0
+2019-08,nutrition,1,0,0
+2019-08,obstetrics and gynecology,2,0,0
+2019-08,occupational and environmental health,3,0,0
+2019-08,orthopedics,1,0,0
+2019-08,otolaryngology,2,0,0
+2019-08,pain medicine,1,0,0
+2019-08,palliative medicine,1,0,0
+2019-08,pathology,1,0,0
+2019-08,pediatrics,2,0,0
+2019-08,pharmacology and therapeutics,2,0,0
+2019-08,primary care research,2,0,0
+2019-08,psychiatry and clinical psychology,3,0,0
+2019-08,public and global health,10,0,0
+2019-08,radiology and imaging,1,0,0
+2019-08,rehabilitation medicine and physical therapy,1,0,0
+2019-08,respiratory medicine,1,0,0
+2019-08,rheumatology,2,0,0
+2019-08,surgery,1,0,0
+2019-09,addiction medicine,1,0,0
+2019-09,anesthesia,1,0,0
+2019-09,cardiovascular medicine,1,0,0
+2019-09,dermatology,1,0,0
+2019-09,endocrinology,5,0,0
+2019-09,epidemiology,21,0,6
+2019-09,gastroenterology,1,0,0
+2019-09,genetic and genomic medicine,11,0,3
+2019-09,geriatric medicine,1,0,0
+2019-09,health informatics,3,0,0
+2019-09,health policy,1,0,0
+2019-09,health systems and quality improvement,2,0,0
+2019-09,hematology,1,0,0
+2019-09,hiv aids,2,0,0
+2019-09,infectious diseases,6,0,1
+2019-09,intensive care and critical care medicine,1,0,0
+2019-09,medical education,2,0,0
+2019-09,nephrology,1,0,0
+2019-09,neurology,11,0,0
+2019-09,nursing,1,0,0
+2019-09,nutrition,1,0,0
+2019-09,occupational and environmental health,1,0,0
+2019-09,oncology,4,0,0
+2019-09,ophthalmology,3,0,0
+2019-09,pain medicine,2,0,0
+2019-09,pediatrics,2,0,0
+2019-09,pharmacology and therapeutics,1,0,0
+2019-09,primary care research,1,0,0
+2019-09,psychiatry and clinical psychology,10,0,2
+2019-09,public and global health,7,0,1
+2019-09,radiology and imaging,1,0,0
+2019-09,rehabilitation medicine and physical therapy,2,0,0
+2019-09,respiratory medicine,3,0,1
+2019-09,sexual and reproductive health,2,0,0
+2019-09,surgery,2,0,0
+2019-09,transplantation,2,0,0
+2019-10,addiction medicine,1,0,0
+2019-10,allergy and immunology,2,0,0
+2019-10,cardiovascular medicine,6,0,0
+2019-10,dermatology,1,0,0
+2019-10,emergency medicine,2,0,0
+2019-10,endocrinology,1,0,0
+2019-10,epidemiology,27,0,6
+2019-10,gastroenterology,3,0,0
+2019-10,genetic and genomic medicine,14,0,2
+2019-10,geriatric medicine,2,0,0
+2019-10,health economics,2,0,0
+2019-10,health informatics,4,0,0
+2019-10,health policy,2,0,0
+2019-10,hematology,1,0,0
+2019-10,hiv aids,5,0,0
+2019-10,infectious diseases,10,0,0
+2019-10,intensive care and critical care medicine,1,0,0
+2019-10,medical education,6,0,0
+2019-10,nephrology,1,0,0
+2019-10,neurology,14,0,0
+2019-10,nursing,2,0,0
+2019-10,nutrition,1,0,0
+2019-10,obstetrics and gynecology,1,0,0
+2019-10,occupational and environmental health,1,0,0
+2019-10,oncology,10,0,0
+2019-10,ophthalmology,4,0,0
+2019-10,otolaryngology,1,0,0
+2019-10,pathology,2,0,0
+2019-10,pediatrics,4,0,1
+2019-10,pharmacology and therapeutics,2,0,0
+2019-10,primary care research,2,0,0
+2019-10,psychiatry and clinical psychology,15,0,1
+2019-10,public and global health,11,0,2
+2019-10,radiology and imaging,5,0,0
+2019-10,rehabilitation medicine and physical therapy,6,0,0
+2019-10,respiratory medicine,2,0,0
+2019-10,rheumatology,1,0,0
+2019-10,sexual and reproductive health,1,0,0
+2019-10,transplantation,1,0,0
+2019-11,addiction medicine,1,0,0
+2019-11,allergy and immunology,3,0,0
+2019-11,anesthesia,2,0,0
+2019-11,cardiovascular medicine,7,0,0
+2019-11,dentistry and oral medicine,1,0,0
+2019-11,dermatology,2,0,0
+2019-11,endocrinology,5,0,0
+2019-11,epidemiology,26,0,3
+2019-11,gastroenterology,3,0,0
+2019-11,genetic and genomic medicine,16,0,5
+2019-11,geriatric medicine,1,0,0
+2019-11,health informatics,13,0,0
+2019-11,health policy,2,0,0
+2019-11,health systems and quality improvement,3,0,0
+2019-11,hematology,1,0,0
+2019-11,hiv aids,5,0,0
+2019-11,infectious diseases,14,0,0
+2019-11,medical education,3,0,0
+2019-11,neurology,13,0,1
+2019-11,nutrition,1,0,0
+2019-11,obstetrics and gynecology,2,0,1
+2019-11,occupational and environmental health,3,0,1
+2019-11,oncology,10,0,0
+2019-11,ophthalmology,3,0,0
+2019-11,pain medicine,2,0,0
+2019-11,pathology,2,0,0
+2019-11,pediatrics,2,0,0
+2019-11,pharmacology and therapeutics,1,0,0
+2019-11,primary care research,1,0,0
+2019-11,psychiatry and clinical psychology,17,0,0
+2019-11,public and global health,7,0,0
+2019-11,radiology and imaging,4,0,0
+2019-11,rehabilitation medicine and physical therapy,6,0,0
+2019-11,respiratory medicine,1,0,0
+2019-11,rheumatology,3,0,0
+2019-11,sports medicine,3,0,0
+2019-11,surgery,1,0,0
+2019-11,urology,1,0,0
+2019-12,allergy and immunology,1,0,0
+2019-12,cardiovascular medicine,5,0,2
+2019-12,dentistry and oral medicine,1,0,0
+2019-12,dermatology,2,0,0
+2019-12,emergency medicine,1,0,0
+2019-12,endocrinology,2,0,1
+2019-12,epidemiology,25,0,5
+2019-12,gastroenterology,3,0,0
+2019-12,genetic and genomic medicine,17,0,3
+2019-12,geriatric medicine,3,0,0
+2019-12,health economics,3,0,0
+2019-12,health informatics,5,0,1
+2019-12,health policy,2,0,0
+2019-12,health systems and quality improvement,2,0,0
+2019-12,hematology,1,0,0
+2019-12,hiv aids,3,0,0
+2019-12,infectious diseases,6,0,0
+2019-12,intensive care and critical care medicine,2,0,1
+2019-12,nephrology,1,0,0
+2019-12,neurology,17,0,0
+2019-12,nutrition,1,0,0
+2019-12,oncology,13,0,0
+2019-12,ophthalmology,3,0,0
+2019-12,orthopedics,2,0,0
+2019-12,pain medicine,1,0,0
+2019-12,palliative medicine,1,0,0
+2019-12,pathology,2,0,0
+2019-12,pediatrics,3,0,0
+2019-12,pharmacology and therapeutics,2,0,0
+2019-12,psychiatry and clinical psychology,12,0,2
+2019-12,public and global health,10,0,0
+2019-12,radiology and imaging,3,0,0
+2019-12,rehabilitation medicine and physical therapy,2,0,0
+2019-12,respiratory medicine,2,0,0
+2019-12,rheumatology,3,0,0
+2019-12,sexual and reproductive health,1,0,0
+2019-12,surgery,1,0,0
+2019-12,transplantation,1,0,0
+2019-12,urology,1,0,0
+2020-01,addiction medicine,3,0,0
+2020-01,allergy and immunology,3,0,0
+2020-01,anesthesia,1,0,0
+2020-01,cardiovascular medicine,10,0,1
+2020-01,emergency medicine,1,0,0
+2020-01,endocrinology,3,0,0
+2020-01,epidemiology,29,3,1
+2020-01,gastroenterology,3,0,0
+2020-01,genetic and genomic medicine,16,0,3
+2020-01,geriatric medicine,1,0,0
+2020-01,health economics,1,0,0
+2020-01,health informatics,8,0,2
+2020-01,health policy,2,0,0
+2020-01,health systems and quality improvement,4,0,0
+2020-01,hematology,2,0,0
+2020-01,hiv aids,3,0,0
+2020-01,infectious diseases,16,4,0
+2020-01,intensive care and critical care medicine,1,0,1
+2020-01,medical education,1,0,0
+2020-01,medical ethics,2,0,0
+2020-01,nephrology,1,0,0
+2020-01,neurology,19,0,0
+2020-01,nursing,1,0,0
+2020-01,nutrition,1,0,0
+2020-01,obstetrics and gynecology,2,0,0
+2020-01,occupational and environmental health,5,0,0
+2020-01,oncology,20,0,2
+2020-01,ophthalmology,7,0,0
+2020-01,orthopedics,1,0,0
+2020-01,otolaryngology,1,0,0
+2020-01,pathology,1,0,0
+2020-01,pharmacology and therapeutics,4,0,1
+2020-01,primary care research,3,0,0
+2020-01,psychiatry and clinical psychology,24,0,0
+2020-01,public and global health,11,0,1
+2020-01,radiology and imaging,4,0,0
+2020-01,rehabilitation medicine and physical therapy,4,0,0
+2020-01,respiratory medicine,2,0,0
+2020-01,surgery,1,0,0
+2020-01,transplantation,2,0,0
+2020-02,addiction medicine,1,0,0
+2020-02,allergy and immunology,5,2,0
+2020-02,anesthesia,1,0,0
+2020-02,cardiovascular medicine,12,1,3
+2020-02,dentistry and oral medicine,1,0,0
+2020-02,emergency medicine,1,0,0
+2020-02,endocrinology,3,0,0
+2020-02,epidemiology,126,87,5
+2020-02,gastroenterology,7,3,0
+2020-02,genetic and genomic medicine,23,0,8
+2020-02,geriatric medicine,1,0,0
+2020-02,health economics,2,0,0
+2020-02,health informatics,6,0,0
+2020-02,health policy,2,0,0
+2020-02,health systems and quality improvement,4,2,0
+2020-02,hematology,4,1,0
+2020-02,hiv aids,2,0,0
+2020-02,infectious diseases,103,91,0
+2020-02,intensive care and critical care medicine,4,2,0
+2020-02,medical education,1,0,0
+2020-02,medical ethics,1,0,0
+2020-02,nephrology,2,2,0
+2020-02,neurology,23,0,1
+2020-02,nursing,1,0,0
+2020-02,nutrition,4,0,0
+2020-02,obstetrics and gynecology,4,0,0
+2020-02,occupational and environmental health,1,0,0
+2020-02,oncology,17,1,1
+2020-02,ophthalmology,10,2,0
+2020-02,otolaryngology,2,0,0
+2020-02,pain medicine,2,0,0
+2020-02,pathology,3,0,0
+2020-02,pediatrics,4,0,0
+2020-02,primary care research,1,1,0
+2020-02,psychiatry and clinical psychology,19,2,0
+2020-02,public and global health,23,13,1
+2020-02,radiology and imaging,6,1,0
+2020-02,rehabilitation medicine and physical therapy,7,0,0
+2020-02,respiratory medicine,8,5,1
+2020-02,rheumatology,2,0,0
+2020-02,sports medicine,1,0,0
+2020-02,surgery,1,0,0
+2020-02,toxicology,1,0,0
+2020-02,urology,2,1,0
+2020-03,addiction medicine,1,0,0
+2020-03,allergy and immunology,5,4,0
+2020-03,anesthesia,3,2,0
+2020-03,cardiovascular medicine,7,2,2
+2020-03,dentistry and oral medicine,2,0,0
+2020-03,emergency medicine,7,4,0
+2020-03,endocrinology,9,1,0
+2020-03,epidemiology,214,175,5
+2020-03,gastroenterology,12,3,0
+2020-03,genetic and genomic medicine,19,2,4
+2020-03,health economics,11,7,0
+2020-03,health informatics,22,15,1
+2020-03,health policy,8,8,0
+2020-03,health systems and quality improvement,1,1,0
+2020-03,hematology,3,1,0
+2020-03,hiv aids,8,0,0
+2020-03,infectious diseases,278,255,1
+2020-03,intensive care and critical care medicine,13,10,0
+2020-03,medical education,3,0,0
+2020-03,medical ethics,1,0,0
+2020-03,nephrology,3,1,0
+2020-03,neurology,23,2,1
+2020-03,nursing,1,0,0
+2020-03,nutrition,1,0,0
+2020-03,obstetrics and gynecology,4,1,0
+2020-03,occupational and environmental health,7,7,0
+2020-03,oncology,18,2,1
+2020-03,ophthalmology,4,1,0
+2020-03,orthopedics,4,0,0
+2020-03,otolaryngology,2,1,0
+2020-03,pain medicine,3,0,0
+2020-03,palliative medicine,1,1,0
+2020-03,pathology,2,0,0
+2020-03,pediatrics,4,1,0
+2020-03,pharmacology and therapeutics,8,2,0
+2020-03,primary care research,3,0,0
+2020-03,psychiatry and clinical psychology,24,9,3
+2020-03,public and global health,52,37,0
+2020-03,radiology and imaging,12,4,0
+2020-03,rehabilitation medicine and physical therapy,6,0,0
+2020-03,respiratory medicine,16,12,0
+2020-03,rheumatology,3,0,0
+2020-03,sexual and reproductive health,6,1,0
+2020-03,surgery,2,0,0
+2020-03,urology,3,2,0
+2020-04,addiction medicine,2,0,0
+2020-04,allergy and immunology,5,3,0
+2020-04,anesthesia,2,2,0
+2020-04,cardiovascular medicine,27,8,4
+2020-04,dentistry and oral medicine,5,0,0
+2020-04,dermatology,3,0,1
+2020-04,emergency medicine,8,7,0
+2020-04,endocrinology,8,2,0
+2020-04,epidemiology,462,410,8
+2020-04,gastroenterology,13,4,0
+2020-04,genetic and genomic medicine,34,9,7
+2020-04,geriatric medicine,2,0,0
+2020-04,health economics,12,8,0
+2020-04,health informatics,53,37,1
+2020-04,health policy,26,24,0
+2020-04,health systems and quality improvement,15,9,0
+2020-04,hematology,5,2,0
+2020-04,hiv aids,6,0,0
+2020-04,infectious diseases,431,400,3
+2020-04,intensive care and critical care medicine,39,31,0
+2020-04,medical education,8,1,0
+2020-04,medical ethics,3,0,0
+2020-04,nephrology,3,2,0
+2020-04,neurology,31,5,3
+2020-04,nutrition,5,0,1
+2020-04,obstetrics and gynecology,6,4,0
+2020-04,occupational and environmental health,20,15,1
+2020-04,oncology,32,3,2
+2020-04,ophthalmology,2,0,0
+2020-04,orthopedics,4,0,0
+2020-04,otolaryngology,7,3,0
+2020-04,pain medicine,4,0,0
+2020-04,pathology,9,8,0
+2020-04,pediatrics,8,4,0
+2020-04,pharmacology and therapeutics,12,9,1
+2020-04,primary care research,5,1,0
+2020-04,psychiatry and clinical psychology,37,12,2
+2020-04,public and global health,131,115,1
+2020-04,radiology and imaging,23,15,0
+2020-04,rehabilitation medicine and physical therapy,6,0,0
+2020-04,respiratory medicine,20,18,0
+2020-04,rheumatology,6,3,0
+2020-04,sexual and reproductive health,3,0,0
+2020-04,sports medicine,4,0,0
+2020-04,surgery,13,1,0
+2020-04,toxicology,4,1,1
+2020-04,transplantation,1,0,0
+2020-04,urology,3,1,0
+2020-05,addiction medicine,6,0,1
+2020-05,allergy and immunology,8,8,0
+2020-05,anesthesia,3,2,0
+2020-05,cardiovascular medicine,38,20,3
+2020-05,dentistry and oral medicine,8,3,0
+2020-05,dermatology,7,1,0
+2020-05,emergency medicine,17,11,1
+2020-05,endocrinology,10,3,0
+2020-05,epidemiology,518,470,20
+2020-05,forensic medicine,1,1,0
+2020-05,gastroenterology,15,4,1
+2020-05,genetic and genomic medicine,37,9,7
+2020-05,geriatric medicine,8,5,0
+2020-05,health economics,16,12,1
+2020-05,health informatics,66,48,3
+2020-05,health policy,37,30,0
+2020-05,health systems and quality improvement,23,17,0
+2020-05,hematology,2,1,0
+2020-05,hiv aids,9,4,0
+2020-05,infectious diseases,597,556,3
+2020-05,intensive care and critical care medicine,39,30,0
+2020-05,medical education,8,5,0
+2020-05,medical ethics,2,1,0
+2020-05,nephrology,9,5,0
+2020-05,neurology,50,13,0
+2020-05,nursing,3,1,0
+2020-05,nutrition,11,3,1
+2020-05,obstetrics and gynecology,8,4,0
+2020-05,occupational and environmental health,18,15,1
+2020-05,oncology,33,10,0
+2020-05,ophthalmology,11,4,0
+2020-05,orthopedics,3,0,0
+2020-05,otolaryngology,10,5,1
+2020-05,pain medicine,1,0,0
+2020-05,pathology,12,9,0
+2020-05,pediatrics,13,5,0
+2020-05,pharmacology and therapeutics,17,12,1
+2020-05,primary care research,9,7,0
+2020-05,psychiatry and clinical psychology,66,34,1
+2020-05,public and global health,208,187,2
+2020-05,radiology and imaging,47,30,0
+2020-05,rehabilitation medicine and physical therapy,16,1,0
+2020-05,respiratory medicine,25,19,0
+2020-05,rheumatology,8,5,0
+2020-05,sexual and reproductive health,6,2,0
+2020-05,sports medicine,6,1,0
+2020-05,surgery,7,2,0
+2020-05,toxicology,4,1,0
+2020-05,transplantation,3,1,0
+2020-05,urology,3,0,0
+2020-06,addiction medicine,7,2,0
+2020-06,allergy and immunology,13,7,0
+2020-06,anesthesia,2,0,0
+2020-06,cardiovascular medicine,30,13,2
+2020-06,dentistry and oral medicine,7,3,0
+2020-06,dermatology,4,0,0
+2020-06,emergency medicine,17,10,0
+2020-06,endocrinology,16,6,1
+2020-06,epidemiology,331,280,13
+2020-06,gastroenterology,12,2,2
+2020-06,genetic and genomic medicine,53,11,15
+2020-06,geriatric medicine,7,4,0
+2020-06,health economics,20,12,0
+2020-06,health informatics,52,29,0
+2020-06,health policy,28,23,0
+2020-06,health systems and quality improvement,15,8,0
+2020-06,hematology,7,3,0
+2020-06,hiv aids,12,3,0
+2020-06,infectious diseases,452,425,2
+2020-06,intensive care and critical care medicine,23,18,0
+2020-06,medical education,7,5,0
+2020-06,medical ethics,2,1,0
+2020-06,nephrology,11,5,0
+2020-06,neurology,44,8,0
+2020-06,nursing,3,2,0
+2020-06,nutrition,13,7,0
+2020-06,obstetrics and gynecology,10,5,0
+2020-06,occupational and environmental health,20,15,0
+2020-06,oncology,39,8,2
+2020-06,ophthalmology,12,5,0
+2020-06,orthopedics,1,0,0
+2020-06,otolaryngology,4,2,0
+2020-06,pain medicine,2,1,0
+2020-06,palliative medicine,1,1,0
+2020-06,pathology,14,9,0
+2020-06,pediatrics,17,5,0
+2020-06,pharmacology and therapeutics,6,4,0
+2020-06,primary care research,6,3,0
+2020-06,psychiatry and clinical psychology,59,25,1
+2020-06,public and global health,150,122,2
+2020-06,radiology and imaging,27,10,0
+2020-06,rehabilitation medicine and physical therapy,6,0,0
+2020-06,respiratory medicine,23,19,2
+2020-06,rheumatology,8,3,1
+2020-06,sexual and reproductive health,3,1,0
+2020-06,sports medicine,6,2,0
+2020-06,surgery,5,3,0
+2020-06,toxicology,2,1,0
+2020-06,transplantation,1,0,0
+2020-06,urology,5,2,0
+2020-07,addiction medicine,5,1,0
+2020-07,allergy and immunology,11,8,0
+2020-07,anesthesia,1,0,0
+2020-07,cardiovascular medicine,32,10,5
+2020-07,dentistry and oral medicine,4,1,0
+2020-07,dermatology,5,1,0
+2020-07,emergency medicine,7,3,0
+2020-07,endocrinology,7,4,0
+2020-07,epidemiology,301,246,16
+2020-07,gastroenterology,7,3,1
+2020-07,genetic and genomic medicine,46,6,11
+2020-07,geriatric medicine,4,1,0
+2020-07,health economics,14,10,1
+2020-07,health informatics,42,20,1
+2020-07,health policy,24,20,0
+2020-07,health systems and quality improvement,16,8,0
+2020-07,hematology,9,6,0
+2020-07,hiv aids,11,4,0
+2020-07,infectious diseases,390,361,7
+2020-07,intensive care and critical care medicine,27,21,0
+2020-07,medical education,7,5,0
+2020-07,medical ethics,2,1,0
+2020-07,nephrology,9,6,0
+2020-07,neurology,54,13,2
+2020-07,nursing,1,1,0
+2020-07,nutrition,7,1,0
+2020-07,obstetrics and gynecology,7,4,0
+2020-07,occupational and environmental health,15,11,1
+2020-07,oncology,23,1,0
+2020-07,ophthalmology,5,0,0
+2020-07,orthopedics,4,1,0
+2020-07,otolaryngology,7,4,0
+2020-07,pain medicine,3,1,0
+2020-07,palliative medicine,3,1,0
+2020-07,pathology,8,3,0
+2020-07,pediatrics,14,12,0
+2020-07,pharmacology and therapeutics,7,3,0
+2020-07,primary care research,8,4,0
+2020-07,psychiatry and clinical psychology,34,11,2
+2020-07,public and global health,126,100,2
+2020-07,radiology and imaging,22,7,0
+2020-07,rehabilitation medicine and physical therapy,6,0,0
+2020-07,respiratory medicine,22,14,0
+2020-07,rheumatology,7,1,2
+2020-07,sexual and reproductive health,5,0,0
+2020-07,sports medicine,4,1,0
+2020-07,surgery,5,3,1
+2020-07,toxicology,2,1,0
+2020-07,transplantation,3,1,0
+2020-08,addiction medicine,2,0,0
+2020-08,allergy and immunology,11,7,1
+2020-08,anesthesia,6,1,0
+2020-08,cardiovascular medicine,31,6,6
+2020-08,dentistry and oral medicine,6,4,0
+2020-08,dermatology,3,1,0
+2020-08,emergency medicine,11,7,0
+2020-08,endocrinology,14,4,2
+2020-08,epidemiology,237,193,9
+2020-08,gastroenterology,8,3,0
+2020-08,genetic and genomic medicine,32,5,9
+2020-08,geriatric medicine,5,2,1
+2020-08,health economics,5,4,0
+2020-08,health informatics,36,14,1
+2020-08,health policy,17,16,0
+2020-08,health systems and quality improvement,14,8,0
+2020-08,hematology,8,4,0
+2020-08,hiv aids,7,1,0
+2020-08,infectious diseases,318,286,2
+2020-08,intensive care and critical care medicine,15,13,0
+2020-08,medical education,5,2,0
+2020-08,medical ethics,4,3,0
+2020-08,nephrology,3,2,0
+2020-08,neurology,35,1,0
+2020-08,nursing,3,3,0
+2020-08,nutrition,4,1,0
+2020-08,obstetrics and gynecology,7,3,0
+2020-08,occupational and environmental health,10,9,0
+2020-08,oncology,26,6,0
+2020-08,ophthalmology,7,1,1
+2020-08,orthopedics,3,1,0
+2020-08,otolaryngology,5,0,0
+2020-08,pain medicine,1,0,0
+2020-08,palliative medicine,1,0,0
+2020-08,pathology,10,4,0
+2020-08,pediatrics,17,9,0
+2020-08,pharmacology and therapeutics,12,4,0
+2020-08,primary care research,3,2,0
+2020-08,psychiatry and clinical psychology,40,10,1
+2020-08,public and global health,107,82,2
+2020-08,radiology and imaging,16,8,0
+2020-08,rehabilitation medicine and physical therapy,7,0,0
+2020-08,respiratory medicine,15,12,0
+2020-08,rheumatology,4,1,0
+2020-08,sexual and reproductive health,4,2,0
+2020-08,sports medicine,3,1,0
+2020-08,surgery,9,4,0
+2020-08,transplantation,1,0,0
+2020-08,urology,4,1,0
+2020-09,addiction medicine,8,4,1
+2020-09,allergy and immunology,8,4,0
+2020-09,anesthesia,4,0,0
+2020-09,cardiovascular medicine,24,3,3
+2020-09,dentistry and oral medicine,10,4,0
+2020-09,dermatology,3,0,0
+2020-09,emergency medicine,10,8,0
+2020-09,endocrinology,19,3,5
+2020-09,epidemiology,282,221,15
+2020-09,gastroenterology,19,5,0
+2020-09,genetic and genomic medicine,67,8,15
+2020-09,geriatric medicine,1,0,0
+2020-09,health economics,16,11,0
+2020-09,health informatics,27,16,0
+2020-09,health policy,25,22,0
+2020-09,health systems and quality improvement,10,4,0
+2020-09,hematology,6,3,0
+2020-09,hiv aids,10,3,0
+2020-09,infectious diseases,343,313,5
+2020-09,intensive care and critical care medicine,22,15,1
+2020-09,medical education,4,3,0
+2020-09,nephrology,2,2,0
+2020-09,neurology,61,6,2
+2020-09,nursing,9,1,0
+2020-09,nutrition,7,1,0
+2020-09,obstetrics and gynecology,14,6,0
+2020-09,occupational and environmental health,19,9,1
+2020-09,oncology,35,3,1
+2020-09,ophthalmology,8,0,1
+2020-09,orthopedics,3,1,0
+2020-09,otolaryngology,7,2,1
+2020-09,pain medicine,2,0,1
+2020-09,palliative medicine,2,0,0
+2020-09,pathology,13,6,0
+2020-09,pediatrics,17,7,0
+2020-09,pharmacology and therapeutics,5,1,0
+2020-09,primary care research,4,3,0
+2020-09,psychiatry and clinical psychology,52,16,1
+2020-09,public and global health,130,97,1
+2020-09,radiology and imaging,18,7,0
+2020-09,rehabilitation medicine and physical therapy,9,1,0
+2020-09,respiratory medicine,26,19,1
+2020-09,rheumatology,10,3,0
+2020-09,sexual and reproductive health,7,5,0
+2020-09,sports medicine,8,1,0
+2020-09,surgery,4,2,0
+2020-09,toxicology,2,0,0
+2020-09,transplantation,1,1,0
+2020-09,urology,6,0,0
+2020-10,addiction medicine,1,0,0
+2020-10,allergy and immunology,9,4,0
+2020-10,anesthesia,2,0,0
+2020-10,cardiovascular medicine,13,5,1
+2020-10,dentistry and oral medicine,6,0,0
+2020-10,dermatology,1,0,0
+2020-10,emergency medicine,7,3,0
+2020-10,endocrinology,12,3,0
+2020-10,epidemiology,232,171,12
+2020-10,gastroenterology,9,2,0
+2020-10,genetic and genomic medicine,43,5,11
+2020-10,geriatric medicine,6,3,0
+2020-10,health economics,13,9,0
+2020-10,health informatics,37,21,0
+2020-10,health policy,20,14,0
+2020-10,health systems and quality improvement,14,5,0
+2020-10,hematology,6,4,0
+2020-10,hiv aids,4,1,0
+2020-10,infectious diseases,276,245,1
+2020-10,intensive care and critical care medicine,14,10,0
+2020-10,medical education,9,5,0
+2020-10,medical ethics,1,1,0
+2020-10,nephrology,3,2,0
+2020-10,neurology,47,6,2
+2020-10,nursing,3,3,0
+2020-10,nutrition,10,2,0
+2020-10,obstetrics and gynecology,10,1,0
+2020-10,occupational and environmental health,7,3,0
+2020-10,oncology,17,1,0
+2020-10,ophthalmology,6,1,0
+2020-10,orthopedics,2,0,0
+2020-10,otolaryngology,7,1,0
+2020-10,pain medicine,2,0,0
+2020-10,palliative medicine,1,1,0
+2020-10,pathology,9,5,0
+2020-10,pediatrics,15,10,0
+2020-10,pharmacology and therapeutics,2,1,0
+2020-10,primary care research,3,2,0
+2020-10,psychiatry and clinical psychology,46,19,1
+2020-10,public and global health,109,81,3
+2020-10,radiology and imaging,19,7,0
+2020-10,rehabilitation medicine and physical therapy,8,0,0
+2020-10,respiratory medicine,14,8,1
+2020-10,rheumatology,4,2,0
+2020-10,sexual and reproductive health,7,0,0
+2020-10,sports medicine,3,2,0
+2020-10,surgery,6,1,0
+2020-10,toxicology,1,1,0
+2020-10,transplantation,4,2,0
+2020-10,urology,2,1,0
+2020-11,addiction medicine,6,1,0
+2020-11,allergy and immunology,10,8,0
+2020-11,anesthesia,5,1,0
+2020-11,cardiovascular medicine,25,8,1
+2020-11,dentistry and oral medicine,2,2,0
+2020-11,dermatology,4,0,0
+2020-11,emergency medicine,10,5,0
+2020-11,endocrinology,11,2,1
+2020-11,epidemiology,220,169,8
+2020-11,gastroenterology,8,1,0
+2020-11,genetic and genomic medicine,50,9,11
+2020-11,geriatric medicine,13,10,0
+2020-11,health economics,16,10,1
+2020-11,health informatics,30,17,1
+2020-11,health policy,25,22,0
+2020-11,health systems and quality improvement,14,7,0
+2020-11,hematology,4,2,0
+2020-11,hiv aids,19,7,0
+2020-11,infectious diseases,333,302,3
+2020-11,intensive care and critical care medicine,13,9,1
+2020-11,medical education,2,1,0
+2020-11,nephrology,1,0,0
+2020-11,neurology,48,4,0
+2020-11,nursing,5,3,1
+2020-11,nutrition,7,1,0
+2020-11,obstetrics and gynecology,10,1,0
+2020-11,occupational and environmental health,12,8,0
+2020-11,oncology,29,2,2
+2020-11,ophthalmology,11,0,1
+2020-11,orthopedics,3,0,1
+2020-11,otolaryngology,7,1,0
+2020-11,pain medicine,2,0,0
+2020-11,palliative medicine,2,2,0
+2020-11,pathology,5,2,0
+2020-11,pediatrics,15,5,0
+2020-11,pharmacology and therapeutics,4,2,0
+2020-11,primary care research,12,5,0
+2020-11,psychiatry and clinical psychology,54,17,5
+2020-11,public and global health,119,94,2
+2020-11,radiology and imaging,17,8,0
+2020-11,rehabilitation medicine and physical therapy,7,2,0
+2020-11,respiratory medicine,16,7,2
+2020-11,rheumatology,6,4,1
+2020-11,sexual and reproductive health,8,2,0
+2020-11,sports medicine,4,3,0
+2020-11,surgery,6,3,0
+2020-11,toxicology,1,0,0
+2020-11,transplantation,1,0,0
+2020-11,urology,1,0,0
+2020-12,addiction medicine,4,0,0
+2020-12,allergy and immunology,10,6,0
+2020-12,anesthesia,3,0,0
+2020-12,cardiovascular medicine,31,5,4
+2020-12,dentistry and oral medicine,5,0,0
+2020-12,emergency medicine,8,5,0
+2020-12,endocrinology,6,1,1
+2020-12,epidemiology,188,143,9
+2020-12,forensic medicine,1,0,0
+2020-12,gastroenterology,11,4,0
+2020-12,genetic and genomic medicine,44,14,9
+2020-12,geriatric medicine,3,1,0
+2020-12,health economics,14,10,0
+2020-12,health informatics,24,13,0
+2020-12,health policy,8,6,0
+2020-12,health systems and quality improvement,6,2,0
+2020-12,hematology,7,2,0
+2020-12,hiv aids,9,1,0
+2020-12,infectious diseases,272,244,0
+2020-12,intensive care and critical care medicine,10,5,0
+2020-12,medical education,3,2,0
+2020-12,nephrology,6,1,0
+2020-12,neurology,33,3,3
+2020-12,nursing,1,0,0
+2020-12,nutrition,5,3,0
+2020-12,obstetrics and gynecology,9,0,0
+2020-12,occupational and environmental health,7,5,0
+2020-12,oncology,24,3,0
+2020-12,ophthalmology,10,0,1
+2020-12,orthopedics,2,0,0
+2020-12,otolaryngology,3,2,0
+2020-12,pain medicine,2,0,0
+2020-12,pathology,5,1,0
+2020-12,pediatrics,14,5,0
+2020-12,pharmacology and therapeutics,3,2,1
+2020-12,primary care research,3,2,0
+2020-12,psychiatry and clinical psychology,59,25,2
+2020-12,public and global health,111,91,1
+2020-12,radiology and imaging,13,5,0
+2020-12,rehabilitation medicine and physical therapy,10,2,0
+2020-12,respiratory medicine,15,7,2
+2020-12,rheumatology,3,0,0
+2020-12,sexual and reproductive health,4,0,0
+2020-12,sports medicine,2,1,0
+2020-12,surgery,6,2,0
+2020-12,transplantation,2,0,0
+2021-01,addiction medicine,1,0,0
+2021-01,allergy and immunology,8,5,0
+2021-01,anesthesia,5,1,0
+2021-01,cardiovascular medicine,33,6,2
+2021-01,dentistry and oral medicine,7,2,0
+2021-01,dermatology,2,0,0
+2021-01,emergency medicine,9,6,0
+2021-01,endocrinology,15,3,2
+2021-01,epidemiology,202,152,12
+2021-01,forensic medicine,1,0,0
+2021-01,gastroenterology,13,1,0
+2021-01,genetic and genomic medicine,43,7,8
+2021-01,geriatric medicine,5,1,0
+2021-01,health economics,7,4,0
+2021-01,health informatics,27,12,2
+2021-01,health policy,19,18,0
+2021-01,health systems and quality improvement,15,8,1
+2021-01,hematology,5,4,0
+2021-01,hiv aids,8,0,0
+2021-01,infectious diseases,285,256,0
+2021-01,intensive care and critical care medicine,21,16,3
+2021-01,medical education,9,4,0
+2021-01,medical ethics,2,1,0
+2021-01,nephrology,7,3,0
+2021-01,neurology,35,5,0
+2021-01,nursing,2,1,0
+2021-01,nutrition,7,3,0
+2021-01,obstetrics and gynecology,12,5,0
+2021-01,occupational and environmental health,13,12,0
+2021-01,oncology,27,1,1
+2021-01,ophthalmology,9,1,3
+2021-01,otolaryngology,4,2,0
+2021-01,pain medicine,2,0,0
+2021-01,palliative medicine,3,0,0
+2021-01,pathology,8,2,0
+2021-01,pediatrics,20,10,0
+2021-01,pharmacology and therapeutics,9,3,0
+2021-01,primary care research,8,4,0
+2021-01,psychiatry and clinical psychology,42,5,5
+2021-01,public and global health,92,79,0
+2021-01,radiology and imaging,13,4,0
+2021-01,rehabilitation medicine and physical therapy,11,3,0
+2021-01,respiratory medicine,8,5,0
+2021-01,rheumatology,6,0,0
+2021-01,sexual and reproductive health,3,0,0
+2021-01,sports medicine,7,3,0
+2021-01,surgery,4,1,0
+2021-01,transplantation,2,1,0
+2021-01,urology,2,1,0
+2021-02,addiction medicine,6,3,2
+2021-02,allergy and immunology,17,11,0
+2021-02,cardiovascular medicine,23,6,2
+2021-02,dentistry and oral medicine,3,0,2
+2021-02,dermatology,4,1,0
+2021-02,emergency medicine,6,4,0
+2021-02,endocrinology,9,0,0
+2021-02,epidemiology,198,153,8
+2021-02,gastroenterology,7,2,1
+2021-02,genetic and genomic medicine,35,2,5
+2021-02,geriatric medicine,3,0,0
+2021-02,health economics,14,6,0
+2021-02,health informatics,36,17,1
+2021-02,health policy,14,13,0
+2021-02,health systems and quality improvement,10,4,0
+2021-02,hematology,10,6,0
+2021-02,hiv aids,4,0,0
+2021-02,infectious diseases,263,240,1
+2021-02,intensive care and critical care medicine,17,12,0
+2021-02,medical education,6,2,0
+2021-02,medical ethics,1,0,0
+2021-02,nephrology,3,2,0
+2021-02,neurology,47,4,2
+2021-02,nursing,1,1,0
+2021-02,nutrition,11,1,0
+2021-02,obstetrics and gynecology,9,2,0
+2021-02,occupational and environmental health,17,13,0
+2021-02,oncology,23,2,1
+2021-02,ophthalmology,6,2,0
+2021-02,orthopedics,2,0,0
+2021-02,otolaryngology,2,1,0
+2021-02,pain medicine,1,0,0
+2021-02,palliative medicine,1,1,0
+2021-02,pathology,5,1,0
+2021-02,pediatrics,16,11,1
+2021-02,pharmacology and therapeutics,2,1,0
+2021-02,primary care research,8,3,0
+2021-02,psychiatry and clinical psychology,47,11,2
+2021-02,public and global health,110,89,0
+2021-02,radiology and imaging,12,3,0
+2021-02,rehabilitation medicine and physical therapy,9,1,0
+2021-02,respiratory medicine,18,7,0
+2021-02,rheumatology,4,1,0
+2021-02,sexual and reproductive health,3,0,0
+2021-02,sports medicine,8,3,0
+2021-02,surgery,5,1,0
+2021-02,toxicology,2,0,0
+2021-03,addiction medicine,4,0,1
+2021-03,allergy and immunology,17,15,0
+2021-03,anesthesia,3,0,0
+2021-03,cardiovascular medicine,30,10,3
+2021-03,dentistry and oral medicine,6,3,0
+2021-03,emergency medicine,7,4,0
+2021-03,endocrinology,17,4,1
+2021-03,epidemiology,241,182,7
+2021-03,gastroenterology,14,5,1
+2021-03,genetic and genomic medicine,58,12,14
+2021-03,geriatric medicine,7,4,0
+2021-03,health economics,9,4,0
+2021-03,health informatics,37,15,1
+2021-03,health policy,23,15,0
+2021-03,health systems and quality improvement,16,9,0
+2021-03,hematology,3,1,0
+2021-03,hiv aids,8,4,0
+2021-03,infectious diseases,405,366,4
+2021-03,intensive care and critical care medicine,20,10,0
+2021-03,medical education,12,5,0
+2021-03,nephrology,7,3,0
+2021-03,neurology,65,9,2
+2021-03,nursing,1,0,0
+2021-03,nutrition,6,2,0
+2021-03,obstetrics and gynecology,17,4,0
+2021-03,occupational and environmental health,16,11,0
+2021-03,oncology,23,4,1
+2021-03,ophthalmology,8,0,1
+2021-03,orthopedics,4,0,0
+2021-03,otolaryngology,7,2,0
+2021-03,pain medicine,3,0,0
+2021-03,palliative medicine,2,1,0
+2021-03,pathology,7,5,0
+2021-03,pediatrics,17,11,0
+2021-03,pharmacology and therapeutics,6,2,1
+2021-03,primary care research,13,7,1
+2021-03,psychiatry and clinical psychology,58,15,5
+2021-03,public and global health,152,128,1
+2021-03,radiology and imaging,17,1,0
+2021-03,rehabilitation medicine and physical therapy,9,2,0
+2021-03,respiratory medicine,19,11,0
+2021-03,rheumatology,10,3,0
+2021-03,sexual and reproductive health,5,1,0
+2021-03,sports medicine,5,2,0
+2021-03,surgery,8,3,0
+2021-03,transplantation,3,1,0
+2021-03,urology,2,0,0
+2021-04,addiction medicine,2,0,0
+2021-04,allergy and immunology,16,12,0
+2021-04,anesthesia,2,0,0
+2021-04,cardiovascular medicine,21,2,5
+2021-04,dentistry and oral medicine,5,1,0
+2021-04,dermatology,1,0,0
+2021-04,emergency medicine,6,4,0
+2021-04,endocrinology,13,6,0
+2021-04,epidemiology,185,138,7
+2021-04,gastroenterology,14,2,0
+2021-04,genetic and genomic medicine,55,6,15
+2021-04,geriatric medicine,5,0,0
+2021-04,health economics,8,1,0
+2021-04,health informatics,31,10,1
+2021-04,health policy,17,16,0
+2021-04,health systems and quality improvement,20,13,0
+2021-04,hematology,5,1,0
+2021-04,hiv aids,12,2,0
+2021-04,infectious diseases,282,254,3
+2021-04,intensive care and critical care medicine,18,13,0
+2021-04,medical education,5,0,0
+2021-04,medical ethics,3,2,0
+2021-04,nephrology,6,3,0
+2021-04,neurology,40,1,1
+2021-04,nursing,1,0,0
+2021-04,nutrition,5,2,1
+2021-04,obstetrics and gynecology,10,3,0
+2021-04,occupational and environmental health,21,15,0
+2021-04,oncology,16,1,0
+2021-04,ophthalmology,8,1,0
+2021-04,orthopedics,1,0,0
+2021-04,otolaryngology,2,0,0
+2021-04,pain medicine,4,0,0
+2021-04,palliative medicine,1,1,0
+2021-04,pathology,6,3,0
+2021-04,pediatrics,20,10,0
+2021-04,pharmacology and therapeutics,4,2,0
+2021-04,primary care research,4,3,0
+2021-04,psychiatry and clinical psychology,63,18,5
+2021-04,public and global health,107,82,1
+2021-04,radiology and imaging,14,3,0
+2021-04,rehabilitation medicine and physical therapy,8,2,0
+2021-04,respiratory medicine,12,4,1
+2021-04,rheumatology,7,2,2
+2021-04,sexual and reproductive health,7,1,1
+2021-04,sports medicine,4,1,0
+2021-04,surgery,3,0,0
+2021-04,transplantation,4,1,0
+2021-04,urology,1,0,0
+2021-05,addiction medicine,3,0,0
+2021-05,allergy and immunology,3,3,0
+2021-05,anesthesia,2,0,0
+2021-05,cardiovascular medicine,16,5,0
+2021-05,dentistry and oral medicine,3,1,0
+2021-05,dermatology,5,1,0
+2021-05,emergency medicine,7,5,0
+2021-05,endocrinology,16,3,2
+2021-05,epidemiology,194,149,8
+2021-05,forensic medicine,2,0,0
+2021-05,gastroenterology,11,3,1
+2021-05,genetic and genomic medicine,58,15,10
+2021-05,geriatric medicine,3,1,1
+2021-05,health economics,8,3,0
+2021-05,health informatics,27,6,1
+2021-05,health policy,26,16,1
+2021-05,health systems and quality improvement,15,6,0
+2021-05,hematology,7,5,0
+2021-05,hiv aids,8,1,0
+2021-05,infectious diseases,242,217,1
+2021-05,intensive care and critical care medicine,15,7,0
+2021-05,medical education,11,3,0
+2021-05,nephrology,9,5,0
+2021-05,neurology,53,9,1
+2021-05,nursing,5,2,0
+2021-05,nutrition,9,0,0
+2021-05,obstetrics and gynecology,19,7,0
+2021-05,occupational and environmental health,17,14,0
+2021-05,oncology,25,4,0
+2021-05,ophthalmology,4,0,0
+2021-05,orthopedics,2,0,0
+2021-05,otolaryngology,3,0,0
+2021-05,pain medicine,4,0,0
+2021-05,pathology,4,2,0
+2021-05,pediatrics,16,9,0
+2021-05,pharmacology and therapeutics,9,3,0
+2021-05,primary care research,8,2,0
+2021-05,psychiatry and clinical psychology,49,11,2
+2021-05,public and global health,93,69,0
+2021-05,radiology and imaging,17,2,1
+2021-05,rehabilitation medicine and physical therapy,12,3,0
+2021-05,respiratory medicine,21,15,0
+2021-05,rheumatology,5,2,0
+2021-05,sexual and reproductive health,5,1,0
+2021-05,sports medicine,3,0,0
+2021-05,surgery,3,0,0
+2021-05,transplantation,3,1,0
+2021-05,urology,2,1,0
+2021-06,addiction medicine,3,0,0
+2021-06,allergy and immunology,16,12,0
+2021-06,anesthesia,4,0,0
+2021-06,cardiovascular medicine,20,4,3
+2021-06,dentistry and oral medicine,1,0,0
+2021-06,dermatology,1,0,0
+2021-06,emergency medicine,6,2,0
+2021-06,endocrinology,7,0,1
+2021-06,epidemiology,176,130,8
+2021-06,gastroenterology,9,2,0
+2021-06,genetic and genomic medicine,52,6,15
+2021-06,geriatric medicine,4,2,0
+2021-06,health economics,12,5,0
+2021-06,health informatics,35,12,6
+2021-06,health policy,18,12,0
+2021-06,health systems and quality improvement,15,6,1
+2021-06,hematology,7,2,0
+2021-06,hiv aids,11,3,0
+2021-06,infectious diseases,243,211,0
+2021-06,intensive care and critical care medicine,13,10,0
+2021-06,medical education,4,1,0
+2021-06,nephrology,9,6,0
+2021-06,neurology,49,5,1
+2021-06,nursing,2,1,0
+2021-06,nutrition,6,1,0
+2021-06,obstetrics and gynecology,17,8,0
+2021-06,occupational and environmental health,11,7,1
+2021-06,oncology,20,1,0
+2021-06,ophthalmology,6,0,0
+2021-06,orthopedics,1,0,0
+2021-06,otolaryngology,4,1,0
+2021-06,pain medicine,2,0,0
+2021-06,palliative medicine,3,0,0
+2021-06,pathology,5,1,0
+2021-06,pediatrics,25,10,0
+2021-06,pharmacology and therapeutics,7,3,0
+2021-06,primary care research,6,2,0
+2021-06,psychiatry and clinical psychology,47,13,0
+2021-06,public and global health,89,64,3
+2021-06,radiology and imaging,15,1,0
+2021-06,rehabilitation medicine and physical therapy,11,2,0
+2021-06,respiratory medicine,13,5,0
+2021-06,rheumatology,4,1,0
+2021-06,sexual and reproductive health,4,1,0
+2021-06,sports medicine,3,0,0
+2021-06,surgery,5,0,0
+2021-06,transplantation,4,0,0
+2021-07,addiction medicine,4,1,0
+2021-07,allergy and immunology,10,9,0
+2021-07,anesthesia,4,1,0
+2021-07,cardiovascular medicine,28,8,1
+2021-07,dentistry and oral medicine,3,0,0
+2021-07,dermatology,6,1,0
+2021-07,emergency medicine,7,5,0
+2021-07,endocrinology,11,0,4
+2021-07,epidemiology,214,162,9
+2021-07,gastroenterology,14,2,2
+2021-07,genetic and genomic medicine,63,5,13
+2021-07,geriatric medicine,5,1,0
+2021-07,health economics,11,4,0
+2021-07,health informatics,40,12,1
+2021-07,health policy,19,11,0
+2021-07,health systems and quality improvement,12,5,0
+2021-07,hematology,7,4,0
+2021-07,hiv aids,12,3,0
+2021-07,infectious diseases,291,263,3
+2021-07,intensive care and critical care medicine,9,7,0
+2021-07,medical education,8,2,0
+2021-07,nephrology,10,5,1
+2021-07,neurology,53,1,0
+2021-07,nursing,4,3,0
+2021-07,nutrition,11,2,0
+2021-07,obstetrics and gynecology,15,7,3
+2021-07,occupational and environmental health,17,11,0
+2021-07,oncology,17,2,1
+2021-07,ophthalmology,7,0,0
+2021-07,orthopedics,4,0,0
+2021-07,otolaryngology,5,2,0
+2021-07,pain medicine,6,0,0
+2021-07,palliative medicine,1,0,0
+2021-07,pathology,9,4,0
+2021-07,pediatrics,33,15,0
+2021-07,pharmacology and therapeutics,10,6,0
+2021-07,primary care research,4,2,0
+2021-07,psychiatry and clinical psychology,59,17,6
+2021-07,public and global health,108,83,1
+2021-07,radiology and imaging,11,2,0
+2021-07,rehabilitation medicine and physical therapy,9,1,0
+2021-07,respiratory medicine,17,7,0
+2021-07,rheumatology,3,1,0
+2021-07,sexual and reproductive health,5,1,0
+2021-07,sports medicine,5,1,1
+2021-07,surgery,6,0,0
+2021-07,transplantation,7,2,0
+2021-07,urology,1,0,0
+2021-08,addiction medicine,5,1,0
+2021-08,allergy and immunology,15,9,0
+2021-08,anesthesia,2,1,0
+2021-08,cardiovascular medicine,15,3,3
+2021-08,dentistry and oral medicine,7,0,0
+2021-08,dermatology,2,0,0
+2021-08,emergency medicine,4,2,0
+2021-08,endocrinology,8,1,1
+2021-08,epidemiology,147,107,9
+2021-08,gastroenterology,11,2,0
+2021-08,genetic and genomic medicine,42,4,10
+2021-08,geriatric medicine,2,0,0
+2021-08,health economics,6,2,1
+2021-08,health informatics,23,13,2
+2021-08,health policy,9,8,0
+2021-08,health systems and quality improvement,6,3,0
+2021-08,hematology,3,0,0
+2021-08,hiv aids,18,5,0
+2021-08,infectious diseases,221,190,1
+2021-08,intensive care and critical care medicine,12,8,0
+2021-08,medical education,7,2,0
+2021-08,medical ethics,1,0,0
+2021-08,nephrology,6,5,1
+2021-08,neurology,44,2,3
+2021-08,nursing,2,0,0
+2021-08,nutrition,7,0,0
+2021-08,obstetrics and gynecology,6,1,0
+2021-08,occupational and environmental health,10,5,0
+2021-08,oncology,21,3,1
+2021-08,ophthalmology,4,0,1
+2021-08,orthopedics,3,0,0
+2021-08,otolaryngology,3,1,0
+2021-08,pain medicine,4,0,0
+2021-08,palliative medicine,1,0,0
+2021-08,pathology,3,0,0
+2021-08,pediatrics,19,7,0
+2021-08,pharmacology and therapeutics,4,2,1
+2021-08,primary care research,2,1,0
+2021-08,psychiatry and clinical psychology,39,10,4
+2021-08,public and global health,93,62,0
+2021-08,radiology and imaging,18,2,1
+2021-08,rehabilitation medicine and physical therapy,5,0,0
+2021-08,respiratory medicine,13,7,0
+2021-08,rheumatology,13,6,1
+2021-08,sexual and reproductive health,6,1,0
+2021-08,sports medicine,1,1,0
+2021-08,surgery,3,0,0
+2021-08,toxicology,2,0,0
+2021-08,transplantation,2,1,0
+2021-08,urology,2,0,0
+2021-09,addiction medicine,8,0,1
+2021-09,allergy and immunology,20,12,0
+2021-09,anesthesia,1,1,0
+2021-09,cardiovascular medicine,26,4,3
+2021-09,dentistry and oral medicine,1,0,0
+2021-09,dermatology,3,0,0
+2021-09,emergency medicine,5,3,0
+2021-09,endocrinology,10,1,1
+2021-09,epidemiology,165,114,12
+2021-09,gastroenterology,12,2,1
+2021-09,genetic and genomic medicine,45,4,8
+2021-09,geriatric medicine,8,1,1
+2021-09,health economics,5,3,0
+2021-09,health informatics,29,11,1
+2021-09,health policy,20,13,0
+2021-09,health systems and quality improvement,11,1,0
+2021-09,hematology,7,4,0
+2021-09,hiv aids,12,4,0
+2021-09,infectious diseases,219,190,1
+2021-09,intensive care and critical care medicine,8,5,0
+2021-09,medical education,3,0,0
+2021-09,medical ethics,6,1,0
+2021-09,nephrology,10,3,0
+2021-09,neurology,46,7,3
+2021-09,nursing,1,0,0
+2021-09,nutrition,8,0,0
+2021-09,obstetrics and gynecology,10,2,0
+2021-09,occupational and environmental health,7,7,0
+2021-09,oncology,33,4,1
+2021-09,ophthalmology,14,2,1
+2021-09,orthopedics,5,0,0
+2021-09,otolaryngology,1,0,0
+2021-09,pain medicine,3,0,0
+2021-09,palliative medicine,1,1,0
+2021-09,pathology,9,1,0
+2021-09,pediatrics,19,7,0
+2021-09,pharmacology and therapeutics,6,4,1
+2021-09,primary care research,6,2,0
+2021-09,psychiatry and clinical psychology,38,5,2
+2021-09,public and global health,93,61,0
+2021-09,radiology and imaging,11,1,0
+2021-09,rehabilitation medicine and physical therapy,9,2,0
+2021-09,respiratory medicine,13,7,0
+2021-09,rheumatology,5,1,0
+2021-09,sexual and reproductive health,2,0,1
+2021-09,sports medicine,11,2,1
+2021-09,surgery,6,0,0
+2021-09,transplantation,6,2,0
+2021-09,urology,1,0,0
+2021-10,addiction medicine,5,2,0
+2021-10,allergy and immunology,11,8,0
+2021-10,anesthesia,4,0,0
+2021-10,cardiovascular medicine,23,2,4
+2021-10,dentistry and oral medicine,2,0,0
+2021-10,emergency medicine,7,3,2
+2021-10,endocrinology,12,0,3
+2021-10,epidemiology,153,102,13
+2021-10,gastroenterology,13,4,0
+2021-10,genetic and genomic medicine,56,7,11
+2021-10,geriatric medicine,8,1,0
+2021-10,health economics,9,5,0
+2021-10,health informatics,25,9,0
+2021-10,health policy,9,6,0
+2021-10,health systems and quality improvement,17,9,0
+2021-10,hematology,2,2,0
+2021-10,hiv aids,17,3,0
+2021-10,infectious diseases,192,170,1
+2021-10,intensive care and critical care medicine,8,3,0
+2021-10,medical education,5,3,0
+2021-10,medical ethics,3,1,0
+2021-10,nephrology,8,4,1
+2021-10,neurology,53,6,1
+2021-10,nursing,2,1,0
+2021-10,nutrition,8,1,0
+2021-10,obstetrics and gynecology,7,4,0
+2021-10,occupational and environmental health,13,4,2
+2021-10,oncology,28,3,1
+2021-10,ophthalmology,4,0,0
+2021-10,orthopedics,7,0,0
+2021-10,otolaryngology,2,0,0
+2021-10,pain medicine,3,0,0
+2021-10,pathology,3,1,0
+2021-10,pediatrics,11,6,0
+2021-10,pharmacology and therapeutics,3,1,0
+2021-10,primary care research,4,2,0
+2021-10,psychiatry and clinical psychology,52,11,3
+2021-10,public and global health,87,61,1
+2021-10,radiology and imaging,27,3,0
+2021-10,rehabilitation medicine and physical therapy,7,0,0
+2021-10,respiratory medicine,12,7,0
+2021-10,rheumatology,4,2,1
+2021-10,sexual and reproductive health,7,2,1
+2021-10,sports medicine,5,0,1
+2021-10,surgery,7,0,0
+2021-10,toxicology,1,0,0
+2021-10,transplantation,2,0,0
+2021-10,urology,3,0,0
+2021-11,addiction medicine,2,0,0
+2021-11,allergy and immunology,8,5,0
+2021-11,cardiovascular medicine,25,4,4
+2021-11,dentistry and oral medicine,3,0,0
+2021-11,emergency medicine,5,0,0
+2021-11,endocrinology,18,1,3
+2021-11,epidemiology,123,90,5
+2021-11,gastroenterology,8,2,1
+2021-11,genetic and genomic medicine,56,6,7
+2021-11,geriatric medicine,4,0,1
+2021-11,health economics,8,4,0
+2021-11,health informatics,27,4,1
+2021-11,health policy,10,6,0
+2021-11,health systems and quality improvement,21,8,0
+2021-11,hematology,4,2,1
+2021-11,hiv aids,4,1,0
+2021-11,infectious diseases,187,152,3
+2021-11,intensive care and critical care medicine,11,8,0
+2021-11,medical education,4,3,0
+2021-11,nephrology,5,2,0
+2021-11,neurology,43,5,1
+2021-11,nursing,1,1,0
+2021-11,nutrition,5,0,1
+2021-11,obstetrics and gynecology,9,4,0
+2021-11,occupational and environmental health,12,4,1
+2021-11,oncology,23,1,1
+2021-11,ophthalmology,2,0,0
+2021-11,orthopedics,4,0,0
+2021-11,otolaryngology,2,0,0
+2021-11,pain medicine,4,0,0
+2021-11,palliative medicine,1,1,0
+2021-11,pathology,5,0,0
+2021-11,pediatrics,12,3,0
+2021-11,pharmacology and therapeutics,3,1,0
+2021-11,primary care research,4,1,0
+2021-11,psychiatry and clinical psychology,47,7,0
+2021-11,public and global health,96,62,1
+2021-11,radiology and imaging,13,1,1
+2021-11,rehabilitation medicine and physical therapy,5,0,0
+2021-11,respiratory medicine,13,5,0
+2021-11,rheumatology,6,3,1
+2021-11,sexual and reproductive health,3,1,0
+2021-11,sports medicine,4,0,0
+2021-11,surgery,6,0,0
+2021-11,toxicology,1,0,0
+2021-11,transplantation,3,1,0
+2021-11,urology,4,0,0
+2021-12,addiction medicine,7,2,0
+2021-12,allergy and immunology,13,12,0
+2021-12,anesthesia,2,0,0
+2021-12,cardiovascular medicine,31,7,3
+2021-12,dentistry and oral medicine,1,0,0
+2021-12,dermatology,3,0,0
+2021-12,emergency medicine,3,2,0
+2021-12,endocrinology,10,1,0
+2021-12,epidemiology,153,114,12
+2021-12,gastroenterology,10,4,1
+2021-12,genetic and genomic medicine,76,12,17
+2021-12,geriatric medicine,6,3,0
+2021-12,health economics,3,2,0
+2021-12,health informatics,26,11,1
+2021-12,health policy,11,8,0
+2021-12,health systems and quality improvement,11,5,0
+2021-12,hematology,8,2,0
+2021-12,hiv aids,15,5,0
+2021-12,infectious diseases,273,227,1
+2021-12,intensive care and critical care medicine,3,2,0
+2021-12,medical education,2,2,0
+2021-12,nephrology,10,3,1
+2021-12,neurology,55,9,0
+2021-12,nursing,2,1,0
+2021-12,nutrition,4,0,0
+2021-12,obstetrics and gynecology,5,2,0
+2021-12,occupational and environmental health,9,6,0
+2021-12,oncology,31,3,0
+2021-12,ophthalmology,4,0,1
+2021-12,orthopedics,4,0,0
+2021-12,otolaryngology,5,1,0
+2021-12,pain medicine,4,0,0
+2021-12,pathology,10,3,0
+2021-12,pediatrics,19,9,2
+2021-12,pharmacology and therapeutics,5,3,0
+2021-12,primary care research,7,3,0
+2021-12,psychiatry and clinical psychology,26,8,0
+2021-12,public and global health,96,60,1
+2021-12,radiology and imaging,14,3,0
+2021-12,rehabilitation medicine and physical therapy,4,0,0
+2021-12,respiratory medicine,12,7,0
+2021-12,rheumatology,4,1,0
+2021-12,sexual and reproductive health,4,0,0
+2021-12,sports medicine,6,3,0
+2021-12,surgery,3,0,0
+2021-12,toxicology,1,0,0
+2021-12,transplantation,1,1,0
+2021-12,urology,2,0,1
+2022-01,addiction medicine,9,3,0
+2022-01,allergy and immunology,27,22,0
+2022-01,anesthesia,2,0,0
+2022-01,cardiovascular medicine,26,3,4
+2022-01,dentistry and oral medicine,4,1,0
+2022-01,dermatology,2,0,0
+2022-01,emergency medicine,4,2,0
+2022-01,endocrinology,9,3,3
+2022-01,epidemiology,160,116,12
+2022-01,gastroenterology,8,0,1
+2022-01,genetic and genomic medicine,51,5,18
+2022-01,geriatric medicine,7,2,1
+2022-01,health economics,7,4,0
+2022-01,health informatics,19,5,2
+2022-01,health policy,10,4,0
+2022-01,health systems and quality improvement,5,0,0
+2022-01,hematology,11,2,2
+2022-01,hiv aids,4,2,0
+2022-01,infectious diseases,252,219,1
+2022-01,intensive care and critical care medicine,11,8,0
+2022-01,medical education,6,3,0
+2022-01,medical ethics,1,1,0
+2022-01,nephrology,11,6,1
+2022-01,neurology,50,6,2
+2022-01,nursing,11,1,0
+2022-01,obstetrics and gynecology,9,1,0
+2022-01,occupational and environmental health,13,5,0
+2022-01,oncology,21,3,1
+2022-01,ophthalmology,5,0,1
+2022-01,orthopedics,7,0,0
+2022-01,otolaryngology,7,2,0
+2022-01,pain medicine,5,0,0
+2022-01,palliative medicine,1,0,0
+2022-01,pathology,7,2,0
+2022-01,pediatrics,18,3,0
+2022-01,pharmacology and therapeutics,3,1,0
+2022-01,primary care research,6,3,0
+2022-01,psychiatry and clinical psychology,43,8,2
+2022-01,public and global health,88,53,4
+2022-01,radiology and imaging,15,2,1
+2022-01,rehabilitation medicine and physical therapy,10,1,0
+2022-01,respiratory medicine,17,3,2
+2022-01,rheumatology,4,0,1
+2022-01,sexual and reproductive health,2,0,0
+2022-01,sports medicine,8,2,0
+2022-01,surgery,4,1,0
+2022-01,transplantation,6,3,0
+2022-01,urology,5,0,0
+2022-02,addiction medicine,6,0,0
+2022-02,allergy and immunology,9,5,1
+2022-02,anesthesia,1,0,0
+2022-02,cardiovascular medicine,32,4,3
+2022-02,dentistry and oral medicine,3,1,0
+2022-02,dermatology,3,0,0
+2022-02,emergency medicine,5,1,0
+2022-02,endocrinology,12,2,0
+2022-02,epidemiology,134,87,10
+2022-02,gastroenterology,10,4,0
+2022-02,genetic and genomic medicine,49,2,5
+2022-02,geriatric medicine,6,1,0
+2022-02,health economics,8,3,0
+2022-02,health informatics,27,7,0
+2022-02,health policy,10,6,0
+2022-02,health systems and quality improvement,14,8,0
+2022-02,hematology,5,2,0
+2022-02,hiv aids,10,1,0
+2022-02,infectious diseases,214,177,3
+2022-02,intensive care and critical care medicine,6,3,1
+2022-02,medical education,4,2,0
+2022-02,medical ethics,4,0,1
+2022-02,nephrology,4,1,0
+2022-02,neurology,68,5,5
+2022-02,nursing,3,1,0
+2022-02,nutrition,7,1,1
+2022-02,obstetrics and gynecology,9,1,1
+2022-02,occupational and environmental health,10,5,0
+2022-02,oncology,33,3,0
+2022-02,ophthalmology,11,1,1
+2022-02,orthopedics,1,0,0
+2022-02,otolaryngology,4,4,0
+2022-02,pain medicine,3,0,0
+2022-02,pathology,5,3,0
+2022-02,pediatrics,10,3,0
+2022-02,pharmacology and therapeutics,6,1,0
+2022-02,primary care research,5,2,0
+2022-02,psychiatry and clinical psychology,53,8,1
+2022-02,public and global health,83,46,2
+2022-02,radiology and imaging,16,2,0
+2022-02,rehabilitation medicine and physical therapy,7,1,0
+2022-02,respiratory medicine,9,5,0
+2022-02,rheumatology,7,3,1
+2022-02,sexual and reproductive health,12,4,0
+2022-02,sports medicine,3,0,1
+2022-02,surgery,5,2,0
+2022-02,toxicology,1,0,0
+2022-02,transplantation,4,2,1
+2022-02,urology,2,0,0
+2022-03,addiction medicine,8,0,0
+2022-03,allergy and immunology,13,11,0
+2022-03,anesthesia,3,0,0
+2022-03,cardiovascular medicine,26,6,3
+2022-03,dentistry and oral medicine,8,2,0
+2022-03,dermatology,3,0,0
+2022-03,emergency medicine,8,4,0
+2022-03,endocrinology,13,2,1
+2022-03,epidemiology,151,84,13
+2022-03,gastroenterology,13,2,0
+2022-03,genetic and genomic medicine,55,0,18
+2022-03,geriatric medicine,5,0,1
+2022-03,health economics,13,5,0
+2022-03,health informatics,35,7,1
+2022-03,health policy,13,5,0
+2022-03,health systems and quality improvement,13,3,0
+2022-03,hematology,5,3,0
+2022-03,hiv aids,15,1,0
+2022-03,infectious diseases,195,158,1
+2022-03,intensive care and critical care medicine,10,4,1
+2022-03,medical education,6,3,0
+2022-03,nephrology,7,4,0
+2022-03,neurology,50,3,4
+2022-03,nursing,5,1,0
+2022-03,nutrition,6,0,0
+2022-03,obstetrics and gynecology,13,0,1
+2022-03,occupational and environmental health,10,4,0
+2022-03,oncology,26,2,3
+2022-03,ophthalmology,7,2,0
+2022-03,orthopedics,5,0,0
+2022-03,otolaryngology,6,3,0
+2022-03,pain medicine,10,0,1
+2022-03,palliative medicine,7,1,0
+2022-03,pathology,6,0,0
+2022-03,pediatrics,20,7,0
+2022-03,pharmacology and therapeutics,7,1,0
+2022-03,primary care research,14,5,0
+2022-03,psychiatry and clinical psychology,44,8,4
+2022-03,public and global health,102,60,0
+2022-03,radiology and imaging,14,1,1
+2022-03,rehabilitation medicine and physical therapy,12,2,0
+2022-03,respiratory medicine,15,8,0
+2022-03,rheumatology,8,3,0
+2022-03,sexual and reproductive health,8,1,0
+2022-03,sports medicine,7,0,0
+2022-03,surgery,3,0,0
+2022-03,transplantation,6,0,0
+2022-03,urology,5,0,0
+2022-04,addiction medicine,5,0,0
+2022-04,allergy and immunology,12,10,0
+2022-04,anesthesia,2,0,0
+2022-04,cardiovascular medicine,14,3,1
+2022-04,dentistry and oral medicine,8,0,0
+2022-04,dermatology,2,0,0
+2022-04,emergency medicine,2,0,0
+2022-04,endocrinology,7,2,1
+2022-04,epidemiology,146,73,16
+2022-04,gastroenterology,6,1,1
+2022-04,genetic and genomic medicine,38,4,5
+2022-04,geriatric medicine,7,1,1
+2022-04,health economics,5,2,0
+2022-04,health informatics,34,9,3
+2022-04,health policy,11,4,0
+2022-04,health systems and quality improvement,17,4,0
+2022-04,hematology,8,3,0
+2022-04,hiv aids,15,2,0
+2022-04,infectious diseases,168,124,1
+2022-04,intensive care and critical care medicine,10,4,0
+2022-04,medical education,7,1,0
+2022-04,medical ethics,3,0,0
+2022-04,nephrology,9,0,1
+2022-04,neurology,47,4,3
+2022-04,nursing,7,0,0
+2022-04,nutrition,14,3,1
+2022-04,obstetrics and gynecology,13,4,0
+2022-04,occupational and environmental health,12,9,0
+2022-04,oncology,27,1,1
+2022-04,ophthalmology,6,0,0
+2022-04,orthopedics,2,0,0
+2022-04,otolaryngology,4,1,0
+2022-04,pain medicine,4,0,0
+2022-04,pathology,9,0,0
+2022-04,pediatrics,17,2,0
+2022-04,pharmacology and therapeutics,4,2,0
+2022-04,primary care research,6,1,0
+2022-04,psychiatry and clinical psychology,50,10,0
+2022-04,public and global health,107,61,2
+2022-04,radiology and imaging,7,3,0
+2022-04,rehabilitation medicine and physical therapy,18,2,0
+2022-04,respiratory medicine,12,3,1
+2022-04,rheumatology,7,3,0
+2022-04,sexual and reproductive health,9,0,0
+2022-04,sports medicine,4,0,1
+2022-04,surgery,2,0,0
+2022-04,toxicology,1,1,0
+2022-04,transplantation,5,0,0
+2022-04,urology,3,0,0
+2022-05,addiction medicine,8,0,0
+2022-05,allergy and immunology,12,7,0
+2022-05,anesthesia,7,0,0
+2022-05,cardiovascular medicine,25,2,2
+2022-05,dentistry and oral medicine,4,1,0
+2022-05,dermatology,3,0,0
+2022-05,emergency medicine,7,1,0
+2022-05,endocrinology,12,1,0
+2022-05,epidemiology,123,60,10
+2022-05,gastroenterology,17,3,2
+2022-05,genetic and genomic medicine,69,5,13
+2022-05,geriatric medicine,5,3,0
+2022-05,health economics,10,2,0
+2022-05,health informatics,31,7,1
+2022-05,health policy,19,10,0
+2022-05,health systems and quality improvement,19,7,0
+2022-05,hematology,5,1,0
+2022-05,hiv aids,19,0,0
+2022-05,infectious diseases,147,111,1
+2022-05,intensive care and critical care medicine,9,5,0
+2022-05,medical education,1,0,0
+2022-05,medical ethics,1,0,0
+2022-05,nephrology,7,4,0
+2022-05,neurology,47,6,2
+2022-05,nursing,3,1,0
+2022-05,nutrition,10,0,2
+2022-05,obstetrics and gynecology,11,1,0
+2022-05,occupational and environmental health,4,0,0
+2022-05,oncology,24,2,2
+2022-05,ophthalmology,9,0,2
+2022-05,orthopedics,5,0,0
+2022-05,otolaryngology,2,1,0
+2022-05,pain medicine,4,0,0
+2022-05,pathology,11,0,1
+2022-05,pediatrics,18,5,0
+2022-05,pharmacology and therapeutics,12,2,0
+2022-05,primary care research,6,3,0
+2022-05,psychiatry and clinical psychology,65,8,4
+2022-05,public and global health,91,44,2
+2022-05,radiology and imaging,15,4,1
+2022-05,rehabilitation medicine and physical therapy,10,0,0
+2022-05,respiratory medicine,11,4,0
+2022-05,rheumatology,8,0,0
+2022-05,sexual and reproductive health,14,2,0
+2022-05,sports medicine,6,0,0
+2022-05,surgery,6,0,1
+2022-05,transplantation,4,3,0
+2022-05,urology,2,0,0
+2022-06,addiction medicine,7,0,1
+2022-06,allergy and immunology,4,2,0
+2022-06,anesthesia,2,0,0
+2022-06,cardiovascular medicine,26,2,7
+2022-06,dentistry and oral medicine,7,2,0
+2022-06,dermatology,4,0,0
+2022-06,emergency medicine,5,0,0
+2022-06,endocrinology,7,0,0
+2022-06,epidemiology,130,68,7
+2022-06,gastroenterology,11,0,1
+2022-06,genetic and genomic medicine,62,4,18
+2022-06,geriatric medicine,9,0,1
+2022-06,health economics,8,1,0
+2022-06,health informatics,27,12,0
+2022-06,health policy,13,7,0
+2022-06,health systems and quality improvement,12,1,0
+2022-06,hematology,7,1,0
+2022-06,hiv aids,12,3,0
+2022-06,infectious diseases,154,122,1
+2022-06,intensive care and critical care medicine,6,4,0
+2022-06,medical ethics,1,0,0
+2022-06,nephrology,4,2,0
+2022-06,neurology,51,2,2
+2022-06,nursing,3,0,0
+2022-06,nutrition,8,1,0
+2022-06,obstetrics and gynecology,11,1,1
+2022-06,occupational and environmental health,6,2,0
+2022-06,oncology,24,2,2
+2022-06,ophthalmology,10,1,1
+2022-06,otolaryngology,3,0,0
+2022-06,pain medicine,2,0,1
+2022-06,palliative medicine,2,0,0
+2022-06,pathology,5,1,0
+2022-06,pediatrics,13,2,0
+2022-06,pharmacology and therapeutics,5,1,0
+2022-06,primary care research,8,3,0
+2022-06,psychiatry and clinical psychology,44,8,2
+2022-06,public and global health,80,47,4
+2022-06,radiology and imaging,19,2,1
+2022-06,rehabilitation medicine and physical therapy,13,2,0
+2022-06,respiratory medicine,5,3,1
+2022-06,rheumatology,5,2,0
+2022-06,sexual and reproductive health,3,1,0
+2022-06,sports medicine,7,1,0
+2022-06,surgery,6,0,0
+2022-06,toxicology,1,0,0
+2022-06,transplantation,4,3,0
+2022-06,urology,4,1,1
+2022-07,addiction medicine,4,0,0
+2022-07,allergy and immunology,7,6,0
+2022-07,anesthesia,2,0,0
+2022-07,cardiovascular medicine,22,3,4
+2022-07,dentistry and oral medicine,7,0,1
+2022-07,dermatology,5,1,0
+2022-07,emergency medicine,3,2,0
+2022-07,endocrinology,7,1,0
+2022-07,epidemiology,116,72,11
+2022-07,gastroenterology,9,1,1
+2022-07,genetic and genomic medicine,44,0,13
+2022-07,geriatric medicine,7,2,1
+2022-07,health economics,7,1,1
+2022-07,health informatics,18,7,0
+2022-07,health policy,9,3,0
+2022-07,health systems and quality improvement,20,5,0
+2022-07,hematology,2,1,0
+2022-07,hiv aids,15,2,0
+2022-07,infectious diseases,135,107,3
+2022-07,intensive care and critical care medicine,5,0,0
+2022-07,medical education,4,0,0
+2022-07,nephrology,3,0,0
+2022-07,neurology,44,2,4
+2022-07,nursing,4,1,0
+2022-07,nutrition,3,0,0
+2022-07,obstetrics and gynecology,7,2,0
+2022-07,occupational and environmental health,5,2,0
+2022-07,oncology,20,2,1
+2022-07,ophthalmology,9,0,1
+2022-07,orthopedics,2,0,0
+2022-07,otolaryngology,4,1,0
+2022-07,pain medicine,6,0,2
+2022-07,pathology,1,0,0
+2022-07,pediatrics,17,3,0
+2022-07,pharmacology and therapeutics,6,1,0
+2022-07,primary care research,8,2,0
+2022-07,psychiatry and clinical psychology,32,5,2
+2022-07,public and global health,79,33,1
+2022-07,radiology and imaging,10,0,0
+2022-07,rehabilitation medicine and physical therapy,12,1,0
+2022-07,respiratory medicine,8,4,0
+2022-07,rheumatology,6,2,2
+2022-07,sexual and reproductive health,10,1,0
+2022-07,sports medicine,8,0,0
+2022-07,surgery,7,1,0
+2022-07,transplantation,2,0,0
+2022-08,addiction medicine,4,0,0
+2022-08,allergy and immunology,6,4,0
+2022-08,anesthesia,1,0,0
+2022-08,cardiovascular medicine,26,4,2
+2022-08,dentistry and oral medicine,2,0,0
+2022-08,dermatology,5,0,0
+2022-08,emergency medicine,1,1,0
+2022-08,endocrinology,10,0,1
+2022-08,epidemiology,112,59,8
+2022-08,forensic medicine,2,0,0
+2022-08,gastroenterology,10,2,2
+2022-08,genetic and genomic medicine,51,2,5
+2022-08,geriatric medicine,5,1,0
+2022-08,health economics,10,0,0
+2022-08,health informatics,22,4,1
+2022-08,health policy,11,5,0
+2022-08,health systems and quality improvement,14,1,0
+2022-08,hematology,5,0,1
+2022-08,hiv aids,16,1,0
+2022-08,infectious diseases,136,101,0
+2022-08,intensive care and critical care medicine,5,0,0
+2022-08,medical education,3,0,0
+2022-08,medical ethics,2,1,0
+2022-08,nephrology,3,2,0
+2022-08,neurology,49,3,1
+2022-08,nursing,3,1,0
+2022-08,nutrition,6,1,2
+2022-08,obstetrics and gynecology,13,3,0
+2022-08,occupational and environmental health,7,0,0
+2022-08,oncology,25,0,1
+2022-08,ophthalmology,10,0,1
+2022-08,orthopedics,2,0,1
+2022-08,otolaryngology,3,0,0
+2022-08,pain medicine,2,0,0
+2022-08,palliative medicine,2,0,0
+2022-08,pathology,3,0,0
+2022-08,pediatrics,15,1,0
+2022-08,pharmacology and therapeutics,4,0,0
+2022-08,primary care research,6,3,0
+2022-08,psychiatry and clinical psychology,35,0,0
+2022-08,public and global health,75,34,0
+2022-08,radiology and imaging,16,0,1
+2022-08,rehabilitation medicine and physical therapy,12,0,0
+2022-08,respiratory medicine,7,4,0
+2022-08,rheumatology,6,1,0
+2022-08,sexual and reproductive health,1,0,0
+2022-08,sports medicine,2,0,0
+2022-08,surgery,5,0,0
+2022-08,toxicology,2,0,0
+2022-08,transplantation,2,1,0
+2022-08,urology,2,0,0
+2022-09,addiction medicine,4,1,0
+2022-09,allergy and immunology,8,5,0
+2022-09,cardiovascular medicine,20,1,1
+2022-09,dentistry and oral medicine,2,0,0
+2022-09,dermatology,4,0,0
+2022-09,emergency medicine,1,0,0
+2022-09,endocrinology,9,0,1
+2022-09,epidemiology,95,48,15
+2022-09,gastroenterology,9,1,0
+2022-09,genetic and genomic medicine,55,4,12
+2022-09,geriatric medicine,10,2,1
+2022-09,health economics,7,4,0
+2022-09,health informatics,28,6,1
+2022-09,health policy,12,7,0
+2022-09,health systems and quality improvement,14,3,1
+2022-09,hematology,3,1,0
+2022-09,hiv aids,11,1,0
+2022-09,infectious diseases,118,82,1
+2022-09,intensive care and critical care medicine,8,5,0
+2022-09,medical education,8,1,0
+2022-09,nephrology,7,1,0
+2022-09,neurology,46,2,2
+2022-09,nursing,6,0,0
+2022-09,nutrition,8,1,0
+2022-09,obstetrics and gynecology,7,2,0
+2022-09,occupational and environmental health,10,5,0
+2022-09,oncology,22,2,0
+2022-09,ophthalmology,8,2,0
+2022-09,orthopedics,4,0,1
+2022-09,otolaryngology,3,0,0
+2022-09,pain medicine,3,0,0
+2022-09,palliative medicine,2,1,0
+2022-09,pathology,6,0,0
+2022-09,pediatrics,18,6,0
+2022-09,pharmacology and therapeutics,3,0,0
+2022-09,primary care research,4,1,0
+2022-09,psychiatry and clinical psychology,47,2,2
+2022-09,public and global health,80,28,1
+2022-09,radiology and imaging,15,0,1
+2022-09,rehabilitation medicine and physical therapy,14,0,0
+2022-09,respiratory medicine,15,6,3
+2022-09,rheumatology,10,1,0
+2022-09,sexual and reproductive health,9,1,0
+2022-09,sports medicine,5,0,0
+2022-09,surgery,8,0,0
+2022-09,transplantation,1,0,0
+2022-09,urology,1,0,0
+2022-10,addiction medicine,9,4,0
+2022-10,allergy and immunology,6,2,0
+2022-10,anesthesia,1,0,0
+2022-10,cardiovascular medicine,24,5,3
+2022-10,dentistry and oral medicine,3,0,0
+2022-10,dermatology,5,0,1
+2022-10,emergency medicine,3,0,0
+2022-10,endocrinology,10,0,0
+2022-10,epidemiology,105,48,12
+2022-10,gastroenterology,7,0,0
+2022-10,genetic and genomic medicine,50,3,13
+2022-10,geriatric medicine,2,1,0
+2022-10,health economics,10,3,0
+2022-10,health informatics,37,8,2
+2022-10,health policy,7,2,1
+2022-10,health systems and quality improvement,8,3,0
+2022-10,hematology,4,1,1
+2022-10,hiv aids,11,0,0
+2022-10,infectious diseases,121,79,1
+2022-10,intensive care and critical care medicine,7,1,1
+2022-10,medical education,2,0,0
+2022-10,medical ethics,4,1,0
+2022-10,nephrology,2,0,0
+2022-10,neurology,41,1,2
+2022-10,nursing,5,1,0
+2022-10,nutrition,7,0,0
+2022-10,obstetrics and gynecology,11,0,1
+2022-10,occupational and environmental health,10,2,0
+2022-10,oncology,27,0,0
+2022-10,ophthalmology,9,2,1
+2022-10,orthopedics,1,0,0
+2022-10,otolaryngology,7,1,0
+2022-10,pain medicine,4,0,2
+2022-10,pathology,3,0,0
+2022-10,pediatrics,27,6,1
+2022-10,pharmacology and therapeutics,3,0,0
+2022-10,primary care research,4,3,0
+2022-10,psychiatry and clinical psychology,41,4,1
+2022-10,public and global health,61,28,1
+2022-10,radiology and imaging,11,2,0
+2022-10,rehabilitation medicine and physical therapy,13,1,0
+2022-10,respiratory medicine,10,2,0
+2022-10,rheumatology,7,3,0
+2022-10,sexual and reproductive health,8,2,0
+2022-10,sports medicine,4,0,0
+2022-10,surgery,4,0,0
+2022-10,transplantation,1,1,0
+2022-10,urology,4,0,0
+2022-11,addiction medicine,5,1,0
+2022-11,allergy and immunology,13,8,0
+2022-11,anesthesia,2,0,0
+2022-11,cardiovascular medicine,26,1,1
+2022-11,dentistry and oral medicine,2,2,0
+2022-11,dermatology,3,0,0
+2022-11,emergency medicine,2,1,0
+2022-11,endocrinology,9,1,0
+2022-11,epidemiology,117,58,8
+2022-11,gastroenterology,9,2,2
+2022-11,genetic and genomic medicine,58,3,13
+2022-11,geriatric medicine,4,0,0
+2022-11,health economics,13,3,1
+2022-11,health informatics,36,5,2
+2022-11,health policy,14,5,0
+2022-11,health systems and quality improvement,17,3,0
+2022-11,hematology,2,1,0
+2022-11,hiv aids,16,2,0
+2022-11,infectious diseases,118,64,3
+2022-11,intensive care and critical care medicine,8,1,1
+2022-11,medical education,9,1,0
+2022-11,medical ethics,3,2,0
+2022-11,nephrology,4,0,0
+2022-11,neurology,51,2,2
+2022-11,nursing,1,0,0
+2022-11,nutrition,10,0,0
+2022-11,obstetrics and gynecology,9,0,0
+2022-11,occupational and environmental health,7,4,0
+2022-11,oncology,32,1,2
+2022-11,ophthalmology,14,1,1
+2022-11,orthopedics,5,0,0
+2022-11,otolaryngology,6,1,0
+2022-11,pain medicine,3,0,0
+2022-11,pathology,7,0,0
+2022-11,pediatrics,17,2,0
+2022-11,pharmacology and therapeutics,5,1,0
+2022-11,primary care research,3,1,0
+2022-11,psychiatry and clinical psychology,42,1,3
+2022-11,public and global health,95,37,0
+2022-11,radiology and imaging,17,2,0
+2022-11,rehabilitation medicine and physical therapy,11,1,0
+2022-11,respiratory medicine,11,5,0
+2022-11,rheumatology,10,0,3
+2022-11,sexual and reproductive health,8,0,1
+2022-11,sports medicine,4,0,0
+2022-11,surgery,8,1,0
+2022-11,toxicology,1,0,0
+2022-11,transplantation,3,0,0
+2022-11,urology,1,0,0
+2022-12,addiction medicine,6,1,0
+2022-12,allergy and immunology,9,5,0
+2022-12,cardiovascular medicine,18,1,1
+2022-12,dentistry and oral medicine,3,0,1
+2022-12,dermatology,5,0,1
+2022-12,emergency medicine,2,0,0
+2022-12,endocrinology,25,4,6
+2022-12,epidemiology,99,47,7
+2022-12,gastroenterology,14,3,1
+2022-12,genetic and genomic medicine,52,1,14
+2022-12,geriatric medicine,2,1,0
+2022-12,health economics,11,2,0
+2022-12,health informatics,31,5,2
+2022-12,health policy,14,8,0
+2022-12,health systems and quality improvement,5,1,0
+2022-12,hematology,4,0,1
+2022-12,hiv aids,17,0,0
+2022-12,infectious diseases,125,89,2
+2022-12,intensive care and critical care medicine,4,2,0
+2022-12,medical education,4,0,0
+2022-12,medical ethics,2,0,0
+2022-12,nephrology,6,0,0
+2022-12,neurology,45,1,2
+2022-12,nursing,5,0,0
+2022-12,nutrition,10,1,0
+2022-12,obstetrics and gynecology,16,0,0
+2022-12,occupational and environmental health,10,0,1
+2022-12,oncology,31,0,0
+2022-12,ophthalmology,5,0,1
+2022-12,orthopedics,5,0,1
+2022-12,otolaryngology,5,2,0
+2022-12,pain medicine,3,0,0
+2022-12,palliative medicine,1,0,0
+2022-12,pathology,8,1,0
+2022-12,pediatrics,16,3,0
+2022-12,pharmacology and therapeutics,2,1,0
+2022-12,primary care research,7,2,0
+2022-12,psychiatry and clinical psychology,36,7,4
+2022-12,public and global health,89,29,1
+2022-12,radiology and imaging,22,3,1
+2022-12,rehabilitation medicine and physical therapy,9,1,0
+2022-12,respiratory medicine,8,4,1
+2022-12,rheumatology,6,1,0
+2022-12,sexual and reproductive health,3,0,0
+2022-12,sports medicine,7,2,0
+2022-12,surgery,6,0,0
+2022-12,toxicology,2,0,0
+2022-12,transplantation,3,1,0
+2022-12,urology,3,0,0
+2023-01,addiction medicine,5,0,0
+2023-01,allergy and immunology,10,4,0
+2023-01,anesthesia,1,0,0
+2023-01,cardiovascular medicine,26,2,4
+2023-01,dentistry and oral medicine,5,0,0
+2023-01,dermatology,2,0,0
+2023-01,emergency medicine,4,0,0
+2023-01,endocrinology,8,1,2
+2023-01,epidemiology,108,61,8
+2023-01,gastroenterology,3,0,0
+2023-01,genetic and genomic medicine,44,3,11
+2023-01,geriatric medicine,2,1,0
+2023-01,health economics,7,2,0
+2023-01,health informatics,31,4,1
+2023-01,health policy,14,9,0
+2023-01,health systems and quality improvement,16,3,0
+2023-01,hematology,5,0,1
+2023-01,hiv aids,10,0,0
+2023-01,infectious diseases,106,71,0
+2023-01,intensive care and critical care medicine,6,0,0
+2023-01,medical education,7,1,0
+2023-01,medical ethics,2,0,0
+2023-01,nephrology,10,2,0
+2023-01,neurology,34,0,3
+2023-01,nursing,6,2,0
+2023-01,nutrition,12,0,1
+2023-01,obstetrics and gynecology,11,3,0
+2023-01,occupational and environmental health,3,1,0
+2023-01,oncology,22,0,3
+2023-01,ophthalmology,9,0,0
+2023-01,orthopedics,2,0,0
+2023-01,otolaryngology,5,1,0
+2023-01,pain medicine,2,1,0
+2023-01,palliative medicine,1,0,0
+2023-01,pathology,5,0,0
+2023-01,pediatrics,14,0,0
+2023-01,pharmacology and therapeutics,6,0,0
+2023-01,primary care research,6,1,0
+2023-01,psychiatry and clinical psychology,45,5,2
+2023-01,public and global health,73,26,3
+2023-01,radiology and imaging,17,2,0
+2023-01,rehabilitation medicine and physical therapy,16,1,0
+2023-01,respiratory medicine,5,1,0
+2023-01,rheumatology,5,0,0
+2023-01,sexual and reproductive health,3,0,0
+2023-01,sports medicine,8,1,0
+2023-01,surgery,6,1,0
+2023-01,toxicology,1,0,1
+2023-02,addiction medicine,6,0,1
+2023-02,allergy and immunology,3,2,0
+2023-02,cardiovascular medicine,63,0,3
+2023-02,dentistry and oral medicine,4,0,1
+2023-02,dermatology,1,0,0
+2023-02,emergency medicine,4,1,0
+2023-02,endocrinology,15,0,2
+2023-02,epidemiology,101,42,9
+2023-02,gastroenterology,8,0,0
+2023-02,genetic and genomic medicine,58,1,12
+2023-02,geriatric medicine,7,1,0
+2023-02,health economics,7,1,1
+2023-02,health informatics,33,6,3
+2023-02,health policy,6,0,0
+2023-02,health systems and quality improvement,14,3,0
+2023-02,hematology,8,1,0
+2023-02,hiv aids,11,2,0
+2023-02,infectious diseases,88,59,2
+2023-02,intensive care and critical care medicine,1,1,0
+2023-02,medical education,7,0,0
+2023-02,medical ethics,4,0,0
+2023-02,nephrology,6,0,0
+2023-02,neurology,68,5,2
+2023-02,nursing,3,0,0
+2023-02,nutrition,6,1,0
+2023-02,obstetrics and gynecology,7,1,0
+2023-02,occupational and environmental health,7,0,0
+2023-02,oncology,30,0,1
+2023-02,ophthalmology,7,0,1
+2023-02,orthopedics,5,0,0
+2023-02,otolaryngology,2,1,0
+2023-02,pain medicine,3,0,0
+2023-02,pathology,10,0,0
+2023-02,pediatrics,21,4,0
+2023-02,pharmacology and therapeutics,7,1,0
+2023-02,primary care research,5,2,0
+2023-02,psychiatry and clinical psychology,47,4,1
+2023-02,public and global health,84,34,3
+2023-02,radiology and imaging,19,1,0
+2023-02,rehabilitation medicine and physical therapy,10,0,0
+2023-02,respiratory medicine,9,3,1
+2023-02,rheumatology,4,0,0
+2023-02,sexual and reproductive health,5,0,0
+2023-02,sports medicine,6,1,1
+2023-02,surgery,5,0,0
+2023-02,toxicology,1,0,0
+2023-02,transplantation,1,0,0
+2023-02,urology,1,0,0
+2023-03,addiction medicine,6,0,0
+2023-03,allergy and immunology,8,2,0
+2023-03,anesthesia,5,1,0
+2023-03,cardiovascular medicine,85,5,6
+2023-03,dentistry and oral medicine,4,0,0
+2023-03,dermatology,5,0,1
+2023-03,emergency medicine,4,0,1
+2023-03,endocrinology,18,0,4
+2023-03,epidemiology,123,50,20
+2023-03,gastroenterology,13,0,3
+2023-03,genetic and genomic medicine,81,2,25
+2023-03,geriatric medicine,8,0,0
+2023-03,health economics,10,2,0
+2023-03,health informatics,40,7,0
+2023-03,health policy,13,2,0
+2023-03,health systems and quality improvement,18,3,0
+2023-03,hematology,6,0,0
+2023-03,hiv aids,18,1,0
+2023-03,infectious diseases,113,63,1
+2023-03,intensive care and critical care medicine,7,1,0
+2023-03,medical education,9,0,0
+2023-03,medical ethics,2,0,0
+2023-03,nephrology,5,2,0
+2023-03,neurology,83,2,3
+2023-03,nursing,3,2,0
+2023-03,nutrition,8,0,1
+2023-03,obstetrics and gynecology,18,1,0
+2023-03,occupational and environmental health,6,3,0
+2023-03,oncology,44,4,1
+2023-03,ophthalmology,6,0,0
+2023-03,orthopedics,1,0,0
+2023-03,otolaryngology,3,0,0
+2023-03,pain medicine,7,1,0
+2023-03,pathology,5,0,0
+2023-03,pediatrics,19,5,0
+2023-03,pharmacology and therapeutics,7,0,0
+2023-03,primary care research,7,1,0
+2023-03,psychiatry and clinical psychology,52,4,4
+2023-03,public and global health,75,30,2
+2023-03,radiology and imaging,34,3,1
+2023-03,rehabilitation medicine and physical therapy,21,0,0
+2023-03,respiratory medicine,15,7,0
+2023-03,rheumatology,5,1,2
+2023-03,sexual and reproductive health,10,1,1
+2023-03,sports medicine,9,1,1
+2023-03,surgery,11,0,0
+2023-03,transplantation,10,1,0
+2023-03,urology,4,0,0
+2023-04,addiction medicine,4,0,1
+2023-04,allergy and immunology,5,1,0
+2023-04,anesthesia,4,0,0
+2023-04,cardiovascular medicine,62,4,10
+2023-04,dentistry and oral medicine,4,0,0
+2023-04,dermatology,4,0,0
+2023-04,emergency medicine,2,0,0
+2023-04,endocrinology,22,0,1
+2023-04,epidemiology,88,26,8
+2023-04,forensic medicine,2,0,0
+2023-04,gastroenterology,10,0,2
+2023-04,genetic and genomic medicine,43,0,9
+2023-04,geriatric medicine,7,0,0
+2023-04,health economics,7,1,0
+2023-04,health informatics,32,3,2
+2023-04,health policy,18,4,0
+2023-04,health systems and quality improvement,12,1,0
+2023-04,hematology,7,0,0
+2023-04,hiv aids,12,1,0
+2023-04,infectious diseases,73,38,1
+2023-04,intensive care and critical care medicine,13,2,0
+2023-04,medical education,8,1,0
+2023-04,medical ethics,4,2,0
+2023-04,nephrology,4,1,0
+2023-04,neurology,65,3,3
+2023-04,nursing,3,1,0
+2023-04,nutrition,9,1,0
+2023-04,obstetrics and gynecology,11,3,0
+2023-04,occupational and environmental health,14,7,0
+2023-04,oncology,21,0,0
+2023-04,ophthalmology,8,0,0
+2023-04,orthopedics,5,0,0
+2023-04,otolaryngology,2,0,0
+2023-04,pain medicine,4,0,0
+2023-04,palliative medicine,1,0,0
+2023-04,pathology,7,0,0
+2023-04,pediatrics,15,2,0
+2023-04,pharmacology and therapeutics,3,0,0
+2023-04,primary care research,4,1,0
+2023-04,psychiatry and clinical psychology,41,5,5
+2023-04,public and global health,65,22,2
+2023-04,radiology and imaging,24,2,0
+2023-04,rehabilitation medicine and physical therapy,10,0,0
+2023-04,respiratory medicine,6,0,2
+2023-04,rheumatology,8,0,1
+2023-04,sexual and reproductive health,5,0,0
+2023-04,sports medicine,6,0,0
+2023-04,surgery,11,1,0
+2023-04,transplantation,3,0,0
+2023-04,urology,3,0,0
+2023-05,addiction medicine,2,1,0
+2023-05,allergy and immunology,7,2,0
+2023-05,anesthesia,6,0,0
+2023-05,cardiovascular medicine,77,1,2
+2023-05,dentistry and oral medicine,4,0,0
+2023-05,dermatology,6,0,0
+2023-05,emergency medicine,5,0,0
+2023-05,endocrinology,17,1,3
+2023-05,epidemiology,98,36,11
+2023-05,gastroenterology,9,0,0
+2023-05,genetic and genomic medicine,68,5,19
+2023-05,geriatric medicine,6,0,0
+2023-05,health economics,7,2,0
+2023-05,health informatics,28,5,4
+2023-05,health policy,9,3,0
+2023-05,health systems and quality improvement,20,2,0
+2023-05,hematology,7,0,2
+2023-05,hiv aids,10,0,0
+2023-05,infectious diseases,75,36,1
+2023-05,intensive care and critical care medicine,8,2,0
+2023-05,medical education,8,2,0
+2023-05,medical ethics,4,1,0
+2023-05,nephrology,11,0,1
+2023-05,neurology,65,3,2
+2023-05,nursing,1,1,0
+2023-05,nutrition,12,1,0
+2023-05,obstetrics and gynecology,15,1,1
+2023-05,occupational and environmental health,12,2,0
+2023-05,oncology,29,0,0
+2023-05,ophthalmology,12,1,1
+2023-05,orthopedics,5,0,0
+2023-05,otolaryngology,4,0,0
+2023-05,pain medicine,5,0,0
+2023-05,pathology,6,2,0
+2023-05,pediatrics,21,4,0
+2023-05,pharmacology and therapeutics,9,0,0
+2023-05,primary care research,8,1,0
+2023-05,psychiatry and clinical psychology,39,2,3
+2023-05,public and global health,64,23,3
+2023-05,radiology and imaging,15,0,0
+2023-05,rehabilitation medicine and physical therapy,18,2,0
+2023-05,respiratory medicine,14,4,0
+2023-05,rheumatology,7,0,1
+2023-05,sexual and reproductive health,7,0,0
+2023-05,sports medicine,6,0,1
+2023-05,surgery,10,0,0
+2023-05,toxicology,1,0,0
+2023-05,transplantation,4,0,0
+2023-05,urology,4,0,0
+2023-06,addiction medicine,4,0,0
+2023-06,allergy and immunology,9,6,0
+2023-06,anesthesia,3,0,0
+2023-06,cardiovascular medicine,70,2,7
+2023-06,dentistry and oral medicine,6,0,0
+2023-06,dermatology,6,0,0
+2023-06,emergency medicine,7,0,0
+2023-06,endocrinology,23,1,2
+2023-06,epidemiology,100,36,11
+2023-06,forensic medicine,2,0,0
+2023-06,gastroenterology,12,1,1
+2023-06,genetic and genomic medicine,74,1,10
+2023-06,geriatric medicine,9,0,0
+2023-06,health economics,6,0,0
+2023-06,health informatics,57,8,3
+2023-06,health policy,12,4,0
+2023-06,health systems and quality improvement,24,4,1
+2023-06,hematology,5,0,0
+2023-06,hiv aids,14,1,0
+2023-06,infectious diseases,93,50,1
+2023-06,intensive care and critical care medicine,10,1,1
+2023-06,medical education,3,1,0
+2023-06,medical ethics,1,1,0
+2023-06,nephrology,11,0,1
+2023-06,neurology,78,3,4
+2023-06,nursing,1,0,0
+2023-06,nutrition,13,1,0
+2023-06,obstetrics and gynecology,16,1,0
+2023-06,occupational and environmental health,10,2,1
+2023-06,oncology,28,0,0
+2023-06,ophthalmology,14,0,1
+2023-06,orthopedics,8,1,1
+2023-06,otolaryngology,5,0,0
+2023-06,pain medicine,6,1,0
+2023-06,palliative medicine,1,0,0
+2023-06,pathology,7,1,0
+2023-06,pediatrics,22,1,0
+2023-06,pharmacology and therapeutics,14,1,3
+2023-06,primary care research,6,2,0
+2023-06,psychiatry and clinical psychology,61,5,2
+2023-06,public and global health,92,34,3
+2023-06,radiology and imaging,23,2,0
+2023-06,rehabilitation medicine and physical therapy,15,2,0
+2023-06,respiratory medicine,11,2,0
+2023-06,rheumatology,1,0,0
+2023-06,sexual and reproductive health,5,0,0
+2023-06,sports medicine,4,0,1
+2023-06,surgery,6,0,0
+2023-06,transplantation,3,0,0
+2023-06,urology,6,0,0
+2023-07,addiction medicine,4,0,0
+2023-07,allergy and immunology,7,1,0
+2023-07,anesthesia,3,0,0
+2023-07,cardiovascular medicine,61,1,5
+2023-07,dentistry and oral medicine,3,1,0
+2023-07,dermatology,2,1,0
+2023-07,emergency medicine,4,3,0
+2023-07,endocrinology,16,0,1
+2023-07,epidemiology,82,33,8
+2023-07,gastroenterology,10,1,0
+2023-07,genetic and genomic medicine,61,4,9
+2023-07,geriatric medicine,8,0,0
+2023-07,health economics,7,3,0
+2023-07,health informatics,28,2,2
+2023-07,health policy,14,6,0
+2023-07,health systems and quality improvement,14,5,0
+2023-07,hematology,5,0,2
+2023-07,hiv aids,15,0,0
+2023-07,infectious diseases,72,34,0
+2023-07,intensive care and critical care medicine,8,5,0
+2023-07,medical education,7,0,0
+2023-07,nephrology,3,0,0
+2023-07,neurology,69,1,3
+2023-07,nursing,2,0,0
+2023-07,nutrition,6,0,1
+2023-07,obstetrics and gynecology,11,2,1
+2023-07,occupational and environmental health,4,0,0
+2023-07,oncology,21,0,0
+2023-07,ophthalmology,5,0,1
+2023-07,orthopedics,4,0,0
+2023-07,otolaryngology,4,0,0
+2023-07,pain medicine,6,1,0
+2023-07,pathology,6,0,0
+2023-07,pediatrics,17,3,0
+2023-07,pharmacology and therapeutics,4,1,0
+2023-07,primary care research,12,2,0
+2023-07,psychiatry and clinical psychology,44,7,0
+2023-07,public and global health,68,24,1
+2023-07,radiology and imaging,23,0,0
+2023-07,rehabilitation medicine and physical therapy,16,1,0
+2023-07,respiratory medicine,8,2,2
+2023-07,rheumatology,5,0,1
+2023-07,sexual and reproductive health,7,0,0
+2023-07,sports medicine,14,0,0
+2023-07,surgery,8,0,0
+2023-07,toxicology,1,0,0
+2023-07,transplantation,1,0,0
+2023-07,urology,2,0,0
+2023-08,addiction medicine,7,0,1
+2023-08,allergy and immunology,3,0,0
+2023-08,anesthesia,4,0,0
+2023-08,cardiovascular medicine,93,4,12
+2023-08,dentistry and oral medicine,5,0,0
+2023-08,dermatology,2,0,0
+2023-08,emergency medicine,7,0,0
+2023-08,endocrinology,11,2,0
+2023-08,epidemiology,124,46,15
+2023-08,gastroenterology,19,0,1
+2023-08,genetic and genomic medicine,65,4,18
+2023-08,geriatric medicine,6,0,0
+2023-08,health economics,11,1,0
+2023-08,health informatics,46,3,1
+2023-08,health policy,7,3,0
+2023-08,health systems and quality improvement,16,2,0
+2023-08,hematology,6,0,0
+2023-08,hiv aids,17,3,0
+2023-08,infectious diseases,108,56,1
+2023-08,intensive care and critical care medicine,7,0,0
+2023-08,medical education,7,1,0
+2023-08,medical ethics,1,0,0
+2023-08,nephrology,9,2,2
+2023-08,neurology,81,2,5
+2023-08,nursing,2,0,0
+2023-08,nutrition,17,0,1
+2023-08,obstetrics and gynecology,15,2,0
+2023-08,occupational and environmental health,9,4,0
+2023-08,oncology,28,1,2
+2023-08,ophthalmology,12,1,4
+2023-08,orthopedics,7,0,0
+2023-08,otolaryngology,6,0,0
+2023-08,pain medicine,4,1,0
+2023-08,palliative medicine,2,0,0
+2023-08,pathology,6,0,0
+2023-08,pediatrics,15,3,0
+2023-08,pharmacology and therapeutics,8,1,0
+2023-08,primary care research,4,2,0
+2023-08,psychiatry and clinical psychology,49,2,3
+2023-08,public and global health,79,22,2
+2023-08,radiology and imaging,32,2,0
+2023-08,rehabilitation medicine and physical therapy,15,1,0
+2023-08,respiratory medicine,6,1,0
+2023-08,rheumatology,8,0,0
+2023-08,sexual and reproductive health,12,0,0
+2023-08,sports medicine,3,0,0
+2023-08,surgery,9,0,0
+2023-08,toxicology,1,0,0
+2023-08,transplantation,2,1,0
+2023-08,urology,4,1,0
+2023-09,addiction medicine,11,0,0
+2023-09,allergy and immunology,12,6,0
+2023-09,anesthesia,1,0,0
+2023-09,cardiovascular medicine,87,1,10
+2023-09,dentistry and oral medicine,3,0,0
+2023-09,dermatology,3,0,0
+2023-09,emergency medicine,7,1,0
+2023-09,endocrinology,19,0,1
+2023-09,epidemiology,104,30,11
+2023-09,forensic medicine,2,0,0
+2023-09,gastroenterology,18,0,2
+2023-09,genetic and genomic medicine,66,1,19
+2023-09,geriatric medicine,8,0,0
+2023-09,health economics,11,3,0
+2023-09,health informatics,40,3,1
+2023-09,health policy,6,0,0
+2023-09,health systems and quality improvement,14,3,0
+2023-09,hematology,7,0,1
+2023-09,hiv aids,17,2,0
+2023-09,infectious diseases,99,48,0
+2023-09,intensive care and critical care medicine,17,2,0
+2023-09,medical education,4,0,0
+2023-09,medical ethics,1,0,0
+2023-09,nephrology,9,0,0
+2023-09,neurology,71,2,1
+2023-09,nursing,3,0,0
+2023-09,nutrition,8,0,1
+2023-09,obstetrics and gynecology,12,0,0
+2023-09,occupational and environmental health,6,2,1
+2023-09,oncology,43,0,2
+2023-09,ophthalmology,11,0,1
+2023-09,orthopedics,3,0,0
+2023-09,otolaryngology,4,0,0
+2023-09,pain medicine,3,0,0
+2023-09,palliative medicine,1,0,0
+2023-09,pathology,12,0,1
+2023-09,pediatrics,19,2,0
+2023-09,pharmacology and therapeutics,9,0,1
+2023-09,primary care research,15,4,1
+2023-09,psychiatry and clinical psychology,53,4,7
+2023-09,public and global health,95,27,3
+2023-09,radiology and imaging,21,0,0
+2023-09,rehabilitation medicine and physical therapy,13,2,0
+2023-09,respiratory medicine,15,0,0
+2023-09,rheumatology,3,0,0
+2023-09,sexual and reproductive health,10,3,0
+2023-09,sports medicine,7,0,0
+2023-09,surgery,2,0,0
+2023-09,toxicology,1,0,0
+2023-09,transplantation,3,0,0
+2023-09,urology,4,0,0
+2023-10,addiction medicine,5,1,0
+2023-10,allergy and immunology,5,1,0
+2023-10,anesthesia,3,0,0
+2023-10,cardiovascular medicine,87,3,11
+2023-10,dentistry and oral medicine,6,0,1
+2023-10,dermatology,2,0,1
+2023-10,emergency medicine,9,2,0
+2023-10,endocrinology,14,1,1
+2023-10,epidemiology,109,36,13
+2023-10,gastroenterology,10,0,1
+2023-10,genetic and genomic medicine,94,1,22
+2023-10,geriatric medicine,4,0,1
+2023-10,health economics,12,2,0
+2023-10,health informatics,42,6,3
+2023-10,health policy,12,2,0
+2023-10,health systems and quality improvement,18,1,0
+2023-10,hematology,9,1,1
+2023-10,hiv aids,22,2,0
+2023-10,infectious diseases,81,44,0
+2023-10,intensive care and critical care medicine,6,0,2
+2023-10,medical education,7,1,0
+2023-10,medical ethics,3,0,0
+2023-10,nephrology,3,1,0
+2023-10,neurology,75,0,2
+2023-10,nursing,4,0,0
+2023-10,nutrition,8,0,0
+2023-10,obstetrics and gynecology,15,1,0
+2023-10,occupational and environmental health,10,0,1
+2023-10,oncology,32,1,0
+2023-10,ophthalmology,7,0,0
+2023-10,orthopedics,8,0,1
+2023-10,otolaryngology,2,0,0
+2023-10,pain medicine,4,0,0
+2023-10,palliative medicine,1,0,0
+2023-10,pathology,9,1,0
+2023-10,pediatrics,15,1,0
+2023-10,pharmacology and therapeutics,7,0,1
+2023-10,primary care research,5,2,0
+2023-10,psychiatry and clinical psychology,60,8,3
+2023-10,public and global health,93,25,4
+2023-10,radiology and imaging,28,0,0
+2023-10,rehabilitation medicine and physical therapy,13,1,1
+2023-10,respiratory medicine,10,2,0
+2023-10,rheumatology,3,1,0
+2023-10,sexual and reproductive health,10,0,0
+2023-10,sports medicine,5,0,0
+2023-10,surgery,9,0,0
+2023-10,transplantation,6,0,0
+2023-10,urology,2,0,0
+2023-11,addiction medicine,3,1,0
+2023-11,allergy and immunology,11,3,0
+2023-11,anesthesia,1,0,0
+2023-11,cardiovascular medicine,71,0,11
+2023-11,dentistry and oral medicine,3,1,0
+2023-11,dermatology,8,0,0
+2023-11,emergency medicine,7,1,0
+2023-11,endocrinology,17,0,2
+2023-11,epidemiology,109,27,10
+2023-11,gastroenterology,14,0,1
+2023-11,genetic and genomic medicine,68,3,17
+2023-11,geriatric medicine,13,0,1
+2023-11,health economics,7,4,0
+2023-11,health informatics,41,6,1
+2023-11,health policy,10,2,0
+2023-11,health systems and quality improvement,14,1,0
+2023-11,hematology,6,0,0
+2023-11,hiv aids,19,0,0
+2023-11,infectious diseases,65,22,0
+2023-11,intensive care and critical care medicine,5,0,0
+2023-11,medical education,8,0,0
+2023-11,nephrology,3,0,2
+2023-11,neurology,76,5,4
+2023-11,nursing,7,0,0
+2023-11,nutrition,15,1,2
+2023-11,obstetrics and gynecology,9,0,1
+2023-11,occupational and environmental health,6,1,0
+2023-11,oncology,28,2,0
+2023-11,ophthalmology,19,0,3
+2023-11,orthopedics,2,0,0
+2023-11,otolaryngology,3,1,0
+2023-11,pain medicine,6,0,0
+2023-11,pathology,3,0,0
+2023-11,pediatrics,22,2,0
+2023-11,pharmacology and therapeutics,5,0,2
+2023-11,primary care research,8,1,0
+2023-11,psychiatry and clinical psychology,56,1,1
+2023-11,public and global health,79,23,2
+2023-11,radiology and imaging,31,0,1
+2023-11,rehabilitation medicine and physical therapy,16,1,1
+2023-11,respiratory medicine,16,2,0
+2023-11,rheumatology,3,0,0
+2023-11,sexual and reproductive health,8,1,0
+2023-11,sports medicine,2,0,0
+2023-11,surgery,6,0,0
+2023-11,transplantation,2,0,0
+2023-11,urology,3,0,0
+2023-12,addiction medicine,6,0,2
+2023-12,allergy and immunology,5,1,0
+2023-12,anesthesia,2,0,0
+2023-12,cardiovascular medicine,68,3,9
+2023-12,dentistry and oral medicine,7,0,1
+2023-12,dermatology,5,0,0
+2023-12,emergency medicine,8,0,0
+2023-12,endocrinology,16,1,1
+2023-12,epidemiology,98,29,12
+2023-12,gastroenterology,18,0,1
+2023-12,genetic and genomic medicine,90,2,22
+2023-12,geriatric medicine,4,0,0
+2023-12,health economics,14,3,3
+2023-12,health informatics,43,6,3
+2023-12,health policy,6,1,0
+2023-12,health systems and quality improvement,18,4,0
+2023-12,hematology,5,2,0
+2023-12,hiv aids,19,0,0
+2023-12,infectious diseases,73,28,0
+2023-12,intensive care and critical care medicine,4,2,0
+2023-12,medical education,10,2,0
+2023-12,nephrology,10,0,1
+2023-12,neurology,61,2,1
+2023-12,nursing,15,0,0
+2023-12,nutrition,9,1,0
+2023-12,obstetrics and gynecology,10,2,0
+2023-12,occupational and environmental health,8,1,0
+2023-12,oncology,37,0,0
+2023-12,ophthalmology,6,0,1
+2023-12,orthopedics,8,0,1
+2023-12,otolaryngology,3,0,0
+2023-12,pain medicine,4,1,0
+2023-12,pathology,8,0,0
+2023-12,pediatrics,17,2,0
+2023-12,pharmacology and therapeutics,8,0,2
+2023-12,primary care research,7,0,0
+2023-12,psychiatry and clinical psychology,57,4,2
+2023-12,public and global health,70,25,1
+2023-12,radiology and imaging,20,1,0
+2023-12,rehabilitation medicine and physical therapy,15,0,0
+2023-12,respiratory medicine,11,5,1
+2023-12,rheumatology,6,0,0
+2023-12,sexual and reproductive health,6,0,0
+2023-12,sports medicine,4,0,0
+2023-12,surgery,12,0,0
+2023-12,transplantation,3,0,0
+2023-12,urology,1,0,0
+2024-01,addiction medicine,7,0,0
+2024-01,allergy and immunology,9,3,0
+2024-01,anesthesia,7,0,0
+2024-01,cardiovascular medicine,70,0,7
+2024-01,dentistry and oral medicine,4,0,0
+2024-01,dermatology,4,0,0
+2024-01,emergency medicine,7,1,0
+2024-01,endocrinology,18,1,4
+2024-01,epidemiology,84,25,16
+2024-01,gastroenterology,7,1,1
+2024-01,genetic and genomic medicine,69,0,16
+2024-01,geriatric medicine,7,0,2
+2024-01,health economics,6,1,0
+2024-01,health informatics,46,5,2
+2024-01,health policy,9,1,0
+2024-01,health systems and quality improvement,17,2,0
+2024-01,hematology,4,0,0
+2024-01,hiv aids,18,0,0
+2024-01,infectious diseases,82,34,3
+2024-01,intensive care and critical care medicine,12,1,0
+2024-01,medical education,8,1,0
+2024-01,nephrology,8,1,0
+2024-01,neurology,76,0,2
+2024-01,nursing,1,0,0
+2024-01,nutrition,8,0,0
+2024-01,obstetrics and gynecology,16,1,1
+2024-01,occupational and environmental health,6,1,0
+2024-01,oncology,48,0,0
+2024-01,ophthalmology,8,0,1
+2024-01,orthopedics,7,0,1
+2024-01,otolaryngology,3,0,0
+2024-01,pain medicine,4,0,0
+2024-01,pathology,6,0,0
+2024-01,pediatrics,16,0,0
+2024-01,pharmacology and therapeutics,7,1,0
+2024-01,primary care research,8,0,0
+2024-01,psychiatry and clinical psychology,55,5,5
+2024-01,public and global health,87,26,1
+2024-01,radiology and imaging,28,0,0
+2024-01,rehabilitation medicine and physical therapy,22,1,0
+2024-01,respiratory medicine,9,0,1
+2024-01,rheumatology,9,0,2
+2024-01,sexual and reproductive health,7,0,0
+2024-01,sports medicine,5,0,0
+2024-01,surgery,4,0,1
+2024-01,urology,4,0,0
+2024-02,addiction medicine,6,0,1
+2024-02,allergy and immunology,9,3,0
+2024-02,anesthesia,3,0,0
+2024-02,cardiovascular medicine,68,2,9
+2024-02,dentistry and oral medicine,5,0,0
+2024-02,dermatology,3,1,0
+2024-02,emergency medicine,11,3,0
+2024-02,endocrinology,23,1,2
+2024-02,epidemiology,100,35,13
+2024-02,forensic medicine,4,2,0
+2024-02,gastroenterology,12,1,1
+2024-02,genetic and genomic medicine,67,1,10
+2024-02,geriatric medicine,8,0,0
+2024-02,health economics,15,1,0
+2024-02,health informatics,48,3,2
+2024-02,health policy,11,1,1
+2024-02,health systems and quality improvement,23,3,1
+2024-02,hematology,4,0,0
+2024-02,hiv aids,5,1,0
+2024-02,infectious diseases,95,38,1
+2024-02,intensive care and critical care medicine,12,1,1
+2024-02,medical education,11,0,0
+2024-02,medical ethics,2,0,0
+2024-02,nephrology,10,2,1
+2024-02,neurology,83,1,2
+2024-02,nursing,4,0,0
+2024-02,nutrition,10,0,3
+2024-02,obstetrics and gynecology,13,1,0
+2024-02,occupational and environmental health,7,0,1
+2024-02,oncology,36,0,3
+2024-02,ophthalmology,17,0,1
+2024-02,orthopedics,2,0,0
+2024-02,otolaryngology,2,0,0
+2024-02,pain medicine,3,0,0
+2024-02,palliative medicine,4,0,0
+2024-02,pathology,2,0,0
+2024-02,pediatrics,16,1,0
+2024-02,pharmacology and therapeutics,7,0,1
+2024-02,primary care research,13,1,0
+2024-02,psychiatry and clinical psychology,52,2,3
+2024-02,public and global health,77,16,0
+2024-02,radiology and imaging,26,0,0
+2024-02,rehabilitation medicine and physical therapy,15,0,0
+2024-02,respiratory medicine,10,1,0
+2024-02,rheumatology,1,0,0
+2024-02,sexual and reproductive health,11,1,0
+2024-02,sports medicine,3,0,0
+2024-02,surgery,9,0,1
+2024-02,toxicology,1,0,0
+2024-02,transplantation,3,0,0
+2024-03,addiction medicine,4,0,0
+2024-03,allergy and immunology,8,3,0
+2024-03,anesthesia,5,0,0
+2024-03,cardiovascular medicine,78,2,8
+2024-03,dentistry and oral medicine,8,0,1
+2024-03,dermatology,2,0,0
+2024-03,emergency medicine,8,0,0
+2024-03,endocrinology,22,0,1
+2024-03,epidemiology,92,28,9
+2024-03,gastroenterology,13,1,0
+2024-03,genetic and genomic medicine,81,1,17
+2024-03,geriatric medicine,5,1,0
+2024-03,health economics,12,3,1
+2024-03,health informatics,58,3,9
+2024-03,health policy,16,4,0
+2024-03,health systems and quality improvement,14,2,0
+2024-03,hematology,5,0,0
+2024-03,hiv aids,19,2,0
+2024-03,infectious diseases,94,33,0
+2024-03,intensive care and critical care medicine,15,2,4
+2024-03,medical education,10,0,0
+2024-03,medical ethics,4,0,0
+2024-03,nephrology,15,2,5
+2024-03,neurology,90,7,2
+2024-03,nursing,5,0,0
+2024-03,nutrition,8,1,1
+2024-03,obstetrics and gynecology,16,2,0
+2024-03,occupational and environmental health,3,2,0
+2024-03,oncology,40,0,0
+2024-03,ophthalmology,14,0,0
+2024-03,orthopedics,5,0,0
+2024-03,otolaryngology,3,0,0
+2024-03,pain medicine,5,1,0
+2024-03,palliative medicine,3,0,0
+2024-03,pathology,9,0,0
+2024-03,pediatrics,18,2,0
+2024-03,pharmacology and therapeutics,8,1,0
+2024-03,primary care research,11,4,0
+2024-03,psychiatry and clinical psychology,54,3,2
+2024-03,public and global health,97,21,5
+2024-03,radiology and imaging,24,0,2
+2024-03,rehabilitation medicine and physical therapy,19,3,0
+2024-03,respiratory medicine,14,3,0
+2024-03,rheumatology,12,2,0
+2024-03,sexual and reproductive health,8,0,0
+2024-03,sports medicine,10,0,0
+2024-03,surgery,10,1,1
+2024-03,transplantation,2,0,0
+2024-03,urology,4,0,0
+2024-04,addiction medicine,4,0,1
+2024-04,allergy and immunology,5,3,0
+2024-04,anesthesia,4,0,0
+2024-04,cardiovascular medicine,63,2,8
+2024-04,dentistry and oral medicine,3,0,0
+2024-04,dermatology,4,0,0
+2024-04,emergency medicine,4,1,0
+2024-04,endocrinology,24,0,1
+2024-04,epidemiology,98,22,5
+2024-04,gastroenterology,14,0,3
+2024-04,genetic and genomic medicine,84,1,25
+2024-04,geriatric medicine,6,0,1
+2024-04,health economics,13,0,0
+2024-04,health informatics,54,2,3
+2024-04,health policy,10,0,0
+2024-04,health systems and quality improvement,19,0,0
+2024-04,hematology,4,0,0
+2024-04,hiv aids,23,0,0
+2024-04,infectious diseases,99,48,0
+2024-04,intensive care and critical care medicine,8,0,2
+2024-04,medical education,6,0,0
+2024-04,medical ethics,4,0,0
+2024-04,nephrology,6,0,2
+2024-04,neurology,74,0,3
+2024-04,nursing,2,0,0
+2024-04,nutrition,12,2,0
+2024-04,obstetrics and gynecology,15,2,0
+2024-04,occupational and environmental health,12,1,0
+2024-04,oncology,45,0,3
+2024-04,ophthalmology,6,0,0
+2024-04,orthopedics,6,0,1
+2024-04,otolaryngology,1,0,0
+2024-04,pain medicine,6,0,1
+2024-04,pathology,6,0,0
+2024-04,pediatrics,16,3,0
+2024-04,pharmacology and therapeutics,5,0,1
+2024-04,primary care research,9,2,0
+2024-04,psychiatry and clinical psychology,73,6,5
+2024-04,public and global health,86,18,2
+2024-04,radiology and imaging,28,0,0
+2024-04,rehabilitation medicine and physical therapy,14,0,0
+2024-04,respiratory medicine,6,0,0
+2024-04,rheumatology,7,0,1
+2024-04,sexual and reproductive health,19,3,0
+2024-04,sports medicine,2,0,0
+2024-04,surgery,11,0,0
+2024-04,urology,2,0,0
+2024-05,addiction medicine,6,0,1
+2024-05,allergy and immunology,10,1,1
+2024-05,anesthesia,4,0,0
+2024-05,cardiovascular medicine,71,2,6
+2024-05,dentistry and oral medicine,8,0,0
+2024-05,dermatology,3,0,0
+2024-05,emergency medicine,7,1,0
+2024-05,endocrinology,25,0,5
+2024-05,epidemiology,113,20,13
+2024-05,gastroenterology,12,1,1
+2024-05,genetic and genomic medicine,98,1,13
+2024-05,geriatric medicine,8,0,0
+2024-05,health economics,9,0,1
+2024-05,health informatics,42,3,6
+2024-05,health policy,14,1,1
+2024-05,health systems and quality improvement,24,2,0
+2024-05,hematology,4,0,0
+2024-05,hiv aids,19,2,0
+2024-05,infectious diseases,102,38,0
+2024-05,intensive care and critical care medicine,7,2,0
+2024-05,medical education,8,0,0
+2024-05,nephrology,6,0,0
+2024-05,neurology,101,3,1
+2024-05,nursing,7,1,0
+2024-05,nutrition,12,1,0
+2024-05,obstetrics and gynecology,17,0,0
+2024-05,occupational and environmental health,8,1,1
+2024-05,oncology,36,0,2
+2024-05,ophthalmology,7,0,0
+2024-05,orthopedics,7,0,0
+2024-05,otolaryngology,2,0,0
+2024-05,pain medicine,5,0,0
+2024-05,palliative medicine,1,0,0
+2024-05,pathology,5,0,0
+2024-05,pediatrics,22,2,2
+2024-05,pharmacology and therapeutics,5,0,1
+2024-05,primary care research,10,2,0
+2024-05,psychiatry and clinical psychology,59,4,3
+2024-05,public and global health,119,22,3
+2024-05,radiology and imaging,41,2,0
+2024-05,rehabilitation medicine and physical therapy,21,1,0
+2024-05,respiratory medicine,15,3,0
+2024-05,rheumatology,3,0,0
+2024-05,sexual and reproductive health,10,1,0
+2024-05,sports medicine,6,0,0
+2024-05,surgery,12,2,0
+2024-05,toxicology,1,0,0
+2024-05,transplantation,3,0,0
+2024-05,urology,4,0,0
+2024-06,addiction medicine,4,0,0
+2024-06,allergy and immunology,11,4,0
+2024-06,anesthesia,5,0,1
+2024-06,cardiovascular medicine,65,1,3
+2024-06,dentistry and oral medicine,9,1,1
+2024-06,dermatology,1,0,0
+2024-06,emergency medicine,1,0,0
+2024-06,endocrinology,22,0,2
+2024-06,epidemiology,112,26,11
+2024-06,gastroenterology,9,0,2
+2024-06,genetic and genomic medicine,66,0,15
+2024-06,geriatric medicine,5,0,0
+2024-06,health economics,9,1,0
+2024-06,health informatics,64,2,3
+2024-06,health policy,17,5,0
+2024-06,health systems and quality improvement,20,5,1
+2024-06,hematology,6,1,0
+2024-06,hiv aids,14,1,0
+2024-06,infectious diseases,79,29,1
+2024-06,intensive care and critical care medicine,5,0,2
+2024-06,medical education,13,0,0
+2024-06,medical ethics,1,0,0
+2024-06,nephrology,8,1,3
+2024-06,neurology,78,0,3
+2024-06,nursing,4,1,0
+2024-06,nutrition,10,0,1
+2024-06,obstetrics and gynecology,16,0,0
+2024-06,occupational and environmental health,5,0,0
+2024-06,oncology,37,2,0
+2024-06,ophthalmology,7,0,2
+2024-06,orthopedics,4,0,1
+2024-06,otolaryngology,9,0,0
+2024-06,pain medicine,5,0,1
+2024-06,palliative medicine,3,0,0
+2024-06,pathology,7,0,0
+2024-06,pediatrics,15,2,0
+2024-06,pharmacology and therapeutics,12,0,0
+2024-06,primary care research,9,1,0
+2024-06,psychiatry and clinical psychology,57,1,5
+2024-06,public and global health,93,13,0
+2024-06,radiology and imaging,29,0,0
+2024-06,rehabilitation medicine and physical therapy,14,0,0
+2024-06,respiratory medicine,4,0,0
+2024-06,rheumatology,6,2,0
+2024-06,sexual and reproductive health,7,1,0
+2024-06,sports medicine,6,0,0
+2024-06,surgery,14,0,0
+2024-06,transplantation,4,0,0
+2024-06,urology,4,0,1
+2024-07,addiction medicine,5,1,0
+2024-07,allergy and immunology,9,1,0
+2024-07,anesthesia,3,0,0
+2024-07,cardiovascular medicine,55,1,6
+2024-07,dentistry and oral medicine,5,0,0
+2024-07,dermatology,7,0,2
+2024-07,emergency medicine,4,1,0
+2024-07,endocrinology,21,1,3
+2024-07,epidemiology,95,19,17
+2024-07,gastroenterology,24,2,1
+2024-07,genetic and genomic medicine,84,2,16
+2024-07,geriatric medicine,16,0,0
+2024-07,health economics,14,1,0
+2024-07,health informatics,56,1,3
+2024-07,health policy,18,1,0
+2024-07,health systems and quality improvement,23,2,0
+2024-07,hematology,5,0,1
+2024-07,hiv aids,11,0,0
+2024-07,infectious diseases,82,27,1
+2024-07,intensive care and critical care medicine,6,1,0
+2024-07,medical education,8,0,0
+2024-07,nephrology,6,1,0
+2024-07,neurology,88,3,7
+2024-07,nursing,2,0,0
+2024-07,nutrition,12,0,2
+2024-07,obstetrics and gynecology,12,1,0
+2024-07,occupational and environmental health,6,1,0
+2024-07,oncology,48,0,4
+2024-07,ophthalmology,13,0,0
+2024-07,orthopedics,1,0,0
+2024-07,otolaryngology,2,0,1
+2024-07,pain medicine,6,1,1
+2024-07,palliative medicine,1,0,0
+2024-07,pathology,9,0,0
+2024-07,pediatrics,18,1,1
+2024-07,pharmacology and therapeutics,8,1,0
+2024-07,primary care research,5,0,0
+2024-07,psychiatry and clinical psychology,59,3,2
+2024-07,public and global health,88,15,2
+2024-07,radiology and imaging,16,0,0
+2024-07,rehabilitation medicine and physical therapy,13,2,0
+2024-07,respiratory medicine,12,2,0
+2024-07,rheumatology,5,0,0
+2024-07,sexual and reproductive health,10,0,1
+2024-07,sports medicine,3,0,0
+2024-07,surgery,6,0,1
+2024-07,transplantation,4,0,0
+2024-07,urology,8,0,0
+2024-08,addiction medicine,9,1,0
+2024-08,allergy and immunology,6,0,0
+2024-08,anesthesia,3,0,0
+2024-08,cardiovascular medicine,60,2,7
+2024-08,dentistry and oral medicine,4,0,0
+2024-08,dermatology,6,1,0
+2024-08,emergency medicine,7,0,1
+2024-08,endocrinology,24,0,2
+2024-08,epidemiology,114,27,19
+2024-08,gastroenterology,15,0,0
+2024-08,genetic and genomic medicine,84,0,18
+2024-08,geriatric medicine,10,0,0
+2024-08,health economics,12,0,0
+2024-08,health informatics,53,4,2
+2024-08,health policy,11,1,0
+2024-08,health systems and quality improvement,25,3,0
+2024-08,hematology,3,0,0
+2024-08,hiv aids,23,2,0
+2024-08,infectious diseases,103,31,2
+2024-08,intensive care and critical care medicine,10,2,1
+2024-08,medical education,2,0,0
+2024-08,medical ethics,2,0,0
+2024-08,nephrology,8,0,0
+2024-08,neurology,103,0,8
+2024-08,nursing,3,0,0
+2024-08,nutrition,16,0,0
+2024-08,obstetrics and gynecology,17,1,1
+2024-08,occupational and environmental health,7,3,1
+2024-08,oncology,61,2,1
+2024-08,ophthalmology,17,0,1
+2024-08,orthopedics,6,0,0
+2024-08,otolaryngology,3,0,0
+2024-08,pain medicine,3,0,0
+2024-08,palliative medicine,3,0,0
+2024-08,pathology,2,0,0
+2024-08,pediatrics,22,1,1
+2024-08,pharmacology and therapeutics,9,1,0
+2024-08,primary care research,7,0,0
+2024-08,psychiatry and clinical psychology,53,4,3
+2024-08,public and global health,93,16,4
+2024-08,radiology and imaging,40,0,1
+2024-08,rehabilitation medicine and physical therapy,15,2,0
+2024-08,respiratory medicine,13,5,0
+2024-08,rheumatology,10,1,0
+2024-08,sexual and reproductive health,10,0,0
+2024-08,sports medicine,6,1,0
+2024-08,surgery,12,0,0
+2024-08,toxicology,1,0,0
+2024-08,transplantation,1,0,0
+2024-08,urology,2,0,0
+2024-09,addiction medicine,13,0,2
+2024-09,allergy and immunology,12,2,0
+2024-09,anesthesia,1,0,0
+2024-09,cardiovascular medicine,69,2,8
+2024-09,dentistry and oral medicine,6,0,0
+2024-09,dermatology,9,0,1
+2024-09,emergency medicine,9,1,0
+2024-09,endocrinology,17,0,3
+2024-09,epidemiology,113,27,15
+2024-09,gastroenterology,16,0,0
+2024-09,genetic and genomic medicine,90,3,23
+2024-09,geriatric medicine,5,0,0
+2024-09,health economics,13,2,0
+2024-09,health informatics,59,4,3
+2024-09,health policy,5,1,0
+2024-09,health systems and quality improvement,25,1,1
+2024-09,hematology,7,0,1
+2024-09,hiv aids,21,1,0
+2024-09,infectious diseases,93,30,0
+2024-09,intensive care and critical care medicine,7,0,0
+2024-09,medical education,1,0,0
+2024-09,medical ethics,1,0,0
+2024-09,nephrology,13,1,0
+2024-09,neurology,102,0,4
+2024-09,nursing,6,0,0
+2024-09,nutrition,11,1,1
+2024-09,obstetrics and gynecology,15,1,0
+2024-09,occupational and environmental health,11,1,0
+2024-09,oncology,64,2,3
+2024-09,ophthalmology,13,0,3
+2024-09,orthopedics,10,0,0
+2024-09,otolaryngology,4,0,0
+2024-09,pain medicine,5,0,0
+2024-09,palliative medicine,2,0,0
+2024-09,pathology,3,2,0
+2024-09,pediatrics,20,3,0
+2024-09,pharmacology and therapeutics,9,1,1
+2024-09,primary care research,14,0,0
+2024-09,psychiatry and clinical psychology,85,6,8
+2024-09,public and global health,87,15,3
+2024-09,radiology and imaging,30,0,0
+2024-09,rehabilitation medicine and physical therapy,26,0,0
+2024-09,respiratory medicine,7,3,0
+2024-09,rheumatology,8,1,2
+2024-09,sexual and reproductive health,7,0,0
+2024-09,sports medicine,7,0,0
+2024-09,surgery,11,0,0
+2024-09,toxicology,4,0,0
+2024-09,transplantation,6,1,0
+2024-09,urology,3,0,0
+2024-10,addiction medicine,10,2,0
+2024-10,allergy and immunology,10,4,0
+2024-10,anesthesia,4,1,0
+2024-10,cardiovascular medicine,78,2,16
+2024-10,dentistry and oral medicine,4,0,0
+2024-10,dermatology,6,0,0
+2024-10,emergency medicine,14,0,2
+2024-10,endocrinology,27,0,1
+2024-10,epidemiology,98,17,8
+2024-10,gastroenterology,11,0,0
+2024-10,genetic and genomic medicine,106,2,22
+2024-10,geriatric medicine,3,0,0
+2024-10,health economics,13,0,0
+2024-10,health informatics,64,4,8
+2024-10,health policy,22,2,1
+2024-10,health systems and quality improvement,20,1,0
+2024-10,hematology,3,0,0
+2024-10,hiv aids,14,1,0
+2024-10,infectious diseases,96,26,0
+2024-10,intensive care and critical care medicine,13,1,0
+2024-10,medical education,8,2,0
+2024-10,medical ethics,2,0,0
+2024-10,nephrology,9,1,0
+2024-10,neurology,107,3,12
+2024-10,nursing,2,0,0
+2024-10,nutrition,19,0,1
+2024-10,obstetrics and gynecology,12,0,1
+2024-10,occupational and environmental health,11,0,0
+2024-10,oncology,48,0,4
+2024-10,ophthalmology,13,2,0
+2024-10,orthopedics,3,0,0
+2024-10,otolaryngology,5,0,0
+2024-10,pain medicine,4,0,1
+2024-10,palliative medicine,3,0,0
+2024-10,pathology,6,0,0
+2024-10,pediatrics,25,0,1
+2024-10,pharmacology and therapeutics,10,0,1
+2024-10,primary care research,12,3,0
+2024-10,psychiatry and clinical psychology,78,5,3
+2024-10,public and global health,87,12,3
+2024-10,radiology and imaging,27,0,0
+2024-10,rehabilitation medicine and physical therapy,15,2,1
+2024-10,respiratory medicine,13,2,0
+2024-10,rheumatology,8,0,0
+2024-10,sexual and reproductive health,12,2,0
+2024-10,sports medicine,5,0,0
+2024-10,surgery,7,0,0
+2024-10,transplantation,2,0,0
+2024-10,urology,3,0,1
+2024-11,addiction medicine,13,0,0
+2024-11,allergy and immunology,7,0,0
+2024-11,anesthesia,9,0,0
+2024-11,cardiovascular medicine,65,3,8
+2024-11,dentistry and oral medicine,1,0,0
+2024-11,dermatology,5,0,2
+2024-11,emergency medicine,6,0,0
+2024-11,endocrinology,23,2,3
+2024-11,epidemiology,108,24,12
+2024-11,gastroenterology,17,0,1
+2024-11,genetic and genomic medicine,106,0,18
+2024-11,geriatric medicine,12,0,0
+2024-11,health economics,5,0,0
+2024-11,health informatics,44,1,5
+2024-11,health policy,11,3,0
+2024-11,health systems and quality improvement,17,1,0
+2024-11,hematology,7,0,0
+2024-11,hiv aids,22,0,0
+2024-11,infectious diseases,106,51,0
+2024-11,intensive care and critical care medicine,9,1,1
+2024-11,medical education,8,2,0
+2024-11,medical ethics,2,0,0
+2024-11,nephrology,7,0,1
+2024-11,neurology,115,4,6
+2024-11,nursing,5,2,0
+2024-11,nutrition,8,0,1
+2024-11,obstetrics and gynecology,17,0,0
+2024-11,occupational and environmental health,6,0,0
+2024-11,oncology,34,0,2
+2024-11,ophthalmology,16,1,2
+2024-11,orthopedics,1,0,0
+2024-11,otolaryngology,6,0,0
+2024-11,pain medicine,8,1,0
+2024-11,palliative medicine,3,0,0
+2024-11,pathology,8,0,0
+2024-11,pediatrics,15,1,1
+2024-11,pharmacology and therapeutics,6,0,0
+2024-11,primary care research,8,2,0
+2024-11,psychiatry and clinical psychology,74,2,8
+2024-11,public and global health,100,12,3
+2024-11,radiology and imaging,26,0,0
+2024-11,rehabilitation medicine and physical therapy,16,1,0
+2024-11,respiratory medicine,16,3,1
+2024-11,rheumatology,4,0,0
+2024-11,sexual and reproductive health,3,0,0
+2024-11,sports medicine,16,0,0
+2024-11,surgery,7,0,0
+2024-11,toxicology,2,0,0
+2024-11,transplantation,8,0,0
+2024-11,urology,3,0,0
+2024-12,addiction medicine,5,1,0
+2024-12,allergy and immunology,6,2,0
+2024-12,anesthesia,5,0,0
+2024-12,cardiovascular medicine,61,0,9
+2024-12,dentistry and oral medicine,6,0,0
+2024-12,dermatology,2,0,0
+2024-12,emergency medicine,9,0,0
+2024-12,endocrinology,21,1,1
+2024-12,epidemiology,114,25,15
+2024-12,forensic medicine,4,0,0
+2024-12,gastroenterology,12,0,1
+2024-12,genetic and genomic medicine,81,1,18
+2024-12,geriatric medicine,10,1,0
+2024-12,health economics,11,6,0
+2024-12,health informatics,50,3,2
+2024-12,health policy,9,2,0
+2024-12,health systems and quality improvement,24,1,0
+2024-12,hematology,10,0,0
+2024-12,hiv aids,13,1,0
+2024-12,infectious diseases,67,23,2
+2024-12,intensive care and critical care medicine,11,2,3
+2024-12,medical education,8,1,0
+2024-12,medical ethics,1,0,0
+2024-12,nephrology,4,0,0
+2024-12,neurology,102,1,6
+2024-12,nursing,8,0,0
+2024-12,nutrition,16,0,0
+2024-12,obstetrics and gynecology,10,2,1
+2024-12,occupational and environmental health,6,1,0
+2024-12,oncology,40,0,1
+2024-12,ophthalmology,11,0,2
+2024-12,orthopedics,2,1,0
+2024-12,otolaryngology,2,0,0
+2024-12,pain medicine,7,0,0
+2024-12,pathology,9,0,0
+2024-12,pediatrics,15,2,0
+2024-12,pharmacology and therapeutics,13,1,1
+2024-12,primary care research,8,1,0
+2024-12,psychiatry and clinical psychology,61,5,4
+2024-12,public and global health,120,19,3
+2024-12,radiology and imaging,23,0,2
+2024-12,rehabilitation medicine and physical therapy,19,1,0
+2024-12,respiratory medicine,3,1,1
+2024-12,rheumatology,8,0,0
+2024-12,sexual and reproductive health,8,0,0
+2024-12,sports medicine,5,0,0
+2024-12,surgery,14,2,0
+2024-12,transplantation,6,0,0
+2024-12,urology,3,0,0
+2025-01,addiction medicine,4,0,0
+2025-01,allergy and immunology,5,3,0
+2025-01,anesthesia,7,1,0
+2025-01,cardiovascular medicine,45,0,4
+2025-01,dentistry and oral medicine,5,0,1
+2025-01,dermatology,5,0,0
+2025-01,emergency medicine,4,0,0
+2025-01,endocrinology,16,0,1
+2025-01,epidemiology,108,13,15
+2025-01,gastroenterology,9,0,0
+2025-01,genetic and genomic medicine,82,1,16
+2025-01,geriatric medicine,12,2,2
+2025-01,health economics,11,0,0
+2025-01,health informatics,48,3,5
+2025-01,health policy,11,0,0
+2025-01,health systems and quality improvement,14,2,0
+2025-01,hematology,10,0,0
+2025-01,hiv aids,17,3,0
+2025-01,infectious diseases,84,26,0
+2025-01,intensive care and critical care medicine,14,1,3
+2025-01,medical education,10,0,0
+2025-01,nephrology,9,0,1
+2025-01,neurology,94,1,5
+2025-01,nursing,2,0,0
+2025-01,nutrition,18,3,2
+2025-01,obstetrics and gynecology,15,0,0
+2025-01,occupational and environmental health,11,0,0
+2025-01,oncology,43,1,1
+2025-01,ophthalmology,14,0,1
+2025-01,orthopedics,4,0,0
+2025-01,otolaryngology,3,0,0
+2025-01,pain medicine,10,0,0
+2025-01,palliative medicine,2,0,0
+2025-01,pathology,3,0,0
+2025-01,pediatrics,19,0,0
+2025-01,pharmacology and therapeutics,6,0,0
+2025-01,primary care research,9,1,0
+2025-01,psychiatry and clinical psychology,65,1,3
+2025-01,public and global health,103,15,3
+2025-01,radiology and imaging,38,0,2
+2025-01,rehabilitation medicine and physical therapy,28,0,0
+2025-01,respiratory medicine,16,1,0
+2025-01,rheumatology,12,0,0
+2025-01,sexual and reproductive health,7,0,0
+2025-01,sports medicine,5,0,0
+2025-01,surgery,5,0,0
+2025-01,toxicology,3,0,0
+2025-01,transplantation,2,0,0
+2025-01,urology,5,0,0
+2025-02,addiction medicine,4,0,0
+2025-02,allergy and immunology,6,1,0
+2025-02,anesthesia,3,0,0
+2025-02,cardiovascular medicine,72,0,7
+2025-02,dentistry and oral medicine,7,0,0
+2025-02,dermatology,4,0,0
+2025-02,emergency medicine,11,2,0
+2025-02,endocrinology,27,0,3
+2025-02,epidemiology,88,12,11
+2025-02,forensic medicine,2,0,0
+2025-02,gastroenterology,16,0,1
+2025-02,genetic and genomic medicine,107,4,27
+2025-02,geriatric medicine,10,2,1
+2025-02,health economics,8,0,0
+2025-02,health informatics,46,4,4
+2025-02,health policy,14,2,1
+2025-02,health systems and quality improvement,19,0,1
+2025-02,hematology,7,0,2
+2025-02,hiv aids,12,0,0
+2025-02,infectious diseases,85,25,0
+2025-02,intensive care and critical care medicine,11,2,3
+2025-02,medical education,12,0,0
+2025-02,medical ethics,2,0,0
+2025-02,nephrology,16,1,2
+2025-02,neurology,95,1,5
+2025-02,nursing,5,0,0
+2025-02,nutrition,24,1,1
+2025-02,obstetrics and gynecology,14,2,1
+2025-02,occupational and environmental health,11,0,0
+2025-02,oncology,44,0,2
+2025-02,ophthalmology,11,0,0
+2025-02,orthopedics,6,0,0
+2025-02,otolaryngology,3,0,0
+2025-02,pain medicine,7,0,1
+2025-02,palliative medicine,2,0,0
+2025-02,pathology,7,0,0
+2025-02,pediatrics,19,2,0
+2025-02,pharmacology and therapeutics,3,0,0
+2025-02,primary care research,10,2,0
+2025-02,psychiatry and clinical psychology,79,4,7
+2025-02,public and global health,92,16,3
+2025-02,radiology and imaging,25,1,1
+2025-02,rehabilitation medicine and physical therapy,9,1,0
+2025-02,respiratory medicine,9,1,1
+2025-02,rheumatology,5,0,0
+2025-02,sexual and reproductive health,17,2,1
+2025-02,sports medicine,10,0,0
+2025-02,surgery,12,1,1
+2025-02,toxicology,2,0,0
+2025-02,transplantation,6,0,0
+2025-02,urology,1,0,0
+2025-03,addiction medicine,7,0,0
+2025-03,allergy and immunology,9,0,0
+2025-03,anesthesia,3,0,0
+2025-03,cardiovascular medicine,79,1,10
+2025-03,dentistry and oral medicine,7,0,1
+2025-03,dermatology,5,0,1
+2025-03,emergency medicine,6,0,0
+2025-03,endocrinology,25,1,1
+2025-03,epidemiology,108,25,15
+2025-03,forensic medicine,5,0,0
+2025-03,gastroenterology,15,2,4
+2025-03,genetic and genomic medicine,110,2,25
+2025-03,geriatric medicine,13,0,0
+2025-03,health economics,9,0,0
+2025-03,health informatics,58,2,4
+2025-03,health policy,13,3,0
+2025-03,health systems and quality improvement,31,4,0
+2025-03,hematology,10,0,1
+2025-03,hiv aids,28,1,0
+2025-03,infectious diseases,106,35,1
+2025-03,intensive care and critical care medicine,16,1,3
+2025-03,medical education,7,2,0
+2025-03,medical ethics,1,0,0
+2025-03,nephrology,10,0,2
+2025-03,neurology,103,3,4
+2025-03,nursing,7,0,0
+2025-03,nutrition,14,0,2
+2025-03,obstetrics and gynecology,13,0,1
+2025-03,occupational and environmental health,7,2,0
+2025-03,oncology,41,0,1
+2025-03,ophthalmology,17,0,1
+2025-03,orthopedics,4,0,0
+2025-03,otolaryngology,1,0,0
+2025-03,pain medicine,10,0,0
+2025-03,palliative medicine,1,0,0
+2025-03,pathology,9,0,0
+2025-03,pediatrics,22,3,0
+2025-03,pharmacology and therapeutics,16,0,0
+2025-03,primary care research,15,1,0
+2025-03,psychiatry and clinical psychology,80,3,4
+2025-03,public and global health,96,15,1
+2025-03,radiology and imaging,28,0,2
+2025-03,rehabilitation medicine and physical therapy,20,0,0
+2025-03,respiratory medicine,9,2,1
+2025-03,rheumatology,7,1,1
+2025-03,sexual and reproductive health,9,0,0
+2025-03,sports medicine,5,1,0
+2025-03,surgery,18,0,1
+2025-03,toxicology,1,0,0
+2025-03,transplantation,6,0,0
+2025-03,urology,5,0,1
+2025-04,addiction medicine,6,0,0
+2025-04,allergy and immunology,3,0,0
+2025-04,anesthesia,2,0,0
+2025-04,cardiovascular medicine,62,1,6
+2025-04,dentistry and oral medicine,3,1,0
+2025-04,dermatology,4,1,1
+2025-04,emergency medicine,6,1,0
+2025-04,endocrinology,23,0,2
+2025-04,epidemiology,104,28,14
+2025-04,forensic medicine,4,0,0
+2025-04,gastroenterology,14,0,0
+2025-04,genetic and genomic medicine,75,4,14
+2025-04,geriatric medicine,14,0,0
+2025-04,health economics,14,1,0
+2025-04,health informatics,53,3,4
+2025-04,health policy,15,0,0
+2025-04,health systems and quality improvement,18,1,1
+2025-04,hematology,6,0,1
+2025-04,hiv aids,13,2,0
+2025-04,infectious diseases,92,17,1
+2025-04,intensive care and critical care medicine,5,0,2
+2025-04,medical education,6,0,0
+2025-04,medical ethics,4,0,0
+2025-04,nephrology,5,0,0
+2025-04,neurology,95,3,1
+2025-04,nursing,5,0,0
+2025-04,nutrition,17,0,3
+2025-04,obstetrics and gynecology,9,0,0
+2025-04,occupational and environmental health,12,2,1
+2025-04,oncology,49,1,5
+2025-04,ophthalmology,13,0,0
+2025-04,orthopedics,8,0,2
+2025-04,otolaryngology,5,0,0
+2025-04,pain medicine,5,0,0
+2025-04,palliative medicine,1,0,0
+2025-04,pathology,9,0,0
+2025-04,pediatrics,21,4,0
+2025-04,pharmacology and therapeutics,7,0,0
+2025-04,primary care research,16,1,0
+2025-04,psychiatry and clinical psychology,69,3,2
+2025-04,public and global health,107,21,6
+2025-04,radiology and imaging,35,0,1
+2025-04,rehabilitation medicine and physical therapy,21,0,1
+2025-04,respiratory medicine,20,3,1
+2025-04,rheumatology,6,1,1
+2025-04,sexual and reproductive health,6,0,0
+2025-04,sports medicine,7,0,0
+2025-04,surgery,9,0,0
+2025-04,toxicology,4,0,0
+2025-04,transplantation,6,1,0
+2025-04,urology,4,0,0
+2025-05,addiction medicine,8,0,0
+2025-05,allergy and immunology,15,5,0
+2025-05,anesthesia,3,0,0
+2025-05,cardiovascular medicine,76,0,10
+2025-05,dentistry and oral medicine,9,0,1
+2025-05,dermatology,12,0,0
+2025-05,emergency medicine,7,2,0
+2025-05,endocrinology,22,0,1
+2025-05,epidemiology,127,31,15
+2025-05,forensic medicine,1,0,0
+2025-05,gastroenterology,9,0,1
+2025-05,genetic and genomic medicine,91,0,11
+2025-05,geriatric medicine,11,1,1
+2025-05,health economics,9,0,0
+2025-05,health informatics,71,4,3
+2025-05,health policy,16,5,0
+2025-05,health systems and quality improvement,20,1,0
+2025-05,hematology,9,1,0
+2025-05,hiv aids,21,2,0
+2025-05,infectious diseases,103,22,0
+2025-05,intensive care and critical care medicine,14,2,2
+2025-05,medical education,10,1,0
+2025-05,medical ethics,4,2,2
+2025-05,nephrology,7,0,0
+2025-05,neurology,100,0,2
+2025-05,nursing,7,1,0
+2025-05,nutrition,18,0,2
+2025-05,obstetrics and gynecology,22,1,0
+2025-05,occupational and environmental health,14,2,0
+2025-05,oncology,34,1,1
+2025-05,ophthalmology,14,0,2
+2025-05,orthopedics,4,0,0
+2025-05,otolaryngology,6,1,0
+2025-05,pain medicine,3,0,0
+2025-05,palliative medicine,1,0,0
+2025-05,pathology,14,1,0
+2025-05,pediatrics,25,1,0
+2025-05,pharmacology and therapeutics,7,0,0
+2025-05,primary care research,8,2,0
+2025-05,psychiatry and clinical psychology,82,3,2
+2025-05,public and global health,113,16,4
+2025-05,radiology and imaging,33,1,1
+2025-05,rehabilitation medicine and physical therapy,27,1,0
+2025-05,respiratory medicine,9,1,0
+2025-05,rheumatology,5,1,0
+2025-05,sexual and reproductive health,12,0,0
+2025-05,sports medicine,8,0,0
+2025-05,surgery,14,0,0
+2025-05,toxicology,2,0,0
+2025-05,transplantation,2,0,0
+2025-05,urology,4,1,0
+2025-06,addiction medicine,11,1,0
+2025-06,allergy and immunology,4,1,1
+2025-06,anesthesia,2,0,0
+2025-06,cardiovascular medicine,63,0,1
+2025-06,dentistry and oral medicine,6,0,0
+2025-06,dermatology,5,0,1
+2025-06,emergency medicine,8,1,0
+2025-06,endocrinology,28,0,5
+2025-06,epidemiology,126,24,14
+2025-06,forensic medicine,4,0,0
+2025-06,gastroenterology,10,0,2
+2025-06,genetic and genomic medicine,82,1,19
+2025-06,geriatric medicine,15,4,0
+2025-06,health economics,27,0,0
+2025-06,health informatics,68,3,7
+2025-06,health policy,14,1,0
+2025-06,health systems and quality improvement,31,2,1
+2025-06,hematology,8,0,0
+2025-06,hiv aids,10,2,0
+2025-06,infectious diseases,91,20,1
+2025-06,intensive care and critical care medicine,9,1,2
+2025-06,medical education,12,1,0
+2025-06,medical ethics,5,0,0
+2025-06,nephrology,12,0,0
+2025-06,neurology,89,1,3
+2025-06,nursing,8,0,0
+2025-06,nutrition,18,0,2
+2025-06,obstetrics and gynecology,16,2,0
+2025-06,occupational and environmental health,10,1,1
+2025-06,oncology,47,0,3
+2025-06,ophthalmology,14,0,3
+2025-06,orthopedics,4,0,0
+2025-06,otolaryngology,2,1,0
+2025-06,pain medicine,5,0,0
+2025-06,palliative medicine,4,1,0
+2025-06,pathology,7,0,0
+2025-06,pediatrics,30,0,1
+2025-06,pharmacology and therapeutics,7,1,0
+2025-06,primary care research,8,0,0
+2025-06,psychiatry and clinical psychology,79,2,2
+2025-06,public and global health,133,21,7
+2025-06,radiology and imaging,32,2,0
+2025-06,rehabilitation medicine and physical therapy,26,0,0
+2025-06,respiratory medicine,22,2,1
+2025-06,rheumatology,7,0,0
+2025-06,sexual and reproductive health,11,2,1
+2025-06,sports medicine,6,0,1
+2025-06,surgery,6,0,0
+2025-06,toxicology,2,0,0
+2025-06,transplantation,3,0,0
+2025-06,urology,1,0,0
+2025-07,addiction medicine,5,0,0
+2025-07,allergy and immunology,3,0,0
+2025-07,anesthesia,10,0,0
+2025-07,cardiovascular medicine,57,3,10
+2025-07,dentistry and oral medicine,5,0,0
+2025-07,dermatology,3,0,0
+2025-07,emergency medicine,7,1,0
+2025-07,endocrinology,16,1,4
+2025-07,epidemiology,96,13,10
+2025-07,forensic medicine,4,0,0
+2025-07,gastroenterology,12,0,0
+2025-07,genetic and genomic medicine,93,0,16
+2025-07,geriatric medicine,17,2,2
+2025-07,health economics,5,0,0
+2025-07,health informatics,79,2,6
+2025-07,health policy,18,1,0
+2025-07,health systems and quality improvement,20,2,0
+2025-07,hematology,10,0,0
+2025-07,hiv aids,15,0,0
+2025-07,infectious diseases,86,23,1
+2025-07,intensive care and critical care medicine,13,2,2
+2025-07,medical education,16,0,0
+2025-07,medical ethics,6,0,0
+2025-07,nephrology,7,0,0
+2025-07,neurology,112,1,6
+2025-07,nursing,6,0,0
+2025-07,nutrition,20,0,1
+2025-07,obstetrics and gynecology,16,0,0
+2025-07,occupational and environmental health,13,2,1
+2025-07,oncology,47,0,2
+2025-07,ophthalmology,24,1,3
+2025-07,orthopedics,5,0,0
+2025-07,otolaryngology,8,0,0
+2025-07,pain medicine,2,0,0
+2025-07,palliative medicine,5,0,0
+2025-07,pathology,4,0,0
+2025-07,pediatrics,20,0,1
+2025-07,pharmacology and therapeutics,10,0,0
+2025-07,primary care research,5,0,0
+2025-07,psychiatry and clinical psychology,75,1,3
+2025-07,public and global health,123,22,1
+2025-07,radiology and imaging,32,1,2
+2025-07,rehabilitation medicine and physical therapy,28,0,0
+2025-07,respiratory medicine,10,0,1
+2025-07,rheumatology,5,0,0
+2025-07,sexual and reproductive health,19,2,1
+2025-07,sports medicine,5,0,0
+2025-07,surgery,9,1,0
+2025-07,toxicology,1,0,0
+2025-07,transplantation,3,0,0
+2025-07,urology,6,0,0
+2025-08,addiction medicine,6,0,0
+2025-08,allergy and immunology,11,2,1
+2025-08,anesthesia,6,0,0
+2025-08,cardiovascular medicine,89,1,10
+2025-08,dentistry and oral medicine,2,0,1
+2025-08,dermatology,12,1,2
+2025-08,emergency medicine,11,1,0
+2025-08,endocrinology,20,0,4
+2025-08,epidemiology,131,19,21
+2025-08,forensic medicine,2,0,0
+2025-08,gastroenterology,11,0,1
+2025-08,genetic and genomic medicine,81,2,21
+2025-08,geriatric medicine,14,0,1
+2025-08,health economics,13,3,0
+2025-08,health informatics,79,3,10
+2025-08,health policy,22,1,1
+2025-08,health systems and quality improvement,30,2,1
+2025-08,hematology,10,1,0
+2025-08,hiv aids,23,1,1
+2025-08,infectious diseases,75,21,1
+2025-08,intensive care and critical care medicine,12,1,1
+2025-08,medical education,11,0,0
+2025-08,medical ethics,2,0,0
+2025-08,nephrology,12,1,1
+2025-08,neurology,115,1,5
+2025-08,nursing,1,0,0
+2025-08,nutrition,22,0,0
+2025-08,obstetrics and gynecology,21,0,1
+2025-08,occupational and environmental health,17,1,0
+2025-08,oncology,52,0,1
+2025-08,ophthalmology,22,1,1
+2025-08,orthopedics,1,0,0
+2025-08,otolaryngology,5,0,2
+2025-08,pain medicine,9,0,0
+2025-08,palliative medicine,6,1,0
+2025-08,pathology,6,0,0
+2025-08,pediatrics,35,0,0
+2025-08,pharmacology and therapeutics,12,0,2
+2025-08,primary care research,10,1,1
+2025-08,psychiatry and clinical psychology,87,1,6
+2025-08,public and global health,151,15,4
+2025-08,radiology and imaging,36,0,0
+2025-08,rehabilitation medicine and physical therapy,23,0,0
+2025-08,respiratory medicine,15,1,1
+2025-08,rheumatology,9,0,0
+2025-08,sexual and reproductive health,19,1,0
+2025-08,sports medicine,6,0,1
+2025-08,surgery,13,0,0
+2025-08,toxicology,2,0,0
+2025-08,transplantation,1,0,0
+2025-08,urology,2,0,0
+2025-09,addiction medicine,10,0,1
+2025-09,allergy and immunology,11,3,0
+2025-09,anesthesia,9,0,1
+2025-09,cardiovascular medicine,95,0,11
+2025-09,dentistry and oral medicine,7,0,1
+2025-09,dermatology,11,0,0
+2025-09,emergency medicine,10,0,1
+2025-09,endocrinology,28,0,4
+2025-09,epidemiology,130,28,14
+2025-09,gastroenterology,18,0,1
+2025-09,genetic and genomic medicine,92,2,24
+2025-09,geriatric medicine,17,3,0
+2025-09,health economics,11,2,1
+2025-09,health informatics,69,0,4
+2025-09,health policy,19,3,2
+2025-09,health systems and quality improvement,35,4,0
+2025-09,hematology,9,0,0
+2025-09,hiv aids,19,0,0
+2025-09,infectious diseases,81,12,0
+2025-09,intensive care and critical care medicine,14,3,1
+2025-09,medical education,8,0,0
+2025-09,medical ethics,2,0,0
+2025-09,nephrology,11,0,0
+2025-09,neurology,127,1,6
+2025-09,nursing,13,0,0
+2025-09,nutrition,10,0,0
+2025-09,obstetrics and gynecology,18,1,1
+2025-09,occupational and environmental health,12,1,0
+2025-09,oncology,69,2,4
+2025-09,ophthalmology,17,0,0
+2025-09,orthopedics,12,1,0
+2025-09,otolaryngology,5,0,1
+2025-09,pain medicine,12,0,0
+2025-09,palliative medicine,2,0,0
+2025-09,pathology,10,0,0
+2025-09,pediatrics,30,1,0
+2025-09,pharmacology and therapeutics,10,2,0
+2025-09,primary care research,11,2,0
+2025-09,psychiatry and clinical psychology,95,4,6
+2025-09,public and global health,135,23,5
+2025-09,radiology and imaging,36,0,1
+2025-09,rehabilitation medicine and physical therapy,32,0,1
+2025-09,respiratory medicine,17,2,1
+2025-09,rheumatology,6,0,0
+2025-09,sexual and reproductive health,18,0,0
+2025-09,sports medicine,12,0,0
+2025-09,surgery,10,0,0
+2025-09,transplantation,6,0,0
+2025-09,urology,4,0,0
+2025-10,addiction medicine,12,1,1
+2025-10,allergy and immunology,5,3,0
+2025-10,anesthesia,4,0,0
+2025-10,cardiovascular medicine,81,2,9
+2025-10,dentistry and oral medicine,4,0,0
+2025-10,dermatology,10,1,2
+2025-10,emergency medicine,6,0,0
+2025-10,endocrinology,24,0,2
+2025-10,epidemiology,128,23,14
+2025-10,gastroenterology,21,0,1
+2025-10,genetic and genomic medicine,103,1,19
+2025-10,geriatric medicine,17,1,1
+2025-10,health economics,19,3,1
+2025-10,health informatics,77,5,5
+2025-10,health policy,9,0,0
+2025-10,health systems and quality improvement,30,2,0
+2025-10,hematology,4,0,0
+2025-10,hiv aids,11,1,0
+2025-10,infectious diseases,92,26,0
+2025-10,intensive care and critical care medicine,16,2,3
+2025-10,medical education,9,1,0
+2025-10,nephrology,9,1,2
+2025-10,neurology,116,3,3
+2025-10,nursing,7,1,0
+2025-10,nutrition,26,0,2
+2025-10,obstetrics and gynecology,20,0,0
+2025-10,occupational and environmental health,15,1,0
+2025-10,oncology,56,2,3
+2025-10,ophthalmology,17,1,0
+2025-10,orthopedics,8,0,0
+2025-10,otolaryngology,5,0,0
+2025-10,pain medicine,9,0,1
+2025-10,palliative medicine,2,0,0
+2025-10,pathology,8,0,0
+2025-10,pediatrics,35,4,0
+2025-10,pharmacology and therapeutics,9,1,1
+2025-10,primary care research,20,1,0
+2025-10,psychiatry and clinical psychology,90,0,3
+2025-10,public and global health,153,23,7
+2025-10,radiology and imaging,38,0,2
+2025-10,rehabilitation medicine and physical therapy,30,0,0
+2025-10,respiratory medicine,25,3,0
+2025-10,rheumatology,8,1,2
+2025-10,sexual and reproductive health,15,1,0
+2025-10,sports medicine,5,0,0
+2025-10,surgery,17,0,1
+2025-10,toxicology,2,0,0
+2025-10,transplantation,6,0,0
+2025-10,urology,6,0,0
+2025-11,addiction medicine,3,0,1
+2025-11,allergy and immunology,7,1,1
+2025-11,anesthesia,7,0,0
+2025-11,cardiovascular medicine,76,3,7
+2025-11,dentistry and oral medicine,4,0,0
+2025-11,dermatology,4,0,0
+2025-11,emergency medicine,12,0,1
+2025-11,endocrinology,28,1,3
+2025-11,epidemiology,126,20,12
+2025-11,gastroenterology,14,0,0
+2025-11,genetic and genomic medicine,85,2,17
+2025-11,geriatric medicine,9,0,1
+2025-11,health economics,14,1,2
+2025-11,health informatics,65,2,3
+2025-11,health policy,9,1,0
+2025-11,health systems and quality improvement,29,3,0
+2025-11,hematology,12,0,0
+2025-11,hiv aids,20,0,0
+2025-11,infectious diseases,105,22,1
+2025-11,intensive care and critical care medicine,12,2,0
+2025-11,medical education,8,1,0
+2025-11,medical ethics,1,0,0
+2025-11,nephrology,8,0,1
+2025-11,neurology,101,0,5
+2025-11,nursing,5,1,0
+2025-11,nutrition,20,0,3
+2025-11,obstetrics and gynecology,17,0,2
+2025-11,occupational and environmental health,9,1,0
+2025-11,oncology,53,3,1
+2025-11,ophthalmology,11,0,1
+2025-11,orthopedics,8,0,0
+2025-11,otolaryngology,7,0,0
+2025-11,pain medicine,3,0,0
+2025-11,palliative medicine,8,0,0
+2025-11,pathology,10,0,1
+2025-11,pediatrics,25,2,0
+2025-11,pharmacology and therapeutics,6,0,0
+2025-11,primary care research,8,1,0
+2025-11,psychiatry and clinical psychology,81,1,7
+2025-11,public and global health,102,10,7
+2025-11,radiology and imaging,24,0,0
+2025-11,rehabilitation medicine and physical therapy,23,1,0
+2025-11,respiratory medicine,11,0,0
+2025-11,rheumatology,9,0,1
+2025-11,sexual and reproductive health,14,1,0
+2025-11,sports medicine,8,0,0
+2025-11,surgery,14,0,0
+2025-11,toxicology,3,0,0
+2025-11,transplantation,4,0,0
+2025-11,urology,1,0,0
+2025-12,addiction medicine,9,1,0
+2025-12,allergy and immunology,8,0,1
+2025-12,anesthesia,5,0,1
+2025-12,cardiovascular medicine,89,3,9
+2025-12,dentistry and oral medicine,5,0,0
+2025-12,dermatology,5,0,0
+2025-12,emergency medicine,12,0,0
+2025-12,endocrinology,29,1,1
+2025-12,epidemiology,104,18,14
+2025-12,gastroenterology,24,0,2
+2025-12,genetic and genomic medicine,89,1,19
+2025-12,geriatric medicine,11,0,2
+2025-12,health economics,16,2,0
+2025-12,health informatics,86,0,6
+2025-12,health policy,13,0,1
+2025-12,health systems and quality improvement,24,1,0
+2025-12,hematology,8,0,1
+2025-12,hiv aids,15,1,0
+2025-12,infectious diseases,69,11,0
+2025-12,intensive care and critical care medicine,12,3,1
+2025-12,medical education,7,1,0
+2025-12,nephrology,6,0,1
+2025-12,neurology,116,1,5
+2025-12,nursing,8,0,0
+2025-12,nutrition,16,0,3
+2025-12,obstetrics and gynecology,20,1,0
+2025-12,occupational and environmental health,6,0,1
+2025-12,oncology,61,0,2
+2025-12,ophthalmology,13,0,0
+2025-12,orthopedics,3,0,0
+2025-12,otolaryngology,5,0,0
+2025-12,pain medicine,4,0,0
+2025-12,pathology,9,0,0
+2025-12,pediatrics,25,1,0
+2025-12,pharmacology and therapeutics,11,0,0
+2025-12,primary care research,14,3,0
+2025-12,psychiatry and clinical psychology,71,1,2
+2025-12,public and global health,98,11,7
+2025-12,radiology and imaging,25,0,0
+2025-12,rehabilitation medicine and physical therapy,27,1,0
+2025-12,respiratory medicine,11,0,1
+2025-12,rheumatology,7,0,0
+2025-12,sexual and reproductive health,15,0,1
+2025-12,sports medicine,4,0,0
+2025-12,surgery,15,0,1
+2025-12,transplantation,5,0,0
+2025-12,urology,4,0,0
+2026-01,addiction medicine,9,1,0
+2026-01,allergy and immunology,9,0,0
+2026-01,anesthesia,3,0,0
+2026-01,cardiovascular medicine,71,1,14
+2026-01,dentistry and oral medicine,6,0,0
+2026-01,dermatology,4,0,0
+2026-01,emergency medicine,5,2,1
+2026-01,endocrinology,16,1,2
+2026-01,epidemiology,102,16,19
+2026-01,forensic medicine,6,0,0
+2026-01,gastroenterology,15,0,1
+2026-01,genetic and genomic medicine,69,1,11
+2026-01,geriatric medicine,12,0,0
+2026-01,health economics,13,1,0
+2026-01,health informatics,80,0,6
+2026-01,health policy,14,2,2
+2026-01,health systems and quality improvement,39,2,0
+2026-01,hematology,6,0,0
+2026-01,hiv aids,10,0,0
+2026-01,infectious diseases,59,13,1
+2026-01,intensive care and critical care medicine,15,2,1
+2026-01,medical education,10,0,0
+2026-01,medical ethics,2,0,0
+2026-01,nephrology,9,0,0
+2026-01,neurology,94,1,2
+2026-01,nursing,2,0,0
+2026-01,nutrition,17,0,0
+2026-01,obstetrics and gynecology,13,0,0
+2026-01,occupational and environmental health,6,1,0
+2026-01,oncology,65,1,0
+2026-01,ophthalmology,12,0,0
+2026-01,orthopedics,3,0,0
+2026-01,otolaryngology,6,0,1
+2026-01,pain medicine,9,0,1
+2026-01,palliative medicine,9,2,0
+2026-01,pathology,7,0,1
+2026-01,pediatrics,28,1,0
+2026-01,pharmacology and therapeutics,12,0,1
+2026-01,primary care research,3,0,0
+2026-01,psychiatry and clinical psychology,81,3,3
+2026-01,public and global health,92,14,2
+2026-01,radiology and imaging,24,0,1
+2026-01,rehabilitation medicine and physical therapy,26,0,0
+2026-01,respiratory medicine,16,2,0
+2026-01,rheumatology,14,0,0
+2026-01,sexual and reproductive health,9,0,0
+2026-01,sports medicine,4,0,1
+2026-01,surgery,7,0,0
+2026-01,toxicology,6,0,0
+2026-01,transplantation,4,1,0
+2026-01,urology,4,0,0
+2026-02,addiction medicine,10,0,1
+2026-02,allergy and immunology,2,0,0
+2026-02,anesthesia,3,0,0
+2026-02,cardiovascular medicine,77,2,11
+2026-02,dentistry and oral medicine,6,0,1
+2026-02,dermatology,7,0,0
+2026-02,emergency medicine,15,1,2
+2026-02,endocrinology,21,0,0
+2026-02,epidemiology,123,15,14
+2026-02,gastroenterology,18,0,2
+2026-02,genetic and genomic medicine,83,0,11
+2026-02,geriatric medicine,9,0,1
+2026-02,health economics,14,2,0
+2026-02,health informatics,76,0,5
+2026-02,health policy,14,0,0
+2026-02,health systems and quality improvement,32,1,2
+2026-02,hematology,7,0,0
+2026-02,hiv aids,24,1,0
+2026-02,infectious diseases,87,17,0
+2026-02,intensive care and critical care medicine,17,0,4
+2026-02,medical education,12,0,0
+2026-02,medical ethics,4,0,0
+2026-02,nephrology,7,0,0
+2026-02,neurology,98,0,3
+2026-02,nursing,5,0,0
+2026-02,nutrition,12,0,2
+2026-02,obstetrics and gynecology,10,0,1
+2026-02,occupational and environmental health,9,1,2
+2026-02,oncology,49,0,3
+2026-02,ophthalmology,16,0,1
+2026-02,orthopedics,9,0,0
+2026-02,otolaryngology,2,0,0
+2026-02,pain medicine,6,1,0
+2026-02,palliative medicine,6,2,0
+2026-02,pathology,14,0,0
+2026-02,pediatrics,19,1,0
+2026-02,pharmacology and therapeutics,6,0,2
+2026-02,primary care research,13,0,0
+2026-02,psychiatry and clinical psychology,74,4,3
+2026-02,public and global health,114,21,9
+2026-02,radiology and imaging,23,0,2
+2026-02,rehabilitation medicine and physical therapy,13,0,0
+2026-02,respiratory medicine,8,1,0
+2026-02,rheumatology,11,0,2
+2026-02,sexual and reproductive health,13,4,0
+2026-02,sports medicine,9,0,0
+2026-02,surgery,10,0,0
+2026-02,toxicology,4,0,0
+2026-02,transplantation,11,0,0
+2026-02,urology,6,0,2
+2026-03,addiction medicine,9,0,1
+2026-03,allergy and immunology,6,1,0
+2026-03,anesthesia,6,0,3
+2026-03,cardiovascular medicine,91,1,10
+2026-03,dentistry and oral medicine,11,0,0
+2026-03,dermatology,6,0,0
+2026-03,emergency medicine,10,0,0
+2026-03,endocrinology,23,0,3
+2026-03,epidemiology,153,26,19
+2026-03,gastroenterology,14,0,3
+2026-03,genetic and genomic medicine,85,1,15
+2026-03,geriatric medicine,13,0,1
+2026-03,health economics,20,1,0
+2026-03,health informatics,106,3,10
+2026-03,health policy,15,1,0
+2026-03,health systems and quality improvement,29,1,0
+2026-03,hematology,9,0,1
+2026-03,hiv aids,33,2,0
+2026-03,infectious diseases,112,16,1
+2026-03,intensive care and critical care medicine,13,2,5
+2026-03,medical education,13,2,0
+2026-03,medical ethics,2,0,0
+2026-03,nephrology,14,0,2
+2026-03,neurology,130,0,3
+2026-03,nursing,9,0,0
+2026-03,nutrition,17,0,2
+2026-03,obstetrics and gynecology,31,0,0
+2026-03,occupational and environmental health,13,2,0
+2026-03,oncology,54,1,3
+2026-03,ophthalmology,26,0,1
+2026-03,orthopedics,6,0,0
+2026-03,otolaryngology,5,1,0
+2026-03,pain medicine,13,0,1
+2026-03,palliative medicine,2,0,0
+2026-03,pathology,10,1,0
+2026-03,pediatrics,17,1,0
+2026-03,pharmacology and therapeutics,12,0,0
+2026-03,primary care research,11,0,0
+2026-03,psychiatry and clinical psychology,92,2,2
+2026-03,public and global health,137,15,6
+2026-03,radiology and imaging,48,0,2
+2026-03,rehabilitation medicine and physical therapy,27,2,0
+2026-03,respiratory medicine,13,0,0
+2026-03,rheumatology,16,0,2
+2026-03,sexual and reproductive health,12,0,1
+2026-03,sports medicine,15,0,1
+2026-03,surgery,8,0,0
+2026-03,toxicology,2,0,0
+2026-03,transplantation,8,0,0
+2026-03,urology,8,0,1
+2026-04,addiction medicine,12,0,0
+2026-04,allergy and immunology,8,3,0
+2026-04,anesthesia,1,0,0
+2026-04,cardiovascular medicine,67,0,7
+2026-04,dentistry and oral medicine,10,0,2
+2026-04,dermatology,9,0,0
+2026-04,emergency medicine,4,1,0
+2026-04,endocrinology,26,0,4
+2026-04,epidemiology,134,12,18
+2026-04,forensic medicine,2,0,0
+2026-04,gastroenterology,15,0,0
+2026-04,genetic and genomic medicine,99,1,28
+2026-04,geriatric medicine,19,0,2
+2026-04,health economics,12,0,1
+2026-04,health informatics,86,1,8
+2026-04,health policy,22,2,1
+2026-04,health systems and quality improvement,40,2,1
+2026-04,hematology,5,0,0
+2026-04,hiv aids,19,0,1
+2026-04,infectious diseases,87,19,1
+2026-04,intensive care and critical care medicine,16,0,4
+2026-04,medical education,10,0,0
+2026-04,medical ethics,2,0,0
+2026-04,nephrology,12,0,1
+2026-04,neurology,112,1,5
+2026-04,nursing,9,0,0
+2026-04,nutrition,30,0,2
+2026-04,obstetrics and gynecology,20,0,1
+2026-04,occupational and environmental health,6,0,0
+2026-04,oncology,58,0,1
+2026-04,ophthalmology,19,0,0
+2026-04,orthopedics,11,0,0
+2026-04,otolaryngology,8,0,1
+2026-04,pain medicine,7,0,0
+2026-04,palliative medicine,5,0,0
+2026-04,pathology,7,0,0
+2026-04,pediatrics,20,1,0
+2026-04,pharmacology and therapeutics,9,1,0
+2026-04,primary care research,8,2,0
+2026-04,psychiatry and clinical psychology,78,1,6
+2026-04,public and global health,119,12,4
+2026-04,radiology and imaging,35,0,1
+2026-04,rehabilitation medicine and physical therapy,18,0,0
+2026-04,respiratory medicine,12,1,0
+2026-04,rheumatology,5,0,0
+2026-04,sexual and reproductive health,15,0,0
+2026-04,sports medicine,7,0,0
+2026-04,surgery,14,0,0
+2026-04,transplantation,8,0,0
+2026-04,urology,5,0,0
+2026-05,addiction medicine,8,0,0
+2026-05,allergy and immunology,7,1,1
+2026-05,anesthesia,7,0,0
+2026-05,cardiovascular medicine,87,2,12
+2026-05,dentistry and oral medicine,8,1,2
+2026-05,dermatology,8,0,2
+2026-05,emergency medicine,6,0,0
+2026-05,endocrinology,21,0,1
+2026-05,epidemiology,101,14,14
+2026-05,forensic medicine,1,0,0
+2026-05,gastroenterology,20,0,0
+2026-05,genetic and genomic medicine,94,3,19
+2026-05,geriatric medicine,11,0,1
+2026-05,health economics,22,2,0
+2026-05,health informatics,101,5,7
+2026-05,health policy,13,1,1
+2026-05,health systems and quality improvement,24,1,0
+2026-05,hematology,6,0,0
+2026-05,hiv aids,17,1,0
+2026-05,infectious diseases,74,17,0
+2026-05,intensive care and critical care medicine,10,0,2
+2026-05,medical education,9,0,0
+2026-05,medical ethics,3,0,0
+2026-05,nephrology,9,0,1
+2026-05,neurology,146,2,9
+2026-05,nursing,5,0,0
+2026-05,nutrition,15,0,4
+2026-05,obstetrics and gynecology,20,0,0
+2026-05,occupational and environmental health,9,0,0
+2026-05,oncology,52,0,1
+2026-05,ophthalmology,20,0,3
+2026-05,orthopedics,5,0,2
+2026-05,otolaryngology,2,0,0
+2026-05,pain medicine,6,0,0
+2026-05,palliative medicine,7,0,0
+2026-05,pathology,4,0,0
+2026-05,pediatrics,26,1,0
+2026-05,pharmacology and therapeutics,11,0,2
+2026-05,primary care research,12,0,2
+2026-05,psychiatry and clinical psychology,85,4,2
+2026-05,public and global health,109,17,4
+2026-05,radiology and imaging,54,1,2
+2026-05,rehabilitation medicine and physical therapy,15,0,0
+2026-05,respiratory medicine,12,1,0
+2026-05,rheumatology,7,0,0
+2026-05,sexual and reproductive health,14,0,0
+2026-05,sports medicine,9,0,0
+2026-05,surgery,13,0,1
+2026-05,toxicology,2,0,0
+2026-05,transplantation,4,0,0
+2026-05,urology,4,0,0
+2026-06,addiction medicine,8,0,0
+2026-06,allergy and immunology,9,2,0
+2026-06,anesthesia,11,0,0
+2026-06,cardiovascular medicine,88,1,10
+2026-06,dentistry and oral medicine,3,0,0
+2026-06,dermatology,5,0,0
+2026-06,emergency medicine,9,1,0
+2026-06,endocrinology,28,0,5
+2026-06,epidemiology,130,19,15
+2026-06,forensic medicine,1,0,0
+2026-06,gastroenterology,16,0,0
+2026-06,genetic and genomic medicine,96,1,24
+2026-06,geriatric medicine,16,0,0
+2026-06,health economics,16,0,0
+2026-06,health informatics,99,2,12
+2026-06,health policy,17,2,1
+2026-06,health systems and quality improvement,31,1,1
+2026-06,hematology,16,2,0
+2026-06,hiv aids,12,0,1
+2026-06,infectious diseases,74,17,0
+2026-06,intensive care and critical care medicine,13,1,4
+2026-06,medical education,11,0,0
+2026-06,nephrology,19,0,2
+2026-06,neurology,163,0,3
+2026-06,nursing,4,0,0
+2026-06,nutrition,23,0,1
+2026-06,obstetrics and gynecology,18,1,0
+2026-06,occupational and environmental health,10,2,1
+2026-06,oncology,54,1,4
+2026-06,ophthalmology,18,0,0
+2026-06,orthopedics,5,0,0
+2026-06,otolaryngology,5,1,0
+2026-06,pain medicine,8,0,0
+2026-06,palliative medicine,4,0,0
+2026-06,pathology,19,0,0
+2026-06,pediatrics,18,0,0
+2026-06,pharmacology and therapeutics,9,0,2
+2026-06,primary care research,14,0,0
+2026-06,psychiatry and clinical psychology,93,0,6
+2026-06,public and global health,108,7,4
+2026-06,radiology and imaging,43,0,1
+2026-06,rehabilitation medicine and physical therapy,17,1,0
+2026-06,respiratory medicine,10,0,1
+2026-06,rheumatology,8,0,1
+2026-06,sexual and reproductive health,15,0,0
+2026-06,sports medicine,6,0,0
+2026-06,surgery,17,0,0
+2026-06,toxicology,2,0,0
+2026-06,transplantation,4,0,0
+2026-06,urology,17,0,0
+2026-07,addiction medicine,10,0,0
+2026-07,allergy and immunology,18,0,0
+2026-07,anesthesia,5,0,0
+2026-07,cardiovascular medicine,94,0,12
+2026-07,dentistry and oral medicine,23,0,0
+2026-07,dermatology,20,0,2
+2026-07,emergency medicine,12,0,0
+2026-07,endocrinology,30,0,5
+2026-07,epidemiology,196,25,16
+2026-07,forensic medicine,2,0,0
+2026-07,gastroenterology,18,0,2
+2026-07,genetic and genomic medicine,97,0,24
+2026-07,geriatric medicine,28,0,2
+2026-07,health economics,10,0,0
+2026-07,health informatics,115,3,9
+2026-07,health policy,16,0,1
+2026-07,health systems and quality improvement,36,2,0
+2026-07,hematology,18,0,2
+2026-07,hiv aids,15,0,0
+2026-07,infectious diseases,93,16,1
+2026-07,intensive care and critical care medicine,15,0,4
+2026-07,medical education,13,0,0
+2026-07,medical ethics,2,0,0
+2026-07,nephrology,16,2,2
+2026-07,neurology,142,0,7
+2026-07,nursing,18,0,0
+2026-07,nutrition,27,0,3
+2026-07,obstetrics and gynecology,31,2,0
+2026-07,occupational and environmental health,23,2,4
+2026-07,oncology,75,1,4
+2026-07,ophthalmology,11,0,0
+2026-07,orthopedics,12,0,0
+2026-07,otolaryngology,10,2,0
+2026-07,pain medicine,8,0,0
+2026-07,palliative medicine,6,0,0
+2026-07,pathology,25,0,0
+2026-07,pediatrics,26,0,1
+2026-07,pharmacology and therapeutics,27,0,1
+2026-07,primary care research,24,3,0
+2026-07,psychiatry and clinical psychology,113,1,6
+2026-07,public and global health,131,22,3
+2026-07,radiology and imaging,41,0,1
+2026-07,rehabilitation medicine and physical therapy,12,0,0
+2026-07,respiratory medicine,18,2,1
+2026-07,rheumatology,26,0,0
+2026-07,sexual and reproductive health,23,1,0
+2026-07,sports medicine,24,0,1
+2026-07,surgery,13,0,0
+2026-07,toxicology,6,0,0
+2026-07,transplantation,7,0,0
+2026-07,urology,13,0,3
+2026-08,addiction medicine,35,2,0
+2026-08,allergy and immunology,9,0,0
+2026-08,anesthesia,8,0,0
+2026-08,cardiovascular medicine,78,2,12
+2026-08,dentistry and oral medicine,18,0,0
+2026-08,dermatology,8,0,0
+2026-08,emergency medicine,14,2,0
+2026-08,endocrinology,18,0,2
+2026-08,epidemiology,156,23,21
+2026-08,gastroenterology,31,0,2
+2026-08,genetic and genomic medicine,91,0,24
+2026-08,geriatric medicine,27,0,3
+2026-08,health economics,28,0,1
+2026-08,health informatics,105,4,13
+2026-08,health policy,25,2,2
+2026-08,health systems and quality improvement,26,1,2
+2026-08,hematology,18,2,0
+2026-08,hiv aids,33,1,0
+2026-08,infectious diseases,75,9,1
+2026-08,intensive care and critical care medicine,24,0,6
+2026-08,medical education,22,2,0
+2026-08,medical ethics,3,0,0
+2026-08,nephrology,28,0,1
+2026-08,neurology,144,4,5
+2026-08,nursing,8,0,0
+2026-08,nutrition,23,0,5
+2026-08,obstetrics and gynecology,23,0,2
+2026-08,occupational and environmental health,26,0,0
+2026-08,oncology,49,0,2
+2026-08,ophthalmology,22,2,2
+2026-08,orthopedics,20,0,0
+2026-08,otolaryngology,14,0,2
+2026-08,pain medicine,22,0,2
+2026-08,palliative medicine,7,0,0
+2026-08,pathology,12,0,0
+2026-08,pediatrics,15,0,0
+2026-08,pharmacology and therapeutics,20,0,1
+2026-08,primary care research,19,0,0
+2026-08,psychiatry and clinical psychology,88,2,5
+2026-08,public and global health,123,7,6
+2026-08,radiology and imaging,50,1,0
+2026-08,rehabilitation medicine and physical therapy,25,1,0
+2026-08,respiratory medicine,18,0,1
+2026-08,rheumatology,13,0,0
+2026-08,sexual and reproductive health,16,0,2
+2026-08,sports medicine,11,0,0
+2026-08,surgery,24,0,0
+2026-08,toxicology,2,0,2
+2026-08,transplantation,9,0,0
+2026-08,urology,21,0,0
+2026-09,addiction medicine,10,0,0
+2026-09,allergy and immunology,15,3,1
+2026-09,anesthesia,14,0,0
+2026-09,cardiovascular medicine,82,1,12
+2026-09,dentistry and oral medicine,9,0,0
+2026-09,dermatology,11,0,1
+2026-09,emergency medicine,10,0,0
+2026-09,endocrinology,27,0,4
+2026-09,epidemiology,168,22,24
+2026-09,forensic medicine,2,0,0
+2026-09,gastroenterology,19,0,0
+2026-09,genetic and genomic medicine,112,0,33
+2026-09,geriatric medicine,7,1,0
+2026-09,health economics,15,0,0
+2026-09,health informatics,97,2,14
+2026-09,health policy,15,0,0
+2026-09,health systems and quality improvement,39,1,0
+2026-09,hematology,10,0,1
+2026-09,hiv aids,21,0,0
+2026-09,infectious diseases,90,17,0
+2026-09,intensive care and critical care medicine,21,0,5
+2026-09,medical education,12,0,0
+2026-09,medical ethics,5,0,0
+2026-09,nephrology,10,0,2
+2026-09,neurology,145,1,6
+2026-09,nursing,7,0,0
+2026-09,nutrition,23,0,3
+2026-09,obstetrics and gynecology,24,0,0
+2026-09,occupational and environmental health,9,0,0
+2026-09,oncology,63,0,3
+2026-09,ophthalmology,21,0,0
+2026-09,orthopedics,7,0,0
+2026-09,otolaryngology,11,1,0
+2026-09,pain medicine,15,1,0
+2026-09,palliative medicine,2,0,0
+2026-09,pathology,8,1,0
+2026-09,pediatrics,43,2,3
+2026-09,pharmacology and therapeutics,9,0,1
+2026-09,primary care research,12,0,0
+2026-09,psychiatry and clinical psychology,99,2,2
+2026-09,public and global health,110,14,1
+2026-09,radiology and imaging,52,0,0
+2026-09,rehabilitation medicine and physical therapy,36,1,0
+2026-09,respiratory medicine,17,1,3
+2026-09,rheumatology,12,1,1
+2026-09,sexual and reproductive health,20,0,0
+2026-09,sports medicine,8,0,0
+2026-09,surgery,19,1,0
+2026-09,transplantation,7,0,0
+2026-09,urology,8,0,1

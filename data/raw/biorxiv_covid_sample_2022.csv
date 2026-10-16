@@ -1,0 +1,51 @@
+month,category,new_papers,covid,public_dataset
+2022-05,animal behavior and cognition,56,0,0
+2022-05,biochemistry,130,5,0
+2022-05,bioengineering,94,5,0
+2022-05,bioinformatics,286,13,4
+2022-05,biophysics,161,9,0
+2022-05,cancer biology,167,0,1
+2022-05,cell biology,209,4,0
+2022-05,developmental biology,100,0,0
+2022-05,ecology,132,2,0
+2022-05,evolutionary biology,141,1,0
+2022-05,genetics,67,1,2
+2022-05,genomics,136,7,3
+2022-05,immunology,141,38,0
+2022-05,microbiology,306,30,0
+2022-05,molecular biology,108,1,0
+2022-05,neuroscience,513,1,1
+2022-05,paleontology,6,0,0
+2022-05,pathology,16,0,0
+2022-05,pharmacology and toxicology,33,3,0
+2022-05,physiology,64,0,0
+2022-05,plant biology,108,0,0
+2022-05,scientific communication and education,11,2,0
+2022-05,synthetic biology,22,0,0
+2022-05,systems biology,63,4,1
+2022-05,zoology,17,0,0
+2022-06,animal behavior and cognition,44,0,0
+2022-06,biochemistry,125,5,0
+2022-06,bioengineering,98,4,0
+2022-06,bioinformatics,240,13,1
+2022-06,biophysics,160,11,0
+2022-06,cancer biology,121,1,0
+2022-06,cell biology,176,4,0
+2022-06,developmental biology,101,1,0
+2022-06,ecology,112,1,0
+2022-06,evolutionary biology,123,7,0
+2022-06,genetics,100,1,9
+2022-06,genomics,134,7,1
+2022-06,immunology,121,22,0
+2022-06,microbiology,304,38,0
+2022-06,molecular biology,114,3,0
+2022-06,neuroscience,505,3,0
+2022-06,paleontology,4,0,0
+2022-06,pathology,16,0,0
+2022-06,pharmacology and toxicology,33,1,0
+2022-06,physiology,46,0,0
+2022-06,plant biology,96,0,0
+2022-06,scientific communication and education,13,2,0
+2022-06,synthetic biology,35,2,0
+2022-06,systems biology,56,3,0
+2022-06,zoology,14,0,0

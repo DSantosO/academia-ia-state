@@ -1,0 +1,26 @@
+category,group,papers_2022,papers_q1q3_2024,papers_q1q3_2025,papers_q1q3_2026,growth_q1q3_2025,growth_q1q3_2026,covid_share_2020,public_dataset_share_2022,public_dataset_share_q1q3_2026
+neuroscience,mixed,6302,5929,6552,7328,0.1051,0.1184,0.0,0.0,0.0
+bioinformatics,computational,3003,2576,3140,3981,0.2189,0.2678,0.0,0.0,0.0
+microbiology,wet_lab,3591,3084,3436,3844,0.1141,0.1187,0.0,0.0,0.0
+cell biology,wet_lab,2186,1940,2148,2423,0.1072,0.128,0.0,0.0,0.0
+cancer biology,wet_lab,1491,1504,1843,1951,0.2254,0.0586,0.0,0.0,0.0
+biophysics,mixed,1802,1450,1696,1888,0.1697,0.1132,0.0,0.0,0.0
+biochemistry,wet_lab,1595,1465,1690,1850,0.1536,0.0947,0.0,0.0,0.0
+ecology,mixed,1477,1323,1517,1799,0.1466,0.1859,0.0,0.0,0.0
+bioengineering,mixed,1239,1273,1437,1795,0.1288,0.2491,0.0,0.0,0.0
+immunology,wet_lab,1683,1451,1672,1790,0.1523,0.0706,0.0,0.0,0.0
+genomics,computational,1510,1319,1522,1627,0.1539,0.069,0.0,0.0,0.0
+molecular biology,wet_lab,1466,1413,1539,1616,0.0892,0.05,0.0,0.0,0.0
+evolutionary biology,mixed,1609,1261,1371,1588,0.0872,0.1583,0.0,0.0,0.0
+plant biology,wet_lab,1328,1249,1322,1487,0.0584,0.1248,0.0,0.0,0.0
+developmental biology,wet_lab,1119,969,1019,965,0.0516,-0.053,0.0,0.0,0.0
+genetics,mixed,1103,831,901,938,0.0842,0.0411,0.0,0.0,0.0
+physiology,wet_lab,599,683,769,803,0.1259,0.0442,0.0,0.0,0.0
+systems biology,computational,701,534,644,677,0.206,0.0512,0.0,0.0,0.0
+animal behavior and cognition,mixed,558,534,584,624,0.0936,0.0685,0.0,0.0,0.0
+pharmacology and toxicology,wet_lab,411,400,472,535,0.18,0.1335,0.0,0.0,0.0
+synthetic biology,wet_lab,329,331,376,422,0.136,0.1223,0.0,0.0,0.0
+pathology,wet_lab,224,231,303,263,0.3117,-0.132,0.0,0.0,0.0
+zoology,mixed,188,178,198,203,0.1124,0.0253,0.0,0.0,0.0
+scientific communication and education,mixed,177,86,97,97,0.1279,0.0,0.0,0.0,0.0
+paleontology,mixed,59,44,56,51,0.2727,-0.0893,0.0,0.0,0.0

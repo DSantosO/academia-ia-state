@@ -206,7 +206,7 @@ Todos los archivos teóricos crecen más que los dos experimentales, aunque la d
 | 1 | Crecimiento frente al rango histórico (P4) como gráfico principal | Ya descargados | Bajo | Prototipo hecho |
 | 2 | Exceso sobre la tendencia (P1, P2), pasado a Poisson o binomial negativa con errores HAC y fecha de ruptura estimada | Ya descargados | Bajo-medio | Prototipo hecho |
 | 3 | Control sintético por archivo, como Nee et al., con placebos | Ya descargados (20 archivos desde 2010) | Medio | — |
-| 4 | Gradiente por archivo (P3) y, después, por subárea de matemáticas e informática | Ya descargados | Bajo | Prototipo hecho |
+| 4 | Gradiente por archivo (P3) y, después, por subárea de matemáticas e informática; contrastes dentro de biología y física | Ya descargados | Bajo | Hecho para bioRxiv, medRxiv y física (fig8, fig9) |
 | 5 | Cociente entre preprints y artículos en biomedicina, con PubMed | Ya descargados | Bajo | Datos listos |
 | 6 | Informática sin IA desde 2015, con exceso sobre tendencia | Descarga OAI de cs desde 2015 (horas) | Medio | — |
 | 7 | Autores × artículos por autor (fraccionario), tamaño de equipo y cuotas de autores con ≥5, ≥10 y >15 artículos por trimestre | Descarga OAI de math, cs y física (horas) | Medio-alto | — |

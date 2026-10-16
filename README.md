@@ -67,9 +67,27 @@ Salidas: `data/processed/arxiv_cs_ai_split_quarterly.csv` y `arxiv_cs_categories
 
 ![Informática con y sin IA](docs/figures/fig7_cs_without_ai.png)
 
+## Contrastes dentro de cada campo
+
+¿Acelera más el trabajo computacional o teórico que el experimental? `scripts/harvest_rxiv_categories.py` cuenta los preprints nuevos de bioRxiv y medRxiv por mes y categoría, y `scripts/analyze_within_field.py` los agrupa:
+
+- **bioRxiv:** computacional (bioinformática, biología de sistemas, genómica), laboratorio (bioquímica, biología celular, del desarrollo, molecular, vegetal y del cáncer, microbiología, inmunología, fisiología, farmacología, patología, biología sintética) y mixto (el resto). Los totales por categoría de la API no permiten quitar los preprints de COVID-19.
+- **arXiv:** física teórica (hep-th, hep-ph, gr-qc, nucl-th) frente a experimental (hep-ex, nucl-ex), y q-bio.
+- **medRxiv:** crecimiento por especialidad sin COVID-19 y cuota de preprints que nombran una base de datos pública (NHANES, UK Biobank, GBD, aleatorización mendeliana, FAERS, MIMIC, SEER, BRFSS).
+
+Salidas en `data/processed/`:
+- `within_field_quarterly.csv`;
+- `biorxiv_categories_growth.csv`;
+- `medrxiv_categories_growth.csv`;
+- `medrxiv_public_dataset_quarterly.csv`.
+
+![Contrastes dentro de cada campo](docs/figures/fig8_within_field_contrasts.png)
+
+![Dónde crece medRxiv](docs/figures/fig9_medrxiv_categories.png)
+
 ## Versiones para publicación
 
-`docs/figures/paper/` contiene las figuras 1, 4 y 5 sin título, en SVG, PDF y PNG a 300 dpi y a 85 y 175 mm, con leyendas y notas de métodos (`scripts/plot_paper.py`).
+`docs/figures/paper/` contiene las figuras 1, 4, 5 y 8 sin título, en SVG, PDF y PNG a 300 dpi y a 85 y 175 mm, con leyendas y notas de métodos (`scripts/plot_paper.py`; la 8, con `scripts/plot_within_field.py`).
 
 ### Advertencias
 
@@ -110,6 +128,10 @@ python3 scripts/plot_paper.py .                           # versiones para publi
 python3 scripts/fetch_pubmed_quarterly.py data/raw/pubmed_edat_quarterly.json   # PubMed por trimestre
 python3 scripts/analyze_trends.py .                       # exceso sobre tendencia y crecimiento por archivo
 python3 scripts/plot_proposal.py .                        # prototipos de la propuesta
+python3 scripts/harvest_rxiv_categories.py biorxiv 2019-01 2026-09 data/raw/biorxiv_category_monthly.csv 4 --counts
+python3 scripts/harvest_rxiv_categories.py medrxiv 2019-06 2026-09 data/raw/medrxiv_category_monthly.csv 4   # lento
+python3 scripts/analyze_within_field.py .
+python3 scripts/plot_within_field.py .                    # fig8, fig9 y versión para publicación de fig8
 ```
 
 `build_datasets.py` conserva solo trimestres completos, desde 2020-Q1 hasta el último trimestre cerrado antes de la fecha en que se ejecuta. `scripts/osf_check_quarter.py <servidor> <desde> <hasta>` sirve para comprobar a mano un trimestre de OSF.

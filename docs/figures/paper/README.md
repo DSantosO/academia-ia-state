@@ -110,3 +110,72 @@ Full output in `data/processed/arxiv_math_prolific_robustness.json`, produced by
 - **Subfields.** In Q3 2026, the most prolific-author papers are in combinatorics (647; 25% of that subfield), analysis of PDEs (516; 23%), number theory (261; 19%) and optimisation (255; 17%). The highest share is in complex variables (31%).
 - **Timing.** The monthly prolific share is 3.7–6.4% throughout 2025 and January–February 2026. It then rises: 6.9% in March, 9.4% in April, 11.1% in May, 15.9% in July and 19.2% in September 2026. These values use the robustness script's name normalisation; the figure's series gives 19.3% for September.
 - **Left-censoring.** The `all_authors_first_time` column in `arxiv_math_monthly_profile.csv` only sees back to January 2025, so it should not be read as "new to arXiv".
+
+## Figure 8 — `fig8_within_field_{85,175}mm`
+
+**Caption.** New preprints in computational and wet-lab biology (**a**, bioRxiv) and in theoretical and experimental
+physics (**b**, arXiv), Q1 2020 – Q3 2026, indexed to each group's 2022 quarterly average (= 100). Dashed lines as in
+Fig. 1; the arXiv rule markers apply to panel b only.
+
+**Methods.**
+- *Biology (a):* bioRxiv version-1 preprints by subject category, from the bioRxiv API's monthly per-category totals
+  (`count_new_papers` of the details endpoint filtered by category).
+  - Their sum matches bioRxiv's official monthly new-paper totals exactly from July 2019. January–June 2019 is
+    about 4% lower, because epidemiology and clinical-trials preprints, which moved to medRxiv, cannot be queried by
+    category.
+  - Groups, fixed before looking at growth (as proposed by the essay session):
+    - computational: bioinformatics, systems biology, genomics;
+    - wet lab: biochemistry, cell, developmental, molecular, plant and cancer biology, microbiology, immunology,
+      physiology, pharmacology and toxicology, pathology, synthetic biology;
+    - mixed: the other ten categories (neuroscience is the largest).
+  - COVID-19 preprints are included, because the per-category totals carry no topic flag.
+    - In a full read of May–June 2022 they were 5.1% of computational, 5.9% of wet-lab and 2.1% of mixed preprints
+      (`data/raw/biorxiv_covid_sample_2022.csv`).
+    - Including them therefore inflates the 2022 base of the two contrasted groups by about the same amount.
+- *Physics (b):* new arXiv submissions by primary archive, from arXiv's yearly statistics pages.
+  - Theory: hep-th, hep-ph, gr-qc, nucl-th.
+  - Experiment: hep-ex, nucl-ex.
+- Data retrieved 16 October 2026. Scripts: `harvest_rxiv_categories.py`, `analyze_within_field.py`,
+  `plot_within_field.py`.
+
+**Numbers for the text** (growth in January–September against the same months a year earlier):
+
+| Group | 2023 | 2024 | 2025 | 2026 | Index Q3 2026 |
+|---|---|---|---|---|---|
+| bioRxiv computational | +7% | +9% | +20% | +18% | 164 |
+| bioRxiv wet lab | +9% | +12% | +13% | +8% | 152 |
+| bioRxiv mixed | +9% | +11% | +12% | +13% | 159 |
+| arXiv theory | 0% | +6% | +6% | +20% | 149 |
+| arXiv experiment | −7% | +7% | +9% | +11% | 119 |
+
+- **Biology.**
+  - Computational preprints outgrew wet-lab ones only from 2025, by 7–10 points a year; in 2023–2024 they grew slightly slower.
+  - The gap rests mostly on bioinformatics:
+    - bioinformatics: +22% in 2025 and +27% in 2026, and 63% of the computational group in 2026;
+    - genomics: +15% and +7%;
+    - systems biology: +21% and +5%.
+  - Much of bioinformatics is itself AI research (protein and genomic models). The contrast therefore mixes AI as a topic with AI as a tool, the same caveat as for computer science.
+- **Physics.**
+  - Theory grows 20% in 2026, far outside its 2017–2025 range (−6% to +6%).
+  - Experiment grows 11%, inside its own range (−13% to +22%).
+  - The experimental series is small (about 430 papers a quarter in 2026) and volatile.
+  - By pair: hep-th +24% vs hep-ex +14%; nucl-th +16% vs nucl-ex +2%.
+- **Base-year check.**
+  - Against January–September 2019 instead of 2022, theory is +46% and experiment +34%.
+  - In biology, against 2019 wet lab is +118% and computational +86%, because of the 2020 surge in wet-lab preprints (COVID-19 and late adoption).
+  - The biology contrast is therefore a 2025–2026 divergence, not a long-run difference.
+- **arXiv q-bio,** for comparison with bioRxiv's computational categories: +19% (2023), +19% (2024), +16% (2025), −7% (2026).
+
+**medRxiv (no figure in the essay set; static chart `../fig9_medrxiv_categories.png`).**
+- *Overall:* excluding COVID-19, medRxiv grew 27% in 2024, 21% in 2025 and 22% in 2026, so there is no acceleration in 2026.
+- *Fastest-growing subjects in 2026:*
+  - health informatics +54%;
+  - health systems and quality improvement +42%;
+  - epidemiology +32%;
+  - neurology and radiology +27%;
+  - oncology +22%.
+- *Flat subjects:* public and global health +3%, genetic and genomic medicine +3%, infectious diseases +1%.
+- *Public datasets:* preprints naming one in title or abstract (NHANES, UK Biobank, Global Burden of Disease, Mendelian randomisation, FAERS, MIMIC, SEER, BRFSS):
+  - 405 in January–September 2022 (5.0% of new preprints) and 915 in January–September 2026 (6.9%);
+  - that is ×2.3, against ×1.6 for all new preprints;
+  - shares in 2026 are highest in intensive care (24%, MIMIC), genetic and genomic medicine (23%), cardiovascular medicine (14%), epidemiology (13%) and nutrition (12%).
