@@ -1,4 +1,4 @@
-<!-- Copied from branch claude/happy-lovelace-wqek9b, commit f5ab16e (companion analysis session). -->
+<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 7ac5647 (companion analysis session). -->
 # Figure captions (PLOS ONE format)
 
 Captions go in the manuscript, directly after the paragraph that first cites each figure. The figure files are

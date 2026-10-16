@@ -1,4 +1,4 @@
-<!-- Copied from branch claude/happy-lovelace-wqek9b, commit f5ab16e (companion analysis session). -->
+<!-- Copied from branch claude/happy-lovelace-wqek9b, commit 7ac5647 (companion analysis session). -->
 # Statistical methods (PLOS ONE analysis)
 
 Written to be pasted into the article's Methods section. Every model below is implemented in `scripts/` and every
@@ -156,7 +156,8 @@ the 2019–2022 trend, in percentage points.
 **Who produced the growth?** The change in fractional output between the third quarters of consecutive years is
 split by author class.
 - *Classes.* Authors are ranked by their combined fractional output in the two years compared: the top 1%, the next
-  9% and the bottom 90%. Ties are broken at random (fixed seed).
+  9% and the bottom 90%. Authors tied at a class boundary share the remaining places equally (fractional
+  membership, the expectation over random tie-breaking).
 - *Why combined output.* Classes defined on one year select on that year's output, so they carry regression to the
   mean: authors who are heavy producers in the second year will, on average, have produced less in the first even if
   nothing changed. Ranking on the sum of both years is symmetric in the two years, so when the years are exchangeable
@@ -211,10 +212,15 @@ Consequences:
 
 **Tests.**
 1. *Rise by group.* Each year's rate relative to the group's 2019–2022 mean.
-2. *Same rise across groups.* Poisson model of monthly marker counts with a log(abstracts) offset, month fixed effects
-   and group × year terms (base year 2022), with Driscoll–Kraay standard errors (2 lags). A rate ratio near 1 means
-   the marker rise is similar in both groups. Pairs: bioRxiv computational vs wet lab, arXiv theory vs experiment,
-   and arXiv maths vs experiment.
+2. *Same rise across groups.*
+   - *Model.* OLS of the monthly log ratio of marker rates, log(M_A/N_A) − log(M_B/N_B), on dummies for 2023, 2024,
+     2025 and 2026. The reference is the pooled 2019–2022 baseline, which is more stable than a single base year,
+     notably for small groups such as experimental physics.
+   - *Inference.* Classical standard errors and t intervals. The bioRxiv text sample has only 16 months (March and
+     September), too few for HAC or Driscoll–Kraay standard errors. Those came out about 2.5 times too narrow when
+     checked against the month-to-month variation of 2019–2022.
+   - *Reading.* A ratio near 1 means the marker rise is similar in both groups.
+   - *Pairs.* bioRxiv computational vs wet lab; arXiv theory vs experiment; arXiv maths vs experiment.
 3. *Does the marker rise predict output growth, and only where experiments are not the bottleneck?*
    - *Panel.* A category-level panel of bioRxiv categories and arXiv archives, 2023–2026.
    - *Model.* growth_cy = a_y + b·Δmarker_cy + c·Δmarker_cy·experimental_c + d·experimental_c + e.
@@ -225,6 +231,24 @@ Consequences:
      each server.
    - *Limits.* The arXiv panel has only 6 or 7 archives, too few clusters for reliable inference, so it is
      descriptive. The panel is an ecological association: categories differ in more than experimental intensity.
+
+4. *Use vs output.* Do markers rise as much in arXiv physics (all six archives, theory, experiment) and maths as in
+   bioRxiv, while output diverges?
+   - *Markers.* Test 2 for each arXiv group against all of bioRxiv, on the months both corpora cover (March and
+     September).
+   - *Output.* The event-study model of the within-field contrasts, applied to the arXiv group against bioRxiv new
+     preprints (sum of categories), monthly from January 2019 to September 2026. Two quantities: rate ratios relative
+     to 2022 (levels), and 2026 relative to 2025, the 2026 acceleration of one group relative to the other. The
+     2026-vs-2025 ratio uses the coefficients' covariance.
+   - *Limit.* After 2024 marker drift differs by field (bioRxiv's 2024 vocabulary fell further than arXiv's), so
+     cross-corpus marker ratios are cleanest in 2024.
+5. *Lower bound on the share of LLM-processed abstracts* (Kobak et al. 2025; arXiv only).
+   - *Counterfactual.* The share of abstracts with at least one core marker word, extrapolated from a linear trend
+     over 2019–2022.
+   - *Bound.* With p the observed share and q the counterfactual, a fraction f of LLM-processed abstracts gives
+     p = (1 − f)q + fr with r ≤ 1, so f ≥ (p − q)/(1 − q).
+   - *Why arXiv only.* bioRxiv and medRxiv were aggregated by word, not by abstract, so their share with any marker
+     is not available.
 
 ## Analyses tried and dropped
 
