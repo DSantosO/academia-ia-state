@@ -32,6 +32,7 @@ EVENTS = [
     (dt.date(2025, 10, 31), "arXiv rules"),
     (dt.date(2026, 2, 5), "Claude Opus 4.6"),
     (dt.date(2026, 7, 24), "Claude Opus 5"),
+    (dt.date(2026, 10, 1), "arXiv cap"),
 ]
 MATH_NAMES = {
     "math.AC": "Commutative algebra", "math.AG": "Algebraic geometry", "math.AP": "Analysis of PDEs",
@@ -51,9 +52,11 @@ MATH_EVENTS = [
     (dt.date(2026, 2, 5), "Claude Opus 4.6"),
     (dt.date(2026, 5, 20), "OpenAI disproves unit-distance conjecture"),
     (dt.date(2026, 7, 24), "Claude Opus 5"),
+    (dt.date(2026, 10, 1), "arXiv cap"),
 ]
 SOURCES = ("Sources: arXiv (primary archive), bioRxiv, medRxiv (COVID-19 preprints removed), PsyArXiv, SocArXiv and "
            "EdArXiv (first versions). New preprints per quarter; data as of 15 Oct 2026.")
+ADVISORY = "Advisory: from 1 Oct 2026 arXiv caps each submitter at 2 submissions a month, so later arXiv counts are not comparable."
 
 
 def mid(q):
@@ -146,10 +149,11 @@ def line_chart(path, x, series, title, subtitle, fmt, ylim, base, end_fmt, note=
     for (key, name, color, ys), y_end, y_lab in zip(series, ends, labels_y):
         ax.plot([x[-1] + dt.timedelta(days=8), x_lab - dt.timedelta(days=6)], [y_end, y_lab], color=AXIS, linewidth=0.8)
         ax.text(x_lab, y_lab, f"{SHORT.get(key, name)}  {end_fmt(y_end)}", color=INK, fontsize=9, va="center")
-    fig.subplots_adjust(left=0.07, right=0.98, top=0.78, bottom=0.11)
+    fig.subplots_adjust(left=0.07, right=0.98, top=0.78, bottom=0.135)
     events(ax, ylim[1], EVENTS)
     header(fig, title, subtitle)
     fig.text(0.05, 0.02, SOURCES, fontsize=7.5, color=MUTED, ha="left")
+    fig.text(0.05, 0.07 if note else 0.045, ADVISORY, fontsize=8, color=INK2, ha="left")
     if note:
         fig.text(0.05, 0.045, note, fontsize=8, color=INK2, ha="left")
     fig.savefig(path, facecolor=SURFACE)
@@ -231,7 +235,7 @@ def math_charts(repo, out):
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t:,.0f}"))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b\n%Y"))
     ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 4, 7, 10)))
-    ax.set_xlim(dt.date(2024, 12, 20), dt.date(2026, 9, 30))
+    ax.set_xlim(dt.date(2024, 12, 20), dt.date(2026, 10, 25))
     for d, v in zip(months, papers):
         if d >= dt.date(2026, 6, 1) or d == dt.date(2025, 9, 15):
             ax.text(d, v + max(papers) * 0.015, f"{v:,}", ha="center", va="bottom", fontsize=8, color=INK)
@@ -240,6 +244,7 @@ def math_charts(repo, out):
     header(fig, "New arXiv mathematics papers per month",
            "Primary category math.*, counted in the month of the first version. Jan 2025 – Sep 2026.")
     fig.text(0.05, 0.02, "Source: arXiv OAI-PMH metadata (harvested 15 Oct 2026).", fontsize=7.5, color=MUTED)
+    fig.text(0.05, 0.045, ADVISORY, fontsize=8, color=INK2)
     fig.savefig(os.path.join(out, "fig4_math_monthly.png"), facecolor=SURFACE)
     plt.close(fig)
 
@@ -267,13 +272,14 @@ def math_charts(repo, out):
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
         ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
         ax.set_xlim(dt.date(2024, 12, 15), dt.date(2026, 11, 15))
-        for d in (dt.date(2026, 2, 5), dt.date(2026, 7, 24)):
+        for d in (dt.date(2026, 2, 5), dt.date(2026, 7, 24), dt.date(2026, 10, 1)):
             ax.axvline(d, color=MUTED, linewidth=1, linestyle=(0, (4, 3)), zorder=1)
         ax.set_title(title, loc="left", fontsize=11, color=INK, pad=16)
         ax.text(0, 1.02, sub, transform=ax.transAxes, fontsize=8.5, color=INK2, va="bottom")
     fig.subplots_adjust(left=0.07, right=0.97, top=0.8, bottom=0.08, hspace=0.62, wspace=0.18)
     header(fig, "What changed in arXiv mathematics papers",
-           "Monthly, Jan 2025 – Sep 2026. Dashed lines: Claude Opus 4.6 (5 Feb 2026) and Claude Opus 5 (24 Jul 2026).",
+           "Monthly, Jan 2025 – Sep 2026. Dashed lines: Claude Opus 4.6 (5 Feb 2026), Claude Opus 5 (24 Jul 2026), "
+           "arXiv cap (1 Oct 2026).",
            y=0.955)
     fig.text(0.05, 0.012, "Source: arXiv OAI-PMH metadata; keyword matching on title, abstract and comments.",
              fontsize=7.5, color=MUTED)
@@ -335,7 +341,7 @@ def cs_charts(repo, out):
     ax1.text(pos[-1], total[-1] + max(total) * 0.02, f"AI {share:.0%}", fontsize=8.5, color=INK, ha="center")
     handles, labels = ax1.get_legend_handles_labels()
     ax1.legend(handles[::-1], labels[::-1], loc="upper left", frameon=False, fontsize=9, labelcolor=INK2)
-    ax1.set_title("New arXiv computer-science papers per quarter", loc="left", fontsize=11, color=INK, pad=52)
+    ax1.set_title("New arXiv computer-science papers per quarter", loc="left", fontsize=11, color=INK, pad=64)
 
     style(ax2)
     base = lambda v: sum(val for q, val in zip(quarters, v) if q.startswith("2022-")) / 4
@@ -362,14 +368,15 @@ def cs_charts(repo, out):
     for (n, c, ys, lw), y_end, y_lab in zip(idx, ends, labels_y):
         ax2.plot([x[-1] + dt.timedelta(days=8), x_lab - dt.timedelta(days=6)], [y_end, y_lab], color=AXIS, linewidth=0.8)
         ax2.text(x_lab, y_lab, f"{n}  {y_end:.0f}", color=INK, fontsize=9, va="center")
-    ax2.set_title("Index, 2022 = 100 (physics and mathematics in grey)", loc="left", fontsize=11, color=INK, pad=52)
-    fig.subplots_adjust(left=0.05, right=0.98, top=0.70, bottom=0.12, wspace=0.12)
+    ax2.set_title("Index, 2022 = 100 (physics and mathematics in grey)", loc="left", fontsize=11, color=INK, pad=64)
+    fig.subplots_adjust(left=0.05, right=0.98, top=0.66, bottom=0.12, wspace=0.12)
     events(ax2, top * 1.12, EVENTS)
     header(fig, "Computer science with and without AI research",
            "AI research = primary category cs.AI, cs.LG, cs.CL, cs.CV, cs.NE or cs.MA, or another CS category whose "
            "title or abstract uses AI/ML vocabulary.", y=0.95)
     fig.text(0.05, 0.02, "Source: arXiv OAI-PMH metadata (harvested Oct 2026); physics and mathematics from arXiv "
              "yearly statistics. New papers per quarter, Q1 2020 – Q3 2026.", fontsize=7.5, color=MUTED)
+    fig.text(0.05, 0.045, ADVISORY, fontsize=8, color=INK2)
     fig.savefig(os.path.join(out, "fig7_cs_without_ai.png"), facecolor=SURFACE)
     plt.close(fig)
 
