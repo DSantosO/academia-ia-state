@@ -107,7 +107,7 @@ def main():
         keep = {int(x) for x in args[i + 1].split(",")}
         args = args[:i] + args[i + 2:]
     server, a, b, out = args[:4]
-    workers = int(args[4]) if len(args) > 4 else 6
+    workers = int(args[4]) if len(args) > 4 else 2
     fields = ["papers", "covid", "public", "public_noncovid", "papers_noncovid", "words_noncovid"]
     with ThreadPoolExecutor(workers) as ex:
         results = list(ex.map(lambda ym: harvest_month(server, ym), months(a, b, keep)))

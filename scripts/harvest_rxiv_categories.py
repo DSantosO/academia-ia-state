@@ -106,7 +106,7 @@ def months(a, b):
 def main():
     args = [x for x in sys.argv[1:] if x != "--counts"]
     server, a, b, out = args[:4]
-    workers = int(args[4]) if len(args) > 4 else 6
+    workers = int(args[4]) if len(args) > 4 else 2
     with ThreadPoolExecutor(workers) as ex:
         if "--counts" in sys.argv:
             jobs = [(ym, c) for ym in months(a, b) for c in BIORXIV_CATEGORIES]

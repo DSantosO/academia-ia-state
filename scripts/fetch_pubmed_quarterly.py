@@ -15,7 +15,7 @@ for y in range(2015, 2027):
         rng = f'("{y}/{STARTS[q]}"[edat] : "{y}/{ENDS[q]}"[edat])'
         rec = {"quarter": f"{y}-Q{q}"}
         for name, extra in (("all", ""), ("medline", " AND medline[sb]"), ("journal_article", ' AND "journal article"[pt]')):
-            url = ("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&rettype=count&retmode=json&term="
+            url = ("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&rettype=count&retmode=json&tool=academia-ia-state&term="
                    + urllib.parse.quote(rng + extra))
             for attempt in range(4):
                 try:

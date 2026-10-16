@@ -11,10 +11,10 @@ for a in $ARCHIVES; do
     for t in 1 2 3; do
       code=$(curl -sS --max-time 40 -A "$UA" -o "$f" -w "%{http_code}" "https://arxiv.org/year/$a/$y")
       [ "$code" = "200" ] && break
-      sleep $((t*3))
+      sleep $((t*15))
     done
     echo "$a $y $code"
-    sleep 3  # arXiv asks for at most one request every three seconds
+    sleep 15  # arXiv's robots.txt sets "Crawl-delay: 15" for these pages
   done
 done
 curl -sS --max-time 40 -A "$UA" -o "$OUT/monthly_submissions.csv" "https://arxiv.org/stats/get_monthly_submissions"

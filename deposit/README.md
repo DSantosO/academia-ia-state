@@ -66,6 +66,16 @@ and `docs/figures/plos/` byte for byte. Counts change slightly when the sources 
 | PubMed (NCBI E-utilities) | Free; the PubMed baseline README asks users to acknowledge the National Library of Medicine and not to imply endorsement ([README](https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/README.txt)). E-utilities allow about three requests per second without a key. | Quarterly counts only |
 | Kobak et al. (2025) excess-vocabulary list | MIT licence ([berenslab/llm-excess-vocab](https://github.com/berenslab/llm-excess-vocab)); cite Kobak, González-Márquez, Horvát & Lause, *Science Advances* 11(27): eadt3813 (2025) | The 407 words they annotate as "style", with part of speech |
 
+### Request pacing (what the scripts do, and what was done for this package)
+
+| Source and rule | Scripts now | Retrievals behind this package |
+|---|---|---|
+| arXiv statistics pages (`arxiv.org/year/...`): `robots.txt` sets `Crawl-delay: 15` and allows `/year` | `fetch_arxiv_years.sh` waits 15 s between requests | Retrieved on 15 October 2026 with a 1 s pause, shorter than the crawl delay. The script was corrected afterwards. |
+| arXiv OAI-PMH (`oaipmh.arxiv.org`): at most one request every 3 s, one connection ([API terms](https://info.arxiv.org/help/api/tou.html)) | `harvest_arxiv_oai.py` waits 3 s after each response, one set at a time | One connection at a time. Each response took 5–15 s, so requests were at least 8 s apart, whatever the pause (2 s in early runs, 3 s later). |
+| bioRxiv and medRxiv API (`api.biorxiv.org`): no stated limit, no `robots.txt` | 2 months in parallel by default, one request at a time per month, 0.3 s pause in the record and category harvesters | 2–4 parallel connections |
+| OSF API v2: COS Terms of Use forbid "unreasonable traffic loads"; the osfr package documents 100 unauthenticated requests per hour | `osf_quarterly.py`, `osf_check_quarter.py` and `osf_continuity.py` wait 36 s between requests | `osf_quarterly.csv` was retrieved with 0.3–0.5 s pauses (a few hundred requests in total), faster than that documented rate; no request was refused. `osf_continuity.csv` was retrieved at the 36 s pace. |
+| PubMed E-utilities: at most 3 requests per second without an API key | `fetch_pubmed_quarterly.py` waits 0.4 s and identifies itself with `tool=`; no e-mail address is sent | Same as now |
+
 Acknowledgement: this work used arXiv's open-access interoperability and data from the National Library of Medicine,
 bioRxiv, medRxiv and the Open Science Framework. None of them endorses it.
 
