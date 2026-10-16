@@ -23,7 +23,7 @@
 |---|---|---|---|
 | Master, main text with Boxes 1–2 | 7,000 words | 6,977 | Counts the empty Section 6 at its reserve of 700 words. The empty Section 4d has no text and no reserve. Headroom is 23 words, so the [AUTHOR] passages need offsetting cuts (the cheapest are listed in the file's header). |
 | Master, references | none | 149 | Draft 1 had 173. |
-| EMBO version, main text with both boxes | 3,500 words | 2,959 | Counts Recommendations at its reserve of 350 words. Headroom is 541 words. |
+| EMBO version, main text with both boxes | 3,500 words | 2,969 | Counts Recommendations at its reserve of 350 words. Headroom is 531 words. |
 | EMBO version, references | 15 | 15 | Two preprints. |
 | EMBO version, standfirst | about 60 words | 63 | |
 | Correspondence, text | under 200 words | 186 | The title adds 10 words. |
@@ -385,7 +385,7 @@ These were decided by the author, not proposed by the review. They are recorded 
   - **The Section 6 seed:** "Count less, read what is counted" is CoARA's programme.
 
   These stay as they are for now, as instructed.
-- **Word budget:** none was reserved. In the master, any text in Section 4d needs offsetting cuts (headroom is 23 words); the EMBO version has 541 words of headroom.
+- **Word budget:** none was reserved. In the master, any text in Section 4d needs offsetting cuts (headroom is 23 words); the EMBO version has 531 words of headroom.
 
 **7. The author's field: physics and biology.**
 - **Where:** stated in ¶0.3b ("a researcher in physics and biology, an insider to academic evaluation and an outsider to metascience") and in the EMBO opening, paragraph 2. Draft 1's "[AUTHOR: field]" slot had been dropped in draft 2.
