@@ -247,6 +247,21 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
 - **Skeleton and analysis plan:** `paper/plos_one/skeleton.md`.
 - **Title (author's choice):** "Generative AI is eroding publication counts as a measure of scientific work: evidence from 1.9 million preprints". N is provisional. No question in the title.
 
+## Process for the PLOS ONE article (author, 16 Oct 2026)
+
+1. **First draft** using everything we already have. The coordinator asks the companion chat to adjust figures where needed.
+2. **Statistics:** the author wants "as much statistics as we can, but with sense, not only to fill".
+   - Formal analyses run in the companion chat. They cover rate ratios with confidence intervals, event studies, placebo tests, break tests, negative controls, leave-one-category-out checks, precision and power, and the separation of confirmatory from exploratory tests.
+   - Two further analyses: heavy producers per author, in mathematics and in physics; and, if feasible, the prevalence of AI-writing markers by experimental intensity.
+3. **Implications (D3):** use the shortlist S1–S7 from research note 7, credited to its sources.
+4. **Review:** four reviewers with different perspectives, two rounds of review and revision. The four:
+   - statistics and causal inference;
+   - scientometrics and preprint data;
+   - an experimental scientist (physics and biology);
+   - a PLOS ONE academic editor.
+5. **Deliver:** the last version and all reviews.
+6. **Usage limits:** removed by the author.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
