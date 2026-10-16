@@ -1,0 +1,284 @@
+[
+ {
+  "quarter": "2015-Q1",
+  "all": 263545,
+  "medline": 212725,
+  "journal_article": 242818
+ },
+ {
+  "quarter": "2015-Q2",
+  "all": 277232,
+  "medline": 226294,
+  "journal_article": 255486
+ },
+ {
+  "quarter": "2015-Q3",
+  "all": 275883,
+  "medline": 221322,
+  "journal_article": 254631
+ },
+ {
+  "quarter": "2015-Q4",
+  "all": 274990,
+  "medline": 218326,
+  "journal_article": 254315
+ },
+ {
+  "quarter": "2016-Q1",
+  "all": 291419,
+  "medline": 228971,
+  "journal_article": 269202
+ },
+ {
+  "quarter": "2016-Q2",
+  "all": 281562,
+  "medline": 219573,
+  "journal_article": 261335
+ },
+ {
+  "quarter": "2016-Q3",
+  "all": 268247,
+  "medline": 200261,
+  "journal_article": 250339
+ },
+ {
+  "quarter": "2016-Q4",
+  "all": 295487,
+  "medline": 228528,
+  "journal_article": 276421
+ },
+ {
+  "quarter": "2017-Q1",
+  "all": 279369,
+  "medline": 212500,
+  "journal_article": 261050
+ },
+ {
+  "quarter": "2017-Q2",
+  "all": 280396,
+  "medline": 214785,
+  "journal_article": 261692
+ },
+ {
+  "quarter": "2017-Q3",
+  "all": 284481,
+  "medline": 212257,
+  "journal_article": 266304
+ },
+ {
+  "quarter": "2017-Q4",
+  "all": 291467,
+  "medline": 218524,
+  "journal_article": 272548
+ },
+ {
+  "quarter": "2018-Q1",
+  "all": 296374,
+  "medline": 217989,
+  "journal_article": 276611
+ },
+ {
+  "quarter": "2018-Q2",
+  "all": 295869,
+  "medline": 218063,
+  "journal_article": 276276
+ },
+ {
+  "quarter": "2018-Q3",
+  "all": 290984,
+  "medline": 213275,
+  "journal_article": 273133
+ },
+ {
+  "quarter": "2018-Q4",
+  "all": 297729,
+  "medline": 221998,
+  "journal_article": 278804
+ },
+ {
+  "quarter": "2019-Q1",
+  "all": 308245,
+  "medline": 229356,
+  "journal_article": 287498
+ },
+ {
+  "quarter": "2019-Q2",
+  "all": 313171,
+  "medline": 230407,
+  "journal_article": 292072
+ },
+ {
+  "quarter": "2019-Q3",
+  "all": 302863,
+  "medline": 220808,
+  "journal_article": 282473
+ },
+ {
+  "quarter": "2019-Q4",
+  "all": 318786,
+  "medline": 234149,
+  "journal_article": 296337
+ },
+ {
+  "quarter": "2020-Q1",
+  "all": 319715,
+  "medline": 229428,
+  "journal_article": 297244
+ },
+ {
+  "quarter": "2020-Q2",
+  "all": 356116,
+  "medline": 261245,
+  "journal_article": 325171
+ },
+ {
+  "quarter": "2020-Q3",
+  "all": 388834,
+  "medline": 279872,
+  "journal_article": 359267
+ },
+ {
+  "quarter": "2020-Q4",
+  "all": 379035,
+  "medline": 263613,
+  "journal_article": 351945
+ },
+ {
+  "quarter": "2021-Q1",
+  "all": 387203,
+  "medline": 271882,
+  "journal_article": 358997
+ },
+ {
+  "quarter": "2021-Q2",
+  "all": 389177,
+  "medline": 267360,
+  "journal_article": 361589
+ },
+ {
+  "quarter": "2021-Q3",
+  "all": 392304,
+  "medline": 262182,
+  "journal_article": 365581
+ },
+ {
+  "quarter": "2021-Q4",
+  "all": 374117,
+  "medline": 248397,
+  "journal_article": 349560
+ },
+ {
+  "quarter": "2022-Q1",
+  "all": 379207,
+  "medline": 253034,
+  "journal_article": 353978
+ },
+ {
+  "quarter": "2022-Q2",
+  "all": 383901,
+  "medline": 254031,
+  "journal_article": 358169
+ },
+ {
+  "quarter": "2022-Q3",
+  "all": 385321,
+  "medline": 254867,
+  "journal_article": 360796
+ },
+ {
+  "quarter": "2022-Q4",
+  "all": 391954,
+  "medline": 252018,
+  "journal_article": 367240
+ },
+ {
+  "quarter": "2023-Q1",
+  "all": 390793,
+  "medline": 243331,
+  "journal_article": 364664
+ },
+ {
+  "quarter": "2023-Q2",
+  "all": 379704,
+  "medline": 238098,
+  "journal_article": 351605
+ },
+ {
+  "quarter": "2023-Q3",
+  "all": 368340,
+  "medline": 229720,
+  "journal_article": 338659
+ },
+ {
+  "quarter": "2023-Q4",
+  "all": 361034,
+  "medline": 230235,
+  "journal_article": 334312
+ },
+ {
+  "quarter": "2024-Q1",
+  "all": 390608,
+  "medline": 251011,
+  "journal_article": 362801
+ },
+ {
+  "quarter": "2024-Q2",
+  "all": 379046,
+  "medline": 242205,
+  "journal_article": 351004
+ },
+ {
+  "quarter": "2024-Q3",
+  "all": 394364,
+  "medline": 241014,
+  "journal_article": 367169
+ },
+ {
+  "quarter": "2024-Q4",
+  "all": 382966,
+  "medline": 221080,
+  "journal_article": 358281
+ },
+ {
+  "quarter": "2025-Q1",
+  "all": 415327,
+  "medline": 239568,
+  "journal_article": 390716
+ },
+ {
+  "quarter": "2025-Q2",
+  "all": 405876,
+  "medline": 233816,
+  "journal_article": 380110
+ },
+ {
+  "quarter": "2025-Q3",
+  "all": 441109,
+  "medline": 244765,
+  "journal_article": 412884
+ },
+ {
+  "quarter": "2025-Q4",
+  "all": 437756,
+  "medline": 245234,
+  "journal_article": 410505
+ },
+ {
+  "quarter": "2026-Q1",
+  "all": 434114,
+  "medline": 231285,
+  "journal_article": 406206
+ },
+ {
+  "quarter": "2026-Q2",
+  "all": 457273,
+  "medline": 230631,
+  "journal_article": 428657
+ },
+ {
+  "quarter": "2026-Q3",
+  "all": 431129,
+  "medline": 164058,
+  "journal_article": 402404
+ }
+]
