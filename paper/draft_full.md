@@ -1,36 +1,39 @@
 <!--
 WORD COUNTS (draft 2, 16 Oct 2026)
 Method: whitespace-separated tokens that contain a letter, digit, €, $ or &, with HTML comments removed; in-text citations are counted.
-'Prose' also removes the editorial markers ([RECHECK...], [AUTHOR: ...], [CITATION NEEDED: ...], [Zenodo DOI], [to be minted]); 'raw' keeps them.
+'Prose' also removes the editorial markers ([RECHECK...], [AUTHOR: ...], [CITATION NEEDED: ...], [PLACEHOLDER: ...], [Zenodo DOI], [to be minted]); 'raw' keeps them.
 Counted by script (scratchpad wc.py) on 16 Oct 2026.
 
 | Section | Prose | Raw |
 |---|---|---|
-| Introduction | 512 | 544 |
+| Introduction | 529 | 561 |
 | 1. How the system works | 409 | 431 |
-| 2. AI makes what the system counts cheap to write | 1,208 | 1,277 |
-| §2 subsection: Misuse is the visible tip | 242 | 248 |
-| 3. The ideal: what AI could do for science | 517 | 532 |
-| 4a. The evidence | 464 | 464 |
-| 4b. The hypothesis | 354 | 402 |
-| 4c. Governance as rationing | 1,005 | 1,085 |
-| 5. The current trajectory: who owns the tools, and what they learn from users | 903 | 1,000 |
-| Conclusion | 356 | 406 |
-| Box 1: How this paper was made | 570 | 764 |
-| Box 2: How this hypothesis could be tested | 385 | 411 |
-| **Main text incl. Boxes 1–2** | **6,925** | **7,564** |
+| 2. AI makes what the system counts cheap to write | 1,103 | 1,172 |
+| §2 subsection: Misuse is the visible tip | 241 | 247 |
+| 3. The ideal: what AI could do for science | 507 | 522 |
+| 4a. The evidence | 439 | 439 |
+| 4b. The hypothesis | 318 | 366 |
+| 4c. Governance as rationing | 878 | 951 |
+| 4d. What DORA and CoARA miss (placeholder: no text, no reserve) | 0 | 12 |
+| 5. The current trajectory: who owns the tools, and what they learn from users | 782 | 879 |
+| 6. Recommendations (placeholder: reserve) | 700 | 700 |
+| Conclusion | 132 | 166 |
+| Box 1: How this paper was made | 537 | 731 |
+| Box 2: How this hypothesis could be tested | 392 | 418 |
+| **Main text incl. Boxes 1–2** | **6,967** | **7,595** |
 
-Limit: <=7,000 for the main text incl. Boxes 1-2. Headroom: 75 words. Filling the [AUTHOR] slots (about 15 in the main text and boxes) will need offsetting cuts; the cheapest are ¶4c.4 (China, ~70), ¶5.3 (licensing and Bartz, ~70) and ¶1.1 (~115), all master-only or 3,800-only paragraphs.
+Limit: <=7,000 for the main text incl. Boxes 1-2, with Section 6 counted at its reserve of 700 words (author's decision, 16 Oct 2026). Headroom: 33 words. Filling the [AUTHOR] slots (about 15 in the main text and boxes) will need offsetting cuts; the cheapest remaining are ¶5.3 (licensing and Bartz, ~70), ¶3.2 (Swanson, ~90) and ¶1.1 (~130), all master-only or 3,800-only paragraphs.
 
 Excluded from the limit:
 - Standfirst: 133
+- Section 6 seed list (not counted; the section is counted at its reserve): 484 prose / 517 raw
 - Table 1: Limits on submission and related measures, 2025–2026: 813 prose / 828 raw
 - Figure captions: 1332 prose / 1387 raw
 - AI-use statement: 74 prose / 102 raw
 - Competing interests: 39 prose / 62 raw
 - Author contributions (CRediT): 61 prose / 65 raw
 - Data and process availability: 189 prose / 264 raw
-- References: 161 entries (draft 1: 173)
+- References: 149 entries (draft 1: 173)
 -->
 
 <!--
@@ -45,10 +48,11 @@ TITLE ALTERNATIVES [AUTHOR: choose]
 
 <!--
 HOW TO READ THIS FILE (draft 2, 16 Oct 2026)
-- Master version (Zenodo preprint; Minerva fallback). Draft 2 was revised by an AI agent from draft 1 after: the internal review (paper/reviews/referee_report.md; point-by-point responses in paper/reviews/response_to_reviews.md); the completed citation audit (paper/reviews/citation_audit.md), whose replacement wording is used throughout; the author's decisions of 16 Oct 2026 (a misuse subsection at the end of Section 2; Blekhman 2026 extended explicitly; the arXiv mathematics panel as a main display item); and the author's companion analysis (Figures 3 and 4; numbers confirmed at commit 41f795d). Not yet revised by the author.
+- Master version (Zenodo preprint; Minerva fallback). Draft 2 was revised by an AI agent from draft 1 after: the internal review (paper/reviews/referee_report.md; point-by-point responses in paper/reviews/response_to_reviews.md); the completed citation audit (paper/reviews/citation_audit.md), whose replacement wording is used throughout; the author's decisions of 16 Oct 2026 (a misuse subsection at the end of Section 2; Blekhman 2026 extended explicitly; the arXiv mathematics panel as a main display item; Kusumegi et al.'s output gain dropped; an empty Section 4d for a critique of DORA and CoARA; a Section 6, Recommendations, still to be written, with 700 words reserved; the author's field, physics and biology); and the author's companion analysis (Figures 3 and 4; numbers confirmed at commit 41f795d). Not yet revised by the author.
+- Placeholders: Section 4d has no text and no word reserve. Section 6 holds a seed list (the proposals that draft 2 made elsewhere, with their sources); the word count counts it at its 700-word reserve, not at the length of the seeds.
 - Cut tags: each paragraph is preceded by <!- - KEEP-3800 - -> (all versions), <!- - CUT-3500 - -> (master and 3,800 only) or <!- - CUT-3800 - -> (master only), and a second comment with the paragraph ID and notes. The EMBO Reports version is no longer cut from this file: it is a separate rewrite (paper/draft_embo.md). The tags still guide the ~3,800-word PLOS Biology version, framed as an extension of Blekhman (2026).
-- Paragraph IDs new in draft 2: ¶2.8 (congestion; was ¶2.6b), ¶2.9–¶2.10 (misuse; replace ¶2.6), ¶4c.2b (what caps restore), ¶4c.3b (automated evaluation), ¶5.2b (confidentiality and the two account tiers). Removed: ¶0.4 (its evidence note now ends ¶0.3b), ¶1.4 (one clause now in ¶1.2), ¶4a.3 (one clause now in ¶4a.2), ¶5.5 (half a sentence now in ¶5.1). ¶4c.4 (China) now follows ¶4c.1; ¶6.3 now precedes ¶6.2, so that the essay ends in the author's own words.
-- Markers: [RECHECK] without a note = one of the five claims the audit could not verify (R47 here; R86, R87 and R89 in the Figure 2 caption; R04, Butler 2003, was cut). [RECHECK: ...] with a note = text new in draft 2 that the audit did not check, or a point that needs a source not in the notes. [AUTHOR: ...] = only the author can supply this. [CITATION NEEDED: ...] = the point needs a source that is not in the research notes.
+- Paragraph IDs new in draft 2: ¶2.8 (congestion; was ¶2.6b), ¶2.9–¶2.10 (misuse; replace ¶2.6), ¶4c.2b (what caps restore), ¶4c.3b (automated evaluation), ¶5.2b (confidentiality and the two account tiers), ¶C.1 (the conclusion; was ¶6.2). Removed or moved: ¶0.4 (its evidence note now ends ¶0.3b), ¶1.4 (one clause now in ¶1.2), ¶4a.3 (one clause now in ¶4a.2), ¶4c.4 (China; one clause now in ¶4c.1), ¶5.5 (half a sentence now in ¶5.1), ¶6.1 (the ranked proposals; now seeds in Section 6), ¶6.3 (cut).
+- Markers: [RECHECK] without a note = one of the five claims the audit could not verify (R86, R87 and R89 in the Figure 2 caption; R04, Butler 2003, and R47, Shu et al. 2022, were cut with their sentences). [RECHECK: ...] with a note = text new in draft 2 that the audit did not check, or a point that needs a source not in the notes. [AUTHOR: ...] = only the author can supply this. [CITATION NEEDED: ...] = the point needs a source that is not in the research notes. [PLACEHOLDER: ...] = a section still to be written.
 - Preprint labels are in the reference list only (¶0.3b says so). Model identifiers are never written; the figure files label one date marker with an Anthropic model's name (see the captions of Figures 3 and 4).
 - Figures are numbered in order of first citation: Figure 1 (¶0.2), Figure 2 (¶0.3), Figures 3 and 4 (¶2.8); Figure S1 is optional.
 - Word counts exclude HTML comments. "Prose" excludes all bracketed editorial markers; "raw" includes them.
