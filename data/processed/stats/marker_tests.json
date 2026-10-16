@@ -1,0 +1,812 @@
+{
+ "core_words": [
+  "accentuates",
+  "acknowledges",
+  "acknowledging",
+  "addresses",
+  "adept",
+  "adhered",
+  "adhering",
+  "advancement",
+  "advancements",
+  "advancing",
+  "advocates",
+  "advocating",
+  "affirming",
+  "afflicted",
+  "aiding",
+  "akin",
+  "align",
+  "aligning",
+  "aligns",
+  "amid",
+  "amidst",
+  "announced",
+  "apologizes",
+  "attains",
+  "augmenting",
+  "avenue",
+  "avenues",
+  "bolster",
+  "bolstered",
+  "bolstering",
+  "burgeoning",
+  "capitalizing",
+  "categorizes",
+  "categorizing",
+  "combating",
+  "commendable",
+  "compelling",
+  "complicates",
+  "complicating",
+  "comprehend",
+  "comprehending",
+  "consolidates",
+  "correlating",
+  "crafted",
+  "crafting",
+  "culminating",
+  "customizing",
+  "declare",
+  "declared",
+  "deductively",
+  "delineates",
+  "delve",
+  "delved",
+  "delves",
+  "delving",
+  "dependability",
+  "dependable",
+  "detailing",
+  "detrimentally",
+  "diminishes",
+  "diminishing",
+  "discern",
+  "discerned",
+  "discernible",
+  "discerning",
+  "displaying",
+  "disrupts",
+  "distinctions",
+  "distinctive",
+  "easing",
+  "elevate",
+  "elevates",
+  "elevating",
+  "elucidates",
+  "elucidating",
+  "embracing",
+  "emerges",
+  "emphasises",
+  "emphasising",
+  "emphasize",
+  "emphasizes",
+  "emphasizing",
+  "employs",
+  "empowers",
+  "emulating",
+  "emulation",
+  "encapsulates",
+  "encompass",
+  "encompassed",
+  "encompasses",
+  "encompassing",
+  "endangering",
+  "endeavors",
+  "endeavours",
+  "enduring",
+  "enhancements",
+  "ensuring",
+  "equipping",
+  "escalating",
+  "essentials",
+  "evaluates",
+  "exacerbating",
+  "examines",
+  "exceeding",
+  "excels",
+  "exceptional",
+  "exceptionally",
+  "exerting",
+  "expedite",
+  "expediting",
+  "explores",
+  "featuring",
+  "fight",
+  "formidable",
+  "fostering",
+  "fosters",
+  "foundational",
+  "furnish",
+  "garnered",
+  "garnering",
+  "gauged",
+  "grappling",
+  "groundbreaking",
+  "groundwork",
+  "hardest",
+  "harness",
+  "harnesses",
+  "harnessing",
+  "heighten",
+  "heightened",
+  "hinder",
+  "hinges",
+  "hinting",
+  "holds",
+  "illuminates",
+  "illuminating",
+  "imbalances",
+  "impactful",
+  "impacting",
+  "impede",
+  "impeding",
+  "imperative",
+  "impressive",
+  "inadequately",
+  "incorporates",
+  "inquiries",
+  "interconnectedness",
+  "intricacies",
+  "intricate",
+  "intricately",
+  "introduces",
+  "invaluable",
+  "investigates",
+  "juxtaposed",
+  "leverages",
+  "merges",
+  "meticulous",
+  "meticulously",
+  "midst",
+  "multifaceted",
+  "necessitate",
+  "necessitates",
+  "necessitating",
+  "necessity",
+  "notable",
+  "noteworthy",
+  "nuanced",
+  "nuances",
+  "optimizing",
+  "orchestrating",
+  "outlines",
+  "overlook",
+  "overlooking",
+  "overwhelmed",
+  "paving",
+  "pinpoint",
+  "pinpointed",
+  "pinpointing",
+  "pioneering",
+  "pioneers",
+  "poised",
+  "pose",
+  "posed",
+  "poses",
+  "posing",
+  "postponed",
+  "preserving",
+  "pressing",
+  "propelling",
+  "realizes",
+  "realm",
+  "realms",
+  "recognizing",
+  "refine",
+  "refines",
+  "refining",
+  "reframing",
+  "renowned",
+  "rethink",
+  "revolutionize",
+  "revolutionizing",
+  "revolves",
+  "scrutinize",
+  "scrutinized",
+  "scrutinizing",
+  "seamless",
+  "seamlessly",
+  "seeks",
+  "serving",
+  "shedding",
+  "showcased",
+  "showcases",
+  "showcasing",
+  "signifying",
+  "solidify",
+  "spanned",
+  "spurred",
+  "stands",
+  "statement",
+  "stemming",
+  "strategically",
+  "streamline",
+  "streamlined",
+  "streamlines",
+  "streamlining",
+  "struggle",
+  "substantiated",
+  "substantiates",
+  "surged",
+  "surmount",
+  "surpass",
+  "surpassed",
+  "surpasses",
+  "surpassing",
+  "swift",
+  "swiftly",
+  "thorough",
+  "transformative",
+  "uncharted",
+  "uncovering",
+  "underexplored",
+  "underscore",
+  "underscored",
+  "underscores",
+  "underscoring",
+  "unlocking",
+  "unparalleled",
+  "unraveling",
+  "unveil",
+  "unveiled",
+  "unveiling",
+  "unveils",
+  "uphold",
+  "upholding",
+  "urging",
+  "utilizes",
+  "verifies",
+  "versatility",
+  "wandering",
+  "warranting",
+  "yielding"
+ ],
+ "baseline_abstracts": 41270,
+ "threshold": 0.005,
+ "rates": {
+  "biorxiv": {
+   "mixed": {
+    "2019": {
+     "abstracts": 2342,
+     "markers_per_100": 28.095644748078566,
+     "ratio_to_2019_2022": 0.9050526798841416
+    },
+    "2020": {
+     "abstracts": 2424,
+     "markers_per_100": 30.445544554455445,
+     "ratio_to_2019_2022": 0.9807506443298969
+    },
+    "2021": {
+     "abstracts": 2590,
+     "markers_per_100": 32.54826254826255,
+     "ratio_to_2019_2022": 1.04848607351829
+    },
+    "2022": {
+     "abstracts": 2643,
+     "markers_per_100": 32.727960650775636,
+     "ratio_to_2019_2022": 1.0542747375873247
+    },
+    "2023": {
+     "abstracts": 2862,
+     "markers_per_100": 47.58909853249476,
+     "ratio_to_2019_2022": 1.533000632172729
+    },
+    "2024": {
+     "abstracts": 3108,
+     "markers_per_100": 60.97168597168597,
+     "ratio_to_2019_2022": 1.964097577419098
+    },
+    "2025": {
+     "abstracts": 3512,
+     "markers_per_100": 64.26537585421413,
+     "ratio_to_2019_2022": 2.070198109427471
+    },
+    "2026": {
+     "abstracts": 3934,
+     "markers_per_100": 44.63650228774784,
+     "ratio_to_2019_2022": 1.437887842703578
+    },
+    "baseline_2019_2022_per_100": 31.043104310431044
+   },
+   "wet_lab": {
+    "2019": {
+     "abstracts": 1938,
+     "markers_per_100": 25.799793601651185,
+     "ratio_to_2019_2022": 0.9307975389569316
+    },
+    "2020": {
+     "abstracts": 2538,
+     "markers_per_100": 25.728920409771472,
+     "ratio_to_2019_2022": 0.928240596308544
+    },
+    "2021": {
+     "abstracts": 2650,
+     "markers_per_100": 29.358490566037737,
+     "ratio_to_2019_2022": 1.0591871853040447
+    },
+    "2022": {
+     "abstracts": 2716,
+     "markers_per_100": 29.34462444771723,
+     "ratio_to_2019_2022": 1.0586869274722617
+    },
+    "2023": {
+     "abstracts": 3065,
+     "markers_per_100": 42.08809135399674,
+     "ratio_to_2019_2022": 1.5184420641716858
+    },
+    "2024": {
+     "abstracts": 3431,
+     "markers_per_100": 59.54532206353833,
+     "ratio_to_2019_2022": 2.148259016676482
+    },
+    "2025": {
+     "abstracts": 4011,
+     "markers_per_100": 63.62503116429818,
+     "ratio_to_2019_2022": 2.2954455891459773
+    },
+    "2026": {
+     "abstracts": 4183,
+     "markers_per_100": 43.43772412144394,
+     "ratio_to_2019_2022": 1.5671337272846453
+    },
+    "baseline_2019_2022_per_100": 27.717943507417193
+   },
+   "computational": {
+    "2019": {
+     "abstracts": 772,
+     "markers_per_100": 37.17616580310881,
+     "ratio_to_2019_2022": 0.9619189030943711
+    },
+    "2020": {
+     "abstracts": 864,
+     "markers_per_100": 37.5,
+     "ratio_to_2019_2022": 0.9702979876160991
+    },
+    "2021": {
+     "abstracts": 891,
+     "markers_per_100": 38.38383838383838,
+     "ratio_to_2019_2022": 0.993166963755199
+    },
+    "2022": {
+     "abstracts": 816,
+     "markers_per_100": 41.544117647058826,
+     "ratio_to_2019_2022": 1.0749379666727372
+    },
+    "2023": {
+     "abstracts": 898,
+     "markers_per_100": 73.16258351893096,
+     "ratio_to_2019_2022": 1.8930535348590263
+    },
+    "2024": {
+     "abstracts": 1065,
+     "markers_per_100": 98.87323943661971,
+     "ratio_to_2019_2022": 2.5583068067849823
+    },
+    "2025": {
+     "abstracts": 1227,
+     "markers_per_100": 93.31703341483292,
+     "ratio_to_2019_2022": 2.4145421262057774
+    },
+    "2026": {
+     "abstracts": 1529,
+     "markers_per_100": 63.30935251798561,
+     "ratio_to_2019_2022": 1.6381049958794573
+    },
+    "baseline_2019_2022_per_100": 38.647921029015855
+   }
+  },
+  "arxiv": {
+   "theory": {
+    "2019": {
+     "abstracts": 12684,
+     "markers_per_100": 14.183222958057396,
+     "ratio_to_2019_2022": 0.9431959391241217
+    },
+    "2020": {
+     "abstracts": 13057,
+     "markers_per_100": 15.011105154323351,
+     "ratio_to_2019_2022": 0.9982507829984901
+    },
+    "2021": {
+     "abstracts": 13378,
+     "markers_per_100": 14.830318433248618,
+     "ratio_to_2019_2022": 0.9862283180291733
+    },
+    "2022": {
+     "abstracts": 13676,
+     "markers_per_100": 16.057326703714537,
+     "ratio_to_2019_2022": 1.0678253726194848
+    },
+    "2023": {
+     "abstracts": 13826,
+     "markers_per_100": 23.260523651092146,
+     "ratio_to_2019_2022": 1.5468438671865599
+    },
+    "2024": {
+     "abstracts": 14542,
+     "markers_per_100": 32.56085820382341,
+     "ratio_to_2019_2022": 2.165323729526208
+    },
+    "2025": {
+     "abstracts": 15517,
+     "markers_per_100": 35.232325836179676,
+     "ratio_to_2019_2022": 2.342978514323096
+    },
+    "2026": {
+     "abstracts": 13359,
+     "markers_per_100": 30.840631783816153,
+     "ratio_to_2019_2022": 2.050927264172533
+    },
+    "baseline_2019_2022_per_100": 15.037408845534616
+   },
+   "experiment": {
+    "2019": {
+     "abstracts": 1283,
+     "markers_per_100": 11.535463756819953,
+     "ratio_to_2019_2022": 0.9899350480644322
+    },
+    "2020": {
+     "abstracts": 1136,
+     "markers_per_100": 10.035211267605634,
+     "ratio_to_2019_2022": 0.8611883802816901
+    },
+    "2021": {
+     "abstracts": 1233,
+     "markers_per_100": 10.62449310624493,
+     "ratio_to_2019_2022": 0.9117585834009191
+    },
+    "2022": {
+     "abstracts": 1497,
+     "markers_per_100": 13.827655310621243,
+     "ratio_to_2019_2022": 1.1866432865731462
+    },
+    "2023": {
+     "abstracts": 1403,
+     "markers_per_100": 17.74768353528154,
+     "ratio_to_2019_2022": 1.523047042052744
+    },
+    "2024": {
+     "abstracts": 1436,
+     "markers_per_100": 24.860724233983287,
+     "ratio_to_2019_2022": 2.1334644846796658
+    },
+    "2025": {
+     "abstracts": 1565,
+     "markers_per_100": 34.37699680511182,
+     "ratio_to_2019_2022": 2.950119275825346
+    },
+    "2026": {
+     "abstracts": 1279,
+     "markers_per_100": 29.945269741985925,
+     "ratio_to_2019_2022": 2.5698032316914254
+    },
+    "baseline_2019_2022_per_100": 11.652748106428433
+   }
+  },
+  "medrxiv": {
+   "all": {
+    "2019": {
+     "abstracts": 913,
+     "markers_per_100": 23.877327491785323,
+     "ratio_to_2019_2022": 0.8991158547083684
+    },
+    "2020": {
+     "abstracts": 4732,
+     "markers_per_100": 24.78867286559594,
+     "ratio_to_2019_2022": 0.93343314063537
+    },
+    "2021": {
+     "abstracts": 5673,
+     "markers_per_100": 25.753569539925966,
+     "ratio_to_2019_2022": 0.9697669346223216
+    },
+    "2022": {
+     "abstracts": 6768,
+     "markers_per_100": 28.826832151300238,
+     "ratio_to_2019_2022": 1.085492580238218
+    },
+    "2023": {
+     "abstracts": 9146,
+     "markers_per_100": 45.22195495298491,
+     "ratio_to_2019_2022": 1.7028612893601605
+    },
+    "2024": {
+     "abstracts": 11521,
+     "markers_per_100": 72.59786476868328,
+     "ratio_to_2019_2022": 2.733718472218209
+    },
+    "2025": {
+     "abstracts": 13918,
+     "markers_per_100": 71.83503376921972,
+     "ratio_to_2019_2022": 2.704993588902994
+    },
+    "2026": {
+     "abstracts": 12529,
+     "markers_per_100": 49.75656476973422,
+     "ratio_to_2019_2022": 1.8736148874149763
+    },
+    "baseline_2019_2022_per_100": 26.556452504699767
+   }
+  }
+ },
+ "did": {
+  "biorxiv_computational_vs_wet_lab": {
+   "2019": {
+    "rr": 1.021084910006994,
+    "lo": 0.8033446759229829,
+    "hi": 1.2978419160444492,
+    "p": 0.8646020439638353
+   },
+   "2020": {
+    "rr": 1.0298059183479331,
+    "lo": 0.8341737121781424,
+    "hi": 1.2713182086442378,
+    "p": 0.7846738040152939
+   },
+   "2021": {
+    "rr": 0.9232794797029044,
+    "lo": 0.7482011312052457,
+    "hi": 1.1393259941578784,
+    "p": 0.4568186217936566
+   },
+   "2023": {
+    "rr": 1.2177179150935797,
+    "lo": 0.9255904535637096,
+    "hi": 1.6020443113156948,
+    "p": 0.15928140569902993
+   },
+   "2024": {
+    "rr": 1.1686511535242905,
+    "lo": 0.94730259877143,
+    "hi": 1.4417204390707987,
+    "p": 0.1457543684992273
+   },
+   "2025": {
+    "rr": 1.0374389250620784,
+    "lo": 0.772254512451905,
+    "hi": 1.393684990997045,
+    "p": 0.8071989979966364
+   },
+   "2026": {
+    "rr": 1.0251115805675692,
+    "lo": 0.8327568547153181,
+    "hi": 1.2618974514151302,
+    "p": 0.8150516453197264
+   }
+  },
+  "arxiv_theory_vs_experiment": {
+   "2019": {
+    "rr": 1.054361489440665,
+    "lo": 0.6291741398256125,
+    "hi": 1.7668846827106721,
+    "p": 0.8407280924316396
+   },
+   "2020": {
+    "rr": 1.2800470804429795,
+    "lo": 0.8195546124611119,
+    "hi": 1.9992816869520624,
+    "p": 0.2777965196269795
+   },
+   "2021": {
+    "rr": 1.1968221838465287,
+    "lo": 0.8213385309959197,
+    "hi": 1.7439621857388423,
+    "p": 0.3496035507258254
+   },
+   "2023": {
+    "rr": 1.1266423652571662,
+    "lo": 0.7373899192159755,
+    "hi": 1.721372893925456,
+    "p": 0.5813814536226329
+   },
+   "2024": {
+    "rr": 1.1138143840741912,
+    "lo": 0.7263673077590107,
+    "hi": 1.7079272000801036,
+    "p": 0.6211585766877263
+   },
+   "2025": {
+    "rr": 0.8799839085877948,
+    "lo": 0.6137080919165205,
+    "hi": 1.2617915415702001,
+    "p": 0.4868428083155648
+   },
+   "2026": {
+    "rr": 0.8905083866177507,
+    "lo": 0.6103472882914657,
+    "hi": 1.2992687963870448,
+    "p": 0.5473982297447462
+   }
+  }
+ },
+ "llm_share_lower_bound_arxiv": {
+  "experiment": {
+   "2019": {
+    "abstracts": 1283,
+    "share_with_marker": 0.10132501948558068,
+    "counterfactual_trend": 0.09349488831707298,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2020": {
+    "abstracts": 1136,
+    "share_with_marker": 0.09066901408450705,
+    "counterfactual_trend": 0.09911448524324662,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2021": {
+    "abstracts": 1233,
+    "share_with_marker": 0.09813463098134631,
+    "counterfactual_trend": 0.10473408216942204,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2022": {
+    "abstracts": 1497,
+    "share_with_marker": 0.11756847027388109,
+    "counterfactual_trend": 0.11035367909559568,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2023": {
+    "abstracts": 1403,
+    "share_with_marker": 0.14326443335709194,
+    "counterfactual_trend": 0.11597327602176932,
+    "lower_bound_trend": 0.03087141666092287,
+    "lower_bound_mean": 0.04603192013850746
+   },
+   "2024": {
+    "abstracts": 1436,
+    "share_with_marker": 0.17548746518105848,
+    "counterfactual_trend": 0.12159287294794296,
+    "lower_bound_trend": 0.061354912287638536,
+    "lower_bound_mean": 0.08191200378774578
+   },
+   "2025": {
+    "abstracts": 1565,
+    "share_with_marker": 0.2511182108626198,
+    "counterfactual_trend": 0.12721246987411838,
+    "lower_bound_trend": 0.14196552621533282,
+    "lower_bound_mean": 0.16612622349038614
+   },
+   "2026": {
+    "abstracts": 1279,
+    "share_with_marker": 0.23143080531665364,
+    "counterfactual_trend": 0.13283206680029203,
+    "lower_bound_trend": 0.11370201173439196,
+    "lower_bound_mean": 0.14420445766509976
+   }
+  },
+  "theory": {
+   "2019": {
+    "abstracts": 12684,
+    "share_with_marker": 0.12992746767581204,
+    "counterfactual_trend": 0.13055888711996388,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2020": {
+    "abstracts": 13057,
+    "share_with_marker": 0.1366316918128207,
+    "counterfactual_trend": 0.13380163234533082,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2021": {
+    "abstracts": 13378,
+    "share_with_marker": 0.13327851696815668,
+    "counterfactual_trend": 0.13704437757069776,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2022": {
+    "abstracts": 13676,
+    "share_with_marker": 0.14185434337525593,
+    "counterfactual_trend": 0.1402871227960647,
+    "lower_bound_trend": null,
+    "lower_bound_mean": null
+   },
+   "2023": {
+    "abstracts": 13826,
+    "share_with_marker": 0.1853753797193693,
+    "counterfactual_trend": 0.14352986802143164,
+    "lower_bound_trend": 0.04885810974081319,
+    "lower_bound_mean": 0.057776664250628114
+   },
+   "2024": {
+    "abstracts": 14542,
+    "share_with_marker": 0.2391693027093935,
+    "counterfactual_trend": 0.14677261324679858,
+    "lower_bound_trend": 0.10829081543455066,
+    "lower_bound_mean": 0.1199965975804661
+   },
+   "2025": {
+    "abstracts": 15517,
+    "share_with_marker": 0.2670619320744989,
+    "counterfactual_trend": 0.1500153584721664,
+    "lower_bound_trend": 0.1377043394477613,
+    "lower_bound_mean": 0.15225818853773046
+   },
+   "2026": {
+    "abstracts": 13359,
+    "share_with_marker": 0.24777303690395988,
+    "counterfactual_trend": 0.15325810369753334,
+    "lower_bound_trend": 0.111621892833167,
+    "lower_bound_mean": 0.12994797755461004
+   }
+  }
+ },
+ "panel": {
+  "n_obs": 108,
+  "n_categories": 27,
+  "all": {
+   "dmarker": {
+    "coef": 0.0005184276875422429,
+    "lo": -0.0016062395129928788,
+    "hi": 0.0026430948880773646,
+    "p": 0.6324798129475159
+   },
+   "experimental": {
+    "coef": -0.07547862188289732,
+    "lo": -0.21212099419635355,
+    "hi": 0.0611637504305589,
+    "p": 0.27896537753087536
+   },
+   "dmarker:experimental": {
+    "coef": 0.003677170723964232,
+    "lo": 2.3696706036169767e-05,
+    "hi": 0.007330644741892294,
+    "p": 0.04853243584010327
+   },
+   "n": 108,
+   "clusters": 27
+  },
+  "biorxiv": {
+   "dmarker": {
+    "coef": 0.0015459556327092332,
+    "lo": -0.0006267147394856184,
+    "hi": 0.003718626004904085,
+    "p": 0.16313493130357704
+   },
+   "experimental": {
+    "coef": 0.043471760993879,
+    "lo": -0.11027626302563909,
+    "hi": 0.1972197850133971,
+    "p": 0.5794600887840259
+   },
+   "dmarker:experimental": {
+    "coef": 0.0010869988423198055,
+    "lo": -0.0022822177859638877,
+    "hi": 0.004456215470603498,
+    "p": 0.5271670310221677
+   },
+   "n": 84,
+   "clusters": 21
+  },
+  "arxiv": {
+   "dmarker": {
+    "coef": 0.010164424998944072,
+    "lo": 0.0032792888081455097,
+    "hi": 0.017049561189742633,
+    "p": 0.003810156366647564
+   },
+   "experimental": {
+    "coef": -0.1355352549690734,
+    "lo": -0.21565399304194738,
+    "hi": -0.05541651689619942,
+    "p": 0.0009143628379812472
+   },
+   "dmarker:experimental": {
+    "coef": 0.0031141776232881065,
+    "lo": -0.00115028787699905,
+    "hi": 0.007378643123575264,
+    "p": 0.15234784712138147
+   },
+   "n": 24,
+   "clusters": 6,
+   "note": "fewer than 20 clusters: clustered standard errors are unreliable; descriptive only"
+  }
+ }
+}

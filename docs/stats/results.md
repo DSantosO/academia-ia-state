@@ -111,3 +111,91 @@ Break tests with no pre-specified date (deseasonalised log counts):
 
 Synthetic control for mathematics (pre-period 2018-01..2025-12): 2026 gap 11.9%, pre-period RMSPE 0.031, rank p = 0.05 (permutation over 20 units). Weights: astro-ph 0.11, cond-mat 0.13, cs 0.01, gr-qc 0.09, hep-ex 0.01, hep-ph 0.09, hep-th 0.12, math-ph 0.12, nucl-ex 0.03, nucl-th 0.06, physics 0.09, q-fin 0.02, quant-ph 0.05, stat 0.08. With the pre-period ending in November 2022: gap 10.1%.
 
+## H2: heavy producers
+
+Authors matched by normalised name strings (arXiv has no author identifiers). Namesake-robust: full first names only, the 1% most frequent surnames removed. Physics excludes papers with more than 50 authors (collaboration papers, which otherwise dominate author counts). Experimental physics has only about 300 such papers a quarter and very few authors with full first names, so only its all-names version is shown.
+
+**Levels and departures from the 2019–2022 trend** (quarterly series; OLS on a linear trend, quarter effects and 2023–2026 year dummies, Newey–West 95% CI, in percentage points):
+
+| Group | Names | Measure | Q3 2022 | Q3 2025 | Q3 2026 | 2026 departure from trend (pp) |
+|---|---|---|---|---|---|---|
+| Physics theory, ≤50 authors | all names | papers with an author who has ≥5 papers in the quarter | 7.94% | 13.37% | 16.61% | +2.09 [+0.06, +4.13], p = 0.043 |
+| Physics theory, ≤50 authors | all names | active authors with ≥5 papers | 0.67% | 1.27% | 1.74% | +0.45 [+0.19, +0.72], p = 0.0007 |
+| Physics theory, ≤50 authors | all names | share of fractional output by the top 1% of authors | 5.50% | 5.86% | 6.52% | +0.82 [+0.53, +1.10], p = 1.3e-08 |
+| Physics theory, ≤50 authors | all names | share of fractional output by the top 10% of authors | 29.21% | 29.54% | 30.88% | -0.30 [-1.11, +0.50], p = 0.46 |
+| Physics theory, ≤50 authors | namesake-robust | papers with an author who has ≥5 papers in the quarter | 2.62% | 5.64% | 8.06% | +1.86 [+0.30, +3.42], p = 0.02 |
+| Physics theory, ≤50 authors | namesake-robust | active authors with ≥5 papers | 0.38% | 0.92% | 1.33% | +0.40 [+0.11, +0.69], p = 0.007 |
+| Physics theory, ≤50 authors | namesake-robust | share of fractional output by the top 1% of authors | 4.93% | 5.59% | 6.11% | +0.73 [+0.36, +1.10], p = 9.5e-05 |
+| Physics theory, ≤50 authors | namesake-robust | share of fractional output by the top 10% of authors | 26.82% | 28.18% | 30.27% | +0.71 [-0.55, +1.97], p = 0.27 |
+| Physics experiment, ≤50 authors | all names | papers with an author who has ≥5 papers in the quarter | 15.65% | 17.07% | 17.61% | +4.18 [-5.04, +13.39], p = 0.37 |
+| Physics experiment, ≤50 authors | all names | active authors with ≥5 papers | 0.16% | 0.16% | 0.13% | +0.13 [-0.02, +0.29], p = 0.096 |
+| Physics experiment, ≤50 authors | all names | share of fractional output by the top 1% of authors | 25.56% | 23.14% | 25.57% | +0.13 [-7.08, +7.34], p = 0.97 |
+| Physics experiment, ≤50 authors | all names | share of fractional output by the top 10% of authors | 64.70% | 56.56% | 58.55% | +3.21 [-4.66, +11.08], p = 0.42 |
+
+**Who produced the growth?** Change in fractional output between the third quarters of consecutive years, by author class defined on the author's combined output in both years (symmetric in the two years, so free of regression to the mean; under proportional growth every class grows at the total rate). Pairs that end before ChatGPT's release (2019→2020 to 2021→2022) show how much the classes differ by chance.
+
+| Group | Names | Q3 pair | Total | Top 1% | Next 9% | Bottom 90% | Share of the change: top 1% / next 9% / bottom 90% |
+|---|---|---|---|---|---|---|---|
+| Physics theory, ≤50 authors | all names | 2019→2020 | +5.4% | -12.4% | +8.8% | +5.9% | -15% / 39% / 76% |
+| Physics theory, ≤50 authors | all names | 2020→2021 | -0.8% | -5.9% | +0.2% | -0.7% | – / – / – |
+| Physics theory, ≤50 authors | all names | 2021→2022 | +3.4% | +8.0% | +0.1% | +4.2% | 14% / 0% / 85% |
+| Physics theory, ≤50 authors | all names | 2022→2023 | +3.8% | -1.3% | +3.5% | +4.4% | -2% / 23% / 79% |
+| Physics theory, ≤50 authors | all names | 2023→2024 | +3.6% | +2.9% | -0.6% | +5.2% | 5% / -4% / 99% |
+| Physics theory, ≤50 authors | all names | 2024→2025 | +11.7% | +35.7% | +16.6% | +8.0% | 18% / 34% / 48% |
+| Physics theory, ≤50 authors | all names | 2025→2026 | +26.2% | +47.4% | +36.9% | +20.4% | 12% / 35% / 53% |
+| Physics theory, ≤50 authors | namesake-robust | 2019→2020 | +4.0% | -13.0% | +0.5% | +6.6% | -19% / 3% / 116% |
+| Physics theory, ≤50 authors | namesake-robust | 2020→2021 | +1.8% | +3.1% | +1.6% | +1.8% | – / – / – |
+| Physics theory, ≤50 authors | namesake-robust | 2021→2022 | +1.6% | -4.5% | +0.2% | +2.7% | – / – / – |
+| Physics theory, ≤50 authors | namesake-robust | 2022→2023 | +6.7% | -6.3% | +11.4% | +6.2% | -6% / 41% / 65% |
+| Physics theory, ≤50 authors | namesake-robust | 2023→2024 | +5.1% | -3.9% | +0.3% | +7.6% | -5% / 1% / 103% |
+| Physics theory, ≤50 authors | namesake-robust | 2024→2025 | +10.2% | +55.7% | +12.6% | +6.2% | 27% / 31% / 42% |
+| Physics theory, ≤50 authors | namesake-robust | 2025→2026 | +25.1% | +50.7% | +33.0% | +20.0% | 12% / 33% / 55% |
+| Physics experiment, ≤50 authors | all names | 2019→2020 | -8.6% | -22.0% | -20.5% | +19.5% | 86% / 84% / -70% |
+| Physics experiment, ≤50 authors | all names | 2020→2021 | +9.4% | -3.2% | +26.3% | +5.7% | -10% / 87% / 23% |
+| Physics experiment, ≤50 authors | all names | 2021→2022 | +26.7% | +22.1% | +35.9% | +21.5% | 23% / 47% / 30% |
+| Physics experiment, ≤50 authors | all names | 2022→2023 | -6.1% | -0.1% | -7.4% | -9.4% | 1% / 44% / 56% |
+| Physics experiment, ≤50 authors | all names | 2023→2024 | -6.9% | +7.3% | -33.7% | +11.5% | -33% / 185% / -52% |
+| Physics experiment, ≤50 authors | all names | 2024→2025 | +11.7% | -28.6% | +59.0% | +19.3% | -91% / 129% / 62% |
+| Physics experiment, ≤50 authors | all names | 2025→2026 | +16.7% | +30.0% | +7.6% | +16.3% | 44% / 15% / 41% |
+
+Shares of the change are omitted (–) when total growth is below 3%, where they are unstable.
+
+**January–August windows** (comparable with Nee, Zhong & Ni 2026):
+
+- Physics theory, ≤50 authors, all names: papers 9,659 → 11,338; with a heavy producer 33.5% → 37.9%; authors ≥5 4.08% → 4.87%; top-1% share 7.4% → 8.1%
+- Physics theory, ≤50 authors, namesake-robust: papers 9,659 → 11,338; with a heavy producer 17.6% → 20.4%; authors ≥5 3.53% → 4.10%; top-1% share 7.0% → 7.4%
+- Physics experiment, ≤50 authors, all names: papers 723 → 846; with a heavy producer 20.7% → 27.9%; authors ≥5 0.17% → 0.22%; top-1% share 26.5% → 32.9%
+
+## H3: AI-writing markers
+
+Core marker words: 261 style words of Kobak et al. (2025) with pooled 2019–2022 document frequency below 0.5% in bioRxiv and medRxiv (41,270 baseline abstracts). Rate = distinct core marker words per 100 abstracts (non-COVID preprints).
+
+| Corpus | Group | 2019–2022 mean | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |
+|---|---|---|---|---|---|---|
+| biorxiv | mixed | 31.0 | 47.6 (×1.53) | 61.0 (×1.96) | 64.3 (×2.07) | 44.6 (×1.44) |
+| biorxiv | wet_lab | 27.7 | 42.1 (×1.52) | 59.5 (×2.15) | 63.6 (×2.30) | 43.4 (×1.57) |
+| biorxiv | computational | 38.6 | 73.2 (×1.89) | 98.9 (×2.56) | 93.3 (×2.41) | 63.3 (×1.64) |
+| arxiv | theory | 15.0 | 23.3 (×1.55) | 32.6 (×2.17) | 35.2 (×2.34) | 30.8 (×2.05) |
+| arxiv | experiment | 11.7 | 17.7 (×1.52) | 24.9 (×2.13) | 34.4 (×2.95) | 29.9 (×2.57) |
+| medrxiv | all | 26.6 | 45.2 (×1.70) | 72.6 (×2.73) | 71.8 (×2.70) | 49.8 (×1.87) |
+
+Is the marker rise the same across groups? Rate ratio of marker rates, group A / group B, relative to 2022 (Poisson with abstracts offset):
+
+- biorxiv_computational_vs_wet_lab: 2023: 1.22 [0.93, 1.60], p = 0.16; 2024: 1.17 [0.95, 1.44], p = 0.15; 2025: 1.04 [0.77, 1.39], p = 0.81; 2026: 1.03 [0.83, 1.26], p = 0.82
+- arxiv_theory_vs_experiment: 2023: 1.13 [0.74, 1.72], p = 0.58; 2024: 1.11 [0.73, 1.71], p = 0.62; 2025: 0.88 [0.61, 1.26], p = 0.49; 2026: 0.89 [0.61, 1.30], p = 0.55
+
+Lower bound on the share of LLM-processed abstracts (Kobak et al. 2025; arXiv only): excess share of abstracts with at least one core marker word over the 2019–2022 linear trend, divided by one minus the counterfactual share (in brackets: with the 2019–2022 mean as counterfactual).
+
+| Group | Share with a marker, 2019–2022 | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |
+|---|---|---|---|---|---|
+| arXiv experiment | 10.2% | ≥3.1% (≥4.6%) | ≥6.1% (≥8.2%) | ≥14.2% (≥16.6%) | ≥11.4% (≥14.4%) |
+| arXiv theory | 13.5% | ≥4.9% (≥5.8%) | ≥10.8% (≥12.0%) | ≥13.8% (≥15.2%) | ≥11.2% (≥13.0%) |
+
+The list was built from 2024 text and its words have drifted since (Methods), so 2024 is the cleanest year; later bounds are weaker.
+
+Does the marker rise predict output growth? Category panel (108 category-years, 27 categories), growth vs 2022 on marker change, interacted with experimental intensity (OLS, year effects, SEs clustered by category):
+
+- all (n = 108, 27 clusters): dmarker: 0.0005 [-0.0016, 0.0026], p = 0.63; experimental: -0.0755 [-0.2121, 0.0612], p = 0.28; dmarker:experimental: 0.0037 [0.0000, 0.0073], p = 0.049
+- biorxiv (n = 84, 21 clusters): dmarker: 0.0015 [-0.0006, 0.0037], p = 0.16; experimental: 0.0435 [-0.1103, 0.1972], p = 0.58; dmarker:experimental: 0.0011 [-0.0023, 0.0045], p = 0.53
+- arxiv (n = 24, 6 clusters): dmarker: 0.0102 [0.0033, 0.0170], p = 0.0038; experimental: -0.1355 [-0.2157, -0.0554], p = 0.00091; dmarker:experimental: 0.0031 [-0.0012, 0.0074], p = 0.15 (fewer than 20 clusters: clustered standard errors are unreliable; descriptive only)
+

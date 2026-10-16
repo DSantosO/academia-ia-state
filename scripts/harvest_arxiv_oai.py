@@ -81,7 +81,7 @@ def main():
             if tok is None or not (tok.text or "").strip():
                 break
             params = {"verb": "ListRecords", "resumptionToken": tok.text.strip()}
-            time.sleep(2)
+            time.sleep(3)  # arXiv API terms: no more than one request every three seconds
     print("done", pages, kept)
 
 

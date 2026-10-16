@@ -14,7 +14,7 @@ for a in $ARCHIVES; do
       sleep $((t*3))
     done
     echo "$a $y $code"
-    sleep 1
+    sleep 3  # arXiv asks for at most one request every three seconds
   done
 done
 curl -sS --max-time 40 -A "$UA" -o "$OUT/monthly_submissions.csv" "https://arxiv.org/stats/get_monthly_submissions"

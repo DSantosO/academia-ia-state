@@ -7,13 +7,21 @@ Authors are matched by normalised name strings (ASCII-folded, lower-case tokens)
 
 Measures by quarter (and for January-August windows, to compare with Nee, Zhong & Ni 2026):
   per paper   share of papers with at least one author who has >=5 papers in the group that quarter
+  per author  share of active authors with >=5 and >=10 papers (and >=15 per quarter, roughly >60 a year)
+  concentration  share of fractional output (each paper split equally among its authors) produced by the top 1% and
+              top 10% of active authors. Fixed-threshold shares rise mechanically when everyone publishes more; the
+              concentration shares do not, so they are the main test of "broad-based vs driven by a fringe".
+  decomposition  change in fractional output between the same window of consecutive years, by author class defined on
+              the author's combined output in both years (top 1%, next 9%, bottom 90%). Combined-output classes are
+              symmetric in the two years, so they carry no regression-to-the-mean bias; pre-2023 pairs are placebos.
+  trend departure  each quarterly measure regressed on a 2019-2022 linear trend, quarter effects and 2023-2026 year
+              dummies (OLS, Newey-West SEs, 4 lags).
+  contribution  (kept for reference, not for inference) share of the Q3 2025 -> Q3 2026 change from authors with >=5
+              papers in Q3 2026. Defining the class on the second period selects on the outcome, so this share is
+              biased upward (regression to the mean); use the decomposition instead.
   CIs: Wilson intervals and two-proportion z-tests treating papers (or authors) as independent units. Papers that
   share authors are not independent, so these intervals are too narrow; they are reported as a guide only.
   A bootstrap of papers was tried and dropped: duplicated papers inflate author counts and bias the share upward.
-  per author  share of active authors with >=5 and >=10 papers (and >=15 per quarter, roughly >60 a year)
-  output      fractional output (each paper split equally among its authors); share of the change in fractional
-              output from Q3 2025 to Q3 2026 contributed by authors with >=5 papers in Q3 2026 ("heavy producers"),
-              and by the top 1% of authors by fractional output
 Namesake-robust variants: full first names only; full first names with the 1% most frequent surnames removed.
 Physics also reports a version without papers that have more than 50 authors (collaboration papers).
 Usage: python3 scripts/stats_heavy_producers.py out.json maths=math.jsonl.gz physics=hep-th.jsonl.gz,hep-ex.jsonl.gz,...
@@ -29,6 +37,7 @@ from collections import Counter, defaultdict
 import numpy as np
 
 RNG = np.random.default_rng(20261016)
+END = "2026-09"  # last complete month of the harvest (16 October 2026); later months are partial
 THEORY = {"hep-th", "hep-ph", "gr-qc", "nucl-th"}
 EXPERIMENT = {"hep-ex", "nucl-ex"}
 
@@ -51,6 +60,8 @@ def load(files, group_of):
                 if not g or r["id"] in papers:
                     continue
                 month = f"20{m.group(1)}-{m.group(2)}"
+                if month > END:
+                    continue
                 authors = []
                 for a in r.get("authors") or []:
                     toks = norm(a)
@@ -76,8 +87,13 @@ def per_quarter(papers, key, keep=lambda a: True, threshold=5):
         for ns in names:
             for n in set(ns):
                 frac[n] += 1 / len(set(ns))
+        fr = sorted(frac.values(), reverse=True)
+        tot = sum(fr)
         out[period] = {
             "papers": len(ps), "active_authors": active,
+            "mean_authors_per_paper": float(np.mean([len(set(ns)) for ns in names])) if names else None,
+            "top1pct_share_of_output": sum(fr[: max(1, active // 100)]) / tot if tot else None,
+            "top10pct_share_of_output": sum(fr[: max(1, active // 10)]) / tot if tot else None,
             "share_papers_with_heavy_author": float(heavy_paper.mean()) if len(ps) else None,
             "share_authors_ge5": sum(v >= 5 for v in cnt.values()) / active if active else None,
             "share_authors_ge10": sum(v >= 10 for v in cnt.values()) / active if active else None,
@@ -121,6 +137,50 @@ def contribution(stats, a, b, threshold=5):
             "share_of_output_b_by_top1pct": sum(fb[n] for n in top) / sum(fb.values())}
 
 
+def decomposition(stats, a, b):
+    """Change in fractional output between periods a and b by author class, with classes defined on the author's
+    combined output in a and b (top 1%, next 9%, rest). Classifying on a + b is symmetric in the two periods, so when
+    they are exchangeable each class's expected change is zero: no regression-to-the-mean bias, unlike classes defined
+    on one period. Under proportional (broad-based) growth every class grows at the same rate."""
+    fa, fb = stats[a]["_frac"], stats[b]["_frac"]
+    comb = Counter(fa)
+    comb.update(fb)
+    keys = sorted(comb)
+    RNG.shuffle(keys)  # ties are broken at random: insertion order would put authors active in a above those in b
+    ranked = sorted(keys, key=comb.get, reverse=True)
+    n = len(ranked)
+    classes = {"top1pct": ranked[: max(1, n // 100)], "next9pct": ranked[max(1, n // 100): max(1, n // 10)],
+               "bottom90pct": ranked[max(1, n // 10):]}
+    total_a, total_b = sum(fa.values()), sum(fb.values())
+    out = {"total_a": total_a, "total_b": total_b, "growth": total_b / total_a - 1 if total_a else None}
+    for k, members in classes.items():
+        oa, ob = sum(fa.get(x, 0) for x in members), sum(fb.get(x, 0) for x in members)
+        out[k] = {"authors": len(members), "output_a": oa, "output_b": ob, "growth": ob / oa - 1 if oa else None,
+                  "share_of_combined_output": (oa + ob) / (total_a + total_b),
+                  "share_of_change": (ob - oa) / (total_b - total_a) if total_b != total_a else None}
+    return out
+
+
+def trend_departure(stats, measure, last_pre="2022-Q4"):
+    """Departure of a quarterly measure from its 2019-2022 linear trend (with quarter-of-year effects): OLS of the
+    measure on a linear trend, quarter dummies and dummies for 2023, 2024, 2025 and 2026, Newey-West SEs (4 lags).
+    Returns the 2023-2026 coefficients (percentage points)."""
+    import statsmodels.api as sm
+    rows = [(k, v[measure]) for k, v in sorted(stats.items()) if v.get(measure) is not None and "-Q" in k]
+    if len(rows) < 20:
+        return None
+    y = np.array([r[1] for r in rows]) * 100
+    t = np.arange(len(rows)) / 4
+    X = [np.ones(len(rows)), t] + [np.array([r[0].endswith(f"Q{q}") for r in rows], float) for q in (2, 3, 4)]
+    years = [y_ for y_ in (2023, 2024, 2025, 2026) if any(r[0].startswith(str(y_)) for r in rows)]
+    X += [np.array([r[0].startswith(str(y_)) for r in rows], float) for y_ in years]
+    m = sm.OLS(y, np.column_stack(X)).fit(cov_type="HAC", cov_kwds={"maxlags": 4})
+    ci = m.conf_int()
+    return {"pre_trend_pp_per_year": float(m.params[1]),
+            **{str(y_): {"pp": float(m.params[5 + i]), "lo": float(ci[5 + i, 0]), "hi": float(ci[5 + i, 1]),
+                         "p": float(m.pvalues[5 + i])} for i, y_ in enumerate(years)}}
+
+
 def clean(stats):
     return {k: {kk: vv for kk, vv in v.items() if not kk.startswith("_")} for k, v in stats.items()}
 
@@ -158,6 +218,17 @@ def analyse(papers, label):
         res[vname] = {"quarterly": clean(q), "jan_aug": clean(janaug), "tests": tests}
         if "2025-Q3" in q and "2026-Q3" in q:
             res[vname]["contribution_Q3_2025_to_Q3_2026"] = contribution(q, "2025-Q3", "2026-Q3")
+        # symmetric decomposition for every pair of consecutive years (Q3 and January-August); pre-2023 pairs are
+        # placebos for the mechanical behaviour of the measure
+        res[vname]["decomposition"] = {}
+        for st, fmt in ((q, "{}-Q3"), (janaug, "{}-JanAug")):
+            for y in range(2019, 2026):
+                a, b = fmt.format(y), fmt.format(y + 1)
+                if a in st and b in st and st[a]["active_authors"] and st[b]["active_authors"]:
+                    res[vname]["decomposition"][f"{a}_to_{b}"] = decomposition(st, a, b)
+        res[vname]["trend_departure"] = {m: trend_departure(q, m) for m in (
+            "share_papers_with_heavy_author", "share_authors_ge5", "top1pct_share_of_output",
+            "top10pct_share_of_output")}
     print(label, "papers:", len(papers), flush=True)
     return res
 

@@ -35,7 +35,8 @@ FONT = "Arial" if any("Arial" in f.name for f in fm.fontManager.ttflist) else "L
 def setup():
     plt.rcParams.update({"font.family": FONT, "font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 8,
                          "ytick.labelsize": 8, "legend.fontsize": 8, "axes.titlesize": 9, "text.color": INK,
-                         "axes.labelcolor": INK2, "pdf.fonttype": 42, "svg.fonttype": "none", "axes.linewidth": 0.6})
+                         "axes.labelcolor": INK2, "pdf.fonttype": 42, "svg.fonttype": "none", "axes.linewidth": 0.6,
+                         "svg.hashsalt": "plos-figures"})
 
 
 def style(ax):
@@ -53,13 +54,15 @@ def year_ticks(ax, first, last):
     ax.set_xticklabels([str(y) for y in range(first, last + 1)])
 
 
-def events(ax, label=True):
+def events(ax, label=True, only=None):
     lo, hi = ax.get_xlim()
     rows = []
     fig = ax.figure
     fig.canvas.draw()
     r = fig.canvas.get_renderer()
     for d, text in EVENTS:
+        if only and text not in only:
+            continue
         if not lo <= mdates.date2num(d) <= hi:
             continue
         ax.axvline(d, color=MUTED, linewidth=0.6, linestyle=(0, (3, 2)), zorder=1)
@@ -88,8 +91,9 @@ def panel_label(ax, s, pad=24):
 
 def save(fig, out, name):
     os.makedirs(out, exist_ok=True)
-    fig.savefig(os.path.join(out, name + ".pdf"), facecolor="white")
-    fig.savefig(os.path.join(out, name + ".svg"), facecolor="white")
+    # no creation dates, fixed SVG ids: re-running the script reproduces the files byte for byte
+    fig.savefig(os.path.join(out, name + ".pdf"), facecolor="white", metadata={"CreationDate": None})
+    fig.savefig(os.path.join(out, name + ".svg"), facecolor="white", metadata={"Date": None})
     buf = io.BytesIO()
     fig.savefig(buf, format="png", dpi=300, facecolor="white")
     buf.seek(0)
@@ -212,11 +216,110 @@ def fig2(repo, out):
     save(fig, out, "Fig2")
 
 
+def fig3(repo, out):
+    """Heavy producers (H2): concentration of output and per-paper share over time (maths, physics theory), and the
+    growth of each author class between the third quarters of consecutive years."""
+    path = os.path.join(repo, "data/processed/stats/heavy_producers.json")
+    if not os.path.exists(path):
+        return
+    h = json.load(open(path))
+    groups = [(g, lab, col) for g, lab, col in (("maths", "Maths", OI["vermillion"]),
+                                                ("theory_max50_authors", "Physics theory", OI["purple"])) if g in h]
+    short = {"Maths": "Maths", "Physics theory": "Theory"}
+    variants = [("all_names", "all names", "-"), ("full_first_names_no_top1pct_surnames", "namesake-robust",
+                                                  (0, (2.5, 1.5)))]
+    fig, axes = plt.subplots(2, 2, figsize=(19.05 * CM, 13.5 * CM))
+    (a, b), (c, d) = axes
+    for ax in axes.flat:
+        style(ax)
+    for g, glab, col in groups:
+        for vname, vlab, ls in variants:
+            q = h[g][vname]["quarterly"]
+            qs = [k for k in sorted(q) if "2019-Q1" <= k <= "2026-Q3"]
+            x = [xq(k) for k in qs]
+            lab = short[glab] + (", namesake-robust" if vname != "all_names" else ", all names")
+            a.plot(x, [q[k]["top1pct_share_of_output"] for k in qs], color=col, linestyle=ls, linewidth=1.2, label=lab)
+            b.plot(x, [q[k]["share_papers_with_heavy_author"] for k in qs], color=col, linestyle=ls, linewidth=1.2,
+                   label=lab)
+    for ax, title in ((a, "Share of output by the top 1% of authors"),
+                      (b, "Papers with an author who has ≥5 papers that quarter")):
+        ax.set_xlim(dt.date(2019, 1, 1), dt.date(2026, 12, 1))
+        year_ticks(ax, 2019, 2026)
+        ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{100 * t:g}%"))
+        ax.set_ylim(0, None)
+        ax.set_title(title, loc="left", pad=6)
+    a.legend(loc="lower left", frameon=False, handlelength=2.2, ncol=2, columnspacing=1.0)
+    classes = [("top1pct", "Top 1%", OI["blue"]), ("next9pct", "Next 9%", OI["sky"]),
+               ("bottom90pct", "Bottom 90%", OI["grey"])]
+    for ax, (g, glab, col) in zip((c, d), groups):
+        dec = h[g]["all_names"]["decomposition"]
+        pairs = [k for k in dec if "Q3" in k]
+        xs = range(len(pairs))
+        w = 0.26
+        for i, (key, lab, ccol) in enumerate(classes):
+            ax.bar([x + (i - 1) * w for x in xs], [100 * dec[p][key]["growth"] for p in pairs], width=w, color=ccol,
+                   label=lab, zorder=2)
+        ax.scatter(list(xs), [100 * dec[p]["growth"] for p in pairs], marker="_", s=160, color=INK, linewidths=1.4,
+                   zorder=3, label="All authors")
+        ax.axhline(0, color=AXIS, linewidth=0.6, zorder=1)
+        ax.axvspan(-0.5, 2.5, color="#f2f2f2", zorder=0)  # pairs that end before ChatGPT's release
+        ax.text(1.0, 0.98, "Before ChatGPT", transform=ax.get_xaxis_transform(), ha="center", va="top", fontsize=8,
+                color=INK2)
+        ax.set_xticks(list(xs))
+        ax.set_xticklabels([p[2:4] + "–" + p[-5:-3] for p in pairs])
+        ax.set_xlabel("Years compared (third quarter)", labelpad=2)
+        ax.set_xlim(-0.5, len(pairs) - 0.5)
+        ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t:+.0f}%" if t else "0"))
+        ax.set_title(f"{glab}: growth in output, Q3 to Q3, by author class", loc="left", pad=6)
+    for ax in (c, d)[len(groups):]:
+        ax.set_visible(False)
+    c.legend(loc="upper left", bbox_to_anchor=(0, 0.9), frameon=False, handlelength=1.4)
+    for ax, s_ in zip(axes.flat, "ABCD"):
+        panel_label(ax, s_, pad=6)
+    fig.subplots_adjust(left=0.07, right=0.99, top=0.94, bottom=0.09, wspace=0.2, hspace=0.4)
+    for ax in (a, b):
+        events(ax, label=False, only={"ChatGPT"})
+    save(fig, out, "Fig3")
+
+
+def fig4(repo, out):
+    """AI-writing marker rates by group and year (core Kobak style words per 100 abstracts, 2019-2022 = 1)."""
+    path = os.path.join(repo, "data/processed/stats/marker_tests.json")
+    if not os.path.exists(path):
+        return
+    m = json.load(open(path))["rates"]
+    spec = [("biorxiv", "computational", "bioRxiv computational", OI["blue"], "-"),
+            ("biorxiv", "mixed", "bioRxiv mixed", OI["grey"], "-"),
+            ("biorxiv", "wet_lab", "bioRxiv wet lab", OI["green"], "-"),
+            ("medrxiv", "all", "medRxiv", OI["orange"], "-"),
+            ("arxiv", "maths", "arXiv maths", OI["vermillion"], (0, (3, 1.5))),
+            ("arxiv", "theory", "arXiv physics theory", OI["purple"], (0, (3, 1.5))),
+            ("arxiv", "experiment", "arXiv physics experiment", OI["sky"], (0, (3, 1.5)))]
+    fig, ax = plt.subplots(figsize=(14 * CM, 8.5 * CM))
+    style(ax)
+    ax.axhline(1, color=AXIS, linewidth=0.6)
+    for src, g, lab, col, ls in spec:
+        if src not in m or g not in m[src]:
+            continue
+        v = m[src][g]
+        ys = [int(y) for y in v if y.isdigit()]
+        ax.plot(ys, [v[str(y)]["ratio_to_2019_2022"] for y in ys], color=col, linestyle=ls, linewidth=1.3,
+                marker="o", markersize=2.5, label=lab)
+    ax.set_xticks(range(2019, 2027))
+    ax.set_xticklabels([str(y) if y < 2026 else "2026*" for y in range(2019, 2027)])
+    ax.set_ylabel("Marker rate relative to 2019–2022")
+    ax.legend(loc="upper left", frameon=False, handlelength=2.2, fontsize=8)
+    fig.subplots_adjust(left=0.1, right=0.98, top=0.95, bottom=0.12)
+    save(fig, out, "Fig4")
+
+
 def main(repo):
     setup()
     out = os.path.join(repo, "docs/figures/plos")
     fig1(repo, out)
     fig2(repo, out)
+    fig3(repo, out)
+    fig4(repo, out)
     print("font:", FONT, "written:", sorted(os.listdir(out)))
 
 

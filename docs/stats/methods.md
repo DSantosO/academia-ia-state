@@ -134,50 +134,104 @@ among them.
 ## Heavy producers (H2)
 
 **Matching authors.** arXiv records carry no author identifiers, so authors are matched by normalised name strings:
-ASCII-folded, lower-case and tokenised.
+ASCII-folded, lower-case and tokenised. Papers are dated by the month in their identifier, from January 2019 to
+September 2026 (October 2026 was incomplete at harvest).
 
 **Measures, by quarter and for January–August windows** (comparable with Nee et al. 2026):
 - *Per paper:* the share of papers with at least one author who has five or more papers in the group that quarter.
 - *Per author:* the shares of active authors with ≥5, ≥10 and ≥15 papers per quarter. ≥15 per quarter is roughly the
   >60 papers a year of Ioannidis, Collins & Baas (2024).
-- *Output:* fractional output, with each paper split equally among its authors.
-  - The share of the change in fractional output from Q3 2025 to Q3 2026 contributed by authors with five or more
-    papers in Q3 2026.
-  - The same share for the top 1% of authors by fractional output.
+- *Concentration:* the share of fractional output (each paper split equally among its authors) produced by the top
+  1% and the top 10% of active authors.
+
+Fixed-threshold measures (per paper, per author) rise mechanically when everyone publishes more: a uniform increase
+in output pushes more authors over the threshold. The concentration shares do not move under proportional growth, so
+they are the main test of whether the acceleration is broad-based or driven by a fringe.
+
+**Departure from trend.** Each quarterly measure is regressed on a linear trend, quarter-of-year effects and dummies
+for 2023, 2024, 2025 and 2026 (OLS, Newey–West standard errors, 4 lags). The year coefficients are departures from
+the 2019–2022 trend, in percentage points.
+
+**Who produced the growth?** The change in fractional output between the third quarters of consecutive years is
+split by author class.
+- *Classes.* Authors are ranked by their combined fractional output in the two years compared: the top 1%, the next
+  9% and the bottom 90%. Ties are broken at random (fixed seed).
+- *Why combined output.* Classes defined on one year select on that year's output, so they carry regression to the
+  mean: authors who are heavy producers in the second year will, on average, have produced less in the first even if
+  nothing changed. Ranking on the sum of both years is symmetric in the two years, so when the years are exchangeable
+  each class's expected change is zero. Under proportional growth every class grows at the total rate.
+- *Reference.* Pairs ending before ChatGPT's release (2019→2020, 2020→2021, 2021→2022) show how much the classes
+  differ by chance.
 
 **Namesake robustness.** Full first names only; and full first names with the 1% most frequent surnames removed.
 
-**Physics.** Results are also reported without papers that have more than 50 authors (collaboration papers).
+**Physics.** Papers with more than 50 authors (collaboration papers) are excluded. With them, a handful of white papers
+signed by hundreds of theorists make hundreds of authors "heavy producers" in a quarter (for example 16.9% of active
+theory authors with ≥5 papers in Q3 2025, against 1.3% without them). Experimental physics has about 300 papers a
+quarter with 50 or fewer authors, and few of their authors give full first names, so only its all-names version is
+reported.
 
-**Intervals.** Wilson 95% intervals and two-proportion z-tests treat papers, or authors, as independent. Shared
-authorship makes them too narrow, so they are a guide only.
+**Intervals.** Wilson 95% intervals and two-proportion z-tests (in the JSON output) treat papers, or authors, as
+independent. Shared authorship makes them too narrow, so they are a guide only.
 
 ## AI-writing markers (H3)
 
+**Text features.** Title plus abstract, lower-cased and split into alphabetic tokens.
+- bioRxiv: every version-1 preprint posted in March and September of each year, 2019–2026.
+- medRxiv: every version-1 preprint, June 2019 to September 2026.
+- arXiv: every paper with primary category in maths (math.*) or in hep-th, hep-ph, gr-qc, nucl-th, hep-ex and
+  nucl-ex, January 2019 to September 2026, from OAI-PMH metadata.
+- COVID-19 preprints are excluded from bioRxiv and medRxiv.
+
 **Marker words.**
 - *Source list.* The 407 "style" words of Kobak et al. (2025), from their published list
-  (`github.com/berenslab/llm-excess-vocab`, `results/excess_words.csv`).
-- *Core list.* Filtered by a rule that uses baseline data only: words whose pooled document frequency in 2019–2022,
-  across all our corpora, is below 0.5% (list in `data/processed/stats/core_marker_words.txt`).
+  (`github.com/berenslab/llm-excess-vocab`, `results/excess_words.csv`). Their list was derived from PubMed abstracts.
+- *Core list.* Filtered by a rule that uses baseline data only: words whose pooled document frequency in 2019–2022
+  in the biomedical corpora (bioRxiv and medRxiv, matching the list's PubMed origin) is below 0.5%. This leaves 261
+  words (`data/processed/stats/core_marker_words.txt`), and the same list is applied to every corpus.
 
-**Metric.** Distinct core marker words per 100 abstracts (title and abstract), by group and year; non-COVID preprints
-only for bioRxiv and medRxiv.
+**Metric.** Distinct core marker words per 100 abstracts, by group and year.
+
+**Marker drift.** The words that identify LLM text change as models and authors change. The list was built from 2024
+abstracts. Its words rose sharply in 2023–2024 and have fallen since, while abstract length stayed stable (bioRxiv
+234–247 words per abstract in every sampled month from 2024 to 2026).
+- Core words such as "delve", "intricate" and "underscores" peaked in 2024 and are back near baseline in 2026.
+- By September 2026 some common words on the list are below their 2019–2022 frequency in bioRxiv: "crucial" appears in
+  1.7% of abstracts against 4.5% before 2023, and "insights" in 4.4% against 6.2%. The fall is gradual across the
+  sampled months (September 2024, March 2025, September 2025, March 2026, September 2026).
+  It looks like deliberate avoidance of words now read as signs of LLM text, by authors and by newer models, not a
+  change in the data.
+
+Consequences:
+- The marker rate is a lower bound on LLM-assisted writing, and from 2025 a weak one.
+- Comparisons across years after 2024 are not interpretable as changes in LLM use.
+- Comparisons across groups within a year remain valid if the groups use the same tools. 2024 is the cleanest year
+  for them, because the list was built on 2024 text.
 
 **Tests.**
 1. *Rise by group.* Each year's rate relative to the group's 2019–2022 mean.
-2. *Same rise across groups.* Poisson model of marker counts with a log(abstracts) offset, period fixed effects and
-   group × year terms, with base year 2022 and Driscoll–Kraay standard errors. A 2026 rate ratio near 1 means the
-   marker rise is similar in both groups.
+2. *Same rise across groups.* Poisson model of monthly marker counts with a log(abstracts) offset, month fixed effects
+   and group × year terms (base year 2022), with Driscoll–Kraay standard errors (2 lags). A rate ratio near 1 means
+   the marker rise is similar in both groups. Pairs: bioRxiv computational vs wet lab, arXiv theory vs experiment,
+   and arXiv maths vs experiment.
 3. *Does the marker rise predict output growth, and only where experiments are not the bottleneck?*
    - *Panel.* A category-level panel of bioRxiv categories and arXiv archives, 2023–2026.
    - *Model.* growth_cy = a_y + b·Δmarker_cy + c·Δmarker_cy·experimental_c + d·experimental_c + e.
    - *Variables.* growth_cy is the log ratio of January–September papers in year y to 2022. Δmarker_cy is the marker
-     rate in y minus the 2019–2022 mean. experimental_c is 1 for wet-lab or experimental, 0 for computational or
-     theory, and 0.5 for mixed.
-   - *Estimation.* OLS with standard errors clustered by category.
+     rate in y minus the 2019–2022 mean. experimental_c is 1 for wet-lab or experimental, 0 for computational, theory
+     or maths, and 0.5 for mixed.
+   - *Estimation.* OLS with standard errors clustered by category. The pooled model has year effects specific to
+     each server.
+   - *Limits.* The arXiv panel has only 6 or 7 archives, too few clusters for reliable inference, so it is
+     descriptive. The panel is an ecological association: categories differ in more than experimental intensity.
 
 ## Analyses tried and dropped
 
+- **Share of the change contributed by heavy producers defined in the later period.** Our first version credited the
+  Q3 2025 → Q3 2026 change to authors with five or more papers in Q3 2026. It was dropped because defining the class on
+  the later period selects on the outcome and biases the share upward (regression to the mean). It was replaced by the
+  combined-output classes above. The old figure is kept in the JSON output (`contribution_Q3_2025_to_Q3_2026`) for
+  reference only.
 - **Bootstrap of papers for the per-paper heavy-producer share.** Dropped because resampling papers duplicates them,
   which inflates authors' paper counts and biases the share upward (for example 6% observed against a 15–22%
   bootstrap interval).

@@ -4,7 +4,8 @@ Inputs (aggregate counts only): data/raw/{biorxiv,medrxiv}_text_{main,words}.csv
 bioRxiv: March and September of each year) and data/raw/arxiv_text_{main,words}.csv (aggregate_arxiv_text.py).
 
 Marker words. The style words of Kobak et al. (2025) are filtered by a rule that uses baseline data only: words whose
-pooled document frequency in 2019-2022 (all corpora) is below 0.5%. The resulting core list is written to
+pooled document frequency in 2019-2022 in the biomedical corpora (bioRxiv and medRxiv, matching the PubMed origin of
+the list) is below 0.5%. The same list is then applied to every corpus. The resulting core list is written to
 data/processed/stats/core_marker_words.txt. Metric: core marker words per 100 abstracts (distinct words per
 abstract, summed), by group and year; non-COVID preprints only for bioRxiv and medRxiv.
 
@@ -18,7 +19,13 @@ Tests.
        growth_cy = a_y + b * dmarker_cy + c * dmarker_cy * experimental_c + d * experimental_c + e
      growth_cy: log(papers Jan-Sep year y) - log(papers Jan-Sep 2022); dmarker_cy: marker rate in y minus 2019-2022
      mean (per 100 abstracts); experimental_c: 1 wet-lab / experimental, 0 computational / theory, 0.5 mixed.
-     OLS with standard errors clustered by category.
+     OLS with standard errors clustered by category; the pooled model has year effects specific to each server.
+     The arXiv panel has only 6-7 archives, too few clusters for reliable inference; it is descriptive.
+  4. Lower bound on the share of LLM-processed abstracts (Kobak et al. 2025), arXiv only: the excess share of abstracts
+     with at least one core marker word over its 2019-2022 trend, divided by one minus the counterfactual share.
+     bioRxiv and medRxiv were aggregated by word, not by abstract, so the share with any marker is not available.
+     Run order: this script writes the core list from bioRxiv and medRxiv alone; aggregate_arxiv_text.py --core then
+     counts arXiv abstracts with any core word; a second run of this script reads those counts.
 Usage: python3 scripts/stats_markers.py [repo_dir]
 """
 import csv
@@ -120,6 +127,39 @@ def did(series, a, b, base=2022):
             for y in years if y != base}
 
 
+def any_marker_lower_bound(repo, groups):
+    """Share of abstracts with at least one core marker word (arXiv only: data/raw/arxiv_text_core_any.csv), and the
+    lower bound on the share of LLM-processed abstracts of Kobak et al. (2025): with p the observed share and q the
+    counterfactual share, a fraction f of LLM-processed abstracts gives p = (1 - f) q + f r with r <= 1, so
+    f >= (p - q) / (1 - q). q is extrapolated from a linear trend over 2019-2022 (alternative: the 2019-2022 mean)."""
+    path = os.path.join(repo, "data/raw/arxiv_text_core_any.csv")
+    main_path = os.path.join(repo, "data/raw/arxiv_text_main.csv")
+    if not os.path.exists(path):
+        return None
+    n, k = defaultdict(int), defaultdict(int)
+    for r in csv.DictReader(open(main_path)):
+        g = groups(r["category"])
+        if g:
+            n[(g, int(r["month"][:4]))] += int(r["papers"])
+    for r in csv.DictReader(open(path)):
+        g = groups(r["category"])
+        if g:
+            k[(g, int(r["month"][:4]))] += int(r["papers_with_core_marker"])
+    out = {}
+    for g in sorted({g for g, _ in n}):
+        years = sorted(y for gg, y in n if gg == g)
+        share = {y: k[(g, y)] / n[(g, y)] for y in years}
+        b = np.polyfit(BASE_YEARS, [share[y] for y in BASE_YEARS], 1)
+        mean = float(np.mean([share[y] for y in BASE_YEARS]))
+        out[g] = {}
+        for y in years:
+            q = float(np.polyval(b, y))
+            out[g][str(y)] = {"abstracts": n[(g, y)], "share_with_marker": share[y], "counterfactual_trend": q,
+                              "lower_bound_trend": (share[y] - q) / (1 - q) if y > 2022 else None,
+                              "lower_bound_mean": (share[y] - mean) / (1 - mean) if y > 2022 else None}
+    return out
+
+
 def panel(repo, bio, arx, core):
     """Category-level growth vs marker rise, interacted with experimental intensity."""
     rows = []
@@ -159,12 +199,16 @@ def panel(repo, bio, arx, core):
     for name, sub in (("all", df), ("biorxiv", df[df.source == "bio"]), ("arxiv", df[df.source == "arx"])):
         if len(sub) < 10:
             continue
-        m = smf.ols("growth ~ C(year) + dmarker * experimental", data=sub).fit(
+        fe = "C(source):C(year)" if name == "all" else "C(year)"  # year effects specific to each server
+        m = smf.ols(f"growth ~ {fe} + dmarker * experimental", data=sub).fit(
             cov_type="cluster", cov_kwds={"groups": pd.factorize(sub["category"])[0]})
         out[name] = {k: {"coef": float(m.params[k]), "lo": float(m.conf_int().loc[k, 0]),
                          "hi": float(m.conf_int().loc[k, 1]), "p": float(m.pvalues[k])}
                      for k in ("dmarker", "experimental", "dmarker:experimental")}
         out[name]["n"] = int(len(sub))
+        out[name]["clusters"] = int(sub["category"].nunique())
+        if out[name]["clusters"] < 20:
+            out[name]["note"] = "fewer than 20 clusters: clustered standard errors are unreliable; descriptive only"
     return out, df
 
 
@@ -174,8 +218,7 @@ def main(repo):
     bio = load(repo, "biorxiv_text", "papers_noncovid")
     med = load(repo, "medrxiv_text", "papers_noncovid")
     arx = load(repo, "arxiv_text", "papers")
-    corpora = [c for c in (bio, med, arx) if c[0] is not None]
-    core, n_base = core_list(corpora)
+    core, n_base = core_list([c for c in (bio, med) if c[0] is not None])
     open(os.path.join(out_dir, "core_marker_words.txt"), "w").write("\n".join(core) + "\n")
     results = {"core_words": core, "baseline_abstracts": n_base, "threshold": THRESHOLD}
     gbio = lambda c: "computational" if c in COMPUTATIONAL else "wet_lab" if c in WET_LAB else "mixed"  # noqa: E731
@@ -192,8 +235,12 @@ def main(repo):
     if "biorxiv" in series:
         results["did"]["biorxiv_computational_vs_wet_lab"] = did(series["biorxiv"], "computational", "wet_lab")
     if "arxiv" in series:
-        results["did"]["arxiv_theory_vs_experiment"] = did(series["arxiv"], "theory", "experiment")
-        results["did"]["arxiv_maths_vs_experiment"] = did(series["arxiv"], "maths", "experiment")
+        for a in ("theory", "maths"):
+            if a in series["arxiv"] and "experiment" in series["arxiv"]:
+                results["did"][f"arxiv_{a}_vs_experiment"] = did(series["arxiv"], a, "experiment")
+    lb = any_marker_lower_bound(repo, garx)
+    if lb:
+        results["llm_share_lower_bound_arxiv"] = lb
     results["panel"], df = panel(repo, bio, arx, set(core))
     df.to_csv(os.path.join(out_dir, "marker_growth_panel.csv"), index=False)
     json.dump(results, open(os.path.join(out_dir, "marker_tests.json"), "w"), indent=1, default=float)
