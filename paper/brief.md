@@ -245,6 +245,7 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
 - **The essay** goes to Zenodo as a companion preprint. Its thesis ("the system is not prepared for good use of AI") becomes the article's framework in the Introduction and its interpretation in the Discussion (D2).
 - **The article must state explicitly** that experimental sciences show the effect much less. AI is visible in their writing, but barely in the volume of output. This is part of H1, a Results subsection and Discussion D1.
 - **Skeleton and analysis plan:** `paper/plos_one/skeleton.md`.
+- **Title (author's choice):** "Generative AI is eroding publication counts as a measure of scientific work: evidence from 1.9 million preprints". N is provisional. No question in the title.
 
 ## Sources
 

@@ -4,7 +4,11 @@
 
 ## Working titles
 
-**Author's proposal (16 Oct):** "Generative AI is making current scientific metrics obsolete".
+**CHOSEN TITLE (author, 16 Oct):** "Generative AI is eroding publication counts as a measure of scientific work: evidence from 1.9 million preprints".
+- N is provisional: 1,944,974 new preprints, Q1 2020–Q3 2026, across six series. These are arXiv physics, mathematics and CS, bioRxiv, medRxiv (all) and the social-science servers. Recompute N once the final design fixes the sample; extending to 2017 would raise it.
+- The author prefers no question in the title.
+
+Author's first proposal: "Generative AI is making current scientific metrics obsolete".
 
 **Defensible variants that keep the claim:**
 - **Is generative AI making publication counts obsolete? Evidence from preprint servers, 2020–2026** (recommended)
