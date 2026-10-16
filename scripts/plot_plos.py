@@ -270,7 +270,7 @@ def fig3(repo, out):
         ax.set_xlabel("Years compared (third quarter)", labelpad=2)
         ax.set_xlim(-0.5, len(pairs) - 0.5)
         ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t:+.0f}%" if t else "0"))
-        ax.set_title(f"{glab}: growth in output, Q3 to Q3, by author class", loc="left", pad=6)
+        ax.set_title(f"{glab}: output growth by author class", loc="left", pad=6)
     for ax in (c, d)[len(groups):]:
         ax.set_visible(False)
     c.legend(loc="upper left", bbox_to_anchor=(0, 0.9), frameon=False, handlelength=1.4)

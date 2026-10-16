@@ -43,9 +43,9 @@
   "quarter": "2021-Q2",
   "start": "2021-04-01",
   "biorxiv": 9479,
-  "medrxiv": 3212,
+  "medrxiv": 3211,
   "medrxiv_covid": 1807,
-  "medrxiv_no_covid": 1405
+  "medrxiv_no_covid": 1404
  },
  {
   "quarter": "2021-Q3",
@@ -83,17 +83,17 @@
   "quarter": "2022-Q3",
   "start": "2022-07-01",
   "biorxiv": 9173,
-  "medrxiv": 2326,
+  "medrxiv": 2325,
   "medrxiv_covid": 750,
-  "medrxiv_no_covid": 1576
+  "medrxiv_no_covid": 1575
  },
  {
   "quarter": "2022-Q4",
   "start": "2022-10-01",
   "biorxiv": 9214,
-  "medrxiv": 2453,
+  "medrxiv": 2452,
   "medrxiv_covid": 673,
-  "medrxiv_no_covid": 1780
+  "medrxiv_no_covid": 1779
  },
  {
   "quarter": "2023-Q1",
@@ -107,17 +107,17 @@
   "quarter": "2023-Q2",
   "start": "2023-04-01",
   "biorxiv": 9326,
-  "medrxiv": 2703,
+  "medrxiv": 2701,
   "medrxiv_covid": 455,
-  "medrxiv_no_covid": 2248
+  "medrxiv_no_covid": 2246
  },
  {
   "quarter": "2023-Q3",
   "start": "2023-07-01",
   "biorxiv": 10061,
-  "medrxiv": 2832,
+  "medrxiv": 2831,
   "medrxiv_covid": 464,
-  "medrxiv_no_covid": 2368
+  "medrxiv_no_covid": 2367
  },
  {
   "quarter": "2023-Q4",
@@ -131,9 +131,9 @@
   "quarter": "2024-Q1",
   "start": "2024-01-01",
   "biorxiv": 10343,
-  "medrxiv": 3009,
-  "medrxiv_covid": 375,
-  "medrxiv_no_covid": 2634
+  "medrxiv": 3007,
+  "medrxiv_covid": 374,
+  "medrxiv_no_covid": 2633
  },
  {
   "quarter": "2024-Q2",
@@ -155,64 +155,64 @@
   "quarter": "2024-Q4",
   "start": "2024-10-01",
   "biorxiv": 11574,
-  "medrxiv": 3376,
+  "medrxiv": 3374,
   "medrxiv_covid": 321,
-  "medrxiv_no_covid": 3055
+  "medrxiv_no_covid": 3053
  },
  {
   "quarter": "2025-Q1",
   "start": "2025-01-01",
   "biorxiv": 11452,
-  "medrxiv": 3434,
+  "medrxiv": 3431,
   "medrxiv_covid": 277,
-  "medrxiv_no_covid": 3157
+  "medrxiv_no_covid": 3154
  },
  {
   "quarter": "2025-Q2",
   "start": "2025-04-01",
   "biorxiv": 12117,
-  "medrxiv": 3628,
-  "medrxiv_covid": 311,
-  "medrxiv_no_covid": 3317
+  "medrxiv": 3620,
+  "medrxiv_covid": 310,
+  "medrxiv_no_covid": 3310
  },
  {
   "quarter": "2025-Q3",
   "start": "2025-07-01",
   "biorxiv": 12735,
-  "medrxiv": 4044,
+  "medrxiv": 4036,
   "medrxiv_covid": 264,
-  "medrxiv_no_covid": 3780
+  "medrxiv_no_covid": 3772
  },
  {
   "quarter": "2025-Q4",
   "start": "2025-10-01",
   "biorxiv": 13014,
-  "medrxiv": 3921,
+  "medrxiv": 3913,
   "medrxiv_covid": 257,
-  "medrxiv_no_covid": 3664
+  "medrxiv_no_covid": 3656
  },
  {
   "quarter": "2026-Q1",
   "start": "2026-01-01",
   "biorxiv": 12620,
-  "medrxiv": 3930,
-  "medrxiv_covid": 224,
-  "medrxiv_no_covid": 3706
+  "medrxiv": 3903,
+  "medrxiv_covid": 222,
+  "medrxiv_no_covid": 3681
  },
  {
   "quarter": "2026-Q2",
   "start": "2026-04-01",
   "biorxiv": 13929,
-  "medrxiv": 4137,
+  "medrxiv": 4082,
   "medrxiv_covid": 196,
-  "medrxiv_no_covid": 3941
+  "medrxiv_no_covid": 3886
  },
  {
   "quarter": "2026-Q3",
   "start": "2026-07-01",
   "biorxiv": 13999,
-  "medrxiv": 5106,
-  "medrxiv_covid": 224,
-  "medrxiv_no_covid": 4882
+  "medrxiv": 4559,
+  "medrxiv_covid": 216,
+  "medrxiv_no_covid": 4343
  }
 ]

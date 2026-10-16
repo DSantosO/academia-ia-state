@@ -10,13 +10,13 @@ Rate ratio of group A to group B relative to 2022 (Poisson PML, month fixed effe
 |---|---|---|---|---|---|
 | C1 physics: theory / experiment | 1.08 [0.96, 1.21], p = 0.21 | 1.11 [0.99, 1.23], p = 0.068 | 1.08 [0.95, 1.23], p = 0.21 | 1.14 [1.00, 1.30], p = 0.056 | 0.11 |
 | C2 biology: computational / wet lab | 0.97 [0.91, 1.04], p = 0.42 | 0.94 [0.89, 1.00], p = 0.045 | 0.98 [0.93, 1.03], p = 0.49 | 1.08 [1.03, 1.14], p = 0.0032 | 0.0095 |
-| C3 medicine: public dataset / other | 0.99 [0.90, 1.09], p = 0.85 | 0.97 [0.88, 1.08], p = 0.6 | 0.92 [0.82, 1.02], p = 0.12 | 0.99 [0.88, 1.10], p = 0.82 | 0.82 |
+| C3 medicine: public dataset / other | 0.99 [0.90, 1.10], p = 0.89 | 0.97 [0.88, 1.08], p = 0.64 | 0.92 [0.82, 1.03], p = 0.15 | 1.01 [0.90, 1.14], p = 0.84 | 0.84 |
 
 Pre-2022 years of the event study (should be near 1 if the groups moved together before ChatGPT):
 
 - C1 physics: theory / experiment: 2015: 1.02 [0.93, 1.12], p = 0.64; 2016: 1.10 [0.95, 1.26], p = 0.19; 2017: 1.00 [0.86, 1.15], p = 0.97; 2018: 1.01 [0.92, 1.12], p = 0.77; 2019: 1.08 [0.94, 1.25], p = 0.29; 2020: 1.25 [1.13, 1.39], p = 1.8e-05; 2021: 1.19 [1.06, 1.33], p = 0.0037
 - C2 biology: computational / wet lab: 2019: 1.24 [1.14, 1.36], p = 1.6e-06; 2020: 1.04 [0.97, 1.12], p = 0.28; 2021: 0.99 [0.94, 1.04], p = 0.67
-- C3 medicine: public dataset / other: 2019: 1.00 [0.85, 1.19], p = 0.96; 2020: 0.88 [0.79, 0.98], p = 0.015; 2021: 0.96 [0.87, 1.06], p = 0.44
+- C3 medicine: public dataset / other: 2019: 1.00 [0.84, 1.20], p = 0.98; 2020: 0.88 [0.79, 0.98], p = 0.022; 2021: 0.96 [0.87, 1.07], p = 0.47
 
 Cross-checks and precision for 2026:
 
@@ -24,32 +24,32 @@ Cross-checks and precision for 2026:
 |---|---|---|---|---|
 | C1 physics: theory / experiment | 1.11 [1.02, 1.21], p = 0.013 | 1.11 [1.03, 1.20] | 0.98 [0.72, 1.33], p = 0.9 | rate ratio ≥ 1.21 |
 | C2 biology: computational / wet lab | 1.08 [1.04, 1.12], p = 7.5e-05 | 1.08 [1.05, 1.12] | 1.48 [1.06, 2.07], p = 0.022 | rate ratio ≥ 1.08 |
-| C3 medicine: public dataset / other | 1.01 [0.94, 1.09], p = 0.84 | 1.01 [0.92, 1.11] | 0.85 [0.60, 1.19], p = 0.34 | rate ratio ≥ 1.17 |
+| C3 medicine: public dataset / other | 1.03 [0.95, 1.12], p = 0.44 | 1.03 [0.94, 1.14] | 0.87 [0.61, 1.24], p = 0.43 | rate ratio ≥ 1.19 |
 
 Break tests with no pre-specified date (deseasonalised log ratio; sup-Wald, bootstrap p):
 
 - C1 physics: theory / experiment: slope break at 2020-10 (sup-Wald 1.3, p = 0.837); level break at 2019-07 (sup-Wald 12.8, p = 0.250)
 - C2 biology: computational / wet lab: slope break at 2020-07 (sup-Wald 131.7, p = 0.001); level break at 2020-03 (sup-Wald 30.6, p = 0.100)
-- C3 medicine: public dataset / other: slope break at 2022-03 (sup-Wald 3.7, p = 0.570); level break at 2021-06 (sup-Wald 15.3, p = 0.235)
+- C3 medicine: public dataset / other: slope break at 2022-01 (sup-Wald 2.7, p = 0.676); level break at 2021-06 (sup-Wald 10.8, p = 0.435)
 
 Placebo break dates (pre-2023 data, group-specific trend plus level shift):
 
 - C1 physics: theory / experiment: 2019: 1.19 [0.90, 1.56], p = 0.22; 2020: 1.16 [0.92, 1.47], p = 0.22; 2021: 0.93 [0.72, 1.19], p = 0.56
 - C2 biology: computational / wet lab: 2020: 0.85 [0.75, 0.96], p = 0.0081; 2021: 1.03 [0.82, 1.29], p = 0.79
-- C3 medicine: public dataset / other: 2020: 0.83 [0.69, 1.00], p = 0.046; 2021: 1.07 [0.89, 1.29], p = 0.47
+- C3 medicine: public dataset / other: 2020: 0.83 [0.69, 1.00], p = 0.049; 2021: 1.07 [0.89, 1.29], p = 0.47
 
 Sensitivity (2026 rate ratio unless stated):
 
 - C1_physics_theory_vs_experiment__base2019: 2023: 0.99 [0.87, 1.13], p = 0.94; 2024: 1.02 [0.89, 1.17], p = 0.74; 2025: 1.00 [0.86, 1.17], p = 0.97; 2026: 1.05 [0.90, 1.23], p = 0.51
 - C2_biology_computational_vs_wetlab__base2019: 2023: 0.78 [0.72, 0.85], p = 4.2e-09; 2024: 0.76 [0.70, 0.82], p = 8.6e-11; 2025: 0.79 [0.73, 0.86], p = 5.9e-09; 2026: 0.87 [0.80, 0.95], p = 0.001
-- C3_medicine_public_dataset_vs_rest__base2019: 2023: 0.99 [0.85, 1.14], p = 0.86; 2024: 0.97 [0.84, 1.12], p = 0.66; 2025: 0.91 [0.79, 1.06], p = 0.24; 2026: 0.98 [0.84, 1.15], p = 0.83
+- C3_medicine_public_dataset_vs_rest__base2019: 2023: 0.99 [0.85, 1.15], p = 0.9; 2024: 0.97 [0.84, 1.12], p = 0.7; 2025: 0.92 [0.79, 1.07], p = 0.26; 2026: 1.01 [0.86, 1.19], p = 0.9
 - C1__without_hep-ph: 1.18 [1.03, 1.35], p = 0.019
 - C2__without_genomics: 1.14 [1.06, 1.22], p = 0.00058
 - C2__genomics_as_wet_lab: 1.14 [1.06, 1.23], p = 0.0004
 - C1__drop_Nov2025_Feb2026: 1.17 [1.05, 1.31], p = 0.0064
 - C1_physics_theory_vs_experiment__sample_to_Oct2025__rr2025: 1.06 [0.95, 1.18], p = 0.3
 - C2_biology_computational_vs_wetlab__sample_to_Oct2025__rr2025: 0.99 [0.94, 1.04], p = 0.65
-- C3_medicine_public_dataset_vs_rest__sample_to_Oct2025__rr2025: 0.92 [0.83, 1.03], p = 0.15
+- C3_medicine_public_dataset_vs_rest__sample_to_Oct2025__rr2025: 0.92 [0.83, 1.03], p = 0.17
 
 Leave one category out (2026 rate ratio):
 
@@ -97,7 +97,7 @@ Ratio of observed to trend-expected counts (Poisson PML, linear trend, seasonali
 | mathematics | 2.9% | 1.04 [0.98, 1.11], p = 0.2 | 1.08 [1.02, 1.14], p = 0.012 | 1.48 [1.26, 1.73], p = 1.9e-06 |
 | computer_science | 21.0% | 1.00 [0.88, 1.14], p = 0.99 | 1.02 [0.88, 1.18], p = 0.8 | 1.15 [0.97, 1.37], p = 0.11 |
 | biology_biorxiv_from2018 | 12.4% | 0.91 [0.78, 1.06], p = 0.23 | 0.92 [0.75, 1.12], p = 0.38 | 0.91 [0.71, 1.15], p = 0.41 |
-| medicine_medrxiv_excl_covid_from2019_unreliable | 48.5% | 0.74 [0.56, 0.97], p = 0.029 | 0.60 [0.41, 0.88], p = 0.0083 | 0.50 [0.30, 0.80], p = 0.0046 |
+| medicine_medrxiv_excl_covid_from2019_unreliable | 48.1% | 0.74 [0.57, 0.97], p = 0.03 | 0.60 [0.42, 0.88], p = 0.0086 | 0.48 [0.29, 0.77], p = 0.0025 |
 | biomedicine_pubmed_quarterly | 5.6% | 0.90 [0.85, 0.96], p = 0.0008 | 0.95 [0.88, 1.02], p = 0.13 | 0.93 [0.86, 1.01], p = 0.079 |
 | social_sciences_quarterly_from2019_unreliable | 18.5% | 0.74 [0.61, 0.91], p = 0.0049 | 0.83 [0.64, 1.08], p = 0.16 | 0.83 [0.62, 1.11], p = 0.22 |
 
@@ -119,16 +119,24 @@ Authors matched by normalised name strings (arXiv has no author identifiers). Na
 
 | Group | Names | Measure | Q3 2022 | Q3 2025 | Q3 2026 | 2026 departure from trend (pp) |
 |---|---|---|---|---|---|---|
+| Maths | all names | papers with an author who has ≥5 papers in the quarter | 3.39% | 5.30% | 18.14% | +9.23 [+5.89, +12.56], p = 6e-08 |
+| Maths | all names | active authors with ≥5 papers | 0.38% | 0.56% | 2.45% | +1.15 [+0.65, +1.66], p = 7.7e-06 |
+| Maths | all names | share of fractional output by the top 1% of authors | 4.87% | 5.15% | 6.84% | +1.77 [+1.37, +2.17], p = 2.4e-18 |
+| Maths | all names | share of fractional output by the top 10% of authors | 25.42% | 26.44% | 32.40% | +4.24 [+2.68, +5.80], p = 9.5e-08 |
+| Maths | namesake-robust | papers with an author who has ≥5 papers in the quarter | 0.87% | 1.75% | 5.12% | +3.79 [+2.73, +4.85], p = 2.5e-12 |
+| Maths | namesake-robust | active authors with ≥5 papers | 0.13% | 0.29% | 1.16% | +0.73 [+0.47, +0.98], p = 2.4e-08 |
+| Maths | namesake-robust | share of fractional output by the top 1% of authors | 4.49% | 4.77% | 6.12% | +1.66 [+1.18, +2.13], p = 1.2e-11 |
+| Maths | namesake-robust | share of fractional output by the top 10% of authors | 24.52% | 25.22% | 29.95% | +4.28 [+2.88, +5.68], p = 2.1e-09 |
 | Physics theory, ≤50 authors | all names | papers with an author who has ≥5 papers in the quarter | 7.94% | 13.37% | 16.61% | +2.09 [+0.06, +4.13], p = 0.043 |
 | Physics theory, ≤50 authors | all names | active authors with ≥5 papers | 0.67% | 1.27% | 1.74% | +0.45 [+0.19, +0.72], p = 0.0007 |
 | Physics theory, ≤50 authors | all names | share of fractional output by the top 1% of authors | 5.50% | 5.86% | 6.52% | +0.82 [+0.53, +1.10], p = 1.3e-08 |
 | Physics theory, ≤50 authors | all names | share of fractional output by the top 10% of authors | 29.21% | 29.54% | 30.88% | -0.30 [-1.11, +0.50], p = 0.46 |
-| Physics theory, ≤50 authors | namesake-robust | papers with an author who has ≥5 papers in the quarter | 2.62% | 5.64% | 8.06% | +1.86 [+0.30, +3.42], p = 0.02 |
-| Physics theory, ≤50 authors | namesake-robust | active authors with ≥5 papers | 0.38% | 0.92% | 1.33% | +0.40 [+0.11, +0.69], p = 0.007 |
+| Physics theory, ≤50 authors | namesake-robust | papers with an author who has ≥5 papers in the quarter | 2.62% | 5.64% | 8.06% | +2.22 [+0.31, +4.13], p = 0.023 |
+| Physics theory, ≤50 authors | namesake-robust | active authors with ≥5 papers | 0.38% | 0.92% | 1.33% | +0.46 [+0.10, +0.82], p = 0.011 |
 | Physics theory, ≤50 authors | namesake-robust | share of fractional output by the top 1% of authors | 4.93% | 5.59% | 6.11% | +0.73 [+0.36, +1.10], p = 9.5e-05 |
 | Physics theory, ≤50 authors | namesake-robust | share of fractional output by the top 10% of authors | 26.82% | 28.18% | 30.27% | +0.71 [-0.55, +1.97], p = 0.27 |
-| Physics experiment, ≤50 authors | all names | papers with an author who has ≥5 papers in the quarter | 15.65% | 17.07% | 17.61% | +4.18 [-5.04, +13.39], p = 0.37 |
-| Physics experiment, ≤50 authors | all names | active authors with ≥5 papers | 0.16% | 0.16% | 0.13% | +0.13 [-0.02, +0.29], p = 0.096 |
+| Physics experiment, ≤50 authors | all names | papers with an author who has ≥5 papers in the quarter | <10 authors | <10 authors | <10 authors | n/a |
+| Physics experiment, ≤50 authors | all names | active authors with ≥5 papers | <10 authors | <10 authors | <10 authors | n/a |
 | Physics experiment, ≤50 authors | all names | share of fractional output by the top 1% of authors | 25.56% | 23.14% | 25.57% | +0.13 [-7.08, +7.34], p = 0.97 |
 | Physics experiment, ≤50 authors | all names | share of fractional output by the top 10% of authors | 64.70% | 56.56% | 58.55% | +3.21 [-4.66, +11.08], p = 0.42 |
 
@@ -136,6 +144,20 @@ Authors matched by normalised name strings (arXiv has no author identifiers). Na
 
 | Group | Names | Q3 pair | Total | Top 1% | Next 9% | Bottom 90% | Share of the change: top 1% / next 9% / bottom 90% |
 |---|---|---|---|---|---|---|---|
+| Maths | all names | 2019→2020 | +5.1% | +2.1% | +6.9% | +4.8% | 2% / 31% / 66% |
+| Maths | all names | 2020→2021 | -3.2% | +0.4% | -8.4% | -1.7% | -1% / 63% / 37% |
+| Maths | all names | 2021→2022 | +2.9% | -3.0% | +0.5% | +4.1% | – / – / – |
+| Maths | all names | 2022→2023 | +2.6% | +0.9% | -0.3% | +3.7% | – / – / – |
+| Maths | all names | 2023→2024 | +7.6% | -0.1% | +4.4% | +9.3% | -0% / 13% / 87% |
+| Maths | all names | 2024→2025 | +12.7% | +17.3% | +14.2% | +11.8% | 8% / 26% / 66% |
+| Maths | all names | 2025→2026 | +80.4% | +265.8% | +120.5% | +57.3% | 14% / 34% / 52% |
+| Maths | namesake-robust | 2019→2020 | +3.0% | +8.2% | +5.0% | +2.0% | 14% / 38% / 49% |
+| Maths | namesake-robust | 2020→2021 | -3.1% | -15.1% | -7.5% | -0.8% | 26% / 56% / 18% |
+| Maths | namesake-robust | 2021→2022 | +1.8% | +5.9% | +0.6% | +1.9% | – / – / – |
+| Maths | namesake-robust | 2022→2023 | +1.7% | +2.2% | -5.6% | +4.1% | – / – / – |
+| Maths | namesake-robust | 2023→2024 | +8.2% | +2.7% | +5.9% | +9.4% | 2% / 17% / 82% |
+| Maths | namesake-robust | 2024→2025 | +11.2% | +14.6% | +14.3% | +10.0% | 7% / 29% / 64% |
+| Maths | namesake-robust | 2025→2026 | +56.3% | +211.2% | +81.0% | +40.8% | 14% / 32% / 53% |
 | Physics theory, ≤50 authors | all names | 2019→2020 | +5.4% | -11.9% | +7.6% | +6.3% | -15% / 34% / 81% |
 | Physics theory, ≤50 authors | all names | 2020→2021 | -0.8% | -5.1% | +0.2% | -0.7% | – / – / – |
 | Physics theory, ≤50 authors | all names | 2021→2022 | +3.4% | +7.7% | +1.0% | +3.8% | 14% / 7% / 79% |
@@ -162,13 +184,15 @@ Shares of the change are omitted (–) when total growth is below 3%, where they
 
 **January–August windows** (comparable with Nee, Zhong & Ni 2026):
 
+- Maths, all names: papers 27,078 → 36,097; with a heavy producer 18.9% → 26.9%; authors ≥5 2.34% → 3.73%; top-1% share 6.1% → 7.7%
+- Maths, namesake-robust: papers 27,078 → 36,097; with a heavy producer 9.0% → 12.0%; authors ≥5 1.78% → 2.59%; top-1% share 5.6% → 6.8%
 - Physics theory, ≤50 authors, all names: papers 9,659 → 11,338; with a heavy producer 33.5% → 37.9%; authors ≥5 4.08% → 4.87%; top-1% share 7.4% → 8.1%
 - Physics theory, ≤50 authors, namesake-robust: papers 9,659 → 11,338; with a heavy producer 17.6% → 20.4%; authors ≥5 3.53% → 4.10%; top-1% share 7.0% → 7.4%
-- Physics experiment, ≤50 authors, all names: papers 723 → 846; with a heavy producer 20.7% → 27.9%; authors ≥5 0.17% → 0.22%; top-1% share 26.5% → 32.9%
+- Physics experiment, ≤50 authors, all names: papers 723 → 846; with a heavy producer <10 authors → 27.9%; authors ≥5 <10 authors → 0.22%; top-1% share 26.5% → 32.9%
 
 ## H3: AI-writing markers
 
-Core marker words: 261 style words of Kobak et al. (2025) with pooled 2019–2022 document frequency below 0.5% in bioRxiv and medRxiv (41,270 baseline abstracts). Rate = distinct core marker words per 100 abstracts (non-COVID preprints).
+Core marker words: 261 style words of Kobak et al. (2025) with pooled 2019–2022 document frequency below 0.5% in bioRxiv and medRxiv (41,267 baseline abstracts). Rate = distinct core marker words per 100 abstracts (non-COVID preprints).
 
 | Corpus | Group | 2019–2022 mean | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |
 |---|---|---|---|---|---|---|
@@ -177,12 +201,14 @@ Core marker words: 261 style words of Kobak et al. (2025) with pooled 2019–202
 | biorxiv | computational | 38.6 | 73.2 (×1.89) | 98.9 (×2.56) | 93.3 (×2.41) | 63.3 (×1.64) |
 | arxiv | theory | 15.0 | 23.3 (×1.55) | 32.6 (×2.17) | 35.2 (×2.34) | 30.8 (×2.05) |
 | arxiv | experiment | 11.7 | 17.7 (×1.52) | 24.9 (×2.13) | 34.4 (×2.95) | 29.9 (×2.57) |
-| medrxiv | all | 26.6 | 45.2 (×1.70) | 72.6 (×2.73) | 71.8 (×2.70) | 49.8 (×1.87) |
+| arxiv | maths | 16.0 | 21.1 (×1.32) | 25.9 (×1.62) | 30.2 (×1.89) | 29.3 (×1.84) |
+| medrxiv | all | 26.6 | 45.2 (×1.70) | 72.6 (×2.73) | 71.8 (×2.70) | 50.0 (×1.88) |
 
 Is the marker rise the same across groups? Ratio of marker rates, group A / group B, relative to 2019–2022 (OLS on monthly log ratios, t intervals):
 
 - biorxiv_computational_vs_wet_lab (16 months): 2023: 1.19 [0.99, 1.43], p = 0.061; 2024: 1.18 [0.98, 1.42], p = 0.076; 2025: 1.04 [0.86, 1.25], p = 0.66; 2026: 1.03 [0.86, 1.24], p = 0.71
 - arxiv_theory_vs_experiment (93 months): 2023: 0.96 [0.79, 1.18], p = 0.7; 2024: 1.00 [0.81, 1.22], p = 0.97; 2025: 0.75 [0.61, 0.91], p = 0.0051; 2026: 0.75 [0.60, 0.95], p = 0.015
+- arxiv_maths_vs_experiment (93 months): 2023: 0.84 [0.69, 1.02], p = 0.075; 2024: 0.75 [0.62, 0.91], p = 0.0039; 2025: 0.60 [0.49, 0.73], p = 9.9e-07; 2026: 0.67 [0.54, 0.83], p = 0.00046
 
 **Use vs output: arXiv groups against bioRxiv.** Markers: ratio of marker rates relative to 2019–2022, on the months both corpora cover (March and September). Output: ratio of new preprints relative to 2022 (event-study model of the within-field contrasts, Driscoll–Kraay 95% CI), and 2026 relative to 2025 (the 2026 acceleration of one group relative to the other).
 
@@ -191,21 +217,23 @@ Is the marker rise the same across groups? Ratio of marker rates, group A / grou
 | arxiv_physics_vs_biorxiv | 0.89 [0.77, 1.03], p = 0.1 | 1.05 [0.91, 1.21], p = 0.5 | 1.36 [1.17, 1.57], p = 0.00072 | 0.86 [0.81, 0.92], p = 2.1e-06 | 0.82 [0.79, 0.84], p = 6.3e-32 | 0.87 [0.80, 0.95], p = 0.0021 | 1.07 [0.99, 1.16], p = 0.082 |
 | arxiv_theory_vs_biorxiv | 0.89 [0.76, 1.03], p = 0.1 | 1.03 [0.89, 1.20], p = 0.67 | 1.36 [1.17, 1.58], p = 0.00087 | 0.87 [0.82, 0.93], p = 1.9e-05 | 0.82 [0.79, 0.86], p = 1.2e-21 | 0.89 [0.81, 0.97], p = 0.011 | 1.08 [0.99, 1.17], p = 0.084 |
 | arxiv_experiment_vs_biorxiv | 1.02 [0.61, 1.71], p = 0.93 | 1.32 [0.79, 2.21], p = 0.26 | 1.45 [0.87, 2.44], p = 0.14 | 0.79 [0.70, 0.89], p = 0.00014 | 0.76 [0.68, 0.85], p = 2.5e-06 | 0.77 [0.69, 0.86], p = 2.5e-06 | 1.02 [0.93, 1.11], p = 0.73 |
+| arxiv_maths_vs_biorxiv | 0.74 [0.63, 0.87], p = 0.0017 | 0.82 [0.69, 0.96], p = 0.021 | 1.11 [0.94, 1.31], p = 0.19 | 0.93 [0.85, 1.02], p = 0.14 | 0.88 [0.85, 0.90], p = 2.1e-20 | 1.11 [0.90, 1.37], p = 0.31 | 1.27 [1.04, 1.56], p = 0.02 |
 
 Lower bound on the share of LLM-processed abstracts (Kobak et al. 2025; arXiv only): excess share of abstracts with at least one core marker word over the 2019–2022 linear trend, divided by one minus the counterfactual share (in brackets: with the 2019–2022 mean as counterfactual).
 
 | Group | Share with a marker, 2019–2022 | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |
 |---|---|---|---|---|---|
 | arXiv experiment | 10.2% | ≥3.1% (≥4.6%) | ≥6.1% (≥8.2%) | ≥14.2% (≥16.6%) | ≥11.4% (≥14.4%) |
+| arXiv maths | 14.3% | ≥1.9% (≥3.4%) | ≥4.4% (≥6.6%) | ≥7.8% (≥10.5%) | ≥8.2% (≥11.5%) |
 | arXiv theory | 13.5% | ≥4.9% (≥5.8%) | ≥10.8% (≥12.0%) | ≥13.8% (≥15.2%) | ≥11.2% (≥13.0%) |
 
 The list was built from 2024 text and its words have drifted since (Methods), so 2024 is the cleanest year; later bounds are weaker.
 
-Does the marker rise predict output growth? Category panel (108 category-years, 27 categories), growth vs 2022 on marker change, interacted with experimental intensity (OLS, year effects, SEs clustered by category):
+Does the marker rise predict output growth? Category panel (112 category-years, 28 categories), growth vs 2022 on marker change, interacted with experimental intensity (OLS, year effects, SEs clustered by category):
 
-- all (n = 108, 27 clusters): dmarker: 0.0005 [-0.0016, 0.0026], p = 0.63; experimental: -0.0755 [-0.2121, 0.0612], p = 0.28; dmarker:experimental: 0.0037 [0.0000, 0.0073], p = 0.049
+- all (n = 112, 28 clusters): dmarker: 0.0001 [-0.0023, 0.0024], p = 0.96; experimental: -0.0974 [-0.2429, 0.0481], p = 0.19; dmarker:experimental: 0.0041 [0.0003, 0.0080], p = 0.034
 - biorxiv (n = 84, 21 clusters): dmarker: 0.0015 [-0.0006, 0.0037], p = 0.16; experimental: 0.0435 [-0.1103, 0.1972], p = 0.58; dmarker:experimental: 0.0011 [-0.0023, 0.0045], p = 0.53
-- arxiv (n = 24, 6 clusters): dmarker: 0.0102 [0.0033, 0.0170], p = 0.0038; experimental: -0.1355 [-0.2157, -0.0554], p = 0.00091; dmarker:experimental: 0.0031 [-0.0012, 0.0074], p = 0.15 (fewer than 20 clusters: clustered standard errors are unreliable; descriptive only)
+- arxiv (n = 28, 7 clusters): dmarker: 0.0060 [-0.0031, 0.0150], p = 0.2; experimental: -0.1947 [-0.3087, -0.0808], p = 0.00081; dmarker:experimental: 0.0051 [0.0001, 0.0100], p = 0.045 (fewer than 20 clusters: clustered standard errors are unreliable; descriptive only)
 
 ## Round-1 review analyses (confounds of the field-level finding)
 
@@ -281,4 +309,76 @@ PubMed journal articles with at least one US affiliation vs the rest (quarterly;
 - base 2023–2024: 2025 0.94 [0.92, 0.96]; 2026 0.91 [0.89, 0.93]; 2026/2025 0.97 [0.96, 0.98]; pre-period: 2019 0.974; 2020 1.034; 2021 1.060; 2022 0.990
 - US share of journal articles: 2019-Q3 19.5%, 2020-Q3 20.6%, 2021-Q3 20.6%, 2022-Q3 19.2%, 2023-Q3 20.1%, 2024-Q3 19.6%, 2025-Q3 19.0%, 2026-Q3 18.2%
 
+
+### P1b. Snowmass 2021 and European Strategy inputs; C1 variants
+
+| Archive | Snowmass share, Jan–Sep 2022 | European Strategy share, Jan–Sep 2025 |
+|---|---|---|
+| hep-th | 1.1% (31) | 0.0% (0) |
+| hep-ph | 4.6% (173) | 0.3% (14) |
+| gr-qc | 0.2% (6) | 0.0% (1) |
+| nucl-th | 0.0% (0) | 0.0% (0) |
+| hep-ex | 16.4% (117) | 5.4% (44) |
+| nucl-ex | 1.4% (5) | 1.8% (6) |
+
+Contrasts after removing those papers (2026 rate ratio):
+
+- C1: base 2022 1.06 [0.89, 1.25]; base 2017–2019 1.11 [0.97, 1.26]
+- C1_without_gr-qc: base 2022 1.02 [0.86, 1.21]; base 2017–2019 1.03 [0.91, 1.16]
+- hep-ph_vs_hep-ex: base 2022 0.88 [0.74, 1.04]; base 2017–2019 0.93 [0.82, 1.06]
+- hep-th_vs_hep-ex: base 2022 0.87 [0.74, 1.03]; base 2017–2019 0.88 [0.75, 1.05]
+- gr-qc_vs_experiment: base 2022 1.15 [0.96, 1.39]; base 2017–2019 1.36 [1.17, 1.58]
+- hep-ex, 2026 departure from trend: raw 1.37 [1.12, 1.67]; without Snowmass and European Strategy papers 1.58 [1.38, 1.82]
+
+### P1f. Genres (maths and the six HEP/nuclear archives only)
+
+Genre from keywords in the comments, title or abstract (white papers; proceedings; theses; reviews, lectures and chapters); everything else is a research article.
+
+- maths: genre shares (Jan–Sep) 2022: proceedings 1.4%, review 0.6%, thesis 0.3%, white_paper 0.0%; 2025: proceedings 1.3%, review 0.7%, thesis 0.3%, white_paper 0.0%; 2026: proceedings 0.9%, review 0.5%, thesis 0.2%, white_paper 0.0%. Growth Jan–Sep 2025 → 2026: all +43.3%, research only +44.3%. 2026 departure from the 2019–2022 trend: all 1.68 [1.45, 1.95], research only 1.69 [1.45, 1.97]
+- hep_nucl_6: genre shares (Jan–Sep) 2022: proceedings 7.3%, review 3.0%, thesis 0.6%, white_paper 3.2%; 2025: proceedings 5.7%, review 2.9%, thesis 0.6%, white_paper 0.8%; 2026: proceedings 4.7%, review 2.3%, thesis 0.5%, white_paper 0.3%. Growth Jan–Sep 2025 → 2026: all +19.2%, research only +21.9%. 2026 departure from the 2019–2022 trend: all 1.19 [1.11, 1.28], research only 1.27 [1.19, 1.37]
+- theory: genre shares (Jan–Sep) 2022: proceedings 6.6%, review 2.9%, thesis 0.6%, white_paper 2.2%; 2025: proceedings 5.0%, review 2.8%, thesis 0.6%, white_paper 0.3%; 2026: proceedings 3.9%, review 2.1%, thesis 0.5%, white_paper 0.2%. Growth Jan–Sep 2025 → 2026: all +20.0%, research only +22.8%. 2026 departure from the 2019–2022 trend: all 1.22 [1.12, 1.32], research only 1.29 [1.20, 1.39]
+- experiment: genre shares (Jan–Sep) 2022: proceedings 14.0%, review 3.8%, thesis 0.1%, white_paper 12.3%; 2025: proceedings 11.8%, review 3.5%, thesis 0.4%, white_paper 5.6%; 2026: proceedings 14.0%, review 4.9%, thesis 0.3%, white_paper 1.3%. Growth Jan–Sep 2025 → 2026: all +10.5%, research only +11.6%. 2026 departure from the 2019–2022 trend: all 0.97 [0.78, 1.20], research only 1.08 [0.92, 1.28]
+
+### P3. medRxiv flags
+
+Each preprint counted once (the API lists some version-1 preprints twice; see Methods). C3 rate ratio in 2026 under each flag definition (base 2022; in brackets base 2019 + 2022):
+
+- original_list_title_or_abstract_covid: 1.01 [0.90, 1.14] (1.01 [0.90, 1.13]); 2026/2025 1.10 [1.03, 1.18]
+- extended_list_title_or_abstract_covid: 1.05 [0.93, 1.17] (1.05 [0.94, 1.16]); 2026/2025 1.09 [1.02, 1.16]
+- original_list_title_only_covid: 1.07 [0.95, 1.21] (1.06 [0.95, 1.19]); 2026/2025 1.11 [1.03, 1.19]
+
+Preprints added by Spick et al.'s four datasets (January–September, non-COVID): 2022 10 of 374, 2023 12 of 482, 2024 30 of 620, 2025 45 of 744, 2026 48 of 922
+
+Non-COVID medRxiv index, Q3 2026 (2022 = 100): 256.8 with a title-or-abstract COVID-19 filter, 241.4 with a title-only filter.
+
+### Exploratory: INSPIRE-HEP (pre-registration §10)
+
+117,950 INSPIRE records with a primary arXiv category in hep-ex, hep-ph, hep-th, hep-lat, nucl-ex or nucl-th, 2017–2026, dated by first arXiv version. ND-INSPIRE: research article, experimental INSPIRE category, linked to an experiment or collaboration, no prospect or sensitivity wording; NN-INSPIRE: all others. Departures from the 2017–2022 trend (field model) and the ratio NN/ND of the 2026 departures (approximate CI from independent fits).
+
+| Rule | Scope | ND papers | NN papers | ND 2026 | NN 2026 | NN/ND 2026 |
+|---|---|---|---|---|---|---|
+| main | all_six | 6,183 | 111,767 | 1.10 [0.93, 1.29] | 1.23 [1.15, 1.32] | 1.12 [0.94, 1.35] |
+| main | hep-ex | 4,592 | 4,329 | 1.33 [1.08, 1.66] | 1.23 [0.88, 1.73] | 0.92 [0.62, 1.38] |
+| main | nucl-ex | 1,200 | 3,297 | 0.77 [0.52, 1.12] | 1.02 [0.76, 1.36] | 1.33 [0.82, 2.15] |
+| main | hep-ex+nucl-ex | 5,792 | 7,626 | 1.18 [0.94, 1.48] | 1.18 [0.96, 1.44] | 1.00 [0.74, 1.35] |
+| no_link | all_six | 21,149 | 96,801 | 1.06 [1.00, 1.14] | 1.26 [1.18, 1.35] | 1.19 [1.08, 1.31] |
+| no_link | hep-ex | 5,970 | 2,951 | 1.50 [1.24, 1.80] | 0.95 [0.62, 1.47] | 0.64 [0.40, 1.02] |
+| no_link | nucl-ex | 3,252 | 1,245 | 0.94 [0.78, 1.15] | 0.88 [0.51, 1.53] | 0.93 [0.52, 1.67] |
+| no_link | hep-ex+nucl-ex | 9,222 | 4,196 | 1.28 [1.10, 1.49] | 0.96 [0.68, 1.35] | 0.75 [0.51, 1.09] |
+| title_prospect | all_six | 6,421 | 111,529 | 1.05 [0.91, 1.22] | 1.24 [1.15, 1.33] | 1.17 [0.99, 1.39] |
+| title_prospect | hep-ex | 4,730 | 4,191 | 1.30 [1.07, 1.60] | 1.26 [0.88, 1.82] | 0.97 [0.64, 1.47] |
+| title_prospect | nucl-ex | 1,245 | 3,252 | 0.76 [0.52, 1.11] | 1.03 [0.77, 1.37] | 1.34 [0.83, 2.16] |
+| title_prospect | hep-ex+nucl-ex | 5,975 | 7,443 | 1.16 [0.94, 1.44] | 1.19 [0.97, 1.47] | 1.03 [0.76, 1.39] |
+| no_prospect | all_six | 6,504 | 111,446 | 1.04 [0.90, 1.21] | 1.24 [1.15, 1.33] | 1.19 [1.01, 1.40] |
+| no_prospect | hep-ex | 4,787 | 4,134 | 1.30 [1.06, 1.59] | 1.27 [0.88, 1.84] | 0.98 [0.64, 1.50] |
+| no_prospect | nucl-ex | 1,257 | 3,240 | 0.75 [0.52, 1.08] | 1.04 [0.78, 1.38] | 1.39 [0.88, 2.21] |
+| no_prospect | hep-ex+nucl-ex | 6,044 | 7,374 | 1.15 [0.93, 1.42] | 1.20 [0.98, 1.49] | 1.05 [0.78, 1.42] |
+| primary_exp | all_six | 5,806 | 112,144 | 1.19 [0.94, 1.49] | 1.23 [1.15, 1.32] | 1.04 [0.82, 1.32] |
+| primary_exp | hep-ex | 4,601 | 4,320 | 1.34 [1.07, 1.66] | 1.23 [0.88, 1.73] | 0.92 [0.61, 1.38] |
+| primary_exp | nucl-ex | 1,205 | 3,292 | 0.77 [0.53, 1.14] | 1.01 [0.76, 1.35] | 1.31 [0.81, 2.12] |
+| primary_exp | hep-ex+nucl-ex | 5,806 | 7,612 | 1.19 [0.94, 1.49] | 1.17 [0.96, 1.44] | 0.99 [0.73, 1.34] |
+
+hep-ex + nucl-ex by author count (2026 departure): le10 (5,573 papers) 1.55 [1.28, 1.89]; 11to300 (3,788 papers) 0.64 [0.49, 0.82]; gt300 (4,057 papers) 1.42 [1.10, 1.84].
+By document type: research_article (10,211) 1.23 [1.07, 1.42]; conference paper (3,043) 1.06 [0.70, 1.60]; article (72) n/a; thesis (61) n/a; book chapter (9) n/a; report (8) n/a.
+Snowmass and European Strategy records by year: 2021 2 / 3 of 11,746; 2022 214 / 10 of 12,249; 2025 1 / 43 of 13,185.
 

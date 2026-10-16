@@ -40,14 +40,22 @@ def harvest_month(server, ym, parts):
     rows = []
     for d in range(1, calendar.monthrange(y, m)[1] + 1):
         day = f"{y}-{m:02d}-{d:02d}"
-        cursor, total = 0, None
+        cursor, total, tries = 0, None, 0
         while total is None or cursor < total:
             j = get(f"https://api.biorxiv.org/details/{server}/{day}/{day}/{cursor}")
             msg = j["messages"][0]
-            if msg.get("status") != "ok":
-                break
-            total = int(msg.get("total", 0))
             coll = j.get("collection", [])
+            if msg.get("status") != "ok" or not coll:
+                if msg.get("status") == "no posts found" and cursor == 0:
+                    break
+                tries += 1  # transient errors and empty pages: retry before moving on
+                if tries > 6:
+                    print("WARNING incomplete day", server, day, cursor, total, flush=True)
+                    break
+                time.sleep(10 * tries)
+                continue
+            tries = 0
+            total = int(msg.get("total", 0))
             for p in coll:
                 if str(p.get("version")) == "1":
                     rows.append({"doi": p.get("doi"), "date": p.get("date"),
@@ -55,8 +63,6 @@ def harvest_month(server, ym, parts):
                                  "institution": " ".join((p.get("author_corresponding_institution") or "").split()),
                                  "title": " ".join((p.get("title") or "").split()),
                                  "abstract": " ".join((p.get("abstract") or "").split())})
-            if not coll:
-                break
             cursor += len(coll)
             time.sleep(0.3)
     tmp = path + ".tmp"

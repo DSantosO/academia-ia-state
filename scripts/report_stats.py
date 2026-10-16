@@ -309,6 +309,44 @@ def r1(lines, r):
                          f"research only {100 * gr_['jan_sep']:+.1f}%. 2026 departure from the 2019–2022 trend: all "
                          f"{ci3(fa)}, research only {ci3(fr)}")
         lines.append("")
+    mf = r.get("medrxiv_flags")
+    if mf:
+        lines += ["### P3. medRxiv flags", "",
+                  "Each preprint counted once (the API lists some version-1 preprints twice; see Methods). C3 rate ratio "
+                  "in 2026 under each flag definition (base 2022; in brackets base 2019 + 2022):", ""]
+        for k, v in mf["C3_variants"].items():
+            lines.append(f"- {k}: {ci3(v['base_2022']['2026'])} ({ci3(v['base_2019_2022']['2026'])}); 2026/2025 "
+                         f"{ci3(v['base_2022']['2026_vs_2025'])}")
+        yrs = mf["by_year_jan_sep"]
+        lines += ["", "Preprints added by Spick et al.'s four datasets (January–September, non-COVID): " + ", ".join(
+            f"{y} {c.get('spick4_only_noncovid', 0)} of {c.get('public_or_spick4_noncovid', 0)}" for y, c in yrs.items()
+            if y >= "2022"), "",
+            f"Non-COVID medRxiv index, Q3 2026 (2022 = 100): {mf['noncovid_index_2022_100']['title_or_abstract']['2026-Q3']:.1f} "
+            f"with a title-or-abstract COVID-19 filter, {mf['noncovid_index_2022_100']['title_only']['2026-Q3']:.1f} with a "
+            "title-only filter.", ""]
+    ins = r.get("inspire")
+    if ins:
+        lines += ["### Exploratory: INSPIRE-HEP (pre-registration §10)", "",
+                  f"{ins['n_records']:,} INSPIRE records with a primary arXiv category in hep-ex, hep-ph, hep-th, hep-lat, "
+                  "nucl-ex or nucl-th, 2017–2026, dated by first arXiv version. ND-INSPIRE: research article, experimental "
+                  "INSPIRE category, linked to an experiment or collaboration, no prospect or sensitivity wording; NN-INSPIRE: "
+                  "all others. Departures from the 2017–2022 trend (field model) and the ratio NN/ND of the 2026 departures "
+                  "(approximate CI from independent fits).", "",
+                  "| Rule | Scope | ND papers | NN papers | ND 2026 | NN 2026 | NN/ND 2026 |", "|---|---|---|---|---|---|---|"]
+        for k, v in ins["classes"].items():
+            rule, scope = k.split("__")
+            f = lambda d: ci3(d["2026"]) if d else "n/a"  # noqa: E731
+            rr = v["RRR_NN_vs_ND"]["2026"]
+            lines.append(f"| {rule} | {scope} | {v['n_ND']:,} | {v['n_NN']:,} | {f(v['ND'])} | {f(v['NN'])} | "
+                         f"{ci3(rr) if rr else 'n/a'} |")
+        lines += ["", "hep-ex + nucl-ex by author count (2026 departure): " + "; ".join(
+            f"{b} ({v['n']:,} papers) {ci3(v['departure']['2026']) if v['departure'] else 'n/a'}"
+            for b, v in ins["by_author_count_hep-ex_nucl-ex"].items()) + ".",
+                  "By document type: " + "; ".join(f"{t} ({v['n']:,}) {ci3(v['departure']['2026']) if v['departure'] else 'n/a'}"
+                                                  for t, v in ins["by_document_type_hep-ex_nucl-ex"].items()) + ".",
+                  "Snowmass and European Strategy records by year: " + "; ".join(
+                      f"{y} {v['snowmass']} / {v['european_strategy']} of {v['all']:,}" for y, v in
+                      ins["snowmass_espp_by_year"].items() if y in ("2021", "2022", "2025")) + ".", ""]
     d = r.get("dating")
     if d:
         lines += ["### P1a. Announcement vs first-version submission", "",

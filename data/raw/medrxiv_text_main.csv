@@ -1007,7 +1007,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2021-05,emergency medicine,7,5,0,0,2,610
 2021-05,endocrinology,16,3,2,2,13,3452
 2021-05,epidemiology,194,149,8,6,45,14498
-2021-05,forensic medicine,2,0,0,0,2,640
+2021-05,forensic medicine,1,0,0,0,1,320
 2021-05,gastroenterology,11,3,1,1,8,2399
 2021-05,genetic and genomic medicine,58,15,10,8,43,11507
 2021-05,geriatric medicine,3,1,1,1,2,619
@@ -1728,7 +1728,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2022-08,emergency medicine,1,1,0,0,0,0
 2022-08,endocrinology,10,0,1,1,10,2397
 2022-08,epidemiology,112,59,8,7,53,15174
-2022-08,forensic medicine,2,0,0,0,2,412
+2022-08,forensic medicine,1,0,0,0,1,206
 2022-08,gastroenterology,10,2,2,1,8,2142
 2022-08,genetic and genomic medicine,51,2,5,5,49,12954
 2022-08,geriatric medicine,5,1,0,0,4,1415
@@ -1923,7 +1923,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2022-12,endocrinology,25,4,6,6,21,5925
 2022-12,epidemiology,99,47,7,7,52,17162
 2022-12,gastroenterology,14,3,1,1,11,3317
-2022-12,genetic and genomic medicine,52,1,14,14,51,12696
+2022-12,genetic and genomic medicine,51,1,13,13,50,12417
 2022-12,geriatric medicine,2,1,0,0,1,489
 2022-12,health economics,11,2,0,0,9,2805
 2022-12,health informatics,31,5,2,2,26,6518
@@ -2116,7 +2116,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2023-04,emergency medicine,2,0,0,0,2,1079
 2023-04,endocrinology,22,0,1,1,22,7296
 2023-04,epidemiology,88,26,8,7,62,17857
-2023-04,forensic medicine,2,0,0,0,2,448
+2023-04,forensic medicine,1,0,0,0,1,224
 2023-04,gastroenterology,10,0,2,2,10,2519
 2023-04,genetic and genomic medicine,43,0,9,9,43,10937
 2023-04,geriatric medicine,7,0,0,0,7,1960
@@ -2215,7 +2215,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2023-06,emergency medicine,7,0,0,0,7,1886
 2023-06,endocrinology,23,1,2,2,22,6692
 2023-06,epidemiology,100,36,11,10,64,17980
-2023-06,forensic medicine,2,0,0,0,2,542
+2023-06,forensic medicine,1,0,0,0,1,271
 2023-06,gastroenterology,12,1,1,1,11,2970
 2023-06,genetic and genomic medicine,74,1,10,10,73,18132
 2023-06,geriatric medicine,9,0,0,0,9,3078
@@ -2363,7 +2363,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2023-09,emergency medicine,7,1,0,0,6,1714
 2023-09,endocrinology,19,0,1,1,19,6188
 2023-09,epidemiology,104,30,11,11,74,22093
-2023-09,forensic medicine,2,0,0,0,2,496
+2023-09,forensic medicine,1,0,0,0,1,248
 2023-09,gastroenterology,18,0,2,2,18,5313
 2023-09,genetic and genomic medicine,66,1,19,19,65,17600
 2023-09,geriatric medicine,8,0,0,0,8,2661
@@ -2603,7 +2603,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2024-02,emergency medicine,11,3,0,0,8,2875
 2024-02,endocrinology,23,1,2,2,22,7300
 2024-02,epidemiology,100,35,13,12,65,19136
-2024-02,forensic medicine,4,2,0,0,2,628
+2024-02,forensic medicine,2,1,0,0,1,314
 2024-02,gastroenterology,12,1,1,1,11,2998
 2024-02,genetic and genomic medicine,67,1,10,10,66,18590
 2024-02,geriatric medicine,8,0,0,0,8,1905
@@ -3094,7 +3094,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2024-12,emergency medicine,9,0,0,0,9,2526
 2024-12,endocrinology,21,1,1,1,20,6270
 2024-12,epidemiology,114,25,15,15,89,27253
-2024-12,forensic medicine,4,0,0,0,4,1048
+2024-12,forensic medicine,2,0,0,0,2,524
 2024-12,gastroenterology,12,0,1,1,12,3232
 2024-12,genetic and genomic medicine,81,1,18,18,80,20205
 2024-12,geriatric medicine,10,1,0,0,9,2452
@@ -3192,7 +3192,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-02,emergency medicine,11,2,0,0,9,2399
 2025-02,endocrinology,27,0,3,3,27,7937
 2025-02,epidemiology,88,12,11,11,76,22278
-2025-02,forensic medicine,2,0,0,0,2,354
+2025-02,forensic medicine,1,0,0,0,1,177
 2025-02,gastroenterology,16,0,1,1,16,4429
 2025-02,genetic and genomic medicine,107,4,27,25,103,27075
 2025-02,geriatric medicine,10,2,1,1,8,2903
@@ -3243,7 +3243,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-03,emergency medicine,6,0,0,0,6,2002
 2025-03,endocrinology,25,1,1,1,24,7997
 2025-03,epidemiology,108,25,15,14,83,23790
-2025-03,forensic medicine,5,0,0,0,5,1057
+2025-03,forensic medicine,3,0,0,0,3,662
 2025-03,gastroenterology,15,2,4,4,13,3754
 2025-03,genetic and genomic medicine,110,2,25,25,108,28420
 2025-03,geriatric medicine,13,0,0,0,13,3982
@@ -3294,7 +3294,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-04,emergency medicine,6,1,0,0,5,1593
 2025-04,endocrinology,23,0,2,2,23,6210
 2025-04,epidemiology,104,28,14,14,76,21130
-2025-04,forensic medicine,4,0,0,0,4,696
+2025-04,forensic medicine,2,0,0,0,2,348
 2025-04,gastroenterology,14,0,0,0,14,3635
 2025-04,genetic and genomic medicine,75,4,14,13,71,19008
 2025-04,geriatric medicine,14,0,0,0,14,3685
@@ -3326,7 +3326,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-04,primary care research,16,1,0,0,15,5766
 2025-04,psychiatry and clinical psychology,69,3,2,1,66,17687
 2025-04,public and global health,107,21,6,6,86,27005
-2025-04,radiology and imaging,35,0,1,1,35,10255
+2025-04,radiology and imaging,35,0,1,1,35,10256
 2025-04,rehabilitation medicine and physical therapy,21,0,1,1,21,6614
 2025-04,respiratory medicine,20,3,1,0,17,4672
 2025-04,rheumatology,6,1,1,1,5,1648
@@ -3358,7 +3358,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-05,infectious diseases,103,22,0,0,81,23736
 2025-05,intensive care and critical care medicine,14,2,2,2,12,3881
 2025-05,medical education,10,1,0,0,9,2695
-2025-05,medical ethics,4,2,2,2,2,448
+2025-05,medical ethics,2,1,1,1,1,224
 2025-05,nephrology,7,0,0,0,7,2195
 2025-05,neurology,100,0,2,2,100,26633
 2025-05,nursing,7,1,0,0,6,2018
@@ -3396,7 +3396,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-06,emergency medicine,8,1,0,0,7,2332
 2025-06,endocrinology,28,0,5,5,28,8934
 2025-06,epidemiology,126,24,14,14,102,27652
-2025-06,forensic medicine,4,0,0,0,4,998
+2025-06,forensic medicine,2,0,0,0,2,539
 2025-06,gastroenterology,10,0,2,2,10,2705
 2025-06,genetic and genomic medicine,82,1,19,19,81,21661
 2025-06,geriatric medicine,15,4,0,0,11,3304
@@ -3409,7 +3409,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-06,infectious diseases,91,20,1,1,71,20122
 2025-06,intensive care and critical care medicine,9,1,2,2,8,2897
 2025-06,medical education,12,1,0,0,11,3034
-2025-06,medical ethics,5,0,0,0,5,1747
+2025-06,medical ethics,3,0,0,0,3,1012
 2025-06,nephrology,12,0,0,0,12,3841
 2025-06,neurology,89,1,3,3,88,24915
 2025-06,nursing,8,0,0,0,8,1997
@@ -3447,7 +3447,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-07,emergency medicine,7,1,0,0,6,2013
 2025-07,endocrinology,16,1,4,4,15,4613
 2025-07,epidemiology,96,13,10,10,83,23641
-2025-07,forensic medicine,4,0,0,0,4,1244
+2025-07,forensic medicine,2,0,0,0,2,622
 2025-07,gastroenterology,12,0,0,0,12,3311
 2025-07,genetic and genomic medicine,93,0,16,16,93,23864
 2025-07,geriatric medicine,17,2,2,2,15,4912
@@ -3460,7 +3460,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-07,infectious diseases,86,23,1,1,63,19401
 2025-07,intensive care and critical care medicine,13,2,2,2,11,3146
 2025-07,medical education,16,0,0,0,16,4410
-2025-07,medical ethics,6,0,0,0,6,1328
+2025-07,medical ethics,3,0,0,0,3,676
 2025-07,nephrology,7,0,0,0,7,2138
 2025-07,neurology,112,1,6,6,111,31393
 2025-07,nursing,6,0,0,0,6,1515
@@ -3498,7 +3498,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-08,emergency medicine,11,1,0,0,10,3326
 2025-08,endocrinology,20,0,4,4,20,6193
 2025-08,epidemiology,131,19,21,21,112,32748
-2025-08,forensic medicine,2,0,0,0,2,534
+2025-08,forensic medicine,1,0,0,0,1,267
 2025-08,gastroenterology,11,0,1,1,11,2730
 2025-08,genetic and genomic medicine,81,2,21,20,79,23735
 2025-08,geriatric medicine,14,0,1,1,14,4170
@@ -3511,7 +3511,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-08,infectious diseases,75,21,1,0,54,15930
 2025-08,intensive care and critical care medicine,12,1,1,1,11,3431
 2025-08,medical education,11,0,0,0,11,2996
-2025-08,medical ethics,2,0,0,0,2,274
+2025-08,medical ethics,1,0,0,0,1,137
 2025-08,nephrology,12,1,1,1,11,3383
 2025-08,neurology,115,1,5,5,114,31104
 2025-08,nursing,1,0,0,0,1,231
@@ -3561,7 +3561,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-09,infectious diseases,81,12,0,0,69,20040
 2025-09,intensive care and critical care medicine,14,3,1,1,11,3000
 2025-09,medical education,8,0,0,0,8,1805
-2025-09,medical ethics,2,0,0,0,2,834
+2025-09,medical ethics,1,0,0,0,1,417
 2025-09,nephrology,11,0,0,0,11,3433
 2025-09,neurology,127,1,6,6,126,37143
 2025-09,nursing,13,0,0,0,13,3214
@@ -3635,7 +3635,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-10,sexual and reproductive health,15,1,0,0,14,4058
 2025-10,sports medicine,5,0,0,0,5,1209
 2025-10,surgery,17,0,1,1,17,4942
-2025-10,toxicology,2,0,0,0,2,488
+2025-10,toxicology,1,0,0,0,1,244
 2025-10,transplantation,6,0,0,0,6,1969
 2025-10,urology,6,0,0,0,6,1667
 2025-11,addiction medicine,3,0,1,1,3,730
@@ -3671,7 +3671,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-11,orthopedics,8,0,0,0,8,2350
 2025-11,otolaryngology,7,0,0,0,7,2414
 2025-11,pain medicine,3,0,0,0,3,861
-2025-11,palliative medicine,8,0,0,0,8,2725
+2025-11,palliative medicine,2,0,0,0,2,633
 2025-11,pathology,10,0,1,1,10,2772
 2025-11,pediatrics,25,2,0,0,23,7063
 2025-11,pharmacology and therapeutics,6,0,0,0,6,2385
@@ -3685,7 +3685,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2025-11,sexual and reproductive health,14,1,0,0,13,4431
 2025-11,sports medicine,8,0,0,0,8,2599
 2025-11,surgery,14,0,0,0,14,3883
-2025-11,toxicology,3,0,0,0,3,746
+2025-11,toxicology,2,0,0,0,2,515
 2025-11,transplantation,4,0,0,0,4,1439
 2025-11,urology,1,0,0,0,1,305
 2025-12,addiction medicine,9,1,0,0,8,2966
@@ -3744,7 +3744,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-01,emergency medicine,5,2,1,1,3,690
 2026-01,endocrinology,16,1,2,2,15,4173
 2026-01,epidemiology,102,16,19,19,86,23838
-2026-01,forensic medicine,6,0,0,0,6,2446
+2026-01,forensic medicine,3,0,0,0,3,1221
 2026-01,gastroenterology,15,0,1,1,15,4575
 2026-01,genetic and genomic medicine,69,1,11,11,68,18522
 2026-01,geriatric medicine,12,0,0,0,12,3453
@@ -3757,19 +3757,19 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-01,infectious diseases,59,13,1,1,46,13390
 2026-01,intensive care and critical care medicine,15,2,1,1,13,3861
 2026-01,medical education,10,0,0,0,10,3443
-2026-01,medical ethics,2,0,0,0,2,534
+2026-01,medical ethics,1,0,0,0,1,267
 2026-01,nephrology,9,0,0,0,9,2617
 2026-01,neurology,94,1,2,2,93,28733
 2026-01,nursing,2,0,0,0,2,519
 2026-01,nutrition,17,0,0,0,17,5002
-2026-01,obstetrics and gynecology,13,0,0,0,13,3668
+2026-01,obstetrics and gynecology,13,0,0,0,13,3601
 2026-01,occupational and environmental health,6,1,0,0,5,1367
 2026-01,oncology,65,1,0,0,64,19440
 2026-01,ophthalmology,12,0,0,0,12,3771
 2026-01,orthopedics,3,0,0,0,3,808
 2026-01,otolaryngology,6,0,1,1,6,2078
 2026-01,pain medicine,9,0,1,1,9,2165
-2026-01,palliative medicine,9,2,0,0,7,3055
+2026-01,palliative medicine,4,1,0,0,3,1285
 2026-01,pathology,7,0,1,1,7,1765
 2026-01,pediatrics,28,1,0,0,27,8211
 2026-01,pharmacology and therapeutics,12,0,1,1,12,3455
@@ -3783,7 +3783,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-01,sexual and reproductive health,9,0,0,0,9,2509
 2026-01,sports medicine,4,0,1,1,4,1306
 2026-01,surgery,7,0,0,0,7,2222
-2026-01,toxicology,6,0,0,0,6,2334
+2026-01,toxicology,4,0,0,0,4,1449
 2026-01,transplantation,4,1,0,0,3,679
 2026-01,urology,4,0,0,0,4,1437
 2026-02,addiction medicine,10,0,1,1,10,3089
@@ -3804,10 +3804,10 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-02,health systems and quality improvement,32,1,2,2,31,9290
 2026-02,hematology,7,0,0,0,7,2060
 2026-02,hiv aids,24,1,0,0,23,7385
-2026-02,infectious diseases,87,17,0,0,70,21331
+2026-02,infectious diseases,87,17,0,0,70,21330
 2026-02,intensive care and critical care medicine,17,0,4,4,17,5362
 2026-02,medical education,12,0,0,0,12,3895
-2026-02,medical ethics,4,0,0,0,4,784
+2026-02,medical ethics,2,0,0,0,2,392
 2026-02,nephrology,7,0,0,0,7,2016
 2026-02,neurology,98,0,3,3,98,29131
 2026-02,nursing,5,0,0,0,5,1403
@@ -3819,7 +3819,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-02,orthopedics,9,0,0,0,9,2450
 2026-02,otolaryngology,2,0,0,0,2,526
 2026-02,pain medicine,6,1,0,0,5,1697
-2026-02,palliative medicine,6,2,0,0,4,938
+2026-02,palliative medicine,3,1,0,0,2,469
 2026-02,pathology,14,0,0,0,14,3873
 2026-02,pediatrics,19,1,0,0,18,5268
 2026-02,pharmacology and therapeutics,6,0,2,2,6,1695
@@ -3833,8 +3833,8 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-02,sexual and reproductive health,13,4,0,0,9,2855
 2026-02,sports medicine,9,0,0,0,9,2979
 2026-02,surgery,10,0,0,0,10,2438
-2026-02,toxicology,4,0,0,0,4,971
-2026-02,transplantation,11,0,0,0,11,3877
+2026-02,toxicology,2,0,0,0,2,448
+2026-02,transplantation,7,0,0,0,7,2421
 2026-02,urology,6,0,2,2,6,1644
 2026-03,addiction medicine,9,0,1,1,9,2981
 2026-03,allergy and immunology,6,1,0,0,5,1556
@@ -3857,7 +3857,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-03,infectious diseases,112,16,1,1,96,29001
 2026-03,intensive care and critical care medicine,13,2,5,4,11,2700
 2026-03,medical education,13,2,0,0,11,3109
-2026-03,medical ethics,2,0,0,0,2,904
+2026-03,medical ethics,1,0,0,0,1,452
 2026-03,nephrology,14,0,2,2,14,4822
 2026-03,neurology,130,0,3,3,130,37571
 2026-03,nursing,9,0,0,0,9,2742
@@ -3884,7 +3884,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-03,sports medicine,15,0,1,1,15,4710
 2026-03,surgery,8,0,0,0,8,2834
 2026-03,toxicology,2,0,0,0,2,415
-2026-03,transplantation,8,0,0,0,8,2490
+2026-03,transplantation,4,0,0,0,4,1338
 2026-03,urology,8,0,1,1,8,2750
 2026-04,addiction medicine,12,0,0,0,12,3693
 2026-04,allergy and immunology,8,3,0,0,5,1221
@@ -3894,10 +3894,10 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-04,dermatology,9,0,0,0,9,3867
 2026-04,emergency medicine,4,1,0,0,3,1006
 2026-04,endocrinology,26,0,4,4,26,7574
-2026-04,epidemiology,134,12,18,18,122,39817
-2026-04,forensic medicine,2,0,0,0,2,722
+2026-04,epidemiology,134,12,18,18,122,40111
+2026-04,forensic medicine,1,0,0,0,1,361
 2026-04,gastroenterology,15,0,0,0,15,4032
-2026-04,genetic and genomic medicine,99,1,28,28,98,25151
+2026-04,genetic and genomic medicine,94,1,26,26,93,23702
 2026-04,geriatric medicine,19,0,2,2,19,6448
 2026-04,health economics,12,0,1,1,12,3730
 2026-04,health informatics,86,1,8,8,85,25859
@@ -3908,10 +3908,10 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-04,infectious diseases,87,19,1,1,68,21922
 2026-04,intensive care and critical care medicine,16,0,4,4,16,4937
 2026-04,medical education,10,0,0,0,10,2658
-2026-04,medical ethics,2,0,0,0,2,432
+2026-04,medical ethics,1,0,0,0,1,216
 2026-04,nephrology,12,0,1,1,12,4261
 2026-04,neurology,112,1,5,5,111,32079
-2026-04,nursing,9,0,0,0,9,2608
+2026-04,nursing,8,0,0,0,8,2301
 2026-04,nutrition,30,0,2,2,30,8875
 2026-04,obstetrics and gynecology,20,0,1,1,20,7444
 2026-04,occupational and environmental health,6,0,0,0,6,1449
@@ -3920,7 +3920,7 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-04,orthopedics,11,0,0,0,11,3239
 2026-04,otolaryngology,8,0,1,1,8,2178
 2026-04,pain medicine,7,0,0,0,7,1877
-2026-04,palliative medicine,5,0,0,0,5,1419
+2026-04,palliative medicine,3,0,0,0,3,926
 2026-04,pathology,7,0,0,0,7,1921
 2026-04,pediatrics,20,1,0,0,19,5643
 2026-04,pharmacology and therapeutics,9,1,0,0,8,2676
@@ -3934,11 +3934,11 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-04,sexual and reproductive health,15,0,0,0,15,4881
 2026-04,sports medicine,7,0,0,0,7,2787
 2026-04,surgery,14,0,0,0,14,3700
-2026-04,transplantation,8,0,0,0,8,2470
+2026-04,transplantation,3,0,0,0,3,795
 2026-04,urology,5,0,0,0,5,1467
 2026-05,addiction medicine,8,0,0,0,8,2493
 2026-05,allergy and immunology,7,1,1,1,6,1721
-2026-05,anesthesia,7,0,0,0,7,2866
+2026-05,anesthesia,7,0,0,0,7,2867
 2026-05,cardiovascular medicine,87,2,12,11,85,27300
 2026-05,dentistry and oral medicine,8,1,2,2,7,2335
 2026-05,dermatology,8,0,2,2,8,3067
@@ -3958,19 +3958,19 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-05,infectious diseases,74,17,0,0,57,18682
 2026-05,intensive care and critical care medicine,10,0,2,2,10,3210
 2026-05,medical education,9,0,0,0,9,2690
-2026-05,medical ethics,3,0,0,0,3,1114
+2026-05,medical ethics,2,0,0,0,2,658
 2026-05,nephrology,9,0,1,1,9,2571
 2026-05,neurology,146,2,9,9,144,42307
-2026-05,nursing,5,0,0,0,5,1608
+2026-05,nursing,3,0,0,0,3,944
 2026-05,nutrition,15,0,4,4,15,5725
 2026-05,obstetrics and gynecology,20,0,0,0,20,6603
 2026-05,occupational and environmental health,9,0,0,0,9,2053
 2026-05,oncology,52,0,1,1,52,16727
 2026-05,ophthalmology,20,0,3,3,20,6251
-2026-05,orthopedics,5,0,2,2,5,1869
+2026-05,orthopedics,4,0,1,1,4,1574
 2026-05,otolaryngology,2,0,0,0,2,443
 2026-05,pain medicine,6,0,0,0,6,1950
-2026-05,palliative medicine,7,0,0,0,7,2429
+2026-05,palliative medicine,3,0,0,0,3,1086
 2026-05,pathology,4,0,0,0,4,957
 2026-05,pediatrics,26,1,0,0,25,7293
 2026-05,pharmacology and therapeutics,11,0,2,2,11,3353
@@ -3985,18 +3985,17 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-05,sports medicine,9,0,0,0,9,2914
 2026-05,surgery,13,0,1,1,13,4552
 2026-05,toxicology,2,0,0,0,2,500
-2026-05,transplantation,4,0,0,0,4,912
+2026-05,transplantation,2,0,0,0,2,456
 2026-05,urology,4,0,0,0,4,858
 2026-06,addiction medicine,8,0,0,0,8,2166
 2026-06,allergy and immunology,9,2,0,0,7,2051
-2026-06,anesthesia,11,0,0,0,11,3238
+2026-06,anesthesia,7,0,0,0,7,2053
 2026-06,cardiovascular medicine,88,1,10,10,87,29069
 2026-06,dentistry and oral medicine,3,0,0,0,3,810
 2026-06,dermatology,5,0,0,0,5,1230
 2026-06,emergency medicine,9,1,0,0,8,2677
 2026-06,endocrinology,28,0,5,5,28,9345
 2026-06,epidemiology,130,19,15,15,111,32944
-2026-06,forensic medicine,1,0,0,0,1,244
 2026-06,gastroenterology,16,0,0,0,16,5251
 2026-06,genetic and genomic medicine,96,1,24,24,95,25852
 2026-06,geriatric medicine,16,0,0,0,16,4767
@@ -4004,24 +4003,24 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-06,health informatics,99,2,12,12,97,27734
 2026-06,health policy,17,2,1,1,15,4886
 2026-06,health systems and quality improvement,31,1,1,1,30,10280
-2026-06,hematology,16,2,0,0,14,4315
+2026-06,hematology,15,2,0,0,13,4088
 2026-06,hiv aids,12,0,1,1,12,3731
 2026-06,infectious diseases,74,17,0,0,57,21289
 2026-06,intensive care and critical care medicine,13,1,4,4,12,4100
 2026-06,medical education,11,0,0,0,11,3269
 2026-06,nephrology,19,0,2,2,19,5351
 2026-06,neurology,163,0,3,3,163,50681
-2026-06,nursing,4,0,0,0,4,1291
+2026-06,nursing,3,0,0,0,3,969
 2026-06,nutrition,23,0,1,1,23,7529
 2026-06,obstetrics and gynecology,18,1,0,0,17,5741
 2026-06,occupational and environmental health,10,2,1,1,8,2503
 2026-06,oncology,54,1,4,4,53,17291
 2026-06,ophthalmology,18,0,0,0,18,5339
-2026-06,orthopedics,5,0,0,0,5,1287
+2026-06,orthopedics,3,0,0,0,3,786
 2026-06,otolaryngology,5,1,0,0,4,970
 2026-06,pain medicine,8,0,0,0,8,2849
-2026-06,palliative medicine,4,0,0,0,4,1282
-2026-06,pathology,19,0,0,0,19,5809
+2026-06,palliative medicine,2,0,0,0,2,641
+2026-06,pathology,15,0,0,0,15,4741
 2026-06,pediatrics,18,0,0,0,18,5928
 2026-06,pharmacology and therapeutics,9,0,2,2,9,2688
 2026-06,primary care research,14,0,0,0,14,4493
@@ -4034,157 +4033,157 @@ month,category,papers,covid,public,public_noncovid,papers_noncovid,words_noncovi
 2026-06,sexual and reproductive health,15,0,0,0,15,4511
 2026-06,sports medicine,6,0,0,0,6,1557
 2026-06,surgery,17,0,0,0,17,5581
-2026-06,toxicology,2,0,0,0,2,512
-2026-06,transplantation,4,0,0,0,4,742
-2026-06,urology,17,0,0,0,17,4930
-2026-07,addiction medicine,10,0,0,0,10,3378
-2026-07,allergy and immunology,18,0,0,0,18,4413
-2026-07,anesthesia,5,0,0,0,5,1937
+2026-06,toxicology,1,0,0,0,1,256
+2026-06,transplantation,2,0,0,0,2,371
+2026-06,urology,5,0,0,0,5,1518
+2026-07,addiction medicine,9,0,0,0,9,3131
+2026-07,allergy and immunology,10,0,0,0,10,2536
+2026-07,anesthesia,3,0,0,0,3,1193
 2026-07,cardiovascular medicine,94,0,12,12,94,30145
-2026-07,dentistry and oral medicine,23,0,0,0,23,7121
-2026-07,dermatology,20,0,2,2,20,5815
-2026-07,emergency medicine,12,0,0,0,12,3414
+2026-07,dentistry and oral medicine,11,0,0,0,11,3433
+2026-07,dermatology,11,0,1,1,11,3060
+2026-07,emergency medicine,6,0,0,0,6,1707
 2026-07,endocrinology,30,0,5,5,30,8399
 2026-07,epidemiology,196,25,16,14,171,54611
-2026-07,forensic medicine,2,0,0,0,2,428
+2026-07,forensic medicine,1,0,0,0,1,214
 2026-07,gastroenterology,18,0,2,2,18,5747
 2026-07,genetic and genomic medicine,97,0,24,24,97,25108
-2026-07,geriatric medicine,28,0,2,2,28,8053
+2026-07,geriatric medicine,23,0,2,2,23,6788
 2026-07,health economics,10,0,0,0,10,3043
 2026-07,health informatics,115,3,9,9,112,33441
-2026-07,health policy,16,0,1,1,16,5557
+2026-07,health policy,15,0,1,1,15,5295
 2026-07,health systems and quality improvement,36,2,0,0,34,11591
-2026-07,hematology,18,0,2,2,18,5145
+2026-07,hematology,8,0,1,1,8,2328
 2026-07,hiv aids,15,0,0,0,15,5394
 2026-07,infectious diseases,93,16,1,1,77,24217
 2026-07,intensive care and critical care medicine,15,0,4,4,15,4952
-2026-07,medical education,13,0,0,0,13,4208
-2026-07,medical ethics,2,0,0,0,2,408
-2026-07,nephrology,16,2,2,2,14,3948
+2026-07,medical education,11,0,0,0,11,3595
+2026-07,medical ethics,1,0,0,0,1,204
+2026-07,nephrology,11,1,2,2,10,2841
 2026-07,neurology,142,0,7,7,142,40691
-2026-07,nursing,18,0,0,0,18,6391
+2026-07,nursing,8,0,0,0,8,2920
 2026-07,nutrition,27,0,3,3,27,8339
 2026-07,obstetrics and gynecology,31,2,0,0,29,9272
-2026-07,occupational and environmental health,23,2,4,4,21,7209
+2026-07,occupational and environmental health,15,1,3,3,14,4569
 2026-07,oncology,75,1,4,4,74,20614
 2026-07,ophthalmology,11,0,0,0,11,3063
-2026-07,orthopedics,12,0,0,0,12,3408
-2026-07,otolaryngology,10,2,0,0,8,2335
-2026-07,pain medicine,8,0,0,0,8,2365
-2026-07,palliative medicine,6,0,0,0,6,2010
-2026-07,pathology,25,0,0,0,25,8762
+2026-07,orthopedics,6,0,0,0,6,1704
+2026-07,otolaryngology,6,1,0,0,5,1493
+2026-07,pain medicine,6,0,0,0,6,1773
+2026-07,palliative medicine,3,0,0,0,3,1005
+2026-07,pathology,8,0,0,0,8,2907
 2026-07,pediatrics,26,0,1,1,26,7656
-2026-07,pharmacology and therapeutics,27,0,1,1,27,9787
-2026-07,primary care research,24,3,0,0,21,8620
+2026-07,pharmacology and therapeutics,11,0,0,0,11,3768
+2026-07,primary care research,15,3,0,0,12,4745
 2026-07,psychiatry and clinical psychology,113,1,6,6,112,33181
 2026-07,public and global health,131,22,3,3,109,34574
 2026-07,radiology and imaging,41,0,1,1,41,13180
 2026-07,rehabilitation medicine and physical therapy,12,0,0,0,12,3699
-2026-07,respiratory medicine,18,2,1,1,16,6634
-2026-07,rheumatology,26,0,0,0,26,7797
-2026-07,sexual and reproductive health,23,1,0,0,22,6367
-2026-07,sports medicine,24,0,1,1,24,7863
+2026-07,respiratory medicine,14,2,1,1,12,4389
+2026-07,rheumatology,17,0,0,0,17,5391
+2026-07,sexual and reproductive health,17,1,0,0,16,4749
+2026-07,sports medicine,18,0,1,1,18,5937
 2026-07,surgery,13,0,0,0,13,4238
-2026-07,toxicology,6,0,0,0,6,1815
-2026-07,transplantation,7,0,0,0,7,2195
-2026-07,urology,13,0,3,3,13,5441
-2026-08,addiction medicine,35,2,0,0,33,9911
-2026-08,allergy and immunology,9,0,0,0,9,1954
-2026-08,anesthesia,8,0,0,0,8,2965
+2026-07,toxicology,3,0,0,0,3,908
+2026-07,transplantation,4,0,0,0,4,1239
+2026-07,urology,5,0,1,1,5,2101
+2026-08,addiction medicine,17,1,0,0,16,4776
+2026-08,allergy and immunology,6,0,0,0,6,1271
+2026-08,anesthesia,4,0,0,0,4,1463
 2026-08,cardiovascular medicine,78,2,12,12,76,25282
-2026-08,dentistry and oral medicine,18,0,0,0,18,6398
-2026-08,dermatology,8,0,0,0,8,2351
-2026-08,emergency medicine,14,2,0,0,12,4905
-2026-08,endocrinology,18,0,2,2,18,6010
+2026-08,dentistry and oral medicine,9,0,0,0,9,3199
+2026-08,dermatology,3,0,0,0,3,990
+2026-08,emergency medicine,9,1,0,0,8,3564
+2026-08,endocrinology,14,0,2,2,14,4593
 2026-08,epidemiology,156,23,21,21,133,44853
-2026-08,gastroenterology,31,0,2,2,31,10157
+2026-08,gastroenterology,17,0,1,1,17,5650
 2026-08,genetic and genomic medicine,91,0,24,24,91,23557
-2026-08,geriatric medicine,27,0,3,3,27,7922
-2026-08,health economics,28,0,1,1,28,8388
+2026-08,geriatric medicine,12,0,1,1,12,3549
+2026-08,health economics,18,0,1,1,18,5269
 2026-08,health informatics,105,4,13,13,101,30493
-2026-08,health policy,25,2,2,2,23,8962
+2026-08,health policy,13,1,1,1,12,4547
 2026-08,health systems and quality improvement,26,1,2,2,25,8104
-2026-08,hematology,18,2,0,0,16,4237
-2026-08,hiv aids,33,1,0,0,32,12967
+2026-08,hematology,10,1,0,0,9,2348
+2026-08,hiv aids,25,1,0,0,24,9512
 2026-08,infectious diseases,75,9,1,1,66,19574
-2026-08,intensive care and critical care medicine,24,0,6,6,24,7732
-2026-08,medical education,22,2,0,0,20,5764
-2026-08,medical ethics,3,0,0,0,3,927
-2026-08,nephrology,28,0,1,1,28,8303
+2026-08,intensive care and critical care medicine,15,0,4,4,15,4886
+2026-08,medical education,11,1,0,0,10,3029
+2026-08,medical ethics,2,0,0,0,2,621
+2026-08,nephrology,15,0,0,0,15,4489
 2026-08,neurology,144,4,5,5,140,39576
-2026-08,nursing,8,0,0,0,8,2621
-2026-08,nutrition,23,0,5,5,23,7324
-2026-08,obstetrics and gynecology,23,0,2,2,23,6806
-2026-08,occupational and environmental health,26,0,0,0,26,8035
+2026-08,nursing,5,0,0,0,5,1593
+2026-08,nutrition,13,0,3,3,13,4073
+2026-08,obstetrics and gynecology,19,0,2,2,19,5580
+2026-08,occupational and environmental health,13,0,0,0,13,4009
 2026-08,oncology,49,0,2,2,49,15344
-2026-08,ophthalmology,22,2,2,2,20,5632
-2026-08,orthopedics,20,0,0,0,20,6039
-2026-08,otolaryngology,14,0,2,2,14,4734
-2026-08,pain medicine,22,0,2,2,22,6589
-2026-08,palliative medicine,7,0,0,0,7,2686
-2026-08,pathology,12,0,0,0,12,3805
+2026-08,ophthalmology,18,2,2,2,16,4542
+2026-08,orthopedics,11,0,0,0,11,3427
+2026-08,otolaryngology,8,0,1,1,8,2733
+2026-08,pain medicine,11,0,1,1,11,3391
+2026-08,palliative medicine,3,0,0,0,3,1138
+2026-08,pathology,4,0,0,0,4,1212
 2026-08,pediatrics,15,0,0,0,15,4758
-2026-08,pharmacology and therapeutics,20,0,1,1,20,6403
-2026-08,primary care research,19,0,0,0,19,7012
+2026-08,pharmacology and therapeutics,8,0,1,1,8,2499
+2026-08,primary care research,5,0,0,0,5,1948
 2026-08,psychiatry and clinical psychology,88,2,5,5,86,25135
 2026-08,public and global health,123,7,6,6,116,39770
 2026-08,radiology and imaging,50,1,0,0,49,15112
-2026-08,rehabilitation medicine and physical therapy,25,1,0,0,24,6808
-2026-08,respiratory medicine,18,0,1,1,18,6224
-2026-08,rheumatology,13,0,0,0,13,3505
-2026-08,sexual and reproductive health,16,0,2,2,16,5174
-2026-08,sports medicine,11,0,0,0,11,3347
-2026-08,surgery,24,0,0,0,24,6589
-2026-08,toxicology,2,0,2,2,2,386
-2026-08,transplantation,9,0,0,0,9,2755
-2026-08,urology,21,0,0,0,21,6342
-2026-09,addiction medicine,10,0,0,0,10,2808
-2026-09,allergy and immunology,15,3,1,1,12,3119
-2026-09,anesthesia,14,0,0,0,14,5019
+2026-08,rehabilitation medicine and physical therapy,24,1,0,0,23,6558
+2026-08,respiratory medicine,9,0,1,1,9,3113
+2026-08,rheumatology,6,0,0,0,6,1612
+2026-08,sexual and reproductive health,9,0,1,1,9,2955
+2026-08,sports medicine,6,0,0,0,6,1804
+2026-08,surgery,15,0,0,0,15,4089
+2026-08,toxicology,1,0,1,1,1,193
+2026-08,transplantation,4,0,0,0,4,1236
+2026-08,urology,7,0,0,0,7,2064
+2026-09,addiction medicine,8,0,0,0,8,2166
+2026-09,allergy and immunology,13,3,1,1,10,2725
+2026-09,anesthesia,13,0,0,0,13,4607
 2026-09,cardiovascular medicine,82,1,12,12,81,26596
 2026-09,dentistry and oral medicine,9,0,0,0,9,2376
-2026-09,dermatology,11,0,1,1,11,3187
-2026-09,emergency medicine,10,0,0,0,10,3303
-2026-09,endocrinology,27,0,4,4,27,8502
+2026-09,dermatology,10,0,1,1,10,2925
+2026-09,emergency medicine,9,0,0,0,9,2615
+2026-09,endocrinology,24,0,3,3,24,7416
 2026-09,epidemiology,168,22,24,22,146,46449
 2026-09,forensic medicine,2,0,0,0,2,390
 2026-09,gastroenterology,19,0,0,0,19,5711
-2026-09,genetic and genomic medicine,112,0,33,33,112,30291
-2026-09,geriatric medicine,7,1,0,0,6,2522
-2026-09,health economics,15,0,0,0,15,4360
+2026-09,genetic and genomic medicine,111,0,33,33,111,30234
+2026-09,geriatric medicine,6,1,0,0,5,2101
+2026-09,health economics,12,0,0,0,12,3395
 2026-09,health informatics,97,2,14,14,95,27775
-2026-09,health policy,15,0,0,0,15,4944
+2026-09,health policy,13,0,0,0,13,4318
 2026-09,health systems and quality improvement,39,1,0,0,38,13417
-2026-09,hematology,10,0,1,1,10,2615
-2026-09,hiv aids,21,0,0,0,21,7237
-2026-09,infectious diseases,90,17,0,0,73,22633
-2026-09,intensive care and critical care medicine,21,0,5,5,21,6997
-2026-09,medical education,12,0,0,0,12,4439
-2026-09,medical ethics,5,0,0,0,5,1607
-2026-09,nephrology,10,0,2,2,10,2896
+2026-09,hematology,7,0,1,1,7,1937
+2026-09,hiv aids,18,0,0,0,18,5889
+2026-09,infectious diseases,89,17,0,0,72,22566
+2026-09,intensive care and critical care medicine,18,0,3,3,18,6050
+2026-09,medical education,10,0,0,0,10,3583
+2026-09,medical ethics,4,0,0,0,4,1292
+2026-09,nephrology,8,0,2,2,8,2292
 2026-09,neurology,145,1,6,6,144,42760
-2026-09,nursing,7,0,0,0,7,2350
-2026-09,nutrition,23,0,3,3,23,7055
-2026-09,obstetrics and gynecology,24,0,0,0,24,8874
-2026-09,occupational and environmental health,9,0,0,0,9,2936
-2026-09,oncology,63,0,3,3,63,17566
-2026-09,ophthalmology,21,0,0,0,21,5890
-2026-09,orthopedics,7,0,0,0,7,2422
+2026-09,nursing,6,0,0,0,6,2012
+2026-09,nutrition,21,0,3,3,21,6404
+2026-09,obstetrics and gynecology,19,0,0,0,19,7051
+2026-09,occupational and environmental health,7,0,0,0,7,2320
+2026-09,oncology,62,0,3,3,62,17292
+2026-09,ophthalmology,19,0,0,0,19,5429
+2026-09,orthopedics,6,0,0,0,6,2112
 2026-09,otolaryngology,11,1,0,0,10,3196
-2026-09,pain medicine,15,1,0,0,14,3947
+2026-09,pain medicine,14,1,0,0,13,3685
 2026-09,palliative medicine,2,0,0,0,2,482
 2026-09,pathology,8,1,0,0,7,2042
-2026-09,pediatrics,43,2,3,1,41,12165
-2026-09,pharmacology and therapeutics,9,0,1,1,9,2273
+2026-09,pediatrics,42,2,3,1,40,11814
+2026-09,pharmacology and therapeutics,7,0,1,1,7,1859
 2026-09,primary care research,12,0,0,0,12,4229
 2026-09,psychiatry and clinical psychology,99,2,2,2,97,27020
 2026-09,public and global health,110,14,1,1,96,30441
 2026-09,radiology and imaging,52,0,0,0,52,15337
-2026-09,rehabilitation medicine and physical therapy,36,1,0,0,35,10264
-2026-09,respiratory medicine,17,1,3,3,16,4848
-2026-09,rheumatology,12,1,1,1,11,3785
-2026-09,sexual and reproductive health,20,0,0,0,20,7397
-2026-09,sports medicine,8,0,0,0,8,2262
-2026-09,surgery,19,1,0,0,18,5369
+2026-09,rehabilitation medicine and physical therapy,32,1,0,0,31,9318
+2026-09,respiratory medicine,16,1,2,2,15,4528
+2026-09,rheumatology,11,1,1,1,10,3316
+2026-09,sexual and reproductive health,16,0,0,0,16,6121
+2026-09,sports medicine,6,0,0,0,6,1686
+2026-09,surgery,16,1,0,0,15,4562
 2026-09,transplantation,7,0,0,0,7,2245
 2026-09,urology,8,0,1,1,8,2449

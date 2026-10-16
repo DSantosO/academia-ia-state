@@ -82,9 +82,13 @@ def main(data_dir):
     missing = [(c, q) for c in cols for q in quarters if q not in s[c]]
     if missing:
         sys.exit(f"missing values: {missing[:10]}")
-    for q in quarters:  # the per-paper harvest must agree with medRxiv's own monthly totals
+    # medRxiv: count each preprint once. The server's monthly totals (sum endpoint) include version-1 listings of the
+    # same DOI on two days, which inflate mid-2026 (rebuild_rxiv_from_records.py); the per-paper series is used and
+    # differences larger than 1% are reported.
+    for q in quarters:
         if abs(s["medrxiv_details"][q] - s["medrxiv"][q]) > 0.01 * s["medrxiv"][q]:
-            sys.exit(f"medRxiv totals disagree in {q}: {s['medrxiv_details'][q]} vs {s['medrxiv'][q]}")
+            print(f"note: medRxiv {q}: {s['medrxiv_details'][q]} preprints vs {s['medrxiv'][q]} in the server totals")
+        s["medrxiv"][q] = s["medrxiv_details"][q]
     for q in quarters:
         s["medrxiv_no_covid"][q] = s["medrxiv"][q] - s["medrxiv_covid"][q]
 
