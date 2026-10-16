@@ -209,6 +209,13 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
   - **Constraint:** never imply that prolific authors in the arXiv mathematics data are misusing AI.
 - **The arXiv mathematics figure** (share of papers with an author who has 5 or more papers in the quarter) is the author's key figure. The author reads it as a sign of AI-assisted production. The essay words it as "consistent with" that reading, pending robustness checks (name homonyms, team size, concentration).
 
+## Author decisions after the citation audit (16 Oct 2026)
+
+1. **Kusumegi et al. 2025: drop the productivity/output-gain claim.** The critique by Renault, Bergeaud & Bosquet (PNAS, Aug 2026) is now peer-reviewed. The author's rule: "if the results are not clear, we leave it". Kusumegi's other findings stay only if that critique does not plausibly apply to them.
+2. **Add a "Recommendations" section** (§6, before the Conclusion). It draws on a research pass (`research_notes/.../7_recommendations.md`) and on the author's own recommendations, which are still to come. Credit prior proposers: Huang et al. made three recommendations; also Blekhman, Hansen and Fourie.
+3. **Field differences.** The author's field is physics and biology. Their view is that biology is not yet feeling this as much as other fields. Check it against the evidence: `research_notes/.../8_field_differences.md`, plus companion-analysis contrasts (bioRxiv computational vs wet-lab categories; arXiv theory vs experiment archives). Word it at the strength the evidence supports.
+4. **Quotations and Table 1** (the conference and arXiv rules) get a final, careful verification against primary sources after the revision.
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.

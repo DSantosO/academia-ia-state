@@ -1,6 +1,36 @@
 <!--
 WORD COUNTS (draft 2, 16 Oct 2026)
-@@WORDCOUNT@@
+Method: whitespace-separated tokens that contain a letter, digit, €, $ or &, with HTML comments removed; in-text citations are counted.
+'Prose' also removes the editorial markers ([RECHECK...], [AUTHOR: ...], [CITATION NEEDED: ...], [Zenodo DOI], [to be minted]); 'raw' keeps them.
+Counted by script (scratchpad wc.py) on 16 Oct 2026.
+
+| Section | Prose | Raw |
+|---|---|---|
+| Introduction | 512 | 544 |
+| 1. How the system works | 409 | 431 |
+| 2. AI makes what the system counts cheap to write | 1,208 | 1,277 |
+| §2 subsection: Misuse is the visible tip | 242 | 248 |
+| 3. The ideal: what AI could do for science | 517 | 532 |
+| 4a. The evidence | 464 | 464 |
+| 4b. The hypothesis | 354 | 402 |
+| 4c. Governance as rationing | 1,005 | 1,085 |
+| 5. The current trajectory: who owns the tools, and what they learn from users | 903 | 1,000 |
+| Conclusion | 356 | 406 |
+| Box 1: How this paper was made | 570 | 764 |
+| Box 2: How this hypothesis could be tested | 385 | 411 |
+| **Main text incl. Boxes 1–2** | **6,925** | **7,564** |
+
+Limit: <=7,000 for the main text incl. Boxes 1-2. Headroom: 75 words. Filling the [AUTHOR] slots (about 15 in the main text and boxes) will need offsetting cuts; the cheapest are ¶4c.4 (China, ~70), ¶5.3 (licensing and Bartz, ~70) and ¶1.1 (~115), all master-only or 3,800-only paragraphs.
+
+Excluded from the limit:
+- Standfirst: 133
+- Table 1: Limits on submission and related measures, 2025–2026: 813 prose / 828 raw
+- Figure captions: 1332 prose / 1387 raw
+- AI-use statement: 74 prose / 102 raw
+- Competing interests: 39 prose / 62 raw
+- Author contributions (CRediT): 61 prose / 65 raw
+- Data and process availability: 189 prose / 264 raw
+- References: 161 entries (draft 1: 173)
 -->
 
 <!--
