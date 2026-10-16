@@ -305,12 +305,82 @@ def math_charts(repo, out):
     plt.close(fig)
 
 
+def cs_charts(repo, out):
+    split_path = os.path.join(repo, "data/processed/arxiv_cs_ai_split_quarterly.csv")
+    if not os.path.exists(split_path):
+        return
+    fields = {r["quarter"]: r for r in csv.DictReader(open(os.path.join(repo, "data/processed/preprints_by_field_quarterly.csv")))}
+    rows = [r for r in csv.DictReader(open(split_path)) if r["quarter"] in fields]
+    quarters = [r["quarter"] for r in rows]
+    x = [mid(q) for q in quarters]
+    ai = [int(r["ai_categories"]) + int(r["ai_text_other"]) for r in rows]
+    other = [int(r["non_ai"]) for r in rows]
+    total = [int(r["cs_total"]) for r in rows]
+    violet, red = "#6250d6", "#e34948"
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.8), dpi=150, gridspec_kw={"width_ratios": [1, 1.15]})
+    fig.patch.set_facecolor(SURFACE)
+    style(ax1)
+    pos = list(range(len(quarters)))
+    ax1.bar(pos, other, width=0.72, color=red, zorder=2, label="Other computer science")
+    ax1.bar(pos, ai, width=0.72, bottom=other, color=violet, zorder=2, label="AI research")
+    ax1.set_ylim(0, max(total) * 1.15)
+    ax1.yaxis.set_major_locator(mticker.MaxNLocator(4))
+    ax1.yaxis.set_major_formatter(mticker.FuncFormatter(lambda t, _: f"{t / 1000:g}k" if t >= 1000 else f"{t:.0f}"))
+    firsts = [i for i, q in enumerate(quarters) if q.endswith("-Q1")]
+    ax1.set_xticks([i + 1.5 for i in firsts])
+    ax1.set_xticklabels([quarters[i][:4] for i in firsts])
+    ax1.set_xlim(-0.8, len(quarters) - 0.2)
+    share = ai[-1] / total[-1]
+    ax1.text(pos[-1], total[-1] + max(total) * 0.02, f"AI {share:.0%}", fontsize=8.5, color=INK, ha="center")
+    ax1.legend(loc="upper left", frameon=False, fontsize=9, labelcolor=INK2)
+    ax1.set_title("New arXiv computer-science papers per quarter", loc="left", fontsize=11, color=INK, pad=10)
+
+    style(ax2)
+    base = lambda v: sum(val for q, val in zip(quarters, v) if q.startswith("2022-")) / 4
+    series = [
+        ("All computer science", MUTED, total, 1.5),
+        ("AI research", violet, ai, 2),
+        ("Computer science without AI", red, other, 2),
+        ("Physics", "#2a78d6", [int(fields[q]["physics"]) for q in quarters], 2),
+        ("Mathematics", "#eb6834", [int(fields[q]["mathematics"]) for q in quarters], 2),
+    ]
+    idx = [(n, c, [100 * v / base(vals) for v in vals], lw) for n, c, vals, lw in series]
+    ax2.axhline(100, color=AXIS, linewidth=1, zorder=1)
+    for n, c, ys, lw in idx:
+        ax2.plot(x, ys, color=c, linewidth=lw, solid_capstyle="round", solid_joinstyle="round", zorder=3)
+        ax2.plot(x[-1], ys[-1], "o", color=c, markersize=5, markeredgecolor=SURFACE, markeredgewidth=1.5, zorder=4)
+    top = max(max(s[2]) for s in idx)
+    ax2.set_ylim(40, top * 1.12)
+    ax2.set_xlim(dt.date(2020, 1, 1), dt.date(2029, 3, 1))
+    ax2.set_xticks([dt.date(y, 7, 1) for y in range(2020, 2027)])
+    ax2.set_xticklabels([str(y) for y in range(2020, 2027)])
+    ax2.spines["bottom"].set_bounds(mdates.date2num(dt.date(2020, 1, 1)), mdates.date2num(dt.date(2026, 10, 1)))
+    ends = [s[2][-1] for s in idx]
+    labels_y = spread(ends, (top * 1.12 - 40) * 0.055)
+    x_lab = x[-1] + dt.timedelta(days=60)
+    for (n, c, ys, lw), y_end, y_lab in zip(idx, ends, labels_y):
+        ax2.plot([x[-1] + dt.timedelta(days=8), x_lab - dt.timedelta(days=6)], [y_end, y_lab], color=AXIS, linewidth=0.8)
+        ax2.text(x_lab, y_lab, f"{n}  {y_end:.0f}", color=INK, fontsize=9, va="center")
+    ax2.set_title("Index, 2022 = 100", loc="left", fontsize=11, color=INK, pad=10)
+    fig.subplots_adjust(left=0.05, right=0.98, top=0.76, bottom=0.12, wspace=0.12)
+    events(ax2, top * 1.12, EVENTS[:1] + EVENTS[2:])
+    header(fig, "Computer science with and without AI research",
+           "AI research = primary category cs.AI, cs.LG, cs.CL, cs.CV, cs.NE or cs.MA, or another CS category whose "
+           "title or abstract uses AI/ML vocabulary.", y=0.95)
+    fig.text(0.05, 0.02, "Source: arXiv OAI-PMH metadata (harvested Oct 2026); physics and mathematics from arXiv "
+             "yearly statistics. New papers per quarter, Q1 2020 – Q3 2026.", fontsize=7.5, color=MUTED)
+    fig.savefig(os.path.join(out, "fig7_cs_without_ai.png"), facecolor=SURFACE)
+    plt.close(fig)
+
+
 def main(repo):
     out = os.path.join(repo, "docs/figures")
     os.makedirs(out, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans", "text.color": INK, "axes.labelcolor": INK2})
     field_charts(repo, out)
     math_charts(repo, out)
+    cs_charts(repo, out)
     print("written:", sorted(os.listdir(out)))
 
 

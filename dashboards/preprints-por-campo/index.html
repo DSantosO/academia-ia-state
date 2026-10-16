@@ -102,6 +102,13 @@
     <div class="pc-chart dash-skeleton" id="yoy-chart" data-source="yoy_growth"></div>
   </section>
 
+  <section class="pc-card" id="cs-without-ai">
+    <h2 class="pc-card-title">Computer science with and without AI research (2022 = 100)</h2>
+    <p class="pc-note">AI research means a primary category of cs.AI, cs.LG, cs.CL, cs.CV, cs.NE or cs.MA, or another computer-science category whose title or abstract uses AI or machine-learning vocabulary. Physics and mathematics are shown for comparison.</p>
+    <ul class="pc-legend" id="cs-legend" aria-label="Legend"></ul>
+    <div class="pc-chart dash-skeleton" id="cs-chart" data-source="cs_index_2022"></div>
+  </section>
+
   <section class="pc-block" id="by-field" aria-labelledby="by-field-title">
     <h2 class="pc-sec" id="by-field-title">New preprints per quarter</h2>
     <p class="pc-note">Each chart has its own scale. The dashed line marks the launch of ChatGPT (30 November 2022).</p>
@@ -239,6 +246,39 @@ dash.calc('yoy_growth', {
   },
 });
 
+dash.calc('cs_index_2022', {
+  inputs: ['arxiv_cs_split', 'arxiv_fields'],
+  title: 'Computer science with and without AI, 2022 = 100',
+  description: 'Computer-science papers split into AI research and the rest, with physics and mathematics, each divided by its 2022 quarterly average, times 100.',
+  fn: (arxiv_cs_split, arxiv_fields) => {
+    const fields = new Map(arxiv_fields.map((r) => [r.quarter, r]));
+    const rows = arxiv_cs_split
+      .filter((r) => fields.has(r.quarter))
+      .map((r) => {
+        const f = fields.get(r.quarter);
+        return {
+          quarter: r.quarter,
+          start: r.start,
+          all_cs: Number(r.cs_total),
+          ai_research: Number(r.ai_categories) + Number(r.ai_text_other),
+          cs_without_ai: Number(r.non_ai),
+          physics: Number(f.physics),
+          mathematics: Number(f.mathematics),
+        };
+      })
+      .sort((p, q) => (p.quarter < q.quarter ? -1 : 1));
+    const keys = ['all_cs', 'ai_research', 'cs_without_ai', 'physics', 'mathematics'];
+    const y2022 = rows.filter((r) => r.quarter.startsWith('2022-'));
+    if (!y2022.length) return [];
+    const mean = Object.fromEntries(keys.map((k) => [k, y2022.reduce((s, r) => s + r[k], 0) / y2022.length]));
+    return rows.map((r) => ({
+      quarter: r.quarter,
+      start: r.start,
+      ...Object.fromEntries(keys.map((k) => [k, (100 * r[k]) / mean[k]])),
+    }));
+  },
+});
+
 dash.calc('change_vs_2022', {
   inputs: ['quarterly'],
   title: 'Last year vs 2022',
@@ -334,9 +374,23 @@ function tooltipRow(color, name, value) {
   return row;
 }
 
-function drawLegend(id) {
+function fieldSeries() {
+  return [{ ...REFERENCE, color: 'var(--cds-chart-muted)', ref: true }].concat(FIELDS.map((f, i) => ({ ...f, color: dash.colors[i] })));
+}
+
+function csSeries() {
+  return [
+    { key: 'all_cs', name: 'All computer science', color: 'var(--cds-chart-muted)', ref: true },
+    { key: 'ai_research', name: 'AI research', color: dash.colors[6] },
+    { key: 'cs_without_ai', name: 'Computer science without AI', color: dash.colors[7] },
+    { key: 'physics', name: 'Physics', color: dash.colors[0] },
+    { key: 'mathematics', name: 'Mathematics', color: dash.colors[1] },
+  ];
+}
+
+function drawLegend(id, series) {
   const ul = document.getElementById(id);
-  const items = FIELDS.map((f, i) => ({ name: f.name, color: dash.colors[i] })).concat([{ name: REFERENCE.name, color: 'var(--cds-chart-muted)' }]);
+  const items = series.slice(1).concat(series.slice(0, 1));
   ul.replaceChildren(...items.map((it) => {
     const li = document.createElement('li');
     const key = document.createElement('span');
@@ -373,7 +427,7 @@ function drawLines(box, rows, opts) {
   if (!rows.length) return;
   const W = Math.max(280, Math.floor(box.clientWidth));
   const H = W < 560 ? 270 : 340;
-  const series = [{ ...REFERENCE, color: 'var(--cds-chart-muted)', ref: true }].concat(FIELDS.map((f, i) => ({ ...f, color: dash.colors[i] })));
+  const series = opts.series;
   const pts = rows.map((r) => ({ ...r, date: dateOf(r.start, 1, 15) }));
   const values = pts.flatMap((r) => series.map((s) => r[s.key])).filter((v) => Number.isFinite(v));
   const y = d3.scaleLinear([Math.min(opts.floor, d3.min(values)), d3.max(values)], [1, 0]).nice();
@@ -576,14 +630,27 @@ function markLoading(el) {
 
 dash.onData(() => {
   paintSwatches();
-  drawLegend('index-legend');
-  drawLegend('yoy-legend');
+  drawLegend('index-legend', fieldSeries());
+  drawLegend('yoy-legend', fieldSeries());
+  drawLegend('cs-legend', csSeries());
+  const csBox = document.getElementById('cs-chart');
+  const K = dash.data('cs_index_2022');
+  if (K.status === 'ok') {
+    drawLines(csBox, K.data.filter((r) => r.quarter >= '2020-Q1'), {
+      floor: 80, base: 100, tick: fIdx, value: fIdx, series: csSeries(),
+      label: 'Index of new computer-science papers with and without AI research, physics and mathematics, 2022 equals 100',
+    });
+  } else if (K.status === 'error' || dash.data('arxiv_cs_split').status === 'error') {
+    markFailed(csBox);
+  } else {
+    markLoading(csBox);
+  }
   const state = sourceState();
   const Q = dash.data('quarterly');
   const I = dash.data('index_2022');
   const Y = dash.data('yoy_growth');
   const C = dash.data('change_vs_2022');
-  const charts = [...document.querySelectorAll('.pc-chart, .pc-mini')];
+  const charts = [...document.querySelectorAll('.pc-chart, .pc-mini')].filter((el) => el.id !== 'cs-chart');
   const texts = [...document.querySelectorAll('#summary-text, .pc-tile [data-source="change_vs_2022"]')];
   const tbody = document.querySelector('#table tbody');
   const ready = state === 'ok' && [Q, I, Y, C].every((d) => d.status === 'ok');
@@ -597,10 +664,10 @@ dash.onData(() => {
   writeSummary(document.getElementById('summary-text'), C.data);
   writeTiles(C.data);
   drawLines(document.getElementById('index-chart'), since2020(I.data), {
-    floor: 80, base: 100, tick: fIdx, value: fIdx, label: 'Index of new preprints by field and quarter, 2022 equals 100',
+    floor: 80, base: 100, tick: fIdx, value: fIdx, series: fieldSeries(), label: 'Index of new preprints by field and quarter, 2022 equals 100',
   });
   drawLines(document.getElementById('yoy-chart'), Y.data, {
-    floor: 0, base: 0, tick: fPctAxis, value: fPct, label: 'Year-on-year growth of new preprints by field and quarter',
+    floor: 0, base: 0, tick: fPctAxis, value: fPct, series: fieldSeries(), label: 'Year-on-year growth of new preprints by field and quarter',
   });
   document.querySelectorAll('.pc-mini').forEach((box) => {
     drawBars(box, since2020(Q.data), box.dataset.series, dash.colors[Number(box.dataset.color)]);
