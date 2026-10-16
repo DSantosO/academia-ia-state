@@ -161,10 +161,23 @@ def p3(lines, m):
             for y in ("2023", "2024", "2025", "2026"):
                 cells.append(f"{v[y]['markers_per_100']:.1f} (×{v[y]['ratio_to_2019_2022']:.2f})" if y in v else "n/a")
             lines.append(f"| {src} | {g} | {v['baseline_2019_2022_per_100']:.1f} | " + " | ".join(cells) + " |")
-    lines += ["", "Is the marker rise the same across groups? Rate ratio of marker rates, group A / group B, relative to 2022 "
-              "(Poisson with abstracts offset):", ""]
+    lines += ["", "Is the marker rise the same across groups? Ratio of marker rates, group A / group B, relative to "
+              "2019–2022 (OLS on monthly log ratios, t intervals):", ""]
     for k, v in m["did"].items():
-        lines.append(f"- {k}: " + "; ".join(f"{y}: {ci(d)}" for y, d in v.items() if int(y) >= 2023))
+        lines.append(f"- {k} ({v['_n_months']} months): " + "; ".join(f"{y}: {ci(d)}" for y, d in v.items()
+                                                                       if not y.startswith("_")))
+    uvo = m.get("use_vs_output")
+    if uvo:
+        lines += ["", "**Use vs output: arXiv groups against bioRxiv.** Markers: ratio of marker rates relative to "
+                  "2019–2022, on the months both corpora cover (March and September). Output: ratio of new preprints "
+                  "relative to 2022 (event-study model of the within-field contrasts, Driscoll–Kraay 95% CI), and 2026 "
+                  "relative to 2025 (the 2026 acceleration of one group relative to the other).", "",
+                  "| Contrast | Markers 2024 | Markers 2025 | Markers 2026 | Output 2024 | Output 2025 | Output 2026 | "
+                  "Output 2026 vs 2025 |", "|---|---|---|---|---|---|---|---|"]
+        for k, v in uvo.items():
+            mk, out = v["markers"], v["output"]
+            lines.append(f"| {k} | " + " | ".join(ci(mk[y]) for y in ("2024", "2025", "2026")) + " | "
+                         + " | ".join(ci(out[y]) for y in ("2024", "2025", "2026", "2026_vs_2025")) + " |")
     lb = m.get("llm_share_lower_bound_arxiv")
     if lb:
         lines += ["", "Lower bound on the share of LLM-processed abstracts (Kobak et al. 2025; arXiv only): excess share "

@@ -179,10 +179,18 @@ Core marker words: 261 style words of Kobak et al. (2025) with pooled 2019–202
 | arxiv | experiment | 11.7 | 17.7 (×1.52) | 24.9 (×2.13) | 34.4 (×2.95) | 29.9 (×2.57) |
 | medrxiv | all | 26.6 | 45.2 (×1.70) | 72.6 (×2.73) | 71.8 (×2.70) | 49.8 (×1.87) |
 
-Is the marker rise the same across groups? Rate ratio of marker rates, group A / group B, relative to 2022 (Poisson with abstracts offset):
+Is the marker rise the same across groups? Ratio of marker rates, group A / group B, relative to 2019–2022 (OLS on monthly log ratios, t intervals):
 
-- biorxiv_computational_vs_wet_lab: 2023: 1.22 [0.93, 1.60], p = 0.16; 2024: 1.17 [0.95, 1.44], p = 0.15; 2025: 1.04 [0.77, 1.39], p = 0.81; 2026: 1.03 [0.83, 1.26], p = 0.82
-- arxiv_theory_vs_experiment: 2023: 1.13 [0.74, 1.72], p = 0.58; 2024: 1.11 [0.73, 1.71], p = 0.62; 2025: 0.88 [0.61, 1.26], p = 0.49; 2026: 0.89 [0.61, 1.30], p = 0.55
+- biorxiv_computational_vs_wet_lab (16 months): 2023: 1.19 [0.99, 1.43], p = 0.061; 2024: 1.18 [0.98, 1.42], p = 0.076; 2025: 1.04 [0.86, 1.25], p = 0.66; 2026: 1.03 [0.86, 1.24], p = 0.71
+- arxiv_theory_vs_experiment (93 months): 2023: 0.96 [0.79, 1.18], p = 0.7; 2024: 1.00 [0.81, 1.22], p = 0.97; 2025: 0.75 [0.61, 0.91], p = 0.0051; 2026: 0.75 [0.60, 0.95], p = 0.015
+
+**Use vs output: arXiv groups against bioRxiv.** Markers: ratio of marker rates relative to 2019–2022, on the months both corpora cover (March and September). Output: ratio of new preprints relative to 2022 (event-study model of the within-field contrasts, Driscoll–Kraay 95% CI), and 2026 relative to 2025 (the 2026 acceleration of one group relative to the other).
+
+| Contrast | Markers 2024 | Markers 2025 | Markers 2026 | Output 2024 | Output 2025 | Output 2026 | Output 2026 vs 2025 |
+|---|---|---|---|---|---|---|---|
+| arxiv_physics_vs_biorxiv | 0.89 [0.77, 1.03], p = 0.1 | 1.05 [0.91, 1.21], p = 0.5 | 1.36 [1.17, 1.57], p = 0.00072 | 0.86 [0.81, 0.92], p = 2.1e-06 | 0.82 [0.79, 0.84], p = 6.3e-32 | 0.87 [0.80, 0.95], p = 0.0021 | 1.07 [0.99, 1.16], p = 0.082 |
+| arxiv_theory_vs_biorxiv | 0.89 [0.76, 1.03], p = 0.1 | 1.03 [0.89, 1.20], p = 0.67 | 1.36 [1.17, 1.58], p = 0.00087 | 0.87 [0.82, 0.93], p = 1.9e-05 | 0.82 [0.79, 0.86], p = 1.2e-21 | 0.89 [0.81, 0.97], p = 0.011 | 1.08 [0.99, 1.17], p = 0.084 |
+| arxiv_experiment_vs_biorxiv | 1.02 [0.61, 1.71], p = 0.93 | 1.32 [0.79, 2.21], p = 0.26 | 1.45 [0.87, 2.44], p = 0.14 | 0.79 [0.70, 0.89], p = 0.00014 | 0.76 [0.68, 0.85], p = 2.5e-06 | 0.77 [0.69, 0.86], p = 2.5e-06 | 1.02 [0.93, 1.11], p = 0.73 |
 
 Lower bound on the share of LLM-processed abstracts (Kobak et al. 2025; arXiv only): excess share of abstracts with at least one core marker word over the 2019–2022 linear trend, divided by one minus the counterfactual share (in brackets: with the 2019–2022 mean as counterfactual).
 
