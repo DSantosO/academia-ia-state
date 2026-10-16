@@ -195,6 +195,20 @@ Source: `research_notes/AI academia essay evidence gaps/6_closest_prior_work.md`
 
 **Use** the draft 163-word contribution paragraph in the note as the starting point.
 
+## Author decisions, 16 Oct 2026
+
+- **Blekhman 2026** (PLOS Biology; summary in `paper/sources/`). Include it and extend it. The author finds it interesting but limited. The essay should go beyond it on four points:
+  - **Real research loses its signal too.** Blekhman's case is the hollow paper with no research behind it. The essay's case is real research whose effort becomes invisible.
+  - **The fallback is rationing.** Blekhman predicts a return to journal prestige; the essay shows rationing is the fallback already under way.
+  - **The caps are brakes.** Blekhman says the system has "no brakes"; the caps are brakes, just crude ones.
+  - **Field-level data.** Blekhman has no data of his own; the essay does.
+
+  Use his five goals of biology research as the hook for section 3.
+- **Misuse.** Add a short subsection at the end of section 2: "Misuse is the visible tip". About 250–350 words in the full version and 100–150 in the EMBO version. Do not over-cite, since misuse is well researched.
+  - **Key point:** gatekeepers cannot separate misuse from legitimate high output, so they ration by volume. Misuse is where the problem becomes visible, not where it ends.
+  - **Constraint:** never imply that prolific authors in the arXiv mathematics data are misusing AI.
+- **The arXiv mathematics figure** (share of papers with an author who has 5 or more papers in the quarter) is the author's key figure. The author reads it as a sign of AI-assisted production. The essay words it as "consistent with" that reading, pending robustness checks (name homonyms, team size, concentration).
+
 ## Sources
 
 - Earlier bibliography: `reports/AI disruption of academia literature.md` and `research_notes/AI disruption of academia literature/`.
