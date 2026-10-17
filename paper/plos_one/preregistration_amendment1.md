@@ -180,3 +180,36 @@
 - D3a–D3c and D3f–D3g record what was done.
 - D3d, D3e and D3h–D3j are design decisions made by the coordinating assistant under the author's standing instructions, following the two reviews, before the estimates they govern.
 - The author is told of them in chat on 17 Oct. Under D3j, any change the author makes is pre-specified only if recorded before the relevant estimate is computed.
+
+### Deviation 3, addendum (recorded 17 Oct 2026, about 08:45 UTC)
+
+*Recorded after the round-2 experimental-scientist review and before any HN, Test A (bioRxiv) or Test B estimate was computed. The facts in the "What had been seen" list of Deviation 3 still hold.*
+
+**D3k. medRxiv category eligibility for Test B.**
+- **The rule applied** is the registered one (Deviation 2): a medRxiv category enters Test B if it has at least 150 non-COVID papers in 2019–2022.
+- **Below the threshold.** Of the registered options ("pooled with their closest category or dropped"), the fixed choice is **dropped**, so that no judgment of closeness is needed.
+- **The code.** The reviewer reports that the code, as of 15df0b1, applied a higher threshold that dropped 13 more categories. It is corrected to this rule before any Test B estimate.
+
+**D3l. Public astronomy data releases in 2025 (added HN sensitivities).**
+- **The issue.** Under the codebook, analysis of public data is NN. The 2025 public releases (DESI DR1, Euclid Q1 and Rubin DP1) can therefore move astro-ph papers on the same data from ND to NN within the test period, for reasons unrelated to AI.
+- **Added sensitivity analyses** (reported; the verdict is unchanged):
+  - **8.** The pooled RRR without astro-ph (cond-mat and quant-ph only), together with leave-one-archive-out estimates for each archive.
+  - **9.** astro-ph without papers whose title or abstract contains "DESI", "Euclid", "Rubin" or "LSST". Matching is case-sensitive, on whole words.
+
+**D3m. AI as a research topic (added sensitivity for HN, Test A and Test B).**
+- **The issue.** Papers about machine learning are NN by construction, so growth in AI as a topic could pass for AI-accelerated production.
+- **Sensitivity 10.** Exclude papers whose title or abstract matches the following terms, with matching fixed now:
+  - **Case-insensitive:** "machine learning", "machine-learning", "deep learning", "neural network", "neural-network", "language model", "artificial intelligence", "reinforcement learning", "generative model", "diffusion model", "foundation model", "graph neural", "transformer-based", "vision transformer".
+  - **Case-sensitive whole words:** "AI", "LLM", "LLMs".
+
+**D3n. The 2019 placebo on bioRxiv and medRxiv.**
+- 2019 is the first year of both series (medRxiv opened in June 2019), so a 2019 placebo there is not informative. It is reported but not interpreted.
+- The registered 2019 placebo for HN (arXiv, from 2017) is unchanged.
+
+**D3o. Implementation completeness.**
+- All six registered HN sensitivity analyses (§7), plus sensitivities 7–10 above, are implemented before the HN estimate is computed.
+- The Test B estimate is computed only once its code covers both category sets (D3d) and the level-based outcome (D3e).
+
+**Note on the validation runs.**
+- The validation sheet's classifier labels and the estimation samples' labels come from separate runs of the same procedure: the same prompts, batch size and blinding.
+- Agreement on the sheet therefore measures the procedure. Agreement between runs is reported (D3h).
