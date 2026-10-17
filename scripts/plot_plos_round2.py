@@ -5,6 +5,7 @@ Table 2 and S5 Table.
 Fig4_forest       the 2026 rate ratio of each within-field contrast under every specification
 Fig6_departures   2026 departures from the pre-2023 trend by arXiv archive and for the other series
 Fig7_h2_ranking   H2: growth by class of names ranked on an independent window; uniform-scaling expectation
+Fig8_inspire      INSPIRE-HEP: papers without to papers with new experimental results, 2026, by archive and base
 Usage: python3 scripts/plot_plos_round2.py [repo_dir] [figure ...]
 """
 import io
@@ -279,7 +280,55 @@ def fig7_h2_ranking(repo, out):
     save(fig, out, "Fig7_h2_ranking")
 
 
-FIGURES = {"fig4": fig4_forest, "fig6": fig6_departures, "fig7": fig7_h2_ranking}
+def fig8_inspire(repo, out):
+    c = load(repo, "round1_tests.json")["inspire_round2"]["contrasts"]
+    scopes = [("all_six", "INSPIRE's six archives"), ("hep-ex", "hep-ex"), ("nucl-ex", "nucl-ex"),
+              ("hep-ex+nucl-ex", "hep-ex + nucl-ex")]
+    bases = [("2022", "Base 2022"), ("2017-2019", "Base 2017–2019"), ("2017-2019+2022", "Base 2017–2019 + 2022"),
+             ("2017-2022", "Base 2017–2022")]
+    rows = []
+    for sc, title in scopes:
+        rows.append((title, None, None))
+        for b, lab in bases:
+            rows.append((lab, c[f"{sc}|research_articles_without_planning|ND"].get(b),
+                         c[f"{sc}|as_harvested|ND"].get(b)))
+    n = len(rows)
+    fig, ax = plt.subplots(figsize=(WIDTH, 0.19 * n + 1.2))
+    fig.subplots_adjust(left=0.22, right=0.80, top=0.99, bottom=0.17)
+    labels = []
+    for i, (lab, main, allrec) in enumerate(rows):
+        y = n - 1 - i
+        labels.append(lab)
+        if main is None:
+            continue
+        for v, off, filled in ((main["2026"], 0.12, True), (allrec["2026"], -0.12, False)):
+            col = PRIMARY if filled else INK2
+            ax.plot([v["lo"], v["hi"]], [y + off, y + off], color=col, linewidth=1.3 if filled else 0.9, zorder=3)
+            ax.plot(v["rr"], y + off, marker="o", markersize=5 if filled else 4.2, linestyle="none", color=col,
+                    markerfacecolor=col if filled else "white", markeredgewidth=1.0, zorder=4)
+        ax.text(1.02, y, ci_text(main["2026"]), transform=ax.get_yaxis_transform(), va="center", ha="left",
+                fontsize=8, color=INK)
+    ax.set_yticks([n - 1 - i for i in range(n)])
+    ax.set_yticklabels(labels)
+    for t, row in zip(ax.get_yticklabels(), rows):
+        t.set_weight("bold" if row[1] is None else "normal")
+        t.set_color(INK if row[1] is None else INK2)
+    ax.set_ylim(-0.7, n - 0.4)
+    log_axis(ax, 0.45, 6.5, [0.5, 0.75, 1, 1.5, 2, 3, 4, 6])
+    ax.set_xlabel("Rate ratio, papers without to papers with new experimental results, 2026 (log scale)",
+                  color=INK2)
+    ax.text(1.02, n - 1, "Research articles\n(95% CI)", transform=ax.get_yaxis_transform(), va="center",
+            ha="left", fontsize=8, color=INK2)
+    handles = [Line2D([], [], marker="o", color=PRIMARY, markersize=5, linewidth=1.3,
+                      label="Research articles, planning papers removed"),
+               Line2D([], [], marker="o", color=INK2, markerfacecolor="white", markersize=4.2, linewidth=0.9,
+                      label="All record types, as harvested")]
+    ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.4, -0.085), ncol=2, frameon=False, fontsize=8,
+              handletextpad=0.4, columnspacing=1.5)
+    save(fig, out, "Fig8_inspire")
+
+
+FIGURES = {"fig4": fig4_forest, "fig6": fig6_departures, "fig7": fig7_h2_ranking, "fig8": fig8_inspire}
 
 
 def main(args):
