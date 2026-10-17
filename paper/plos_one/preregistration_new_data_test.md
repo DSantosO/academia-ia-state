@@ -289,7 +289,7 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
 
 **Correction to "What had been seen".**
 - **What happened.** Deviation 3 says the author had not seen the Test A (medRxiv) estimate. In fact, at about 00:12 UTC on 17 Oct the analysis session wrote its point estimate, CI, verdict and minimum detectable effect in a status line in its chat with the author. This was before the hold request. The author may therefore have read it.
-- **Consequence.** The author's coding of the 100 medRxiv validation papers may not be blind to that result. [AUTHOR: state whether you read it before coding.]
+- **Consequence.** The author's coding of the 100 medRxiv validation papers may not be blind to that result. The author's answer (not read) is recorded in the fourth addendum.
 - **Other results.** No other paper-level result has been reported to the author.
 
 **D3k, completed.**
@@ -319,3 +319,16 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
   - Both intervals are reported in S6 Table.
 - **Applies to all tests.** The same correction applies to every bootstrap in HN, Test A and Test B, and to the level-based companions. It is not specific to the result already computed.
 - **Status (17 Oct 2026, 14:42 UTC).** Test A (medRxiv) recomputed with the corrected code and sealed at commit 1b0ec82 on the analysis branch: `validation/sealed/nd_results_A-medrxiv.json.gz`, SHA-256 `e07ec58761bef9d4d94f48a155534fa631b9ca0367bc2c2e5c96dc3d767ee06e`. Only the hash has been reported; the corrected value has not been shown to the author or the coordinator.
+
+### Deviation 3, fourth addendum (recorded 17 Oct 2026, about 15:45 UTC)
+
+*Recorded before the author or anyone else coded any validation paper, and before any HN, Test A (bioRxiv) or Test B estimate was computed.*
+
+**The author's statement on the 00:12 status line.** Asked in the coordinating session, before coding any validation paper, whether they had read the analysis session's status line of about 00:12 UTC on 17 October with the Test A (medRxiv) estimate, the author answered: «No la he leído» ("I have not read it"). The author's coding of the medRxiv validation papers is therefore blind to that estimate on the author's own statement; the status line remains in the analysis session's transcript.
+
+**D3r. A second human coder (activates the optional item of Amendment 1).**
+- **Who.** A colleague of the author [AUTHOR: name and affiliation, for the Acknowledgments] codes 100 of the 400 validation papers.
+- **Selection.** Stratified as the 400 (50 physics/astronomy, 25 bioRxiv, 25 medRxiv), simple random within strata, seed 20261017, drawn by the analysis session from the identifier key alone, without any label. The script and the list of identifiers are committed before any coding.
+- **Procedure.** The same codebook and prompts as the author (Appendices A and B), the same fields (title, abstract and, for arXiv, comments), new pseudonymous identifiers and a new random order. The second coder is not told the hypotheses or any result, sees neither the author's nor the classifier's labels, and does not discuss the papers with the author until both sets of labels are committed. The second coder's file is committed with its SHA-256 on receipt, and the author does not open it before their own labels are committed.
+- **Analysis.** Cohen's κ between the two human coders on the 100, pooled and by domain, with 95% CIs, and κ between the classifier and the second coder by domain. Disagreements are not adjudicated. The author's labels remain the reference for the registered rule (κ ≥ 0.60 in each domain), which is unchanged.
+- **Authorisation.** The author, in the coordinating session, 17 October 2026 («Vale, hazlo»).
