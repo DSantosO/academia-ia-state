@@ -305,3 +305,16 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
 **D3g, detail.**
 - The relabelling sensitivity uses the empirical first-run to second-run transition matrices from the test–retest sets.
 - There was no arXiv retest. So the 200 arXiv validation papers are classified a second time, blind, to give an arXiv-specific matrix. The bioRxiv and medRxiv matrices come from their own retest sets.
+
+### Deviation 3, third addendum (recorded 17 Oct 2026, about 09:00 UTC)
+
+*Recorded before any HN, Test A (bioRxiv) or Test B estimate was computed.*
+
+**D3q. A coding error in the bootstrap, and the fix.**
+- **The error.** A full run of the test script on random synthetic labels, made before any estimate on real labels, found that some moving-block bootstrap replicates contain no month of a base year: bioRxiv without 2019 or 2022, medRxiv without July–December 2019 or 2022. In those replicates the post-period terms are not identified (the unit-by-class effects equal the sum of the period indicators). The model nonetheless returned arbitrary coefficients, which entered the percentile intervals.
+- **Extent.** In the synthetic runs, 1–3% of bioRxiv and medRxiv replicates were affected, and none for HN, whose base years are 2017–2019 and 2022. Point estimates are unaffected. Intervals, standard errors and minimum detectable effects can be affected.
+- **The fix.** Before each fit, the code checks that every requested term is identified, by testing whether its unit vector lies in the row space of the design. A replicate that fails is discarded. Each result reports the number of retained replicates.
+- **Test A (medRxiv), computed at dacd064 with the faulty code.** It is recomputed with the corrected code, sealed, and labelled a correction of dacd064. The point estimate is unchanged by construction.
+  - The verdict is taken from the corrected computation, because that is the registered estimator correctly implemented.
+  - Both intervals are reported in S6 Table.
+- **Applies to all tests.** The same correction applies to every bootstrap in HN, Test A and Test B, and to the level-based companions. It is not specific to the result already computed.
