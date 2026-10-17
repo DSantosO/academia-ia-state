@@ -333,3 +333,7 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
 - **Analysis.** Cohen's κ between the two human coders on the 100, pooled and by domain, with 95% CIs, and κ between the classifier and the second coder by domain. Disagreements are not adjudicated. The author's labels remain the reference for the registered rule (κ ≥ 0.60 in each domain), which is unchanged.
 - **Authorisation.** The author, in the coordinating session, 17 October 2026 («Vale, hazlo»).
 - **Status (17 Oct 2026, about 15:55 UTC).** The draw was committed by the analysis session (ecc1683, its branch). The coordinator built the second coder's sheet from the same coding page: the 100 papers renamed S001–S100 in a new random order (seed 20261018), with the codebook and without labels; the mapping is in `validation/second_coder_ids.csv` and the sheet's SHA-256 is 6294d5e41525d6e3d16c2d904941293732592bed25d41f552c3890a67aaf8f83. The sheet itself, which contains titles and abstracts, is released with the validation sheet after coding.
+
+### Status log of the sealed computations
+
+- **17 Oct 2026, about 16:53 UTC — HN.** arXiv classification completed: 269 of 269 batches, 13,412 papers; labels sealed at analysis-branch commit 10dfe72. HN computed and sealed at analysis-branch commit bb61c99: `validation/sealed/nd_results_HN.json.gz`, SHA-256 `6e61a6a9796b3e4bc36b5e14960da71ad23edf0ce42f8611bf834ea776fcc016`. Only the hash has been reported. The result has not been shown to the author or the coordinator, and the author has not yet coded any validation paper.
