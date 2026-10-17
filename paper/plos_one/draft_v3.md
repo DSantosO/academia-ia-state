@@ -58,18 +58,18 @@ WORD COUNTS (computed by build_v3.py; HTML comments, headings, figure legends an
 | Section | Prose | Raw |
 |---|---|---|
 | Introduction | 723 | 756 |
-| Materials and methods | 2,206 | 2,446 |
+| Materials and methods | 2,164 | 2,404 |
 | Results | 2,069 | 2,122 |
 | Discussion | 1,387 | 1,432 |
 | Conclusions | 116 | 128 |
-| **Main text (Introduction to Conclusions)** | **6,501** | **6,884** |
+| **Main text (Introduction to Conclusions)** | **6,459** | **6,842** |
 
 By subsection (prose):
 
 | Section | Subsection | Prose |
 |---|---|---|
 | Materials and methods | Study design and pre-specification | 128 |
-| Materials and methods | Data sources | 292 |
+| Materials and methods | Data sources | 250 |
 | Materials and methods | Groups for the within-field contrasts (H1) | 165 |
 | Materials and methods | Author-level measures (H2) | 237 |
 | Materials and methods | Statistical analysis | 501 |
@@ -199,7 +199,7 @@ This observational study analyses monthly counts of new preprints (first version
 
 *bioRxiv and medRxiv.* Monthly counts of version-1 preprints in 25 bioRxiv subject categories, January 2019 to September 2026, came from the bioRxiv API [28]; they include COVID-19 preprints and, from August 2019, sum to bioRxiv's official totals [29] except for three preprints (S2 Appendix). The medRxiv API lists some version-1 preprints twice, mostly in 2026, so every medRxiv series counts each DOI once and excludes preprints that mention COVID-19 in the title or abstract.
 
-*PubMed and INSPIRE-HEP.* PubMed journal articles per quarter by entry date were counted with NCBI's E-utilities [30]. INSPIRE-HEP records of six particle and nuclear physics archives, dated by first-version submission, were read from its API [31]. Retrieval followed each source's terms, except two earlier retrievals that exceeded documented rates (S2 Appendix). Data were retrieved on 15–17 October 2026: arXiv metadata on 16 October (17:24–19:10 UTC), INSPIRE-HEP records on 16 October (ending 19:12 UTC), arXivRaw first-version dates from 16 October, 19:21, to 17 October, 08:17 UTC, and the bioRxiv and medRxiv records on 16 October, with bioRxiv's 2026 records completed on 17 October.
+*PubMed and INSPIRE-HEP.* PubMed journal articles per quarter by entry date were counted with NCBI's E-utilities [30]. INSPIRE-HEP records of six particle and nuclear physics archives, dated by first-version submission, were read from its API [31]. Retrieval followed each source's terms, except two earlier retrievals that exceeded documented rates (S2 Appendix). Data were retrieved on 15–17 October 2026 (S2 Appendix).
 
 ### Groups for the within-field contrasts (H1)
 
@@ -516,6 +516,8 @@ All data and code are available from Zenodo (doi:[AUTHOR: DOI of the tagged rele
 <!-- SI FILE: S2 Appendix -->
 
 ## S2 Appendix. Definitions, regular expressions, queries, terms of use and dated events
+
+**Retrieval dates (UTC).** arXiv OAI-PMH metadata: 16 October 2026, 17:24–19:10. INSPIRE-HEP records: 16 October, ending 19:12. arXivRaw first-version dates: 16 October, 19:21, to 17 October, 08:17. medRxiv records: 16 October. bioRxiv records: 16 October, with the 2026 records completed on 17 October (built 08:05). Counts from the arXiv statistics pages, the bioRxiv and medRxiv summary endpoints and PubMed: 15–16 October.
 
 *A separate Supporting Information file at submission.*
 
