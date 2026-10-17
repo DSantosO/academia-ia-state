@@ -34,4 +34,5 @@ STATS_LAST=2026-08 python3 scripts/stats_within_field.py .
 STATS_LAST=2026-08 python3 scripts/stats_fields.py .
 
 python3 scripts/report_stats.py .
+python3 scripts/build_si_tables.py .                # S2 and S5 Tables (docs/si/)
 python3 scripts/plot_plos.py .

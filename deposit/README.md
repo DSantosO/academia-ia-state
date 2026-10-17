@@ -33,13 +33,14 @@ Aggregate data:
 | `data/raw/osf_quarterly.csv` | First versions per quarter on PsyArXiv, SocArXiv and EdArXiv (OSF API). Not used in the article's figures or tables: the series changes method in 2025 and its continuity could not be checked |
 | `data/processed/` | Series used in the figures and tables (one CSV/JSON per analysis) |
 | `data/processed/stats/` | Every estimate reported in the article (JSON): `within_field_tests.json` (H1 contrasts), `field_tests.json` (field departures, breaks, synthetic control), `round1_tests.json` (review analyses, including the planned specification and the rank-based calibration), `heavy_producers.json` (H2, aggregate shares only), `h2_round2.json` (H2 with classes ranked on an independent window, and the uniform-scaling simulation; aggregates only), `*_to_2026-08.json` (the same estimates with the data ending in August 2026), `nd_tests.json` (pre-registered test of medRxiv, Test A) |
+| `docs/si/` | Supporting Information spreadsheets: `S2_Table.xlsx` (growth by arXiv archive and by bioRxiv and medRxiv category) and `S5_Table.xlsx` (all estimates, with a README sheet), built by `scripts/build_si_tables.py` |
 | `validation/sealed/` | Sealed results and labels of the pre-registered tests (SHA-256 hashes in `validation/README.md`) |
 
 Record-level identifier tables (no names, titles or abstracts):
 
 | Path | Rows | Columns |
 |---|---|---|
-| `data/raw/biorxiv_records.csv.gz` | One per bioRxiv version-1 preprint, 2019–2026 (unique DOIs) | `doi, date, category, country, group`; `country` is US or non-US for the corresponding author's institution, classified by `scripts/classify_country.py` from the API's institution field |
+| `data/raw/biorxiv_records.csv.gz` | One per bioRxiv version-1 preprint, 2019–2026 (unique DOIs) | `doi, date, category, country, group, covid_title_abstract, ai_topic`; `country` is US, non-US or unknown for the corresponding author's institution, classified by `scripts/classify_country.py` from the API's institution field; `covid_title_abstract` flags COVID-19 or SARS-CoV-2 in the title or abstract; `ai_topic` flags AI or machine learning as a topic (Deviation 3, D3m list) |
 | `data/raw/medrxiv_records.csv.gz` | One per medRxiv version-1 preprint, mid-2019 to 2026 (unique DOIs) | `doi, date, category, country` and keyword flags: COVID-19 in the title, or in the title or abstract; public dataset (original list; Spick et al.'s four added datasets) |
 | `data/raw/inspire_hep_records.csv.gz` | One per INSPIRE-HEP record with a primary arXiv category in hep-ex, hep-ph, hep-th, hep-lat, nucl-ex or nucl-th, 2017–2026 | INSPIRE record id, arXiv id, categories, dates, document and publication types, INSPIRE categories, experiments, collaborations, author count, keyword flags (prospects, Snowmass, European Strategy) |
 | `data/raw/arxiv_v1_dates.csv.gz` | One per arXiv paper in maths and the six HEP/nuclear archives with a first version from December 2023 | `arxiv_id, v1_submitted` (from arXivRaw) |
