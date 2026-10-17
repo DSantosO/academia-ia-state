@@ -249,15 +249,15 @@ The same event-study estimator as above. Level: the 2026 log rate ratio against 
 
 | Series | 2026 vs pre-period | p two-sided / one-sided (n) | 2026 / 2025 | p vs changes to 2022 (n) | p vs all earlier changes, two-sided / one-sided (n) |
 |---|---|---|---|---|---|
-| C1_theory_vs_experiment | 1.060 | 0.67 / 0.33 (8) | 1.051 | 0.12 (7) | 0.09 / 0.09 (10) |
-| C1_theory_without_gr-qc_vs_experiment | 0.994 | 0.89 / 0.56 (8) | 1.055 | 0.12 (7) | 0.18 / 0.09 (10) |
-| C2_computational_vs_wet_lab | 1.030 | 0.80 / 0.40 (4) | 1.105 | 0.25 (3) | 0.14 / 0.14 (6) |
-| C3_public_dataset_vs_other | 1.058 | 0.60 / 0.40 (4) | 1.102 | 0.25 (3) | 0.14 / 0.14 (6) |
-| arxiv_physics_6_vs_biorxiv | 0.897 | 0.60 / 0.40 (4) | 1.073 | 0.25 (3) | 0.14 / 0.14 (6) |
-| arxiv_theory_vs_biorxiv | 0.899 | 0.60 / 0.40 (4) | 1.079 | 0.25 (3) | 0.14 / 0.14 (6) |
-| arxiv_experiment_vs_biorxiv | 0.877 | 0.80 / 0.40 (4) | 1.018 | 0.25 (3) | 0.57 / 0.14 (6) |
-| arxiv_maths_vs_biorxiv | 1.091 | 0.60 / 0.40 (4) | 1.273 | 0.25 (3) | 0.14 / 0.14 (6) |
-| pubmed_us_vs_non_us | 0.895 | 0.20 / 0.20 (4) | 0.969 | 0.25 (3) | 0.29 / 0.29 (6) |
+| C1_theory_vs_experiment | 1.060 | 0.67 / 0.33 (8) | 1.051 | 0.88 (7) | 0.73 / 0.45 (10) |
+| C1_theory_without_gr-qc_vs_experiment | 0.994 | 0.89 / 0.56 (8) | 1.056 | 0.75 (7) | 0.55 / 0.27 (10) |
+| C2_computational_vs_wet_lab | 1.030 | 0.80 / 0.40 (4) | 1.104 | 0.50 (3) | 0.29 / 0.14 (6) |
+| C3_public_dataset_vs_other | 1.058 | 0.60 / 0.40 (4) | 1.102 | 0.50 (3) | 0.29 / 0.14 (6) |
+| arxiv_physics_6_vs_biorxiv | 0.897 | 0.60 / 0.40 (4) | 1.073 | 0.75 (3) | 0.57 / 0.29 (6) |
+| arxiv_theory_vs_biorxiv | 0.899 | 0.60 / 0.40 (4) | 1.078 | 0.50 (3) | 0.43 / 0.14 (6) |
+| arxiv_experiment_vs_biorxiv | 0.877 | 0.80 / 0.40 (4) | 1.016 | 1.00 (3) | 1.00 / 0.43 (6) |
+| arxiv_maths_vs_biorxiv | 1.091 | 0.60 / 0.40 (4) | 1.272 | 0.50 (3) | 0.29 / 0.14 (6) |
+| pubmed_us_vs_non_us | 0.895 | 0.20 / 0.20 (4) | 0.969 | 0.75 (3) | 0.57 / 0.43 (6) |
 
 ### P1d. Break tests that can see 2025–2026
 

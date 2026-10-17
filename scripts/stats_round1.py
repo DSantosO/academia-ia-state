@@ -252,8 +252,11 @@ def rank_calibration(ya, yb, months, pre_last=2022, target=2026, lags=12):
     b = {y: (ev[str(y)]["b"] if str(y) in ev else 0.0) for y in years}
     out = {"level": dict(rank(b[target], loo), rr=math.exp(b[target]), ref_years=pre,
                          ref_rr={str(k): math.exp(v) for k, v in zip(pre, loo)})}
-    # year-on-year changes are differences of year coefficients, so they do not depend on the base
-    ch = {y: b[y] - b[y - 1] for y in years if y - 1 in b}
+    # year-on-year changes need a coefficient for every year: the pooled base above sets every pre-period change to
+    # zero. With one base year they are differences of year coefficients and do not depend on which year it is.
+    ev1 = event_study(ya, yb, months, {pre_last}, lags=lags)
+    b1 = {y: (ev1[str(y)]["b"] if str(y) in ev1 else 0.0) for y in years}
+    ch = {y: b1[y] - b1[y - 1] for y in years if y - 1 in b1}
     out["acceleration_pre_period"] = dict(rank(ch[target], [ch[y] for y in ch if y <= pre_last]),
                                           rr=math.exp(ch[target]))
     out["acceleration_all_earlier"] = dict(rank(ch[target], [ch[y] for y in ch if y < target]),
