@@ -1,0 +1,32 @@
+{
+ "coverage": {
+  "A-medrxiv": "1830/1830",
+  "B-arxiv": "0/6600",
+  "B-medrxiv": "2250/2250",
+  "HN": "0/6840"
+ },
+ "testA_medrxiv": {
+  "status": "pending human validation (Deviation 1)",
+  "pooled": {
+   "rr": 0.8396512342650847,
+   "lo": 0.20007302198600802,
+   "hi": 3.679159892001369,
+   "se_log": 0.7273570871680842,
+   "mde_80": 7.664504333866774,
+   "n_boot": 999
+  },
+  "n_classified": {
+   "NN": 928,
+   "ND": 852,
+   "U": 50
+  },
+  "placebo_2019": 1.6763119788816017,
+  "decision": "not supported",
+  "sensitivity": {
+   "excluding_september_2026": 0.8546151663134841,
+   "U_as_NN": 0.8092421505238304,
+   "trend_2017_2019_only": 0.594933994948692,
+   "excluding_reviews_from_NN": 0.7486375154222104
+  }
+ }
+}

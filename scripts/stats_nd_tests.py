@@ -38,7 +38,9 @@ Estimand = slope of the outcome on the ND share, servers jointly (server fixed e
 a permutation test shuffling ND shares within server (10,000 permutations) and a bootstrap over categories.
 Decision rule: supported if the joint slope is negative with one-sided permutation p < 0.05 and the slope is negative
 in at least 2 of the 3 servers. Sensitivity: U counted as NN in the ND share.
-Usage: python3 scripts/stats_nd_tests.py LABELS_FILE [repo_dir]
+A design is estimated only when every sampled paper has a label (coverage is reported), so the tests can be run
+server by server as the classification is completed.
+Usage: python3 scripts/stats_nd_tests.py LABELS_FILE[,LABELS_FILE...] [repo_dir]
 """
 import csv
 import gzip
@@ -61,10 +63,11 @@ STATUS = "pending human validation (Deviation 1)"
 POST = ("2025-01", "2026-09")
 
 
-def load_labels(path):
+def load_labels(paths):
     out = {}
-    for r in csv.DictReader(gzip.open(path, "rt") if path.endswith(".gz") else open(path)):
-        out[r["id"]] = r["label"]
+    for path in paths.split(","):
+        for r in csv.DictReader(gzip.open(path, "rt") if path.endswith(".gz") else open(path)):
+            out[r.get("paper_key") or r["id"]] = r["label"]
     return out
 
 
@@ -349,7 +352,13 @@ def main():
     attrs = load_attributes(repo)
     out_path = os.path.join(repo, "data/processed/stats/nd_tests.json")
     out = json.load(open(out_path)) if os.path.exists(out_path) else {}
-    designs = {r["design"] for r in rows}
+    coverage = defaultdict(lambda: [0, 0])
+    for r in rows:
+        coverage[r["design"]][0] += r["paper_key"] in labels
+        coverage[r["design"]][1] += 1
+    out["coverage"] = {d: f"{a}/{b}" for d, (a, b) in sorted(coverage.items())}
+    designs = {d for d, (a, b) in coverage.items() if a == b}
+    print("classified designs:", sorted(designs), out["coverage"])
     if "A-medrxiv" in designs:
         out["testA_medrxiv"] = hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"], attrs)
     if "A-biorxiv" in designs:
@@ -363,7 +372,7 @@ def main():
                                                .items() if k in ("slope_joint", "p_permutation_one_sided", "by_server")}
     json.dump(out, open(out_path, "w"), indent=1, default=float)
     print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk in ("pooled", "decision", "placebo_2019")}
-                      for k, v in out.items()}, indent=1, default=float))
+                      for k, v in out.items() if k != "coverage"}, indent=1, default=float))
 
 
 if __name__ == "__main__":
