@@ -213,3 +213,26 @@
 **Note on the validation runs.**
 - The validation sheet's classifier labels and the estimation samples' labels come from separate runs of the same procedure: the same prompts, batch size and blinding.
 - Agreement on the sheet therefore measures the procedure. Agreement between runs is reported (D3h).
+
+### Deviation 3, second addendum (recorded 17 Oct 2026, about 09:05 UTC)
+
+*Recorded before any HN, Test A (bioRxiv) or Test B estimate was computed.*
+
+**Correction to "What had been seen".**
+- **What happened.** Deviation 3 says the author had not seen the Test A (medRxiv) estimate. In fact, at about 00:12 UTC on 17 Oct the analysis session wrote its point estimate, CI, verdict and minimum detectable effect in a status line in its chat with the author. This was before the hold request. The author may therefore have read it.
+- **Consequence.** The author's coding of the 100 medRxiv validation papers may not be blind to that result. [AUTHOR: state whether you read it before coding.]
+- **Other results.** No other paper-level result has been reported to the author.
+
+**D3k, completed.**
+- The registered rule (at least 150 eligible papers in 2019–2022; below that, dropped) applies to **both** bioRxiv and medRxiv.
+- The code's earlier threshold of 300 (`nd_design.py`, c2f891b) is replaced by 150. Under 150, 28 medRxiv categories enter (15 under the old threshold) and 23 are dropped.
+- The bioRxiv Test B sample had not been drawn when this was fixed.
+
+**D3p. Test B samples are drawn independently of Test A.**
+- Deviation 2 says Test B samples reuse "Test A papers that fall in that window". The code instead draws 150 papers per category independently of Test A. A paper drawn in both samples is classified once and its label shared.
+- Each category's sample is still a simple random sample, so the exposure estimate is unbiased; only efficiency differs.
+- It is kept because the medRxiv Test B draws had already been classified.
+
+**D3g, detail.**
+- The relabelling sensitivity uses the empirical first-run to second-run transition matrices from the test–retest sets.
+- There was no arXiv retest. So the 200 arXiv validation papers are classified a second time, blind, to give an arXiv-specific matrix. The bioRxiv and medRxiv matrices come from their own retest sets.

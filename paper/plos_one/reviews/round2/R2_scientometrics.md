@@ -122,14 +122,14 @@ On criterion 4 I would now support the paper.
   - the abstract's "not because of reviews, proceedings or white papers" (N1);
   - "similar" adoption of AI-assisted writing within fields (N2);
   - the accounting of the funding shock from PubMed affiliations (N4).
-- **An unconfirmed comparator.** The bioRxiv series, the paper's main comparator, has not been checked for the duplication found in medRxiv. My spot check finds none in the months where medRxiv's was worst, but the full check is still to be run (N5).
-- **Positioning.** The positioning against Qi et al. misreads their finding (N9). I share the blame: my round-1 description of their design was partly wrong.
-- **The deposit.** The deposit and the disclosures are honest in spirit but wrong in several particulars (N10).
+- **An unconfirmed comparator.** The bioRxiv series, the paper's main comparator, has not been checked for the duplication found in medRxiv. My spot check finds none in the months where medRxiv's was worst, but the full check is still to be run (N7).
+- **Positioning.** The positioning against Qi et al. misreads their finding (N11). I share the blame: my round-1 description of their design was partly wrong.
+- **The deposit.** The deposit and the disclosures are honest in spirit but wrong in several particulars (N12).
 
 **All of this can be fixed with data in hand.**
 - Each problem can be fixed with data already harvested, or by narrowing a sentence.
 - The one exception is the bioRxiv record harvest, and its scripts exist.
-- One open question can already be closed: dating by submission rather than announcement makes no material difference (N6).
+- One open question can already be closed: dating by submission rather than announcement makes no material difference (N8).
 
 **Before submission.**
 - **Resolve every marker.** Do not submit with [ANALYSIS PENDING] or [RECHECK] markers.
@@ -146,33 +146,33 @@ Status codes: **Resolved**; **Partly**; **Not** resolved; **Open (author)**, nee
 | Round-1 issue | Status | Evidence | What remains |
 |---|---|---|---|
 | **M1. Reframe; H1 not supported** | Resolved | Title, Abstract, Results, Conclusions; placebo p beside Holm p; bases 2019, pooled and cleaned; Fig 2D; the two findings withdrawn; the nucl-ex and `physics` "hint" reported as description | The Abstract's "not because of reviews, proceedings or white papers" (N1) |
-| **M2a. Date by v1 submission** | Partly in v2; answerable now | Marked [ANALYSIS PENDING]. The companion found that OAI `created` is the latest version's date. **I recommended `created` in round 1; that advice was wrong.** The arXiv API returned 429; an arXivRaw adapter was added | My calculations from committed files settle the question for mathematics and HEP (N6). Report them and remove the marker |
+| **M2a. Date by v1 submission** | Partly in v2; answerable now | Marked [ANALYSIS PENDING]. The companion found that OAI `created` is the latest version's date. **I recommended `created` in round 1; that advice was wrong.** The arXiv API returned 429; an arXivRaw adapter was added | My calculations from committed files settle the question for mathematics and HEP (N8). Report them and remove the marker |
 | **M2b. Headline windows** | Partly | January–September comparisons lead; H2 gives July–August and January–August variants | The Abstract's "more than tripled" (+266%) is the Q3 figure, which includes the September spike; January–August gives +78% (Section 5, item 3) |
-| **M2c. Reconcile the arXiv sources; the January 2025 boundary** | Resolved for HEP; partly for mathematics | The harvest now starts in 2019. My calculation: the flag table matches arXiv's statistics pages exactly for hep-ex and hep-th (January–September 2019, 2022, 2026) | Mathematics: the OAI primary-math series is 89.9–92.3% of the statistics-page "math" counts (N8) |
+| **M2c. Reconcile the arXiv sources; the January 2025 boundary** | Resolved for HEP; partly for mathematics | The harvest now starts in 2019. My calculation: the flag table matches arXiv's statistics pages exactly for hep-ex and hep-th (January–September 2019, 2022, 2026) | Mathematics: the OAI primary-math series is 89.9–92.3% of the statistics-page "math" counts (N10) |
 | **M2d. Ask arXiv for moderation statistics** | Open (author) | Optional | – |
-| **M3a. One record, one primary category; N** | Resolved in the text | N removed; aliasing stated (archive sums about 5% above arXiv's total) | The two definitions of mathematics, unlabelled (N8) |
+| **M3a. One record, one primary category; N** | Resolved in the text | N removed; aliasing stated (archive sums about 5% above arXiv's total) | The two definitions of mathematics, unlabelled (N10) |
 | **M3b. Report both count definitions** | Resolved | New submissions and list entries; mathematics ranks fifth on new submissions and second on entries | – |
-| **M3c. Replicate Nee et al. before comparing** | Partly | The synthetic control is replicated (11.9%; about 8% without September). The author panel is compared on January–August windows with primary-only papers: 2.34% → 3.73% against Nee's 2.45% → 3.80% | The like-for-like variant is already computed: list entries, January–August, all names, 2.80% → 4.07% (`heavy_producers.json`, `maths_list_entries`). It is not reported. The text cites the variant that happens to be numerically closest (N9) |
+| **M3c. Replicate Nee et al. before comparing** | Partly | The synthetic control is replicated (11.9%; about 8% without September). The author panel is compared on January–August windows with primary-only papers: 2.34% → 3.73% against Nee's 2.45% → 3.80% | The like-for-like variant is already computed: list entries, January–August, all names, 2.80% → 4.07% (`heavy_producers.json`, `maths_list_entries`). It is not reported. The text cites the variant that happens to be numerically closest (Section 4.3, "Nee et al.") |
 | **M3d. Name the unit when citing Nee et al.** | Resolved | "list entries" in the Introduction | – |
-| **M4. bioRxiv confounds** (adoption, COVID-19, author-chosen categories, screening) | Not resolved; acknowledged | Pending: COVID-19 removal record by record, content classification (Test A), the AI-topic split and structure-matched permutation. Declined: normalisation by journal output. Not examined: the Gates mandate, the 2020 screening of drug-repurposing papers, the platform change | Duplicate listings: my spot check finds none on bioRxiv; a full check is still needed (N5). The cautious reading of C2 ("fragile in level; acceleration confounded with the end of adoption") is appropriate |
-| **M5a. Validate the medRxiv flags** | Not (pending) | A coding sheet of 200 rows (50 per rule) is committed, uncoded | Coding the flagged sample gives precision only; recall needs a sample of unflagged preprints (Section 6, item 10) |
+| **M4. bioRxiv confounds** (adoption, COVID-19, author-chosen categories, screening) | Not resolved; acknowledged | Pending: COVID-19 removal record by record, content classification (Test A), the AI-topic split and structure-matched permutation. Declined: normalisation by journal output. Not examined: the Gates mandate, the 2020 screening of drug-repurposing papers, the platform change | Duplicate listings: my spot check finds none on bioRxiv; a full check is still needed (N7). The cautious reading of C2 ("fragile in level; acceleration confounded with the end of adoption") is appropriate |
+| **M5a. Validate the medRxiv flags** | Not (pending) | A coding sheet of 200 rows (50 per rule) is committed, uncoded | Coding the flagged sample gives precision only; recall needs a sample of unflagged preprints (Section 6, rank 7) |
 | **M5b. Title-only bound; extended list** | Resolved | C3 1.07 (0.95–1.21) with title-only matching; 1.05 (0.93–1.17) with Spick et al.'s four datasets | When the list was fixed (marked [AUTHOR]) |
 | **M5c. medRxiv as the venue; genre contrast; a journal version of C3** | Partly | "A weak test of H1 … in this venue"; the journal version declined; the genre contrast is part of Test A | Acceptable |
-| **M5d. The medRxiv duplicate correction** (new in v2) | Resolved for duplicates under the same DOI | Every series counts each DOI once; my re-run reproduces the corrected C3 values in Table 1 | Duplicates cluster after the change of DOI prefix and peak in July–August 2026. Duplicates under different DOIs are unchecked. The committed `round1_tests.json` and `results.md` still hold pre-correction C3 values (N8, N10) |
-| **M6. H2 artefacts** (namesakes, newcomers, batch posting, a few submitters) | Largely resolved | Histories from 2019; the combined-output decomposition for mathematics and theory; namesake-robust and established-name variants; collaboration papers (>50 authors) excluded; fixed-threshold measures moved to S3 Table | Declined: an identifier-matched subsample and a simulated namesake null. Batch posting was declined for lack of submission dates, which now exist (N6). The abstract's headline uses Q3 (Section 5, item 3) |
+| **M5d. The medRxiv duplicate correction** (new in v2) | Resolved for duplicates under the same DOI | Every series counts each DOI once; my re-run reproduces the corrected C3 values in Table 1 | Duplicates cluster after the change of DOI prefix and peak in July–August 2026. Duplicates under different DOIs are unchecked. The committed `round1_tests.json` and `results.md` still hold pre-correction C3 values (N10, N12) |
+| **M6. H2 artefacts** (namesakes, newcomers, batch posting, a few submitters) | Largely resolved | Histories from 2019; the combined-output decomposition for mathematics and theory; namesake-robust and established-name variants; collaboration papers (>50 authors) excluded; fixed-threshold measures moved to S3 Table | Declined: an identifier-matched subsample and a simulated namesake null. Batch posting was declined for lack of submission dates, which now exist (N8). The abstract's headline uses Q3 (Section 5, item 3) |
 | **M7. H3 on the companion's own markers** | Resolved in structure; new metric issue | Rebuilt on Kobak et al.'s style words; 2024 leads; drift stated; mathematics and the panel added; Table 6 moved to S4 Table | Relative rises versus absolute excess (N2); Liang et al.'s bioRxiv values still [RECHECK], and the open preprint can be read (Section 4.3) |
 | **M8a. Server-policy timeline** | Largely resolved | S2 Appendix, dated and sourced | Two [RECHECK] items can be closed now: arXiv's post and openRxiv (Section 5, item 9). Add the medRxiv DOI-prefix change (2 December 2025) and the onset of duplicates |
 | **M8b. Rule-date indicators in the models** | Acceptable as declined | Nearly collinear with 2026; window-drop variants in S5 Table | – |
-| **M8c. Validate the OSF method; demote the social-science series** | Not resolved | Continuity check pending; OSF access is blocked | Remove the series from Fig 1 and Table 3 (N7) |
+| **M8c. Validate the OSF method; demote the social-science series** | Not resolved | Continuity check pending; OSF access is blocked | Remove the series from Fig 1 and Table 3 (N9) |
 | **M9a. Positioning against Nee et al.** | Resolved | Replication on a different unit; "an excess over an accelerating arXiv" | Report the list-entry author panel (M3c) |
-| **M9b. Positioning against Qi et al.** | Not resolved; my round-1 advice was partly wrong | v2 presents itself as the within-field test of Qi et al.'s "computationally intensive fields benefited more" | Qi et al.'s claim concerns the share of AI-related papers by discipline, not the volume of output. Their bioRxiv volume result needs reconciling (N9) |
+| **M9b. Positioning against Qi et al.** | Not resolved; my round-1 advice was partly wrong | v2 presents itself as the within-field test of Qi et al.'s "computationally intensive fields benefited more" | Qi et al.'s claim concerns the share of AI-related papers by discipline, not the volume of output. Their bioRxiv volume result needs reconciling (N11) |
 | **M9c. Core scientometric literature** | Resolved | All the references I listed are added; I re-verified the new ones (Section 4.3) | A few useful additions (Section 4.3) |
 | **M9d. Discussion material the data do not test** | Partly; author's decision | "Implications" shortened to about 520 words and labelled as interpretation; proposals cut to one paragraph | Acceptable if the [RECHECK] figures are verified |
-| **M10a. Record-level identifiers and flags** | Partly; more exists than v2 says | v2 says the tables "will be added". Already committed: arXiv flags (453,067 rows), medRxiv records (89,700), INSPIRE records (117,960), medRxiv ND samples (4,080) | Missing: bioRxiv records, complete v1 dates, OAI datestamps. A heavy-producer flag must **not** be released (N10) |
-| **M10b. Respect request limits; state compliance** | Partly | Commendably frank about arXiv's statistics pages (1 s pauses against a 15 s crawl delay) and about OSF | Three inaccuracies: "no request was refused" against the 429; an OSF file claimed but absent; parallel connections to the bioRxiv API not in Methods (N10) |
-| **M10c. Pinned environment; a single rebuild command** | Not resolved | Pinned environment pending | `run_all.sh` does not run `stats_round1.py`, the source of many v2 numbers (N10) |
-| **M10d. Names only with data-protection approval** | Open (author) | Ethics statement drafted | Say which framework governs: EMBL's Internal Policy 68, or the GDPR at UPF (N10) |
-| **M10e. Licences** | Open (author) | CC BY 4.0 for data and MIT for code proposed | Consider CC0 for tables derived from CC0 sources. Titles and abstracts appear in the validation sheets (N10) |
+| **M10a. Record-level identifiers and flags** | Partly; more exists than v2 says | v2 says the tables "will be added". Already committed: arXiv flags (453,067 rows), medRxiv records (89,700), INSPIRE records (117,960), medRxiv ND samples (4,080) | Missing: bioRxiv records, complete v1 dates, OAI datestamps. A heavy-producer flag must **not** be released (N12) |
+| **M10b. Respect request limits; state compliance** | Partly | Commendably frank about arXiv's statistics pages (1 s pauses against a 15 s crawl delay) and about OSF | Three inaccuracies: "no request was refused" against the 429; an OSF file claimed but absent; parallel connections to the bioRxiv API not in Methods (N12) |
+| **M10c. Pinned environment; a single rebuild command** | Not resolved | Pinned environment pending | `run_all.sh` does not run `stats_round1.py`, the source of many v2 numbers (N12) |
+| **M10d. Names only with data-protection approval** | Open (author) | Ethics statement drafted | Say which framework governs: EMBL's Internal Policy 68, or the GDPR at UPF (N12) |
+| **M10e. Licences** | Open (author) | CC BY 4.0 for data and MIT for code proposed | Consider CC0 for tables derived from CC0 sources. Titles and abstracts appear in the validation sheets (N12) |
 
 ### Minor issues
 
@@ -192,14 +192,14 @@ Status codes: **Resolved**; **Partly**; **Not** resolved; **Open (author)**, nee
 | 12 | Terminology ("heavy producer") | Resolved |
 | 13 | References | Mostly resolved; ref. 68 lacks its DOI; Renault et al.'s article type is open |
 | 14 | "Fixed before growth was examined" | Resolved (Study design) |
-| 15 | Partial October 2026 | Declined because dating was pending. Dating is now settled for unrevised papers, and October is informative about H2 (N6) |
+| 15 | Partial October 2026 | Declined because dating was pending. Dating is now settled for unrevised papers, and October is informative about H2 (N8) |
 | 16 | medRxiv's early months | Resolved |
 
 ### Analyses requested in round 1, ranked as then
 
 | # | Analysis | Status |
 |---|---|---|
-| 1 | Re-date by submission | Pending in v2; answerable now (N6) |
+| 1 | Re-date by submission | Pending in v2; answerable now (N8) |
 | 2 | Genre and topic breakdown | Partly: genres done for mathematics and six HEP archives, with validity problems (N1); AI topic pending |
 | 3 | Who drives the growth | Largely done (decomposition, 2019 histories). Identifiers and country declined. A Nee-comparable list-entry panel exists but is unreported |
 | 4 | Propensity to post | Declined; named as untested |
@@ -408,7 +408,7 @@ So the claim at the level of servers and the mathematics result survive. The cla
   - compare the US with other large producers.
 - **The bioRxiv test.** The bioRxiv US/non-US test (pending) is better placed: it uses the corresponding author's institution, and its classifier needs a human check, not one by an AI agent.
 
-#### N5a. Removing Snowmass and European Strategy papers is valid, but one reading is an artefact of the trend
+#### N5. Removing Snowmass and European Strategy papers is valid, but one reading is an artefact of the trend
 
 **The identification is adequate** (my calculation):
 - 117 of 713 hep-ex papers in January–September 2022 (16.4%), 78 of them in March 2022, the deadline;
@@ -429,7 +429,7 @@ So the claim at the level of servers and the mathematics result survive. The cla
 - Show hep-ex's departure under other trend windows: 2015–2021 and 2017–2022.
 - Reword the Discussion's sentence.
 
-#### N5b. The list-entry checks are valid; two notes
+#### N6. The list-entry checks are valid; two notes
 
 - **The unit is right.** List entries are the correct unit for comparison with Nee et al., and the departures and ranks are reported.
 - **Note 1: the author panel.** The list-entry version of H2 exists but is not reported (M3c).
@@ -437,11 +437,11 @@ So the claim at the level of servers and the mathematics result survive. The cla
 
 ### 4.2 Data integrity risks still open
 
-#### N5. bioRxiv duplicates: my spot check finds none, but the official totals cannot rule them out, and the full check is still needed
+#### N7. bioRxiv duplicates: my spot check finds none, but the official totals cannot rule them out, and the full check is still needed
 
 **Why it matters.**
 - **Duplicates in medRxiv.** The medRxiv API lists some version-1 preprints on two days, and medRxiv's official monthly totals include the duplicates (`rebuild_rxiv_from_records.py`).
-- **The bioRxiv counts would include them too.** The bioRxiv category counts are the API's `count_new_papers` (`harvest_rxiv_categories.py --counts`), a count on the server side that would include duplicates of the same kind.
+- **The bioRxiv counts would include them too, if bioRxiv had any.** The bioRxiv category counts are the API's `count_new_papers` (`harvest_rxiv_categories.py --counts`), a count on the server side that would include duplicates of the same kind.
 - **Agreement with official totals proves nothing here.** "Category sums equal bioRxiv's official totals" holds whether or not duplicates are present, because both come from the same API. (I listed it as a strength in round 1; it validates coverage, not uniqueness.)
 
 **The medRxiv pattern** (my calculation from `medrxiv_covid_monthly.csv` and `medrxiv_records.csv.gz`).
@@ -487,7 +487,7 @@ So the claim at the level of servers and the mathematics result survive. The cla
    - the prefix change (2 December 2025, both servers);
    - the onset of medRxiv duplicates (2026).
 
-#### N6. Dating by v1 submission for mathematics and HEP: the companion's own files already answer it
+#### N8. Dating by v1 submission for mathematics and HEP: the companion's own files already answer it
 
 **The question.** v2 marks dating by submission [ANALYSIS PENDING] and lists announcement dating among the open explanations.
 
@@ -532,7 +532,7 @@ That is a cheap first look at the Q4 test of H2 that I proposed in round 1. The 
 - Add one sentence on October.
 - With v1 dates, batch posting by heavy producers becomes measurable: the share of an author's quarterly papers submitted within seven days.
 
-#### N7. OSF is blocked: take the social-science series out of the main text
+#### N9. OSF is blocked: take the social-science series out of the main text
 
 **Why.**
 - The continuity check across the 2025 change of counting method cannot be run.
@@ -545,7 +545,7 @@ That is a cheap first look at the Q4 test of H2 that I proposed in round 1. The 
 - Remove the series from Fig 1 and Table 3; at most, keep it in S2 Table with the caveat.
 - Correct the README.
 
-#### N8. Other integrity issues
+#### N10. Other integrity issues
 
 1. **Two definitions of "mathematics".**
    - **The gap.** The OAI series of primary math.\* papers is 89.9% of the statistics-page "math" count in January–September 2019, and 92.3% in 2026 (24,667 against 27,450; 44,457 against 48,151).
@@ -569,11 +569,11 @@ That is a cheap first look at the Q4 test of H2 that I proposed in round 1. The 
      - bases 2019 and pooled: 1.01.
    - **It also fills the cell marked "not yet recomputed".** The slope change after December 2022 is −3.8% a year (−8.6 to +1.3; bootstrap p = 0.27), and after November 2024 −2.0% (−8.2 to +4.5; p = 0.66).
    - **Consequence.** `results.md`, as committed, gives two different C3 estimates in two sections.
-4. **The medRxiv correction works on DOIs only** (N5).
+4. **The medRxiv correction works on DOIs only** (N7).
 
 ### 4.3 Positioning and literature
 
-#### N9. The positioning against Qi et al. misreads their finding, and I contributed to the error
+#### N11. The positioning against Qi et al. misreads their finding, and I contributed to the error
 
 **The framing in v2.**
 - The Introduction says Qi et al. "report that computationally intensive fields benefited more than others [11]".
@@ -630,7 +630,7 @@ That is a cheap first look at the Q4 test of H2 that I proposed in round 1. The 
 - **The scientometric references added at my request.** I verified them in round 1: Abdill and Blekhman, Larivière et al., Wang et al., Krumholz et al., Fraser et al., Sever et al., Milojević, Kim and Diesner, Ioannidis et al. 2018, Abadie et al., and Driscoll and Kraay.
 - **The references in "Implications".** I did not check DORA, CoARA, McKiernan et al., Rice et al., the Commission's study or the proposals. Several carry [RECHECK], and they lie outside my remit.
 
-**Qi et al.'s characterisation.** The Introduction's "2.1 million preprints on arXiv, bioRxiv, medRxiv and SocArXiv from 2016 to 2025" matches their abstract: "more than 2.1 million preprints spanning 2016–2025 (115 months)", ending in August 2025. Only the reading of "benefited" is wrong (N9).
+**Qi et al.'s characterisation.** The Introduction's "2.1 million preprints on arXiv, bioRxiv, medRxiv and SocArXiv from 2016 to 2025" matches their abstract: "more than 2.1 million preprints spanning 2016–2025 (115 months)", ending in August 2025. Only the reading of "benefited" is wrong (N11).
 
 **Points to fix.**
 - **Ref. 68 (Pruller et al.)** lacks its DOI: 10.1371/journal.pone.0337199 (PLOS One 20(11):e0337199, 18 November 2025). Check that it supports "from April 2024".
@@ -653,14 +653,14 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
 
 ### 4.4 Deposit, reproducibility and disclosure
 
-#### N10. The deposit plan is close to what PLOS needs, but the statement, the pipeline and the disclosures do not yet match the files
+#### N12. The deposit plan is close to what PLOS needs, but the statement, the pipeline and the disclosures do not yet match the files
 
 1. **The single rebuild command misses `stats_round1.py`.**
    - **The gap.** `run_all.sh` does not call it, and the deposit README does not list it. Its output, `round1_tests.json`, supplies:
      - Table 1's rows on placebos, pooled bases, Snowmass cleaning, acceleration and slope changes;
      - the list-entry results;
      - the INSPIRE, PubMed, genre and medRxiv-flag results.
-   - **A cumulative file.** The script also merges each section into the existing JSON, so the committed file is the cumulative product of runs on different inputs. That is how the stale C3 values survived (N8, item 3).
+   - **A cumulative file.** The script also merges each section into the existing JSON, so the committed file is the cumulative product of runs on different inputs. That is how the stale C3 values survived (N10, item 3).
    - **Missing harvest commands.** The README lacks the commands for INSPIRE, the medRxiv records, PubMed by US affiliation and arXivRaw.
    - **My re-run** of `build_datasets.py`, `analyze_trends.py`, `analyze_within_field.py`, `stats_within_field.py`, `stats_fields.py`, `stats_markers.py`, `stats_round1.py` (all sections that need no OAI harvest) and `report_stats.py`:
      - It ran on a copy of the committed data, with numpy 2.5.3, pandas 3.0.5, scipy 1.18.1 and statsmodels 0.15.0.
@@ -702,7 +702,7 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
    - **Name the framework in the Ethics statement.** EMBL applies its own Internal Policy No. 68 on data protection, with a Data Protection Officer and a Data Protection Committee as supervisory body (https://www.embl.org/documents/document/internal-policy-no-68-on-general-data-protection/; https://www.embl.org/info/data-protection/). UPF is bound by the GDPR. The statement should say which framework governs this processing, and record the advice received.
 4. **The request-pacing disclosure is frank, with three errors and one gap.** Disclosing the 1 s pauses against arXiv's 15 s crawl delay, and the OSF retrievals faster than documented, is exemplary. But:
    - **(i) "No request was refused" (Methods)** is contradicted by the companion's own record. The arXiv API "answered '429 Rate exceeded' from this environment" (`harvest_arxiv_raw.py`, `v1_dates_from_raw.py`). State it, and say that the environment's network address may be shared, which can trigger rate limits even for a compliant client.
-   - **(ii) The OSF file.** The README claims `osf_continuity.csv` was retrieved; it is absent (N7).
+   - **(ii) The OSF file.** The README claims `osf_continuity.csv` was retrieved; it is absent (N9).
    - **(iii) Parallel connections.** The bioRxiv and medRxiv harvests used two to four parallel connections (deposit README). Methods says only that the API "states no limit". I confirm the API page states no terms or limits (https://api.biorxiv.org/, read on 16 October 2026), but Methods should report the parallelism.
    - **(iv) The gap: INSPIRE.** Replace the [RECHECK] with the documented limit and the pacing used.
      - The limit: "every IP address is allowed 15 requests in a 5s window" (https://github.com/inspirehep/rest-api-doc).
@@ -719,7 +719,7 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
 ## 5. Minor issues
 
 1. **The Abstract on physics.** "Physics fell to 1.06 without planning white papers in its 2022 base": the same cleaning against 2017–2019 gives 1.11 (Table 1). Give both or neither.
-2. **"14 of the 18 arXiv archives stood at least 1.25 times their trends."** Correct. The note to Table 3 should say that the largest departures are in archives whose pre-2023 trend was falling: math-ph, nucl-th and nlin.
+2. **"14 of the 18 arXiv archives stood at least 1.25 times their trends."** Correct. The note to Table 3 already says that the largest departures are in archives whose pre-2023 trend was falling (math-ph, nucl-th, nlin). Say it in this Results sentence too, because it qualifies the count.
 3. **H2 headline.**
    - The Abstract's "in mathematics the top 1% of names more than tripled theirs" is the Q3 figure (+266%).
    - January–August gives +78%; July–August +135%; namesake-robust January–August +63%.
@@ -739,38 +739,50 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
      - papers of authors who submit quality work "can be delayed for days or weeks". That sentence comes from a quoted statement by Thomas Dietterich.
 
      The row "Until Oct 2026" is therefore supported.
-   - **openRxiv** was announced on 11 March 2025 (sources in N5).
+   - **openRxiv** was announced on 11 March 2025 (sources in N7).
    - **Add:** the medRxiv DOI prefix 10.64898 from 2 December 2025, and the onset of duplicate listings in 2026.
 10. **S2 Appendix, INSPIRE queries.** R3's queries were made by an AI agent and have not been re-run. The rule-based classification supersedes them, but the sample classification of 60 records (1 of 60 reporting new measurements) still motivates the pre-registration. Say that this motivating number is unvalidated.
 11. **"Data were retrieved on 15–16 October 2026."** Add the dates of the INSPIRE and arXivRaw harvests, and of the ND samples.
 12. **Retrieval of version-1 abstracts.** The marker counts for bioRxiv and medRxiv use version-1 text; arXiv's use the latest version (N2). Say so in Methods.
-13. **"Archive and category labels are weak proxies"** (Discussion). Add that 67–69% of hep-ex and nucl-ex list entries are cross-lists (N5b).
+13. **"Archive and category labels are weak proxies"** (Discussion). Add that 67–69% of hep-ex and nucl-ex list entries are cross-lists (N6).
 14. **medRxiv flag validation.** Precision from the coding sheet will not give recall. Add 100 randomly sampled unflagged non-COVID preprints.
-15. **Country of the corresponding institution.** `medrxiv_records.csv.gz` already carries a US/non-US flag, and the bioRxiv split is pending. Its classifier was checked by an AI agent on 150 records; have a person check it before use.
+15. **Country of the corresponding institution.** `medrxiv_records.csv.gz` already carries a US/non-US flag, and the bioRxiv split is pending. The classifier (`classify_country.py`) was checked by an AI agent on 150 bioRxiv records from 2022 (`methods.md`, P1e); have a person check it on both servers before use.
 16. **"PubMed requests stayed within three a second".** True of the scripts. Add the date and query of the US-affiliation retrieval.
 17. **Kusumegi et al.** Keep the output-gain sentence with Renault et al.'s critique ([AUTHOR] in the Introduction). Limitations already uses both, and removing one would leave the other unexplained.
-18. **"The bioRxiv and medRxiv API states no limit"** is accurate as of 17 October 2026 (https://api.biorxiv.org/).
+18. **"The bioRxiv and medRxiv API states no limit"** is accurate as of 16 October 2026 (https://api.biorxiv.org/).
 19. **Word counts.** The header's "Markers outside HTML comments: [AUTHOR] 53, [ANALYSIS PENDING] 18, [RECHECK] 9" is a useful check; keep it in the build until all reach zero.
 
 ---
 
 ## 6. Requested checks, ranked by information value
 
+### Analyses
+
 | Rank | Check | Why it matters | Cost |
 |---|---|---|---|
-| 1 | **Close the dating question** (N6): report INSPIRE against the statistics pages, and the unrevised-paper lags for mathematics; complete revised papers with arXivRaw; add October 2026 | Removes an [ANALYSIS PENDING] marker, an open explanation and a Limitation; gives a first look at the cap | Low; the data are committed |
-| 2 | **De-duplicate bioRxiv** (N5): record harvest, `rebuild_rxiv_from_records.py`, re-estimate everything that uses bioRxiv; check duplicates under different DOIs on both servers | bioRxiv is the comparator for the main exploratory finding and the server for C2 | Moderate (the record harvest); the scripts exist |
-| 3 | **Narrow and validate the genre claim** (N1): Abstract wording, INSPIRE validation, journal-name exclusions, 200 hand-coded mathematics papers, a sensitivity analysis on revision | The Abstract makes a claim the check does not support | Low to moderate |
-| 4 | **Marker metric** (N2): absolute excess and lower bounds for every group, bioRxiv and medRxiv included; a baseline sensitivity for arXiv | Decides whether H3's within-field reading survives | Low (re-aggregation) |
-| 5 | **Rewrite the positioning against Qi et al.** (N9) | Accuracy of the framing | None |
-| 6 | **Report the like-for-like Nee panel** (M3c) | Exact replication of the author-level comparison | None (already computed) |
-| 7 | **Delete or redo the PubMed accounting** (N4) | Removes a claim the measure cannot carry | None to delete; moderate to redo |
-| 8 | **Deposit and pipeline** (N10): `stats_round1.py` in `run_all.sh`, regeneration from scratch, pinned environment, complete record tables, accurate disclosure | PLOS's minimal data set; reproducibility; accurate statements | Low |
-| 9 | **INSPIRE diagnostics** (N3): link and type shares by year, the collaboration-only sensitivity, a re-harvest to measure lag, a spot check of 100 records | Validity of the exploratory component that motivates the pre-registration | Low |
-| 10 | **medRxiv flags**: code the sheet (precision) and 100 unflagged preprints (recall) | Validity of C3 | Low (author time) |
-| 11 | **Pending round-1 items for C2**: bioRxiv without COVID-19 record by record; the AI-topic split of bioinformatics; structure-matched placebos | C2 is the only contrast whose model interval excludes 1 | Moderate |
-| 12 | **Batch posting by heavy producers**, now measurable with v1 dates | Separates breadth from a few heavy submitters, which arXiv's own account emphasises | Low |
-| 13 | **Remove OSF from the main text** (N7) | Removes an unvalidated series | None |
+| 1 | **Close the dating question** (N8): report INSPIRE against the statistics pages, and the lags of unrevised mathematics papers; complete revised papers with arXivRaw; add October 2026 | Removes an [ANALYSIS PENDING] marker, an open explanation and a Limitation; gives a first look at the cap | Low; the data are committed |
+| 2 | **Narrow and validate the genre claim** (N1): INSPIRE validation for HEP, journal-name exclusions, 200 hand-coded mathematics papers, a sensitivity analysis on revision | The Abstract makes a claim the check does not support | Low to moderate |
+| 3 | **Marker metric** (N2): absolute excess and lower bounds for every group, bioRxiv and medRxiv included (re-aggregated by abstract); a baseline sensitivity for arXiv | Decides whether H3's within-field reading survives | Low |
+| 4 | **Complete the bioRxiv duplicate check over 2019–2026** (N7); match duplicates under different DOIs on both servers | bioRxiv is the comparator for the main exploratory finding and the server for C2. My spot check makes a problem unlikely, so the value is mainly confirmation | Moderate (the record harvest); the scripts exist |
+| 5 | **INSPIRE diagnostics** (N3): link and type shares by year, the collaboration-only sensitivity, a re-harvest to measure lag, a spot check of 100 records | Validity of the exploratory component that motivates the pre-registration | Low |
+| 6 | **Pending round-1 items for C2**: bioRxiv without COVID-19 record by record; the AI-topic split of bioinformatics (Qi et al.'s own measure, N11); structure-matched placebos | C2 is the only contrast whose model interval excludes 1 | Moderate |
+| 7 | **medRxiv flags**: code the sheet (precision) and 100 unflagged preprints (recall) | Validity of C3 | Low (author time) |
+| 8 | **Batch posting by heavy producers**, measurable with v1 dates; October 2026 under the cap | Separates breadth from a few heavy submitters, which arXiv's own account emphasises | Low |
+| 9 | **Redo the PubMed comparison** with a validated country assignment, if it is kept (N4) | Would give the funding explanation a usable test | Moderate |
+| 10 | **Deposit and pipeline** (N12): `stats_round1.py` in `run_all.sh`, regeneration from scratch, pinned environment, complete record tables | PLOS's minimal data set and reproducibility | Low |
+
+### Corrections that need no new analysis
+
+- **Abstract.** Narrow the genre sentence (N1). Give the H2 headline with a window that is robust to September (Section 5, item 3).
+- **Qi et al.** Rewrite the positioning, and reconcile the bioRxiv volume result (N11).
+- **Nee et al.** Report the like-for-like author panel, list entries at 2.80% → 4.07%; it is already computed (M3c).
+- **PubMed.** Delete "no comparable decline in 2019–2022" and the accounting sentence (N4).
+- **H3.** Correct "as in Kobak et al." and the drift examples (N2).
+- **C3.** Fill Table 1's C3 slope-change cell from the corrected data (N10, item 3). Regenerate the committed `round1_tests.json` and `results.md`.
+- **Social sciences.** Remove the OSF series from Fig 1 and Table 3 (N9).
+- **Disclosures.** Correct "no request was refused", the OSF file claim, the parallel connections to bioRxiv and medRxiv, and INSPIRE's terms (N12, item 4).
+- **Deposit statement.** List the record-level tables already deposited. Correct "no titles … are redistributed" (N12, items 2 and 5).
+- **Names and definitions.** Name the two six-archive sets consistently (N1). State which series of mathematics is used where (N10).
 
 ---
 
@@ -783,9 +795,9 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
   - The Deviations section is a model of disclosure.
 - **The H2 decomposition** on combined output avoids regression to the mean. It has an analytic null (every class grows at the total rate under proportional growth) and an empirical one (pairs of years before ChatGPT's release). This is the right design, and it is now reported for mathematics.
 - **H3 rests on a measured marker, with its drift documented** instead of being read as falling use. The mathematics result (smallest rise, largest acceleration) holds under every metric I tried.
-- **New checks that changed conclusions.** Snowmass cleaning, list entries, the medRxiv duplicate correction and the INSPIRE component were all reported whatever they showed. Several moved estimates against the author's prior.
+- **New checks that changed conclusions.** Snowmass cleaning, list entries, the medRxiv duplicate correction and the INSPIRE component were all reported whatever they showed. Several moved estimates against the paper's own hypotheses.
 - **A pipeline that reproduces.**
-  - My re-run reproduced the main statistics byte for byte with different package versions.
+  - My re-run reproduced the main statistics byte for byte with the package versions available to me, which may differ from the companion's.
   - The only differences traced to a stale committed file, not to the code.
   - Record-level tables already exist for arXiv, medRxiv and INSPIRE.
 - **Transparency about terms of use.** The two retrievals faster than documented limits are disclosed without being asked, and the scripts were corrected.
