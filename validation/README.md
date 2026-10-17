@@ -68,11 +68,13 @@ precision and recall per class, by domain).
 | `sealed/classifier_retest_validation_arxiv.json.gz` | `9d31b35cb8d6fa2ad60cc7115b3723023cad4c4907a19fdc3ec6ca83cecea43a` |
 | `sealed/nd_model_labels_arxiv_batches001-243.csv.gz` | `5377cff70f1b80104226b51c7b2716439bd7b0eed28486a8483fc9d52bb177ec` |
 | `sealed/nd_results_A-medrxiv.json.gz` | `e07ec58761bef9d4d94f48a155534fa631b9ca0367bc2c2e5c96dc3d767ee06e` |
+| `sealed/nd_model_labels_arxiv_batches244-255.csv.gz` | `9e8a114265ee99d9899a58dd06c034ce0461491c6da3c20cdd7c2f6d8dcb0c63` |
 
 The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
 too, because a few papers on the sheet may also be in those samples. `nd_model_labels_arxiv_batches001-243.csv.gz`
 holds the arXiv labels of the first 243 of 269 blind batches (12,150 papers), sealed when classification was paused;
-the complete arXiv file will supersede it.
+the complete arXiv file will supersede it. Later batches are sealed as they finish, every ten batches or so
+(`nd_model_labels_<server>_batches<first>-<last>.csv.gz`), so that no label exists only in a working directory.
 
 The confirmatory results computed after Deviation 3 (`nd_results_*.json.gz`) are sealed here as well (D3i) and are
 opened only after the author's coding is committed. `nd_results_A-medrxiv.json.gz` is the D3q correction of the Test A
