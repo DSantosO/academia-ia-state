@@ -1,11 +1,11 @@
 # Response to the round-2 internal reviews (R1–R4)
 
 - **What this is.** The author's response to the second round of internal review, drafted on 17 October 2026 by an AI agent from the four reviews (`paper/plos_one/reviews/round2/`) and the v3 source. The author is to adopt or amend it [AUTHOR: approve or amend each response]. The reviews were written by AI agents in reviewer roles; they are not peer review.
-- **Version answered:** draft v2 (commit a17a8b9). **Version that answers:** draft v3, `paper/plos_one/build/draft_v3_keyed.md`. The brief named commit cc24781; I checked the source at commit 27edcd6, which includes two later commits: 934267f (INSPIRE paragraph; Data availability) and 27edcd6 (S2 and S5 Tables, bioRxiv record table).
+- **Version answered:** draft v2 (commit a17a8b9). **Version that answers:** draft v3, `paper/plos_one/build/draft_v3_keyed.md`. The brief named commit cc24781; the source was checked at commit 27edcd6, which includes two later commits: 934267f (INSPIRE paragraph; Data availability) and 27edcd6 (S2 and S5 Tables, bioRxiv record table).
 - **Numbers** are copied from the v3 source or the reviews; none was recomputed. [CHECK: …] marks a point I could not verify from v3.
 - **Blinding.** No result of HN, Test A or Test B appears here. No sealed file or other branch was opened.
 - **Locations** are section headings of v3. "Registration" is Deviation 3 and its four addenda in the registration files (commits 8932773, 80a2ef2, 6e1c119, 0a49bb7 and 868ef0a); D-labels follow S6 Table.
-- **Status codes.** *Done*; *Partly done*; *Pending* (analysis not yet delivered); *Author* (needs the author; matches an [AUTHOR] marker); *Declined*; *Moot* (the text concerned is gone).
+- **Status codes.** *Done*; *Partly done*; *Pending* (analysis not yet delivered); *Author* (needs the author); *Declined*; *Moot* (the text concerned is gone).
 
 ---
 
@@ -30,16 +30,16 @@
 
 **R1-N1. The in-time calibration is mis-specified, and acceleration estimates have none.** *Done, with two gaps.*
 - The v2 year-shock ratio is withdrawn (S5 Table note). Calibration is by rank with the identical estimator: the 2026 coefficient among the contrast's earlier year coefficients, and the 2026/2025 change among all earlier year-on-year changes. Two-sided, 2026 included, so p cannot fall below 1/(n + 1) (Methods, Calibration; Table 1; S5 Table).
-- Rank p of the 2026 coefficient: 0.67, 0.80, 0.60. Of the 2026/2025 change: 0.73, 0.29, 0.29. C2's and C3's equal-sized rises are read alike (Results). R1 offered rank or a centred z; I used rank.
-- Gaps: slope changes keep bootstrap p values only. Fig 2D's legend describes Driscoll–Kraay bars and no rank p; I could not check the figure [CHECK].
+- Rank p of the 2026 coefficient: 0.67, 0.80, 0.60. Of the 2026/2025 change: 0.73, 0.29, 0.29. C2's and C3's equal-sized rises are read alike (Results). R1 allowed rank or a centred z; rank was used.
+- Gaps: slope changes keep bootstrap p values only. Fig 2D's legend describes Driscoll–Kraay bars and no rank p; the figure was not checked [CHECK].
 
 **R1-N2. The cross-server divergence depends on the counterfactual; only mathematics stands out against bioRxiv; "experimental included" depends on archive and window; bioRxiv duplicates.** *Done.*
-- Each claim names its counterfactual. Results note that bioRxiv's 12% trend was fitted to years of adoption; the Discussion calls the contrast "dependent on the counterfactual, since in levels bioRxiv grew more".
+- Each claim names its counterfactual. Results note that bioRxiv's 12% trend was fitted to years of adoption; the Discussion calls the contrast "dependent on the counterfactual".
 - Direct comparison with bioRxiv (Results), 2025 to 2026: C1's six archives +7% (1.07; 0.99–1.16), "as much as in 2021 and 2022"; experiment 1.02 (0.93–1.11); mathematics 1.27 (1.04–1.56), its largest gain (rank p 0.14 one-sided, the floor; 0.29 two-sided).
 - "Experimental included" is limited to hep-ex (1.37; 1.12–1.67), "but not nucl-ex (1.00)", in Results, Principal findings and Conclusions; the abstract has no such clause. The genre window is in S2 Appendix.
 - A record-level bioRxiv harvest found 313,161 unique version-1 DOIs from 313,165 listings; monthly counts equal the official totals in 89 of 93 months and are one lower in four (S2 Appendix). No number changed; the [RECHECK] is gone.
 
-**R1-N3. "Use vs output" is suggestive, not robust.** *Moot.* The marker analysis was withdrawn on the author's decision (A2). v2's Fig 4 and Table 2, the H3 Methods and Results, and every marker sentence in the abstract, Discussion and Conclusions are gone, so R1's five problems and the corpus-specific check no longer apply. Methods (Deviations) records the pre-specified marker, the test run and the withdrawal after the results were known, with the author's reason. Results stay in the deposit; S4 Table stays as literature context. [AUTHOR: R4 and R2-N2 advise against dropping a pre-specified test unreported. v3 offers a 2024-only S Table as the alternative; choose.]
+**R1-N3. "Use vs output" is suggestive, not robust.** *Moot.* The marker analysis was withdrawn on the author's decision (A2). v2's Fig 4 and Table 2, the H3 Methods and Results, and every marker sentence in the abstract, Discussion and Conclusions are gone, so R1's five problems and the corpus-specific check no longer apply. Methods (Deviations) records the pre-specified marker, the test run and the withdrawal after the results were known, with the author's reason. Results stay in the deposit; S4 Table stays as literature context. [AUTHOR: R4 and R2-N2 advise against dropping a pre-specified test unreported; see §5 item 3.]
 
 **R1-N4. H2: what the symmetric decomposition can and cannot say.** *Done.*
 - Names are also ranked on an independent window (July 2024–June 2025). Mathematics, third quarters 2025 to 2026: total +80%; previous top 1% +40%, next 9% +76%, bottom 90% +68%. Names not active in the ranking year supplied half of the increase; names entering the top 1% supplied 13%, names already in it 1%. Physics theory: previous top 1% +2% against +26% (Results, H2; S5 Table).
@@ -56,7 +56,7 @@
 - Level-based companion estimates against pooled bases sit beside each trend-based one; disagreement is reported as dependence on the counterfactual (D3e). R1's 2023–2024 base is not in the registration.
 - Blind random-order runs replace date-ordered batches (D3a); test–retest disagreement is propagated (D3g); remaining estimates are sealed (D3i); κ with CIs by domain and period, confusion matrices, corrected ratios and a secondary Holm adjustment are reported (D3h); the "can revise" clause is replaced (D3j); the bootstrap identification error is fixed (D3q); an erratum corrects "classified by one person".
 - A second human coder is registered (D3r): a colleague codes 100 of the 400 papers. Not yet done.
-- Open: no non-US sensitivity analysis; no rule for what a failed κ in one domain means for Test B (Deviation 1 covers each domain's results only); no hash of the model identifier; no OSF or Zenodo registration, only GitHub push times [AUTHOR]. D3q and D3r are missing from S6 Table and the S1 Text caption; to add.
+- Open: no non-US sensitivity analysis; no rule for what a failed κ in one domain means for Test B (Deviation 1 covers each domain's results only); no hash of the model identifier; no OSF or Zenodo registration, only GitHub push times [AUTHOR]. D3q and D3r are missing from S6 Table and the S1 Text caption.
 
 **R1-N7. Sentences beyond, or short of, the evidence.** *Done.* All 16 rows handled; three marker rows are Moot.
 - Abstract: INSPIRE and genre sentences removed; "more than tripled" replaced; placebo result given in words. "Falsification test" is now "test"; "pre-specified estimate relative to 2022" is now "estimates first reported, a deviation"; C3's bound reads "under within-period uncertainty only, excludes increases of more than 13%".
@@ -68,7 +68,7 @@
 
 1. Fix and seal the registered tests: *Partly done* (N6).
 2. bioRxiv duplicate check: *Done* (N2).
-3. Dating by submission; January–August versions: *Done* for the contrasts and H2 (S5 Table: C1 1.10, 0.99–1.23; C2 1.08, 1.02–1.14; C3 1.01); dating leaves C1 at 1.15 either way. January–August departures from trend are not in the text. [CHECK: S5 spreadsheet.]
+3. Dating by submission; January–August versions: *Done* for the contrasts and H2 (S5 Table: C1 1.10, 0.99–1.23; C2 1.08, 1.02–1.14; C3 1.01); C1 is 1.15 by either dating. January–August departures from trend are not in the text. [CHECK: S5 spreadsheet.]
 4. Rank calibration for every headline comparison: *Partly done* (N1).
 5. H2 independent window and simulation: *Done* (N4).
 6. Marker sensitivity by field: *Moot*.
@@ -85,7 +85,7 @@
 4. *Not done.* "At most nine percentage points" is unqualified in Results; S5 Table labels the pairs "all names".
 5. *Done.* The range sentence is gone; S5 Table lists every variant.
 6. *Done.* "Lower bound" in Methods and Table 1.
-7. *Declined.* Methods say "No placebo was defined for C3" and call the interval within-period only. No reason is recorded.
+7. *Declined.* Methods say "No placebo was defined for C3"; no reason is recorded.
 8. *Done.* Title, abstract and, for arXiv, comments.
 9. *Done.* S2 Appendix gives the transform.
 10. *Not done.* No archive rank p is reported.
@@ -113,13 +113,13 @@
 - Results depend on the base period and on proceedings: 1.03–1.05 including proceedings; for research articles without planning papers, 1.19–1.27 in the six archives (four base periods, every lower bound at least 1.00), 2.12–3.69 in hep-ex and 0.84–1.20 in nucl-ex.
 - The link share fell from 0.55–0.68 before 2025 to 0.47–0.49 in 2025–2026, "mostly through composition": records with more than 300 authors carried a collaboration in 99–100% of cases in every year, and only mid-size collaborations show a possible lag, about 0.1 in 2026. Requiring a collaboration instead of a link (R2's sensitivity) gives 2.04 in hep-ex.
 - Reading: "consistent with the refined hypothesis in hep-ex, the archive in which it was formed, but not in nucl-ex ... not a held-out test".
-- Pending (analysis session, in about three months): a re-harvest to measure lag. Author: the 100-record spot-check. The text does not say that the experimental category follows arXiv categories (R2).
+- Pending (analysis session, in about three months): a re-harvest to measure lag. Author: the 100-record spot-check. The text does not say that the experimental category follows arXiv categories.
 
-**R2-N4. The PubMed US-affiliation check.** *Done.* See R1-N5. It is called "uninformative" and was not redone with validated countries.
+**R2-N4. The PubMed US-affiliation check.** *Done* (R1-N5). It is called "uninformative"; it was not redone with validated countries.
 
 **R2-N5. Snowmass removal: asymmetric cleaning, trend leverage.** *Partly done.* The Discussion now says removal "did not reduce hep-ex's departure"; the cleaned value (1.58) is no longer reported. Not done in the text: other trend windows, the asymmetry caveat.
 
-**R2-N6. List-entry checks.** *Done.* Like-for-like author panel: share of names with five or more papers 2.80% to 4.07%, against Nee et al.'s 2.45% to 3.80% (Results, H2; S3 Table). Cross-lists are 67–69% of hep-ex and nucl-ex entries (Results).
+**R2-N6. List-entry checks.** *Done.* Like-for-like author panel: names with five or more papers 2.80% to 4.07%, against Nee et al.'s 2.45% to 3.80% (Results, H2; S3 Table). Cross-lists are 67–69% of hep-ex and nucl-ex entries.
 
 **R2-N7. bioRxiv duplicates.** *Done; two parts not done.* See R1-N2. medRxiv duplicates are described (below 0.5% until late 2025, rising in 2026, most in July–August); the DOI prefix change and the onset of duplicates are in the dated events. Not done: duplicates under different DOIs on either server; the uniform `type` value.
 
@@ -132,7 +132,7 @@
 **R2-N11. Positioning against Qi et al.** *Done.* The Introduction says Qi et al. measured the share of papers mentioning AI by discipline, and the acceleration of submissions. The Discussion: their finding "concerns the share of papers mentioning AI, not the volume of output, so these contrasts neither corroborate nor refute it"; their bioRxiv acceleration is a recovery. Blekhman is credited for the idea tested. The AI-topic split is done. Pruller et al. has its DOI; Renault et al.'s critique left with Kusumegi's output-gain estimate (A1). Not added: R2's six references. [CHECK: Discussion says Qi et al.'s slope stayed "below its pre-2020 level"; R2 read it as below the slope before their first, 2020, intervention.]
 
 **R2-N12. Deposit, pipeline, disclosures.** *Partly done.*
-- Methods (Software) pins the versions (Python 3.13.16; requirements.txt) and says `run_all.sh` reproduces the count-based outputs. Data availability says the author-level analyses need harvests with names, which are not deposited, and gives the route to reproduce them. [CHECK: whether `run_all.sh` now includes `stats_round1.py` and regenerates from scratch.]
+- Methods (Software) pins the versions (Python 3.13.16; requirements.txt) and says `run_all.sh` reproduces the count-based outputs. Data availability says the author-level analyses need undeposited harvests with names, and gives the route to reproduce them. [CHECK: whether `run_all.sh` now includes `stats_round1.py` and regenerates from scratch.]
 - Record-level tables are listed for arXiv, medRxiv, INSPIRE and now bioRxiv. No heavy-producer flag is released. Pseudonymised table or non-author contact, and the governing framework (EMBL Policy 68 or GDPR): [AUTHOR].
 - S2 Appendix now states the 429 answer, the two to four parallel connections, INSPIRE's limit and CC0 terms, and that OSF's figure comes from the osfr documentation. The coding sheet lists DOIs and links only (934267f). Licences: [AUTHOR: confirm].
 
@@ -148,7 +148,7 @@
 8. Batch posting *Not done*; October *Done*.
 9. PubMed with validated countries: *Declined*; the check is no longer used as evidence.
 10. Deposit: *Partly done* (N12).
-- "Corrections needing no new analysis" (genre sentence, H2 headline, Qi et al., Nee et al. panel, PubMed, C3 slope cell, social sciences, disclosures, names): *Done*.
+- "Corrections needing no new analysis" (genre sentence, H2 headline, Qi et al., Nee et al. panel, PubMed, C3 slope cell, social sciences, disclosures): *Done*.
 
 ### Minor issues (§5)
 
@@ -156,8 +156,7 @@
 2. *Done.* Results note the falling pre-2023 trends.
 3. *Done* (R1-N4).
 4. *Done.* S5 Table lists the namesake-robust July–August variant.
-5. *Moot.*
-6. *Moot.*
+5–6. *Moot.*
 7. *Partly.* The Fig 1 legend gives each series' third-quarter index and warns about indexing to 2022; no 2.39-fold sentence.
 8. *Done.* Methods: latest-version metadata; INSPIRE dated by first-version submission.
 9. *Done.* openRxiv, the arXiv post, the prefix change and the medRxiv duplicates are in the dated events.
@@ -181,7 +180,7 @@
 **R3-N1. The INSPIRE result is stated too strongly, and the Discussion contradicts itself.** *Done, updated at 934267f.*
 - The abstract and Conclusions no longer say papers reporting new results "grew as fast as the rest". The Discussion's "did not support its refinement" and "which the held-out tests classify directly" are deleted.
 - Results (R2-N3) give the dependence on base period and proceedings. The Discussion adds that the rule counts collaboration analyses of stored data as new results.
-- The independent-fit interval (0.74–1.35) and the team-size ratios are not quoted. S6 Table lists the four rule variants as unregistered.
+- The independent-fit interval (0.74–1.35) and the team-size ratios are not quoted; S6 Table lists the four rule variants as unregistered.
 - [CHECK: Methods does not say whether the INSPIRE ratios use the stacked estimator, or whether the planning-paper flag reads arXiv comments.]
 
 **R3-N2. The team-size pattern is mostly an artefact.** *Done by removal; one gap.* Team-size estimates are gone. S2 Appendix says INSPIRE author counts of 0 mark lists not yet loaded, and labels the motivating count (187 to 366) unvalidated. Data-supply facts (LHC 124 fb⁻¹, LHCb 9.56 fb⁻¹, BESIII 2022–2024) are in the dated events and Discussion explanation (i): the rise "may reflect data supply, which this study did not model". The three-mode description is not written out. Counts by data vintage and lags: *Author* (R3 §6 item 3).
@@ -195,11 +194,11 @@
 - Done (R1-N6): sealing; κ by domain and period, confusion matrices, corrected ratios, licence check; blind runs; test–retest relabelling, with the 200 arXiv validation papers classified twice (D3a, D3g–D3i). A second human coder for 100 papers is registered (D3r), not yet coded. Limitations name the single coder, label noise outside the intervals, the licence-restricted frame and the proprietary classifier.
 - Not done: a validation sample redrawn from the estimation sample by estimation period; a tipping-point analysis; the unclassifiable share by period; κ by archive.
 
-**R3-N5. Test B is not a good test of the mechanism.** *Partly done.* The primary arXiv arm is held-out subcategories only (D3d; R1-N6). The inclusion rule is recorded (150 eligible papers; 28 medRxiv categories enter, 23 are dropped) (D3k). One-sidedness stated (D3c). Not done: precision weighting; R3's two better tests (a gradient over paper types; data-release natural experiments). Test B's exposure is the share of papers judged from abstracts to report new data, not the share depositing it; v3 claims nothing else.
+**R3-N5. Test B is not a good test of the mechanism.** *Partly done.* The primary arXiv arm is held-out subcategories only (D3d; R1-N6). The inclusion rule is recorded (150 eligible papers; 28 medRxiv categories enter, 23 are dropped) (D3k). One-sidedness stated (D3c). Not done: precision weighting; R3's two better tests (a gradient over paper types; data-release natural experiments). Test B's exposure is the share judged from abstracts to report new data, not the share depositing it.
 
 **R3-N6. Implementation problems.** *Done* (Registration). Items 1–8: D3b; D3n; D3o (twice); D3a; Methods ("the bootstrap does not carry misclassification") with D3g; D3i and D3k; D3e.
 
-**R3-N7. Inferences beyond the evidence.** *Done, with one conflict.* The Qi et al. sentence, "This supports", the DORA and CoARA figures and the comparability claim are rewritten or deleted. "Archives where the idea was not formed" is now true of HN only; Discussion (i) cites the data-supply facts. Conflict: R3 and R4 asked to move the proposals out, but decision A3 asks for one paragraph with the author's own proposal, so it stays [AUTHOR].
+**R3-N7. Inferences beyond the evidence.** *Done, with one conflict.* The Qi et al. sentence, "This supports", the DORA and CoARA figures and the comparability claim are rewritten or deleted. "Archives where the idea was not formed" is now true of HN only; Discussion (i) cites the data-supply facts. Conflict: R3 and R4 asked to move the proposals out; decision A3 asks for one paragraph with the author's own proposal, so it stays (§5 item 4).
 
 **R3 §4.8. Fairness and the wording of H1.** *Done.* "So far" is not used. Principal findings follow R3's sentence: the second clause of H1 "does not describe the experimental particle-physics archive ... although nucl-ex did not; whether experimental work as such responded to AI cannot be determined from counts". No prospective test is registered.
 
@@ -243,17 +242,17 @@
 **R4-N1. Pre-registered paper-level tests: report in full or remove; record changes before any estimate is seen.** *Done in form; content sealed.*
 - v3 takes R4's Option A in form: a Methods subsection (R4's model paragraph, updated with Deviation 3), a Results shell with [SEALED] placeholders, one abstract sentence with placeholders, and S6 Table with R4's columns. S1 Text is re-captioned as the plan, time-stamped in the public repository, "not in a registry".
 - D3a–D3f, the erratum and the sealing rule are recorded. "Held out" is kept for HN only. Methods say the medRxiv coding may not be blind to the Test A (medRxiv) estimate; the fourth addendum records the author's answer that they had not read it, but Methods and S6 Table still carry the [AUTHOR] marker.
-- Open: Option A or B depends on finishing the coding and unsealing before submission; otherwise use R4's Option B sentence [AUTHOR]. Model and version, justification of a proprietary model, training setting, run records, number classified [AUTHOR]. D3q and D3r are missing from S1 Text and S6 Table. The abstract is at 300 words with its placeholders (limit 300).
+- Open: Option A or B depends on finishing the coding and unsealing before submission; otherwise use R4's Option B sentence (§5 item 6). Model and version, justification, training setting, run records and number classified: §5 item 11. D3q and D3r are missing from S1 Text and S6 Table. The abstract is at 300 words with its placeholders (limit 300).
 
 **R4-N2. Two design problems to settle before any estimate.** *Done* (R1-N6: D3d, D3e). The 2019 placebo is reported, not interpreted, for bioRxiv and medRxiv (D3n).
 
-**R4-N3. "Pre-specified" attached to an estimand the record does not show was pre-specified.** *Done, except the title.* The planned specification is primary and Table 1 labels its rows "Planned". Methods: "estimates first reported, a deviation". Results: the all-three-fields rule was "added after the results". Methods say the specification was committed with the first estimates [AUTHOR: whether the logs show it preceded them]. The title still says "pre-specified within-field tests" [AUTHOR].
+**R4-N3. "Pre-specified" attached to an estimand the record does not show was pre-specified.** *Done, except the title.* The planned specification is primary and Table 1 labels its rows "Planned". Methods: "estimates first reported, a deviation". Results: the all-three-fields rule was "added after the results". Methods say the specification was committed with the first estimates [AUTHOR: §5 item 8]. The title still says "pre-specified within-field tests" [AUTHOR: §5 item 1].
 
 **R4-N4. Sentences beyond the data.** *Done, with two author decisions.* The 12 rows are corrected as in R1-N7, R2-N11 and R3-N7. The opening premise follows A1 ("polish served as a cue of quality"); the effort sentence now reads "form becomes a weaker cue of the quality of the work behind it; this is an interpretation, not a result of this study". The Amdahl paragraph, the DORA/CoARA claim and the seven proposals are cut. [AUTHOR: marker (R1-N3); A3 paragraph (R3-N7).]
 
-**R4-N5. The companion essay contradicts the article and still shows the model marker.** *Pending (scheduled after v3).* v3 cites the essay only as the place the argument is developed; its reference needs a DOI [AUTHOR]. The marker label naming the model is in six figure files in `paper/figures/`, outside this article.
+**R4-N5. The companion essay contradicts the article and still shows the model marker.** *Pending (scheduled after v3).* v3 cites the essay only as the place the argument is developed; its reference needs a DOI (§5 item 18). The marker label naming the model is in six figure files in `paper/figures/`, outside this article.
 
-**R4-N6. Length, density and structure.** *Partly done.* The main text is 6,490 prose words (6,459 at cc24781), against R4's 5,700–6,000. Moved to the Supporting Information: Table 1's acceleration, slope-change, trend-adjusted, negative-control and variant rows and the H2 decompositions (S5 Table, a spreadsheet with a README); the inventories of checks (S2 Appendix); the deviations (S6 Table). Cut: Table 1 from 18 to 16 rows (R4: 10; the planned rows were added); Implications to 410 words (R4: about 180); the Amdahl paragraph. References: 61 (v2: 70; R4: 54). The overage comes from analyses the reviewers requested. [AUTHOR: accept the overage, or cut, for example by moving the INSPIRE paragraph (273 words) to the Supporting Information.]
+**R4-N6. Length, density and structure.** *Partly done.* The main text is 6,490 prose words (6,459 at cc24781), against R4's 5,700–6,000. Moved to the Supporting Information: Table 1's acceleration, slope-change, trend-adjusted, negative-control and variant rows and the H2 decompositions (S5 Table, a spreadsheet); the inventories of checks (S2 Appendix); the deviations (S6 Table). Cut: Table 1 from 18 to 16 rows (R4: 10; the planned rows were added); Implications to 410 words (R4: about 180); the Amdahl paragraph. References: 61 (v2: 70; R4: 54). The overage comes from analyses the reviewers requested. [AUTHOR: §5 item 5; one cut is the INSPIRE paragraph, 273 words, to the Supporting Information.] The v3 header still says Table 1 was cut to 10 rows.
 
 **R4-N7. Pending analyses.** *Done.* Run: planned specification, bioRxiv duplicates, C3 slope change, matched placebos, AI/ML split, dating, bioRxiv US/non-US. Dropped with their mentions: OSF continuity, synthetic-control variants, bioRxiv without COVID-19, medRxiv flag recall. No [ANALYSIS PENDING] marker remains.
 
@@ -266,7 +265,7 @@
 5. Sentence fixes; Implications: *Done.*
 6. Record-level tables; versions: *Done*; paper-level data follow unsealing.
 7. Arial and NAAS: *Author.* The figures use Liberation Sans because Arial cannot be installed in the analysis container.
-8. Markers, SI files, S2 and S5 Tables: *Partly done.* Tables assembled; [AUTHOR] markers remain; I did not check the LaTeX build.
+8. Markers, SI files, S2 and S5 Tables: *Partly done.* Tables assembled; [AUTHOR] markers remain; the LaTeX build was not checked.
 9. Essay: *Pending* (scheduled after v3).
 10. Matched placebos, AI/ML split, C3 slope change, dating: *Done.*
 11. Length cuts; references: *Partly done.* E-utilities cited; Pruller DOI added; JAMA and CRS [RECHECK] remain.
@@ -324,13 +323,13 @@
 10. The blind coding of 400 papers, with results sealed until it is committed. The colleague who codes 100 (D3r): name and affiliation for the Acknowledgments.
 11. Model and version of the main sessions and of the classifier; dates; account type; training setting; who paid, and any credits; number classified; run records; why a proprietary model.
 12. Your own validation: code reviewed, re-runs with commit hash, numbers recomputed, sources read, AI proposals rejected; the S1 Appendix fields (reading depth, time and cost).
-13. Human checks: the 200-row medRxiv flag sheet (precision), a 100-record INSPIRE spot-check, the 100-record country spot-check.
+13. Human checks: the 200-row medRxiv flag sheet, a 100-record INSPIRE spot-check, the 100-record country spot-check.
 14. Analyses waiting for you: counts by data vintage and lags (R3 §6 item 3); within-person contrasts with INSPIRE author identifiers (R3 §6 item 6), which need the data-protection consultation.
 
 **Compliance**
 15. Data-protection consultation: office, framework (EMBL Policy 68 or GDPR), date, outcome, lawful basis. A pseudonymised author table or a non-author contact.
 16. Zenodo deposit: DOI, licences (CC BY 4.0 or CC0; MIT), repository identifier. Re-run `plot_plos.py` with Arial and check with NAAS.
 17. Funding and competing-interests statements, aligned with the essay. Name, e-mail, ORCID iD, EMBL unit. CRediT roles; acknowledgements.
-18. Related manuscripts (R4-N5): revise the essay, decide on EMBO Reports and the Correspondence, mint the essay's DOI, post this article's preprint first, write the cover letter.
+18. Related manuscripts (R4-N5): revise the essay, decide on EMBO Reports and the Correspondence, mint the essay's DOI, post this preprint first, write the cover letter.
 19. [RECHECK] items: Lin and Zhu (relative or percentage-point), Liang et al.'s bioRxiv series, the JAMA letter, the CRS source. Read each source cited for a number or quotation.
 
