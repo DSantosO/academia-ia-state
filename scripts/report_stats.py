@@ -344,6 +344,308 @@ def r1(lines, r):
         lines.append("")
 
 
+def dating2(lines, r):
+    """Round 2, item 6: dating by first-version submission."""
+    d, ins = r.get("dating") or {}, r.get("inspire_dating")
+    if ins:
+        lines += ["### Round 2. INSPIRE-HEP dated by submission against arXiv's statistics pages", "",
+                  "Growth from 2025 to 2026 by primary archive: INSPIRE-HEP records counted by `preprint_date` "
+                  "(first-version submission) and arXiv's statistics pages (new submissions, counted by announcement).", "",
+                  "| Archive | Jan–Sep: INSPIRE, submission | Jan–Sep: statistics pages, announcement | Jan–Aug: INSPIRE | "
+                  "Jan–Aug: statistics pages | September 2026: INSPIRE / pages |", "|---|---|---|---|---|---|"]
+        for a, v in ins["growth_2025_to_2026"].items():
+            def g(k, src):
+                return f"{100 * v[k][src]['growth']:+.1f}%"
+            lines.append(f"| {a} | {g('jan_sep', 'inspire_by_submission')} | "
+                         f"{g('jan_sep', 'statistics_pages_by_announcement')} | {g('jan_aug', 'inspire_by_submission')} | "
+                         f"{g('jan_aug', 'statistics_pages_by_announcement')} | "
+                         f"{v['sep_2026']['inspire_by_submission']:,} / {v['sep_2026']['statistics_pages_by_announcement']:,} |")
+        wk = ins["weekend_share_of_submission_dates"]
+        lines += ["", f"Records whose arXiv identifier month is later than their submission month: "
+                  f"{pct(ins['identifier_month_later_overall'])} overall; by year " +
+                  ", ".join(f"{y} {pct(x)}" for y, x in ins["identifier_month_later_than_submission"].items()) +
+                  f". Submission dates on Saturdays: {pct(wk['saturday'])}; on Sundays: {pct(wk['sunday'])} (arXiv does "
+                  "not announce on those days).", ""]
+    ms = d.get("maths_september")
+    if ms:
+        lines += ["### Round 2. The September 2026 spike in mathematics and October 2026 under the cap", ""]
+        for y, v in ms.items():
+            lines.append(f"- September {y}: {v['by_identifier']:,} mathematics papers announced (identifier month) and "
+                         f"{v['submitted_in_september']:,} submitted (first version) in September. Of the announced papers "
+                         f"with a known v1 date ({v['v1_known']:,}), "
+                         f"{pct(v['identifier_september_submitted_earlier'] / v['v1_known'])} were submitted in an earlier "
+                         f"month and {pct(v['identifier_september_submitted_over_7_days_before'] / v['v1_known'])} more than "
+                         "seven days before 1 September.")
+        o = d["october_2026"]
+        wins = list(o["weekdays_in_window"])
+        lines += ["", "Papers by first-version date in 14-day and 7-day windows (weekdays per window: " +
+                  ", ".join(f"{w} {n}" for w, n in o["weekdays_in_window"].items()) + "). arXiv's cap of two "
+                  "submissions per submitter a month applies from 1 October 2026. The harvest of 16 October holds "
+                  "announcements to 15 October, so the October 2026 counts miss papers still on hold and are lower "
+                  "bounds.", "",
+                  "| Group | " + " | ".join(wins) + " | Oct 1–14, 2026 / 2025 | Oct 1–14 / Sep 1–14, 2026 |",
+                  "|---|" + "---|" * (len(wins) + 2)]
+        for g, c in o["counts_by_v1_date"].items():
+            lines.append(f"| {g} | " + " | ".join(f"{c[w]:,}" for w in wins) +
+                         f" | {c['oct_01_14_2026'] / c['oct_01_14_2025']:.2f} | "
+                         f"{c['oct_01_14_2026'] / c['sep_01_14_2026']:.2f} |")
+        lines.append("")
+    cd = d.get("contrasts_by_dating")
+    if cd:
+        lines += ["### Round 2. C1 and arXiv against bioRxiv, dated by announcement or by first-version submission", "",
+                  "Event study as in P1c (base 2022), February 2019 to the stated month. 'Statistics pages' are arXiv's "
+                  "published counts; the other two columns count the same OAI records by identifier (announcement) month "
+                  "or by first-version month (identifier month when the v1 date is unknown, which holds for papers first "
+                  "posted before December 2023 and revised later). Cells: 2026 rate ratio [95% CI]; 2026/2025 ratio.", "",
+                  "| Series | Data to | Statistics pages | OAI, identifier month | OAI, v1 month |", "|---|---|---|---|---|"]
+        res = cd["results"]
+        for n in res["identifier|to_2026-09"]:
+            for last in ("2026-09", "2026-08"):
+                cells = [f"{ci3(res[f'{src}|to_{last}'][n]['2026'])}; {res[f'{src}|to_{last}'][n]['2026_vs_2025']['rr']:.3f}"
+                         for src in ("statistics_pages", "identifier", "v1")]
+                lines.append(f"| {n} | {last} | " + " | ".join(cells) + " |")
+        lines.append("")
+
+
+def placebos_matched(lines, r):
+    """Round 2, item 8: in-space placebos matched to each contrast's structure."""
+    pm = r.get("placebos_matched")
+    if not pm:
+        return
+    lines += ["### Round 2. Placebos matched to each contrast's structure", "",
+              "Every grouping with the contrast's structure, the observed one included, so p cannot fall below 1/n "
+              "(the floor). C1: four theory archives against two experimental ones, as splits of the six particle and "
+              "nuclear physics archives and as disjoint draws from the 13 physics archives; C1 without gr-qc: three "
+              "against two; C2: three of the fifteen bioRxiv categories as the computational group against the other "
+              "twelve. Statistics from the event-study estimator (base 2022); p two-sided on |log ratio|, one-sided in "
+              "the observed direction.", "",
+              "| Contrast | Reference set | n (floor) | 2026 vs 2022: observed; p two-sided / one-sided | Placebo 5th / 50th / "
+              "95th percentile | 2026 / 2025: observed; p two-sided / one-sided |", "|---|---|---|---|---|---|"]
+    for name, v in pm.items():
+        for ref, x in v.items():
+            if ref == "observed":
+                continue
+            a, b = x["2026_vs_2022"], x["2026_vs_2025"]
+            q = " / ".join(f"{t:.2f}" for t in a["placebo_rr_5_50_95"])
+            lines.append(f"| {name} | {ref.replace('_', ' ')} | {x['n']:,} ({x['floor']:.4f}) | {a['observed_rr']:.3f}; "
+                         f"{a['p_two_sided']:.3f} / {a['p_one_sided']:.3f} | {q} | {b['observed_rr']:.3f}; "
+                         f"{b['p_two_sided']:.3f} / {b['p_one_sided']:.3f} |")
+    lines.append("")
+
+
+def inspire_round2(lines, r):
+    """Round 2, item 9: the INSPIRE classes with the C1-C3 estimator."""
+    ins = r.get("inspire_round2")
+    if not ins:
+        return
+    pf = ins["planning_flagged"]
+    lines += ["### Round 2. INSPIRE-HEP classes with the estimator of C1–C3", "",
+              f"NN-INSPIRE (group A) against ND-INSPIRE (group B), event study as in P1c, 2026 rate ratio [95% CI] by base. "
+              f"Planning papers: {pf['inspire_flags']} records flagged by INSPIRE's title-and-abstract flags, "
+              f"{pf['with_arxiv_flags']} with the arXiv flags that also read the comments (matched by arXiv identifier, "
+              f"2019 on). Author count 0 (author list not yet loaded; {ins['author_count_zero']} records) is treated as "
+              "missing. 'ND with collaboration' requires a collaboration field.", "",
+              "| Scope | Sample | ND rule | NN; ND records | Base 2022 | Base 2017–2019 | Base 2017–2019 + 2022 | "
+              "Base 2017–2022 | 2026 / 2025 |", "|---|---|---|---|---|---|---|---|---|"]
+    for k, v in ins["contrasts"].items():
+        scope, smp, rule = k.split("|")
+        cells = [ci3(v[b]["2026"]) if b in v else "–" for b in ("2022", "2017-2019", "2017-2019+2022", "2017-2022")]
+        acc = ci3(v["2022"]["2026_vs_2025"]) if "2022" in v else "–"
+        lines.append(f"| {scope} | {smp.replace('_', ' ')} | {rule.replace('_', ' ')} | {v['n_NN']:,}; {v['n_ND']:,} | "
+                     + " | ".join(cells) + f" | {acc} |")
+    pdp = ins["proceedings_departure"]
+    lines += ["", "Proceedings (conference papers, planning papers removed), 2026 departure from the 2017–2022 trend: " +
+              "; ".join(f"{sc} {ci3(v['2026'])} ({v['n']:,} records)" if "2026" in v else
+                        f"{sc} not estimated ({v['n']:,} records, {v['months_with_zero']} months with none)"
+                        for sc, v in pdp.items()) + ".", "",
+              "Records with primary category hep-ex or nucl-ex, January–September of each year: shares with an "
+              "experiment link, a collaboration, each document type, a planning flag, and cross-lists.", "",
+              "| Year | Records | Experiment link | Collaboration | Conference paper | Research article | Planning | "
+              "Cross-list physics.ins-det | Cross-list cs or stat | Author count 0 | ND |",
+              "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for y, v in ins["hep-ex+nucl-ex_shares_jan_sep"].items():
+        lines.append(f"| {y} | {v['records']:,} | " + " | ".join(
+            f"{v[k]:.3f}" for k in ("experiment_link", "collaboration", "conference_paper", "research_article",
+                                    "planning", "cross_list_physics.ins-det", "cross_list_cs_or_stat")) +
+            f" | {v['author_count_zero']} | {v['ND']:.3f} |")
+    lines.append("")
+    xl = r.get("hepex_crosslists")
+    if xl:
+        by = xl["hep-ex_primary_by_month"]
+        into = xl["cross_listed_into_hep-ex_by_month"]
+
+        def tot(months, key, src):
+            return sum(src[m][key] for m in months if m in src)
+        lines += ["Cross-lists of papers with primary category hep-ex, from the arXiv OAI records (so not an INSPIRE "
+                  "curation effect), by half-year: papers; with any cross-list; with physics.ins-det; with cs or stat; "
+                  "and papers of other primary categories cross-listed into hep-ex (of which physics.ins-det primary):", ""]
+        for y in range(2023, 2027):
+            for h, ms in (("H1", [f"{y}-{i:02d}" for i in range(1, 7)]), ("H2", [f"{y}-{i:02d}" for i in range(7, 13)])):
+                if not any(m in by for m in ms):
+                    continue
+                lines.append(f"- {y} {h}: {tot(ms, 'papers', by):,} papers; {tot(ms, 'any_cross_list', by):,} with a "
+                             f"cross-list; {tot(ms, 'physics.ins-det', by)} physics.ins-det; {tot(ms, 'cs_or_stat', by)} cs "
+                             f"or stat; {tot(ms, 'all', into):,} cross-listed into hep-ex ({tot(ms, 'physics.ins-det', into)} "
+                             "physics.ins-det primary)")
+        lines.append("")
+
+
+def funding_round2(lines, r):
+    """Round 2, item 10: bioRxiv and medRxiv by country, PubMed calibrated in time."""
+    f = r.get("funding_round2")
+    if not f:
+        return
+    lines += ["### Round 2. The funding explanation: bioRxiv and medRxiv by country, PubMed in time", "",
+              f"**Prediction.** {f['prediction']}", "",
+              "US against non-US preprints by the corresponding author's institution (preprints with no country left "
+              "out), event study as in P1c. The country classifier was checked by an AI agent only; a human spot-check "
+              "sheet is in `docs/stats/validation/country_spot_check_sheet.csv`.", "",
+              "| Series | 2025 vs 2023–2024 | 2026 vs 2023–2024 | 2026 vs 2022 | Jan–Sep US 2024 / 2025 / 2026 | "
+              "Jan–Sep non-US 2024 / 2025 / 2026 | No country, 2026 |", "|---|---|---|---|---|---|---|"]
+    rows = [(f"bioRxiv {g.replace('_', ' ')}", v) for g, v in f["biorxiv"].items() if g != "wet_lab_vs_computational"]
+    rows += [(f"medRxiv {sc.replace('noncovid', 'without COVID-19')}", v) for sc, v in f["medrxiv"].items()]
+    for name, v in rows:
+        js = v["jan_sep_counts"]
+        lines.append(f"| {name} | {ci3(v['base_2023_2024']['2025'])} | {ci3(v['base_2023_2024']['2026'])} | "
+                     f"{ci3(v['base_2022']['2026'])} | " +
+                     " / ".join(f"{js[y]['US']:,}" for y in ("2024", "2025", "2026")) + " | " +
+                     " / ".join(f"{js[y]['non-US']:,}" for y in ("2024", "2025", "2026")) +
+                     f" | {pct(js['2026']['unknown'] / sum(js['2026'].values()))} |")
+    wc = f["biorxiv"]["wet_lab_vs_computational"]
+    pm = f["pubmed_us_vs_non_us"]
+    lines += ["", "bioRxiv wet lab against computational (ratio of the two US/non-US ratios, base 2023–2024; independent "
+              f"fits): 2025 {ci3(wc['2025'])}, 2026 {ci3(wc['2026'])}.", "",
+              "PubMed US/non-US ratio, year-on-year change: " +
+              ", ".join(f"{y} {100 * (v - 1):+.1f}%" for y, v in pm["year_on_year_change"].items()) +
+              "; two-year change: " + ", ".join(f"{y} {100 * (v - 1):+.1f}%" for y, v in pm["two_year_change"].items()) +
+              ". Rank among earlier changes (one-sided, falls; n): " + "; ".join(
+                  f"{lab} {pm[k]['p_one_sided_fall']:.2f} ({pm[k]['n_ref']})" for k, lab in
+                  (("rank_2025_change", "2025"), ("rank_2026_change", "2026"), ("rank_2024_to_2026", "2024 to 2026"))) +
+              ".", ""]
+
+
+def h2_round2(lines, d):
+    """Round 2, item 7: H2 with classes ranked on an independent window, and the uniform-scaling simulation."""
+    path = os.path.join(d, "h2_round2.json")
+    if not os.path.exists(path):
+        return
+    h = json.load(open(path))
+    lines += ["### Round 2. H2: classes ranked on an independent window; uniform-scaling simulation", "",
+              "Names ranked on fractional output in the twelve months before the first compared window (Q3 of the "
+              "previous year to Q2 for third quarters; the previous calendar year for January–August); growth of each "
+              "class between the two compared windows. 'New top 1%': share of the total increase that came from names "
+              "in the combined-output top 1% (the main decomposition's class) that were not in the ranking window's top "
+              "1%; 'old': from names that were.", "",
+              "| Group | Names | Pair | Total | Top 1% | Next 9% | Bottom 90% | Not active in ranking window | "
+              "Increase from new top 1% / old top 1% |", "|---|---|---|---|---|---|---|---|---|"]
+
+    def g_(x):
+        return "–" if x is None else f"{100 * x:+.0f}%"
+    for grp in ("maths", "theory_max50_authors"):
+        for v in ("all_names", "full_first_names_no_top1pct_surnames"):
+            for pair, x in h[grp][v]["independent_window"].items():
+                c = x["combined_top1pct"]
+                lines.append(f"| {grp} | {v.replace('_', ' ')} | {pair.replace('_to_', ' → ')} | {g_(x['growth'])} | " +
+                             " | ".join(g_(x[k].get("growth")) for k in ("top1pct", "next9pct", "bottom90pct",
+                                                                           "not_active_in_ranking_window")) +
+                             f" | {g_(c['share_of_change_from_names_not_in_ranking_top1pct'])} / "
+                             f"{g_(c['share_of_change_from_names_in_ranking_top1pct'])} |")
+    lines += ["", "Uniform-scaling simulation (all names): a pool of names with Gamma or lognormal rates, calibrated to the "
+              "first window's active names and top-1% share, fills author slots of papers with the observed team sizes; "
+              "the number of papers is scaled by the observed growth with every rate unchanged. Mean (SD) over 100 "
+              "replications of the change in the share of fractional output of the top 1% and top 10% of active names.", "",
+              "| Group | Pair | Papers | Observed change, top 1%; top 10% | Model (parameter; fit of top 1% and top 10% in "
+              "the first window) | Change under uniform scaling, top 1%; top 10% | Share of the observed change | "
+              "Active names: observed; under the null |", "|---|---|---|---|---|---|---|---|"]
+    for grp in ("maths", "theory_max50_authors"):
+        for pair, u in h[grp]["all_names"]["uniform_scaling"].items():
+            for m in ("gamma", "lognormal"):
+                x = u.get(m)
+                if not x:
+                    continue
+                c = x["calibration"]
+                lines.append(
+                    f"| {grp} | {pair.replace('_to_', ' → ')} | {g_(u['paper_growth'])} | "
+                    f"{100 * u['observed_change_top1']:+.2f} pp; {100 * u['observed_change_top10']:+.2f} pp | {m} "
+                    f"({c['parameter']}; {100 * c['top1_sim']:.2f}% vs {100 * u['observed']['a']['top1']:.2f}%, "
+                    f"{100 * c['top10_sim']:.1f}% vs {100 * u['observed']['a']['top10']:.1f}%) | "
+                    f"{100 * x['null_change_top1']['mean']:+.2f} ({100 * x['null_change_top1']['sd']:.2f}) pp; "
+                    f"{100 * x['null_change_top10']['mean']:+.2f} pp | {x['mechanical_fraction_top1']:.2f}; "
+                    f"{x['mechanical_fraction_top10']:.2f} | {g_(u['observed_active_growth'])}; "
+                    f"{g_(x['null_active_growth'])} |")
+    lines.append("")
+
+
+def jan_aug(lines, d):
+    """Round 2, item 6: every 2026 estimate with the data ending in August 2026 beside the main (January-September)
+    estimate."""
+    stems = ("within_field_tests", "field_tests", "round1_tests")
+    if not all(os.path.exists(os.path.join(d, f"{s}_to_2026-08.json")) for s in stems):
+        return
+    src = {s: (json.load(open(os.path.join(d, f"{s}.json"))), json.load(open(os.path.join(d, f"{s}_to_2026-08.json"))))
+           for s in stems}
+    num = lambda x: f"{x:.2f}"  # noqa: E731
+    rows = []
+    conf = {"C1_physics_theory_vs_experiment": "C1", "C2_biology_computational_vs_wetlab": "C2",
+            "C3_medicine_public_dataset_vs_rest": "C3"}
+    for k, c in conf.items():
+        rows += [(f"{c}: 2026 vs 2022", "within_field_tests", lambda x, k=k: x["confirmatory"][k]["event_study"]["2026"], ci3),
+                 (f"{c}: Holm-adjusted p", "within_field_tests", lambda x, k=k: x["confirmatory"][k]["p_holm_2026"], num),
+                 (f"{c}: minimum detectable rate ratio, 80% power", "within_field_tests",
+                  lambda x, k=k: 1 + x["confirmatory"][k]["mde_2026_80pct_power"], num)]
+    for n in ("C1_theory_vs_experiment", "C1_theory_without_gr-qc_vs_experiment", "C2_computational_vs_wet_lab",
+              "C3_public_dataset_vs_other"):
+        rows += [(f"{n}: placebo p", "round1_tests", lambda x, n=n: x["estimands"][n]["placebo_p_2026"], num),
+                 (f"{n}: 2026 / 2025", "round1_tests",
+                  lambda x, n=n: x["estimands"][n]["by_base"]["2022"]["event_study"]["2026_vs_2025"], ci3)]
+        for b in src["round1_tests"][0]["estimands"].get(n, {}).get("by_base", {}):
+            if b != "2022":
+                rows.append((f"{n}: 2026, base {b}", "round1_tests",
+                             lambda x, n=n, b=b: x["estimands"][n]["by_base"][b]["event_study"]["2026"], ci3))
+        rows += [(f"{n}: planned specification, 2026", "round1_tests", lambda x, n=n: x["planned"][n]["planned_2026"], ci3),
+                 (f"{n}: calibration, 2026/2025 rank p (all earlier changes)", "round1_tests",
+                  lambda x, n=n: x["calibration"][n]["acceleration_all_earlier"]["p_two_sided"], num)]
+    for n in ("C1", "C1_without_gr-qc", "hep-ph_vs_hep-ex", "hep-th_vs_hep-ex"):
+        for b in ("base_2022", "base_2017_2019"):
+            rows.append((f"{n} without planning papers: 2026, {'base 2022' if b == 'base_2022' else 'base 2017–2019'}",
+                         "round1_tests",
+                         lambda x, n=n, b=b: x["oai"]["clean_physics"][n][b]["2026"], ci3))
+    for n, ref in (("C1_theory_vs_experiment", "splits_of_the_hep_nucl_archives"),
+                   ("C1_theory_vs_experiment", "draws_from_13_physics_archives"),
+                   ("C2_computational_vs_wet_lab", "three_of_the_fifteen_categories")):
+        rows.append((f"{n}: matched placebo p, {ref.replace('_', ' ')} (two-sided)", "round1_tests",
+                     lambda x, n=n, ref=ref: x["placebos_matched"][n][ref]["2026_vs_2022"]["p_two_sided"], num))
+    for k in src["within_field_tests"][0]["leave_one_out"]:
+        rows.append((f"Leave one out: {k}", "within_field_tests", lambda x, k=k: x["leave_one_out"][k], ci3))
+    for g in ("arxiv_physics_6_vs_biorxiv", "arxiv_theory_vs_biorxiv", "arxiv_experiment_vs_biorxiv",
+              "arxiv_maths_vs_biorxiv", "pubmed_us_vs_non_us"):
+        rows.append((f"{g}: 2026 / 2025 (rank p, all earlier changes)", "round1_tests",
+                     lambda x, g=g: x["calibration"][g]["acceleration_all_earlier"],
+                     lambda v: f"{v['rr']:.3f} (p {v['p_two_sided']:.2f})"))
+    for k in src["field_tests"][0]["fields"]:
+        if not k.startswith("social"):
+            rows.append((f"Departure from trend, 2026: {k}", "field_tests", lambda x, k=k: x["fields"][k]["2026"], ci3))
+    rows += [("Synthetic control, mathematics: gap in 2026", "field_tests",
+              lambda x: x["synthetic_control_math"]["gap_2026_pct"], pct),
+             ("Synthetic control, mathematics: rank p", "field_tests", lambda x: x["synthetic_control_math"]["rank_p"], num),
+             ("Mathematics' rank among archive departures: p", "field_tests", lambda x: x["math_rank_p"], num)]
+    lines += ["### Round 2. January–August versions of the 2026 estimates", "",
+              "Every estimate re-run with the data ending in August 2026 (`STATS_LAST=2026-08`; files "
+              "`*_to_2026-08.json`), leaving out September 2026, the month before arXiv's submission cap, when mathematics "
+              "submissions doubled. In the event studies the 2026 effect is then January–August against whole earlier "
+              "years, with calendar-month effects; PubMed, which is quarterly, ends in the second quarter.", "",
+              "| Estimate | January–September 2026 | January–August 2026 |", "|---|---|---|"]
+    for label, s, get, fmt in rows:
+        cells = []
+        for x in src[s]:
+            try:
+                cells.append(fmt(get(x)))
+            except (KeyError, TypeError, IndexError):
+                cells.append("–")
+        lines.append(f"| {label} | {cells[0]} | {cells[1]} |")
+    lines.append("")
+
+
 def main(repo):
     d = os.path.join(repo, "data/processed/stats")
     lines = ["# Results (generated by scripts/report_stats.py)", "",
@@ -354,6 +656,12 @@ def main(repo):
         p2(lines, json.load(open(os.path.join(d, "heavy_producers.json"))))
     if os.path.exists(os.path.join(d, "round1_tests.json")):
         r1(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
+        dating2(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
+        placebos_matched(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
+        inspire_round2(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
+        funding_round2(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
+        h2_round2(lines, d)
+        jan_aug(lines, d)
     os.makedirs(os.path.join(repo, "docs/stats"), exist_ok=True)
     open(os.path.join(repo, "docs/stats/results.md"), "w").write("\n".join(lines) + "\n")
     print("written docs/stats/results.md", len(lines), "lines")

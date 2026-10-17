@@ -30,9 +30,8 @@ import statsmodels.api as sm
 from scipy.optimize import minimize
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from stats_within_field import load_arxiv, sup_wald_break, ym_range  # noqa: E402
+from stats_within_field import LAST, SUFFIX, load_arxiv, sup_wald_break, ym_range  # noqa: E402
 
-LAST = "2026-09"
 PHYSICS = ["astro-ph", "cond-mat", "gr-qc", "hep-ex", "hep-lat", "hep-ph", "hep-th", "math-ph", "nlin", "nucl-ex",
            "nucl-th", "physics", "quant-ph"]
 
@@ -103,7 +102,8 @@ def main(repo):
            for r in csv.DictReader(open(os.path.join(repo, "data/raw/medrxiv_covid_monthly.csv")))}
     mm = ym_range("2019-07", LAST)
     results["fields"]["medicine_medrxiv_excl_covid_from2019_unreliable"] = field_model([med[m] for m in mm], mm)
-    pub = json.load(open(os.path.join(repo, "data/raw/pubmed_edat_quarterly.json")))
+    pub = [r for r in json.load(open(os.path.join(repo, "data/raw/pubmed_edat_quarterly.json")))
+           if f"{r['quarter'][:4]}-{3 * int(r['quarter'][-1]):02d}" <= LAST]  # with STATS_LAST=2026-08: to 2026 Q2
     results["notes"].append("PubMed is quarterly; fitted with quarterly months (t in years, quarter effects).")
     pq = [r["quarter"] for r in pub]
     pm = [f"{q[:4]}-{3 * int(q[-1]):02d}" for q in pq]  # label quarters by their last month
@@ -144,7 +144,7 @@ def main(repo):
     ratios = sorted([sc["ratio"]] + [p["ratio"] for p in placebo.values()], reverse=True)
     results["synthetic_control_math"] = {
         "donors": donors, "weights": {d: round(float(w), 3) for d, w in zip(donors, sc["weights"]) if w > 0.005},
-        "pre_window": "2018-01..2025-12", "post_window": "2026-01..2026-09",
+        "pre_window": "2018-01..2025-12", "post_window": f"2026-01..{LAST}",
         "gap_2026_pct": math.exp(sc["gap_post_mean"]) - 1, "rmspe_pre": sc["rmspe_pre"],
         "post_pre_rmspe_ratio": sc["ratio"], "rank_p": (ratios.index(sc["ratio"]) + 1) / len(ratios),
         "placebo_gaps_2026_pct": {a: round(math.exp(p["gap_post_mean"]) - 1, 3) for a, p in placebo.items()},
@@ -157,7 +157,7 @@ def main(repo):
         "gap_2026_pct": math.exp(sc2["gap_post_mean"]) - 1, "rmspe_pre": sc2["rmspe_pre"],
         "weights": {d: round(float(w), 3) for d, w in zip(donors, sc2["weights"]) if w > 0.005}}
 
-    json.dump(results, open(os.path.join(out_dir, "field_tests.json"), "w"), indent=1, default=float)
+    json.dump(results, open(os.path.join(out_dir, f"field_tests{SUFFIX}.json"), "w"), indent=1, default=float)
     f = lambda d: f"{d['rr']:.3f} [{d['lo']:.3f}, {d['hi']:.3f}] p={d['p']:.2g}"  # noqa: E731
     for name, v in results["fields"].items():
         print(f"{name:50} trend {v['trend_per_year']:+.1%}/yr | " + " | ".join(f"{k}: {f(v[k])}" for k in ("2024", "2025", "2026")))

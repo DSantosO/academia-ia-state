@@ -32,7 +32,7 @@ Aggregate data:
 | `data/raw/pubmed_edat_quarterly.json`, `pubmed_us_quarterly.json` | PubMed records per quarter by entry date (all, MEDLINE, journal articles; with and without a US affiliation) |
 | `data/raw/osf_quarterly.csv` | First versions per quarter on PsyArXiv, SocArXiv and EdArXiv (OSF API). Not used in the article's figures or tables: the series changes method in 2025 and its continuity could not be checked |
 | `data/processed/` | Series used in the figures and tables (one CSV/JSON per analysis) |
-| `data/processed/stats/` | Every estimate reported in the article (JSON): `within_field_tests.json` (H1 contrasts), `field_tests.json` (field departures, breaks, synthetic control), `round1_tests.json` (review analyses, including the planned specification and the rank-based calibration), `heavy_producers.json` (H2, aggregate shares only), `nd_tests.json` (pre-registered test of medRxiv, Test A) |
+| `data/processed/stats/` | Every estimate reported in the article (JSON): `within_field_tests.json` (H1 contrasts), `field_tests.json` (field departures, breaks, synthetic control), `round1_tests.json` (review analyses, including the planned specification and the rank-based calibration), `heavy_producers.json` (H2, aggregate shares only), `h2_round2.json` (H2 with classes ranked on an independent window, and the uniform-scaling simulation; aggregates only), `*_to_2026-08.json` (the same estimates with the data ending in August 2026), `nd_tests.json` (pre-registered test of medRxiv, Test A) |
 | `validation/sealed/` | Sealed results and labels of the pre-registered tests (SHA-256 hashes in `validation/README.md`) |
 
 Record-level identifier tables (no names, titles or abstracts):
@@ -48,6 +48,7 @@ Record-level identifier tables (no names, titles or abstracts):
 | `data/processed/nd_sample_attributes_*.csv.gz` | The sampled papers | month, author count, genre and keyword flags used by the registered sensitivities |
 | `data/processed/nd_frame_counts_*.csv`, `nd_category_monthly_*.csv` | Sampling frames | papers per stratum or category and month |
 | `docs/stats/validation/medrxiv_flag_coding_sheet.csv` | 200 medRxiv preprints flagged by the COVID-19 or dataset rules, for a hand check | DOI, DOI link and flag (no titles) |
+| `docs/stats/validation/country_spot_check_sheet.csv` | 100 bioRxiv and medRxiv preprints of 2025–2026 (20 US, 20 non-US and 10 without a country per server), for a human check of the country classifier | server, DOI, DOI link and assigned class (no titles) |
 
 Text and code:
 

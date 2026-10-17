@@ -13,13 +13,22 @@ Sections (each writes its own key of data/processed/stats/round1_tests.json; run
               2026 inputs, the C1 variants (hep-ph vs hep-ex, gr-qc out of theory), genres (reviews, proceedings, white
               papers, theses), and OAI vs statistics-page counts (P1b, P1f). Writes the paper-level table
               data/processed/arxiv_paper_flags.csv.gz.
-  dating      identifier (announcement) month vs first-version submission month, 2024-2026 (P1a)
+  dating      identifier (announcement) month vs first-version submission month, 2024-2026 (P1a); round 2: the
+              September 2026 spike in mathematics, October 2026 under the cap, C1 and arXiv vs bioRxiv by dating
+  inspire_dating  round 2: INSPIRE-HEP records dated by submission against arXiv's statistics pages
+  hepex_crosslists  round 2: cross-lists of hep-ex papers by month (OAI), for the 2025-2026 change in composition
+  placebos_matched  round 2: in-space placebos matched to the structure of C1 and C2, with their floors
+  funding_round2  round 2: bioRxiv and medRxiv by the corresponding author's institution (US or elsewhere),
+              against a prediction stated first; PubMed's US/non-US ratio calibrated in time
+  inspire_round2  round 2: the INSPIRE classes with the C1-C3 estimator under four bases, without planning
+              papers, research articles only; link, type and cross-list shares by year
   planned     round 2: the C1-C3 specification planned in draft v1 (period effects against multi-year baselines,
               Poisson or negative binomial, Newey-West errors, Bonferroni intervals), beside the 2022-base estimate
   calibration round 2: rank-based in-time calibration with the estimator itself (replaces the year-shock z)
   medrxiv_flags  C3 with the title-only COVID-19 filter and with Spick et al.'s four missing datasets (P3)
   inspire     pre-registration section 10 (exploratory): INSPIRE-HEP classes from curated metadata (no AI)
 Usage: python3 scripts/stats_round1.py [repo_dir] [section ...] [--oai OAI_DIR]
+STATS_LAST=2026-08 writes the January-August 2026 versions to round1_tests_to_2026-08.json.
 """
 import csv
 import gzip
@@ -37,11 +46,10 @@ import statsmodels.api as sm
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from stats_fields import PHYSICS, deseason_log, field_model  # noqa: E402
-from stats_within_field import (COMPUTATIONAL, EXPERIMENT, THEORY, WET_LAB, contrast_frame,  # noqa: E402
-                                deseasonalised_log_ratio, hac_wald_last, load_arxiv, load_biorxiv,
+from stats_within_field import (COMPUTATIONAL, EXPERIMENT, LAST, SUFFIX, THEORY, WET_LAB,  # noqa: E402
+                                contrast_frame, deseasonalised_log_ratio, hac_wald_last, load_arxiv, load_biorxiv,
                                 load_medrxiv_public, total, ym_range)
 
-LAST = "2026-09"
 RNG = np.random.default_rng(20261016)
 HEP6 = ["hep-th", "hep-ph", "gr-qc", "nucl-th", "hep-ex", "nucl-ex"]
 
@@ -367,6 +375,89 @@ def section_calibration(repo):
     return out
 
 
+def year_effects_fast(ya, yb, months, base=2022):
+    """Point estimates of the event study's year effects (base year 0). With month fixed effects the Poisson model is
+    the binomial logit of group A's share of each month's papers on group-specific calendar-month and year effects, so
+    this IRLS fit returns the same coefficients as event_study in a fraction of the time (used for the placebos)."""
+    yrs = sorted({int(m[:4]) for m in months})
+    n = np.asarray(ya, float) + np.asarray(yb, float)
+    keep = n > 0
+    cm = np.array([int(m[5:]) for m in months])
+    yr = np.array([int(m[:4]) for m in months])
+    X = np.column_stack([np.ones(len(months))] + [(cm == c).astype(float) for c in range(2, 13)] +
+                        [(yr == k).astype(float) for k in yrs if k != base])[keep]
+    y, n = np.asarray(ya, float)[keep], n[keep]
+    beta = np.zeros(X.shape[1])
+    beta[0] = math.log(y.sum() / (n - y).sum())
+    for _ in range(50):
+        pi = 1 / (1 + np.exp(-(X @ beta)))
+        w = n * pi * (1 - pi)
+        step = np.linalg.solve(X.T @ (X * w[:, None]), X.T @ (y - n * pi))
+        beta += step
+        if np.max(np.abs(step)) < 1e-10:
+            break
+    names = [k for k in yrs if k != base]
+    return {k: float(b) for k, b in zip(names, beta[12:])}
+
+
+def section_placebos_matched(repo):
+    """Round 2 (item 8; R1 #7, R3 #7): in-space placebos matched to each contrast's structure, with the observed
+    contrast counted among them, so p cannot fall below 1/n (the floor). C1 (four theory archives against two
+    experimental ones): every split of the six particle and nuclear physics archives into four against two (15), and
+    every disjoint draw of four against two of the 13 physics archives (25,740). C1 without gr-qc (three against two):
+    the ten splits of the five archives, and the 12,870 draws from the 13 physics archives. C2 (three computational
+    against twelve wet-lab categories): every choice of three of the fifteen categories as the computational group
+    (455). Statistics: the 2026 log rate ratio against 2022 and the 2026/2025 log ratio, from the event-study
+    estimator; p two-sided on absolute values, one-sided in the observed direction."""
+    ax, bx = load_arxiv(repo), load_biorxiv(repo)
+    m15, m19 = ym_range("2015-01", LAST), ym_range("2019-01", LAST)
+    out = {}
+
+    def stats(ya, yb, ms):
+        e = year_effects_fast(ya, yb, ms)
+        return e[2026], e[2026] - e[2025]
+
+    def summarise(obs, draws):
+        lv, ac = np.array([d[0] for d in draws]), np.array([d[1] for d in draws])
+        res = {"n": len(draws), "floor": 1 / len(draws)}
+        for name, o, v in (("2026_vs_2022", obs[0], lv), ("2026_vs_2025", obs[1], ac)):
+            res[name] = {"observed_rr": math.exp(o), "p_two_sided": float(np.mean(np.abs(v) >= abs(o) - 1e-12)),
+                         "p_one_sided": float(np.mean(v * np.sign(o) >= abs(o) - 1e-12)),
+                         "placebo_rr_5_50_95": [float(math.exp(q)) for q in np.percentile(v, [5, 50, 95])]}
+        return res
+
+    hep_nucl = ["hep-th", "hep-ph", "gr-qc", "nucl-th", "hep-ex", "nucl-ex"]
+    for name, A, B, pool6 in (("C1_theory_vs_experiment", THEORY, EXPERIMENT, hep_nucl),
+                              ("C1_theory_without_gr-qc_vs_experiment", ["hep-th", "hep-ph", "nucl-th"], EXPERIMENT,
+                               [a for a in hep_nucl if a != "gr-qc"])):
+        obs = stats(total(ax, A, m15), total(ax, B, m15), m15)
+        k, j = len(A), len(B)
+        within = [stats(total(ax, list(a), m15), total(ax, [x for x in pool6 if x not in a], m15), m15)
+                  for a in combinations(pool6, k)]
+        cache = {a: total(ax, [a], m15) for a in PHYSICS}
+        draws = []
+        for a in combinations(PHYSICS, k):
+            ya = sum(cache[x] for x in a)
+            for b in combinations([x for x in PHYSICS if x not in a], j):
+                draws.append(stats(ya, sum(cache[x] for x in b), m15))
+        out[name] = {"observed": {"rr_2026_vs_2022": math.exp(obs[0]), "rr_2026_vs_2025": math.exp(obs[1])},
+                     "splits_of_the_hep_nucl_archives": summarise(obs, within),
+                     "draws_from_13_physics_archives": summarise(obs, draws)}
+        print("placebos", name, len(within), len(draws), flush=True)
+    cats = list(COMPUTATIONAL) + list(WET_LAB)
+    cache = {c: total(bx, [c], m19) for c in cats}
+    allsum = sum(cache.values())
+    obs = stats(sum(cache[c] for c in COMPUTATIONAL), sum(cache[c] for c in WET_LAB), m19)
+    draws = []
+    for a in combinations(cats, len(COMPUTATIONAL)):
+        ya = sum(cache[c] for c in a)
+        draws.append(stats(ya, allsum - ya, m19))
+    out["C2_computational_vs_wet_lab"] = {"observed": {"rr_2026_vs_2022": math.exp(obs[0]),
+                                                       "rr_2026_vs_2025": math.exp(obs[1])},
+                                          "three_of_the_fifteen_categories": summarise(obs, draws)}
+    return out
+
+
 def section_breaks(repo):
     ax = load_arxiv(repo)
     m15 = ym_range("2015-01", LAST)
@@ -450,6 +541,88 @@ def section_funding(repo):
                                                                          for y in range(2022, 2027)}}
     return out
 
+
+FUNDING_PREDICTION = (
+    "Stated before the bioRxiv split was read (draft v3, Discussion, explanation (i)): if the 2025 disruption of US "
+    "research funding drove the 2026 wet-lab slowdown, US wet-lab preprints fall relative to non-US wet-lab preprints "
+    "in 2025-2026 against 2023-2024 (ratio below 1), and by more than computational preprints do (wet-lab ratio "
+    "below the computational one).")
+
+
+def section_funding_round2(repo):
+    """Round 2 (item 10; R1 N5, R3 #4): bioRxiv by the corresponding author's institution (US or elsewhere) against the
+    prediction in FUNDING_PREDICTION; the medRxiv split (all preprints and without COVID-19); PubMed's US/non-US
+    ratio calibrated in time (its year-on-year and two-year changes against the earlier ones). Event studies as in
+    P1c (bases 2023-2024 and 2022); preprints whose institution has no country stay out of both groups, and their
+    share is reported. The country classifier (scripts/classify_country.py) was checked by an AI agent only; a sheet
+    for a human spot check is in docs/stats/validation/country_spot_check_sheet.csv."""
+    out = {"prediction": FUNDING_PREDICTION}
+    path = os.path.join(repo, "data/processed/biorxiv_records_country_monthly.csv")
+    cnt = defaultdict(lambda: defaultdict(int))
+    for r in csv.DictReader(open(path)):
+        cnt[(r["group"], r["country"])][r["month"]] += int(r["preprints"])
+    ms = ym_range("2019-01", LAST)
+    groups = {"wet_lab": ["wet_lab"], "computational": ["computational"], "mixed": ["mixed"],
+              "all": ["wet_lab", "computational", "mixed"]}
+    bio = {}
+    for g, gg in groups.items():
+        series = {c: np.array([sum(cnt[(x, c)].get(m, 0) for x in gg) for m in ms], float)
+                  for c in ("US", "non-US", "unknown")}
+        jan_sep = {str(y): {c: int(sum(v[i] for i, m in enumerate(ms) if m[:4] == str(y) and m[5:] <= "09"))
+                            for c, v in series.items()} for y in range(2019, 2027)}
+        bio[g] = {"base_2023_2024": event_study(series["US"], series["non-US"], ms, {2023, 2024}),
+                  "base_2022": event_study(series["US"], series["non-US"], ms, {2022}),
+                  "jan_sep_counts": jan_sep}
+    # wet lab against computational: ratio of the two US/non-US ratios (independent fits, conservative interval)
+    wl, cp = bio["wet_lab"]["base_2023_2024"], bio["computational"]["base_2023_2024"]
+    bio["wet_lab_vs_computational"] = {}
+    for y in ("2025", "2026"):
+        la, lb = math.log(wl[y]["rr"]), math.log(cp[y]["rr"])
+        d, se = la - lb, math.sqrt(wl[y]["se"] ** 2 + cp[y]["se"] ** 2)
+        bio["wet_lab_vs_computational"][y] = {"rr": math.exp(d), "lo": math.exp(d - 1.96 * se),
+                                              "hi": math.exp(d + 1.96 * se)}
+    out["biorxiv"] = bio
+    med = defaultdict(Counter)
+    for r in csv.DictReader(gzip.open(os.path.join(repo, "data/raw/medrxiv_records.csv.gz"), "rt")):
+        m = r["date"][:7]
+        med[(r["country"], "all")][m] += 1
+        if r["covid_title_abstract"] != "1":
+            med[(r["country"], "noncovid")][m] += 1
+    mm = ym_range("2019-07", LAST)
+    medo = {}
+    for scope in ("all", "noncovid"):
+        us = np.array([med[("US", scope)].get(m, 0) for m in mm], float)
+        non = np.array([med[("non-US", scope)].get(m, 0) for m in mm], float)
+        unk = np.array([med[("unknown", scope)].get(m, 0) for m in mm], float)
+        js = {}
+        for y in range(2020, 2027):
+            sel = [i for i, m in enumerate(mm) if m[:4] == str(y) and m[5:] <= "09"]
+            js[str(y)] = {"US": int(us[sel].sum()), "non-US": int(non[sel].sum()), "unknown": int(unk[sel].sum())}
+        medo[scope] = {"base_2023_2024": event_study(us, non, mm, {2023, 2024}),
+                       "base_2022": event_study(us, non, mm, {2022}), "jan_sep_counts": js}
+    out["medrxiv"] = medo
+    pub = json.load(open(os.path.join(repo, "data/raw/pubmed_us_quarterly.json")))
+    lab = [f"{r['quarter'][:4]}-{3 * int(r['quarter'][-1]):02d}" for r in pub if
+           f"{r['quarter'][:4]}-{3 * int(r['quarter'][-1]):02d}" <= LAST]
+    ev = event_study(np.array([r["us_affiliation"] for r in pub][:len(lab)], float),
+                     np.array([r["non_us"] for r in pub][:len(lab)], float), lab, {2022}, lags=4)
+    years = sorted({int(m[:4]) for m in lab})
+    b = {y: (ev[str(y)]["b"] if str(y) in ev else 0.0) for y in years}
+    one = {y: b[y] - b[y - 1] for y in years if y - 1 in b}
+    two = {y: b[y] - b[y - 2] for y in years if y - 2 in b}
+
+    def rank(obs, ref):
+        ref = np.asarray(ref)
+        return {"rr": math.exp(obs), "n_ref": len(ref),
+                "p_one_sided_fall": float((np.sum(ref <= obs) + 1) / (len(ref) + 1)),
+                "p_two_sided": float((np.sum(np.abs(ref) >= abs(obs)) + 1) / (len(ref) + 1))}
+    out["pubmed_us_vs_non_us"] = {
+        "year_on_year_change": {str(y): math.exp(v) for y, v in one.items()},
+        "two_year_change": {str(y): math.exp(v) for y, v in two.items()},
+        "rank_2025_change": rank(one[2025], [one[y] for y in one if y < 2025]),
+        "rank_2026_change": rank(one[2026], [one[y] for y in one if y < 2026]),
+        "rank_2024_to_2026": rank(two[2026], [two[y] for y in two if y < 2026])}
+    return out
 
 def section_medrxiv_flags(repo):
     """P3: medRxiv COVID-19 filter (title only vs title or abstract) and the public-dataset list extended with the
@@ -550,7 +723,8 @@ def section_inspire(repo):
                 "RRR_NN_vs_ND": {y: rrr(nn, nd, y) for y in ("2025", "2026")}}
     # collaboration size and document type, hep-ex + nucl-ex
     exp = lambda r: r["primary"] in ("hep-ex", "nucl-ex")  # noqa: E731
-    size = lambda r: (None if r["author_count"] == "" else "le10" if int(r["author_count"]) <= 10 else  # noqa: E731
+    size = lambda r: (None if r["author_count"] in ("", "0") else  # noqa: E731
+                      "le10" if int(r["author_count"]) <= 10 else
                       "11to300" if int(r["author_count"]) <= 300 else "gt300")
     out["by_author_count_hep-ex_nucl-ex"] = {b: {"n": sum(1 for r in recs if exp(r) and size(r) == b),
                                                  "departure": dep(series(lambda r, b=b: exp(r) and size(r) == b))}
@@ -572,6 +746,93 @@ def section_inspire(repo):
         "all_six": dep(series(lambda r: r["snowmass"] != "1" and r["european_strategy"] != "1"))}
     return out
 
+
+
+def section_inspire_round2(repo):
+    """Round 2 (item 9; R3 #2, R2 N3): the INSPIRE-HEP classes with the estimator of C1-C3 (NN as group A, ND as
+    group B) under four bases (2022; 2017-2019; 2017-2019 and 2022 pooled; 2017-2022 pooled), for records as
+    harvested, without planning papers (INSPIRE's flags, plus the arXiv flags that read title, abstract and comments,
+    matched by arXiv identifier from 2019), and for research articles only without planning papers; with ND restricted
+    to records that carry a collaboration as a sensitivity; proceedings (conference papers) reported separately as
+    departures from their 2017-2022 trend. An author count of 0 (author list not yet loaded) is treated as missing.
+    Also the shares of hep-ex and nucl-ex records with an experiment link, a collaboration, each document type and
+    cross-lists to physics.ins-det or to cs/stat, by year (January-September)."""
+    path = os.path.join(repo, "data/raw/inspire_hep_records.csv.gz")
+    if not os.path.exists(path):
+        return None
+    recs = [r for r in csv.DictReader(gzip.open(path, "rt")) if "2017-01" <= r["date"][:7] <= LAST]
+    ms = ym_range("2017-01", LAST)
+    flags = {}
+    fpath = os.path.join(repo, "data/processed/arxiv_paper_flags.csv.gz")
+    if os.path.exists(fpath):
+        flags = {r["arxiv_id"]: r["snowmass"] == "1" or r["european_strategy"] == "1"
+                 for r in csv.DictReader(gzip.open(fpath, "rt"))}
+
+    def docs(r):
+        return set(filter(None, r["document_type"].split(";"))) | set(filter(None, r["publication_type"].split(";")))
+
+    planning = lambda r: r["snowmass"] == "1" or r["european_strategy"] == "1" or flags.get(r["arxiv_id"], False)  # noqa: E731
+    research = lambda r: "article" in docs(r) and not (docs(r) & NON_RESEARCH_DOCS)  # noqa: E731
+    proceedings = lambda r: bool(docs(r) & {"conference paper", "proceedings"})  # noqa: E731
+    nd = lambda r: inspire_classes(r) == "ND"  # noqa: E731
+    nd_collab = lambda r: nd(r) and bool(r["collaborations"])  # noqa: E731
+
+    def series(keep):
+        c = Counter(r["date"][:7] for r in recs if keep(r))
+        return np.array([c.get(m, 0) for m in ms], float)
+
+    scopes = {"all_six": lambda r: True, "hep-ex": lambda r: r["primary"] == "hep-ex",
+              "nucl-ex": lambda r: r["primary"] == "nucl-ex",
+              "hep-ex+nucl-ex": lambda r: r["primary"] in ("hep-ex", "nucl-ex")}
+    samples = {"as_harvested": lambda r: True, "without_planning": lambda r: not planning(r),
+               "research_articles_without_planning": lambda r: research(r) and not planning(r)}
+    bases = {"2022": {2022}, "2017-2019": {2017, 2018, 2019}, "2017-2019+2022": {2017, 2018, 2019, 2022},
+             "2017-2022": set(range(2017, 2023))}
+    out = {"n_records": len(recs), "planning_flagged": {"inspire_flags": sum(1 for r in recs if r["snowmass"] == "1" or
+                                                                              r["european_strategy"] == "1"),
+                                                        "with_arxiv_flags": sum(1 for r in recs if planning(r))},
+           "author_count_zero": sum(1 for r in recs if r["author_count"] == "0"), "contrasts": {}}
+    for sname, sk in scopes.items():
+        for smp, keep in samples.items():
+            for ndname, ndrule in (("ND", nd), ("ND_with_collaboration", nd_collab)):
+                if ndname != "ND" and smp != "research_articles_without_planning":
+                    continue
+                ya = series(lambda r: sk(r) and keep(r) and not ndrule(r))
+                yb = series(lambda r: sk(r) and keep(r) and ndrule(r))
+                res = {"n_NN": int(ya.sum()), "n_ND": int(yb.sum())}
+                if yb.sum() > 0 and min(ya.sum(), yb.sum()) >= 100:
+                    for bname, bset in bases.items():
+                        ev = event_study(ya, yb, ms, bset)
+                        res[bname] = {k: ev[k] for k in ("2025", "2026", "2026_vs_2025") if k in ev}
+                out["contrasts"][f"{sname}|{smp}|{ndname}"] = res
+        print("inspire round 2", sname, flush=True)
+    out["proceedings_departure"] = {}
+    for sname, sk in scopes.items():
+        y = series(lambda r: sk(r) and proceedings(r) and not planning(r))
+        if y.min() > 0:
+            fm = field_model(list(y), ms)
+            out["proceedings_departure"][sname] = {k: fm[k] for k in ("2025", "2026")} | {
+                "trend_per_year": fm["trend_per_year"], "n": int(y.sum())}
+        else:
+            out["proceedings_departure"][sname] = {"n": int(y.sum()), "months_with_zero": int((y == 0).sum())}
+    exp = [r for r in recs if r["primary"] in ("hep-ex", "nucl-ex") and r["date"][5:7] <= "09"]
+    shares = {}
+    for y in sorted({r["date"][:4] for r in exp}):
+        ry = [r for r in exp if r["date"][:4] == y]
+        cats = [set(r["categories"].split(";")) for r in ry]
+        n = len(ry)
+        shares[y] = {"records": n,
+                     "experiment_link": sum(1 for r in ry if r["experiments"]) / n,
+                     "collaboration": sum(1 for r in ry if r["collaborations"]) / n,
+                     "conference_paper": sum(1 for r in ry if "conference paper" in docs(r)) / n,
+                     "research_article": sum(1 for r in ry if research(r)) / n,
+                     "planning": sum(1 for r in ry if planning(r)) / n,
+                     "cross_list_physics.ins-det": sum(1 for c in cats if "physics.ins-det" in c) / n,
+                     "cross_list_cs_or_stat": sum(1 for c in cats if any(x.startswith(("cs.", "stat.")) for x in c)) / n,
+                     "author_count_zero": sum(1 for r in ry if r["author_count"] == "0"),
+                     "ND": sum(1 for r in ry if nd(r)) / n}
+    out["hep-ex+nucl-ex_shares_jan_sep"] = shares
+    return out
 
 # ---------------------------------------------------------------- arXiv paper-level flags (OAI)
 SNOWMASS = re.compile(r"snowmass", re.I)
@@ -698,7 +959,138 @@ def section_dating(repo, oai_dir):
                      "share_submitted_over_a_month_before": {m: v[2] / v[0] for m, v in sorted(spill.items()) if v[0]},
                      "monthly": {m: {"by_identifier": by_id.get(m, 0), "by_v1": by_v1.get(m, 0)} for m in ms}}
     out["groups"] = dating
+    out.update(dating_round2(repo, papers))
     return out
+
+
+def dating_round2(repo, papers):
+    """Round 2 (item 6): the September 2026 spike in mathematics by submission and by announcement; October 2026,
+    under arXiv's cap of two submissions per submitter a month (from 1 October 2026), in 14-day windows by
+    first-version date (the harvest of 16 October holds announcements to 15 October, so papers still on hold are
+    missing from the October windows); and C1 and the arXiv groups against bioRxiv with arXiv dated by identifier month
+    or by first-version month (identifier month when the v1 date is unknown, as for papers first posted before December
+    2023 and revised later), January-September and January-August 2026, from the same OAI records."""
+    import datetime as dt
+    out = {}
+    maths = [p for p in papers if p["archive"] == "math"]
+    sep = {}
+    for y in (2025, 2026):
+        ids = [p for p in maths if p["id_month"] == f"{y}-09"]
+        known = [p for p in ids if p["v1"]]
+        sep[str(y)] = {"by_identifier": len(ids), "v1_known": len(known),
+                       "submitted_in_september": sum(1 for p in maths if p["v1"][:7] == f"{y}-09"),
+                       "identifier_september_submitted_earlier": sum(1 for p in known if p["v1"][:7] < f"{y}-09"),
+                       "identifier_september_submitted_over_7_days_before":
+                           sum(1 for p in known if (dt_days(p["v1"], f"{y}-09") or 0) > 7)}
+    out["maths_september"] = sep
+    windows = {"aug_01_14_2026": ("2026-08-01", "2026-08-14"), "sep_01_14_2026": ("2026-09-01", "2026-09-14"),
+               "oct_01_14_2025": ("2025-10-01", "2025-10-14"), "oct_01_14_2026": ("2026-10-01", "2026-10-14"),
+               "sep_01_07_2026": ("2026-09-01", "2026-09-07"), "oct_01_07_2025": ("2025-10-01", "2025-10-07"),
+               "oct_01_07_2026": ("2026-10-01", "2026-10-07")}
+    weekdays = {}
+    for w, (a, b) in windows.items():
+        d0, d1 = dt.date.fromisoformat(a), dt.date.fromisoformat(b)
+        weekdays[w] = sum((d0 + dt.timedelta(i)).weekday() < 5 for i in range((d1 - d0).days + 1))
+    groups = {"maths": ["math"], "hep_nucl_6": HEP6, "theory": THEORY, "experiment": EXPERIMENT, "hep-ph": ["hep-ph"],
+              "hep-ex": ["hep-ex"]}
+    octo = {"weekdays_in_window": weekdays, "counts_by_v1_date": {}}
+    for g, arch in groups.items():
+        days = Counter(p["v1"][:10] for p in papers if p["archive"] in arch and p["v1"])
+        octo["counts_by_v1_date"][g] = {w: sum(n for d, n in days.items() if a <= d <= b) for w, (a, b) in windows.items()}
+    out["october_2026"] = octo
+    by = {"identifier": defaultdict(Counter), "v1": defaultdict(Counter)}
+    for p in papers:
+        by["identifier"][p["archive"]][p["id_month"]] += 1
+        by["v1"][p["archive"]][(p["v1"] or p["id_month"])[:7]] += 1
+    ax, bx = load_arxiv(repo), load_biorxiv(repo)
+    con = {}
+    for last in ("2026-09", "2026-08"):
+        ms = ym_range("2019-02", last)
+        sources = {"identifier": by["identifier"], "v1": by["v1"], "statistics_pages": ax}
+        for src, ser in sources.items():
+            c = lambda arch: np.array([sum(ser[a].get(m, 0) for a in arch) for m in ms], float)  # noqa: E731
+            res = {}
+            for name, (A, B) in (("C1_theory_vs_experiment", (THEORY, EXPERIMENT)),
+                                 ("C1_without_gr-qc", (["hep-th", "hep-ph", "nucl-th"], EXPERIMENT))):
+                es = event_study(c(A), c(B), ms, {2022})
+                res[name] = {"2026": es["2026"], "2026_vs_2025": es["2026_vs_2025"]}
+            yb = total(bx, list(bx), ms)
+            for g, arch in (("hep_nucl_6", HEP6), ("theory", THEORY), ("experiment", EXPERIMENT), ("maths", ["math"])):
+                es = event_study(c(arch), yb, ms, {2022})
+                res[f"{g}_vs_biorxiv"] = {"2026": es["2026"], "2026_vs_2025": es["2026_vs_2025"]}
+            con[f"{src}|to_{last}"] = res
+    out["contrasts_by_dating"] = {"window_from": "2019-02", "base": 2022, "results": con}
+    return out
+
+
+def section_hepex_crosslists(repo, oai_dir):
+    """Round 2 (R3 minor 10): cross-lists of papers with primary category hep-ex, by month, from the arXiv OAI records
+    (the same fall appears in INSPIRE's categories, so it is not an INSPIRE curation effect); and papers of other
+    primary categories cross-listed to hep-ex, which would rise if instrumentation papers had moved to
+    physics.ins-det as primary."""
+    by, into = defaultdict(lambda: [0, 0, 0, 0]), defaultdict(Counter)
+    with gzip.open(os.path.join(oai_dir, "oai_physics_hep-ex.jsonl.gz"), "rt", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            m = re.fullmatch(r"(\d{2})(\d{2})\.\d{4,5}", r.get("id") or "")
+            if not m or not r.get("categories") or m.group(1) < "19":
+                continue
+            month, cats = f"20{m.group(1)}-{m.group(2)}", r["categories"]
+            if month > LAST:
+                continue
+            if cats[0] == "hep-ex":
+                v = by[month]
+                v[0] += 1
+                v[1] += len(cats) > 1
+                v[2] += "physics.ins-det" in cats
+                v[3] += any(c.startswith(("cs.", "stat.")) for c in cats)
+            elif "hep-ex" in cats[1:]:
+                into[month][cats[0]] += 1
+    return {"hep-ex_primary_by_month": {m: {"papers": v[0], "any_cross_list": v[1], "physics.ins-det": v[2],
+                                            "cs_or_stat": v[3]} for m, v in sorted(by.items())},
+            "cross_listed_into_hep-ex_by_month": {m: {"all": sum(c.values()), "physics.ins-det": c["physics.ins-det"]}
+                                                  for m, c in sorted(into.items())}}
+
+def section_inspire_dating(repo):
+    """Round 2 (item 6): INSPIRE-HEP records dated by first-version submission (preprint_date) against arXiv's
+    statistics pages (announced new submissions): growth from 2025 to 2026 in January-September and January-August by
+    primary archive; the share of records whose arXiv identifier month is later than their submission month, by year;
+    and the share of submission dates on weekends, when arXiv does not announce."""
+    import datetime as dt
+    path = os.path.join(repo, "data/raw/inspire_hep_records.csv.gz")
+    if not os.path.exists(path):
+        return None
+    recs = list(csv.DictReader(gzip.open(path, "rt")))
+    ax = load_arxiv(repo)
+
+    def window(c, y, last):
+        return sum(c.get(f"{y}-{i:02d}", 0) for i in range(1, last + 1))
+    growth = {}
+    for a in ("hep-ex", "hep-ph", "hep-th", "hep-lat", "nucl-ex", "nucl-th"):
+        ins = Counter(r["date"][:7] for r in recs if r["primary"] == a)
+        row = {}
+        for name, last in (("jan_sep", 9), ("jan_aug", 8)):
+            i25, i26, s25, s26 = window(ins, 2025, last), window(ins, 2026, last), window(ax[a], 2025, last), \
+                window(ax[a], 2026, last)
+            row[name] = {"inspire_by_submission": {"2025": i25, "2026": i26, "growth": i26 / i25 - 1},
+                         "statistics_pages_by_announcement": {"2025": s25, "2026": s26, "growth": s26 / s25 - 1}}
+        row["sep_2026"] = {"inspire_by_submission": ins.get("2026-09", 0),
+                           "statistics_pages_by_announcement": ax[a].get("2026-09", 0)}
+        growth[a] = row
+    later, wk = defaultdict(lambda: [0, 0]), Counter()
+    for r in recs:
+        d = r["date"]
+        m = re.fullmatch(r"(\d{2})(\d{2})\.\d{4,5}", r["arxiv_id"] or "")
+        if not m or len(d) < 10 or not "2017" <= d[:4] <= "2026":
+            continue
+        later[d[:4]][0] += 1
+        later[d[:4]][1] += f"20{m.group(1)}-{m.group(2)}" > d[:7]
+        wk[dt.date.fromisoformat(d[:10]).weekday()] += 1
+    n = sum(wk.values())
+    return {"growth_2025_to_2026": growth,
+            "identifier_month_later_than_submission": {y: v[1] / v[0] for y, v in sorted(later.items())},
+            "identifier_month_later_overall": sum(v[1] for v in later.values()) / sum(v[0] for v in later.values()),
+            "weekend_share_of_submission_dates": {"saturday": wk[5] / n, "sunday": wk[6] / n, "n": n}}
 
 
 def section_oai(repo, oai_dir):
@@ -749,7 +1141,9 @@ def section_oai(repo, oai_dir):
                   "field_model_2019_2026": {"all": field_model([allc.get(m, 0) for m in ms], ms),
                                             "research_only": field_model([res_c.get(m, 0) for m in ms], ms)}}
     out["genre"] = gen
-    # paper-level table for the deposit (no names, no text)
+    # paper-level table for the deposit (no names, no text); written by the main run only
+    if SUFFIX:
+        return out
     path = os.path.join(repo, "data/processed/arxiv_paper_flags.csv.gz")
     with gzip.open(path, "wt", newline="") as f:
         w = csv.writer(f)
@@ -770,13 +1164,17 @@ def main():
         args = args[:i] + args[i + 2:]
     repo = args[0] if args else "."
     sections = args[1:] or ["estimands", "planned", "calibration", "breaks", "crosslists", "funding",
-                            "medrxiv_flags", "inspire"] + (["oai", "dating"] if oai else [])
-    path = os.path.join(repo, "data/processed/stats/round1_tests.json")
+                            "funding_round2", "medrxiv_flags", "inspire", "inspire_dating", "inspire_round2",
+                            "placebos_matched"] + (
+                                ["oai", "dating", "hepex_crosslists"] if oai else [])
+    path = os.path.join(repo, f"data/processed/stats/round1_tests{SUFFIX}.json")
     out = json.load(open(path)) if os.path.exists(path) else {}
     funcs = {"estimands": section_estimands, "breaks": section_breaks, "crosslists": section_crosslists,
              "funding": section_funding, "oai": lambda r: section_oai(r, oai), "dating": lambda r: section_dating(r, oai),
              "medrxiv_flags": section_medrxiv_flags, "inspire": section_inspire, "planned": section_planned,
-             "calibration": section_calibration}
+             "calibration": section_calibration, "inspire_dating": section_inspire_dating,
+             "placebos_matched": section_placebos_matched, "inspire_round2": section_inspire_round2,
+             "funding_round2": section_funding_round2, "hepex_crosslists": lambda r: section_hepex_crosslists(r, oai)}
     for s in sections:
         print("section", s, flush=True)
         out[s] = funcs[s](repo)

@@ -23,9 +23,15 @@ if [ -n "$OAI" ]; then
   python3 scripts/stats_heavy_producers.py data/processed/stats/heavy_producers.json \
     maths="$OAI/oai_math_math.jsonl.gz" physics="${physics#,}"
   python3 scripts/stats_round1.py . --oai "$OAI"   # all review sections, including the OAI-based ones
+  python3 scripts/stats_h2_round2.py "$OAI"         # H2: independent-window classes, uniform-scaling simulation
+  STATS_LAST=2026-08 python3 scripts/stats_round1.py . estimands planned calibration placebos_matched oai breaks --oai "$OAI"
 else
   python3 scripts/stats_round1.py .                # review sections that need no OAI harvest
+  STATS_LAST=2026-08 python3 scripts/stats_round1.py . estimands planned calibration placebos_matched breaks
 fi
+# January-August 2026 versions of the 2026 estimates (files *_to_2026-08.json), read by report_stats.py
+STATS_LAST=2026-08 python3 scripts/stats_within_field.py .
+STATS_LAST=2026-08 python3 scripts/stats_fields.py .
 
 python3 scripts/report_stats.py .
 python3 scripts/plot_plos.py .

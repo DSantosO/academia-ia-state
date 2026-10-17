@@ -1,0 +1,2583 @@
+{
+ "notes": "Round 2 (item 7; review R1 N4): two checks of H2 in arXiv mathematics and physics theory (papers with at most 50\nauthors), from the same OAI harvests and name matching as stats_heavy_producers.py.\n\n1. Classes ranked on an independent window. Names are ranked on their fractional output in the twelve months before\n   the first compared window: Q3 of year y-1 to Q2 of year y for the third quarters of y and y+1, and calendar year y-1\n   for January-August of y and y+1. The change between the two compared windows is then decomposed by those classes:\n   top 1%, next 9% and bottom 90% of the names active in the ranking window, and names not active in it. Neither\n   compared window overlaps the ranking window, so no class is selected on the outcome. Activity decays with time, so\n   the top class is expected to grow less than the rest even under proportional growth; the pairs of years before\n   ChatGPT's release show how much. Also reported: the share of the increase that came from names in the\n   combined-output top 1% (the class of the main decomposition) that were not in the ranking window's top 1%.\n2. Uniform-scaling simulation for the concentration shares. A pool of names with Gamma- or lognormal-distributed\n   rates fills the author slots of papers whose numbers of distinct authors are drawn from the base window's\n   distribution. The pool size and the distribution's parameter are calibrated to the base window's active names and\n   top-1% share; the calibration record gives the fit. Scaling the number of\n   papers by the observed growth, with the rates unchanged relative to one another, gives the change in the top-1% and\n   top-10% shares of fractional output that proportional growth alone produces (mean and SD over replications).\nOnly aggregates are written; classes with fewer than ten names are suppressed.",
+ "maths": {
+  "all_names": {
+   "independent_window": {
+    "2020-Q3_to_2021-Q3": {
+     "total_a": 8752.0,
+     "total_b": 8472.0,
+     "growth": -0.03199268738574035,
+     "names_ranked": 44007,
+     "top1pct": {
+      "names_in_class": 440.0,
+      "names_active_in_a_or_b": 334.0,
+      "output_a": 315.19444444444446,
+      "output_b": 303.8845238095238,
+      "growth": -0.03588236034697667,
+      "share_of_output_a": 0.036013990452975826,
+      "share_of_change": 0.04039257369614526
+     },
+     "next9pct": {
+      "names_in_class": 3960.0,
+      "names_active_in_a_or_b": 2262.5723684210525,
+      "output_a": 1171.5454412546517,
+      "output_b": 1081.0745713716108,
+      "growth": -0.07722352603425464,
+      "share_of_output_a": 0.13386031092946202,
+      "share_of_change": 0.32311024958228896
+     },
+     "bottom90pct": {
+      "names_in_class": 39607.0,
+      "names_active_in_a_or_b": 10968.427631578947,
+      "output_a": 3844.14331896174,
+      "output_b": 3392.3944401724007,
+      "growth": -0.11751613852715348,
+      "share_of_output_a": 0.43923026953401967,
+      "share_of_change": 1.6133888528190694
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 13431.0,
+      "output_a": 3421.1167953391637,
+      "output_b": 3694.6464646464647,
+      "growth": 0.07995332684343026,
+      "share_of_output_a": 0.39089542908354247,
+      "share_of_change": -0.9768916760975035
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.020569727891156464,
+      "share_of_change_from_names_in_ranking_top1pct": 0.013988095238095244,
+      "names_also_in_ranking_top1pct": 70.2,
+      "names": 269.0
+     }
+    },
+    "2020-JanAug_to_2021-JanAug": {
+     "total_a": 23464.0,
+     "total_b": 22730.0,
+     "growth": -0.03128196385952953,
+     "names_ranked": 42631,
+     "top1pct": {
+      "names_in_class": 426.0,
+      "names_active_in_a_or_b": 388.0,
+      "output_a": 849.6075396825397,
+      "output_b": 697.2123015873016,
+      "growth": -0.17937133438361597,
+      "share_of_output_a": 0.036208981404813316,
+      "share_of_change": 0.20762294018424815
+     },
+     "next9pct": {
+      "names_in_class": 3837.0,
+      "names_active_in_a_or_b": 3163.031304347826,
+      "output_a": 3158.8633466967813,
+      "output_b": 2737.151604899931,
+      "growth": -0.13350110324900044,
+      "share_of_output_a": 0.13462595238223582,
+      "share_of_change": 0.5745391577613763
+     },
+     "bottom90pct": {
+      "names_in_class": 38368.0,
+      "names_active_in_a_or_b": 18869.968695652173,
+      "output_a": 9962.665946232511,
+      "output_b": 8951.345797697471,
+      "growth": -0.10151099655383722,
+      "share_of_output_a": 0.4245936731261725,
+      "share_of_change": 1.3778203658515533
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 31175.0,
+      "output_a": 9492.863167388166,
+      "output_b": 10344.290295815295,
+      "growth": 0.08969128843572993,
+      "share_of_output_a": 0.4045713930867783,
+      "share_of_change": -1.1599824637971785
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.13660687254011508,
+      "share_of_change_from_names_in_ranking_top1pct": 0.0967821461009472,
+      "names_also_in_ranking_top1pct": 129.0,
+      "names": 535.0
+     }
+    },
+    "2021-Q3_to_2022-Q3": {
+     "total_a": 8472.0,
+     "total_b": 8714.0,
+     "growth": 0.0285646836638338,
+     "names_ranked": 45054,
+     "top1pct": {
+      "names_in_class": 450.0,
+      "names_active_in_a_or_b": 336.5,
+      "output_a": 347.6361471861472,
+      "output_b": 294.63525641025643,
+      "growth": -0.15246081630144925,
+      "share_of_output_a": 0.04103353956399282,
+      "share_of_change": -0.21901194535492047
+     },
+     "next9pct": {
+      "names_in_class": 4055.0,
+      "names_active_in_a_or_b": 2363.632819194516,
+      "output_a": 1118.9392591912515,
+      "output_b": 1121.7438221732566,
+      "growth": 0.002506447922858923,
+      "share_of_output_a": 0.13207498337951504,
+      "share_of_change": 0.011589103231426071
+     },
+     "bottom90pct": {
+      "names_in_class": 40549.0,
+      "names_active_in_a_or_b": 11120.867180805484,
+      "output_a": 3592.4382299862377,
+      "output_b": 3486.88752425809,
+      "growth": -0.029381355773110185,
+      "share_of_output_a": 0.42403661827033023,
+      "share_of_change": -0.4361599410254047
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 13651.0,
+      "output_a": 3412.9863636363634,
+      "output_b": 3810.733397158397,
+      "growth": 0.11653929759574377,
+      "share_of_output_a": 0.4028548587861619,
+      "share_of_change": 1.6435827831488996
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.007139577594123045,
+      "share_of_change_from_names_in_ranking_top1pct": -0.06783746556473828,
+      "names_also_in_ranking_top1pct": 77.5,
+      "names": 274.0
+     }
+    },
+    "2021-JanAug_to_2022-JanAug": {
+     "total_a": 22730.0,
+     "total_b": 22444.0,
+     "growth": -0.012582490101187838,
+     "names_ranked": 44642,
+     "top1pct": {
+      "names_in_class": 446.0,
+      "names_active_in_a_or_b": 398.4,
+      "output_a": 829.2396825396826,
+      "output_b": 711.6465262515262,
+      "growth": -0.14180840445069876,
+      "share_of_output_a": 0.036482168171565445,
+      "share_of_change": 0.4111648821264209
+     },
+     "next9pct": {
+      "names_in_class": 4018.0,
+      "names_active_in_a_or_b": 3240.6,
+      "output_a": 2947.461147186147,
+      "output_b": 2785.2744305694305,
+      "growth": -0.05502590484408976,
+      "share_of_output_a": 0.12967272974862065,
+      "share_of_change": 0.5670864217367717
+     },
+     "bottom90pct": {
+      "names_in_class": 40178.0,
+      "names_active_in_a_or_b": 19400.0,
+      "output_a": 9578.388383838384,
+      "output_b": 8928.625008325009,
+      "growth": -0.06783639893008742,
+      "share_of_output_a": 0.42139852106636094,
+      "share_of_change": 2.2718999143824323
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 30874.0,
+      "output_a": 9374.910786435787,
+      "output_b": 10018.454034854034,
+      "growth": 0.06864526640076041,
+      "share_of_output_a": 0.412446581013453,
+      "share_of_change": -2.2501512182456205
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1227825205097932,
+      "share_of_change_from_names_in_ranking_top1pct": 0.26064768564768565,
+      "names_also_in_ranking_top1pct": 134.17142857142858,
+      "names": 539.0
+     }
+    },
+    "2022-Q3_to_2023-Q3": {
+     "total_a": 8714.0,
+     "total_b": 8944.0,
+     "growth": 0.026394308010098788,
+     "names_ranked": 45266,
+     "top1pct": {
+      "names_in_class": 452.0,
+      "names_active_in_a_or_b": 347.19718309859155,
+      "output_a": 330.5553767046725,
+      "output_b": 279.5508520821901,
+      "growth": -0.1542994857047849,
+      "share_of_output_a": 0.037933827944075335,
+      "share_of_change": -0.22175880270644518
+     },
+     "next9pct": {
+      "names_in_class": 4074.0,
+      "names_active_in_a_or_b": 2313.9932930918844,
+      "output_a": 1111.152437703142,
+      "output_b": 1045.9442107914442,
+      "growth": -0.05868522148634203,
+      "share_of_output_a": 0.12751347689960316,
+      "share_of_change": -0.2835140300508595
+     },
+     "bottom90pct": {
+      "names_in_class": 40740.0,
+      "names_active_in_a_or_b": 11403.809523809523,
+      "output_a": 3622.324728049728,
+      "output_b": 3549.6095908060192,
+      "growth": -0.02007416305905263,
+      "share_of_output_a": 0.4156902373249631,
+      "share_of_change": -0.31615277062482083
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 14560.0,
+      "output_a": 3649.9674575424574,
+      "output_b": 4068.895346320346,
+      "growth": 0.11477578736002081,
+      "share_of_output_a": 0.41886245783135845,
+      "share_of_change": 1.8214256033821248
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1354099285284577,
+      "share_of_change_from_names_in_ranking_top1pct": -0.11487991450248816,
+      "names_also_in_ranking_top1pct": 74.03242712086472,
+      "names": 286.0
+     }
+    },
+    "2022-JanAug_to_2023-JanAug": {
+     "total_a": 22444.0,
+     "total_b": 23747.0,
+     "growth": 0.05805560506148644,
+     "names_ranked": 45271,
+     "top1pct": {
+      "names_in_class": 452.0,
+      "names_active_in_a_or_b": 417.0,
+      "output_a": 833.1845598845599,
+      "output_b": 743.4618343715905,
+      "growth": -0.10768649568518263,
+      "share_of_output_a": 0.03712281945662805,
+      "share_of_change": -0.06885857675592434
+     },
+     "next9pct": {
+      "names_in_class": 4075.0,
+      "names_active_in_a_or_b": 3355.7455731593664,
+      "output_a": 2956.9481981800946,
+      "output_b": 2904.199837841764,
+      "growth": -0.017838784044575284,
+      "share_of_output_a": 0.1317478256184323,
+      "share_of_change": -0.040482241242003614
+     },
+     "bottom90pct": {
+      "names_in_class": 40744.0,
+      "names_active_in_a_or_b": 19785.254426840635,
+      "output_a": 9280.064644532747,
+      "output_b": 9197.830569826448,
+      "growth": -0.008861368735695874,
+      "share_of_output_a": 0.4134764143883776,
+      "share_of_change": -0.0631113389917874
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 32484.0,
+      "output_a": 9373.802597402597,
+      "output_b": 10901.507757960197,
+      "growth": 0.16297603290482288,
+      "share_of_output_a": 0.417652940536562,
+      "share_of_change": 1.172452156989716
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.03218612270042632,
+      "share_of_change_from_names_in_ranking_top1pct": -0.033862776848793595,
+      "names_also_in_ranking_top1pct": 145.954128440367,
+      "names": 560.0
+     }
+    },
+    "2023-Q3_to_2024-Q3": {
+     "total_a": 8944.0,
+     "total_b": 9624.0,
+     "growth": 0.07602862254025045,
+     "names_ranked": 47698,
+     "top1pct": {
+      "names_in_class": 476.0,
+      "names_active_in_a_or_b": 364.0731707317073,
+      "output_a": 309.94758473234083,
+      "output_b": 337.5599109562524,
+      "growth": 0.08908708305553192,
+      "share_of_output_a": 0.034654246951290345,
+      "share_of_change": 0.040606362093987595
+     },
+     "next9pct": {
+      "names_in_class": 4293.0,
+      "names_active_in_a_or_b": 2502.154342495806,
+      "output_a": 1128.5424737321223,
+      "output_b": 1166.46231645323,
+      "growth": 0.033600722705372066,
+      "share_of_output_a": 0.1261787202294412,
+      "share_of_change": 0.05576447458986422
+     },
+     "bottom90pct": {
+      "names_in_class": 42929.0,
+      "names_active_in_a_or_b": 12078.772486772486,
+      "output_a": 3786.200958851554,
+      "output_b": 3819.614268284366,
+      "growth": 0.008825022706387742,
+      "share_of_output_a": 0.4233230052383222,
+      "share_of_change": 0.04913721975413556
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 15541.0,
+      "output_a": 3719.308982683983,
+      "output_b": 4300.363504306151,
+      "growth": 0.1562264722633664,
+      "share_of_output_a": 0.4158440275809462,
+      "share_of_change": 0.8544919435620125
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.03327052616583738,
+      "share_of_change_from_names_in_ranking_top1pct": 0.03233018226554354,
+      "names_also_in_ranking_top1pct": 82.23559937727038,
+      "names": 304.0
+     }
+    },
+    "2023-JanAug_to_2024-JanAug": {
+     "total_a": 23747.0,
+     "total_b": 26026.0,
+     "growth": 0.09597001726533883,
+     "names_ranked": 46032,
+     "top1pct": {
+      "names_in_class": 460.0,
+      "names_active_in_a_or_b": 407.1304347826087,
+      "output_a": 753.4594406800928,
+      "output_b": 792.1794168391995,
+      "growth": 0.051389595867505466,
+      "share_of_output_a": 0.031728615853795966,
+      "share_of_change": 0.016989897393201683
+     },
+     "next9pct": {
+      "names_in_class": 4143.0,
+      "names_active_in_a_or_b": 3373.2966114807364,
+      "output_a": 3053.1447019936145,
+      "output_b": 3030.182537256176,
+      "growth": -0.0075208242578364,
+      "share_of_output_a": 0.1285697015199231,
+      "share_of_change": -0.010075543983079572
+     },
+     "bottom90pct": {
+      "names_in_class": 41429.0,
+      "names_active_in_a_or_b": 21069.572953736653,
+      "output_a": 9881.633429408681,
+      "output_b": 10106.067733911115,
+      "growth": 0.022712267774930517,
+      "share_of_output_a": 0.4161213386705134,
+      "share_of_change": 0.09847929113753151
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 35765.0,
+      "output_a": 10058.76242791761,
+      "output_b": 12097.57031199351,
+      "growth": 0.20268973431734372,
+      "share_of_output_a": 0.4235803439557675,
+      "share_of_change": 0.8946063554523471
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.01433994624801043,
+      "share_of_change_from_names_in_ranking_top1pct": 0.024275316895554608,
+      "names_also_in_ranking_top1pct": 145.8181818181818,
+      "names": 606.0
+     }
+    },
+    "2024-Q3_to_2025-Q3": {
+     "total_a": 9624.0,
+     "total_b": 10846.0,
+     "growth": 0.12697423108894434,
+     "names_ranked": 51425,
+     "top1pct": {
+      "names_in_class": 514.0,
+      "names_active_in_a_or_b": 399.70666666666665,
+      "output_a": 344.22573015873013,
+      "output_b": 361.83203174603176,
+      "growth": 0.05114754663802423,
+      "share_of_output_a": 0.035767428320732556,
+      "share_of_change": 0.014407775439690369
+     },
+     "next9pct": {
+      "names_in_class": 4628.0,
+      "names_active_in_a_or_b": 2707.287460850112,
+      "output_a": 1282.9897506016541,
+      "output_b": 1343.0559094077664,
+      "growth": 0.04681733332471638,
+      "share_of_output_a": 0.1333114869702467,
+      "share_of_change": 0.0491539761097482
+     },
+     "bottom90pct": {
+      "names_in_class": 46283.0,
+      "names_active_in_a_or_b": 13464.005872483222,
+      "output_a": 4128.77767869454,
+      "output_b": 4350.4617597725155,
+      "growth": 0.05369242384299788,
+      "share_of_output_a": 0.42900848697989813,
+      "share_of_change": 0.18141086831258255
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 16814.0,
+      "output_a": 3868.0068405450756,
+      "output_b": 4790.650299073686,
+      "growth": 0.23853201314364592,
+      "share_of_output_a": 0.4019125977291226,
+      "share_of_change": 0.7550273801379792
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.06669149907220553,
+      "share_of_change_from_names_in_ranking_top1pct": 0.010530979784749667,
+      "names_also_in_ranking_top1pct": 79.58692556634304,
+      "names": 333.0
+     }
+    },
+    "2024-JanAug_to_2025-JanAug": {
+     "total_a": 26026.0,
+     "total_b": 27078.0,
+     "growth": 0.04042111734419418,
+     "names_ranked": 49091,
+     "top1pct": {
+      "names_in_class": 490.0,
+      "names_active_in_a_or_b": 446.0,
+      "output_a": 896.4003968253968,
+      "output_b": 851.4313852813852,
+      "growth": -0.050166211107524505,
+      "share_of_output_a": 0.034442495843594746,
+      "share_of_change": -0.04274620869202619
+     },
+     "next9pct": {
+      "names_in_class": 4419.0,
+      "names_active_in_a_or_b": 3614.6620808254515,
+      "output_a": 3277.6200130314073,
+      "output_b": 3140.8107012112278,
+      "growth": -0.04174044314967651,
+      "share_of_output_a": 0.12593637182169398,
+      "share_of_change": -0.13004687435378287
+     },
+     "bottom90pct": {
+      "names_in_class": 44182.0,
+      "names_active_in_a_or_b": 22509.337919174548,
+      "output_a": 10916.658442431535,
+      "output_b": 10699.458350570323,
+      "growth": -0.019896206609981038,
+      "share_of_output_a": 0.41945202652853053,
+      "share_of_change": -0.20646396564754
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 37517.0,
+      "output_a": 10935.32114771166,
+      "output_b": 12386.299562937063,
+      "growth": 0.13268731623204655,
+      "share_of_output_a": 0.4201691058061808,
+      "share_of_change": 1.379257048693349
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.14815225779215938,
+      "share_of_change_from_names_in_ranking_top1pct": -0.008173273053892607,
+      "names_also_in_ranking_top1pct": 171.1764705882353,
+      "names": 640.0
+     }
+    },
+    "2025-Q3_to_2026-Q3": {
+     "total_a": 10846.0,
+     "total_b": 19562.0,
+     "growth": 0.8036142356629172,
+     "names_ranked": 53899,
+     "top1pct": {
+      "names_in_class": 538.0,
+      "names_active_in_a_or_b": 437.0833333333333,
+      "output_a": 440.12420634920636,
+      "output_b": 617.2349867724868,
+      "growth": 0.4024109055314171,
+      "share_of_output_a": 0.04057940313011307,
+      "share_of_change": 0.02032019050290046
+     },
+     "next9pct": {
+      "names_in_class": 4851.0,
+      "names_active_in_a_or_b": 3241.2337398373984,
+      "output_a": 1447.9312584652866,
+      "output_b": 2552.241271454381,
+      "growth": 0.7626812436935657,
+      "share_of_output_a": 0.13349910183157723,
+      "share_of_change": 0.12669917542325546
+     },
+     "bottom90pct": {
+      "names_in_class": 48510.0,
+      "names_active_in_a_or_b": 16428.682926829268,
+      "output_a": 4585.228279890623,
+      "output_b": 7686.030000791891,
+      "growth": 0.6762589628307962,
+      "share_of_output_a": 0.4227575400968673,
+      "share_of_change": 0.35575972015847507
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 21640.0,
+      "output_a": 4372.716255294884,
+      "output_b": 8706.493740981241,
+      "growth": 0.9910950614366125,
+      "share_of_output_a": 0.40316395494144236,
+      "share_of_change": 0.4972209139153691
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.12625207609432024,
+      "share_of_change_from_names_in_ranking_top1pct": 0.011196613416668487,
+      "names_also_in_ranking_top1pct": 77.08333333333333,
+      "names": 417.0
+     }
+    },
+    "2025-JanAug_to_2026-JanAug": {
+     "total_a": 27078.0,
+     "total_b": 36097.0,
+     "growth": 0.3330748208878056,
+     "names_ranked": 53264,
+     "top1pct": {
+      "names_in_class": 532.0,
+      "names_active_in_a_or_b": 497.7647058823529,
+      "output_a": 981.4072012138189,
+      "output_b": 1243.3792600373483,
+      "growth": 0.26693512998429036,
+      "share_of_output_a": 0.036243710806330556,
+      "share_of_change": 0.02904668575490957
+     },
+     "next9pct": {
+      "names_in_class": 4794.0,
+      "names_active_in_a_or_b": 4033.1472542505376,
+      "output_a": 3518.8409304049314,
+      "output_b": 4475.811883101074,
+      "growth": 0.2719562980035075,
+      "share_of_output_a": 0.12995202490600974,
+      "share_of_change": 0.1061061040798473
+     },
+     "bottom90pct": {
+      "names_in_class": 47938.0,
+      "names_active_in_a_or_b": 25196.08803986711,
+      "output_a": 11670.459591213972,
+      "output_b": 14122.626016091235,
+      "growth": 0.21011738275700464,
+      "share_of_output_a": 0.4309941499081901,
+      "share_of_change": 0.2718889483176919
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 40803.0,
+      "output_a": 10907.292277167277,
+      "output_b": 16255.18284077034,
+      "growth": 0.4903041403592019,
+      "share_of_output_a": 0.40281011437946956,
+      "share_of_change": 0.5929582618475511
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.13268245338139215,
+      "share_of_change_from_names_in_ranking_top1pct": 0.02214132366276911,
+      "names_also_in_ranking_top1pct": 165.53273244781784,
+      "names": 705.0
+     }
+    }
+   },
+   "uniform_scaling": {
+    "2025-Q3_to_2026-Q3": {
+     "observed": {
+      "a": {
+       "active": 20114,
+       "top1": 0.0515155905622437,
+       "top10": 0.26437821019925023,
+       "papers": 10846
+      },
+      "b": {
+       "active": 28278,
+       "top1": 0.06841266189875739,
+       "top10": 0.32395512683762867,
+       "papers": 19562
+      }
+     },
+     "paper_growth": 0.8036142356629172,
+     "observed_change_top1": 0.016897071336513685,
+     "observed_change_top10": 0.05957691663837844,
+     "observed_active_growth": 0.40588644725067113,
+     "reps": 100,
+     "gamma": {
+      "calibration": {
+       "model": "gamma",
+       "parameter": 0.01,
+       "pool": 4022800,
+       "top1_sim": 0.04324514976075342,
+       "active_sim": 19525.8,
+       "top10_sim": 0.25636683900862184
+      },
+      "null_change_top1": {
+       "mean": 0.006146919679439684,
+       "sd": 0.000879523494287045
+      },
+      "null_change_top10": {
+       "mean": 0.02714004259276714,
+       "sd": 0.002197573276950664
+      },
+      "null_active_growth": 0.5538860453712348,
+      "mechanical_fraction_top1": 0.3637860997933123,
+      "mechanical_fraction_top10": 0.4555462773862987
+     },
+     "lognormal": {
+      "calibration": {
+       "model": "lognormal",
+       "parameter": 1.25,
+       "pool": 186925,
+       "top1_sim": 0.0499895295545479,
+       "active_sim": 20079.4,
+       "top10_sim": 0.25952811355254524
+      },
+      "null_change_top1": {
+       "mean": 0.009839815935824763,
+       "sd": 0.0014611270524859553
+      },
+      "null_change_top10": {
+       "mean": 0.03021232953140799,
+       "sd": 0.0023279522247214527
+      },
+      "null_active_growth": 0.5988304289331468,
+      "mechanical_fraction_top1": 0.5823385449383431,
+      "mechanical_fraction_top10": 0.5071146886434489
+     }
+    },
+    "2025-JanAug_to_2026-JanAug": {
+     "observed": {
+      "a": {
+       "active": 41096,
+       "top1": 0.06122228585113585,
+       "top10": 0.30294125893228485,
+       "papers": 27078
+      },
+      "b": {
+       "active": 48231,
+       "top1": 0.07693485048563033,
+       "top10": 0.3328769340151865,
+       "papers": 36097
+      }
+     },
+     "paper_growth": 0.3330748208878056,
+     "observed_change_top1": 0.015712564634494476,
+     "observed_change_top10": 0.029935675082901625,
+     "observed_active_growth": 0.17361787035234566,
+     "reps": 100,
+     "gamma": {
+      "calibration": {
+       "model": "gamma",
+       "parameter": 0.01,
+       "pool": 5309953,
+       "top1_sim": 0.04994144477692007,
+       "active_sim": 41081.2,
+       "top10_sim": 0.28463395118557977
+      },
+      "null_change_top1": {
+       "mean": 0.003487637895797373,
+       "sd": 0.0007256950436291905
+      },
+      "null_change_top10": {
+       "mean": 0.013355901076872831,
+       "sd": 0.0015771410987735076
+      },
+      "null_active_growth": 0.21185586749677066,
+      "mechanical_fraction_top1": 0.22196490368865754,
+      "mechanical_fraction_top10": 0.4461533284245635
+     },
+     "lognormal": {
+      "calibration": {
+       "model": "lognormal",
+       "parameter": 1.25,
+       "pool": 193724,
+       "top1_sim": 0.06505002573277556,
+       "active_sim": 40952.2,
+       "top10_sim": 0.3027227213968295
+      },
+      "null_change_top1": {
+       "mean": 0.006106139999648929,
+       "sd": 0.0013021576381574175
+      },
+      "null_change_top10": {
+       "mean": 0.015442386416202259,
+       "sd": 0.0017605755892777838
+      },
+      "null_active_growth": 0.22007749115575156,
+      "mechanical_fraction_top1": 0.3886151078254822,
+      "mechanical_fraction_top10": 0.5158522857238819
+     }
+    }
+   }
+  },
+  "full_first_names_no_top1pct_surnames": {
+   "independent_window": {
+    "2020-Q3_to_2021-Q3": {
+     "total_a": 6658.0,
+     "total_b": 6449.0,
+     "growth": -0.03139080805046557,
+     "names_ranked": 29328,
+     "top1pct": {
+      "names_in_class": 293.0,
+      "names_active_in_a_or_b": 234.0,
+      "output_a": 226.7,
+      "output_b": 200.0595238095238,
+      "growth": -0.11751423110046844,
+      "share_of_output_a": 0.034049264043256235,
+      "share_of_change": 0.12746639325586695
+     },
+     "next9pct": {
+      "names_in_class": 2639.0,
+      "names_active_in_a_or_b": 1448.0814053127679,
+      "output_a": 841.8875821193944,
+      "output_b": 779.2623474925531,
+      "growth": -0.07438669479978144,
+      "share_of_output_a": 0.12644751909272972,
+      "share_of_change": 0.2996422709418246
+     },
+     "bottom90pct": {
+      "names_in_class": 26396.0,
+      "names_active_in_a_or_b": 7363.918594687232,
+      "output_a": 2979.9341350523227,
+      "output_b": 2642.9606683804627,
+      "growth": -0.11308084387104866,
+      "share_of_output_a": 0.44757196381080244,
+      "share_of_change": 1.612313237664402
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 8634.0,
+      "output_a": 2609.4782828282828,
+      "output_b": 2826.7174603174603,
+      "growth": 0.08325004232406297,
+      "share_of_output_a": 0.3919312530532116,
+      "share_of_change": -1.0394219018620936
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.20566188197767146,
+      "share_of_change_from_names_in_ranking_top1pct": 0.05318979266347687,
+      "names_also_in_ranking_top1pct": 36.0,
+      "names": 176.0
+     }
+    },
+    "2020-JanAug_to_2021-JanAug": {
+     "total_a": 18260.0,
+     "total_b": 17444.0,
+     "growth": -0.04468784227820377,
+     "names_ranked": 28471,
+     "top1pct": {
+      "names_in_class": 284.0,
+      "names_active_in_a_or_b": 265.5925925925926,
+      "output_a": 583.2867283950617,
+      "output_b": 506.68648589065253,
+      "growth": -0.13132519355476846,
+      "share_of_output_a": 0.03194341338417644,
+      "share_of_change": 0.09387284620638377
+     },
+     "next9pct": {
+      "names_in_class": 2563.0,
+      "names_active_in_a_or_b": 2022.9619925602458,
+      "output_a": 2236.619345880008,
+      "output_b": 1948.1243063738514,
+      "growth": -0.12898709833552258,
+      "share_of_output_a": 0.12248736833954042,
+      "share_of_change": 0.35354784253205473
+     },
+     "bottom90pct": {
+      "names_in_class": 25624.0,
+      "names_active_in_a_or_b": 13063.445414847161,
+      "output_a": 8099.78675511776,
+      "output_b": 7118.115867187155,
+      "growth": -0.12119712748120759,
+      "share_of_output_a": 0.44358087377424754,
+      "share_of_change": 1.2030280489345642
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 20069.0,
+      "output_a": 7340.3071706071705,
+      "output_b": 7871.073340548341,
+      "growth": 0.07230844126885039,
+      "share_of_output_a": 0.40198834450203563,
+      "share_of_change": -0.6504487376730026
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1830528792930903,
+      "share_of_change_from_names_in_ranking_top1pct": 0.04594507490213791,
+      "names_also_in_ranking_top1pct": 81.71770551038844,
+      "names": 354.0
+     }
+    },
+    "2021-Q3_to_2022-Q3": {
+     "total_a": 6449.0,
+     "total_b": 6564.0,
+     "growth": 0.01783222204993029,
+     "names_ranked": 29749,
+     "top1pct": {
+      "names_in_class": 297.0,
+      "names_active_in_a_or_b": 214.68,
+      "output_a": 203.0895238095238,
+      "output_b": 176.42733333333334,
+      "growth": -0.1312829434825833,
+      "share_of_output_a": 0.03149163030074799,
+      "share_of_change": -0.2318451345755692
+     },
+     "next9pct": {
+      "names_in_class": 2677.0,
+      "names_active_in_a_or_b": 1436.925354058722,
+      "output_a": 791.6611197466897,
+      "output_b": 816.0162002631795,
+      "growth": 0.030764527787196183,
+      "share_of_output_a": 0.12275719022277712,
+      "share_of_change": 0.21178330883904178
+     },
+     "bottom90pct": {
+      "names_in_class": 26775.0,
+      "names_active_in_a_or_b": 7468.394645941278,
+      "output_a": 2838.8374516818817,
+      "output_b": 2715.1782918003123,
+      "growth": -0.04355978881718181,
+      "share_of_output_a": 0.4401980852352119,
+      "share_of_change": -1.0752970424484296
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 8679.0,
+      "output_a": 2615.4119047619047,
+      "output_b": 2856.3781746031746,
+      "growth": 0.09213320066431607,
+      "share_of_output_a": 0.40555309424126296,
+      "share_of_change": 2.0953588681849555
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.31826570048309183,
+      "share_of_change_from_names_in_ranking_top1pct": -0.15604347826086956,
+      "names_also_in_ranking_top1pct": 37.26916666666666,
+      "names": 177.0
+     }
+    },
+    "2021-JanAug_to_2022-JanAug": {
+     "total_a": 17444.0,
+     "total_b": 16915.0,
+     "growth": -0.030325613391424033,
+     "names_ranked": 29590,
+     "top1pct": {
+      "names_in_class": 295.0,
+      "names_active_in_a_or_b": 274.3,
+      "output_a": 555.7833333333333,
+      "output_b": 464.62619047619046,
+      "growth": -0.16401561074245274,
+      "share_of_output_a": 0.03186100282809753,
+      "share_of_change": 0.1723197407507426
+     },
+     "next9pct": {
+      "names_in_class": 2664.0,
+      "names_active_in_a_or_b": 2085.9557544757035,
+      "output_a": 2165.412629399586,
+      "output_b": 1943.3771353468924,
+      "growth": -0.10253726751111558,
+      "share_of_output_a": 0.1241350968470297,
+      "share_of_change": 0.41972683185764387
+     },
+     "bottom90pct": {
+      "names_in_class": 26631.0,
+      "names_active_in_a_or_b": 13177.744245524296,
+      "output_a": 7585.4152205282635,
+      "output_b": 7046.239531319774,
+      "growth": -0.07108057680867996,
+      "share_of_output_a": 0.434843798471008,
+      "share_of_change": 1.019235707388449
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 19511.0,
+      "output_a": 7137.388816738817,
+      "output_b": 7460.757142857143,
+      "growth": 0.04530625056602666,
+      "share_of_output_a": 0.40916010185386475,
+      "share_of_change": -0.6112822799968355
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1779728148348186,
+      "share_of_change_from_names_in_ranking_top1pct": 0.11547394004860924,
+      "names_also_in_ranking_top1pct": 80.32857142857142,
+      "names": 350.0
+     }
+    },
+    "2022-Q3_to_2023-Q3": {
+     "total_a": 6564.0,
+     "total_b": 6675.0,
+     "growth": 0.016910420475319876,
+     "names_ranked": 29304,
+     "top1pct": {
+      "names_in_class": 293.0,
+      "names_active_in_a_or_b": 207.32530120481928,
+      "output_a": 176.15682730923695,
+      "output_b": 165.48713425129088,
+      "growth": -0.060569284886221264,
+      "share_of_output_a": 0.026836810985563217,
+      "share_of_change": -0.09612336088239697
+     },
+     "next9pct": {
+      "names_in_class": 2637.0,
+      "names_active_in_a_or_b": 1411.0364009228404,
+      "output_a": 797.4338700902903,
+      "output_b": 755.6136121181789,
+      "growth": -0.052443543647545554,
+      "share_of_output_a": 0.12148596436476086,
+      "share_of_change": -0.37675908082983184
+     },
+     "bottom90pct": {
+      "names_in_class": 26374.0,
+      "names_active_in_a_or_b": 7425.63829787234,
+      "output_a": 2772.9085089496793,
+      "output_b": 2752.4512377575143,
+      "growth": -0.00737755000792073,
+      "share_of_output_a": 0.42244188131469823,
+      "share_of_change": -0.18429974046995568
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 9204.0,
+      "output_a": 2817.5007936507936,
+      "output_b": 3001.4480158730157,
+      "growth": 0.06528737192789613,
+      "share_of_output_a": 0.4292353433349777,
+      "share_of_change": 1.6571821821821808
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.04929691346663583,
+      "share_of_change_from_names_in_ranking_top1pct": 0.01746114894360049,
+      "names_also_in_ranking_top1pct": 24.974332111052906,
+      "names": 182.0
+     }
+    },
+    "2022-JanAug_to_2023-JanAug": {
+     "total_a": 16915.0,
+     "total_b": 18114.0,
+     "growth": 0.0708838309193025,
+     "names_ranked": 29810,
+     "top1pct": {
+      "names_in_class": 298.0,
+      "names_active_in_a_or_b": 272.64356435643566,
+      "output_a": 512.9204620462046,
+      "output_b": 469.67261511865473,
+      "growth": -0.08431686806765393,
+      "share_of_output_a": 0.030323408929719457,
+      "share_of_change": -0.036069930715220945
+     },
+     "next9pct": {
+      "names_in_class": 2683.0,
+      "names_active_in_a_or_b": 2143.9079062317996,
+      "output_a": 2087.7656899145795,
+      "output_b": 2138.669129964795,
+      "growth": 0.024381778231204798,
+      "share_of_output_a": 0.12342688086991306,
+      "share_of_change": 0.04245491246890369
+     },
+     "bottom90pct": {
+      "names_in_class": 26829.0,
+      "names_active_in_a_or_b": 13329.448529411764,
+      "output_a": 7217.326149626517,
+      "output_b": 7260.419444543916,
+      "growth": 0.005970811630790607,
+      "share_of_output_a": 0.426682007072215,
+      "share_of_change": 0.03594102995612958
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 20417.0,
+      "output_a": 7096.987698412699,
+      "output_b": 8245.238810372633,
+      "growth": 0.1617941527807285,
+      "share_of_output_a": 0.41956770312815245,
+      "share_of_change": 0.9576739882901876
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.06638721211570697,
+      "share_of_change_from_names_in_ranking_top1pct": 0.0008980255823747529,
+      "names_also_in_ranking_top1pct": 81.54125412541254,
+      "names": 361.0
+     }
+    },
+    "2023-Q3_to_2024-Q3": {
+     "total_a": 6675.0,
+     "total_b": 7225.0,
+     "growth": 0.08239700374531833,
+     "names_ranked": 31019,
+     "top1pct": {
+      "names_in_class": 310.0,
+      "names_active_in_a_or_b": 219.25,
+      "output_a": 189.72410714285715,
+      "output_b": 209.81145833333332,
+      "growth": 0.10587664104989525,
+      "share_of_output_a": 0.028423087212413056,
+      "share_of_change": 0.03652245670995667
+     },
+     "next9pct": {
+      "names_in_class": 2791.0,
+      "names_active_in_a_or_b": 1488.75,
+      "output_a": 777.0854166666667,
+      "output_b": 843.7857028388278,
+      "growth": 0.0858339183075576,
+      "share_of_output_a": 0.11641729088639201,
+      "share_of_change": 0.12127324758574745
+     },
+     "bottom90pct": {
+      "names_in_class": 27918.0,
+      "names_active_in_a_or_b": 7895.0,
+      "output_a": 2924.0261904761905,
+      "output_b": 2976.0832112332114,
+      "growth": 0.017803199207508946,
+      "share_of_output_a": 0.43805635812377386,
+      "share_of_change": 0.09464912864912879
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 9675.0,
+      "output_a": 2784.1642857142856,
+      "output_b": 3195.3196275946275,
+      "growth": 0.14767639395060295,
+      "share_of_output_a": 0.4171032637774211,
+      "share_of_change": 0.7475551670551671
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.022053030303030307,
+      "share_of_change_from_names_in_ranking_top1pct": -0.004343073593073594,
+      "names_also_in_ranking_top1pct": 37.6975,
+      "names": 192.0
+     }
+    },
+    "2023-JanAug_to_2024-JanAug": {
+     "total_a": 18114.0,
+     "total_b": 19631.0,
+     "growth": 0.08374737771889151,
+     "names_ranked": 29778,
+     "top1pct": {
+      "names_in_class": 297.0,
+      "names_active_in_a_or_b": 261.2340425531915,
+      "output_a": 461.05739614994934,
+      "output_b": 475.67624113475176,
+      "growth": 0.031707212826161735,
+      "share_of_output_a": 0.025453096839458393,
+      "share_of_change": 0.009636680939223746
+     },
+     "next9pct": {
+      "names_in_class": 2680.0,
+      "names_active_in_a_or_b": 2128.2258730586227,
+      "output_a": 2170.545662724796,
+      "output_b": 2175.171972313778,
+      "growth": 0.002131403945298427,
+      "share_of_output_a": 0.11982696603316749,
+      "share_of_change": 0.003049643763336959
+     },
+     "bottom90pct": {
+      "names_in_class": 26801.0,
+      "names_active_in_a_or_b": 13973.540084388185,
+      "output_a": 7801.029077616215,
+      "output_b": 7878.831768606452,
+      "growth": 0.009973388153811547,
+      "share_of_output_a": 0.4306629721550301,
+      "share_of_change": 0.05128720566264822
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 22558.0,
+      "output_a": 7681.36786350904,
+      "output_b": 9101.320017945018,
+      "growth": 0.18485667913153536,
+      "share_of_output_a": 0.424056964972344,
+      "share_of_change": 0.9360264696347909
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.03193402544860054,
+      "share_of_change_from_names_in_ranking_top1pct": 0.004715744590572357,
+      "names_also_in_ranking_top1pct": 72.6606749816581,
+      "names": 389.0
+     }
+    },
+    "2024-Q3_to_2025-Q3": {
+     "total_a": 7225.0,
+     "total_b": 8035.0,
+     "growth": 0.11211072664359856,
+     "names_ranked": 32914,
+     "top1pct": {
+      "names_in_class": 329.0,
+      "names_active_in_a_or_b": 244.38709677419354,
+      "output_a": 213.75752688172042,
+      "output_b": 212.81827956989247,
+      "growth": -0.004393984743038648,
+      "share_of_output_a": 0.029585816869442273,
+      "share_of_change": -0.0011595645825036487
+     },
+     "next9pct": {
+      "names_in_class": 2962.0,
+      "names_active_in_a_or_b": 1647.253928866832,
+      "output_a": 900.2240359998424,
+      "output_b": 995.9038616946401,
+      "growth": 0.10628446016610749,
+      "share_of_output_a": 0.12459848249132767,
+      "share_of_change": 0.11812324159851571
+     },
+     "bottom90pct": {
+      "names_in_class": 29623.0,
+      "names_active_in_a_or_b": 8640.358974358975,
+      "output_a": 3163.4007936507937,
+      "output_b": 3237.5936196050325,
+      "growth": 0.02345350171977878,
+      "share_of_output_a": 0.4378409402976877,
+      "share_of_change": 0.0915960814249861
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 10433.0,
+      "output_a": 2947.6176434676436,
+      "output_b": 3588.684239130435,
+      "growth": 0.21748634768946018,
+      "share_of_output_a": 0.40797476034154234,
+      "share_of_change": 0.7914402415590016
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.0714211034665861,
+      "share_of_change_from_names_in_ranking_top1pct": -0.004285442901806763,
+      "names_also_in_ranking_top1pct": 32.36596218020022,
+      "names": 209.0
+     }
+    },
+    "2024-JanAug_to_2025-JanAug": {
+     "total_a": 19631.0,
+     "total_b": 20187.0,
+     "growth": 0.028322551067189616,
+     "names_ranked": 31746,
+     "top1pct": {
+      "names_in_class": 317.0,
+      "names_active_in_a_or_b": 289.5,
+      "output_a": 553.8607142857143,
+      "output_b": 539.1166666666667,
+      "growth": -0.0266204972455254,
+      "share_of_output_a": 0.028213576195085032,
+      "share_of_change": -0.02651807125727984
+     },
+     "next9pct": {
+      "names_in_class": 2857.0,
+      "names_active_in_a_or_b": 2274.887755102041,
+      "output_a": 2347.779184213368,
+      "output_b": 2253.429247283329,
+      "growth": -0.04018688706521234,
+      "share_of_output_a": 0.11959549611397116,
+      "share_of_change": -0.1696941311691347
+     },
+     "bottom90pct": {
+      "names_in_class": 28572.0,
+      "names_active_in_a_or_b": 14772.612244897959,
+      "output_a": 8471.007041434623,
+      "output_b": 8207.887369433287,
+      "growth": -0.031061203315535746,
+      "share_of_output_a": 0.43151174374380435,
+      "share_of_change": -0.47323682014628754
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 23256.0,
+      "output_a": 8258.353060066294,
+      "output_b": 9186.566716616717,
+      "growth": 0.11239694522614307,
+      "share_of_output_a": 0.42067918394713943,
+      "share_of_change": 1.6694490225727023
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.13452357161889536,
+      "share_of_change_from_names_in_ranking_top1pct": 0.024790167865707438,
+      "names_also_in_ranking_top1pct": 85.0,
+      "names": 405.0
+     }
+    },
+    "2025-Q3_to_2026-Q3": {
+     "total_a": 8035.0,
+     "total_b": 12559.0,
+     "growth": 0.5630367143746111,
+     "names_ranked": 33980,
+     "top1pct": {
+      "names_in_class": 339.0,
+      "names_active_in_a_or_b": 278.1326530612245,
+      "output_a": 267.487074829932,
+      "output_b": 365.4840986394558,
+      "growth": 0.36636171625051484,
+      "share_of_output_a": 0.03329023955568538,
+      "share_of_change": 0.021661587933139655
+     },
+     "next9pct": {
+      "names_in_class": 3059.0,
+      "names_active_in_a_or_b": 1844.8387755102042,
+      "output_a": 934.2614689933945,
+      "output_b": 1457.7981235827665,
+      "growth": 0.5603748757330733,
+      "share_of_output_a": 0.11627398494006154,
+      "share_of_change": 0.11572428262364545
+     },
+     "bottom90pct": {
+      "names_in_class": 30582.0,
+      "names_active_in_a_or_b": 10080.028571428571,
+      "output_a": 3525.0697964113183,
+      "output_b": 5070.9473232323235,
+      "growth": 0.4385381328888236,
+      "share_of_output_a": 0.4387143492733439,
+      "share_of_change": 0.3417059077853681
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 12720.0,
+      "output_a": 3308.1816597653556,
+      "output_b": 5664.770454545454,
+      "growth": 0.7123516895826236,
+      "share_of_output_a": 0.41172142623090924,
+      "share_of_change": 0.5209082216578468
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1344237009569522,
+      "share_of_change_from_names_in_ranking_top1pct": 0.007469271970503498,
+      "names_also_in_ranking_top1pct": 42.416326530612245,
+      "names": 249.0
+     }
+    },
+    "2025-JanAug_to_2026-JanAug": {
+     "total_a": 20187.0,
+     "total_b": 25456.0,
+     "growth": 0.26100956060831226,
+     "names_ranked": 33822,
+     "top1pct": {
+      "names_in_class": 338.0,
+      "names_active_in_a_or_b": 311.4313725490196,
+      "output_a": 600.0929738562091,
+      "output_b": 683.1613056333645,
+      "growth": 0.1384257696659179,
+      "share_of_output_a": 0.02972670401031402,
+      "share_of_change": 0.015765483351139746
+     },
+     "next9pct": {
+      "names_in_class": 3044.0,
+      "names_active_in_a_or_b": 2474.4803921568628,
+      "output_a": 2433.10058356676,
+      "output_b": 2960.713240245593,
+      "growth": 0.21684786080869234,
+      "share_of_output_a": 0.12052809152260169,
+      "share_of_change": 0.10013525463633194
+     },
+     "bottom90pct": {
+      "names_in_class": 30440.0,
+      "names_active_in_a_or_b": 16193.088235294117,
+      "output_a": 8975.275806546395,
+      "output_b": 10300.80190313499,
+      "growth": 0.1476863915002793,
+      "share_of_output_a": 0.44460671751852154,
+      "share_of_change": 0.25157071485834037
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 24985.0,
+      "output_a": 8178.530636030636,
+      "output_b": 11511.323550986051,
+      "growth": 0.40750509636446774,
+      "share_of_output_a": 0.40513848694856275,
+      "share_of_change": 0.6325285471541878
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1312532351461493,
+      "share_of_change_from_names_in_ranking_top1pct": 0.015210256515672212,
+      "names_also_in_ranking_top1pct": 86.63725490196079,
+      "names": 439.0
+     }
+    }
+   }
+  }
+ },
+ "theory_max50_authors": {
+  "all_names": {
+   "independent_window": {
+    "2020-Q3_to_2021-Q3": {
+     "total_a": 3278.0,
+     "total_b": 3253.0,
+     "growth": -0.007626601586333104,
+     "names_ranked": 18934,
+     "top1pct": {
+      "names_in_class": 189.0,
+      "names_active_in_a_or_b": 167.0,
+      "output_a": 155.07738095238093,
+      "output_b": 145.27617789187556,
+      "growth": -0.06320201566671413,
+      "share_of_output_a": 0.04730853598303262,
+      "share_of_change": 0.3920481224202149
+     },
+     "next9pct": {
+      "names_in_class": 1704.0,
+      "names_active_in_a_or_b": 1196.2,
+      "output_a": 571.9308994708995,
+      "output_b": 520.1628340189262,
+      "growth": -0.09051454555063299,
+      "share_of_output_a": 0.17447556420710783,
+      "share_of_change": 2.07072261807893
+     },
+     "bottom90pct": {
+      "names_in_class": 17041.0,
+      "names_active_in_a_or_b": 5893.8,
+      "output_a": 1581.824233174233,
+      "output_b": 1558.5562726928554,
+      "growth": -0.01470957391687322,
+      "share_of_output_a": 0.48255772824107174,
+      "share_of_change": 0.9307184192551086
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 5117.0,
+      "output_a": 969.1674864024864,
+      "output_b": 1029.0047153963428,
+      "growth": 0.06174085473705904,
+      "share_of_output_a": 0.29565817156878776,
+      "share_of_change": -2.3934891597542585
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.623145299145299,
+      "share_of_change_from_names_in_ranking_top1pct": -0.21690476190476193,
+      "names_also_in_ranking_top1pct": 39.333333333333336,
+      "names": 123.0
+     }
+    },
+    "2020-JanAug_to_2021-JanAug": {
+     "total_a": 8444.0,
+     "total_b": 8444.0,
+     "growth": 0.0,
+     "names_ranked": 18456,
+     "top1pct": {
+      "names_in_class": 184.0,
+      "names_active_in_a_or_b": 176.125,
+      "output_a": 425.12113095238095,
+      "output_b": 392.79199407552653,
+      "growth": -0.07604688293058692,
+      "share_of_output_a": 0.05034594160970878,
+      "share_of_change": null
+     },
+     "next9pct": {
+      "names_in_class": 1661.0,
+      "names_active_in_a_or_b": 1485.1661392405063,
+      "output_a": 1501.176425651821,
+      "output_b": 1396.459494138057,
+      "growth": -0.0697565787234471,
+      "share_of_output_a": 0.1777802493666297,
+      "share_of_change": null
+     },
+     "bottom90pct": {
+      "names_in_class": 16611.0,
+      "names_active_in_a_or_b": 9293.708860759494,
+      "output_a": 4088.057662170393,
+      "output_b": 3892.980408248236,
+      "growth": -0.047718811729917876,
+      "share_of_output_a": 0.484137572497678,
+      "share_of_change": null
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 11388.0,
+      "output_a": 2429.6447812254046,
+      "output_b": 2761.76810353818,
+      "growth": 0.13669624666090785,
+      "share_of_output_a": 0.2877362365259835,
+      "share_of_change": null
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": null,
+      "share_of_change_from_names_in_ranking_top1pct": null,
+      "names_also_in_ranking_top1pct": 75.75,
+      "names": 223.0
+     }
+    },
+    "2021-Q3_to_2022-Q3": {
+     "total_a": 3253.0,
+     "total_b": 3362.0,
+     "growth": 0.03350753150937602,
+     "names_ranked": 19667,
+     "top1pct": {
+      "names_in_class": 196.0,
+      "names_active_in_a_or_b": 167.47619047619048,
+      "output_a": 161.76037554177088,
+      "output_b": 162.47965772254565,
+      "growth": 0.004446590695439179,
+      "share_of_output_a": 0.04972652183884749,
+      "share_of_change": 0.006598919089676781
+     },
+     "next9pct": {
+      "names_in_class": 1770.0,
+      "names_active_in_a_or_b": 1251.5238095238096,
+      "output_a": 559.5261761836774,
+      "output_b": 533.7793464838059,
+      "growth": -0.04601541589257041,
+      "share_of_output_a": 0.17200312824582767,
+      "share_of_change": -0.23620944678781255
+     },
+     "bottom90pct": {
+      "names_in_class": 17701.0,
+      "names_active_in_a_or_b": 6127.0,
+      "output_a": 1584.957070763234,
+      "output_b": 1593.8437606879033,
+      "growth": 0.005606896293026908,
+      "share_of_output_a": 0.48722934852850724,
+      "share_of_change": 0.08152926536393877
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 5357.0,
+      "output_a": 946.7563775113175,
+      "output_b": 1071.897235105745,
+      "growth": 0.13217852086022153,
+      "share_of_output_a": 0.29104100138681754,
+      "share_of_change": 1.1480812623341976
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.1025558537227368,
+      "share_of_change_from_names_in_ranking_top1pct": 0.03624734897537328,
+      "names_also_in_ranking_top1pct": 51.19047619047619,
+      "names": 129.0
+     }
+    },
+    "2021-JanAug_to_2022-JanAug": {
+     "total_a": 8444.0,
+     "total_b": 8777.0,
+     "growth": 0.03943628612032213,
+     "names_ranked": 19503,
+     "top1pct": {
+      "names_in_class": 195.0,
+      "names_active_in_a_or_b": 186.54545454545453,
+      "output_a": 455.50172708246265,
+      "output_b": 412.64190472428965,
+      "growth": -0.09409365499598599,
+      "share_of_output_a": 0.05394383314572035,
+      "share_of_change": -0.1287081752497688
+     },
+     "next9pct": {
+      "names_in_class": 1755.0,
+      "names_active_in_a_or_b": 1581.4545454545455,
+      "output_a": 1481.176786463382,
+      "output_b": 1496.1961256187597,
+      "growth": 0.010140139443610474,
+      "share_of_output_a": 0.17541174638363122,
+      "share_of_change": 0.04510312058671941
+     },
+     "bottom90pct": {
+      "names_in_class": 17553.0,
+      "names_active_in_a_or_b": 9656.0,
+      "output_a": 4070.1874004815822,
+      "output_b": 4007.953300618462,
+      "growth": -0.015290229598705185,
+      "share_of_output_a": 0.48202124591207746,
+      "share_of_change": -0.18688918877813893
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 11844.0,
+      "output_a": 2437.134085972573,
+      "output_b": 2860.2086690384886,
+      "growth": 0.1735951195713885,
+      "share_of_output_a": 0.2886231745585709,
+      "share_of_change": 1.2704942434411883
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.05260123849988512,
+      "share_of_change_from_names_in_ranking_top1pct": -0.08272789100519501,
+      "names_also_in_ranking_top1pct": 89.42424242424242,
+      "names": 232.0
+     }
+    },
+    "2022-Q3_to_2023-Q3": {
+     "total_a": 3362.0,
+     "total_b": 3490.0,
+     "growth": 0.03807257584770962,
+     "names_ranked": 20872,
+     "top1pct": {
+      "names_in_class": 208.0,
+      "names_active_in_a_or_b": 185.0,
+      "output_a": 170.8706481018981,
+      "output_b": 160.28687652926783,
+      "growth": -0.06194025533465919,
+      "share_of_output_a": 0.05082410710942835,
+      "share_of_change": -0.08268571541117398
+     },
+     "next9pct": {
+      "names_in_class": 1879.0,
+      "names_active_in_a_or_b": 1365.6296296296296,
+      "output_a": 594.2033709741715,
+      "output_b": 621.1997294532308,
+      "growth": 0.045432859855372154,
+      "share_of_output_a": 0.17674103836233537,
+      "share_of_change": 0.21090905061765053
+     },
+     "bottom90pct": {
+      "names_in_class": 18785.0,
+      "names_active_in_a_or_b": 6467.37037037037,
+      "output_a": 1637.9072952768856,
+      "output_b": 1595.7915120233035,
+      "growth": -0.02571316665786172,
+      "share_of_output_a": 0.48718241977301774,
+      "share_of_change": -0.3290295566686101
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 5389.0,
+      "output_a": 959.0186856470448,
+      "output_b": 1112.7218819941977,
+      "growth": 0.1602713259371482,
+      "share_of_output_a": 0.28525243475521855,
+      "share_of_change": 1.2008062214621322
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.027461557539682525,
+      "share_of_change_from_names_in_ranking_top1pct": -0.03436055589375901,
+      "names_also_in_ranking_top1pct": 48.8,
+      "names": 134.0
+     }
+    },
+    "2022-JanAug_to_2023-JanAug": {
+     "total_a": 8777.0,
+     "total_b": 8780.0,
+     "growth": 0.0003418024381907081,
+     "names_ranked": 20155,
+     "top1pct": {
+      "names_in_class": 201.0,
+      "names_active_in_a_or_b": 196.91304347826087,
+      "output_a": 459.7750179374048,
+      "output_b": 423.61079400775805,
+      "growth": -0.07865634825459411,
+      "share_of_output_a": 0.05238407405006321,
+      "share_of_change": -12.054741309882255
+     },
+     "next9pct": {
+      "names_in_class": 1814.0,
+      "names_active_in_a_or_b": 1635.535232383808,
+      "output_a": 1572.6831610412823,
+      "output_b": 1467.78328569723,
+      "growth": -0.06670121353279934,
+      "share_of_output_a": 0.1791823129818027,
+      "share_of_change": -34.96662511468412
+     },
+     "bottom90pct": {
+      "names_in_class": 18140.0,
+      "names_active_in_a_or_b": 10139.551724137931,
+      "output_a": 4283.556176444752,
+      "output_b": 3961.488085469716,
+      "growth": -0.07518708234669269,
+      "share_of_output_a": 0.48804331507858634,
+      "share_of_change": -107.35603032501194
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 12124.0,
+      "output_a": 2460.985644576561,
+      "output_b": 2927.117834825295,
+      "growth": 0.1894087400615201,
+      "share_of_output_a": 0.2803902978895478,
+      "share_of_change": 155.3773967495781
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -8.443837950436416,
+      "share_of_change_from_names_in_ranking_top1pct": -11.613502171473185,
+      "names_also_in_ranking_top1pct": 91.34782608695652,
+      "names": 240.0
+     }
+    },
+    "2023-Q3_to_2024-Q3": {
+     "total_a": 3490.0,
+     "total_b": 3615.0,
+     "growth": 0.035816618911174825,
+     "names_ranked": 20909,
+     "top1pct": {
+      "names_in_class": 209.0,
+      "names_active_in_a_or_b": 181.0,
+      "output_a": 156.79067225045486,
+      "output_b": 161.14964985994396,
+      "growth": 0.02780125594796945,
+      "share_of_output_a": 0.04492569405457159,
+      "share_of_change": 0.03487182087591282
+     },
+     "next9pct": {
+      "names_in_class": 1881.0,
+      "names_active_in_a_or_b": 1363.3,
+      "output_a": 604.6492950004051,
+      "output_b": 630.485417454146,
+      "growth": 0.04272910374223393,
+      "share_of_output_a": 0.17325194699152008,
+      "share_of_change": 0.2066889796299274
+     },
+     "bottom90pct": {
+      "names_in_class": 18819.0,
+      "names_active_in_a_or_b": 6532.7,
+      "output_a": 1699.6285964808199,
+      "output_b": 1648.791456436082,
+      "growth": -0.029910734704040154,
+      "share_of_output_a": 0.4869995978455071,
+      "share_of_change": -0.4066971203579033
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 5793.0,
+      "output_a": 1028.93143626832,
+      "output_b": 1174.573476249828,
+      "growth": 0.14154688529073955,
+      "share_of_output_a": 0.29482276110840117,
+      "share_of_change": 1.165136319852063
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.0063460317460317375,
+      "share_of_change_from_names_in_ranking_top1pct": 0.0643142857142857,
+      "names_also_in_ranking_top1pct": 40.5,
+      "names": 138.0
+     }
+    },
+    "2023-JanAug_to_2024-JanAug": {
+     "total_a": 8780.0,
+     "total_b": 9306.0,
+     "growth": 0.05990888382687931,
+     "names_ranked": 21015,
+     "top1pct": {
+      "names_in_class": 210.0,
+      "names_active_in_a_or_b": 202.0,
+      "output_a": 442.36423583662713,
+      "output_b": 423.6788706700736,
+      "growth": -0.04223977359113262,
+      "share_of_output_a": 0.05038317036863635,
+      "share_of_change": -0.03552350792120444
+     },
+     "next9pct": {
+      "names_in_class": 1891.0,
+      "names_active_in_a_or_b": 1706.0576923076924,
+      "output_a": 1561.6649380340436,
+      "output_b": 1536.0313212552242,
+      "growth": -0.016414287184477128,
+      "share_of_output_a": 0.17786616606310293,
+      "share_of_change": -0.048733111746805106
+     },
+     "bottom90pct": {
+      "names_in_class": 18914.0,
+      "names_active_in_a_or_b": 10271.942307692309,
+      "output_a": 4203.117946113494,
+      "output_b": 4275.05280701141,
+      "growth": 0.017114642467844998,
+      "share_of_output_a": 0.4787150280311497,
+      "share_of_change": 0.13675829068044737
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 12417.0,
+      "output_a": 2572.8528800158347,
+      "output_b": 3071.237001063292,
+      "growth": 0.1937087522254246,
+      "share_of_output_a": 0.293035635537111,
+      "share_of_change": 0.9474983289875618
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.10216377640123192,
+      "share_of_change_from_names_in_ranking_top1pct": -0.0034457226072862816,
+      "names_also_in_ranking_top1pct": 95.2,
+      "names": 245.0
+     }
+    },
+    "2024-Q3_to_2025-Q3": {
+     "total_a": 3615.0,
+     "total_b": 4039.0,
+     "growth": 0.11728907330567084,
+     "names_ranked": 21673,
+     "top1pct": {
+      "names_in_class": 216.0,
+      "names_active_in_a_or_b": 193.0,
+      "output_a": 193.4146608946609,
+      "output_b": 200.73408179539757,
+      "growth": 0.037843154530684986,
+      "share_of_output_a": 0.05350336400958808,
+      "share_of_change": 0.017262785143246872
+     },
+     "next9pct": {
+      "names_in_class": 1951.0,
+      "names_active_in_a_or_b": 1406.6567164179105,
+      "output_a": 588.1573421361367,
+      "output_b": 677.9923016017979,
+      "growth": 0.15273967190376037,
+      "share_of_output_a": 0.16269912645536283,
+      "share_of_change": 0.21187490440014434
+     },
+     "bottom90pct": {
+      "names_in_class": 19506.0,
+      "names_active_in_a_or_b": 6946.3432835820895,
+      "output_a": 1775.149430959011,
+      "output_b": 1871.2340915810425,
+      "growth": 0.05412764635263567,
+      "share_of_output_a": 0.4910510182459228,
+      "share_of_change": 0.22661476561799906
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 6109.0,
+      "output_a": 1058.2785660101915,
+      "output_b": 1289.0395250217618,
+      "growth": 0.21805313499030832,
+      "share_of_output_a": 0.2927464912891263,
+      "share_of_change": 0.5442475448386093
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.15339956165427862,
+      "share_of_change_from_names_in_ranking_top1pct": 0.025676406926406926,
+      "names_also_in_ranking_top1pct": 62.0,
+      "names": 146.0
+     }
+    },
+    "2024-JanAug_to_2025-JanAug": {
+     "total_a": 9306.0,
+     "total_b": 9659.0,
+     "growth": 0.03793251665592101,
+     "names_ranked": 21217,
+     "top1pct": {
+      "names_in_class": 212.0,
+      "names_active_in_a_or_b": 204.2,
+      "output_a": 457.15142839013134,
+      "output_b": 481.09343419738155,
+      "growth": 0.05237215574620979,
+      "share_of_output_a": 0.04912437442404162,
+      "share_of_change": 0.06782437905736603
+     },
+     "next9pct": {
+      "names_in_class": 1909.0,
+      "names_active_in_a_or_b": 1729.9333333333334,
+      "output_a": 1664.820341580827,
+      "output_b": 1650.0277639331587,
+      "growth": -0.00888538977942932,
+      "share_of_output_a": 0.17889752219867044,
+      "share_of_change": -0.041905319115207916
+     },
+     "bottom90pct": {
+      "names_in_class": 19096.0,
+      "names_active_in_a_or_b": 10704.866666666667,
+      "output_a": 4468.563942075945,
+      "output_b": 4356.285317042612,
+      "growth": -0.02512633286414878,
+      "share_of_output_a": 0.4801809522970068,
+      "share_of_change": -0.31806975930122633
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 13200.0,
+      "output_a": 2715.4642879530957,
+      "output_b": 3171.593484826847,
+      "growth": 0.16797466234313085,
+      "share_of_output_a": 0.2917971510802811,
+      "share_of_change": 1.2921506993590692
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.22974681546721865,
+      "share_of_change_from_names_in_ranking_top1pct": 0.09367705728675349,
+      "names_also_in_ranking_top1pct": 95.46666666666667,
+      "names": 258.0
+     }
+    },
+    "2025-Q3_to_2026-Q3": {
+     "total_a": 4039.0,
+     "total_b": 5099.0,
+     "growth": 0.262441198316415,
+     "names_ranked": 22686,
+     "top1pct": {
+      "names_in_class": 226.0,
+      "names_active_in_a_or_b": 211.0,
+      "output_a": 236.31190476190474,
+      "output_b": 239.88537157287158,
+      "growth": 0.01512182306078591,
+      "share_of_output_a": 0.058507527794480006,
+      "share_of_change": 0.0033711951046856933
+     },
+     "next9pct": {
+      "names_in_class": 2042.0,
+      "names_active_in_a_or_b": 1545.04,
+      "output_a": 724.637646230962,
+      "output_b": 849.184663336307,
+      "growth": 0.17187489188996463,
+      "share_of_output_a": 0.17941016247362268,
+      "share_of_change": 0.11749718594843872
+     },
+     "bottom90pct": {
+      "names_in_class": 20418.0,
+      "names_active_in_a_or_b": 7630.96,
+      "output_a": 1911.269890676575,
+      "output_b": 2302.993353948195,
+      "growth": 0.20495455151702968,
+      "share_of_output_a": 0.473203736240796,
+      "share_of_change": 0.36955043704869805
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 7145.0,
+      "output_a": 1166.7805583305583,
+      "output_b": 1706.9366111426261,
+      "growth": 0.46294570898998244,
+      "share_of_output_a": 0.28887857349110135,
+      "share_of_change": 0.5095811818981772
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.11396784546152972,
+      "share_of_change_from_names_in_ranking_top1pct": -0.00412232394584379,
+      "names_also_in_ranking_top1pct": 58.48275862068966,
+      "names": 165.0
+     }
+    },
+    "2025-JanAug_to_2026-JanAug": {
+     "total_a": 9659.0,
+     "total_b": 11338.0,
+     "growth": 0.17382751837664356,
+     "names_ranked": 22160,
+     "top1pct": {
+      "names_in_class": 221.0,
+      "names_active_in_a_or_b": 214.0,
+      "output_a": 516.4676748689907,
+      "output_b": 567.256150617675,
+      "growth": 0.09833815013024294,
+      "share_of_output_a": 0.05347009782265148,
+      "share_of_change": 0.030249241065327146
+     },
+     "next9pct": {
+      "names_in_class": 1995.0,
+      "names_active_in_a_or_b": 1827.4666666666667,
+      "output_a": 1765.0657315995977,
+      "output_b": 1893.7398024636182,
+      "growth": 0.07290044136056562,
+      "share_of_output_a": 0.18273793680501063,
+      "share_of_change": 0.07663732630376441
+     },
+     "bottom90pct": {
+      "names_in_class": 19944.0,
+      "names_active_in_a_or_b": 11386.533333333333,
+      "output_a": 4552.868627075107,
+      "output_b": 5116.412174365455,
+      "growth": 0.12377768687175683,
+      "share_of_output_a": 0.4713602471348076,
+      "share_of_change": 0.3356423748006839
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 14315.0,
+      "output_a": 2824.5979664563047,
+      "output_b": 3760.591872553252,
+      "growth": 0.33137243501992253,
+      "share_of_output_a": 0.2924317182375302,
+      "share_of_change": 0.5574710578302247
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.12222542314702436,
+      "share_of_change_from_names_in_ranking_top1pct": 0.015191759607295177,
+      "names_also_in_ranking_top1pct": 97.22222222222223,
+      "names": 277.0
+     }
+    }
+   },
+   "uniform_scaling": {
+    "2025-Q3_to_2026-Q3": {
+     "observed": {
+      "a": {
+       "active": 9131,
+       "top1": 0.058639067323147546,
+       "top10": 0.29535986626231736,
+       "papers": 4039
+      },
+      "b": {
+       "active": 10718,
+       "top1": 0.0651894155179113,
+       "top10": 0.3088242513257889,
+       "papers": 5099
+      }
+     },
+     "paper_growth": 0.262441198316415,
+     "observed_change_top1": 0.006550348194763751,
+     "observed_change_top10": 0.013464385063471529,
+     "observed_active_growth": 0.1738035264483626,
+     "reps": 100,
+     "gamma": {
+      "calibration": {
+       "model": "gamma",
+       "parameter": 0.01,
+       "pool": 1646576,
+       "top1_sim": 0.04881136394976779,
+       "active_sim": 9161.0,
+       "top10_sim": 0.2834773248213587
+      },
+      "null_change_top1": {
+       "mean": 0.002442846990373748,
+       "sd": 0.001765131486076152
+      },
+      "null_change_top10": {
+       "mean": 0.004836846226509822,
+       "sd": 0.003973793991486648
+      },
+      "null_active_growth": 0.1918498656967114,
+      "mechanical_fraction_top1": 0.37293391400575054,
+      "mechanical_fraction_top10": 0.35923261283072183
+     },
+     "lognormal": {
+      "calibration": {
+       "model": "lognormal",
+       "parameter": 1.25,
+       "pool": 62519,
+       "top1_sim": 0.05747787515936224,
+       "active_sim": 9139.6,
+       "top10_sim": 0.29398998418795524
+      },
+      "null_change_top1": {
+       "mean": 0.004094323094534272,
+       "sd": 0.002234441861401252
+      },
+      "null_change_top10": {
+       "mean": 0.006427861269245708,
+       "sd": 0.0041093110830580275
+      },
+      "null_active_growth": 0.1960253472029156,
+      "mechanical_fraction_top1": 0.6250542677726982,
+      "mechanical_fraction_top10": 0.47739731439234473
+     }
+    },
+    "2025-JanAug_to_2026-JanAug": {
+     "observed": {
+      "a": {
+       "active": 17464,
+       "top1": 0.0740502579048304,
+       "top10": 0.33250165666871945,
+       "papers": 9659
+      },
+      "b": {
+       "active": 19199,
+       "top1": 0.08128491845858224,
+       "top10": 0.3537855792923466,
+       "papers": 11338
+      }
+     },
+     "paper_growth": 0.17382751837664356,
+     "observed_change_top1": 0.00723466055375184,
+     "observed_change_top10": 0.02128392262362716,
+     "observed_active_growth": 0.09934722858451672,
+     "reps": 100,
+     "gamma": {
+      "calibration": {
+       "model": "gamma",
+       "parameter": 0.01,
+       "pool": 1826396,
+       "top1_sim": 0.055936245294637275,
+       "active_sim": 17487.2,
+       "top10_sim": 0.309122765001292
+      },
+      "null_change_top1": {
+       "mean": 0.0020324389881345713,
+       "sd": 0.0013878925312682234
+      },
+      "null_change_top10": {
+       "mean": 0.007073104333454322,
+       "sd": 0.0025884385135325925
+      },
+      "null_active_growth": 0.1064535951542266,
+      "mechanical_fraction_top1": 0.2809308015260735,
+      "mechanical_fraction_top10": 0.3323214643527462
+     },
+     "lognormal": {
+      "calibration": {
+       "model": "lognormal",
+       "parameter": 1.25,
+       "pool": 65097,
+       "top1_sim": 0.07213110542423858,
+       "active_sim": 17538.2,
+       "top10_sim": 0.32720654015075684
+      },
+      "null_change_top1": {
+       "mean": 0.003635255214494263,
+       "sd": 0.0020445731314709865
+      },
+      "null_change_top10": {
+       "mean": 0.008832770089482793,
+       "sd": 0.003084092568009705
+      },
+      "null_active_growth": 0.11118566700339416,
+      "mechanical_fraction_top1": 0.5024776473595637,
+      "mechanical_fraction_top10": 0.4149972843670079
+     }
+    }
+   }
+  },
+  "full_first_names_no_top1pct_surnames": {
+   "independent_window": {
+    "2020-Q3_to_2021-Q3": {
+     "total_a": 2334.0,
+     "total_b": 2377.0,
+     "growth": 0.018423307626392438,
+     "names_ranked": 10871,
+     "top1pct": {
+      "names_in_class": 108.0,
+      "names_active_in_a_or_b": 90.26666666666667,
+      "output_a": 90.93730158730159,
+      "output_b": 82.86904761904762,
+      "growth": -0.08872326127368413,
+      "share_of_output_a": 0.03896199725248568,
+      "share_of_change": -0.1876338132152086
+     },
+     "next9pct": {
+      "names_in_class": 979.0,
+      "names_active_in_a_or_b": 673.4606060606061,
+      "output_a": 392.0394841269841,
+      "output_b": 357.741292747999,
+      "growth": -0.08748657410199967,
+      "share_of_output_a": 0.16796893064566587,
+      "share_of_change": -0.7976323576508165
+     },
+     "bottom90pct": {
+      "names_in_class": 9784.0,
+      "names_active_in_a_or_b": 3540.2727272727275,
+      "output_a": 1150.3892778115603,
+      "output_b": 1191.041801572735,
+      "growth": 0.03533805864264483,
+      "share_of_output_a": 0.4928831524471124,
+      "share_of_change": 0.945407529329645
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 2864.0,
+      "output_a": 700.6339364741539,
+      "output_b": 745.3478580602182,
+      "growth": 0.06381923463639394,
+      "share_of_output_a": 0.300185919654736,
+      "share_of_change": 1.0398586415363795
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.13446419640624444,
+      "share_of_change_from_names_in_ranking_top1pct": -0.10913621262458473,
+      "names_also_in_ranking_top1pct": 16.176190476190477,
+      "names": 71.0
+     }
+    },
+    "2020-JanAug_to_2021-JanAug": {
+     "total_a": 6031.0,
+     "total_b": 6136.0,
+     "growth": 0.017410048084894658,
+     "names_ranked": 10637,
+     "top1pct": {
+      "names_in_class": 106.0,
+      "names_active_in_a_or_b": 101.0,
+      "output_a": 249.9722582972583,
+      "output_b": 238.50238095238095,
+      "growth": -0.04588460104736014,
+      "share_of_output_a": 0.04144789558899988,
+      "share_of_change": -0.10923692709406997
+     },
+     "next9pct": {
+      "names_in_class": 957.0,
+      "names_active_in_a_or_b": 849.0,
+      "output_a": 1043.073425733623,
+      "output_b": 939.9201643138131,
+      "growth": -0.09889357630529161,
+      "share_of_output_a": 0.1729519856961736,
+      "share_of_change": -0.9824120135219996
+     },
+     "bottom90pct": {
+      "names_in_class": 9574.0,
+      "names_active_in_a_or_b": 5581.0,
+      "output_a": 3015.7185690962656,
+      "output_b": 2951.371366356546,
+      "growth": -0.02133727045989009,
+      "share_of_output_a": 0.5000362409378653,
+      "share_of_change": -0.6128305022830448
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 6240.0,
+      "output_a": 1722.235746872853,
+      "output_b": 2006.2060883772597,
+      "growth": 0.16488470990108373,
+      "share_of_output_a": 0.2855638777769612,
+      "share_of_change": 2.704479442899111
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.1907225399120221,
+      "share_of_change_from_names_in_ranking_top1pct": -0.0010245310245309979,
+      "names_also_in_ranking_top1pct": 38.0,
+      "names": 127.0
+     }
+    },
+    "2021-Q3_to_2022-Q3": {
+     "total_a": 2377.0,
+     "total_b": 2415.0,
+     "growth": 0.01598653765250324,
+     "names_ranked": 11242,
+     "top1pct": {
+      "names_in_class": 112.0,
+      "names_active_in_a_or_b": 95.0,
+      "output_a": 89.55499231950844,
+      "output_b": 96.50775978407557,
+      "growth": 0.07763684954336769,
+      "share_of_output_a": 0.0376756383338277,
+      "share_of_change": 0.18296756485702978
+     },
+     "next9pct": {
+      "names_in_class": 1012.0,
+      "names_active_in_a_or_b": 698.8913043478261,
+      "output_a": 386.44076260248244,
+      "output_b": 350.1572453934647,
+      "growth": -0.0938915371263287,
+      "share_of_output_a": 0.1625749947843847,
+      "share_of_change": -0.9548294002373094
+     },
+     "bottom90pct": {
+      "names_in_class": 10118.0,
+      "names_active_in_a_or_b": 3745.108695652174,
+      "output_a": 1204.2007694284657,
+      "output_b": 1191.162584069044,
+      "growth": -0.010827252141360044,
+      "share_of_output_a": 0.5066052879379326,
+      "share_of_change": -0.343110141037414
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 3054.0,
+      "output_a": 696.8034756495432,
+      "output_b": 777.1724107534158,
+      "growth": 0.11533945784204747,
+      "share_of_output_a": 0.29314407894385497,
+      "share_of_change": 2.114971976417699
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.36094856706984857,
+      "share_of_change_from_names_in_ranking_top1pct": 0.19927641684857303,
+      "names_also_in_ranking_top1pct": 23.0,
+      "names": 75.0
+     }
+    },
+    "2021-JanAug_to_2022-JanAug": {
+     "total_a": 6136.0,
+     "total_b": 6324.0,
+     "growth": 0.030638852672751016,
+     "names_ranked": 11112,
+     "top1pct": {
+      "names_in_class": 111.0,
+      "names_active_in_a_or_b": 110.0,
+      "output_a": 274.1372183819764,
+      "output_b": 247.470717688109,
+      "growth": -0.09727428056379761,
+      "share_of_output_a": 0.04467686088363371,
+      "share_of_change": -0.14184308879716712
+     },
+     "next9pct": {
+      "names_in_class": 1000.0,
+      "names_active_in_a_or_b": 891.0,
+      "output_a": 980.3655505409134,
+      "output_b": 1005.7432576638141,
+      "growth": 0.025885963770247322,
+      "share_of_output_a": 0.15977274291735877,
+      "share_of_change": 0.13498780384521641
+     },
+     "bottom90pct": {
+      "names_in_class": 10001.0,
+      "names_active_in_a_or_b": 5780.0,
+      "output_a": 3103.1206783864336,
+      "output_b": 3005.8914641423503,
+      "growth": -0.0313327209351848,
+      "share_of_output_a": 0.5057237089938778,
+      "share_of_change": -0.5171766715110815
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 6640.0,
+      "output_a": 1778.3765526906761,
+      "output_b": 2064.8945605057265,
+      "growth": 0.16111211508133638,
+      "share_of_output_a": 0.2898266872051298,
+      "share_of_change": 1.524031956463034
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.0210253841025659,
+      "share_of_change_from_names_in_ranking_top1pct": 0.020245427398282955,
+      "names_also_in_ranking_top1pct": 40.473684210526315,
+      "names": 134.0
+     }
+    },
+    "2022-Q3_to_2023-Q3": {
+     "total_a": 2415.0,
+     "total_b": 2574.0,
+     "growth": 0.06583850931677016,
+     "names_ranked": 12195,
+     "top1pct": {
+      "names_in_class": 121.0,
+      "names_active_in_a_or_b": 107.97142857142858,
+      "output_a": 103.12689208546594,
+      "output_b": 104.92142857142856,
+      "growth": 0.017401246655192715,
+      "share_of_output_a": 0.042702646826279896,
+      "share_of_change": 0.011286392993475622
+     },
+     "next9pct": {
+      "names_in_class": 1098.0,
+      "names_active_in_a_or_b": 774.6285714285714,
+      "output_a": 401.340209867036,
+      "output_b": 437.0845738252975,
+      "growth": 0.08906250377978231,
+      "share_of_output_a": 0.16618642230519087,
+      "share_of_change": 0.22480732049221097
+     },
+     "bottom90pct": {
+      "names_in_class": 10976.0,
+      "names_active_in_a_or_b": 3918.4,
+      "output_a": 1218.8288447625448,
+      "output_b": 1210.8104394947159,
+      "growth": -0.0065787787204782955,
+      "share_of_output_a": 0.5046910330279689,
+      "share_of_change": -0.050430221810244896
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 3101.0,
+      "output_a": 691.7040532849531,
+      "output_b": 821.1835581085581,
+      "growth": 0.18718916595717117,
+      "share_of_output_a": 0.2864198978405603,
+      "share_of_change": 0.8143365083245597
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.03701349011029077,
+      "share_of_change_from_names_in_ranking_top1pct": -0.0215865287076486,
+      "names_also_in_ranking_top1pct": 21.0,
+      "names": 79.0
+     }
+    },
+    "2022-JanAug_to_2023-JanAug": {
+     "total_a": 6324.0,
+     "total_b": 6409.0,
+     "growth": 0.013440860215053752,
+     "names_ranked": 11749,
+     "top1pct": {
+      "names_in_class": 117.0,
+      "names_active_in_a_or_b": 114.0,
+      "output_a": 285.3946074535933,
+      "output_b": 272.3095238095238,
+      "growth": -0.045849092107310474,
+      "share_of_output_a": 0.045128812057810455,
+      "share_of_change": -0.15394216051846504
+     },
+     "next9pct": {
+      "names_in_class": 1057.0,
+      "names_active_in_a_or_b": 962.0365853658536,
+      "output_a": 1096.8148201293263,
+      "output_b": 1020.9845699084447,
+      "growth": -0.06913678483295882,
+      "share_of_output_a": 0.17343687857832485,
+      "share_of_change": -0.8921205908339022
+     },
+     "bottom90pct": {
+      "names_in_class": 10575.0,
+      "names_active_in_a_or_b": 6188.963414634146,
+      "output_a": 3210.8014581411,
+      "output_b": 3021.3118777832256,
+      "growth": -0.05901628700130823,
+      "share_of_output_a": 0.5077168656137097,
+      "share_of_change": -2.229289180680874
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 6701.0,
+      "output_a": 1730.9891142759802,
+      "output_b": 2094.3940284988057,
+      "growth": 0.20994061211923132,
+      "share_of_output_a": 0.273717443750155,
+      "share_of_change": 4.275351932033241
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": -0.023289819392255797,
+      "share_of_change_from_names_in_ranking_top1pct": -0.25368789621111604,
+      "names_also_in_ranking_top1pct": 51.0,
+      "names": 139.0
+     }
+    },
+    "2023-Q3_to_2024-Q3": {
+     "total_a": 2574.0,
+     "total_b": 2707.0,
+     "growth": 0.05167055167055157,
+     "names_ranked": 12254,
+     "top1pct": {
+      "names_in_class": 122.0,
+      "names_active_in_a_or_b": 99.21428571428571,
+      "output_a": 90.65119047619048,
+      "output_b": 86.1484593837535,
+      "growth": -0.04967095378211961,
+      "share_of_output_a": 0.03521802271802272,
+      "share_of_change": -0.03385512099576672
+     },
+     "next9pct": {
+      "names_in_class": 1103.0,
+      "names_active_in_a_or_b": 777.7857142857143,
+      "output_a": 439.32133558449345,
+      "output_b": 455.85555272614096,
+      "growth": 0.03763581643411329,
+      "share_of_output_a": 0.17067650955108526,
+      "share_of_change": 0.1243174221176504
+     },
+     "bottom90pct": {
+      "names_in_class": 11029.0,
+      "names_active_in_a_or_b": 4059.0,
+      "output_a": 1306.1054456751824,
+      "output_b": 1289.7774267127209,
+      "growth": -0.012501302262024394,
+      "share_of_output_a": 0.5074224730672814,
+      "share_of_change": -0.122767059868132
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 3386.0,
+      "output_a": 737.9220282641335,
+      "output_b": 875.2185611773847,
+      "growth": 0.18605832005885992,
+      "share_of_output_a": 0.2866829946636105,
+      "share_of_change": 1.0323047587462497
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.03817316400244308,
+      "share_of_change_from_names_in_ranking_top1pct": -0.07636949516648764,
+      "names_also_in_ranking_top1pct": 16.285714285714285,
+      "names": 83.0
+     }
+    },
+    "2023-JanAug_to_2024-JanAug": {
+     "total_a": 6409.0,
+     "total_b": 6868.0,
+     "growth": 0.07161803713527859,
+     "names_ranked": 12394,
+     "top1pct": {
+      "names_in_class": 123.0,
+      "names_active_in_a_or_b": 120.10344827586206,
+      "output_a": 299.564082620344,
+      "output_b": 280.6514230979748,
+      "growth": -0.06313393567391834,
+      "share_of_output_a": 0.04674115815577219,
+      "share_of_change": -0.04120405124699162
+     },
+     "next9pct": {
+      "names_in_class": 1116.0,
+      "names_active_in_a_or_b": 983.7536945812808,
+      "output_a": 1051.4186498518623,
+      "output_b": 1045.957171123967,
+      "growth": -0.005194390197153731,
+      "share_of_output_a": 0.16405346385580624,
+      "share_of_change": -0.011898646466002517
+     },
+     "bottom90pct": {
+      "names_in_class": 11155.0,
+      "names_active_in_a_or_b": 6381.142857142857,
+      "output_a": 3208.1906849613056,
+      "output_b": 3290.084340738907,
+      "growth": 0.025526430259113164,
+      "share_of_output_a": 0.5005758597224693,
+      "share_of_change": 0.17841755071372867
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 6976.0,
+      "output_a": 1849.826582566488,
+      "output_b": 2251.3070650391505,
+      "growth": 0.21703682186015527,
+      "share_of_output_a": 0.28862951826595223,
+      "share_of_change": 0.8746851469992647
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.09051149710853398,
+      "share_of_change_from_names_in_ranking_top1pct": -0.005907966018519612,
+      "names_also_in_ranking_top1pct": 51.12643678160919,
+      "names": 144.0
+     }
+    },
+    "2024-Q3_to_2025-Q3": {
+     "total_a": 2707.0,
+     "total_b": 2982.0,
+     "growth": 0.10158847432582196,
+     "names_ranked": 12901,
+     "top1pct": {
+      "names_in_class": 129.0,
+      "names_active_in_a_or_b": 116.11111111111111,
+      "output_a": 114.51882975412387,
+      "output_b": 143.1081569664903,
+      "growth": 0.24964739225635446,
+      "share_of_output_a": 0.04230470253199995,
+      "share_of_change": 0.10396118986315064
+     },
+     "next9pct": {
+      "names_in_class": 1161.0,
+      "names_active_in_a_or_b": 787.3547979797979,
+      "output_a": 425.78488173047,
+      "output_b": 455.4863006592173,
+      "growth": 0.06975686597428066,
+      "share_of_output_a": 0.1572903146399963,
+      "share_of_change": 0.10800515974089939
+     },
+     "bottom90pct": {
+      "names_in_class": 11611.0,
+      "names_active_in_a_or_b": 4306.534090909091,
+      "output_a": 1375.3287374390316,
+      "output_b": 1413.1637293971078,
+      "growth": 0.02750978070052401,
+      "share_of_output_a": 0.5080638113923279,
+      "share_of_change": 0.13758178893845896
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 3570.0,
+      "output_a": 791.3675510763746,
+      "output_b": 970.2418129771845,
+      "growth": 0.22603183774406088,
+      "share_of_output_a": 0.2923411714356759,
+      "share_of_change": 0.6504518614574905
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.2009538676811404,
+      "share_of_change_from_names_in_ranking_top1pct": 0.06847968866150685,
+      "names_also_in_ranking_top1pct": 28.072951739618407,
+      "names": 87.0
+     }
+    },
+    "2024-JanAug_to_2025-JanAug": {
+     "total_a": 6868.0,
+     "total_b": 7129.0,
+     "growth": 0.03800232964472916,
+     "names_ranked": 12510,
+     "top1pct": {
+      "names_in_class": 125.0,
+      "names_active_in_a_or_b": 121.17241379310344,
+      "output_a": 291.3963054187192,
+      "output_b": 303.9025674819232,
+      "growth": 0.042918396117731294,
+      "share_of_output_a": 0.04242811668880594,
+      "share_of_change": 0.04791671288583915
+     },
+     "next9pct": {
+      "names_in_class": 1126.0,
+      "names_active_in_a_or_b": 1012.7418719211822,
+      "output_a": 1145.4994601295055,
+      "output_b": 1159.8253878652874,
+      "growth": 0.012506271922784196,
+      "share_of_output_a": 0.16678792372299148,
+      "share_of_change": 0.05488861201449038
+     },
+     "bottom90pct": {
+      "names_in_class": 11259.0,
+      "names_active_in_a_or_b": 6586.085714285714,
+      "output_a": 3407.9342017652284,
+      "output_b": 3259.8320017117344,
+      "growth": -0.04345805736999875,
+      "share_of_output_a": 0.4962047469081579,
+      "share_of_change": -0.5674413795153027
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 7479.0,
+      "output_a": 2023.1700326865466,
+      "output_b": 2405.440042941055,
+      "growth": 0.18894606191200647,
+      "share_of_output_a": 0.29457921268004467,
+      "share_of_change": 1.464636054614974
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.32434654092402804,
+      "share_of_change_from_names_in_ranking_top1pct": 0.07249459270705906,
+      "names_also_in_ranking_top1pct": 45.9973474801061,
+      "names": 151.0
+     }
+    },
+    "2025-Q3_to_2026-Q3": {
+     "total_a": 2982.0,
+     "total_b": 3735.0,
+     "growth": 0.2525150905432596,
+     "names_ranked": 13554,
+     "top1pct": {
+      "names_in_class": 135.0,
+      "names_active_in_a_or_b": 122.0,
+      "output_a": 158.34404761904761,
+      "output_b": 179.83809523809524,
+      "growth": 0.13574269410340656,
+      "share_of_output_a": 0.053099948899747694,
+      "share_of_change": 0.028544551950926454
+     },
+     "next9pct": {
+      "names_in_class": 1220.0,
+      "names_active_in_a_or_b": 892.5757575757576,
+      "output_a": 548.8422299922299,
+      "output_b": 594.3842168924986,
+      "growth": 0.0829782848541254,
+      "share_of_output_a": 0.18405172031932593,
+      "share_of_change": 0.06048072629517746
+     },
+     "bottom90pct": {
+      "names_in_class": 12199.0,
+      "names_active_in_a_or_b": 4716.424242424242,
+      "output_a": 1417.9876591245013,
+      "output_b": 1723.2943329116704,
+      "growth": 0.21530982432926993,
+      "share_of_output_a": 0.47551564692303866,
+      "share_of_change": 0.4054537500493613
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 4054.0,
+      "output_a": 856.8260632642211,
+      "output_b": 1237.4833549577359,
+      "growth": 0.44426437058104606,
+      "share_of_output_a": 0.2873326838578877,
+      "share_of_change": 0.5055209717045348
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.09933975939952035,
+      "share_of_change_from_names_in_ranking_top1pct": 0.019182002150129638,
+      "names_also_in_ranking_top1pct": 40.75,
+      "names": 97.0
+     }
+    },
+    "2025-JanAug_to_2026-JanAug": {
+     "total_a": 7129.0,
+     "total_b": 8234.0,
+     "growth": 0.1550007013606396,
+     "names_ranked": 13370,
+     "top1pct": {
+      "names_in_class": 133.0,
+      "names_active_in_a_or_b": 128.70731707317074,
+      "output_a": 354.1607239643825,
+      "output_b": 372.7231362418782,
+      "growth": 0.052412396467098166,
+      "share_of_output_a": 0.049678878379068946,
+      "share_of_change": 0.01679856314705493
+     },
+     "next9pct": {
+      "names_in_class": 1204.0,
+      "names_active_in_a_or_b": 1090.076466710613,
+      "output_a": 1270.66096600193,
+      "output_b": 1337.7021865949578,
+      "growth": 0.052760903487866884,
+      "share_of_output_a": 0.17823831757636838,
+      "share_of_change": 0.06067078786699337
+     },
+     "bottom90pct": {
+      "names_in_class": 12033.0,
+      "names_active_in_a_or_b": 7043.216216216216,
+      "output_a": 3464.3997553002373,
+      "output_b": 3820.5541360535167,
+      "growth": 0.1028040659015732,
+      "share_of_output_a": 0.4859587256698327,
+      "share_of_change": 0.3223116567902981
+     },
+     "not_active_in_ranking_window": {
+      "names_in_class": null,
+      "names_active_in_a_or_b": 7862.0,
+      "output_a": 2039.7785547334502,
+      "output_b": 2703.020541109647,
+      "growth": 0.3251539167509616,
+      "share_of_output_a": 0.28612407837473,
+      "share_of_change": 0.6002189921956534
+     },
+     "combined_top1pct": {
+      "share_of_change_from_names_not_in_ranking_top1pct": 0.09611828655625379,
+      "share_of_change_from_names_in_ranking_top1pct": 0.016021470831181623,
+      "names_also_in_ranking_top1pct": 50.79965156794425,
+      "names": 161.0
+     }
+    }
+   }
+  }
+ }
+}

@@ -29,7 +29,9 @@ import pandas as pd
 import statsmodels.api as sm
 
 RNG = np.random.default_rng(20261016)
-LAST = "2026-09"
+# STATS_LAST=2026-08 gives the January-August 2026 versions (round 2), written beside the main results
+LAST = os.environ.get("STATS_LAST", "2026-09")
+SUFFIX = "" if LAST == "2026-09" else f"_to_{LAST}"
 THEORY = ["hep-th", "hep-ph", "gr-qc", "nucl-th"]
 EXPERIMENT = ["hep-ex", "nucl-ex"]
 COMPUTATIONAL = ["bioinformatics", "systems biology", "genomics"]
@@ -400,7 +402,7 @@ def main(repo):
     neg["arxiv_all_archive_pairs"] = {"n_pairs": len(pair_logs), "archives": archives,
                                       "share_at_least_as_extreme_as_C1": float(np.mean(np.array(pair_logs) >= obs1))}
 
-    json.dump(results, open(os.path.join(out_dir, "within_field_tests.json"), "w"), indent=1, default=float)
+    json.dump(results, open(os.path.join(out_dir, f"within_field_tests{SUFFIX}.json"), "w"), indent=1, default=float)
     print(json.dumps(results, indent=1, default=float)[:6000])
 
 
