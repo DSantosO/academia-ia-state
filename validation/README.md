@@ -79,6 +79,7 @@ the classifier and the author ≥ 0.60 in each domain), and there is no adjudica
 | `sealed/nd_model_labels_arxiv_batches001-243.csv.gz` | `5377cff70f1b80104226b51c7b2716439bd7b0eed28486a8483fc9d52bb177ec` |
 | `sealed/nd_results_A-medrxiv.json.gz` | `e07ec58761bef9d4d94f48a155534fa631b9ca0367bc2c2e5c96dc3d767ee06e` |
 | `sealed/nd_model_labels_arxiv_batches244-255.csv.gz` | `9e8a114265ee99d9899a58dd06c034ce0461491c6da3c20cdd7c2f6d8dcb0c63` |
+| `sealed/nd_model_labels_arxiv_batches256-265.csv.gz` | `0cb7f57c45b4ccca0aa94192d42eb2e51278afad412e39ab94224a6f34090f61` |
 
 The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
 too, because a few papers on the sheet may also be in those samples. `nd_model_labels_arxiv_batches001-243.csv.gz`
