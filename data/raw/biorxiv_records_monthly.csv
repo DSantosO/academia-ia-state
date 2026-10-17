@@ -1,0 +1,2341 @@
+month,category,new_papers,listings_all_categories
+2019-01,animal behavior and cognition,28,2173
+2019-01,biochemistry,64,2173
+2019-01,bioengineering,41,2173
+2019-01,bioinformatics,184,2173
+2019-01,biophysics,91,2173
+2019-01,cancer biology,82,2173
+2019-01,cell biology,110,2173
+2019-01,clinical trials,7,2173
+2019-01,developmental biology,71,2173
+2019-01,ecology,91,2173
+2019-01,epidemiology,88,2173
+2019-01,evolutionary biology,114,2173
+2019-01,genetics,102,2173
+2019-01,genomics,117,2173
+2019-01,immunology,62,2173
+2019-01,microbiology,219,2173
+2019-01,molecular biology,80,2173
+2019-01,neuroscience,389,2173
+2019-01,paleontology,4,2173
+2019-01,pathology,9,2173
+2019-01,pharmacology and toxicology,29,2173
+2019-01,physiology,31,2173
+2019-01,plant biology,64,2173
+2019-01,scientific communication and education,18,2173
+2019-01,synthetic biology,17,2173
+2019-01,systems biology,53,2173
+2019-01,zoology,8,2173
+2019-02,animal behavior and cognition,28,2082
+2019-02,biochemistry,64,2082
+2019-02,bioengineering,52,2082
+2019-02,bioinformatics,171,2082
+2019-02,biophysics,81,2082
+2019-02,cancer biology,71,2082
+2019-02,cell biology,105,2082
+2019-02,clinical trials,6,2082
+2019-02,developmental biology,58,2082
+2019-02,ecology,88,2082
+2019-02,epidemiology,92,2082
+2019-02,evolutionary biology,112,2082
+2019-02,genetics,98,2082
+2019-02,genomics,114,2082
+2019-02,immunology,70,2082
+2019-02,microbiology,191,2082
+2019-02,molecular biology,74,2082
+2019-02,neuroscience,383,2082
+2019-02,paleontology,3,2082
+2019-02,pathology,20,2082
+2019-02,pharmacology and toxicology,22,2082
+2019-02,physiology,17,2082
+2019-02,plant biology,77,2082
+2019-02,scientific communication and education,13,2082
+2019-02,synthetic biology,9,2082
+2019-02,systems biology,50,2082
+2019-02,zoology,13,2082
+2019-03,animal behavior and cognition,36,2408
+2019-03,biochemistry,61,2408
+2019-03,bioengineering,62,2408
+2019-03,bioinformatics,181,2408
+2019-03,biophysics,95,2408
+2019-03,cancer biology,81,2408
+2019-03,cell biology,125,2408
+2019-03,clinical trials,3,2408
+2019-03,developmental biology,60,2408
+2019-03,ecology,97,2408
+2019-03,epidemiology,86,2408
+2019-03,evolutionary biology,131,2408
+2019-03,genetics,137,2408
+2019-03,genomics,135,2408
+2019-03,immunology,80,2408
+2019-03,microbiology,198,2408
+2019-03,molecular biology,88,2408
+2019-03,neuroscience,448,2408
+2019-03,paleontology,3,2408
+2019-03,pathology,21,2408
+2019-03,pharmacology and toxicology,30,2408
+2019-03,physiology,52,2408
+2019-03,plant biology,80,2408
+2019-03,scientific communication and education,18,2408
+2019-03,synthetic biology,23,2408
+2019-03,systems biology,62,2408
+2019-03,zoology,15,2408
+2019-04,animal behavior and cognition,32,2244
+2019-04,biochemistry,70,2244
+2019-04,bioengineering,50,2244
+2019-04,bioinformatics,181,2244
+2019-04,biophysics,111,2244
+2019-04,cancer biology,76,2244
+2019-04,cell biology,121,2244
+2019-04,clinical trials,3,2244
+2019-04,developmental biology,61,2244
+2019-04,ecology,97,2244
+2019-04,epidemiology,103,2244
+2019-04,evolutionary biology,99,2244
+2019-04,genetics,91,2244
+2019-04,genomics,131,2244
+2019-04,immunology,68,2244
+2019-04,microbiology,215,2244
+2019-04,molecular biology,82,2244
+2019-04,neuroscience,410,2244
+2019-04,paleontology,3,2244
+2019-04,pathology,13,2244
+2019-04,pharmacology and toxicology,16,2244
+2019-04,physiology,33,2244
+2019-04,plant biology,80,2244
+2019-04,scientific communication and education,18,2244
+2019-04,synthetic biology,22,2244
+2019-04,systems biology,45,2244
+2019-04,zoology,13,2244
+2019-05,animal behavior and cognition,34,2509
+2019-05,biochemistry,83,2509
+2019-05,bioengineering,67,2509
+2019-05,bioinformatics,223,2509
+2019-05,biophysics,129,2509
+2019-05,cancer biology,83,2509
+2019-05,cell biology,150,2509
+2019-05,clinical trials,6,2509
+2019-05,developmental biology,63,2509
+2019-05,ecology,93,2509
+2019-05,epidemiology,96,2509
+2019-05,evolutionary biology,117,2509
+2019-05,genetics,129,2509
+2019-05,genomics,133,2509
+2019-05,immunology,72,2509
+2019-05,microbiology,235,2509
+2019-05,molecular biology,67,2509
+2019-05,neuroscience,457,2509
+2019-05,paleontology,4,2509
+2019-05,pathology,16,2509
+2019-05,pharmacology and toxicology,30,2509
+2019-05,physiology,41,2509
+2019-05,plant biology,72,2509
+2019-05,scientific communication and education,15,2509
+2019-05,synthetic biology,15,2509
+2019-05,systems biology,68,2509
+2019-05,zoology,11,2509
+2019-06,animal behavior and cognition,27,2355
+2019-06,biochemistry,82,2355
+2019-06,bioengineering,67,2355
+2019-06,bioinformatics,203,2355
+2019-06,biophysics,107,2355
+2019-06,cancer biology,95,2355
+2019-06,cell biology,118,2355
+2019-06,clinical trials,5,2355
+2019-06,developmental biology,81,2355
+2019-06,ecology,100,2355
+2019-06,epidemiology,70,2355
+2019-06,evolutionary biology,102,2355
+2019-06,genetics,107,2355
+2019-06,genomics,119,2355
+2019-06,immunology,72,2355
+2019-06,microbiology,206,2355
+2019-06,molecular biology,95,2355
+2019-06,neuroscience,463,2355
+2019-06,paleontology,1,2355
+2019-06,pathology,12,2355
+2019-06,pharmacology and toxicology,21,2355
+2019-06,physiology,39,2355
+2019-06,plant biology,68,2355
+2019-06,scientific communication and education,9,2355
+2019-06,synthetic biology,23,2355
+2019-06,systems biology,47,2355
+2019-06,zoology,16,2355
+2019-07,animal behavior and cognition,41,2614
+2019-07,biochemistry,85,2614
+2019-07,bioengineering,69,2614
+2019-07,bioinformatics,210,2614
+2019-07,biophysics,112,2614
+2019-07,cancer biology,83,2614
+2019-07,cell biology,132,2614
+2019-07,developmental biology,89,2614
+2019-07,ecology,134,2614
+2019-07,epidemiology,9,2614
+2019-07,evolutionary biology,148,2614
+2019-07,genetics,122,2614
+2019-07,genomics,163,2614
+2019-07,immunology,91,2614
+2019-07,microbiology,248,2614
+2019-07,molecular biology,82,2614
+2019-07,neuroscience,485,2614
+2019-07,paleontology,3,2614
+2019-07,pathology,12,2614
+2019-07,pharmacology and toxicology,34,2614
+2019-07,physiology,45,2614
+2019-07,plant biology,86,2614
+2019-07,scientific communication and education,26,2614
+2019-07,synthetic biology,25,2614
+2019-07,systems biology,66,2614
+2019-07,zoology,14,2614
+2019-08,animal behavior and cognition,37,2375
+2019-08,biochemistry,94,2375
+2019-08,bioengineering,60,2375
+2019-08,bioinformatics,162,2375
+2019-08,biophysics,111,2375
+2019-08,cancer biology,94,2375
+2019-08,cell biology,134,2375
+2019-08,developmental biology,85,2375
+2019-08,ecology,116,2375
+2019-08,evolutionary biology,141,2375
+2019-08,genetics,123,2375
+2019-08,genomics,121,2375
+2019-08,immunology,83,2375
+2019-08,microbiology,229,2375
+2019-08,molecular biology,94,2375
+2019-08,neuroscience,432,2375
+2019-08,paleontology,4,2375
+2019-08,pathology,14,2375
+2019-08,pharmacology and toxicology,18,2375
+2019-08,physiology,42,2375
+2019-08,plant biology,76,2375
+2019-08,scientific communication and education,25,2375
+2019-08,synthetic biology,21,2375
+2019-08,systems biology,51,2375
+2019-08,zoology,8,2375
+2019-09,animal behavior and cognition,53,2644
+2019-09,biochemistry,84,2644
+2019-09,bioengineering,66,2644
+2019-09,bioinformatics,195,2644
+2019-09,biophysics,111,2644
+2019-09,cancer biology,111,2644
+2019-09,cell biology,129,2644
+2019-09,developmental biology,66,2644
+2019-09,ecology,123,2644
+2019-09,evolutionary biology,139,2644
+2019-09,genetics,125,2644
+2019-09,genomics,135,2644
+2019-09,immunology,97,2644
+2019-09,microbiology,226,2644
+2019-09,molecular biology,94,2644
+2019-09,neuroscience,543,2644
+2019-09,paleontology,4,2644
+2019-09,pathology,17,2644
+2019-09,pharmacology and toxicology,37,2644
+2019-09,physiology,61,2644
+2019-09,plant biology,93,2644
+2019-09,scientific communication and education,25,2644
+2019-09,synthetic biology,24,2644
+2019-09,systems biology,64,2644
+2019-09,zoology,22,2644
+2019-10,animal behavior and cognition,53,2909
+2019-10,biochemistry,94,2909
+2019-10,bioengineering,78,2909
+2019-10,bioinformatics,203,2909
+2019-10,biophysics,120,2909
+2019-10,cancer biology,111,2909
+2019-10,cell biology,158,2909
+2019-10,developmental biology,86,2909
+2019-10,ecology,139,2909
+2019-10,evolutionary biology,160,2909
+2019-10,genetics,153,2909
+2019-10,genomics,162,2909
+2019-10,immunology,97,2909
+2019-10,microbiology,231,2909
+2019-10,molecular biology,132,2909
+2019-10,neuroscience,597,2909
+2019-10,paleontology,3,2909
+2019-10,pathology,22,2909
+2019-10,pharmacology and toxicology,23,2909
+2019-10,physiology,40,2909
+2019-10,plant biology,101,2909
+2019-10,scientific communication and education,31,2909
+2019-10,synthetic biology,23,2909
+2019-10,systems biology,75,2909
+2019-10,zoology,17,2909
+2019-11,animal behavior and cognition,43,2564
+2019-11,biochemistry,95,2564
+2019-11,bioengineering,65,2564
+2019-11,bioinformatics,241,2564
+2019-11,biophysics,105,2564
+2019-11,cancer biology,121,2564
+2019-11,cell biology,151,2564
+2019-11,developmental biology,79,2564
+2019-11,ecology,110,2564
+2019-11,evolutionary biology,121,2564
+2019-11,genetics,123,2564
+2019-11,genomics,142,2564
+2019-11,immunology,85,2564
+2019-11,microbiology,231,2564
+2019-11,molecular biology,98,2564
+2019-11,neuroscience,481,2564
+2019-11,paleontology,5,2564
+2019-11,pathology,15,2564
+2019-11,pharmacology and toxicology,17,2564
+2019-11,physiology,38,2564
+2019-11,plant biology,109,2564
+2019-11,scientific communication and education,12,2564
+2019-11,synthetic biology,22,2564
+2019-11,systems biology,44,2564
+2019-11,zoology,11,2564
+2019-12,animal behavior and cognition,48,2302
+2019-12,biochemistry,80,2302
+2019-12,bioengineering,59,2302
+2019-12,bioinformatics,193,2302
+2019-12,biophysics,106,2302
+2019-12,cancer biology,80,2302
+2019-12,cell biology,131,2302
+2019-12,developmental biology,82,2302
+2019-12,ecology,96,2302
+2019-12,evolutionary biology,115,2302
+2019-12,genetics,92,2302
+2019-12,genomics,108,2302
+2019-12,immunology,72,2302
+2019-12,microbiology,204,2302
+2019-12,molecular biology,92,2302
+2019-12,neuroscience,452,2302
+2019-12,paleontology,4,2302
+2019-12,pathology,20,2302
+2019-12,pharmacology and toxicology,22,2302
+2019-12,physiology,46,2302
+2019-12,plant biology,83,2302
+2019-12,scientific communication and education,15,2302
+2019-12,synthetic biology,29,2302
+2019-12,systems biology,50,2302
+2019-12,zoology,23,2302
+2020-01,animal behavior and cognition,41,2657
+2020-01,biochemistry,102,2657
+2020-01,bioengineering,78,2657
+2020-01,bioinformatics,210,2657
+2020-01,biophysics,122,2657
+2020-01,cancer biology,113,2657
+2020-01,cell biology,159,2657
+2020-01,developmental biology,80,2657
+2020-01,ecology,154,2657
+2020-01,evolutionary biology,125,2657
+2020-01,genetics,107,2657
+2020-01,genomics,125,2657
+2020-01,immunology,90,2657
+2020-01,microbiology,244,2657
+2020-01,molecular biology,93,2657
+2020-01,neuroscience,499,2657
+2020-01,paleontology,4,2657
+2020-01,pathology,22,2657
+2020-01,pharmacology and toxicology,39,2657
+2020-01,physiology,34,2657
+2020-01,plant biology,97,2657
+2020-01,scientific communication and education,19,2657
+2020-01,synthetic biology,20,2657
+2020-01,systems biology,67,2657
+2020-01,zoology,13,2657
+2020-02,animal behavior and cognition,34,2744
+2020-02,biochemistry,129,2744
+2020-02,bioengineering,77,2744
+2020-02,bioinformatics,228,2744
+2020-02,biophysics,111,2744
+2020-02,cancer biology,114,2744
+2020-02,cell biology,160,2744
+2020-02,developmental biology,88,2744
+2020-02,ecology,137,2744
+2020-02,evolutionary biology,121,2744
+2020-02,genetics,113,2744
+2020-02,genomics,153,2744
+2020-02,immunology,102,2744
+2020-02,microbiology,256,2744
+2020-02,molecular biology,117,2744
+2020-02,neuroscience,480,2744
+2020-02,paleontology,4,2744
+2020-02,pathology,15,2744
+2020-02,pharmacology and toxicology,26,2744
+2020-02,physiology,41,2744
+2020-02,plant biology,115,2744
+2020-02,scientific communication and education,21,2744
+2020-02,synthetic biology,30,2744
+2020-02,systems biology,61,2744
+2020-02,zoology,11,2744
+2020-03,animal behavior and cognition,56,3037
+2020-03,biochemistry,149,3037
+2020-03,bioengineering,86,3037
+2020-03,bioinformatics,251,3037
+2020-03,biophysics,132,3037
+2020-03,cancer biology,129,3037
+2020-03,cell biology,171,3037
+2020-03,developmental biology,93,3037
+2020-03,ecology,147,3037
+2020-03,evolutionary biology,135,3037
+2020-03,genetics,106,3037
+2020-03,genomics,159,3037
+2020-03,immunology,125,3037
+2020-03,microbiology,346,3037
+2020-03,molecular biology,123,3037
+2020-03,neuroscience,504,3037
+2020-03,paleontology,1,3037
+2020-03,pathology,22,3037
+2020-03,pharmacology and toxicology,34,3037
+2020-03,physiology,48,3037
+2020-03,plant biology,109,3037
+2020-03,scientific communication and education,17,3037
+2020-03,synthetic biology,25,3037
+2020-03,systems biology,54,3037
+2020-03,zoology,15,3037
+2020-04,animal behavior and cognition,45,3413
+2020-04,biochemistry,151,3413
+2020-04,bioengineering,94,3413
+2020-04,bioinformatics,341,3413
+2020-04,biophysics,156,3413
+2020-04,cancer biology,148,3413
+2020-04,cell biology,220,3413
+2020-04,developmental biology,100,3413
+2020-04,ecology,160,3413
+2020-04,evolutionary biology,163,3413
+2020-04,genetics,121,3413
+2020-04,genomics,173,3413
+2020-04,immunology,122,3413
+2020-04,microbiology,370,3413
+2020-04,molecular biology,123,3413
+2020-04,neuroscience,551,3413
+2020-04,paleontology,3,3413
+2020-04,pathology,28,3413
+2020-04,pharmacology and toxicology,46,3413
+2020-04,physiology,66,3413
+2020-04,plant biology,106,3413
+2020-04,scientific communication and education,17,3413
+2020-04,synthetic biology,24,3413
+2020-04,systems biology,62,3413
+2020-04,zoology,23,3413
+2020-05,animal behavior and cognition,58,3797
+2020-05,biochemistry,175,3797
+2020-05,bioengineering,122,3797
+2020-05,bioinformatics,298,3797
+2020-05,biophysics,187,3797
+2020-05,cancer biology,139,3797
+2020-05,cell biology,233,3797
+2020-05,developmental biology,98,3797
+2020-05,ecology,164,3797
+2020-05,evolutionary biology,153,3797
+2020-05,genetics,144,3797
+2020-05,genomics,213,3797
+2020-05,immunology,172,3797
+2020-05,microbiology,400,3797
+2020-05,molecular biology,175,3797
+2020-05,neuroscience,619,3797
+2020-05,paleontology,3,3797
+2020-05,pathology,30,3797
+2020-05,pharmacology and toxicology,39,3797
+2020-05,physiology,76,3797
+2020-05,plant biology,147,3797
+2020-05,scientific communication and education,22,3797
+2020-05,synthetic biology,29,3797
+2020-05,systems biology,86,3797
+2020-05,zoology,15,3797
+2020-06,animal behavior and cognition,46,3819
+2020-06,biochemistry,197,3819
+2020-06,bioengineering,107,3819
+2020-06,bioinformatics,266,3819
+2020-06,biophysics,205,3819
+2020-06,cancer biology,139,3819
+2020-06,cell biology,219,3819
+2020-06,developmental biology,113,3819
+2020-06,ecology,178,3819
+2020-06,evolutionary biology,172,3819
+2020-06,genetics,150,3819
+2020-06,genomics,173,3819
+2020-06,immunology,156,3819
+2020-06,microbiology,414,3819
+2020-06,molecular biology,140,3819
+2020-06,neuroscience,716,3819
+2020-06,paleontology,6,3819
+2020-06,pathology,31,3819
+2020-06,pharmacology and toxicology,45,3819
+2020-06,physiology,71,3819
+2020-06,plant biology,139,3819
+2020-06,scientific communication and education,21,3819
+2020-06,synthetic biology,35,3819
+2020-06,systems biology,67,3819
+2020-06,zoology,13,3819
+2020-07,animal behavior and cognition,55,3696
+2020-07,biochemistry,153,3696
+2020-07,bioengineering,113,3696
+2020-07,bioinformatics,269,3696
+2020-07,biophysics,174,3696
+2020-07,cancer biology,156,3696
+2020-07,cell biology,220,3696
+2020-07,developmental biology,94,3696
+2020-07,ecology,168,3696
+2020-07,evolutionary biology,177,3696
+2020-07,genetics,143,3696
+2020-07,genomics,178,3696
+2020-07,immunology,179,3696
+2020-07,microbiology,407,3696
+2020-07,molecular biology,168,3696
+2020-07,neuroscience,636,3696
+2020-07,paleontology,2,3696
+2020-07,pathology,24,3696
+2020-07,pharmacology and toxicology,58,3696
+2020-07,physiology,62,3696
+2020-07,plant biology,109,3696
+2020-07,scientific communication and education,24,3696
+2020-07,synthetic biology,44,3696
+2020-07,systems biology,57,3696
+2020-07,zoology,26,3696
+2020-08,animal behavior and cognition,65,3186
+2020-08,biochemistry,127,3186
+2020-08,bioengineering,94,3186
+2020-08,bioinformatics,219,3186
+2020-08,biophysics,149,3186
+2020-08,cancer biology,118,3186
+2020-08,cell biology,180,3186
+2020-08,developmental biology,91,3186
+2020-08,ecology,138,3186
+2020-08,evolutionary biology,163,3186
+2020-08,genetics,107,3186
+2020-08,genomics,162,3186
+2020-08,immunology,161,3186
+2020-08,microbiology,343,3186
+2020-08,molecular biology,124,3186
+2020-08,neuroscience,548,3186
+2020-08,paleontology,5,3186
+2020-08,pathology,22,3186
+2020-08,pharmacology and toxicology,50,3186
+2020-08,physiology,50,3186
+2020-08,plant biology,128,3186
+2020-08,scientific communication and education,20,3186
+2020-08,synthetic biology,22,3186
+2020-08,systems biology,77,3186
+2020-08,zoology,23,3186
+2020-09,animal behavior and cognition,37,3151
+2020-09,biochemistry,129,3151
+2020-09,bioengineering,106,3151
+2020-09,bioinformatics,230,3151
+2020-09,biophysics,167,3151
+2020-09,cancer biology,125,3151
+2020-09,cell biology,169,3151
+2020-09,developmental biology,115,3151
+2020-09,ecology,141,3151
+2020-09,evolutionary biology,141,3151
+2020-09,genetics,104,3151
+2020-09,genomics,165,3151
+2020-09,immunology,150,3151
+2020-09,microbiology,347,3151
+2020-09,molecular biology,113,3151
+2020-09,neuroscience,555,3151
+2020-09,paleontology,3,3151
+2020-09,pathology,15,3151
+2020-09,pharmacology and toxicology,36,3151
+2020-09,physiology,55,3151
+2020-09,plant biology,124,3151
+2020-09,scientific communication and education,13,3151
+2020-09,synthetic biology,17,3151
+2020-09,systems biology,78,3151
+2020-09,zoology,16,3151
+2020-10,animal behavior and cognition,37,3188
+2020-10,biochemistry,117,3188
+2020-10,bioengineering,94,3188
+2020-10,bioinformatics,224,3188
+2020-10,biophysics,160,3188
+2020-10,cancer biology,145,3188
+2020-10,cell biology,178,3188
+2020-10,developmental biology,95,3188
+2020-10,ecology,121,3188
+2020-10,evolutionary biology,157,3188
+2020-10,genetics,105,3188
+2020-10,genomics,152,3188
+2020-10,immunology,147,3188
+2020-10,microbiology,335,3188
+2020-10,molecular biology,134,3188
+2020-10,neuroscience,593,3188
+2020-10,paleontology,4,3188
+2020-10,pathology,22,3188
+2020-10,pharmacology and toxicology,40,3188
+2020-10,physiology,72,3188
+2020-10,plant biology,132,3188
+2020-10,scientific communication and education,15,3188
+2020-10,synthetic biology,23,3188
+2020-10,systems biology,66,3188
+2020-10,zoology,20,3188
+2020-11,animal behavior and cognition,38,3006
+2020-11,biochemistry,113,3006
+2020-11,bioengineering,82,3006
+2020-11,bioinformatics,281,3006
+2020-11,biophysics,130,3006
+2020-11,cancer biology,104,3006
+2020-11,cell biology,174,3006
+2020-11,developmental biology,95,3006
+2020-11,ecology,147,3006
+2020-11,evolutionary biology,145,3006
+2020-11,genetics,98,3006
+2020-11,genomics,151,3006
+2020-11,immunology,140,3006
+2020-11,microbiology,333,3006
+2020-11,molecular biology,100,3006
+2020-11,neuroscience,538,3006
+2020-11,paleontology,2,3006
+2020-11,pathology,11,3006
+2020-11,pharmacology and toxicology,41,3006
+2020-11,physiology,43,3006
+2020-11,plant biology,113,3006
+2020-11,scientific communication and education,22,3006
+2020-11,synthetic biology,23,3006
+2020-11,systems biology,64,3006
+2020-11,zoology,18,3006
+2020-12,animal behavior and cognition,44,3023
+2020-12,biochemistry,121,3023
+2020-12,bioengineering,90,3023
+2020-12,bioinformatics,272,3023
+2020-12,biophysics,131,3023
+2020-12,cancer biology,115,3023
+2020-12,cell biology,184,3023
+2020-12,developmental biology,94,3023
+2020-12,ecology,134,3023
+2020-12,evolutionary biology,121,3023
+2020-12,genetics,82,3023
+2020-12,genomics,135,3023
+2020-12,immunology,164,3023
+2020-12,microbiology,319,3023
+2020-12,molecular biology,110,3023
+2020-12,neuroscience,549,3023
+2020-12,paleontology,4,3023
+2020-12,pathology,30,3023
+2020-12,pharmacology and toxicology,45,3023
+2020-12,physiology,54,3023
+2020-12,plant biology,108,3023
+2020-12,scientific communication and education,21,3023
+2020-12,synthetic biology,25,3023
+2020-12,systems biology,57,3023
+2020-12,zoology,14,3023
+2021-01,animal behavior and cognition,42,3004
+2021-01,biochemistry,97,3004
+2021-01,bioengineering,77,3004
+2021-01,bioinformatics,234,3004
+2021-01,biophysics,162,3004
+2021-01,cancer biology,118,3004
+2021-01,cell biology,174,3004
+2021-01,developmental biology,109,3004
+2021-01,ecology,131,3004
+2021-01,evolutionary biology,142,3004
+2021-01,genetics,86,3004
+2021-01,genomics,130,3004
+2021-01,immunology,172,3004
+2021-01,microbiology,323,3004
+2021-01,molecular biology,120,3004
+2021-01,neuroscience,500,3004
+2021-01,paleontology,5,3004
+2021-01,pathology,18,3004
+2021-01,pharmacology and toxicology,55,3004
+2021-01,physiology,58,3004
+2021-01,plant biology,138,3004
+2021-01,scientific communication and education,21,3004
+2021-01,synthetic biology,21,3004
+2021-01,systems biology,48,3004
+2021-01,zoology,23,3004
+2021-02,animal behavior and cognition,50,3156
+2021-02,biochemistry,119,3156
+2021-02,bioengineering,102,3156
+2021-02,bioinformatics,273,3156
+2021-02,biophysics,148,3156
+2021-02,cancer biology,130,3156
+2021-02,cell biology,171,3156
+2021-02,developmental biology,86,3156
+2021-02,ecology,151,3156
+2021-02,evolutionary biology,149,3156
+2021-02,genetics,105,3156
+2021-02,genomics,131,3156
+2021-02,immunology,154,3156
+2021-02,microbiology,299,3156
+2021-02,molecular biology,112,3156
+2021-02,neuroscience,577,3156
+2021-02,paleontology,3,3156
+2021-02,pathology,22,3156
+2021-02,pharmacology and toxicology,39,3156
+2021-02,physiology,69,3156
+2021-02,plant biology,146,3156
+2021-02,scientific communication and education,18,3156
+2021-02,synthetic biology,22,3156
+2021-02,systems biology,54,3156
+2021-02,zoology,26,3156
+2021-03,animal behavior and cognition,58,3524
+2021-03,biochemistry,153,3524
+2021-03,bioengineering,91,3524
+2021-03,bioinformatics,268,3524
+2021-03,biophysics,178,3524
+2021-03,cancer biology,122,3524
+2021-03,cell biology,189,3524
+2021-03,developmental biology,128,3524
+2021-03,ecology,184,3524
+2021-03,evolutionary biology,151,3524
+2021-03,genetics,106,3524
+2021-03,genomics,168,3524
+2021-03,immunology,191,3524
+2021-03,microbiology,387,3524
+2021-03,molecular biology,138,3524
+2021-03,neuroscience,607,3524
+2021-03,paleontology,3,3524
+2021-03,pathology,21,3524
+2021-03,pharmacology and toxicology,33,3524
+2021-03,physiology,66,3524
+2021-03,plant biology,153,3524
+2021-03,scientific communication and education,16,3524
+2021-03,synthetic biology,24,3524
+2021-03,systems biology,70,3524
+2021-03,zoology,19,3524
+2021-04,animal behavior and cognition,42,3250
+2021-04,biochemistry,145,3250
+2021-04,bioengineering,104,3250
+2021-04,bioinformatics,225,3250
+2021-04,biophysics,157,3250
+2021-04,cancer biology,120,3250
+2021-04,cell biology,209,3250
+2021-04,developmental biology,122,3250
+2021-04,ecology,166,3250
+2021-04,evolutionary biology,153,3250
+2021-04,genetics,108,3250
+2021-04,genomics,154,3250
+2021-04,immunology,182,3250
+2021-04,microbiology,317,3250
+2021-04,molecular biology,106,3250
+2021-04,neuroscience,562,3250
+2021-04,paleontology,10,3250
+2021-04,pathology,28,3250
+2021-04,pharmacology and toxicology,36,3250
+2021-04,physiology,58,3250
+2021-04,plant biology,116,3250
+2021-04,scientific communication and education,11,3250
+2021-04,synthetic biology,39,3250
+2021-04,systems biology,61,3250
+2021-04,zoology,19,3250
+2021-05,animal behavior and cognition,42,3229
+2021-05,biochemistry,126,3229
+2021-05,bioengineering,105,3229
+2021-05,bioinformatics,251,3229
+2021-05,biophysics,177,3229
+2021-05,cancer biology,132,3229
+2021-05,cell biology,161,3229
+2021-05,developmental biology,106,3229
+2021-05,ecology,145,3229
+2021-05,evolutionary biology,131,3229
+2021-05,genetics,111,3229
+2021-05,genomics,162,3229
+2021-05,immunology,160,3229
+2021-05,microbiology,372,3229
+2021-05,molecular biology,151,3229
+2021-05,neuroscience,557,3229
+2021-05,paleontology,6,3229
+2021-05,pathology,21,3229
+2021-05,pharmacology and toxicology,27,3229
+2021-05,physiology,58,3229
+2021-05,plant biology,95,3229
+2021-05,scientific communication and education,12,3229
+2021-05,synthetic biology,28,3229
+2021-05,systems biology,74,3229
+2021-05,zoology,19,3229
+2021-06,animal behavior and cognition,38,3000
+2021-06,biochemistry,134,3000
+2021-06,bioengineering,101,3000
+2021-06,bioinformatics,236,3000
+2021-06,biophysics,154,3000
+2021-06,cancer biology,134,3000
+2021-06,cell biology,204,3000
+2021-06,developmental biology,93,3000
+2021-06,ecology,119,3000
+2021-06,evolutionary biology,109,3000
+2021-06,genetics,90,3000
+2021-06,genomics,147,3000
+2021-06,immunology,131,3000
+2021-06,microbiology,323,3000
+2021-06,molecular biology,117,3000
+2021-06,neuroscience,525,3000
+2021-06,paleontology,4,3000
+2021-06,pathology,26,3000
+2021-06,pharmacology and toxicology,30,3000
+2021-06,physiology,41,3000
+2021-06,plant biology,113,3000
+2021-06,scientific communication and education,19,3000
+2021-06,synthetic biology,27,3000
+2021-06,systems biology,68,3000
+2021-06,zoology,17,3000
+2021-07,animal behavior and cognition,50,2934
+2021-07,biochemistry,130,2934
+2021-07,bioengineering,82,2934
+2021-07,bioinformatics,221,2934
+2021-07,biophysics,142,2934
+2021-07,cancer biology,92,2934
+2021-07,cell biology,181,2934
+2021-07,developmental biology,81,2934
+2021-07,ecology,136,2934
+2021-07,epidemiology,1,2934
+2021-07,evolutionary biology,146,2934
+2021-07,genetics,90,2934
+2021-07,genomics,151,2934
+2021-07,immunology,135,2934
+2021-07,microbiology,315,2934
+2021-07,molecular biology,132,2934
+2021-07,neuroscience,514,2934
+2021-07,paleontology,3,2934
+2021-07,pathology,22,2934
+2021-07,pharmacology and toxicology,43,2934
+2021-07,physiology,43,2934
+2021-07,plant biology,102,2934
+2021-07,scientific communication and education,15,2934
+2021-07,synthetic biology,28,2934
+2021-07,systems biology,62,2934
+2021-07,zoology,17,2934
+2021-08,animal behavior and cognition,50,2847
+2021-08,biochemistry,121,2847
+2021-08,bioengineering,91,2847
+2021-08,bioinformatics,236,2847
+2021-08,biophysics,136,2847
+2021-08,cancer biology,114,2847
+2021-08,cell biology,165,2847
+2021-08,developmental biology,113,2847
+2021-08,ecology,131,2847
+2021-08,evolutionary biology,136,2847
+2021-08,genetics,86,2847
+2021-08,genomics,128,2847
+2021-08,immunology,142,2847
+2021-08,microbiology,292,2847
+2021-08,molecular biology,134,2847
+2021-08,neuroscience,444,2847
+2021-08,paleontology,4,2847
+2021-08,pathology,20,2847
+2021-08,pharmacology and toxicology,36,2847
+2021-08,physiology,42,2847
+2021-08,plant biology,112,2847
+2021-08,scientific communication and education,16,2847
+2021-08,synthetic biology,38,2847
+2021-08,systems biology,53,2847
+2021-08,zoology,7,2847
+2021-09,animal behavior and cognition,52,3026
+2021-09,biochemistry,123,3026
+2021-09,bioengineering,90,3026
+2021-09,bioinformatics,252,3026
+2021-09,biophysics,150,3026
+2021-09,cancer biology,118,3026
+2021-09,cell biology,175,3026
+2021-09,developmental biology,80,3026
+2021-09,ecology,145,3026
+2021-09,evolutionary biology,151,3026
+2021-09,genetics,97,3026
+2021-09,genomics,122,3026
+2021-09,immunology,163,3026
+2021-09,microbiology,291,3026
+2021-09,molecular biology,120,3026
+2021-09,neuroscience,523,3026
+2021-09,paleontology,9,3026
+2021-09,pathology,26,3026
+2021-09,pharmacology and toxicology,33,3026
+2021-09,physiology,56,3026
+2021-09,plant biology,118,3026
+2021-09,scientific communication and education,12,3026
+2021-09,synthetic biology,31,3026
+2021-09,systems biology,75,3026
+2021-09,zoology,14,3026
+2021-10,animal behavior and cognition,47,3061
+2021-10,biochemistry,124,3061
+2021-10,bioengineering,93,3061
+2021-10,bioinformatics,232,3061
+2021-10,biophysics,157,3061
+2021-10,cancer biology,125,3061
+2021-10,cell biology,187,3061
+2021-10,developmental biology,100,3061
+2021-10,ecology,155,3061
+2021-10,evolutionary biology,133,3061
+2021-10,genetics,102,3061
+2021-10,genomics,110,3061
+2021-10,immunology,156,3061
+2021-10,microbiology,279,3061
+2021-10,molecular biology,124,3061
+2021-10,neuroscience,561,3061
+2021-10,paleontology,4,3061
+2021-10,pathology,24,3061
+2021-10,pharmacology and toxicology,43,3061
+2021-10,physiology,58,3061
+2021-10,plant biology,132,3061
+2021-10,scientific communication and education,10,3061
+2021-10,synthetic biology,31,3061
+2021-10,systems biology,62,3061
+2021-10,zoology,12,3061
+2021-11,animal behavior and cognition,38,2870
+2021-11,biochemistry,114,2870
+2021-11,bioengineering,105,2870
+2021-11,bioinformatics,248,2870
+2021-11,biophysics,145,2870
+2021-11,cancer biology,109,2870
+2021-11,cell biology,171,2870
+2021-11,developmental biology,75,2870
+2021-11,ecology,108,2870
+2021-11,evolutionary biology,135,2870
+2021-11,genetics,86,2870
+2021-11,genomics,144,2870
+2021-11,immunology,123,2870
+2021-11,microbiology,279,2870
+2021-11,molecular biology,115,2870
+2021-11,neuroscience,529,2870
+2021-11,paleontology,5,2870
+2021-11,pathology,21,2870
+2021-11,pharmacology and toxicology,41,2870
+2021-11,physiology,57,2870
+2021-11,plant biology,109,2870
+2021-11,scientific communication and education,8,2870
+2021-11,synthetic biology,32,2870
+2021-11,systems biology,56,2870
+2021-11,zoology,17,2870
+2021-12,animal behavior and cognition,49,2965
+2021-12,biochemistry,142,2965
+2021-12,bioengineering,105,2965
+2021-12,bioinformatics,242,2965
+2021-12,biophysics,154,2965
+2021-12,cancer biology,125,2965
+2021-12,cell biology,163,2965
+2021-12,developmental biology,93,2965
+2021-12,ecology,120,2965
+2021-12,evolutionary biology,142,2965
+2021-12,genetics,89,2965
+2021-12,genomics,133,2965
+2021-12,immunology,176,2965
+2021-12,microbiology,269,2965
+2021-12,molecular biology,116,2965
+2021-12,neuroscience,503,2965
+2021-12,paleontology,2,2965
+2021-12,pathology,13,2965
+2021-12,pharmacology and toxicology,46,2965
+2021-12,physiology,68,2965
+2021-12,plant biology,95,2965
+2021-12,scientific communication and education,17,2965
+2021-12,synthetic biology,25,2965
+2021-12,systems biology,58,2965
+2021-12,zoology,20,2965
+2022-01,animal behavior and cognition,30,2855
+2022-01,biochemistry,132,2855
+2022-01,bioengineering,107,2855
+2022-01,bioinformatics,214,2855
+2022-01,biophysics,136,2855
+2022-01,cancer biology,103,2855
+2022-01,cell biology,177,2855
+2022-01,developmental biology,108,2855
+2022-01,ecology,112,2855
+2022-01,evolutionary biology,140,2855
+2022-01,genetics,77,2855
+2022-01,genomics,103,2855
+2022-01,immunology,148,2855
+2022-01,microbiology,321,2855
+2022-01,molecular biology,125,2855
+2022-01,neuroscience,501,2855
+2022-01,paleontology,4,2855
+2022-01,pathology,22,2855
+2022-01,pharmacology and toxicology,31,2855
+2022-01,physiology,47,2855
+2022-01,plant biology,107,2855
+2022-01,scientific communication and education,12,2855
+2022-01,synthetic biology,27,2855
+2022-01,systems biology,59,2855
+2022-01,zoology,12,2855
+2022-02,animal behavior and cognition,31,2646
+2022-02,biochemistry,128,2646
+2022-02,bioengineering,72,2646
+2022-02,bioinformatics,210,2646
+2022-02,biophysics,153,2646
+2022-02,cancer biology,106,2646
+2022-02,cell biology,178,2646
+2022-02,developmental biology,77,2646
+2022-02,ecology,105,2646
+2022-02,evolutionary biology,100,2646
+2022-02,genetics,80,2646
+2022-02,genomics,116,2646
+2022-02,immunology,151,2646
+2022-02,microbiology,289,2646
+2022-02,molecular biology,109,2646
+2022-02,neuroscience,461,2646
+2022-02,paleontology,7,2646
+2022-02,pathology,20,2646
+2022-02,pharmacology and toxicology,32,2646
+2022-02,physiology,45,2646
+2022-02,plant biology,84,2646
+2022-02,scientific communication and education,11,2646
+2022-02,synthetic biology,17,2646
+2022-02,systems biology,44,2646
+2022-02,zoology,20,2646
+2022-03,animal behavior and cognition,52,3189
+2022-03,biochemistry,114,3189
+2022-03,bioengineering,113,3189
+2022-03,bioinformatics,234,3189
+2022-03,biophysics,147,3189
+2022-03,cancer biology,130,3189
+2022-03,cell biology,210,3189
+2022-03,developmental biology,115,3189
+2022-03,ecology,149,3189
+2022-03,evolutionary biology,140,3189
+2022-03,genetics,101,3189
+2022-03,genomics,135,3189
+2022-03,immunology,168,3189
+2022-03,microbiology,310,3189
+2022-03,molecular biology,126,3189
+2022-03,neuroscience,570,3189
+2022-03,paleontology,6,3189
+2022-03,pathology,21,3189
+2022-03,pharmacology and toxicology,46,3189
+2022-03,physiology,56,3189
+2022-03,plant biology,116,3189
+2022-03,scientific communication and education,14,3189
+2022-03,synthetic biology,28,3189
+2022-03,systems biology,63,3189
+2022-03,zoology,25,3189
+2022-04,animal behavior and cognition,45,2695
+2022-04,biochemistry,120,2695
+2022-04,bioengineering,85,2695
+2022-04,bioinformatics,243,2695
+2022-04,biophysics,142,2695
+2022-04,cancer biology,122,2695
+2022-04,cell biology,154,2695
+2022-04,developmental biology,78,2695
+2022-04,ecology,119,2695
+2022-04,evolutionary biology,112,2695
+2022-04,genetics,83,2695
+2022-04,genomics,131,2695
+2022-04,immunology,125,2695
+2022-04,microbiology,275,2695
+2022-04,molecular biology,116,2695
+2022-04,neuroscience,466,2695
+2022-04,paleontology,3,2695
+2022-04,pathology,16,2695
+2022-04,pharmacology and toxicology,27,2695
+2022-04,physiology,42,2695
+2022-04,plant biology,102,2695
+2022-04,scientific communication and education,17,2695
+2022-04,synthetic biology,18,2695
+2022-04,systems biology,45,2695
+2022-04,zoology,9,2695
+2022-05,animal behavior and cognition,56,3087
+2022-05,biochemistry,130,3087
+2022-05,bioengineering,94,3087
+2022-05,bioinformatics,286,3087
+2022-05,biophysics,161,3087
+2022-05,cancer biology,167,3087
+2022-05,cell biology,209,3087
+2022-05,developmental biology,100,3087
+2022-05,ecology,132,3087
+2022-05,evolutionary biology,141,3087
+2022-05,genetics,67,3087
+2022-05,genomics,136,3087
+2022-05,immunology,141,3087
+2022-05,microbiology,306,3087
+2022-05,molecular biology,108,3087
+2022-05,neuroscience,513,3087
+2022-05,paleontology,6,3087
+2022-05,pathology,16,3087
+2022-05,pharmacology and toxicology,33,3087
+2022-05,physiology,64,3087
+2022-05,plant biology,108,3087
+2022-05,scientific communication and education,11,3087
+2022-05,synthetic biology,22,3087
+2022-05,systems biology,63,3087
+2022-05,zoology,17,3087
+2022-06,animal behavior and cognition,44,2891
+2022-06,biochemistry,125,2891
+2022-06,bioengineering,98,2891
+2022-06,bioinformatics,240,2891
+2022-06,biophysics,160,2891
+2022-06,cancer biology,121,2891
+2022-06,cell biology,176,2891
+2022-06,developmental biology,101,2891
+2022-06,ecology,112,2891
+2022-06,evolutionary biology,123,2891
+2022-06,genetics,100,2891
+2022-06,genomics,134,2891
+2022-06,immunology,121,2891
+2022-06,microbiology,304,2891
+2022-06,molecular biology,114,2891
+2022-06,neuroscience,505,2891
+2022-06,paleontology,4,2891
+2022-06,pathology,16,2891
+2022-06,pharmacology and toxicology,33,2891
+2022-06,physiology,46,2891
+2022-06,plant biology,96,2891
+2022-06,scientific communication and education,13,2891
+2022-06,synthetic biology,35,2891
+2022-06,systems biology,56,2891
+2022-06,zoology,14,2891
+2022-07,animal behavior and cognition,55,2985
+2022-07,biochemistry,134,2985
+2022-07,bioengineering,94,2985
+2022-07,bioinformatics,275,2985
+2022-07,biophysics,153,2985
+2022-07,cancer biology,122,2985
+2022-07,cell biology,167,2985
+2022-07,developmental biology,86,2985
+2022-07,ecology,130,2985
+2022-07,evolutionary biology,126,2985
+2022-07,genetics,105,2985
+2022-07,genomics,125,2985
+2022-07,immunology,127,2985
+2022-07,microbiology,268,2985
+2022-07,molecular biology,134,2985
+2022-07,neuroscience,535,2985
+2022-07,paleontology,7,2985
+2022-07,pathology,13,2985
+2022-07,pharmacology and toxicology,41,2985
+2022-07,physiology,49,2985
+2022-07,plant biology,126,2985
+2022-07,scientific communication and education,8,2985
+2022-07,synthetic biology,33,2985
+2022-07,systems biology,61,2985
+2022-07,zoology,11,2985
+2022-08,animal behavior and cognition,46,2905
+2022-08,biochemistry,139,2905
+2022-08,bioengineering,90,2905
+2022-08,bioinformatics,246,2905
+2022-08,biophysics,143,2905
+2022-08,cancer biology,123,2905
+2022-08,cell biology,189,2905
+2022-08,developmental biology,95,2905
+2022-08,ecology,98,2905
+2022-08,evolutionary biology,139,2905
+2022-08,genetics,91,2905
+2022-08,genomics,121,2905
+2022-08,immunology,128,2905
+2022-08,microbiology,310,2905
+2022-08,molecular biology,126,2905
+2022-08,neuroscience,498,2905
+2022-08,paleontology,6,2905
+2022-08,pathology,21,2905
+2022-08,pharmacology and toxicology,27,2905
+2022-08,physiology,45,2905
+2022-08,plant biology,103,2905
+2022-08,scientific communication and education,18,2905
+2022-08,synthetic biology,34,2905
+2022-08,systems biology,59,2905
+2022-08,zoology,10,2905
+2022-09,animal behavior and cognition,58,3283
+2022-09,biochemistry,160,3283
+2022-09,bioengineering,126,3283
+2022-09,bioinformatics,243,3283
+2022-09,biophysics,159,3283
+2022-09,cancer biology,156,3283
+2022-09,cell biology,184,3283
+2022-09,developmental biology,112,3283
+2022-09,ecology,143,3283
+2022-09,evolutionary biology,179,3283
+2022-09,genetics,101,3283
+2022-09,genomics,108,3283
+2022-09,immunology,158,3283
+2022-09,microbiology,317,3283
+2022-09,molecular biology,137,3283
+2022-09,neuroscience,566,3283
+2022-09,paleontology,5,3283
+2022-09,pathology,20,3283
+2022-09,pharmacology and toxicology,38,3283
+2022-09,physiology,67,3283
+2022-09,plant biology,118,3283
+2022-09,scientific communication and education,19,3283
+2022-09,synthetic biology,31,3283
+2022-09,systems biology,62,3283
+2022-09,zoology,16,3283
+2022-10,animal behavior and cognition,47,3211
+2022-10,biochemistry,150,3211
+2022-10,bioengineering,127,3211
+2022-10,bioinformatics,281,3211
+2022-10,biophysics,163,3211
+2022-10,cancer biology,118,3211
+2022-10,cell biology,187,3211
+2022-10,developmental biology,91,3211
+2022-10,ecology,123,3211
+2022-10,evolutionary biology,154,3211
+2022-10,genetics,118,3211
+2022-10,genomics,125,3211
+2022-10,immunology,147,3211
+2022-10,microbiology,305,3211
+2022-10,molecular biology,126,3211
+2022-10,neuroscience,591,3211
+2022-10,paleontology,3,3211
+2022-10,pathology,18,3211
+2022-10,pharmacology and toxicology,30,3211
+2022-10,physiology,49,3211
+2022-10,plant biology,134,3211
+2022-10,scientific communication and education,18,3211
+2022-10,synthetic biology,27,3211
+2022-10,systems biology,60,3211
+2022-10,zoology,19,3211
+2022-11,animal behavior and cognition,51,2993
+2022-11,biochemistry,123,2993
+2022-11,bioengineering,108,2993
+2022-11,bioinformatics,261,2993
+2022-11,biophysics,139,2993
+2022-11,cancer biology,99,2993
+2022-11,cell biology,188,2993
+2022-11,developmental biology,80,2993
+2022-11,ecology,107,2993
+2022-11,evolutionary biology,114,2993
+2022-11,genetics,87,2993
+2022-11,genomics,144,2993
+2022-11,immunology,146,2993
+2022-11,microbiology,313,2993
+2022-11,molecular biology,128,2993
+2022-11,neuroscience,558,2993
+2022-11,paleontology,5,2993
+2022-11,pathology,18,2993
+2022-11,pharmacology and toxicology,42,2993
+2022-11,physiology,32,2993
+2022-11,plant biology,113,2993
+2022-11,scientific communication and education,21,2993
+2022-11,synthetic biology,34,2993
+2022-11,systems biology,64,2993
+2022-11,zoology,18,2993
+2022-12,animal behavior and cognition,43,3010
+2022-12,biochemistry,140,3010
+2022-12,bioengineering,125,3010
+2022-12,bioinformatics,270,3010
+2022-12,biophysics,146,3010
+2022-12,cancer biology,124,3010
+2022-12,cell biology,167,3010
+2022-12,developmental biology,76,3010
+2022-12,ecology,147,3010
+2022-12,evolutionary biology,141,3010
+2022-12,genetics,93,3010
+2022-12,genomics,132,3010
+2022-12,immunology,123,3010
+2022-12,microbiology,273,3010
+2022-12,molecular biology,117,3010
+2022-12,neuroscience,538,3010
+2022-12,paleontology,3,3010
+2022-12,pathology,23,3010
+2022-12,pharmacology and toxicology,31,3010
+2022-12,physiology,57,3010
+2022-12,plant biology,121,3010
+2022-12,scientific communication and education,15,3010
+2022-12,synthetic biology,23,3010
+2022-12,systems biology,65,3010
+2022-12,zoology,17,3010
+2023-01,animal behavior and cognition,50,2987
+2023-01,biochemistry,124,2987
+2023-01,bioengineering,119,2987
+2023-01,bioinformatics,267,2987
+2023-01,biophysics,166,2987
+2023-01,cancer biology,155,2987
+2023-01,cell biology,178,2987
+2023-01,developmental biology,94,2987
+2023-01,ecology,114,2987
+2023-01,evolutionary biology,124,2987
+2023-01,genetics,87,2987
+2023-01,genomics,109,2987
+2023-01,immunology,132,2987
+2023-01,microbiology,257,2987
+2023-01,molecular biology,151,2987
+2023-01,neuroscience,529,2987
+2023-01,paleontology,2,2987
+2023-01,pathology,22,2987
+2023-01,pharmacology and toxicology,33,2987
+2023-01,physiology,37,2987
+2023-01,plant biology,116,2987
+2023-01,scientific communication and education,15,2987
+2023-01,synthetic biology,31,2987
+2023-01,systems biology,59,2987
+2023-01,zoology,16,2987
+2023-02,animal behavior and cognition,54,2995
+2023-02,biochemistry,139,2995
+2023-02,bioengineering,123,2995
+2023-02,bioinformatics,228,2995
+2023-02,biophysics,111,2995
+2023-02,cancer biology,140,2995
+2023-02,cell biology,210,2995
+2023-02,developmental biology,74,2995
+2023-02,ecology,102,2995
+2023-02,evolutionary biology,142,2995
+2023-02,genetics,91,2995
+2023-02,genomics,107,2995
+2023-02,immunology,156,2995
+2023-02,microbiology,293,2995
+2023-02,molecular biology,114,2995
+2023-02,neuroscience,552,2995
+2023-02,paleontology,3,2995
+2023-02,pathology,32,2995
+2023-02,pharmacology and toxicology,34,2995
+2023-02,physiology,60,2995
+2023-02,plant biology,98,2995
+2023-02,scientific communication and education,11,2995
+2023-02,synthetic biology,35,2995
+2023-02,systems biology,66,2995
+2023-02,zoology,20,2995
+2023-03,animal behavior and cognition,50,3447
+2023-03,biochemistry,162,3447
+2023-03,bioengineering,126,3447
+2023-03,bioinformatics,232,3447
+2023-03,biophysics,182,3447
+2023-03,cancer biology,149,3447
+2023-03,cell biology,241,3447
+2023-03,developmental biology,107,3447
+2023-03,ecology,147,3447
+2023-03,evolutionary biology,148,3447
+2023-03,genetics,89,3447
+2023-03,genomics,140,3447
+2023-03,immunology,151,3447
+2023-03,microbiology,353,3447
+2023-03,molecular biology,154,3447
+2023-03,neuroscience,615,3447
+2023-03,paleontology,2,3447
+2023-03,pathology,26,3447
+2023-03,pharmacology and toxicology,45,3447
+2023-03,physiology,51,3447
+2023-03,plant biology,133,3447
+2023-03,scientific communication and education,15,3447
+2023-03,synthetic biology,38,3447
+2023-03,systems biology,68,3447
+2023-03,zoology,23,3447
+2023-04,animal behavior and cognition,45,2955
+2023-04,biochemistry,138,2955
+2023-04,bioengineering,120,2955
+2023-04,bioinformatics,266,2955
+2023-04,biophysics,131,2955
+2023-04,cancer biology,146,2955
+2023-04,cell biology,174,2955
+2023-04,developmental biology,101,2955
+2023-04,ecology,123,2955
+2023-04,evolutionary biology,124,2955
+2023-04,genetics,87,2955
+2023-04,genomics,121,2955
+2023-04,immunology,116,2955
+2023-04,microbiology,271,2955
+2023-04,molecular biology,113,2955
+2023-04,neuroscience,504,2955
+2023-04,paleontology,6,2955
+2023-04,pathology,26,2955
+2023-04,pharmacology and toxicology,36,2955
+2023-04,physiology,68,2955
+2023-04,plant biology,114,2955
+2023-04,scientific communication and education,10,2955
+2023-04,synthetic biology,30,2955
+2023-04,systems biology,75,2955
+2023-04,zoology,10,2955
+2023-05,animal behavior and cognition,50,3104
+2023-05,biochemistry,160,3104
+2023-05,bioengineering,102,3104
+2023-05,bioinformatics,248,3104
+2023-05,biophysics,175,3104
+2023-05,cancer biology,144,3104
+2023-05,cell biology,192,3104
+2023-05,developmental biology,108,3104
+2023-05,ecology,118,3104
+2023-05,evolutionary biology,124,3104
+2023-05,genetics,84,3104
+2023-05,genomics,134,3104
+2023-05,immunology,125,3104
+2023-05,microbiology,264,3104
+2023-05,molecular biology,143,3104
+2023-05,neuroscience,560,3104
+2023-05,paleontology,3,3104
+2023-05,pathology,18,3104
+2023-05,pharmacology and toxicology,36,3104
+2023-05,physiology,60,3104
+2023-05,plant biology,121,3104
+2023-05,scientific communication and education,10,3104
+2023-05,synthetic biology,38,3104
+2023-05,systems biology,66,3104
+2023-05,zoology,21,3104
+2023-06,animal behavior and cognition,48,3267
+2023-06,biochemistry,169,3267
+2023-06,bioengineering,113,3267
+2023-06,bioinformatics,274,3267
+2023-06,biophysics,166,3267
+2023-06,cancer biology,136,3267
+2023-06,cell biology,197,3267
+2023-06,developmental biology,119,3267
+2023-06,ecology,125,3267
+2023-06,evolutionary biology,120,3267
+2023-06,genetics,102,3267
+2023-06,genomics,142,3267
+2023-06,immunology,127,3267
+2023-06,microbiology,334,3267
+2023-06,molecular biology,135,3267
+2023-06,neuroscience,575,3267
+2023-06,paleontology,4,3267
+2023-06,pathology,24,3267
+2023-06,pharmacology and toxicology,35,3267
+2023-06,physiology,76,3267
+2023-06,plant biology,108,3267
+2023-06,scientific communication and education,11,3267
+2023-06,synthetic biology,44,3267
+2023-06,systems biology,66,3267
+2023-06,zoology,17,3267
+2023-07,animal behavior and cognition,38,3177
+2023-07,biochemistry,133,3177
+2023-07,bioengineering,121,3177
+2023-07,bioinformatics,275,3177
+2023-07,biophysics,157,3177
+2023-07,cancer biology,144,3177
+2023-07,cell biology,192,3177
+2023-07,developmental biology,97,3177
+2023-07,ecology,118,3177
+2023-07,evolutionary biology,148,3177
+2023-07,genetics,89,3177
+2023-07,genomics,127,3177
+2023-07,immunology,142,3177
+2023-07,microbiology,297,3177
+2023-07,molecular biology,132,3177
+2023-07,neuroscience,611,3177
+2023-07,paleontology,7,3177
+2023-07,pathology,26,3177
+2023-07,pharmacology and toxicology,45,3177
+2023-07,physiology,55,3177
+2023-07,plant biology,101,3177
+2023-07,scientific communication and education,15,3177
+2023-07,synthetic biology,25,3177
+2023-07,systems biology,67,3177
+2023-07,zoology,15,3177
+2023-08,animal behavior and cognition,58,3297
+2023-08,biochemistry,162,3297
+2023-08,bioengineering,118,3297
+2023-08,bioinformatics,260,3297
+2023-08,biophysics,166,3297
+2023-08,cancer biology,132,3297
+2023-08,cell biology,224,3297
+2023-08,developmental biology,94,3297
+2023-08,ecology,130,3297
+2023-08,evolutionary biology,135,3297
+2023-08,genetics,79,3297
+2023-08,genomics,122,3297
+2023-08,immunology,155,3297
+2023-08,microbiology,320,3297
+2023-08,molecular biology,147,3297
+2023-08,neuroscience,587,3297
+2023-08,paleontology,8,3297
+2023-08,pathology,25,3297
+2023-08,pharmacology and toxicology,49,3297
+2023-08,physiology,72,3297
+2023-08,plant biology,117,3297
+2023-08,scientific communication and education,13,3297
+2023-08,synthetic biology,33,3297
+2023-08,systems biology,62,3297
+2023-08,zoology,29,3297
+2023-09,animal behavior and cognition,56,3587
+2023-09,biochemistry,139,3587
+2023-09,bioengineering,121,3587
+2023-09,bioinformatics,264,3587
+2023-09,biophysics,174,3587
+2023-09,cancer biology,172,3587
+2023-09,cell biology,218,3587
+2023-09,developmental biology,86,3587
+2023-09,ecology,126,3587
+2023-09,evolutionary biology,182,3587
+2023-09,genetics,83,3587
+2023-09,genomics,155,3587
+2023-09,immunology,178,3587
+2023-09,microbiology,329,3587
+2023-09,molecular biology,180,3587
+2023-09,neuroscience,713,3587
+2023-09,paleontology,3,3587
+2023-09,pathology,25,3587
+2023-09,pharmacology and toxicology,49,3587
+2023-09,physiology,64,3587
+2023-09,plant biology,127,3587
+2023-09,scientific communication and education,14,3587
+2023-09,synthetic biology,30,3587
+2023-09,systems biology,67,3587
+2023-09,zoology,32,3587
+2023-10,animal behavior and cognition,52,3348
+2023-10,biochemistry,151,3348
+2023-10,bioengineering,141,3348
+2023-10,bioinformatics,265,3348
+2023-10,biophysics,152,3348
+2023-10,cancer biology,158,3348
+2023-10,cell biology,203,3348
+2023-10,developmental biology,94,3348
+2023-10,ecology,131,3348
+2023-10,evolutionary biology,131,3348
+2023-10,genetics,85,3348
+2023-10,genomics,143,3348
+2023-10,immunology,146,3348
+2023-10,microbiology,298,3348
+2023-10,molecular biology,146,3348
+2023-10,neuroscience,629,3348
+2023-10,paleontology,9,3348
+2023-10,pathology,21,3348
+2023-10,pharmacology and toxicology,39,3348
+2023-10,physiology,87,3348
+2023-10,plant biology,144,3348
+2023-10,scientific communication and education,8,3348
+2023-10,synthetic biology,41,3348
+2023-10,systems biology,60,3348
+2023-10,zoology,14,3348
+2023-11,animal behavior and cognition,60,3624
+2023-11,biochemistry,149,3624
+2023-11,bioengineering,142,3624
+2023-11,bioinformatics,350,3624
+2023-11,biophysics,125,3624
+2023-11,cancer biology,156,3624
+2023-11,cell biology,216,3624
+2023-11,developmental biology,103,3624
+2023-11,ecology,197,3624
+2023-11,evolutionary biology,158,3624
+2023-11,genetics,114,3624
+2023-11,genomics,146,3624
+2023-11,immunology,154,3624
+2023-11,microbiology,335,3624
+2023-11,molecular biology,165,3624
+2023-11,neuroscience,655,3624
+2023-11,paleontology,2,3624
+2023-11,pathology,28,3624
+2023-11,pharmacology and toxicology,41,3624
+2023-11,physiology,70,3624
+2023-11,plant biology,122,3624
+2023-11,scientific communication and education,8,3624
+2023-11,synthetic biology,45,3624
+2023-11,systems biology,64,3624
+2023-11,zoology,18,3624
+2023-12,animal behavior and cognition,55,3367
+2023-12,biochemistry,148,3367
+2023-12,bioengineering,108,3367
+2023-12,bioinformatics,316,3367
+2023-12,biophysics,170,3367
+2023-12,cancer biology,158,3367
+2023-12,cell biology,216,3367
+2023-12,developmental biology,96,3367
+2023-12,ecology,147,3367
+2023-12,evolutionary biology,129,3367
+2023-12,genetics,85,3367
+2023-12,genomics,145,3367
+2023-12,immunology,118,3367
+2023-12,microbiology,322,3367
+2023-12,molecular biology,149,3367
+2023-12,neuroscience,629,3367
+2023-12,paleontology,5,3367
+2023-12,pathology,19,3367
+2023-12,pharmacology and toxicology,30,3367
+2023-12,physiology,60,3367
+2023-12,plant biology,135,3367
+2023-12,scientific communication and education,9,3367
+2023-12,synthetic biology,40,3367
+2023-12,systems biology,58,3367
+2023-12,zoology,20,3367
+2024-01,animal behavior and cognition,52,3222
+2024-01,biochemistry,161,3222
+2024-01,bioengineering,112,3222
+2024-01,bioinformatics,261,3222
+2024-01,biophysics,146,3222
+2024-01,cancer biology,161,3222
+2024-01,cell biology,205,3222
+2024-01,developmental biology,98,3222
+2024-01,ecology,156,3222
+2024-01,evolutionary biology,119,3222
+2024-01,genetics,61,3222
+2024-01,genomics,121,3222
+2024-01,immunology,144,3222
+2024-01,microbiology,320,3222
+2024-01,molecular biology,143,3222
+2024-01,neuroscience,599,3222
+2024-01,paleontology,5,3222
+2024-01,pathology,26,3222
+2024-01,pharmacology and toxicology,39,3222
+2024-01,physiology,48,3222
+2024-01,plant biology,128,3222
+2024-01,scientific communication and education,9,3222
+2024-01,synthetic biology,26,3222
+2024-01,systems biology,55,3222
+2024-01,zoology,26,3222
+2024-02,animal behavior and cognition,60,3374
+2024-02,biochemistry,143,3374
+2024-02,bioengineering,130,3374
+2024-02,bioinformatics,250,3374
+2024-02,biophysics,149,3374
+2024-02,cancer biology,136,3374
+2024-02,cell biology,235,3374
+2024-02,developmental biology,109,3374
+2024-02,ecology,140,3374
+2024-02,evolutionary biology,134,3374
+2024-02,genetics,103,3374
+2024-02,genomics,124,3374
+2024-02,immunology,130,3374
+2024-02,microbiology,325,3374
+2024-02,molecular biology,145,3374
+2024-02,neuroscience,652,3374
+2024-02,paleontology,5,3374
+2024-02,pathology,34,3374
+2024-02,pharmacology and toxicology,37,3374
+2024-02,physiology,85,3374
+2024-02,plant biology,130,3374
+2024-02,scientific communication and education,10,3374
+2024-02,synthetic biology,35,3374
+2024-02,systems biology,52,3374
+2024-02,zoology,21,3374
+2024-03,animal behavior and cognition,54,3747
+2024-03,biochemistry,168,3747
+2024-03,bioengineering,148,3747
+2024-03,bioinformatics,342,3747
+2024-03,biophysics,156,3747
+2024-03,cancer biology,204,3747
+2024-03,cell biology,215,3747
+2024-03,developmental biology,99,3747
+2024-03,ecology,135,3747
+2024-03,evolutionary biology,138,3747
+2024-03,genetics,107,3747
+2024-03,genomics,151,3747
+2024-03,immunology,181,3747
+2024-03,microbiology,371,3747
+2024-03,molecular biology,180,3747
+2024-03,neuroscience,685,3747
+2024-03,paleontology,8,3747
+2024-03,pathology,15,3747
+2024-03,pharmacology and toxicology,53,3747
+2024-03,physiology,66,3747
+2024-03,plant biology,136,3747
+2024-03,scientific communication and education,13,3747
+2024-03,synthetic biology,35,3747
+2024-03,systems biology,62,3747
+2024-03,zoology,25,3747
+2024-04,animal behavior and cognition,45,3286
+2024-04,biochemistry,157,3286
+2024-04,bioengineering,110,3286
+2024-04,bioinformatics,259,3286
+2024-04,biophysics,151,3286
+2024-04,cancer biology,147,3286
+2024-04,cell biology,191,3286
+2024-04,developmental biology,102,3286
+2024-04,ecology,139,3286
+2024-04,evolutionary biology,127,3286
+2024-04,genetics,84,3286
+2024-04,genomics,142,3286
+2024-04,immunology,134,3286
+2024-04,microbiology,335,3286
+2024-04,molecular biology,165,3286
+2024-04,neuroscience,590,3286
+2024-04,paleontology,2,3286
+2024-04,pathology,20,3286
+2024-04,pharmacology and toxicology,41,3286
+2024-04,physiology,73,3286
+2024-04,plant biology,156,3286
+2024-04,scientific communication and education,8,3286
+2024-04,synthetic biology,31,3286
+2024-04,systems biology,52,3286
+2024-04,zoology,25,3286
+2024-05,animal behavior and cognition,67,3576
+2024-05,biochemistry,167,3576
+2024-05,bioengineering,132,3576
+2024-05,bioinformatics,266,3576
+2024-05,biophysics,173,3576
+2024-05,cancer biology,166,3576
+2024-05,cell biology,250,3576
+2024-05,developmental biology,113,3576
+2024-05,ecology,122,3576
+2024-05,evolutionary biology,130,3576
+2024-05,genetics,103,3576
+2024-05,genomics,138,3576
+2024-05,immunology,158,3576
+2024-05,microbiology,357,3576
+2024-05,molecular biology,140,3576
+2024-05,neuroscience,686,3576
+2024-05,paleontology,2,3576
+2024-05,pathology,23,3576
+2024-05,pharmacology and toxicology,43,3576
+2024-05,physiology,87,3576
+2024-05,plant biology,130,3576
+2024-05,scientific communication and education,7,3576
+2024-05,synthetic biology,44,3576
+2024-05,systems biology,53,3576
+2024-05,zoology,19,3576
+2024-06,animal behavior and cognition,63,3670
+2024-06,biochemistry,167,3670
+2024-06,bioengineering,142,3670
+2024-06,bioinformatics,336,3670
+2024-06,biophysics,160,3670
+2024-06,cancer biology,167,3670
+2024-06,cell biology,213,3670
+2024-06,developmental biology,92,3670
+2024-06,ecology,139,3670
+2024-06,evolutionary biology,134,3670
+2024-06,genetics,103,3670
+2024-06,genomics,163,3670
+2024-06,immunology,156,3670
+2024-06,microbiology,329,3670
+2024-06,molecular biology,172,3670
+2024-06,neuroscience,694,3670
+2024-06,paleontology,4,3670
+2024-06,pathology,24,3670
+2024-06,pharmacology and toxicology,54,3670
+2024-06,physiology,84,3670
+2024-06,plant biology,139,3670
+2024-06,scientific communication and education,8,3670
+2024-06,synthetic biology,47,3670
+2024-06,systems biology,71,3670
+2024-06,zoology,9,3670
+2024-07,animal behavior and cognition,63,3712
+2024-07,biochemistry,171,3712
+2024-07,bioengineering,143,3712
+2024-07,bioinformatics,299,3712
+2024-07,biophysics,185,3712
+2024-07,cancer biology,153,3712
+2024-07,cell biology,199,3712
+2024-07,developmental biology,135,3712
+2024-07,ecology,168,3712
+2024-07,evolutionary biology,191,3712
+2024-07,genetics,83,3712
+2024-07,genomics,139,3712
+2024-07,immunology,193,3712
+2024-07,microbiology,338,3712
+2024-07,molecular biology,156,3712
+2024-07,neuroscience,663,3712
+2024-07,paleontology,12,3712
+2024-07,pathology,32,3712
+2024-07,pharmacology and toxicology,42,3712
+2024-07,physiology,67,3712
+2024-07,plant biology,147,3712
+2024-07,scientific communication and education,7,3712
+2024-07,synthetic biology,34,3712
+2024-07,systems biology,68,3712
+2024-07,zoology,24,3712
+2024-08,animal behavior and cognition,63,3469
+2024-08,biochemistry,160,3469
+2024-08,bioengineering,178,3469
+2024-08,bioinformatics,281,3469
+2024-08,biophysics,143,3469
+2024-08,cancer biology,175,3469
+2024-08,cell biology,198,3469
+2024-08,developmental biology,103,3469
+2024-08,ecology,165,3469
+2024-08,evolutionary biology,129,3469
+2024-08,genetics,83,3469
+2024-08,genomics,158,3469
+2024-08,immunology,156,3469
+2024-08,microbiology,317,3469
+2024-08,molecular biology,149,3469
+2024-08,neuroscience,598,3469
+2024-08,paleontology,2,3469
+2024-08,pathology,26,3469
+2024-08,pharmacology and toxicology,51,3469
+2024-08,physiology,83,3469
+2024-08,plant biology,144,3469
+2024-08,scientific communication and education,8,3469
+2024-08,synthetic biology,30,3469
+2024-08,systems biology,56,3469
+2024-08,zoology,13,3469
+2024-09,animal behavior and cognition,67,4002
+2024-09,biochemistry,171,4002
+2024-09,bioengineering,178,4002
+2024-09,bioinformatics,282,4002
+2024-09,biophysics,187,4002
+2024-09,cancer biology,195,4002
+2024-09,cell biology,234,4002
+2024-09,developmental biology,118,4002
+2024-09,ecology,159,4002
+2024-09,evolutionary biology,159,4002
+2024-09,genetics,104,4002
+2024-09,genomics,182,4002
+2024-09,immunology,199,4002
+2024-09,microbiology,392,4002
+2024-09,molecular biology,163,4002
+2024-09,neuroscience,762,4002
+2024-09,paleontology,4,4002
+2024-09,pathology,31,4002
+2024-09,pharmacology and toxicology,40,4002
+2024-09,physiology,90,4002
+2024-09,plant biology,139,4002
+2024-09,scientific communication and education,16,4002
+2024-09,synthetic biology,49,4002
+2024-09,systems biology,65,4002
+2024-09,zoology,16,4002
+2024-10,animal behavior and cognition,77,4051
+2024-10,biochemistry,196,4051
+2024-10,bioengineering,139,4051
+2024-10,bioinformatics,331,4051
+2024-10,biophysics,191,4051
+2024-10,cancer biology,203,4051
+2024-10,cell biology,235,4051
+2024-10,developmental biology,120,4051
+2024-10,ecology,133,4051
+2024-10,evolutionary biology,159,4051
+2024-10,genetics,100,4051
+2024-10,genomics,159,4051
+2024-10,immunology,159,4051
+2024-10,microbiology,392,4051
+2024-10,molecular biology,154,4051
+2024-10,neuroscience,805,4051
+2024-10,paleontology,4,4051
+2024-10,pathology,19,4051
+2024-10,pharmacology and toxicology,49,4051
+2024-10,physiology,85,4051
+2024-10,plant biology,158,4051
+2024-10,scientific communication and education,15,4051
+2024-10,synthetic biology,65,4051
+2024-10,systems biology,76,4051
+2024-10,zoology,26,4051
+2024-11,animal behavior and cognition,57,3686
+2024-11,biochemistry,164,3686
+2024-11,bioengineering,135,3686
+2024-11,bioinformatics,350,3686
+2024-11,biophysics,166,3686
+2024-11,cancer biology,171,3686
+2024-11,cell biology,224,3686
+2024-11,developmental biology,106,3686
+2024-11,ecology,159,3686
+2024-11,evolutionary biology,153,3686
+2024-11,genetics,89,3686
+2024-11,genomics,140,3686
+2024-11,immunology,148,3686
+2024-11,microbiology,375,3686
+2024-11,molecular biology,173,3686
+2024-11,neuroscience,636,3686
+2024-11,paleontology,7,3686
+2024-11,pathology,34,3686
+2024-11,pharmacology and toxicology,50,3686
+2024-11,physiology,72,3686
+2024-11,plant biology,126,3686
+2024-11,scientific communication and education,13,3686
+2024-11,synthetic biology,54,3686
+2024-11,systems biology,67,3686
+2024-11,zoology,16,3686
+2024-12,animal behavior and cognition,66,3837
+2024-12,biochemistry,180,3837
+2024-12,bioengineering,152,3837
+2024-12,bioinformatics,352,3837
+2024-12,biophysics,191,3837
+2024-12,cancer biology,218,3837
+2024-12,cell biology,228,3837
+2024-12,developmental biology,115,3837
+2024-12,ecology,158,3837
+2024-12,evolutionary biology,158,3837
+2024-12,genetics,93,3837
+2024-12,genomics,165,3837
+2024-12,immunology,180,3837
+2024-12,microbiology,326,3837
+2024-12,molecular biology,148,3837
+2024-12,neuroscience,630,3837
+2024-12,paleontology,7,3837
+2024-12,pathology,38,3837
+2024-12,pharmacology and toxicology,51,3837
+2024-12,physiology,90,3837
+2024-12,plant biology,150,3837
+2024-12,scientific communication and education,14,3837
+2024-12,synthetic biology,33,3837
+2024-12,systems biology,75,3837
+2024-12,zoology,19,3837
+2025-01,animal behavior and cognition,58,3703
+2025-01,biochemistry,188,3703
+2025-01,bioengineering,133,3703
+2025-01,bioinformatics,301,3703
+2025-01,biophysics,194,3703
+2025-01,cancer biology,183,3703
+2025-01,cell biology,243,3703
+2025-01,developmental biology,130,3703
+2025-01,ecology,157,3703
+2025-01,evolutionary biology,143,3703
+2025-01,genetics,108,3703
+2025-01,genomics,134,3703
+2025-01,immunology,179,3703
+2025-01,microbiology,379,3703
+2025-01,molecular biology,145,3703
+2025-01,neuroscience,613,3703
+2025-01,paleontology,9,3703
+2025-01,pathology,34,3703
+2025-01,pharmacology and toxicology,34,3703
+2025-01,physiology,82,3703
+2025-01,plant biology,134,3703
+2025-01,scientific communication and education,15,3703
+2025-01,synthetic biology,36,3703
+2025-01,systems biology,59,3703
+2025-01,zoology,12,3703
+2025-02,animal behavior and cognition,43,3646
+2025-02,biochemistry,145,3646
+2025-02,bioengineering,128,3646
+2025-02,bioinformatics,375,3646
+2025-02,biophysics,151,3646
+2025-02,cancer biology,184,3646
+2025-02,cell biology,240,3646
+2025-02,developmental biology,92,3646
+2025-02,ecology,165,3646
+2025-02,evolutionary biology,144,3646
+2025-02,genetics,79,3646
+2025-02,genomics,145,3646
+2025-02,immunology,153,3646
+2025-02,microbiology,375,3646
+2025-02,molecular biology,133,3646
+2025-02,neuroscience,673,3646
+2025-02,paleontology,3,3646
+2025-02,pathology,27,3646
+2025-02,pharmacology and toxicology,44,3646
+2025-02,physiology,72,3646
+2025-02,plant biology,137,3646
+2025-02,scientific communication and education,8,3646
+2025-02,synthetic biology,26,3646
+2025-02,systems biology,75,3646
+2025-02,zoology,29,3646
+2025-03,animal behavior and cognition,66,4103
+2025-03,biochemistry,194,4103
+2025-03,bioengineering,156,4103
+2025-03,bioinformatics,339,4103
+2025-03,biophysics,185,4103
+2025-03,cancer biology,217,4103
+2025-03,cell biology,230,4103
+2025-03,developmental biology,107,4103
+2025-03,ecology,176,4103
+2025-03,evolutionary biology,133,4103
+2025-03,genetics,104,4103
+2025-03,genomics,162,4103
+2025-03,immunology,197,4103
+2025-03,microbiology,399,4103
+2025-03,molecular biology,203,4103
+2025-03,neuroscience,758,4103
+2025-03,paleontology,7,4103
+2025-03,pathology,31,4103
+2025-03,pharmacology and toxicology,48,4103
+2025-03,physiology,93,4103
+2025-03,plant biology,144,4103
+2025-03,scientific communication and education,10,4103
+2025-03,synthetic biology,45,4103
+2025-03,systems biology,71,4103
+2025-03,zoology,28,4103
+2025-04,animal behavior and cognition,57,3838
+2025-04,biochemistry,186,3838
+2025-04,bioengineering,174,3838
+2025-04,bioinformatics,357,3838
+2025-04,biophysics,183,3838
+2025-04,cancer biology,208,3838
+2025-04,cell biology,210,3838
+2025-04,developmental biology,110,3838
+2025-04,ecology,130,3838
+2025-04,evolutionary biology,153,3838
+2025-04,genetics,96,3838
+2025-04,genomics,171,3838
+2025-04,immunology,162,3838
+2025-04,microbiology,378,3838
+2025-04,molecular biology,158,3838
+2025-04,neuroscience,660,3838
+2025-04,paleontology,7,3838
+2025-04,pathology,28,3838
+2025-04,pharmacology and toxicology,49,3838
+2025-04,physiology,73,3838
+2025-04,plant biology,138,3838
+2025-04,scientific communication and education,10,3838
+2025-04,synthetic biology,47,3838
+2025-04,systems biology,76,3838
+2025-04,zoology,17,3838
+2025-05,animal behavior and cognition,67,4331
+2025-05,biochemistry,243,4331
+2025-05,bioengineering,174,4331
+2025-05,bioinformatics,387,4331
+2025-05,biophysics,236,4331
+2025-05,cancer biology,209,4331
+2025-05,cell biology,257,4331
+2025-05,developmental biology,132,4331
+2025-05,ecology,173,4331
+2025-05,evolutionary biology,176,4331
+2025-05,genetics,106,4331
+2025-05,genomics,155,4331
+2025-05,immunology,212,4331
+2025-05,microbiology,400,4331
+2025-05,molecular biology,181,4331
+2025-05,neuroscience,735,4331
+2025-05,paleontology,2,4331
+2025-05,pathology,37,4331
+2025-05,pharmacology and toxicology,47,4331
+2025-05,physiology,99,4331
+2025-05,plant biology,138,4331
+2025-05,scientific communication and education,13,4331
+2025-05,synthetic biology,47,4331
+2025-05,systems biology,90,4331
+2025-05,zoology,15,4331
+2025-06,animal behavior and cognition,82,3948
+2025-06,biochemistry,166,3948
+2025-06,bioengineering,170,3948
+2025-06,bioinformatics,352,3948
+2025-06,biophysics,192,3948
+2025-06,cancer biology,191,3948
+2025-06,cell biology,213,3948
+2025-06,developmental biology,110,3948
+2025-06,ecology,147,3948
+2025-06,evolutionary biology,132,3948
+2025-06,genetics,100,3948
+2025-06,genomics,177,3948
+2025-06,immunology,174,3948
+2025-06,microbiology,348,3948
+2025-06,molecular biology,163,3948
+2025-06,neuroscience,776,3948
+2025-06,paleontology,3,3948
+2025-06,pathology,31,3948
+2025-06,pharmacology and toxicology,51,3948
+2025-06,physiology,78,3948
+2025-06,plant biology,148,3948
+2025-06,scientific communication and education,13,3948
+2025-06,synthetic biology,44,3948
+2025-06,systems biology,70,3948
+2025-06,zoology,17,3948
+2025-07,animal behavior and cognition,70,4049
+2025-07,biochemistry,163,4049
+2025-07,bioengineering,158,4049
+2025-07,bioinformatics,338,4049
+2025-07,biophysics,193,4049
+2025-07,cancer biology,187,4049
+2025-07,cell biology,251,4049
+2025-07,developmental biology,103,4049
+2025-07,ecology,181,4049
+2025-07,evolutionary biology,170,4049
+2025-07,genetics,99,4049
+2025-07,genomics,196,4049
+2025-07,immunology,183,4049
+2025-07,microbiology,359,4049
+2025-07,molecular biology,168,4049
+2025-07,neuroscience,748,4049
+2025-07,paleontology,8,4049
+2025-07,pathology,30,4049
+2025-07,pharmacology and toxicology,57,4049
+2025-07,physiology,90,4049
+2025-07,plant biology,162,4049
+2025-07,scientific communication and education,9,4049
+2025-07,synthetic biology,34,4049
+2025-07,systems biology,70,4049
+2025-07,zoology,22,4049
+2025-08,animal behavior and cognition,54,3916
+2025-08,biochemistry,202,3916
+2025-08,bioengineering,158,3916
+2025-08,bioinformatics,308,3916
+2025-08,biophysics,171,3916
+2025-08,cancer biology,205,3916
+2025-08,cell biology,225,3916
+2025-08,developmental biology,99,3916
+2025-08,ecology,168,3916
+2025-08,evolutionary biology,149,3916
+2025-08,genetics,83,3916
+2025-08,genomics,169,3916
+2025-08,immunology,187,3916
+2025-08,microbiology,377,3916
+2025-08,molecular biology,186,3916
+2025-08,neuroscience,698,3916
+2025-08,paleontology,7,3916
+2025-08,pathology,32,3916
+2025-08,pharmacology and toxicology,66,3916
+2025-08,physiology,72,3916
+2025-08,plant biology,163,3916
+2025-08,scientific communication and education,13,3916
+2025-08,synthetic biology,46,3916
+2025-08,systems biology,50,3916
+2025-08,zoology,28,3916
+2025-09,animal behavior and cognition,87,4770
+2025-09,biochemistry,203,4770
+2025-09,bioengineering,186,4770
+2025-09,bioinformatics,383,4770
+2025-09,biophysics,191,4770
+2025-09,cancer biology,259,4770
+2025-09,cell biology,279,4770
+2025-09,developmental biology,136,4770
+2025-09,ecology,220,4770
+2025-09,evolutionary biology,171,4770
+2025-09,genetics,126,4770
+2025-09,genomics,213,4770
+2025-09,immunology,225,4770
+2025-09,microbiology,421,4770
+2025-09,molecular biology,202,4770
+2025-09,neuroscience,891,4770
+2025-09,paleontology,10,4770
+2025-09,pathology,53,4770
+2025-09,pharmacology and toxicology,76,4770
+2025-09,physiology,110,4770
+2025-09,plant biology,158,4770
+2025-09,scientific communication and education,6,4770
+2025-09,synthetic biology,51,4770
+2025-09,systems biology,83,4770
+2025-09,zoology,30,4770
+2025-10,animal behavior and cognition,57,4736
+2025-10,biochemistry,214,4736
+2025-10,bioengineering,216,4736
+2025-10,bioinformatics,360,4736
+2025-10,biophysics,226,4736
+2025-10,cancer biology,248,4736
+2025-10,cell biology,287,4736
+2025-10,developmental biology,123,4736
+2025-10,ecology,213,4736
+2025-10,evolutionary biology,194,4736
+2025-10,genetics,115,4736
+2025-10,genomics,179,4736
+2025-10,immunology,231,4736
+2025-10,microbiology,429,4736
+2025-10,molecular biology,199,4736
+2025-10,neuroscience,895,4736
+2025-10,paleontology,4,4736
+2025-10,pathology,29,4736
+2025-10,pharmacology and toxicology,55,4736
+2025-10,physiology,114,4736
+2025-10,plant biology,166,4736
+2025-10,scientific communication and education,11,4736
+2025-10,synthetic biology,46,4736
+2025-10,systems biology,99,4736
+2025-10,zoology,26,4736
+2025-11,animal behavior and cognition,50,3884
+2025-11,biochemistry,156,3884
+2025-11,bioengineering,142,3884
+2025-11,bioinformatics,344,3884
+2025-11,biophysics,188,3884
+2025-11,cancer biology,186,3884
+2025-11,cell biology,204,3884
+2025-11,developmental biology,98,3884
+2025-11,ecology,162,3884
+2025-11,evolutionary biology,157,3884
+2025-11,genetics,80,3884
+2025-11,genomics,148,3884
+2025-11,immunology,190,3884
+2025-11,microbiology,398,3884
+2025-11,molecular biology,185,3884
+2025-11,neuroscience,772,3884
+2025-11,paleontology,6,3884
+2025-11,pathology,29,3884
+2025-11,pharmacology and toxicology,43,3884
+2025-11,physiology,62,3884
+2025-11,plant biology,137,3884
+2025-11,scientific communication and education,9,3884
+2025-11,synthetic biology,45,3884
+2025-11,systems biology,70,3884
+2025-11,zoology,23,3884
+2025-12,animal behavior and cognition,67,4394
+2025-12,biochemistry,201,4394
+2025-12,bioengineering,172,4394
+2025-12,bioinformatics,391,4394
+2025-12,biophysics,173,4394
+2025-12,cancer biology,210,4394
+2025-12,cell biology,282,4394
+2025-12,developmental biology,117,4394
+2025-12,ecology,211,4394
+2025-12,evolutionary biology,158,4394
+2025-12,genetics,102,4394
+2025-12,genomics,189,4394
+2025-12,immunology,187,4394
+2025-12,microbiology,388,4394
+2025-12,molecular biology,195,4394
+2025-12,neuroscience,852,4394
+2025-12,paleontology,8,4394
+2025-12,pathology,24,4394
+2025-12,pharmacology and toxicology,56,4394
+2025-12,physiology,82,4394
+2025-12,plant biology,164,4394
+2025-12,scientific communication and education,10,4394
+2025-12,synthetic biology,58,4394
+2025-12,systems biology,79,4394
+2025-12,zoology,18,4394
+2026-01,animal behavior and cognition,68,3924
+2026-01,biochemistry,189,3924
+2026-01,bioengineering,167,3924
+2026-01,bioinformatics,329,3924
+2026-01,biophysics,175,3924
+2026-01,cancer biology,200,3924
+2026-01,cell biology,226,3924
+2026-01,developmental biology,88,3924
+2026-01,ecology,144,3924
+2026-01,evolutionary biology,157,3924
+2026-01,genetics,93,3924
+2026-01,genomics,140,3924
+2026-01,immunology,217,3924
+2026-01,microbiology,419,3924
+2026-01,molecular biology,171,3924
+2026-01,neuroscience,698,3924
+2026-01,paleontology,5,3924
+2026-01,pathology,29,3924
+2026-01,pharmacology and toxicology,61,3924
+2026-01,physiology,79,3924
+2026-01,plant biology,147,3924
+2026-01,scientific communication and education,12,3924
+2026-01,synthetic biology,38,3924
+2026-01,systems biology,52,3924
+2026-01,zoology,20,3924
+2026-02,animal behavior and cognition,72,3993
+2026-02,biochemistry,175,3993
+2026-02,bioengineering,177,3993
+2026-02,bioinformatics,407,3993
+2026-02,biophysics,185,3993
+2026-02,cancer biology,180,3993
+2026-02,cell biology,244,3993
+2026-02,developmental biology,84,3993
+2026-02,ecology,189,3993
+2026-02,evolutionary biology,155,3993
+2026-02,genetics,103,3993
+2026-02,genomics,177,3993
+2026-02,immunology,207,3993
+2026-02,microbiology,377,3993
+2026-02,molecular biology,168,3993
+2026-02,neuroscience,681,3993
+2026-02,paleontology,4,3993
+2026-02,pathology,33,3993
+2026-02,pharmacology and toxicology,46,3993
+2026-02,physiology,79,3993
+2026-02,plant biology,135,3993
+2026-02,scientific communication and education,6,3993
+2026-02,synthetic biology,26,3993
+2026-02,systems biology,64,3993
+2026-02,zoology,19,3993
+2026-03,animal behavior and cognition,83,4703
+2026-03,biochemistry,197,4703
+2026-03,bioengineering,193,4703
+2026-03,bioinformatics,493,4703
+2026-03,biophysics,221,4703
+2026-03,cancer biology,210,4703
+2026-03,cell biology,292,4703
+2026-03,developmental biology,127,4703
+2026-03,ecology,184,4703
+2026-03,evolutionary biology,175,4703
+2026-03,genetics,102,4703
+2026-03,genomics,197,4703
+2026-03,immunology,205,4703
+2026-03,microbiology,473,4703
+2026-03,molecular biology,198,4703
+2026-03,neuroscience,860,4703
+2026-03,paleontology,11,4703
+2026-03,pathology,23,4703
+2026-03,pharmacology and toxicology,65,4703
+2026-03,physiology,86,4703
+2026-03,plant biology,145,4703
+2026-03,scientific communication and education,12,4703
+2026-03,synthetic biology,43,4703
+2026-03,systems biology,89,4703
+2026-03,zoology,19,4703
+2026-04,animal behavior and cognition,53,4265
+2026-04,biochemistry,176,4265
+2026-04,bioengineering,190,4265
+2026-04,bioinformatics,427,4265
+2026-04,biophysics,221,4265
+2026-04,cancer biology,220,4265
+2026-04,cell biology,239,4265
+2026-04,developmental biology,114,4265
+2026-04,ecology,193,4265
+2026-04,evolutionary biology,182,4265
+2026-04,genetics,93,4265
+2026-04,genomics,170,4265
+2026-04,immunology,188,4265
+2026-04,microbiology,382,4265
+2026-04,molecular biology,174,4265
+2026-04,neuroscience,764,4265
+2026-04,paleontology,6,4265
+2026-04,pathology,29,4265
+2026-04,pharmacology and toxicology,53,4265
+2026-04,physiology,86,4265
+2026-04,plant biology,158,4265
+2026-04,scientific communication and education,11,4265
+2026-04,synthetic biology,45,4265
+2026-04,systems biology,67,4265
+2026-04,zoology,24,4265
+2026-05,animal behavior and cognition,66,5165
+2026-05,biochemistry,282,5165
+2026-05,bioengineering,227,5165
+2026-05,bioinformatics,521,5165
+2026-05,biophysics,228,5165
+2026-05,cancer biology,261,5165
+2026-05,cell biology,323,5165
+2026-05,developmental biology,132,5165
+2026-05,ecology,220,5165
+2026-05,evolutionary biology,194,5165
+2026-05,genetics,127,5165
+2026-05,genomics,233,5165
+2026-05,immunology,202,5165
+2026-05,microbiology,471,5165
+2026-05,molecular biology,206,5165
+2026-05,neuroscience,890,5165
+2026-05,paleontology,3,5165
+2026-05,pathology,32,5165
+2026-05,pharmacology and toxicology,80,5165
+2026-05,physiology,88,5165
+2026-05,plant biology,190,5165
+2026-05,scientific communication and education,13,5165
+2026-05,synthetic biology,66,5165
+2026-05,systems biology,86,5165
+2026-05,zoology,24,5165
+2026-06,animal behavior and cognition,71,4499
+2026-06,biochemistry,215,4499
+2026-06,bioengineering,231,4499
+2026-06,bioinformatics,459,4499
+2026-06,biophysics,194,4499
+2026-06,cancer biology,202,4499
+2026-06,cell biology,284,4499
+2026-06,developmental biology,98,4499
+2026-06,ecology,198,4499
+2026-06,evolutionary biology,168,4499
+2026-06,genetics,100,4499
+2026-06,genomics,161,4499
+2026-06,immunology,196,4499
+2026-06,microbiology,421,4499
+2026-06,molecular biology,145,4499
+2026-06,neuroscience,825,4499
+2026-06,paleontology,8,4499
+2026-06,pathology,26,4499
+2026-06,pharmacology and toxicology,64,4499
+2026-06,physiology,108,4499
+2026-06,plant biology,162,4499
+2026-06,scientific communication and education,8,4499
+2026-06,synthetic biology,57,4499
+2026-06,systems biology,76,4499
+2026-06,unknown,3,4499
+2026-06,zoology,19,4499
+2026-07,animal behavior and cognition,63,4676
+2026-07,biochemistry,225,4676
+2026-07,bioengineering,219,4676
+2026-07,bioinformatics,415,4676
+2026-07,biophysics,226,4676
+2026-07,cancer biology,201,4676
+2026-07,cell biology,271,4676
+2026-07,developmental biology,115,4676
+2026-07,ecology,217,4676
+2026-07,evolutionary biology,194,4676
+2026-07,genetics,106,4676
+2026-07,genomics,196,4676
+2026-07,immunology,209,4676
+2026-07,microbiology,416,4676
+2026-07,molecular biology,173,4676
+2026-07,neuroscience,887,4676
+2026-07,paleontology,3,4676
+2026-07,pathology,36,4676
+2026-07,pharmacology and toxicology,54,4676
+2026-07,physiology,93,4676
+2026-07,plant biology,179,4676
+2026-07,scientific communication and education,18,4676
+2026-07,synthetic biology,54,4676
+2026-07,systems biology,79,4676
+2026-07,zoology,27,4676
+2026-08,animal behavior and cognition,72,4274
+2026-08,biochemistry,179,4274
+2026-08,bioengineering,159,4274
+2026-08,bioinformatics,432,4274
+2026-08,biophysics,219,4274
+2026-08,cancer biology,217,4274
+2026-08,cell biology,256,4274
+2026-08,developmental biology,89,4274
+2026-08,ecology,206,4274
+2026-08,evolutionary biology,178,4274
+2026-08,genetics,100,4274
+2026-08,genomics,174,4274
+2026-08,immunology,169,4274
+2026-08,microbiology,402,4274
+2026-08,molecular biology,176,4274
+2026-08,neuroscience,741,4274
+2026-08,paleontology,5,4274
+2026-08,pathology,25,4274
+2026-08,pharmacology and toxicology,58,4274
+2026-08,physiology,77,4274
+2026-08,plant biology,190,4274
+2026-08,scientific communication and education,9,4274
+2026-08,synthetic biology,49,4274
+2026-08,systems biology,65,4274
+2026-08,zoology,27,4274
+2026-09,animal behavior and cognition,76,5049
+2026-09,biochemistry,212,5049
+2026-09,bioengineering,232,5049
+2026-09,bioinformatics,498,5049
+2026-09,biophysics,219,5049
+2026-09,cancer biology,260,5049
+2026-09,cell biology,288,5049
+2026-09,developmental biology,118,5049
+2026-09,ecology,248,5049
+2026-09,evolutionary biology,185,5049
+2026-09,genetics,114,5049
+2026-09,genomics,179,5049
+2026-09,immunology,197,5049
+2026-09,microbiology,483,5049
+2026-09,molecular biology,205,5049
+2026-09,neuroscience,982,5049
+2026-09,paleontology,6,5049
+2026-09,pathology,30,5049
+2026-09,pharmacology and toxicology,54,5049
+2026-09,physiology,107,5049
+2026-09,plant biology,181,5049
+2026-09,scientific communication and education,8,5049
+2026-09,synthetic biology,44,5049
+2026-09,systems biology,99,5049
+2026-09,zoology,24,5049

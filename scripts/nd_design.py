@@ -18,8 +18,9 @@ Test B (exposure)    150 random papers per category from 2019-2022 (all of them 
                        full-arXiv harvest. Dating: held-out subcategories by first-version submission (API);
                        maths subcategories by identifier month from the OAI harvest (2019 on, so their trend window
                        is 2019-2022); the six HEP/nuclear archives by announcement month from arXiv's statistics pages.
-                       bioRxiv and medRxiv subject categories with at least 300 eligible preprints in 2019-2022 (medRxiv:
-                       non-COVID). Smaller categories are dropped, not pooled, and listed.
+                       bioRxiv and medRxiv subject categories with at least 150 eligible preprints in 2019-2022 (medRxiv:
+                       non-COVID), the registered rule (Deviation 2; Deviation 3, D3k). Smaller categories are dropped,
+                       not pooled, and listed. The first version of this file used 300.
 Labels               U is excluded from the ND share (primary); in a sensitivity analysis U counts as NN.
 Seeds                each stratum's sample uses random.Random(seed) with seed = first 8 bytes of
                      SHA-256("<design>|<stratum>|20261016"), so any stratum can be redrawn independently.
@@ -32,7 +33,7 @@ HN_ARCHIVES = ["cond-mat", "astro-ph", "quant-ph"]
 HN_FIRST, LAST = "2017-01", "2026-09"
 BIO_FIRST, MED_FIRST = "2019-01", "2019-07"
 N_BEFORE_2025, N_FROM_2025 = 15, 40
-TESTB_N, TESTB_WINDOW, TESTB_MIN_PER_YEAR, TESTB_MIN_RXIV = 150, ("2019-01", "2022-12"), 300, 300
+TESTB_N, TESTB_WINDOW, TESTB_MIN_PER_YEAR, TESTB_MIN_RXIV = 150, ("2019-01", "2022-12"), 300, 150
 TESTB_ARXIV_ARCHIVES = ["hep-th", "hep-ph", "gr-qc", "nucl-th", "hep-ex", "nucl-ex"]  # no subcategories
 
 

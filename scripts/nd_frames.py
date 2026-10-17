@@ -15,8 +15,12 @@ Writes:
   data/processed/nd_sample_attributes.csv.gz  per sampled paper: announcement month (arXiv identifier month; posting
                                          month for bioRxiv/medRxiv), number of authors (held-out arXiv only) and genre
                                          (arXiv: the keyword genres of stats_round1.py; bioRxiv/medRxiv: "review" if
-                                         the title names a review or meta-analysis), for the sensitivity analyses
-  data/processed/nd_category_monthly.csv server, category, month, papers: monthly output by category for the Test B
+                                         the title names a review or meta-analysis), and the flags of Deviation 3:
+                                         survey_words (DESI, Euclid, Rubin or LSST as whole words, case-sensitive, in
+                                         the title or abstract; D3l) and ai_topic (the AI-topic list of D3m), for the
+                                         sensitivity analyses
+  data/processed/nd_category_monthly.csv server, category, month, papers, papers_without_ai_topic: monthly output by
+                                         category for the Test B
                                          outcomes (held-out arXiv subcategories by first-version month, maths
                                          subcategories by identifier month, bioRxiv and medRxiv by first posting,
                                          every preprint once, medRxiv without COVID-19); the six HEP/nuclear archives
@@ -44,6 +48,18 @@ from stats_within_field import ym_range  # noqa: E402
 
 BIORXIV_MOVED = {"epidemiology", "clinical trials"}  # bioRxiv categories that moved to medRxiv in mid-2019
 RXIV_REVIEW = re.compile(r"\breview\b|meta-?analy[sz]", re.I)
+# Deviation 3, addendum: D3l (2025 public astronomy releases; case-sensitive whole words) and D3m (AI as a topic)
+SURVEY_RE = re.compile(r"\b(?:DESI|Euclid|Rubin|LSST)\b")
+AI_CI_RE = re.compile(r"machine learning|machine-learning|deep learning|neural network|neural-network|language model|"
+                      r"artificial intelligence|reinforcement learning|generative model|diffusion model|"
+                      r"foundation model|graph neural|transformer-based|vision transformer", re.I)
+AI_CS_RE = re.compile(r"\b(?:AI|LLM|LLMs)\b")
+
+
+def flags(title, abstract):
+    text = (title or "") + " " + (abstract or "")
+    return {"survey_words": int(bool(SURVEY_RE.search(text))),
+            "ai_topic": int(bool(AI_CI_RE.search(text) or AI_CS_RE.search(text)))}
 
 
 def gz_text(path):
@@ -63,7 +79,7 @@ def heldout(dir_):
             out[r["id"]] = {"key": "arxiv:" + r["id"], "domain": "arxiv", "archive": arch, "category": r["primary"],
                             "month": r["v1"][:7], "title": r["title"], "abstract": r["abstract"],
                             "comments": r["comments"], "announce": arxiv_month(r["id"]), "n_authors": r["n_authors"],
-                            "genre": genre(r)}
+                            "genre": genre(r), **flags(r["title"], r["abstract"])}
     return list(out.values())
 
 
@@ -87,7 +103,7 @@ def oai(dir_):
                             "title": " ".join((r.get("title") or "").split()),
                             "abstract": " ".join((r.get("abstract") or "").split()),
                             "comments": " ".join((r.get("comments") or "").split()), "announce": f"20{m.group(1)}-{m.group(2)}",
-                            "n_authors": "", "genre": genre(r)}
+                            "n_authors": "", "genre": genre(r), **flags(r.get("title"), r.get("abstract"))}
     return list(out.values())
 
 
@@ -104,19 +120,22 @@ def rxiv(parts, server):
             out[r["doi"]] = {"key": f"{server}:{r['doi']}", "domain": server, "archive": server,
                              "category": r["category"], "month": r["date"][:7], "title": r["title"],
                              "abstract": r["abstract"], "comments": "", "announce": r["date"][:7], "n_authors": "",
-                             "genre": "review" if RXIV_REVIEW.search(r["title"]) else "research"}
+                             "genre": "review" if RXIV_REVIEW.search(r["title"]) else "research",
+                             **flags(r["title"], r["abstract"])}
     return list(out.values())
 
 
 def category_months(frames, bio_parts, med_parts, only):
     """Monthly output by category for the Test B outcomes; bioRxiv and medRxiv count every preprint once, at its
     first version-1 listing, including the few without an abstract."""
-    c = Counter()
+    c, c_no_ai = Counter(), Counter()
     for p in frames["heldout"]:
         c[("arxiv", p["category"], p["month"])] += 1
+        c_no_ai[("arxiv", p["category"], p["month"])] += not p["ai_topic"]
     for p in frames["oai"]:
         if p["archive"] == "math":
             c[("arxiv", p["category"], p["month"])] += 1
+            c_no_ai[("arxiv", p["category"], p["month"])] += not p["ai_topic"]
     for server, parts in (("biorxiv", bio_parts), ("medrxiv", med_parts)):
         if only not in (None, server):
             continue
@@ -131,7 +150,8 @@ def category_months(frames, bio_parts, med_parts, only):
             if server == "biorxiv" and r["category"] in BIORXIV_MOVED:
                 continue
             c[(server, r["category"], r["date"][:7])] += 1
-    return sorted((k + (n,) for k, n in c.items() if k[2] <= D.LAST))
+            c_no_ai[(server, r["category"], r["date"][:7])] += not flags(r["title"], r["abstract"])["ai_topic"]
+    return sorted((k + (n, c_no_ai[k]) for k, n in c.items() if k[2] <= D.LAST))
 
 
 def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo=".", only=None):
@@ -197,12 +217,13 @@ def main(heldout_dir, oai_dir, bio_parts, med_parts, work, repo=".", only=None):
     keys = sorted({k for _, _, k in samples})
     with gz_text(os.path.join(repo, f"data/processed/nd_sample_attributes{suffix}.csv.gz")) as f:
         w = csv.writer(f)
-        w.writerow(["paper_key", "announce_month", "n_authors", "genre"])
+        w.writerow(["paper_key", "announce_month", "n_authors", "genre", "survey_words", "ai_topic"])
         for k in keys:
-            w.writerow([k, by_key[k]["announce"], by_key[k]["n_authors"], by_key[k]["genre"]])
+            p = by_key[k]
+            w.writerow([k, p["announce"], p["n_authors"], p["genre"], p["survey_words"], p["ai_topic"]])
     with open(os.path.join(repo, f"data/processed/nd_category_monthly{suffix}.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["server", "category", "month", "papers"])
+        w.writerow(["server", "category", "month", "papers", "papers_without_ai_topic"])
         w.writerows(category_months(frames, bio_parts, med_parts, only))
     json.dump([{"id": k, "domain": by_key[k]["domain"], "title": by_key[k]["title"], "abstract": by_key[k]["abstract"],
                 "comments": by_key[k]["comments"]} for k in keys],
