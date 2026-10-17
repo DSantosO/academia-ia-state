@@ -349,6 +349,12 @@ def disagree(a, b, null=1.0, est="rr"):
     return excludes(a) != excludes(b) or (a[est] - null) * (b[est] - null) < 0
 
 
+D3Q_NOTE = ("Deviation 3, D3q: correction of the Test A medRxiv computation of dacd064. The registered estimate is "
+            "recomputed with the bootstrap that drops replicates whose post terms are not identified (no month of a "
+            "base year drawn); the point estimate is unchanged by construction. The verdict comes from this "
+            "computation; the dacd064 interval (data/processed/stats/nd_tests.json) is reported beside it.")
+
+
 def hn_like(rows, sizes, labels, design, units, attrs, kernel, reps=999, registered=True):
     """HN (three archives) or Test A (one server). With registered=False the registered estimate is not recomputed
     (Test A medRxiv, computed at dacd064) and only its companions and the added sensitivities are produced."""
@@ -607,8 +613,8 @@ def main():
         "HN": ({"HN"}, lambda: hn_like(rows, sizes, labels, "HN", D.HN_ARCHIVES, attrs, kernels["arxiv"])),
         "A-biorxiv": ({"A-biorxiv"}, lambda: hn_like(rows, sizes, labels, "A-biorxiv", ["A-biorxiv"], attrs,
                                                      kernels["biorxiv"])),
-        "A-medrxiv": ({"A-medrxiv"}, lambda: hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"], attrs,
-                                                     kernels["medrxiv"], registered=False)),
+        "A-medrxiv": ({"A-medrxiv"}, lambda: dict(hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"], attrs,
+                                                          kernels["medrxiv"]), correction_D3q=D3Q_NOTE)),
         "B": ({"B-arxiv", "B-biorxiv", "B-medrxiv"}, lambda: test_b(rows, labels, attrs, kernels, repo)),
     }
     os.makedirs(os.path.join(repo, "validation/sealed"), exist_ok=True)
