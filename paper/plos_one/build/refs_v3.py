@@ -58,5 +58,22 @@ R.update({
 })
 
 # --- A3: prior attempts at open, post-publication evaluation ---
-# The verified file paper/sources/open_publishing_attempts.md did not exist when v3 was built (17 Oct 2026); the
-# Discussion carries [A3 REFS PENDING] markers. Add the verified entries here when the file is ready.
+# From paper/sources/open_publishing_attempts.md (17 Oct 2026). The coordinator checked the eLife and Nature bylines on
+# the pages, the eLife submission counts, the Brodeur et al. author count (Crossref) and the AAAI-26 count (arXiv).
+R.update({
+"eLife2026": "Rodgers P, Pattinson D. The eLife Model: three-year update [Internet]. Cambridge (UK): eLife Sciences Publications; 2026 Mar 17 " + ACC + ". Available from: https://elifesciences.org/inside-elife/7da92a51/the-elife-model-three-year-update",
+"Nature2006": "Campbell P, et al. Report of Nature's peer review trial [Internet]. London: Nature Publishing Group; 2006 Dec 20 " + ACC + ". Available from: https://blogs.nature.com/blog/report_of_natures_peer_review_trial/",
+"NCBI2018": "National Center for Biotechnology Information. PubMed Commons to be discontinued [Internet]. Bethesda (MD): NCBI; 2018 Feb 1 [updated 2018 Feb 27; cited 2026 Oct 17]. Available from: https://ncbiinsights.ncbi.nlm.nih.gov/2018/02/01/pubmed-commons-to-be-discontinued/",
+# Crossref, 17 Oct 2026.
+"Carneiro2023": "Carneiro CFD, da Costa GG, Neves K, Abreu MB, Tan PB, Rayêe D, et al. Characterization of comments about bioRxiv and medRxiv preprints. JAMA Netw Open. 2023;6(8):e2331410. doi:10.1001/jamanetworkopen.2023.31410",
+"Naddaf2025b": "Naddaf M. Major AI conference flooded with peer reviews written fully by AI. Nature. 2025;648(8093):256–257. doi:10.1038/d41586-025-03506-6",
+"Brodeur2026": "Brodeur A, Mikola D, Cook N, Fiala L, Brailey T, Briggs R, et al. Reproducibility and robustness of economics and political science research. Nature. 2026;652(8108):151–156. doi:10.1038/s41586-026-10251-x",
+# arXiv metadata via OpenAlex, 17 Oct 2026.
+"Biswas2026": "Biswas J, Schoepp S, Vasan G, Opipari AW, Zhang A, Hu Z, et al. AI-assisted peer review at scale: the AAAI-26 AI review pilot [Preprint]. arXiv:2604.13940. 2026 Apr 15 " + ACC + ". doi:10.48550/arXiv.2604.13940",
+})
+
+# --- Planned specification of C1–C3 (round 2, companion item 1) ---
+R.update({
+# Crossref, 17 Oct 2026.
+"CameronTrivedi1990": "Cameron AC, Trivedi PK. Regression-based tests for overdispersion in the Poisson model. J Econom. 1990;46(3):347–364. doi:10.1016/0304-4076(90)90014-K",
+})
