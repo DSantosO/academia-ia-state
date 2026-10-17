@@ -152,61 +152,6 @@ def p2(lines, h):
     lines.append("")
 
 
-def p3(lines, m):
-    lines += ["## H3: AI-writing markers", "",
-              f"Core marker words: {len(m['core_words'])} style words of Kobak et al. (2025) with pooled 2019–2022 document "
-              f"frequency below {100 * m['threshold']:.1f}% in bioRxiv and medRxiv ({m['baseline_abstracts']:,} baseline abstracts). "
-              "Rate = distinct core marker words per 100 abstracts (non-COVID preprints).", "",
-              "| Corpus | Group | 2019–2022 mean | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |", "|---|---|---|---|---|---|---|"]
-    for src, groups in m["rates"].items():
-        for g, v in groups.items():
-            cells = []
-            for y in ("2023", "2024", "2025", "2026"):
-                cells.append(f"{v[y]['markers_per_100']:.1f} (×{v[y]['ratio_to_2019_2022']:.2f})" if y in v else "n/a")
-            lines.append(f"| {src} | {g} | {v['baseline_2019_2022_per_100']:.1f} | " + " | ".join(cells) + " |")
-    lines += ["", "Is the marker rise the same across groups? Ratio of marker rates, group A / group B, relative to "
-              "2019–2022 (OLS on monthly log ratios, t intervals):", ""]
-    for k, v in m["did"].items():
-        lines.append(f"- {k} ({v['_n_months']} months): " + "; ".join(f"{y}: {ci(d)}" for y, d in v.items()
-                                                                       if not y.startswith("_")))
-    uvo = m.get("use_vs_output")
-    if uvo:
-        lines += ["", "**Use vs output: arXiv groups against bioRxiv.** Markers: ratio of marker rates relative to "
-                  "2019–2022, on the months both corpora cover (March and September). Output: ratio of new preprints "
-                  "relative to 2022 (event-study model of the within-field contrasts, Driscoll–Kraay 95% CI), and 2026 "
-                  "relative to 2025 (the 2026 acceleration of one group relative to the other).", "",
-                  "| Contrast | Markers 2024 | Markers 2025 | Markers 2026 | Output 2024 | Output 2025 | Output 2026 | "
-                  "Output 2026 vs 2025 |", "|---|---|---|---|---|---|---|---|"]
-        for k, v in uvo.items():
-            mk, out = v["markers"], v["output"]
-            lines.append(f"| {k} | " + " | ".join(ci(mk[y]) for y in ("2024", "2025", "2026")) + " | "
-                         + " | ".join(ci(out[y]) for y in ("2024", "2025", "2026", "2026_vs_2025")) + " |")
-    lb = m.get("llm_share_lower_bound_arxiv")
-    if lb:
-        lines += ["", "Lower bound on the share of LLM-processed abstracts (Kobak et al. 2025; arXiv only): excess share "
-                  "of abstracts with at least one core marker word over the 2019–2022 linear trend, divided by one "
-                  "minus the counterfactual share (in brackets: with the 2019–2022 mean as counterfactual).", "",
-                  "| Group | Share with a marker, 2019–2022 | 2023 | 2024 | 2025 | 2026 (Jan–Sep) |", "|---|---|---|---|---|---|"]
-        for g, v in lb.items():
-            base = sum(v[str(y)]["share_with_marker"] for y in range(2019, 2023)) / 4
-            cells = [f"≥{pct(v[y]['lower_bound_trend'])} (≥{pct(v[y]['lower_bound_mean'])})" if y in v else "n/a"
-                     for y in ("2023", "2024", "2025", "2026")]
-            lines.append(f"| arXiv {g} | {pct(base)} | " + " | ".join(cells) + " |")
-        lines += ["", "The list was built from 2024 text and its words have drifted since (Methods), so 2024 is the "
-                  "cleanest year; later bounds are weaker."]
-    pn = m["panel"]
-    lines += ["", f"Does the marker rise predict output growth? Category panel ({pn['n_obs']} category-years, "
-              f"{pn['n_categories']} categories), growth vs 2022 on marker change, interacted with experimental intensity "
-              "(OLS, year effects, SEs clustered by category):", ""]
-    for name in ("all", "biorxiv", "arxiv"):
-        if name in pn:
-            v = pn[name]
-            lines.append(f"- {name} (n = {v['n']}, {v.get('clusters', '?')} clusters): " + "; ".join(
-                f"{k}: {v[k]['coef']:.4f} [{v[k]['lo']:.4f}, {v[k]['hi']:.4f}], p = {v[k]['p']:.2g}"
-                for k in ("dmarker", "experimental", "dmarker:experimental")) + (f" ({v['note']})" if v.get("note") else ""))
-    lines.append("")
-
-
 def ci3(d, digits=2):
     return f"{d['rr']:.{digits}f} [{d['lo']:.{digits}f}, {d['hi']:.{digits}f}]"
 
@@ -219,19 +164,17 @@ def r1(lines, r):
     if e:
         lines += ["### P1c. Estimands and inference for the within-field contrasts", "",
                   "Rate ratio of group A to group B in 2026 relative to the stated base (Poisson event study, Driscoll–Kraay "
-                  "95% CI); the 2026/2025 ratio (acceleration); the placebo p-value (share of the 153 pairs of arXiv "
-                  "archives, or of the 462 halvings of the wet-lab categories, whose 2026 ratio is at least as far from 1); "
-                  "and the 2026 coefficient against the spread of the pre-2022 year coefficients (z).", "",
-                  "| Contrast | Base | 2026 | 2026 / 2025 | Placebo p | Year-shock z (p) |", "|---|---|---|---|---|---|"]
+                  "95% CI); the 2026/2025 ratio (acceleration); and the placebo p-value (share of the 153 pairs of arXiv "
+                  "archives, or of the 462 halvings of the wet-lab categories, whose 2026 ratio is at least as far from 1). "
+                  "The year-shock z of round 1 is replaced by the rank-based calibration below.", "",
+                  "| Contrast | Base | 2026 | 2026 / 2025 | Placebo p |", "|---|---|---|---|---|"]
         for name, v in e.items():
             if not isinstance(v, dict) or "by_base" not in v:
                 continue
             for b, bb in v["by_base"].items():
-                ev, z = bb["event_study"], bb["year_shock_calibration_2026"]
-                lines.append(f"| {name} | {b} | {ci3(ev['2026'])} | {ci3(ev['2026_vs_2025'])} | "
-                             f"{v['placebo_p_2026']:.2f} | " if "placebo_p_2026" in v and b == "2022" else
-                             f"| {name} | {b} | {ci3(ev['2026'])} | {ci3(ev['2026_vs_2025'])} | – | ")
-                lines[-1] += (f"{z['z']:.2f} ({z['p_normal']:.2f}) |" if z else "– |")
+                ev = bb["event_study"]
+                pl = f"{v['placebo_p_2026']:.2f}" if "placebo_p_2026" in v and b == "2022" else "–"
+                lines.append(f"| {name} | {b} | {ci3(ev['2026'])} | {ci3(ev['2026_vs_2025'])} | {pl} |")
         lines += ["", "Change in the slope of the deseasonalised log ratio after a known date (per year; Newey–West CI; "
                   "AR(1) bootstrap p):", ""]
         for name, v in e.items():
@@ -241,6 +184,42 @@ def r1(lines, r):
                              f"[{100 * a['lo']:+.1f}, {100 * a['hi']:+.1f}], p = {a['p_bootstrap']:.3f}; after Nov 2024 "
                              f"{100 * b['slope_change_per_year']:+.1f}% [{100 * b['lo']:+.1f}, {100 * b['hi']:+.1f}], "
                              f"p = {b['p_bootstrap']:.3f} (pre-2023 slope {100 * a['pre_slope_per_year']:+.1f}% a year)")
+        lines.append("")
+    pl = r.get("planned")
+    if pl:
+        lines += ["### Round 2. The specification planned in draft v1", "",
+                  "Period effects (2023–2024, 2025, 2026) against the planned multi-year baseline (from the first month "
+                  "shown to December 2022), calendar-month effects common to both groups, Newey–West (Driscoll–Kraay) "
+                  "errors with 12 lags. The plan replaced the Poisson model by a negative binomial (NB2) if the counts "
+                  "were overdispersed (Cameron–Trivedi test, 5%); 98.3% Bonferroni intervals over the three contrasts. "
+                  "Checks: moving-block bootstrap of the log ratio (12-month blocks, 999 draws) and group-specific linear "
+                  "trends. The last column is the estimate as run (year effects, base 2022).", "",
+                  "| Contrast | Baseline | Model (Pearson dispersion) | 2023–2024 | 2025 | 2026 (95% CI) | 2026, 98.3% CI | p | "
+                  "Bootstrap 2026 | With group trends, 2026 | As run, base 2022 |", "|---|---|---|---|---|---|---|---|---|---|---|"]
+        for name, v in pl.items():
+            m = v[v["planned_model"]]
+            lines.append(f"| {name} | {v['baseline']} | {v['planned_model'].replace('_', ' ')} "
+                         f"({v['overdispersion']['pearson_dispersion']:.1f}) | {ci3(m['2023-2024'])} | {ci3(m['2025'])} | "
+                         f"{ci3(v['planned_2026'])} | {ci3(v['planned_2026_bonferroni'])} | {v['planned_2026']['p']:.2f} | "
+                         f"{ci3(v['block_bootstrap_2026'])} | {ci3(v['with_group_trends']['2026'])} | "
+                         f"{ci3(v['as_run_2022_base_2026'])} |")
+        lines.append("")
+    cal = r.get("calibration")
+    if cal:
+        lines += ["### Round 2. Rank-based in-time calibration (replaces the year-shock z)", "",
+                  "The same event-study estimator as above. Level: the 2026 log rate ratio against all years to 2022 "
+                  "pooled, ranked among each of those years' log rate ratios against the other years pooled (so every "
+                  "statistic is centred on the pre-period mean). Acceleration: the change from 2025 to 2026, ranked among "
+                  "the earlier year-on-year changes, to 2022 and to 2025. p = (number of reference values at least as "
+                  "large + 1) / (number of reference values + 1); two-sided on absolute values, one-sided in the observed "
+                  "direction. With n reference values, p cannot fall below 1/(n + 1).", "",
+                  "| Series | 2026 vs pre-period | p two-sided / one-sided (n) | 2026 / 2025 | p vs changes to 2022 (n) | "
+                  "p vs all earlier changes, two-sided / one-sided (n) |", "|---|---|---|---|---|---|"]
+        for name, v in cal.items():
+            lv, a1, a2 = v["level"], v["acceleration_pre_period"], v["acceleration_all_earlier"]
+            lines.append(f"| {name} | {lv['rr']:.3f} | {lv['p_two_sided']:.2f} / {lv['p_one_sided']:.2f} ({lv['n_ref']}) | "
+                         f"{a1['rr']:.3f} | {a1['p_two_sided']:.2f} ({a1['n_ref']}) | {a2['p_two_sided']:.2f} / "
+                         f"{a2['p_one_sided']:.2f} ({a2['n_ref']}) |")
         lines.append("")
     b = r.get("breaks")
     if b:
@@ -373,8 +352,6 @@ def main(repo):
     p1(lines, w, f)
     if os.path.exists(os.path.join(d, "heavy_producers.json")):
         p2(lines, json.load(open(os.path.join(d, "heavy_producers.json"))))
-    if os.path.exists(os.path.join(d, "marker_tests.json")):
-        p3(lines, json.load(open(os.path.join(d, "marker_tests.json"))))
     if os.path.exists(os.path.join(d, "round1_tests.json")):
         r1(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
     os.makedirs(os.path.join(repo, "docs/stats"), exist_ok=True)

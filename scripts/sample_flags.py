@@ -6,7 +6,8 @@ Draws, with a fixed seed, preprints flagged by each rule from the harvest_rxiv_r
   public_dataset         PUBLIC_RE (original list) matches title or abstract
   public_spick4          one of FinnGen, CHARLS, CDC WONDER, TriNetX matches and the original list does not
 For each it writes the DOI, the title and a snippet around the first match to SAMPLE_CSV (kept out of the repository,
-because abstracts are the authors' text) and a coding sheet with the DOI and flag only to SHEET_CSV (deposited).
+because abstracts are the authors' text) and a coding sheet with the DOI, a DOI link and the flag only to SHEET_CSV
+(deposited; no titles).
 A preprint is a true positive if it studies COVID-19 (covid flags) or analyses data from the named source (dataset
 flags); a passing mention is a false positive.
 Usage: python3 scripts/sample_flags.py PARTS_DIR SAMPLE_CSV SHEET_CSV [n_per_flag]
@@ -54,13 +55,13 @@ def main(parts, sample_csv, sheet_csv, n=60):
         w = csv.writer(f)
         w.writerow(["id", "flag", "doi", "date", "title", "snippet"])
         s = csv.writer(g)
-        s.writerow(["id", "flag", "doi", "pool_size", "coder", "true_positive", "note"])
+        s.writerow(["id", "flag", "doi", "link", "pool_size", "coder", "true_positive", "note"])
         k = 0
         for flag, pool in pools.items():
             for r, rx in rng.sample(pool, min(n, len(pool))):
                 k += 1
                 w.writerow([k, flag, r["doi"], r["date"], r["title"], snippet(r["title"] + " " + r["abstract"], rx)])
-                s.writerow([k, flag, r["doi"], len(pool), "", "", ""])
+                s.writerow([k, flag, r["doi"], f"https://doi.org/{r['doi']}", len(pool), "", "", ""])
     print({f: len(p) for f, p in pools.items()})
 
 

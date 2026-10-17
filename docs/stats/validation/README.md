@@ -12,7 +12,7 @@ by `scripts/sample_flags.py`:
 
 `pool_size` is the number of preprints the rule flags.
 
-**How to code.** Open each preprint (`link`). Enter 1 in `true_positive` if the flag is right, otherwise 0:
+The sheet holds DOIs and DOI links only, no titles or abstracts. **How to code.** Open each preprint (`link`). Enter 1 in `true_positive` if the flag is right, otherwise 0:
 - for COVID-19 flags, the preprint studies COVID-19;
 - for dataset flags, it analyses data from the named source.
 

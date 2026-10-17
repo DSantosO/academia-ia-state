@@ -66,6 +66,9 @@ precision and recall per class, by domain).
 | `sealed/classifier_retest_validation_medrxiv.json.gz` | `acef560215c611b3303b95741f4a89c52816cd869a8774f891c63a470186c75c` |
 | `sealed/model_labels_retest_arxiv.csv.gz` | `ba90122763bb55ceaa6aaca007cf527433fd8d58d624d582e1ac091bd509d1de` |
 | `sealed/classifier_retest_validation_arxiv.json.gz` | `9d31b35cb8d6fa2ad60cc7115b3723023cad4c4907a19fdc3ec6ca83cecea43a` |
+| `sealed/nd_model_labels_arxiv_batches001-243.csv.gz` | `5377cff70f1b80104226b51c7b2716439bd7b0eed28486a8483fc9d52bb177ec` |
 
 The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
-too, because a few papers on the sheet may also be in those samples.
+too, because a few papers on the sheet may also be in those samples. `nd_model_labels_arxiv_batches001-243.csv.gz`
+holds the arXiv labels of the first 243 of 269 blind batches (12,150 papers), sealed when classification was paused;
+the complete arXiv file will supersede it.

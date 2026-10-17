@@ -135,7 +135,6 @@ def fig1(repo, out):
     fields = [("physics", "Physics", OI["blue"]), ("mathematics", "Mathematics", OI["vermillion"]),
               ("biology_biorxiv", "Biology (bioRxiv)", OI["green"]),
               ("medicine_medrxiv_no_covid", "Medicine excl. COVID-19 (medRxiv)", OI["orange"]),
-              ("social_sciences", "Social sciences", OI["purple"]),
               ("computer_science_reference", "Computer science", OI["grey"])]
     fig, ax = plt.subplots(figsize=(19.05 * CM, 10.5 * CM))
     style(ax)
@@ -282,44 +281,12 @@ def fig3(repo, out):
     save(fig, out, "Fig3")
 
 
-def fig4(repo, out):
-    """AI-writing marker rates by group and year (core Kobak style words per 100 abstracts, 2019-2022 = 1)."""
-    path = os.path.join(repo, "data/processed/stats/marker_tests.json")
-    if not os.path.exists(path):
-        return
-    m = json.load(open(path))["rates"]
-    spec = [("biorxiv", "computational", "bioRxiv computational", OI["blue"], "-"),
-            ("biorxiv", "mixed", "bioRxiv mixed", OI["grey"], "-"),
-            ("biorxiv", "wet_lab", "bioRxiv wet lab", OI["green"], "-"),
-            ("medrxiv", "all", "medRxiv", OI["orange"], "-"),
-            ("arxiv", "maths", "arXiv maths", OI["vermillion"], (0, (3, 1.5))),
-            ("arxiv", "theory", "arXiv physics theory", OI["purple"], (0, (3, 1.5))),
-            ("arxiv", "experiment", "arXiv physics experiment", OI["sky"], (0, (3, 1.5)))]
-    fig, ax = plt.subplots(figsize=(14 * CM, 8.5 * CM))
-    style(ax)
-    ax.axhline(1, color=AXIS, linewidth=0.6)
-    for src, g, lab, col, ls in spec:
-        if src not in m or g not in m[src]:
-            continue
-        v = m[src][g]
-        ys = [int(y) for y in v if y.isdigit()]
-        ax.plot(ys, [v[str(y)]["ratio_to_2019_2022"] for y in ys], color=col, linestyle=ls, linewidth=1.3,
-                marker="o", markersize=2.5, label=lab)
-    ax.set_xticks(range(2019, 2027))
-    ax.set_xticklabels([str(y) if y < 2026 else "2026*" for y in range(2019, 2027)])
-    ax.set_ylabel("Marker rate relative to 2019–2022")
-    ax.legend(loc="upper left", frameon=False, handlelength=2.2, fontsize=8)
-    fig.subplots_adjust(left=0.1, right=0.98, top=0.95, bottom=0.12)
-    save(fig, out, "Fig4")
-
-
 def main(repo):
     setup()
     out = os.path.join(repo, "docs/figures/plos")
     fig1(repo, out)
     fig2(repo, out)
     fig3(repo, out)
-    fig4(repo, out)
     print("font:", FONT, "written:", sorted(os.listdir(out)))
 
 

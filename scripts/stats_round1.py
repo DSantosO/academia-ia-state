@@ -2,7 +2,7 @@
 
 Sections (each writes its own key of data/processed/stats/round1_tests.json; run all or name some):
   estimands   C1-C3 with multi-year baselines, a slope-change estimand, the 2026-vs-2025 acceleration, and inference
-              from in-space placebos and from the spread of pre-2022 year effects (review item P1c)
+              from in-space placebos (review item P1c; the year-shock z was replaced by the calibration section)
   breaks      unknown-break tests with 5% trimming, so that breaks up to early 2026 can be found, and known-date tests
               (December 2022, November 2024, November 2025) with AR(1) bootstrap p-values (P1d)
   crosslists  field-level departures and the archive ranking with new + cross-listed submissions (list entries,
@@ -14,6 +14,9 @@ Sections (each writes its own key of data/processed/stats/round1_tests.json; run
               papers, theses), and OAI vs statistics-page counts (P1b, P1f). Writes the paper-level table
               data/processed/arxiv_paper_flags.csv.gz.
   dating      identifier (announcement) month vs first-version submission month, 2024-2026 (P1a)
+  planned     round 2: the C1-C3 specification planned in draft v1 (period effects against multi-year baselines,
+              Poisson or negative binomial, Newey-West errors, Bonferroni intervals), beside the 2022-base estimate
+  calibration round 2: rank-based in-time calibration with the estimator itself (replaces the year-shock z)
   medrxiv_flags  C3 with the title-only COVID-19 filter and with Spick et al.'s four missing datasets (P3)
   inspire     pre-registration section 10 (exploratory): INSPIRE-HEP classes from curated metadata (no AI)
 Usage: python3 scripts/stats_round1.py [repo_dir] [section ...] [--oai OAI_DIR]
@@ -73,19 +76,6 @@ def event_study(ya, yb, months, base_years, lags=12, per_year=12):
         out["2026_vs_2025"] = {"rr": math.exp(d), "lo": math.exp(d - 1.96 * se), "hi": math.exp(d + 1.96 * se),
                                "p": float(math.erfc(abs(d / se) / math.sqrt(2)))}
     return out
-
-
-def year_shock_z(ev, target="2026", pre_last=2021):
-    """Calibrate the target-year log rate ratio against the spread of the pre-ChatGPT year effects (relative to the
-    same base): z = b_target / sd(b_pre). Year-level shocks that the HAC errors miss are in that spread."""
-    pre = [v["b"] for k, v in ev.items() if k.isdigit() and int(k) <= pre_last]
-    if len(pre) < 3 or target not in ev:
-        return None
-    sd = float(np.std(pre, ddof=1))
-    z = ev[target]["b"] / sd
-    return {"sd_pre_year_effects": sd, "n_pre_years": len(pre), "z": z,
-            "p_normal": float(math.erfc(abs(z) / math.sqrt(2))),
-            "share_pre_years_at_least_as_large": float(np.mean(np.abs(pre) >= abs(ev[target]["b"])))}
 
 
 def hinge_change(r, months, tau_month, lags=12, reps=999):
@@ -155,6 +145,123 @@ def placebo_p(obs_log, null_logs):
     return float((np.sum(null >= abs(obs_log)) + 1) / (len(null) + 1))
 
 
+PERIODS = ["2023-2024", "2025", "2026"]
+Z_BONF3 = 2.3940  # two-sided 98.33% (Bonferroni over the three confirmatory contrasts)
+
+
+def _rr(b, se, z=1.96):
+    return {"rr": math.exp(b), "lo": math.exp(b - z * se), "hi": math.exp(b + z * se), "b": b, "se": se}
+
+
+def planned_v1(ya, yb, months, base_from, lags=12, reps=999, block=12):
+    """The specification planned in draft v1 (essay branch, 697fb25), reported beside the 2022-base estimate as run:
+    log E[y_gt] = a_g + c_m(t) + b_p(t) + th_p(t) D_g, periods 2023-2024, 2025 and 2026 against a multi-year baseline
+    (base_from to December 2022), calendar-month effects common to both groups, D_g = 1 for the non-experimental group.
+    Poisson, replaced by a negative binomial (NB2, dispersion by maximum likelihood) if the Cameron-Trivedi test finds
+    overdispersion at the 5% level; Newey-West errors in their panel (Driscoll-Kraay) form, 12 lags; a moving-block
+    bootstrap of exp(th_2026) as a check (residuals of the log ratio, 12-month blocks); group-specific linear trends
+    as a sensitivity. Bonferroni intervals (98.3%) for the three contrasts."""
+    keep = [i for i, m in enumerate(months) if m >= base_from]
+    ms = [months[i] for i in keep]
+    ya, yb = np.asarray(ya, float)[keep], np.asarray(yb, float)[keep]
+    df = contrast_frame(ya, yb, ms)
+    period = np.where(df["year"] <= 2022, "base", np.where(df["year"] <= 2024, "2023-2024", df["year"].astype(str)))
+
+    def design(trend=False):
+        X = pd.DataFrame({"const": 1.0, "A": df["A"].astype(float)})
+        for c in range(2, 13):
+            X[f"cm{c}"] = (df["cm"] == c).astype(float)
+        for p in PERIODS:
+            X[f"P{p}"] = (period == p).astype(float)
+            X[f"A_P{p}"] = df["A"] * (period == p)
+        if trend:
+            X["t"] = df["t"] / 12.0
+            X["A_t"] = df["A"] * df["t"] / 12.0
+        return X.astype(float)
+
+    def fit(X, family):
+        return sm.GLM(df["y"].values, X, family=family).fit(
+            cov_type="hac-groupsum", cov_kwds={"time": df["t"].values, "maxlags": lags})
+
+    def periods(res, z=1.96):
+        return {p: _rr(float(res.params[f"A_P{p}"]), float(res.bse[f"A_P{p}"]), z) for p in PERIODS}
+
+    X = design()
+    pois = fit(X, sm.families.Poisson())
+    mu = sm.GLM(df["y"].values, X, family=sm.families.Poisson()).fit().mu
+    mu = np.asarray(mu)
+    aux = sm.OLS(((df["y"].values - mu) ** 2 - df["y"].values) / mu, mu).fit()
+    a_ct, t_ct, p_ct = (float(np.asarray(v)[0]) for v in (aux.params, aux.tvalues, aux.pvalues))
+    ct = {"alpha": a_ct, "t": t_ct, "p_one_sided": p_ct / 2 if a_ct > 0 else 1 - p_ct / 2,
+          "pearson_dispersion": float(np.sum((df["y"].values - mu) ** 2 / mu) / (len(mu) - X.shape[1]))}
+    out = {"window": [ms[0], ms[-1]], "baseline": f"{ms[0]} to 2022-12", "overdispersion": ct,
+           "poisson": periods(pois)}
+    alpha = float(np.asarray(sm.NegativeBinomial(df["y"].values, X, loglike_method="nb2").fit(
+        disp=0, maxiter=500).params)[-1])
+    nb = fit(X, sm.families.NegativeBinomial(alpha=alpha))
+    out["negative_binomial"] = dict(periods(nb), alpha=alpha)
+    chosen, label = (nb, "negative_binomial") if ct["p_one_sided"] < 0.05 else (pois, "poisson")
+    out["planned_model"] = label
+    out["planned_2026"] = periods(chosen)["2026"]
+    out["planned_2026_bonferroni"] = periods(chosen, Z_BONF3)["2026"]
+    out["planned_2026"]["p"] = float(chosen.pvalues["A_P2026"])
+    out["mde_2026_80pct_power"] = math.exp(2.8 * out["planned_2026"]["se"]) - 1
+    # moving-block bootstrap (check): residuals of the monthly log ratio around the period model
+    r = np.log(ya) - np.log(yb)
+    pr = period[df["A"].values == 1]
+    cm = np.array([int(m[5:]) for m in ms])
+    Z = np.column_stack([np.ones(len(r))] + [(cm == c).astype(float) for c in range(2, 13)] +
+                        [(pr == p).astype(float) for p in PERIODS])
+    beta, *_ = np.linalg.lstsq(Z, r, rcond=None)
+    fitted, resid = Z @ beta, r - Z @ beta
+    n, draws = len(r), []
+    for _ in range(reps):
+        idx = []
+        while len(idx) < n:
+            s = RNG.integers(0, n - block + 1)
+            idx.extend(range(s, s + block))
+        bb, *_ = np.linalg.lstsq(Z, fitted + resid[np.array(idx[:n])], rcond=None)
+        draws.append(bb[-1])
+    lo, hi = np.percentile(draws, [2.5, 97.5])
+    out["block_bootstrap_2026"] = {"rr": math.exp(beta[-1]), "lo": math.exp(lo), "hi": math.exp(hi)}
+    tr = fit(design(trend=True), sm.families.NegativeBinomial(alpha=alpha) if label == "negative_binomial"
+             else sm.families.Poisson())
+    out["with_group_trends"] = dict(periods(tr), trend_ratio_per_year=math.exp(float(tr.params["A_t"])))
+    return out
+
+
+def rank_calibration(ya, yb, months, pre_last=2022, target=2026, lags=12):
+    """In-time calibration with the estimator itself (event study: month effects, group-specific calendar effects),
+    replacing the year-shock z. Level: the target year's log rate ratio against all years up to pre_last pooled,
+    compared with each of those years' log rate ratio against the other years pooled (leave-one-out base, so every
+    statistic is centred on the pre-period mean). Acceleration: the change from the year before the target, compared
+    with the year-on-year changes before it (up to pre_last, and up to the year before the target). Rank p values
+    count the comparison values at least as large, plus one, over their number plus one: two-sided on absolute values
+    and one-sided in the direction of the observed statistic."""
+    years = sorted({int(m[:4]) for m in months})
+    pre = [y for y in years if y <= pre_last]
+
+    def rank(obs, ref):
+        ref = np.asarray(ref, float)
+        two = float((np.sum(np.abs(ref) >= abs(obs)) + 1) / (len(ref) + 1))
+        one = float((np.sum(ref * np.sign(obs) >= abs(obs)) + 1) / (len(ref) + 1))
+        return {"stat": obs, "n_ref": int(len(ref)), "p_two_sided": two, "p_one_sided": one}
+
+    ev = event_study(ya, yb, months, set(pre), lags=lags)
+    loo = [event_study(ya, yb, months, set(pre) - {k}, lags=lags)[str(k)]["b"] for k in pre]
+    b = {y: (ev[str(y)]["b"] if str(y) in ev else 0.0) for y in years}
+    out = {"level": dict(rank(b[target], loo), rr=math.exp(b[target]), ref_years=pre,
+                         ref_rr={str(k): math.exp(v) for k, v in zip(pre, loo)})}
+    # year-on-year changes are differences of year coefficients, so they do not depend on the base
+    ch = {y: b[y] - b[y - 1] for y in years if y - 1 in b}
+    out["acceleration_pre_period"] = dict(rank(ch[target], [ch[y] for y in ch if y <= pre_last]),
+                                          rr=math.exp(ch[target]))
+    out["acceleration_all_earlier"] = dict(rank(ch[target], [ch[y] for y in ch if y < target]),
+                                           rr=math.exp(ch[target]),
+                                           ref_rr={str(y): math.exp(ch[y]) for y in ch if y < target})
+    return out
+
+
 # ---------------------------------------------------------------- sections
 def contrasts(repo):
     ax, bx = load_arxiv(repo), load_biorxiv(repo)
@@ -201,7 +308,7 @@ def section_estimands(repo):
         r = {"window": [ms[0], ms[-1]], "by_base": {}}
         for bname, bset in bases.items():
             ev = event_study(ya, yb, ms, bset)
-            r["by_base"][bname] = {"event_study": ev, "year_shock_calibration_2026": year_shock_z(ev)}
+            r["by_base"][bname] = {"event_study": ev}
         ev22 = r["by_base"]["2022"]["event_study"]
         null = pair_logs if not name.startswith(("C2", "C3")) else halves if name.startswith("C2") else None
         if null is not None:
@@ -216,6 +323,45 @@ def section_estimands(repo):
     res["archive_departures_2026"] = dict(sorted(dep.items(), key=lambda kv: -kv[1]))
     res["math_rank_p"] = float(np.mean([v >= dep["math"] for v in dep.values()]))
     return res
+
+
+PLANNED_BASE_FROM = {"C1_theory_vs_experiment": "2017-01", "C1_theory_without_gr-qc_vs_experiment": "2017-01",
+                     "C2_computational_vs_wet_lab": "2019-01", "C3_public_dataset_vs_other": "2019-07"}
+
+
+def section_planned(repo):
+    """Round 2 (R1 N7, R4 N3): the specification planned in draft v1, beside the 2022-base estimate as run."""
+    C, _, _ = contrasts(repo)
+    out = {}
+    for name, base_from in PLANNED_BASE_FROM.items():
+        if name not in C:
+            continue
+        ya, yb, ms = C[name]
+        r = planned_v1(ya, yb, ms, base_from)
+        r["as_run_2022_base_2026"] = event_study(ya, yb, ms, {2022})["2026"]
+        out[name] = r
+    return out
+
+
+def section_calibration(repo):
+    """Round 2 (R1 N1): rank-based in-time calibration with the estimator itself, replacing the year-shock z: the
+    within-field contrasts, the arXiv groups against bioRxiv (output) and PubMed US vs non-US."""
+    C, ax, bx = contrasts(repo)
+    out = {}
+    for name in ("C1_theory_vs_experiment", "C1_theory_without_gr-qc_vs_experiment", "C2_computational_vs_wet_lab",
+                 "C3_public_dataset_vs_other"):
+        if name in C:
+            out[name] = rank_calibration(*C[name])
+    m19 = ym_range("2019-01", LAST)
+    yb = total(bx, list(bx), m19)
+    for g, arch in (("arxiv_physics_6", HEP6), ("arxiv_theory", THEORY), ("arxiv_experiment", EXPERIMENT),
+                    ("arxiv_maths", ["math"])):
+        out[f"{g}_vs_biorxiv"] = rank_calibration(total(ax, arch, m19), yb, m19)
+    pub = json.load(open(os.path.join(repo, "data/raw/pubmed_us_quarterly.json")))
+    lab = [f"{r['quarter'][:4]}-{3 * int(r['quarter'][-1]):02d}" for r in pub]
+    out["pubmed_us_vs_non_us"] = rank_calibration(np.array([r["us_affiliation"] for r in pub], float),
+                                                  np.array([r["non_us"] for r in pub], float), lab, lags=4)
+    return out
 
 
 def section_breaks(repo):
@@ -620,12 +766,14 @@ def main():
         oai = args[i + 1]
         args = args[:i] + args[i + 2:]
     repo = args[0] if args else "."
-    sections = args[1:] or ["estimands", "breaks", "crosslists", "funding"] + (["oai"] if oai else [])
+    sections = args[1:] or ["estimands", "planned", "calibration", "breaks", "crosslists", "funding",
+                            "medrxiv_flags", "inspire"] + (["oai", "dating"] if oai else [])
     path = os.path.join(repo, "data/processed/stats/round1_tests.json")
     out = json.load(open(path)) if os.path.exists(path) else {}
     funcs = {"estimands": section_estimands, "breaks": section_breaks, "crosslists": section_crosslists,
              "funding": section_funding, "oai": lambda r: section_oai(r, oai), "dating": lambda r: section_dating(r, oai),
-             "medrxiv_flags": section_medrxiv_flags, "inspire": section_inspire}
+             "medrxiv_flags": section_medrxiv_flags, "inspire": section_inspire, "planned": section_planned,
+             "calibration": section_calibration}
     for s in sections:
         print("section", s, flush=True)
         out[s] = funcs[s](repo)

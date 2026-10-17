@@ -225,7 +225,22 @@ def _post_terms(X, df, uc, post_ind, pooled):
 
 
 def _glm(y, X, names):
+    """Poisson fit; raises if a requested term is not identified, as when a bootstrap replicate draws no month of
+    the base years (block_bootstrap then drops the replicate)."""
     X = X.loc[:, (X != 0).any(axis=0)]
+    missing = [n for n in names if n not in X.columns]
+    if missing:
+        raise ValueError(f"no data for {missing}")
+    _, s, vt = np.linalg.svd(X.values, full_matrices=False)
+    r = int((s > s[0] * 1e-9).sum())
+    if r < X.shape[1]:
+        V = vt[:r].T
+        for n in names:
+            if n in X.columns:
+                e = np.zeros(X.shape[1])
+                e[X.columns.get_loc(n)] = 1.0
+                if np.linalg.norm(V @ (V.T @ e) - e) > 1e-6:
+                    raise ValueError(f"{n} is not identified")
     res = sm.GLM(y, X.values, family=sm.families.Poisson()).fit()
     params = dict(zip(X.columns, res.params))
     return {n: params[n] for n in names if n in params}

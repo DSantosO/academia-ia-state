@@ -27,11 +27,10 @@ FIELDS = [
     ("mathematics", "Mathematics", OI["vermillion"]),
     ("biology_biorxiv", "Biology (bioRxiv)", OI["green"]),
     ("medicine_medrxiv_no_covid", "Medicine excl. COVID-19 (medRxiv)", OI["orange"]),
-    ("social_sciences", "Social sciences", OI["purple"]),
     ("computer_science_reference", "Computer science", OI["grey"]),
 ]
 SHORT = {"medicine_medrxiv_no_covid": "Medicine excl. COVID-19", "biology_biorxiv": "Biology",
-         "computer_science_reference": "Computer sci.", "social_sciences": "Social sci."}
+         "computer_science_reference": "Computer sci."}
 FIELD_EVENTS = [
     (dt.date(2022, 11, 30), "ChatGPT"),
     (dt.date(2025, 10, 31), "arXiv CS review rule"),

@@ -397,54 +397,6 @@ z
     </g>
    </g>
    <g id="line2d_32">
-    <path d="M 46.554157 246.542092 
-L 64.06247 205.835468 
-L 81.959857 220.627119 
-L 99.857245 218.556288 
-L 117.754632 208.971298 
-L 135.068409 209.503798 
-L 152.965796 219.207121 
-L 170.863183 223.23045 
-L 188.76057 222.195034 
-L 206.074347 222.342951 
-L 223.971734 222.313368 
-L 241.869121 224.739198 
-L 259.766508 216.396707 
-L 277.080285 217.343373 
-L 294.977672 218.645038 
-L 312.875059 213.024211 
-L 330.772447 210.450463 
-L 348.28076 210.923796 
-L 366.178147 216.307957 
-L 384.075534 213.55671 
-L 401.972922 211.042129 
-L 419.286698 191.043817 
-L 437.184086 160.987182 
-L 455.081473 165.631761 
-L 472.97886 168.057591 
-L 490.292637 159.182601 
-L 508.190024 151.934692 
-" clip-path="url(#p76b302f4ef)" style="fill: none; stroke: #cc79a7; stroke-width: 1.3; stroke-linecap: round"/>
-   </g>
-   <g id="line2d_33">
-    <defs>
-     <path id="me320003720" d="M 0 1.5 
-C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
-C 1.341951 0.77937 1.5 0.397805 1.5 0 
-C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
-C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
-C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
-C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
-C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
-C -0.77937 1.341951 -0.397805 1.5 0 1.5 
-z
-" style="stroke: #cc79a7"/>
-    </defs>
-    <g clip-path="url(#p76b302f4ef)">
-     <use xlink:href="#me320003720" x="508.190024" y="151.934692" style="fill: #cc79a7; stroke: #cc79a7"/>
-    </g>
-   </g>
-   <g id="line2d_34">
     <path d="M 46.554157 247.580774 
 L 64.06247 233.473356 
 L 81.959857 237.59125 
@@ -474,7 +426,7 @@ L 490.292637 74.319208
 L 508.190024 71.974431 
 " clip-path="url(#p76b302f4ef)" style="fill: none; stroke: #999999; stroke-width: 1.3; stroke-linecap: round"/>
    </g>
-   <g id="line2d_35">
+   <g id="line2d_33">
     <defs>
      <path id="m8b895f3719" d="M 0 1.5 
 C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
@@ -507,7 +459,7 @@ L 520.05677 273.826772
     <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: middle; fill: #404040" x="517.333254" y="40.670265" transform="rotate(-0 517.333254 40.670265)">arXiv cap</text>
    </g>
    <g id="legend_1">
-    <g id="line2d_36">
+    <g id="line2d_34">
      <path d="M 45 54.869888 
 L 51.4 54.869888 
 L 57.8 54.869888 
@@ -516,7 +468,7 @@ L 57.8 54.869888
     <g id="text_18">
      <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="64.2" y="57.669888" transform="rotate(-0 64.2 57.669888)">Physics (162)</text>
     </g>
-    <g id="line2d_37">
+    <g id="line2d_35">
      <path d="M 45 66.377701 
 L 51.4 66.377701 
 L 57.8 66.377701 
@@ -525,7 +477,7 @@ L 57.8 66.377701
     <g id="text_19">
      <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="64.2" y="69.177701" transform="rotate(-0 64.2 69.177701)">Mathematics (219)</text>
     </g>
-    <g id="line2d_38">
+    <g id="line2d_36">
      <path d="M 45 77.885513 
 L 51.4 77.885513 
 L 57.8 77.885513 
@@ -534,7 +486,7 @@ L 57.8 77.885513
     <g id="text_20">
      <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="64.2" y="80.685513" transform="rotate(-0 64.2 80.685513)">Biology (bioRxiv) (157)</text>
     </g>
-    <g id="line2d_39">
+    <g id="line2d_37">
      <path d="M 154.71375 54.869888 
 L 161.11375 54.869888 
 L 167.51375 54.869888 
@@ -543,23 +495,14 @@ L 167.51375 54.869888
     <g id="text_21">
      <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="173.91375" y="57.669888" transform="rotate(-0 173.91375 57.669888)">Medicine excl. COVID-19 (medRxiv) (257)</text>
     </g>
-    <g id="line2d_40">
+    <g id="line2d_38">
      <path d="M 154.71375 66.377701 
 L 161.11375 66.377701 
 L 167.51375 66.377701 
-" style="fill: none; stroke: #cc79a7; stroke-width: 1.3; stroke-linecap: round"/>
-    </g>
-    <g id="text_22">
-     <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="173.91375" y="69.177701" transform="rotate(-0 173.91375 69.177701)">Social sciences (184)</text>
-    </g>
-    <g id="line2d_41">
-     <path d="M 154.71375 77.885513 
-L 161.11375 77.885513 
-L 167.51375 77.885513 
 " style="fill: none; stroke: #999999; stroke-width: 1.3; stroke-linecap: round"/>
     </g>
-    <g id="text_23">
-     <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="173.91375" y="80.685513" transform="rotate(-0 173.91375 80.685513)">Computer science (278)</text>
+    <g id="text_22">
+     <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="173.91375" y="69.177701" transform="rotate(-0 173.91375 69.177701)">Computer science (278)</text>
     </g>
    </g>
   </g>

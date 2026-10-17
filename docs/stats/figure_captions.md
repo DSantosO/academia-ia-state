@@ -1,7 +1,7 @@
 # Figure captions (PLOS ONE format)
 
 Captions go in the manuscript, directly after the paragraph that first cites each figure. The figure files are
-`docs/figures/plos/Fig1.tif` to `Fig4.tif` (PDF and SVG copies alongside). Text is 8–11 pt in Liberation Sans, which
+`docs/figures/plos/Fig1.tif` to `Fig3.tif` (PDF and SVG copies alongside). Text is 8–11 pt in Liberation Sans, which
 has the same metrics as Arial; `scripts/plot_plos.py` uses Arial itself when it is installed, so re-running it on a
 machine with Arial gives Arial text without any layout change. Each caption ends with the AI-use disclosure the
 journal's policy asks for.
@@ -15,7 +15,6 @@ September 2026. The number in each legend entry is the index in July–September
 - Computer science: arXiv cs, shown for reference; it includes AI research itself.
 - Biology: bioRxiv new preprints.
 - Medicine: medRxiv new preprints, excluding those that mention COVID-19 or SARS-CoV-2 in the title or abstract.
-- Social sciences: first versions on PsyArXiv, SocArXiv and EdArXiv plus arXiv econ and q-fin.
 
 Dashed vertical lines mark, from left to right, the release of ChatGPT (30 November 2022), arXiv's rule on review
 articles in computer science (31 October 2025) and arXiv's submission cap (1 October 2026). They mark dates for reference; they are not estimated break points or causes.
@@ -55,20 +54,5 @@ the classes diverge by chance.
 
 Physics theory is hep-th, hep-ph, gr-qc and nucl-th (primary category), papers with at most 50 authors. Authors are
 matched by name strings, because arXiv has no author identifiers.
-
-The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.
-
-**Fig 4. AI-associated style words by group.**
-Core marker words per 100 abstracts, relative to each group's 2019–2022 mean. The core words are the 261 "style" words
-of Kobak et al. (2025) that appeared in fewer than 0.5% of bioRxiv and medRxiv abstracts in 2019–2022.
-- bioRxiv: version-1 preprints posted in March and September of each year.
-- medRxiv: all version-1 preprints.
-- arXiv: papers with primary category in maths, physics theory or physics experiment.
-- bioRxiv and medRxiv exclude COVID-19 preprints.
-- 2026*: January–September (bioRxiv: March and September).
-
-The word list was built from 2024 text. Its fall after 2024 reflects, at least in part, changes in vocabulary: newer
-models and authors avoiding words now read as signs of LLM text. Values after 2024 are therefore lower bounds on
-LLM-assisted writing. The markers date changes in style; they do not identify causes.
 
 The code that drew this figure was written with an AI assistant (Claude, Anthropic); the data and code are in the deposit.
