@@ -18,6 +18,16 @@ precision and recall per class, by domain).
   the model's labels. The repository is public, so blinding depends on the coder not opening these files. Their
   SHA-256 hashes below fix their content at the time of commit.
 
+## Second coder (Amendment 1; Deviation 3, D3r)
+
+A second person codes 100 of the 400 papers, listed in `second_coder_ids.csv` (V-ids only, sorted). They were drawn by
+`scripts/draw_second_coder.py` with seed 20261017, stratified as the sheet: 50 physics and astronomy, 25 bioRxiv and
+25 medRxiv papers, at random within each stratum; only the V-id and server columns of the sealed key were read. The
+second coder uses the same rows of `sheet.csv` and the same codebooks, works independently of the author, and does not
+open `sealed/`. Planned comparisons (D3r): κ between the two people on the 100, pooled and by domain, with 95%
+intervals; κ between the classifier and the second coder, by domain. The confirmatory rule is unchanged (κ between
+the classifier and the author ≥ 0.60 in each domain), and there is no adjudication.
+
 ## How the sample was drawn
 
 `scripts/make_validation_sheet.py` (fixed seeds):
