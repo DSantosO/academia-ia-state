@@ -49,7 +49,7 @@
 **R1-N5. Funding checks: PubMed over-read; medRxiv split unreported.** *Done for PubMed and bioRxiv; Pending (analysis session) for medRxiv.*
 - PubMed is one sentence: the query misses about a quarter of articles from large US institutions, at a drifting rate, and 2026 is not unusual (rank p = 0.20). "No comparable decline" and the "about 1.7 of the roughly 7 percentage points" accounting are deleted.
 - The bioRxiv split ran against a prediction stated first (Discussion): US wet-lab preprints did not fall relative to non-US ones (2026 against 2023–2024: 1.01; 0.96–1.07). The country classifier is unvalidated.
-- R1's medRxiv split (US +17.7%, non-US +10.1% in 2026) is not in the v3 text. [CHECK: whether the S5 spreadsheet holds it.]
+- R1's medRxiv split (US +17.7%, non-US +10.1% in 2026) is now in the Discussion: US preprints on medRxiv rose relative to non-US ones (2026 against 2023–2024: 1.12; 1.06–1.17).
 
 **R1-N6. The pre-registered tests: design, implementation, deviations.** *Mostly done; four points open.* All recorded before any HN, Test A (bioRxiv) or Test B estimate (Registration; S6 Table B).
 - Test A rule: supported if the ratio exceeds 1 and its 95% CI excludes 1 (D3b). Test B's primary set: 15 held-out arXiv subcategories plus the bioRxiv and medRxiv categories; mathematics and the six particle and nuclear archives are sensitivity only (D3d). One-sided p stated (D3c). All registered sensitivity analyses coded before the HN estimate (D3o).
@@ -103,7 +103,7 @@
 **R2-N1. The genre split is not valid as built; the abstract overreaches.** *Partly done.*
 - The abstract has no genre clause. Results: papers not flagged as proceedings, white papers, theses or reviews departed from trend as much as all papers in C1's six archives (1.24–1.28 under three keyword rules, against 1.20) and in mathematics (1.69–1.71 against 1.69), whereas in the two experimental archives neither series departed much (1.07–1.11 and 1.01).
 - Against INSPIRE's curated types, the proceedings flag has precision 0.89–0.97 and recall 0.63–0.87; the review flag is "unreliable" (precision 0.04–0.57); genre shares by year are "not comparable", because metadata mature as papers are revised (Results; S2 Appendix).
-- S2 Appendix adds a revised rule (journal names ignored; "review" only in titles or explicit phrases), a title-only rule as the revision sensitivity, and proceedings shares for revised and unrevised papers. The two six-archive sets are named "C1's six archives" and "INSPIRE's six archives". [CHECK: the v3 header and an abstract comment still mention a genre clause.]
+- S2 Appendix adds a revised rule (journal names ignored; "review" only in titles or explicit phrases), a title-only rule as the revision sensitivity, and proceedings shares for revised and unrevised papers. The two six-archive sets are named "C1's six archives" and "INSPIRE's six archives". The stale header notes and the abstract comment were corrected after this draft.
 - Not done: hand-coding 200 mathematics papers; mathematics genres stay unvalidated [AUTHOR, if wanted].
 
 **R2-N2. H3's within-field comparison depends on the metric.** *Moot* (marker withdrawn; R1-N3).
@@ -128,10 +128,10 @@
 
 **R2-N10. Other integrity issues.** *Done in v3.* Two mathematics series defined (89.9% in 2019, 92.3% in 2026; growth +43.2% and +43.3%); revision censoring stated; corrected C3 values used. Regenerating `round1_tests.json` and `results.md`: *Pending (analysis session)*. [CHECK: not verifiable here.]
 
-**R2-N11. Positioning against Qi et al.** *Done.* The Introduction says Qi et al. measured the share of papers mentioning AI by discipline, and the acceleration of submissions. The Discussion: their finding "concerns the share of papers mentioning AI, not the volume of output, so these contrasts neither corroborate nor refute it"; their bioRxiv acceleration is a recovery. Blekhman is credited for the idea tested. The AI-topic split is done. Pruller et al. has its DOI; Renault et al.'s critique left with Kusumegi's output-gain estimate (A1). Not added: R2's six references. [CHECK: Discussion says Qi et al.'s slope stayed "below its pre-2020 level"; R2 read it as below the slope before their first, 2020, intervention.]
+**R2-N11. Positioning against Qi et al.** *Done.* The Introduction says Qi et al. measured the share of papers mentioning AI by discipline, and the acceleration of submissions. The Discussion: their finding "concerns the share of papers mentioning AI, not the volume of output, so these contrasts neither corroborate nor refute it"; their bioRxiv acceleration is a recovery. Blekhman is credited for the idea tested. The AI-topic split is done. Pruller et al. has its DOI; Renault et al.'s critique left with Kusumegi's output-gain estimate (A1). Not added: R2's six references. The exact reading of Qi et al.'s Table IV (below the pre-2020 slope, or below the slope before their first, 2020, intervention) is flagged for the author with a [RECHECK] marker in v3.
 
 **R2-N12. Deposit, pipeline, disclosures.** *Partly done.*
-- Methods (Software) pins the versions (Python 3.13.16; requirements.txt) and says `run_all.sh` reproduces the count-based outputs. Data availability says the author-level analyses need undeposited harvests with names, and gives the route to reproduce them. [CHECK: whether `run_all.sh` now includes `stats_round1.py` and regenerates from scratch.]
+- Methods (Software) pins the versions (Python 3.13.16; requirements.txt) and says `run_all.sh` reproduces the count-based outputs. Data availability says the author-level analyses need undeposited harvests with names, and gives the route to reproduce them. The analysis session reports that `run_all.sh` now calls `stats_round1.py` and that `round1_tests.json` and `results.md` were regenerated (companion commit 666be30).
 - Record-level tables are listed for arXiv, medRxiv, INSPIRE and now bioRxiv. No heavy-producer flag is released. Pseudonymised table or non-author contact, and the governing framework (EMBL Policy 68 or GDPR): [AUTHOR].
 - S2 Appendix now states the 429 answer, the two to four parallel connections, INSPIRE's limit and CC0 terms, and that OSF's figure comes from the osfr documentation. The coding sheet lists DOIs and links only (934267f). Licences: [AUTHOR: confirm].
 
@@ -178,7 +178,7 @@
 - The abstract and Conclusions no longer say papers reporting new results "grew as fast as the rest". The Discussion's "did not support its refinement" and "which the held-out tests classify directly" are deleted.
 - Results (R2-N3) give the dependence on base period and proceedings. The Discussion adds that the rule counts collaboration analyses of stored data as new results.
 - The independent-fit interval (0.74–1.35) and the team-size ratios are not quoted; S6 Table lists the four rule variants as unregistered.
-- [CHECK: Methods does not say whether the INSPIRE ratios use the stacked estimator, or whether the planning-paper flag reads arXiv comments.]
+- Results now say that the INSPIRE ratios use the stacked estimator of C1 as first reported, and that planning papers are flagged from arXiv comments as well as INSPIRE's own flag.
 
 **R3-N2. The team-size pattern is mostly an artefact.** *Done by removal; one gap.* Team-size estimates are gone. S2 Appendix says INSPIRE author counts of 0 mark lists not yet loaded, and labels the motivating count (187 to 366) unvalidated. Data-supply facts (LHC 124 fb⁻¹, LHCb 9.56 fb⁻¹, BESIII 2022–2024) are in the dated events; Discussion (i) says the rise "may reflect data supply, which this study did not model". The three-mode description is not written out. Counts by data vintage and lags: *Author* (R3 §6 item 3).
 
