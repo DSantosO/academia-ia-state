@@ -403,6 +403,65 @@ def year_effects_fast(ya, yb, months, base=2022):
     return {k: float(b) for k, b in zip(names, beta[12:])}
 
 
+def planned_fast(ya, yb, months, base_from):
+    """Point estimates of planned_v1 for the placebos: the same design, Poisson by IRLS, the Cameron-Trivedi test, and
+    NB2 with the dispersion maximising the profile likelihood when the test rejects at 5%. Returns the 2026 and 2025
+    period effects of group A (log scale) and the model used."""
+    from scipy.optimize import minimize_scalar
+    from scipy.special import gammaln
+    from scipy.stats import t as tdist
+    keep = [i for i, m in enumerate(months) if m >= base_from]
+    ms = [months[i] for i in keep]
+    n = len(ms)
+    cm = np.array([int(m[5:]) for m in ms])
+    yr = np.array([int(m[:4]) for m in ms])
+    per = np.where(yr <= 2022, "base", np.where(yr <= 2024, "2023-2024", yr.astype(str)))
+
+    def block(a):
+        cols = [np.ones(n), np.full(n, float(a))] + [(cm == c).astype(float) for c in range(2, 13)]
+        for p in PERIODS:
+            cols += [(per == p).astype(float), a * (per == p).astype(float)]
+        return np.column_stack(cols)
+    X = np.vstack([block(1), block(0)])
+    y = np.concatenate([np.asarray(ya, float)[keep], np.asarray(yb, float)[keep]])
+    i25, i26 = 2 + 11 + 2 * PERIODS.index("2025") + 1, 2 + 11 + 2 * PERIODS.index("2026") + 1
+
+    def irls(alpha, beta):
+        for _ in range(100):
+            eta = X @ beta
+            mu = np.exp(eta)
+            w = mu / (1 + alpha * mu)
+            xtw = X.T * w
+            new = np.linalg.solve(xtw @ X, xtw @ (eta + (y - mu) / mu))
+            done = np.max(np.abs(new - beta)) < 1e-10
+            beta = new
+            if done:
+                break
+        return beta, np.exp(X @ beta)
+    b0 = np.zeros(X.shape[1])
+    b0[0] = math.log(y.mean())
+    bp, mu = irls(0.0, b0)
+    z = ((y - mu) ** 2 - y) / mu
+    a_ct = float(np.sum(z * mu) / np.sum(mu * mu))
+    s2 = float(np.sum((z - a_ct * mu) ** 2) / (len(y) - 1))
+    t_ct = a_ct / math.sqrt(s2 / float(np.sum(mu * mu)))
+    if tdist.sf(t_ct, len(y) - 1) >= 0.05:
+        return float(bp[i26]), float(bp[i25]), "poisson"
+    state = {"b": bp}
+
+    def negll(la):
+        a = math.exp(la)
+        b, m = irls(a, state["b"])
+        state["b"] = b
+        r = 1 / a
+        return -float(np.sum(gammaln(y + r) - gammaln(r) - gammaln(y + 1) + y * np.log(a * m / (1 + a * m)) -
+                             r * np.log1p(a * m)))
+    la = minimize_scalar(negll, bounds=(math.log(1e-6), math.log(2.0)), method="bounded",
+                         options={"xatol": 1e-6}).x
+    b, _ = irls(math.exp(la), state["b"])
+    return float(b[i26]), float(b[i25]), "negative_binomial"
+
+
 def section_placebos_matched(repo):
     """Round 2 (item 8; R1 #7, R3 #7): in-space placebos matched to each contrast's structure, with the observed
     contrast counted among them, so p cannot fall below 1/n (the floor). C1 (four theory archives against two
@@ -410,20 +469,23 @@ def section_placebos_matched(repo):
     every disjoint draw of four against two of the 13 physics archives (25,740). C1 without gr-qc (three against two):
     the ten splits of the five archives, and the 12,870 draws from the 13 physics archives. C2 (three computational
     against twelve wet-lab categories): every choice of three of the fifteen categories as the computational group
-    (455). Statistics: the 2026 log rate ratio against 2022 and the 2026/2025 log ratio, from the event-study
-    estimator; p two-sided on absolute values, one-sided in the observed direction."""
+    (455). Statistics, from the event-study estimator as run (base 2022) and from the planned specification (period
+    effects against the multi-year baseline, NB2 when overdispersed; planned_fast): the 2026 log rate ratio and the
+    2026/2025 log ratio; p two-sided on absolute values, one-sided in the observed direction."""
     ax, bx = load_arxiv(repo), load_biorxiv(repo)
     m15, m19 = ym_range("2015-01", LAST), ym_range("2019-01", LAST)
     out = {}
 
-    def stats(ya, yb, ms):
+    def stats(ya, yb, ms, base_from):
         e = year_effects_fast(ya, yb, ms)
-        return e[2026], e[2026] - e[2025]
+        p26, p25, _ = planned_fast(ya, yb, ms, base_from)
+        return e[2026], e[2026] - e[2025], p26, p26 - p25
 
     def summarise(obs, draws):
-        lv, ac = np.array([d[0] for d in draws]), np.array([d[1] for d in draws])
         res = {"n": len(draws), "floor": 1 / len(draws)}
-        for name, o, v in (("2026_vs_2022", obs[0], lv), ("2026_vs_2025", obs[1], ac)):
+        for name, j in (("2026_vs_2022", 0), ("2026_vs_2025", 1), ("planned_2026_vs_base", 2),
+                        ("planned_2026_vs_2025", 3)):
+            v, o = np.array([d[j] for d in draws]), obs[j]
             res[name] = {"observed_rr": math.exp(o), "p_two_sided": float(np.mean(np.abs(v) >= abs(o) - 1e-12)),
                          "p_one_sided": float(np.mean(v * np.sign(o) >= abs(o) - 1e-12)),
                          "placebo_rr_5_50_95": [float(math.exp(q)) for q in np.percentile(v, [5, 50, 95])]}
@@ -433,30 +495,36 @@ def section_placebos_matched(repo):
     for name, A, B, pool6 in (("C1_theory_vs_experiment", THEORY, EXPERIMENT, hep_nucl),
                               ("C1_theory_without_gr-qc_vs_experiment", ["hep-th", "hep-ph", "nucl-th"], EXPERIMENT,
                                [a for a in hep_nucl if a != "gr-qc"])):
-        obs = stats(total(ax, A, m15), total(ax, B, m15), m15)
+        base_from = PLANNED_BASE_FROM[name]
+        obs = stats(total(ax, A, m15), total(ax, B, m15), m15, base_from)
         k, j = len(A), len(B)
-        within = [stats(total(ax, list(a), m15), total(ax, [x for x in pool6 if x not in a], m15), m15)
+        within = [stats(total(ax, list(a), m15), total(ax, [x for x in pool6 if x not in a], m15), m15, base_from)
                   for a in combinations(pool6, k)]
         cache = {a: total(ax, [a], m15) for a in PHYSICS}
         draws = []
         for a in combinations(PHYSICS, k):
             ya = sum(cache[x] for x in a)
             for b in combinations([x for x in PHYSICS if x not in a], j):
-                draws.append(stats(ya, sum(cache[x] for x in b), m15))
-        out[name] = {"observed": {"rr_2026_vs_2022": math.exp(obs[0]), "rr_2026_vs_2025": math.exp(obs[1])},
+                draws.append(stats(ya, sum(cache[x] for x in b), m15, base_from))
+        out[name] = {"observed": {"rr_2026_vs_2022": math.exp(obs[0]), "rr_2026_vs_2025": math.exp(obs[1]),
+                                  "planned_rr_2026_vs_base": math.exp(obs[2]),
+                                  "planned_rr_2026_vs_2025": math.exp(obs[3])},
                      "splits_of_the_hep_nucl_archives": summarise(obs, within),
                      "draws_from_13_physics_archives": summarise(obs, draws)}
         print("placebos", name, len(within), len(draws), flush=True)
     cats = list(COMPUTATIONAL) + list(WET_LAB)
     cache = {c: total(bx, [c], m19) for c in cats}
     allsum = sum(cache.values())
-    obs = stats(sum(cache[c] for c in COMPUTATIONAL), sum(cache[c] for c in WET_LAB), m19)
+    base_from = PLANNED_BASE_FROM["C2_computational_vs_wet_lab"]
+    obs = stats(sum(cache[c] for c in COMPUTATIONAL), sum(cache[c] for c in WET_LAB), m19, base_from)
     draws = []
     for a in combinations(cats, len(COMPUTATIONAL)):
         ya = sum(cache[c] for c in a)
-        draws.append(stats(ya, allsum - ya, m19))
+        draws.append(stats(ya, allsum - ya, m19, base_from))
     out["C2_computational_vs_wet_lab"] = {"observed": {"rr_2026_vs_2022": math.exp(obs[0]),
-                                                       "rr_2026_vs_2025": math.exp(obs[1])},
+                                                       "rr_2026_vs_2025": math.exp(obs[1]),
+                                                       "planned_rr_2026_vs_base": math.exp(obs[2]),
+                                                       "planned_rr_2026_vs_2025": math.exp(obs[3])},
                                           "three_of_the_fifteen_categories": summarise(obs, draws)}
     return out
 

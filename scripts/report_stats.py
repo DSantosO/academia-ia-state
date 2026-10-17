@@ -419,18 +419,24 @@ def placebos_matched(lines, r):
               "against two; C2: three of the fifteen bioRxiv categories as the computational group against the other "
               "twelve. Statistics from the event-study estimator (base 2022); p two-sided on |log ratio|, one-sided in "
               "the observed direction.", "",
-              "| Contrast | Reference set | n (floor) | 2026 vs 2022: observed; p two-sided / one-sided | Placebo 5th / 50th / "
+              "| Contrast | Reference set; estimator | n (floor) | 2026: observed; p two-sided / one-sided | Placebo 5th / 50th / "
               "95th percentile | 2026 / 2025: observed; p two-sided / one-sided |", "|---|---|---|---|---|---|"]
     for name, v in pm.items():
         for ref, x in v.items():
             if ref == "observed":
                 continue
-            a, b = x["2026_vs_2022"], x["2026_vs_2025"]
-            q = " / ".join(f"{t:.2f}" for t in a["placebo_rr_5_50_95"])
-            lines.append(f"| {name} | {ref.replace('_', ' ')} | {x['n']:,} ({x['floor']:.4f}) | {a['observed_rr']:.3f}; "
-                         f"{a['p_two_sided']:.3f} / {a['p_one_sided']:.3f} | {q} | {b['observed_rr']:.3f}; "
-                         f"{b['p_two_sided']:.3f} / {b['p_one_sided']:.3f} |")
-    lines.append("")
+            for est, lk, ak in (("as run", "2026_vs_2022", "2026_vs_2025"),
+                                ("planned", "planned_2026_vs_base", "planned_2026_vs_2025")):
+                if lk not in x:
+                    continue
+                a, b = x[lk], x[ak]
+                q = " / ".join(f"{t:.2f}" for t in a["placebo_rr_5_50_95"])
+                lines.append(f"| {name} | {ref.replace('_', ' ')}; {est} | {x['n']:,} ({x['floor']:.4f}) | "
+                             f"{a['observed_rr']:.3f}; {a['p_two_sided']:.3f} / {a['p_one_sided']:.3f} | {q} | "
+                             f"{b['observed_rr']:.3f}; {b['p_two_sided']:.3f} / {b['p_one_sided']:.3f} |")
+    lines += ["", "'As run': event study, 2026 against 2022. 'Planned': the planned specification, 2026 period effect "
+              "against the multi-year baseline (2017–2022 for C1, 2019–2022 for C2), NB2 when the Cameron–Trivedi test "
+              "rejects.", ""]
 
 
 def inspire_round2(lines, r):

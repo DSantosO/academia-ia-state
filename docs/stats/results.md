@@ -453,13 +453,20 @@ Event study as in P1c (base 2022), February 2019 to the stated month. 'Statistic
 
 Every grouping with the contrast's structure, the observed one included, so p cannot fall below 1/n (the floor). C1: four theory archives against two experimental ones, as splits of the six particle and nuclear physics archives and as disjoint draws from the 13 physics archives; C1 without gr-qc: three against two; C2: three of the fifteen bioRxiv categories as the computational group against the other twelve. Statistics from the event-study estimator (base 2022); p two-sided on |log ratio|, one-sided in the observed direction.
 
-| Contrast | Reference set | n (floor) | 2026 vs 2022: observed; p two-sided / one-sided | Placebo 5th / 50th / 95th percentile | 2026 / 2025: observed; p two-sided / one-sided |
+| Contrast | Reference set; estimator | n (floor) | 2026: observed; p two-sided / one-sided | Placebo 5th / 50th / 95th percentile | 2026 / 2025: observed; p two-sided / one-sided |
 |---|---|---|---|---|---|
-| C1_theory_vs_experiment | splits of the hep nucl archives | 15 (0.0667) | 1.140; 0.133 / 0.067 | 0.87 / 1.04 / 1.13 | 1.051; 0.200 / 0.133 |
-| C1_theory_vs_experiment | draws from 13 physics archives | 25,740 (0.0000) | 1.140; 0.394 / 0.240 | 0.72 / 1.03 / 1.30 | 1.051; 0.489 / 0.226 |
-| C1_theory_without_gr-qc_vs_experiment | splits of the hep nucl archives | 10 (0.1000) | 1.096; 0.100 / 0.100 | 0.93 / 1.01 / 1.08 | 1.056; 0.300 / 0.200 |
-| C1_theory_without_gr-qc_vs_experiment | draws from 13 physics archives | 12,870 (0.0001) | 1.096; 0.529 / 0.314 | 0.72 / 1.01 / 1.35 | 1.056; 0.474 / 0.226 |
-| C2_computational_vs_wet_lab | three of the fifteen categories | 455 (0.0022) | 1.084; 0.374 / 0.189 | 0.87 / 0.98 / 1.16 | 1.104; 0.134 / 0.105 |
+| C1_theory_vs_experiment | splits of the hep nucl archives; as run | 15 (0.0667) | 1.140; 0.133 / 0.067 | 0.87 / 1.04 / 1.13 | 1.051; 0.200 / 0.133 |
+| C1_theory_vs_experiment | splits of the hep nucl archives; planned | 15 (0.0667) | 1.051; 0.867 / 0.533 | 0.84 / 1.05 / 1.16 | 1.052; 0.067 / 0.067 |
+| C1_theory_vs_experiment | draws from 13 physics archives; as run | 25,740 (0.0000) | 1.140; 0.394 / 0.240 | 0.72 / 1.03 / 1.30 | 1.051; 0.489 / 0.226 |
+| C1_theory_vs_experiment | draws from 13 physics archives; planned | 25,740 (0.0000) | 1.051; 0.769 / 0.491 | 0.60 / 1.05 / 1.47 | 1.052; 0.406 / 0.216 |
+| C1_theory_without_gr-qc_vs_experiment | splits of the hep nucl archives; as run | 10 (0.1000) | 1.096; 0.100 / 0.100 | 0.93 / 1.01 / 1.08 | 1.056; 0.300 / 0.200 |
+| C1_theory_without_gr-qc_vs_experiment | splits of the hep nucl archives; planned | 10 (0.1000) | 0.991; 0.900 / 0.600 | 0.93 / 0.99 / 1.10 | 1.051; 0.100 / 0.100 |
+| C1_theory_without_gr-qc_vs_experiment | draws from 13 physics archives; as run | 12,870 (0.0001) | 1.096; 0.529 / 0.314 | 0.72 / 1.01 / 1.35 | 1.056; 0.474 / 0.226 |
+| C1_theory_without_gr-qc_vs_experiment | draws from 13 physics archives; planned | 12,870 (0.0001) | 0.991; 0.954 / 0.413 | 0.60 / 1.03 / 1.56 | 1.051; 0.416 / 0.216 |
+| C2_computational_vs_wet_lab | three of the fifteen categories; as run | 455 (0.0022) | 1.084; 0.374 / 0.189 | 0.87 / 0.98 / 1.16 | 1.104; 0.134 / 0.105 |
+| C2_computational_vs_wet_lab | three of the fifteen categories; planned | 455 (0.0022) | 1.019; 0.864 / 0.409 | 0.85 / 0.99 / 1.17 | 1.094; 0.145 / 0.108 |
+
+'As run': event study, 2026 against 2022. 'Planned': the planned specification, 2026 period effect against the multi-year baseline (2017–2022 for C1, 2019–2022 for C2), NB2 when the Cameron–Trivedi test rejects.
 
 ### Round 2. INSPIRE-HEP classes with the estimator of C1–C3
 
