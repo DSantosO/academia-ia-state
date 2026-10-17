@@ -2,7 +2,8 @@
 
 The first runs on the medRxiv samples (18 batches of the date-ordered, DOI-keyed split, 900 papers) and on the 200
 bioRxiv and medRxiv papers of the validation sheet were superseded by blind runs (pseudonymous ids, random order);
-the superseded labels are used only here. Agreement between runs measures how stable the labels are when the batch
+the superseded labels are used only here. The 200 arXiv papers of the sheet were classified a second time, blind, with
+a new random order and new pseudonymous ids. Agreement between runs measures how stable the labels are when the batch
 composition and order change; it says nothing about accuracy, which the human validation measures.
 Inputs: CSV or gzip CSV files with columns id,label; with --map, a CSV pseudonym,id that turns the second file's
 ids into the first file's ids (a prefix such as "medrxiv:" is ignored when matching).

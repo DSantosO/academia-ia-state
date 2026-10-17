@@ -48,6 +48,9 @@ precision and recall per class, by domain).
   --blind`), so the agreement measured here applies to them.
 - *Earlier run.* The 200 bioRxiv and medRxiv papers were first classified in batches keyed by DOI. Those labels are
   not used for the sheet; they serve only as a test–retest check of the classifier.
+- *Second run (arXiv).* The 200 arXiv papers were classified a second time, blind, with a new random order and new
+  pseudonymous ids (4 batches, same prompt). Those labels are not used for the sheet either; they give the arXiv
+  test–retest table. The per-server tables (first run by second run) feed the relabelling of Deviation 3 (D3g).
 - *Temperature.* Sub-agents do not expose a temperature setting, so the registered "temperature 0" could not be
   applied. This is a deviation.
 
@@ -59,6 +62,10 @@ precision and recall per class, by domain).
 | `sealed/model_labels.csv.gz` | `1b8260e5982ca4914f3a00f347a08cf78a6ec9a1e781f194853216d653bca955` |
 | `sealed/nd_model_labels_medrxiv.csv.gz` | `6b59301db05da6c36dc4081e520641fa6dd661a421b428b90f5746cd4da165f0` |
 | `sealed/classifier_retest_validation.json.gz` | `d7743b8d22c739738fa13d050425d9b84814a29cc27b47e55cafb0c5478388bb` |
+| `sealed/classifier_retest_validation_biorxiv.json.gz` | `21fc6d368081c5789c358d0a409d809b4b638cfaf665d6c51506e366d120fcae` |
+| `sealed/classifier_retest_validation_medrxiv.json.gz` | `acef560215c611b3303b95741f4a89c52816cd869a8774f891c63a470186c75c` |
+| `sealed/model_labels_retest_arxiv.csv.gz` | `ba90122763bb55ceaa6aaca007cf527433fd8d58d624d582e1ac091bd509d1de` |
+| `sealed/classifier_retest_validation_arxiv.json.gz` | `9d31b35cb8d6fa2ad60cc7115b3723023cad4c4907a19fdc3ec6ca83cecea43a` |
 
 The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
 too, because a few papers on the sheet may also be in those samples.

@@ -39,8 +39,9 @@ turn (D3l); (9) astro-ph without papers naming DESI, Euclid, Rubin or LSST (D3l)
 Test A: (2), (3), (4) with "reviews" = titles naming a review or meta-analysis, (6) and (10); (1) and (5) do not apply.
 Excluded papers stay in each stratum's denominator and are counted in neither class, so the estimates are counts of
 the papers that remain. Misclassification (D3g): the interval is recomputed with papers relabelled at random in each
-bootstrap draw, using the test-retest transition matrix (first run -> blind run) of the 900 medRxiv and 200 validation
-papers classified twice.
+bootstrap draw, using each domain's test-retest transition matrix (first run -> second run): arXiv, a second blind run
+of the 200 arXiv validation papers; bioRxiv, the 100 bioRxiv validation papers; medRxiv, the 900 medRxiv sample papers
+and the 100 medRxiv validation papers (second Deviation 3 addendum).
 
 Test B: exposure = ND share among classified papers of each category in 2019-2022; outcome = the category's departure
 in January 2025 - September 2026. Registered outcome: Poisson PML of the monthly count on a linear trend, month of
@@ -136,14 +137,14 @@ def retest_kernel(paths):
 
 
 def relabel(labs, kernel):
-    out = []
-    for x in labs:
-        if x in kernel:
-            choices, p = kernel[x]
-            out.append(choices[RNG.choice(len(choices), p=p)])
-        else:
-            out.append(x)
-    return out
+    """Relabel each paper at random from its row of the test-retest transition matrix."""
+    labs = np.array(labs, dtype=object)
+    out = labs.copy()
+    for a, (choices, p) in kernel.items():
+        idx = np.flatnonzero(labs == a)
+        if len(idx):
+            out[idx] = np.array(choices, dtype=object)[RNG.choice(len(choices), size=len(idx), p=p)]
+    return list(out)
 
 
 def strata(rows, sizes, labels, design, u_as_nn=False, exclude=None):
@@ -502,7 +503,8 @@ def dose_response(expo, outcomes, keep, perms=10000, kernel=None):
                            for _, g in df.groupby("server")])
             if relabelled:
                 d = d.copy()
-                d["nd_share"] = [share(relabel(expo[(s, c)], kernel))[0] for s, c in zip(d["server"], d["category"])]
+                d["nd_share"] = [share(relabel(expo[(s, c)], kernel[s]))[0]
+                                 for s, c in zip(d["server"], d["category"])]
             try:
                 out.append(_slope(d))
             except Exception:
@@ -526,12 +528,12 @@ def dose_response(expo, outcomes, keep, perms=10000, kernel=None):
     return out
 
 
-def test_b(rows, labels, attrs, kernel, repo):
+def test_b(rows, labels, attrs, kernels, repo):
     reseed("B")
     trend = testb_outcomes(repo)
     level = testb_outcomes(repo, level=True)
     expo = exposure_labels(rows, labels)
-    res = {"primary": dose_response(expo, trend, primary, kernel=kernel)}
+    res = {"primary": dose_response(expo, trend, primary, kernel=kernels)}
     res["primary_level_based"] = dose_response(expo, level, primary)
     p, lv = res["primary"], res["primary_level_based"]
     res["primary_dependent_on_counterfactual"] = disagree(
@@ -573,8 +575,13 @@ def main():
     repo = args[1] if len(args) > 1 else "."
     rows, sizes = load_samples(repo)
     attrs = load_attributes(repo)
-    kernel = retest_kernel([os.path.join(repo, "data/processed/stats/classifier_retest_medrxiv.json"),
-                            os.path.join(repo, "validation/sealed/classifier_retest_validation.json.gz")])
+    sealed = os.path.join(repo, "validation/sealed")
+    kernels = {
+        "arxiv": retest_kernel([os.path.join(sealed, "classifier_retest_validation_arxiv.json.gz")]),
+        "biorxiv": retest_kernel([os.path.join(sealed, "classifier_retest_validation_biorxiv.json.gz")]),
+        "medrxiv": retest_kernel([os.path.join(repo, "data/processed/stats/classifier_retest_medrxiv.json"),
+                                  os.path.join(sealed, "classifier_retest_validation_medrxiv.json.gz")]),
+    }
     coverage = defaultdict(lambda: [0, 0])
     for r in rows:
         coverage[r["design"]][0] += r["paper_key"] in labels
@@ -582,11 +589,12 @@ def main():
     done = {d for d, (a, b) in coverage.items() if a == b}
     print("coverage:", {d: f"{a}/{b}" for d, (a, b) in sorted(coverage.items())})
     jobs = {
-        "HN": ({"HN"}, lambda: hn_like(rows, sizes, labels, "HN", D.HN_ARCHIVES, attrs, kernel)),
-        "A-biorxiv": ({"A-biorxiv"}, lambda: hn_like(rows, sizes, labels, "A-biorxiv", ["A-biorxiv"], attrs, kernel)),
-        "A-medrxiv": ({"A-medrxiv"}, lambda: hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"], attrs, kernel,
-                                                     registered=False)),
-        "B": ({"B-arxiv", "B-biorxiv", "B-medrxiv"}, lambda: test_b(rows, labels, attrs, kernel, repo)),
+        "HN": ({"HN"}, lambda: hn_like(rows, sizes, labels, "HN", D.HN_ARCHIVES, attrs, kernels["arxiv"])),
+        "A-biorxiv": ({"A-biorxiv"}, lambda: hn_like(rows, sizes, labels, "A-biorxiv", ["A-biorxiv"], attrs,
+                                                     kernels["biorxiv"])),
+        "A-medrxiv": ({"A-medrxiv"}, lambda: hn_like(rows, sizes, labels, "A-medrxiv", ["A-medrxiv"], attrs,
+                                                     kernels["medrxiv"], registered=False)),
+        "B": ({"B-arxiv", "B-biorxiv", "B-medrxiv"}, lambda: test_b(rows, labels, attrs, kernels, repo)),
     }
     os.makedirs(os.path.join(repo, "validation/sealed"), exist_ok=True)
     for name, (needs, job) in jobs.items():
