@@ -28,12 +28,12 @@
 
 ### New major issues
 
-**R1-N1. The in-time calibration is mis-specified, and acceleration estimates have none.** *Done, with two gaps.*
+**R1-N1. In-time calibration is mis-specified; acceleration estimates have none.** *Done, with two gaps.*
 - The v2 year-shock ratio is withdrawn (S5 Table note). Calibration is by rank with the identical estimator: the 2026 coefficient among the contrast's earlier year coefficients, and the 2026/2025 change among all earlier year-on-year changes. Two-sided, 2026 included, so p cannot fall below 1/(n + 1) (Methods, Calibration; Table 1; S5 Table).
 - Rank p of the 2026 coefficient: 0.67, 0.80, 0.60. Of the 2026/2025 change: 0.73, 0.29, 0.29. C2's and C3's equal-sized rises are read alike (Results). R1 allowed rank or a centred z; rank was used.
 - Gaps: slope changes keep bootstrap p values only. Fig 2D's legend describes Driscoll–Kraay bars and no rank p; the figure was not checked [CHECK].
 
-**R1-N2. The cross-server divergence depends on the counterfactual; only mathematics stands out against bioRxiv; "experimental included" depends on archive and window; bioRxiv duplicates.** *Done.*
+**R1-N2. The cross-server divergence depends on the counterfactual; only mathematics stands out; "experimental included" depends on archive and window; bioRxiv duplicates.** *Done.*
 - Each claim names its counterfactual. Results note that bioRxiv's 12% trend was fitted to years of adoption; the Discussion calls the contrast "dependent on the counterfactual".
 - Direct comparison with bioRxiv (Results), 2025 to 2026: C1's six archives +7% (1.07; 0.99–1.16), "as much as in 2021 and 2022"; experiment 1.02 (0.93–1.11); mathematics 1.27 (1.04–1.56), its largest gain (rank p 0.14 one-sided, the floor; 0.29 two-sided).
 - "Experimental included" is limited to hep-ex (1.37; 1.12–1.67), "but not nucl-ex (1.00)", in Results, Principal findings and Conclusions; the abstract has no such clause. The genre window is in S2 Appendix.
@@ -86,8 +86,7 @@
 5. *Done.* The range sentence is gone; S5 Table lists every variant.
 6. *Done.* "Lower bound" in Methods and Table 1.
 7. *Declined.* Methods say "No placebo was defined for C3"; no reason is recorded.
-8. *Done.* Title, abstract and, for arXiv, comments.
-9. *Done.* S2 Appendix gives the transform.
+8–9. *Done.* Methods name the comments field for arXiv; S2 Appendix gives the transform.
 10. *Not done.* No archive rank p is reported.
 11. *Done.* "No detectable slope break".
 12. *Not done* in Results. The pooled-base interval (0.80–1.22) is in Table 1 but is not set against 1.03–1.14.
@@ -101,7 +100,7 @@
 
 ### New major issues
 
-**R2-N1. The genre split is not valid as built, and the abstract applies it beyond its coverage.** *Partly done.*
+**R2-N1. The genre split is not valid as built; the abstract overreaches.** *Partly done.*
 - The abstract has no genre clause. Results: papers not flagged as proceedings, white papers, theses or reviews departed from trend as much as all papers in C1's six archives (1.24–1.28 under three keyword rules, against 1.20) and in mathematics (1.69–1.71 against 1.69), whereas in the two experimental archives neither series departed much (1.07–1.11 and 1.01).
 - Against INSPIRE's curated types, the proceedings flag has precision 0.89–0.97 and recall 0.63–0.87; the review flag is "unreliable" (precision 0.04–0.57); genre shares by year are "not comparable", because metadata mature as papers are revised (Results; S2 Appendix).
 - S2 Appendix adds a revised rule (journal names ignored; "review" only in titles or explicit phrases), a title-only rule as the revision sensitivity, and proceedings shares for revised and unrevised papers. The two six-archive sets are named "C1's six archives" and "INSPIRE's six archives". [CHECK: the v3 header and an abstract comment still mention a genre clause.]
@@ -109,7 +108,7 @@
 
 **R2-N2. H3's within-field comparison depends on the metric.** *Moot* (marker withdrawn; R1-N3).
 
-**R2-N3. INSPIRE classes rest on curation that changes with record age.** *Done, updated at 934267f; two checks open.*
+**R2-N3. INSPIRE classes depend on curation that changes with record age.** *Done, updated at 934267f; two checks open.*
 - Results depend on the base period and on proceedings: 1.03–1.05 including proceedings; for research articles without planning papers, 1.19–1.27 in the six archives (four base periods, every lower bound at least 1.00), 2.12–3.69 in hep-ex and 0.84–1.20 in nucl-ex.
 - The link share fell from 0.55–0.68 before 2025 to 0.47–0.49 in 2025–2026, "mostly through composition": records with more than 300 authors carried a collaboration in 99–100% of cases in every year, and only mid-size collaborations show a possible lag, about 0.1 in 2026. Requiring a collaboration instead of a link (R2's sensitivity) gives 2.04 in hep-ex.
 - Reading: "consistent with the refined hypothesis in hep-ex, the archive in which it was formed, but not in nucl-ex ... not a held-out test".
@@ -167,9 +166,7 @@
 14. *Author.* Precision coding; the recall sample was dropped.
 15. *Author.* Spot-check of the country classifier.
 16. *Done.* S2 Appendix gives query and dates.
-17. *Done* (A1).
-18. *Done.*
-19. *Done.* The build header counts markers.
+17–19. *Done* (A1; the API statement stands; the build header counts markers).
 
 ---
 
@@ -177,7 +174,7 @@
 
 ### New major issues
 
-**R3-N1. The INSPIRE result is stated too strongly, and the Discussion contradicts itself.** *Done, updated at 934267f.*
+**R3-N1. The INSPIRE result is overstated; the Discussion contradicts itself.** *Done, updated at 934267f.*
 - The abstract and Conclusions no longer say papers reporting new results "grew as fast as the rest". The Discussion's "did not support its refinement" and "which the held-out tests classify directly" are deleted.
 - Results (R2-N3) give the dependence on base period and proceedings. The Discussion adds that the rule counts collaboration analyses of stored data as new results.
 - The independent-fit interval (0.74–1.35) and the team-size ratios are not quoted; S6 Table lists the four rule variants as unregistered.
@@ -239,14 +236,14 @@
 
 ### New major issues
 
-**R4-N1. Pre-registered paper-level tests: report in full or remove; record changes before any estimate is seen.** *Done in form; content sealed.*
+**R4-N1. Paper-level tests: report in full or remove; record changes first.** *Done in form; content sealed.*
 - v3 takes R4's Option A in form: a Methods subsection (R4's model paragraph, updated with Deviation 3), a Results shell with [SEALED] placeholders, one abstract sentence with placeholders, and S6 Table with R4's columns. S1 Text is re-captioned as the plan, time-stamped in the public repository, "not in a registry".
 - D3a–D3f, the erratum and the sealing rule are recorded. "Held out" is kept for HN only. Methods say the medRxiv coding may not be blind to the Test A (medRxiv) estimate; the fourth addendum records the author's answer that they had not read it, but Methods and S6 Table still carry the [AUTHOR] marker.
 - Open: Option A or B depends on finishing the coding and unsealing before submission; otherwise use R4's Option B sentence (§5 item 6). Model and version, justification, training setting, run records and number classified: §5 item 11. D3q and D3r are missing from S1 Text and S6 Table. The abstract is at 300 words with its placeholders (limit 300).
 
 **R4-N2. Two design problems to settle before any estimate.** *Done* (R1-N6: D3d, D3e). The 2019 placebo is reported, not interpreted, for bioRxiv and medRxiv (D3n).
 
-**R4-N3. "Pre-specified" attached to an estimand the record does not show was pre-specified.** *Done, except the title.* The planned specification is primary and Table 1 labels its rows "Planned". Methods: "estimates first reported, a deviation". Results: the all-three-fields rule was "added after the results". Methods say the specification was committed with the first estimates [AUTHOR: §5 item 8]. The title still says "pre-specified within-field tests" [AUTHOR: §5 item 1].
+**R4-N3. "Pre-specified" attached to an estimand not shown to be pre-specified.** *Done, except the title.* The planned specification is primary and Table 1 labels its rows "Planned". Methods: "estimates first reported, a deviation". Results: the all-three-fields rule was "added after the results". Methods say the specification was committed with the first estimates [AUTHOR: §5 item 8]. The title still says "pre-specified within-field tests" [AUTHOR: §5 item 1].
 
 **R4-N4. Sentences beyond the data.** *Done, with two author decisions.* The 12 rows are corrected as in R1-N7, R2-N11 and R3-N7. The opening premise follows A1 ("polish served as a cue of quality"); the effort sentence now reads "form becomes a weaker cue of the quality of the work behind it; this is an interpretation, not a result of this study". The Amdahl paragraph, the DORA/CoARA claim and the seven proposals are cut. [AUTHOR: marker (R1-N3); A3 paragraph (R3-N7).]
 
