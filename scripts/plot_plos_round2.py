@@ -4,6 +4,7 @@ Table 2 and S5 Table.
 
 Fig4_forest       the 2026 rate ratio of each within-field contrast under every specification
 Fig6_departures   2026 departures from the pre-2023 trend by arXiv archive and for the other series
+Fig7_h2_ranking   H2: growth by class of names ranked on an independent window; uniform-scaling expectation
 Usage: python3 scripts/plot_plos_round2.py [repo_dir] [figure ...]
 """
 import io
@@ -199,7 +200,86 @@ def fig6_departures(repo, out):
     save(fig, out, "Fig6_departures")
 
 
-FIGURES = {"fig4": fig4_forest, "fig6": fig6_departures}
+def fig7_h2_ranking(repo, out):
+    h = load(repo, "h2_round2.json")
+    classes = [("top1pct", "Previous\ntop 1%"), ("next9pct", "Next\n9%"), ("bottom90pct", "Bottom\n90%"),
+               ("not_active_in_ranking_window", "Not\nactive")]
+    pre = ["2020-Q3_to_2021-Q3", "2021-Q3_to_2022-Q3"]
+    fig = plt.figure(figsize=(WIDTH, 8.4 * CM))
+    gs = fig.add_gridspec(1, 3, width_ratios=[1, 1, 0.72], wspace=0.40, left=0.075, right=0.975, top=0.78,
+                          bottom=0.15)
+    groups = [("maths", "A  Mathematics"), ("theory_max50_authors", "B  Physics theory (≤50 authors)")]
+    for k, (g, title) in enumerate(groups):
+        ax = fig.add_subplot(gs[0, k])
+        iw = h[g]["all_names"]["independent_window"]
+        xs = range(len(classes))
+        for j, pair in enumerate(pre):
+            d = iw[pair]
+            ax.plot([x + 0.12 * (j - 0.5) for x in xs], [100 * d[c]["growth"] for c, _ in classes], marker="o",
+                    markersize=3.5, linestyle="none", color=GREY, zorder=2)
+            ax.axhline(100 * d["growth"], color=GREY, linewidth=0.7, linestyle=(0, (3, 2)), zorder=1)
+        d = iw["2025-Q3_to_2026-Q3"]
+        ax.axhline(100 * d["growth"], color=PRIMARY, linewidth=1.0, zorder=1)
+        ax.plot(list(xs), [100 * d[c]["growth"] for c, _ in classes], marker="o", markersize=5.5, linestyle="none",
+                color=PRIMARY, zorder=3)
+        for x, (c, _) in zip(xs, classes):
+            v = 100 * d[c]["growth"]
+            below = abs(v + 9 - 100 * d["growth"]) < 9
+            ax.text(x, v - 7 if below else v + 6, f"{v:+.0f}%".replace("-", "\u2212"), ha="center",
+                    va="top" if below else "bottom", fontsize=8, color=INK)
+        ax.text(len(classes) - 0.4, 100 * d["growth"] + 2, f"All\nnames\n{100 * d['growth']:+.0f}%", ha="left",
+                va="bottom", fontsize=8, color=INK2)
+        ax.set_xticks(list(xs))
+        ax.set_xticklabels([lab for _, lab in classes])
+        ax.set_xlim(-0.5, len(classes) + 0.35)
+        ax.set_ylim(-30, 125)
+        ax.set_ylabel("Growth in fractional output, Q3 to Q3 (%)" if k == 0 else "")
+        for side in ("top", "right", "left"):
+            ax.spines[side].set_visible(False)
+        ax.spines["bottom"].set_color(AXIS)
+        ax.tick_params(axis="y", length=0, colors=INK2, pad=2)
+        ax.tick_params(axis="x", length=0, colors=INK, pad=3)
+        ax.grid(axis="y", color=GRID, linewidth=0.5)
+        ax.set_axisbelow(True)
+        ax.axhline(0, color=AXIS, linewidth=0.6)
+        ax.set_title(title, loc="left", fontsize=9, weight="bold", pad=8)
+    ax = fig.add_subplot(gs[0, 2])
+    xs = [0, 1.25]
+    for x, (g, lab) in zip(xs, (("maths", "Mathematics"), ("theory_max50_authors", "Physics\ntheory"))):
+        u = h[g]["all_names"]["uniform_scaling"]["2025-Q3_to_2026-Q3"]
+        obs, null = 100 * u["observed_change_top1"], u["lognormal"]["null_change_top1"]
+        ax.bar(x, obs, width=0.55, color=PRIMARY, zorder=2)
+        m, sd = 100 * null["mean"], 100 * null["sd"]
+        ax.plot([x, x], [m - sd, m + sd], color=INK, linewidth=1.0, zorder=4)
+        ax.plot(x, m, marker="_", markersize=14, markeredgewidth=1.6, color=INK, zorder=4)
+        ax.text(x, obs + 0.06, f"{obs:.2f}", ha="center", va="bottom", fontsize=8, color=INK)
+        ax.text(x + 0.33, m, f"{m:.2f}", ha="left", va="center", fontsize=8, color=INK2)
+    ax.set_xticks(xs)
+    ax.set_xticklabels(["Mathe-\nmatics", "Physics\ntheory"])
+    ax.set_xlim(-0.5, 2.0)
+    ax.set_ylim(0, 2.0)
+    ax.set_ylabel("Rise in the top-1% share (pp)")
+    for side in ("top", "right", "left"):
+        ax.spines[side].set_visible(False)
+    ax.spines["bottom"].set_color(AXIS)
+    ax.tick_params(axis="y", length=0, colors=INK2, pad=2)
+    ax.tick_params(axis="x", length=0, colors=INK, pad=3)
+    ax.grid(axis="y", color=GRID, linewidth=0.5)
+    ax.set_axisbelow(True)
+    ax.set_title("C  Uniform scaling", loc="left", fontsize=9, weight="bold", pad=8)
+    handles = [Line2D([], [], marker="o", linestyle="none", color=PRIMARY, markersize=5.5,
+                      label="Q3 2025 to Q3 2026; line: all names"),
+               Line2D([], [], marker="o", linestyle=(0, (3, 2)), color=GREY, markersize=3.5, linewidth=0.7,
+                      label="Pairs before ChatGPT (2020–21, 2021–22)"),
+               Patch(facecolor=PRIMARY, label="Observed rise"),
+               Line2D([], [], marker="_", color=INK, markersize=10, markeredgewidth=1.6, linewidth=1.0,
+                      label="Uniform scaling: mean ± SD (100 runs)")]
+    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False, fontsize=8,
+               handletextpad=0.4, columnspacing=2.0)
+    save(fig, out, "Fig7_h2_ranking")
+
+
+FIGURES = {"fig4": fig4_forest, "fig6": fig6_departures, "fig7": fig7_h2_ranking}
 
 
 def main(args):
