@@ -78,6 +78,7 @@ the classifier and the author ≥ 0.60 in each domain), and there is no adjudica
 | `sealed/classifier_retest_validation_arxiv.json.gz` | `9d31b35cb8d6fa2ad60cc7115b3723023cad4c4907a19fdc3ec6ca83cecea43a` |
 | `sealed/nd_model_labels_arxiv_batches001-243.csv.gz` | `5377cff70f1b80104226b51c7b2716439bd7b0eed28486a8483fc9d52bb177ec` |
 | `sealed/nd_results_A-medrxiv.json.gz` | `e07ec58761bef9d4d94f48a155534fa631b9ca0367bc2c2e5c96dc3d767ee06e` |
+| `sealed/nd_results_HN.json.gz` | `6e61a6a9796b3e4bc36b5e14960da71ad23edf0ce42f8611bf834ea776fcc016` |
 | `sealed/nd_model_labels_arxiv_batches244-255.csv.gz` | `9e8a114265ee99d9899a58dd06c034ce0461491c6da3c20cdd7c2f6d8dcb0c63` |
 | `sealed/nd_model_labels_arxiv_batches256-265.csv.gz` | `0cb7f57c45b4ccca0aa94192d42eb2e51278afad412e39ab94224a6f34090f61` |
 | `sealed/nd_model_labels_arxiv.csv.gz` | `2bd6ada047ac74cdcca53780b0e2b211e69bf7b9ed9c589a25e212c7bc1c8c52` |
