@@ -318,3 +318,4 @@ The author proposed using INSPIRE-HEP because its metadata are rich. HEP is wher
   - The verdict is taken from the corrected computation, because that is the registered estimator correctly implemented.
   - Both intervals are reported in S6 Table.
 - **Applies to all tests.** The same correction applies to every bootstrap in HN, Test A and Test B, and to the level-based companions. It is not specific to the result already computed.
+- **Status (17 Oct 2026, 14:42 UTC).** Test A (medRxiv) recomputed with the corrected code and sealed at commit 1b0ec82 on the analysis branch: `validation/sealed/nd_results_A-medrxiv.json.gz`, SHA-256 `e07ec58761bef9d4d94f48a155534fa631b9ca0367bc2c2e5c96dc3d767ee06e`. Only the hash has been reported; the corrected value has not been shown to the author or the coordinator.
