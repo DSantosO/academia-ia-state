@@ -703,7 +703,7 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
 4. **The request-pacing disclosure is frank, with three errors and one gap.** Disclosing the 1 s pauses against arXiv's 15 s crawl delay, and the OSF retrievals faster than documented, is exemplary. But:
    - **(i) "No request was refused" (Methods)** is contradicted by the companion's own record. The arXiv API "answered '429 Rate exceeded' from this environment" (`harvest_arxiv_raw.py`, `v1_dates_from_raw.py`). State it, and say that the environment's network address may be shared, which can trigger rate limits even for a compliant client.
    - **(ii) The OSF file.** The README claims `osf_continuity.csv` was retrieved; it is absent (N7).
-   - **(iii) Parallel connections.** The bioRxiv and medRxiv harvests used two to four parallel connections (deposit README). Methods says only that the API "states no limit". I confirm the API page states no terms or limits (https://api.biorxiv.org/, read 17 October 2026), but Methods should report the parallelism.
+   - **(iii) Parallel connections.** The bioRxiv and medRxiv harvests used two to four parallel connections (deposit README). Methods says only that the API "states no limit". I confirm the API page states no terms or limits (https://api.biorxiv.org/, read on 16 October 2026), but Methods should report the parallelism.
    - **(iv) The gap: INSPIRE.** Replace the [RECHECK] with the documented limit and the pacing used.
      - The limit: "every IP address is allowed 15 requests in a 5s window" (https://github.com/inspirehep/rest-api-doc).
      - The pacing: at most one request a second (`harvest_inspire.py`).
