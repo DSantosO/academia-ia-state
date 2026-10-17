@@ -55,4 +55,28 @@ The marker vocabulary has drifted since 2024: authors and newer models avoid the
 2. Keep 2024 only, as a secondary measure in the Supporting Information.
 3. Replace it with full-text mentions. Not recommended, because it measures disclosure rather than use.
 
-**Author decision:** pending.
+**Author decision (17 Oct 2026):** "Quitarla del todo" (drop it entirely).
+- Remove the marker analysis from the main text and from the Supporting Information.
+- H3 becomes literature context only: cite the published marker studies; we run no analysis of our own.
+- The round-2 statistics review (N3) had independently judged "use vs output" not robust.
+
+## A3. Engaging Blekhman with a concrete mechanism: the author's proposal (17 Oct 2026)
+
+**The author, translated:**
+
+> "Does he propose anything? I propose an evolution of arXiv-type repositories, but modern: web pages in which data, interactive visualisation, videos etc. are mixed with the text. The PDF is very old-fashioned. And with public reviews. Nothing is 'accepted': everyone can give their opinion and criticise. The critiques are what gets valued, not the article. I think there have been attempts at something like this; can you check?"
+
+**Blekhman names no mechanism.** He asks the field to:
+- admit that paper counts are meaningless;
+- abandon the current incentive system;
+- define evaluation aligned with the field's goals (his five), starting from "what is biology research for".
+
+He gives the job to journals, funders and universities together.
+
+**Coordinator's notes for v3:**
+- **Prior attempts.** A check of prior attempts is in progress, verified against sources: paper/sources/open_publishing_attempts.md.
+- **Placement.** The proposal is a mechanism, not a finding. In the PLOS article it should be one short Discussion paragraph engaging Blekhman, citing the strongest prior attempts and their lessons. The round-2 editor flagged the implications section as already too long. The full development belongs in the essay.
+- **Risks to address.**
+  - Participation has been the recurring failure of open commenting.
+  - AI makes critiques cheap too, so "valuing critiques" moves the Goodhart problem to reviews unless what is credited is verification with consequences: reproductions, and errors found and corrected.
+  - The web-native format's strongest argument is that data and code attached to the text make verification cheaper. That is the mirror image of the paper's thesis: AI made production cheap.
