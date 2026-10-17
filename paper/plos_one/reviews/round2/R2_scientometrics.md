@@ -123,7 +123,7 @@ On criterion 4 I would now support the paper.
   - "similar" adoption of AI-assisted writing within fields (N2);
   - the accounting of the funding shock from PubMed affiliations (N4).
 - **An unconfirmed comparator.** The bioRxiv series, the paper's main comparator, has not been checked for the duplication found in medRxiv. My spot check finds none in the months where medRxiv's was worst, but the full check is still to be run (N5).
-- **Positioning.** The positioning against Qi et al. misreads their finding (N9). I share the blame: I described Qi et al. wrongly in round 1.
+- **Positioning.** The positioning against Qi et al. misreads their finding (N9). I share the blame: my round-1 description of their design was partly wrong.
 - **The deposit.** The deposit and the disclosures are honest in spirit but wrong in several particulars (N10).
 
 **All of this can be fixed with data in hand.**
@@ -165,7 +165,7 @@ Status codes: **Resolved**; **Partly**; **Not** resolved; **Open (author)**, nee
 | **M8b. Rule-date indicators in the models** | Acceptable as declined | Nearly collinear with 2026; window-drop variants in S5 Table | – |
 | **M8c. Validate the OSF method; demote the social-science series** | Not resolved | Continuity check pending; OSF access is blocked | Remove the series from Fig 1 and Table 3 (N7) |
 | **M9a. Positioning against Nee et al.** | Resolved | Replication on a different unit; "an excess over an accelerating arXiv" | Report the list-entry author panel (M3c) |
-| **M9b. Positioning against Qi et al.** | Not resolved, and my round-1 advice was wrong | v2 presents itself as the within-field test of Qi et al.'s "computationally intensive fields benefited more" | Qi et al.'s claim concerns the share of AI-related papers by discipline, not the volume of output (N9) |
+| **M9b. Positioning against Qi et al.** | Not resolved; my round-1 advice was partly wrong | v2 presents itself as the within-field test of Qi et al.'s "computationally intensive fields benefited more" | Qi et al.'s claim concerns the share of AI-related papers by discipline, not the volume of output. Their bioRxiv volume result needs reconciling (N9) |
 | **M9c. Core scientometric literature** | Resolved | All the references I listed are added; I re-verified the new ones (Section 4.3) | A few useful additions (Section 4.3) |
 | **M9d. Discussion material the data do not test** | Partly; author's decision | "Implications" shortened to about 520 words and labelled as interpretation; proposals cut to one paragraph | Acceptable if the [RECHECK] figures are verified |
 | **M10a. Record-level identifiers and flags** | Partly; more exists than v2 says | v2 says the tables "will be added". Already committed: arXiv flags (453,067 rows), medRxiv records (89,700), INSPIRE records (117,960), medRxiv ND samples (4,080) | Missing: bioRxiv records, complete v1 dates, OAI datestamps. A heavy-producer flag must **not** be released (N10) |
@@ -585,20 +585,28 @@ That is a cheap first look at the Q4 test of H2 that I proposed in round 1. The 
 - **The finding.** Finding 5 reads: "AI adoption is highly uneven across disciplines: exceeding 50% in computer science", "remaining below 20% in physics and mathematics" (https://arxiv.org/html/2510.17882v1).
 - **The comparison.** Disciplines are taken from "repository-specific subject taxonomies", so the comparison runs across fields within each repository, not between servers.
 
-**My round-1 review was wrong** to say that "their design compares servers" and to propose the paper as "the within-field test their design lacks".
+**My round-1 review was partly wrong.**
+- I wrote that "their design compares servers, so it cannot separate computational intensity from server", and proposed the paper as "the within-field test their design lacks".
+- That holds for their analysis of volume, which is by repository.
+- It does not hold for their finding on computational intensity. That finding compares AI-topic shares across disciplines and says nothing about where output grows.
 
 **What Qi et al. report about volume.**
-- Interrupted time series up to August 2025 give "significant post-ChatGPT slope increases in all repositories, most notably in arXiv", followed by bioRxiv.
-- Their Table IV, as read from the HTML version, gives slope changes of +477.38 a month (SE 70.32) for arXiv and +29.60 (SE 5.61) for bioRxiv.
-- Their text reads: "arXiv and bioRxiv exhibiting accelerated accumulation after ChatGPT, whereas medRxiv and SocArXiv remain relatively flat".
+- **The model.** Their Table IV ("Interrupted time series for monthly submissions", HAC-robust standard errors) has two interventions, GPT-3 and ChatGPT. The data run to August 2025.
+- **Slope change at ChatGPT:** +477.38 a month (SE 70.32) for arXiv and +29.60 (5.61) for bioRxiv.
+- **Slope change at GPT-3:** −53.17 (19.55) for arXiv and −56.79 (6.73) for bioRxiv.
+- **Their text:** "arXiv and bioRxiv exhibiting accelerated accumulation after ChatGPT, whereas medRxiv and SocArXiv remain relatively flat".
 
-v2 reports that bioRxiv did not depart from its own trend (0.91). That contrast with Qi et al. is a different counterfactual for the same server, and it needs one sentence of reconciliation.
+**The reconciliation.**
+- For bioRxiv, the post-ChatGPT increase is measured against the 2020–2022 segment, when bioRxiv was falling after the COVID-19 surge.
+- On their own estimates, bioRxiv's slope after ChatGPT remains below its slope before GPT-3 (−56.79 + 29.60 = −27.19 a month).
+- That is consistent with v2's finding that bioRxiv grew 9–13% a year in 2023–2026 but stayed at its own pre-2023 trend (0.91).
+- One sentence saying so would turn an apparent contradiction into corroboration.
 
 **Fix.**
 1. **Describe Qi et al.'s finding accurately:** AI-related topics, by discipline, within repositories.
 2. **Re-target the falsification framing** to the hypothesis as stated (Blekhman; H1), citing Qi et al. as motivation that AI's footprint differs across fields.
 3. **Note that Qi et al.'s measure is AI as topic.** This is exactly why the AI-topic split of bioinformatics, still pending, matters for C2.
-4. **Reconcile the bioRxiv result.** Qi et al.'s volume model finds a post-ChatGPT slope increase on bioRxiv to August 2025; v2's trend model, with a different pre-period and a COVID-19 indicator, does not. Say which counterfactual each uses.
+4. **Reconcile the bioRxiv result.** Qi et al.'s post-ChatGPT slope increase on bioRxiv is a recovery from the 2020–2022 decline, measured after a negative break at GPT-3; v2 measures departures from a 2018–2022 trend with a COVID-19 indicator. Say so, and cite their Table IV.
 
 #### Nee et al.
 
@@ -612,11 +620,17 @@ v2 reports that bioRxiv did not depart from its own trend (0.91). That contrast 
 
 #### Accuracy of the references
 
-**Verified.** I checked every reference added in v2, plus the preprints the argument rests on, against Crossref or the arXiv API on 17 October 2026. All resolve, with correct authors, titles, venues, volumes and pages. They include:
+**Verified.** On 16–17 October 2026 I checked, against Crossref or the arXiv API, the references on which the empirical argument rests. All resolve, with correct authors, titles, venues, volumes and pages. They include:
 - Qi et al., Nee et al. (v1), Lin and Zhu, Holzwarth et al., He and Bu (v2), Elazar and Antoniak (v2), Shah and Filimonovic et al.;
 - Kusumegi et al., Renault et al. (PNAS 123(33):e2618638123, published 11 August 2026), Spick et al. (J Clin Epidemiol 193:112203) and Gartenberg et al. (Organ Sci 37(3):795–812);
 - Liang et al. (Nat Hum Behav 9(12):2599–2609), Blekhman (PLoS Biol 24(10):e3004075, 15 October 2026), Hansen, Hanson et al. and Geng and Trotta;
 - Ioannidis et al. 2024, Bornmann et al. and Pruller et al.
+
+**What I did not check.**
+- **The scientometric references added at my request.** I verified them in round 1: Abdill and Blekhman, Larivière et al., Wang et al., Krumholz et al., Fraser et al., Sever et al., Milojević, Kim and Diesner, Ioannidis et al. 2018, Abadie et al., and Driscoll and Kraay.
+- **The references in "Implications".** I did not check DORA, CoARA, McKiernan et al., Rice et al., the Commission's study or the proposals. Several carry [RECHECK], and they lie outside my remit.
+
+**Qi et al.'s characterisation.** The Introduction's "2.1 million preprints on arXiv, bioRxiv, medRxiv and SocArXiv from 2016 to 2025" matches their abstract: "more than 2.1 million preprints spanning 2016–2025 (115 months)", ending in August 2025. Only the reading of "benefited" is wrong (N9).
 
 **Points to fix.**
 - **Ref. 68 (Pruller et al.)** lacks its DOI: 10.1371/journal.pone.0337199 (PLOS One 20(11):e0337199, 18 November 2025). Check that it supports "from April 2024".
@@ -654,6 +668,13 @@ All verified on Crossref or arXiv; each supports a sentence the paper already ma
      - `round1_tests.json` and `results.md` changed, and only in the C3 estimands.
 
      This is a good result for the pipeline and a bad one for the committed state.
+   - **What the re-run could not cover.** The analyses that need the arXiv OAI harvests are not reproducible from the deposit, because the harvests contain author names and are not deposited:
+     - H2 (`heavy_producers.json` was not regenerated);
+     - the arXiv text counts;
+     - the genre and Snowmass flags;
+     - the dating section.
+
+     Say so in the Data availability statement, and give the route for reproducing them (item 3).
    - **Fix.**
      - Add `stats_round1.py`, with all its sections, to `run_all.sh`.
      - Regenerate from scratch rather than merging.
