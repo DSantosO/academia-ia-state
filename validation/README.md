@@ -55,7 +55,7 @@ precision and recall per class, by domain).
 
 | File | SHA-256 |
 |---|---|
-| `sealed/key.csv.gz` | (added when the file is committed) |
+| `sealed/key.csv.gz` | `0d724ec919547cf000cffd9f03999b70bebb144fc2ace6c066373c41120d15f4` |
 | `sealed/model_labels.csv.gz` | (added when the file is committed) |
 | `sealed/nd_model_labels_medrxiv.csv.gz` | `6b59301db05da6c36dc4081e520641fa6dd661a421b428b90f5746cd4da165f0` |
 
