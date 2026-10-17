@@ -80,11 +80,12 @@ the classifier and the author ≥ 0.60 in each domain), and there is no adjudica
 | `sealed/nd_results_A-medrxiv.json.gz` | `e07ec58761bef9d4d94f48a155534fa631b9ca0367bc2c2e5c96dc3d767ee06e` |
 | `sealed/nd_model_labels_arxiv_batches244-255.csv.gz` | `9e8a114265ee99d9899a58dd06c034ce0461491c6da3c20cdd7c2f6d8dcb0c63` |
 | `sealed/nd_model_labels_arxiv_batches256-265.csv.gz` | `0cb7f57c45b4ccca0aa94192d42eb2e51278afad412e39ab94224a6f34090f61` |
+| `sealed/nd_model_labels_arxiv.csv.gz` | `2bd6ada047ac74cdcca53780b0e2b211e69bf7b9ed9c589a25e212c7bc1c8c52` |
 
 The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
 too, because a few papers on the sheet may also be in those samples. `nd_model_labels_arxiv_batches001-243.csv.gz`
 holds the arXiv labels of the first 243 of 269 blind batches (12,150 papers), sealed when classification was paused;
-the complete arXiv file will supersede it. Later batches are sealed as they finish, every ten batches or so
+the complete arXiv file (`nd_model_labels_arxiv.csv.gz`, all 269 batches, 13,412 papers) supersedes it and the later partial files, whose labels it contains unchanged. Later batches are sealed as they finish, every ten batches or so
 (`nd_model_labels_<server>_batches<first>-<last>.csv.gz`), so that no label exists only in a working directory.
 
 The confirmatory results computed after Deviation 3 (`nd_results_*.json.gz`) are sealed here as well (D3i) and are
