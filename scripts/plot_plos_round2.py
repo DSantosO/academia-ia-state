@@ -65,8 +65,15 @@ def log_axis(ax, lo, hi, ticks):
     ax.set_axisbelow(True)
 
 
+def bound(x):
+    """Two decimals, or three when two would print 1.00 for a bound that is not 1, so a label never reads as
+    excluding (or touching) 1 when the interval does the opposite."""
+    s = f"{x:.2f}"
+    return f"{x:.3f}" if s == "1.00" and round(x, 3) != 1 else s
+
+
 def ci_text(d):
-    return f"{d['rr']:.2f} ({d['lo']:.2f}–{d['hi']:.2f})"
+    return f"{d['rr']:.2f} ({bound(d['lo'])}–{bound(d['hi'])})"
 
 
 def fig4_forest(repo, out):

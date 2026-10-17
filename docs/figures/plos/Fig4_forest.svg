@@ -401,7 +401,7 @@ L 309.783252 63.968123
 " clip-path="url(#p30ed50eb34)" style="fill: none; stroke: #404040; stroke-linecap: square"/>
    </g>
    <g id="text_36">
-    <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="401.811024" y="66.038436" transform="rotate(-0 401.811024 66.038436)">1.14 (1.00–1.30)</text>
+    <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="401.811024" y="66.038436" transform="rotate(-0 401.811024 66.038436)">1.14 (0.997–1.30)</text>
    </g>
    <g id="line2d_47">
     <path d="M 249.110503 77.066585 
@@ -503,7 +503,7 @@ L 292.233368 273.543508
 " clip-path="url(#p30ed50eb34)" style="fill: none; stroke: #404040; stroke-linecap: square"/>
    </g>
    <g id="text_50">
-    <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="401.811024" y="275.61382" transform="rotate(-0 401.811024 275.61382)">1.09 (1.00–1.20)</text>
+    <text style="font-size: 8px; font-family: 'Liberation Sans'; text-anchor: start" x="401.811024" y="275.61382" transform="rotate(-0 401.811024 275.61382)">1.09 (0.995–1.20)</text>
    </g>
    <g id="line2d_59">
     <path d="M 228.67073 286.641969 
