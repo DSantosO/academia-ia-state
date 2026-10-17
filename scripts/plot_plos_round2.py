@@ -3,6 +3,7 @@ Every number is read from the committed JSON files in data/processed/stats/, so 
 Table 2 and S5 Table.
 
 Fig4_forest       the 2026 rate ratio of each within-field contrast under every specification
+Fig5_calibration  matched placebo distributions (both estimators) and the rank-based calibration by year
 Fig6_departures   2026 departures from the pre-2023 trend by arXiv archive and for the other series
 Fig7_h2_ranking   H2: growth by class of names ranked on an independent window; uniform-scaling expectation
 Fig8_inspire      INSPIRE-HEP: papers without to papers with new experimental results, 2026, by archive and base
@@ -335,7 +336,103 @@ def fig8_inspire(repo, out):
     save(fig, out, "Fig8_inspire")
 
 
-FIGURES = {"fig4": fig4_forest, "fig6": fig6_departures, "fig7": fig7_h2_ranking, "fig8": fig8_inspire}
+def fig5_calibration(repo, out):
+    import math
+    r = load(repo, "round1_tests.json")
+    pm, cal = r["placebos_matched"], r["calibration"]
+    cols = [("C1_theory_vs_experiment", "splits_of_the_hep_nucl_archives", "A  C1: 15 splits, 6 archives"),
+            ("C1_theory_vs_experiment", "draws_from_13_physics_archives", "B  C1: 25,740 draws, 13 archives"),
+            ("C2_computational_vs_wet_lab", "three_of_the_fifteen_categories", "C  C2: 455 assignments")]
+    ests = [("2026_vs_2022", "First reported"), ("planned_2026_vs_base", "Planned")]
+    fig = plt.figure(figsize=(WIDTH, 15.5 * CM))
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.3, 1], hspace=0.62, left=0.095, right=0.985, top=0.885,
+                             bottom=0.135)
+    top = outer[0].subgridspec(2, 3, wspace=0.3, hspace=0.75)
+    for j, (c, ref, title) in enumerate(cols):
+        for i, (ek, elab) in enumerate(ests):
+            ax = fig.add_subplot(top[i, j])
+            d = pm[c][ref][ek]
+            if "placebo_log_rr" in d:
+                vals = [math.exp(v) for v in d["placebo_log_rr"]]
+                if len(vals) <= 20:
+                    ax.plot(vals, [0.5] * len(vals), marker="o", linestyle="none", markersize=4.5, color=GREY,
+                            alpha=0.9, zorder=2)
+                    ax.set_ylim(0, 1)
+                    ax.set_yticks([])
+                else:
+                    edges = [x / 50 for x in range(-40, 41)]
+                    counts = [0] * (len(edges) - 1)
+                    for v in d["placebo_log_rr"]:
+                        k = min(max(int((v + 0.8) * 50), 0), len(counts) - 1)
+                        counts[k] += 1
+                    ax.bar([math.exp(e) for e in edges[:-1]], counts,
+                           width=[math.exp(b) - math.exp(a) for a, b in zip(edges[:-1], edges[1:])], align="edge",
+                           color=GREY, edgecolor="white", linewidth=0.3, zorder=2)
+                    ax.set_yticks([])
+            else:
+                hist = d["placebo_log_rr_histogram"]
+                e = hist["edges"]
+                ax.bar([math.exp(x) for x in e[:-1]], hist["counts"],
+                       width=[math.exp(b) - math.exp(a) for a, b in zip(e[:-1], e[1:])], align="edge", color=GREY,
+                       edgecolor="white", linewidth=0.3, zorder=2)
+                ax.set_yticks([])
+            ax.axvline(d["observed_rr"], color=PRIMARY, linewidth=1.6, zorder=3)
+            ax.axvline(1, color=INK2, linewidth=0.6, zorder=1)
+            ax.set_xscale("log")
+            ax.set_xlim(0.5, 2.0)
+            ax.set_xticks([0.5, 0.75, 1, 1.5, 2])
+            ax.set_xticklabels(["0.5", "0.75", "1", "1.5", "2"] if i == 1 else [])
+            ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
+            for side in ("top", "right", "left"):
+                ax.spines[side].set_visible(False)
+            ax.spines["bottom"].set_color(AXIS)
+            ax.tick_params(axis="x", length=3, width=0.6, color=AXIS, colors=INK2, pad=2)
+            ax.set_title(f"{elab}: {d['observed_rr']:.2f}, p = {d['p_two_sided']:.2f}", loc="left",
+                         fontsize=8, color=INK, pad=3)
+            if i == 0:
+                ax.text(0, 1.42, title, transform=ax.transAxes, fontsize=9, weight="bold", ha="left", va="bottom")
+            if i == 1 and j == 1:
+                ax.set_xlabel("2026 rate ratio of the placebo grouping (log scale)", color=INK2)
+    bottom = outer[1].subgridspec(1, 3, wspace=0.28)
+    names = [("C1_theory_vs_experiment", "D  C1 physics"), ("C2_computational_vs_wet_lab", "E  C2 biology"),
+             ("C3_public_dataset_vs_other", "F  C3 medicine")]
+    for j, (c, title) in enumerate(names):
+        ax = fig.add_subplot(bottom[0, j])
+        lv = cal[c]["level"]
+        years = [int(y) for y in lv["ref_years"]]
+        ax.plot(years, [lv["ref_rr"][str(y)] for y in years], marker="o", linestyle="none", markersize=4.5,
+                color=GREY, zorder=2)
+        ax.plot([2026], [lv["rr"]], marker="o", linestyle="none", markersize=6, color=PRIMARY, zorder=3)
+        ax.axhline(1, color=INK2, linewidth=0.6, zorder=1)
+        ax.set_yscale("log")
+        ax.set_ylim(0.75, 1.35)
+        ax.set_yticks([0.8, 0.9, 1, 1.1, 1.2, 1.3])
+        ax.set_yticklabels(["0.8", "0.9", "1", "1.1", "1.2", "1.3"])
+        ax.yaxis.set_minor_locator(matplotlib.ticker.NullLocator())
+        ax.set_xlim(min(years) - 0.7, 2026.7)
+        ax.set_xticks(years + [2026])
+        ax.set_xticklabels([("2026" if y == 2026 else f"{y}" if y % 2 else "") for y in years + [2026]])
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        ax.spines["bottom"].set_color(AXIS)
+        ax.spines["left"].set_color(AXIS)
+        ax.tick_params(colors=INK2, length=3, width=0.6, pad=2)
+        ax.grid(axis="y", color=GRID, linewidth=0.5)
+        ax.set_axisbelow(True)
+        ax.set_title(f"rank p = {lv['p_two_sided']:.2f} (n = {lv['n_ref']})", loc="left", fontsize=8, color=INK,
+                     pad=3)
+        ax.text(0, 1.17, title, transform=ax.transAxes, fontsize=9, weight="bold", ha="left", va="bottom")
+        if j == 0:
+            ax.set_ylabel("Rate ratio against\nthe other years", color=INK2)
+    handles = [Patch(facecolor=GREY, label="Placebo groupings (A–C); pre-2023 years, each against the others (D–F)"),
+               Line2D([], [], color=PRIMARY, linewidth=1.6, marker="o", markersize=5,
+                      label="Observed contrast; 2026 against the pre-2023 years")]
+    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=1, frameon=False, fontsize=8,
+               handletextpad=0.5)
+    save(fig, out, "Fig5_calibration")
+
+
+FIGURES = {"fig4": fig4_forest, "fig5": fig5_calibration, "fig6": fig6_departures, "fig7": fig7_h2_ranking, "fig8": fig8_inspire}
 
 
 def main(args):
