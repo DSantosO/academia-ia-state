@@ -56,7 +56,7 @@ precision and recall per class, by domain).
 | File | SHA-256 |
 |---|---|
 | `sealed/key.csv.gz` | `0d724ec919547cf000cffd9f03999b70bebb144fc2ace6c066373c41120d15f4` |
-| `sealed/model_labels.csv.gz` | (added when the file is committed) |
+| `sealed/model_labels.csv.gz` | `1b8260e5982ca4914f3a00f347a08cf78a6ec9a1e781f194853216d653bca955` |
 | `sealed/nd_model_labels_medrxiv.csv.gz` | `6b59301db05da6c36dc4081e520641fa6dd661a421b428b90f5746cd4da165f0` |
 
 The model labels of the confirmatory samples (`nd_model_labels_*.csv.gz`, one row per sampled paper) are sealed here
