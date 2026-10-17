@@ -481,6 +481,8 @@ def section_placebos_matched(repo):
         p26, p25, _ = planned_fast(ya, yb, ms, base_from)
         return e[2026], e[2026] - e[2025], p26, p26 - p25
 
+    edges = np.round(np.arange(-0.80, 0.8001, 0.02), 2)  # log-ratio bins for the large reference sets (figures)
+
     def summarise(obs, draws):
         res = {"n": len(draws), "floor": 1 / len(draws)}
         for name, j in (("2026_vs_2022", 0), ("2026_vs_2025", 1), ("planned_2026_vs_base", 2),
@@ -489,6 +491,12 @@ def section_placebos_matched(repo):
             res[name] = {"observed_rr": math.exp(o), "p_two_sided": float(np.mean(np.abs(v) >= abs(o) - 1e-12)),
                          "p_one_sided": float(np.mean(v * np.sign(o) >= abs(o) - 1e-12)),
                          "placebo_rr_5_50_95": [float(math.exp(q)) for q in np.percentile(v, [5, 50, 95])]}
+            if len(v) <= 500:
+                res[name]["placebo_log_rr"] = sorted(round(float(x), 5) for x in v)
+            else:
+                counts, _ = np.histogram(np.clip(v, edges[0], edges[-1]), bins=edges)
+                res[name]["placebo_log_rr_histogram"] = {"edges": [float(e) for e in edges],
+                                                         "counts": [int(c) for c in counts]}
         return res
 
     hep_nucl = ["hep-th", "hep-ph", "gr-qc", "nucl-th", "hep-ex", "nucl-ex"]
