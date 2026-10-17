@@ -88,3 +88,95 @@
 5. **Blinding.** The key and the model labels for the validation sheet are stored compressed and hash-committed in validation/sealed/. Blinding depends on the author not opening those files before coding.
 
 **Authorisation.** The author's standing instructions of 16 Oct ("as much statistics as we can but with sense"; usage limits removed; "supón que está bien y mañana lo valido") are taken as authorising the full sampled plan, not the cheaper option. The author can revise this choice before results are reported.
+
+## Deviation 3 (recorded 17 Oct 2026, about 08:20 UTC)
+
+*Recorded after the round-2 reviews (statistics; PLOS academic editor) and before any HN, Test A (bioRxiv) or Test B estimate was computed. Times are UTC and can be checked against the repository's commit and push log.*
+
+**What had been seen when this was recorded.**
+- **Test A, medRxiv: already computed.** The registered, trend-based estimate was computed at about 00:10 UTC and committed at 00:11:46 UTC (companion commit dacd064). The coordinating session asked for a hold on further estimates at 00:15 UTC. The result is known to the analysis and coordinating sessions. The author has not seen it.
+- **Partial class shares, no estimates:**
+  - shares in the 900 earliest medRxiv sample papers, June 2019 to about mid-2020, from the test–retest table;
+  - per-batch ND counts for six shuffled arXiv batches, which carry no period information;
+  - pooled counts of the superseded DOI-keyed validation labels, with no period information.
+- **Nothing else.** No HN, Test A (bioRxiv) or Test B estimate, and no arXiv or bioRxiv class share by period, had been computed.
+
+**D3a. Classifier re-runs.**
+- Before any estimate, two sets of papers were first classified in date-ordered batches keyed by DOI:
+  - the first 18 medRxiv batches (900 sampled papers);
+  - the 200 bioRxiv and medRxiv validation papers.
+- DOIs encode posting dates, so these runs exposed the information the classifier was meant not to see.
+- They were superseded by blind runs (random order, pseudonymous identifiers) at companion commit 8ab4d9d, 23:43 UTC on 16 Oct.
+- The first-run labels feed no estimate. They are used only to report agreement between runs.
+- This departs from Deviation 2's "Labels are stored and will not be re-drawn". The re-draw removed the date exposure, and was made before any label was analysed.
+
+**D3b. Test A decision rule.**
+- Each Test A hypothesis has one unit, its server, so the "at least 2 of 3 archives" condition of §6 cannot apply.
+- The rule is:
+  - **supported** if the RRR > 1 and its 95% CI excludes 1;
+  - **contradicted** if the RRR < 1 and its 95% CI excludes 1;
+  - **not supported** otherwise.
+- This was fixed in code at 8ab4d9d, before any estimate. The earlier code, at 15df0b1, applied the 2-of-3 clause, which could never return "supported".
+
+**D3c. Test B sidedness.**
+- The prediction is directional (a negative slope), so the decision uses the one-sided permutation p-value, as coded before estimation.
+- The two-sided p-value is also reported.
+
+**D3d. Test B category set (design change).**
+- **Primary (decides the verdict):**
+  - the held-out arXiv subcategories with at least 1,200 papers in 2019–2022: astro-ph.CO, EP, GA, HE, IM and SR; cond-mat.dis-nn, mes-hall, mtrl-sci, quant-gas, soft, stat-mech, str-el and supr-con; and quant-ph (15 categories);
+  - all bioRxiv categories in the frame;
+  - the medRxiv categories after the pooling rule of Deviation 2.
+- **Sensitivity only (cannot change the verdict):** the set in the sampling design (companion commit c2f891b). It adds 23 math.* subcategories, hep-ex, hep-ph, hep-th, nucl-ex, nucl-th and gr-qc.
+- **Reasons:**
+  1. §3 of the plan reserves hep-ex and nucl-ex for exploratory use and says they are never pooled with the confirmatory archives.
+  2. The mathematics outcomes (Q3 2025 to Q3 2026 growth) had been computed on 15 Oct, and their ND share is expected to be near zero. Together they would largely fix the arXiv slope in advance.
+  3. The classifier is validated only for cond-mat, astro-ph, quant-ph, bioRxiv and medRxiv. The validation sheet contains no mathematics or particle-physics papers.
+- **Description.** Test B remains "pre-specified, with outcomes already examined; only the exposure was unmeasured".
+
+**D3e. Level-based companion estimates (added).**
+- **Why.** The registered Test A and Test B estimands extrapolate class- or category-specific trends. The article itself treats such trends as not credible on bioRxiv and medRxiv, where the 2019–2022 years are shaped by server adoption and COVID-19.
+- **What is added:**
+  - **Test A:** a level-based RRR for January 2025 to September 2026 against a pooled 2019 + 2022 base (medRxiv: July–December 2019 + 2022). It has class-specific month-of-year effects and no class-specific trends; 2020–2021, 2023 and 2024 get their own indicators.
+  - **Test B:** the same level-based departure for each category.
+  - **HN:** a level-based RRR against a pooled 2017–2019 + 2022 base, reported as a seventh sensitivity analysis.
+- **Interpretation:**
+  - The registered estimate decides the verdict. The level-based estimate is reported beside it.
+  - If the two disagree (one CI excludes 1 and the other does not, or the points lie on opposite sides of 1), the result is reported as dependent on the counterfactual.
+- **For medRxiv this addition is post hoc,** because the trend-based estimate was already computed (see above). The registered medRxiv estimate and its verdict stand as computed.
+- **The 2019 placebo** is reported for every test. For medRxiv the note is that its pre-trend rests mainly on months of server adoption and COVID-19.
+
+**D3f. Validation sampling and frames.**
+- **arXiv half of the validation sheet.** It is a simple random sample per stratum from the complete arXivRaw harvests, instead of the planned draw by random submission day. The arXiv API answered "429 Rate exceeded" from the analysis environment.
+- **bioRxiv frames.** The bioRxiv categories "epidemiology" and "clinical trials" are left out of the bioRxiv frames. bioRxiv listed them only until medRxiv opened (January–July 2019), so they would put a composition break into the 2019 baseline. This was fixed before the bioRxiv sample was drawn.
+
+**D3g. Batching (correction to Deviation 2).**
+- Deviation 2 says each paper is "classified once, independently". In fact each sub-agent run judges a batch of 50 papers in one context, with one domain prompt.
+- **Added sensitivity analysis:** the test–retest disagreement rate is propagated into the estimates by randomly relabelling papers at the observed rate in each bootstrap draw.
+
+**D3h. Reporting fixed now (secondary; does not change any verdict).**
+- **Agreement:**
+  - Cohen's κ with 95% CIs, by domain and by period (2019–2022 and 2023–2026);
+  - confusion matrices by domain and period;
+  - precision and recall for each class;
+  - agreement between the DOI-keyed and blind runs.
+- **Misclassification-corrected ratios (exploratory).** Using period-specific sensitivity and specificity from the validation sheet (Rogan WJ, Gladen B. Am J Epidemiol. 1978;107:71–76).
+- **Minimum detectable effects** for the observed-label ratio and for the implied true ratio given the validation error rates.
+- **Multiplicity.** Holm-adjusted p-values across HN, HN-bio, HN-med and HN-dose, as a secondary statistic. Each hypothesis is still judged by its registered rule.
+- **Licence check.** For the bioRxiv and medRxiv samples: the share under Creative Commons licences, and the classifier's ND share for CC and non-CC papers. The validation sheet contains CC papers only.
+- **Run records.** Model identifier, time, batch-file hash and tools used. They are kept outside this repository's text, under repository policy, and reported in the article.
+
+**D3i. Sealing the remaining estimates from the author (strengthens Deviation 1).**
+- **Sealed estimates.** From this record on, every remaining confirmatory estimate is written to results files committed only as compressed files in validation/sealed/, with their SHA-256 hashes in the commit message and in validation/README.md. This covers HN, Test A (bioRxiv), Test B, the level-based companions, sensitivities, placebos and minimum detectable effects.
+- **What may be shared.** Commit messages and session summaries do not state estimates or verdicts. Neither the author nor the coordinating session is told any estimate until the author's coding is committed (validation/author_labels.csv, with its hash).
+- **Unsealing.** After the coding commit, the files are unsealed, κ is computed, and each domain's results are reported with its κ status (Deviation 1, safeguards 3–4).
+- **The medRxiv estimate already committed.** The Test A (medRxiv) estimate is already in commit dacd064, whose commit message states the result. The author should not open the analysis branch's commit list or data/processed/stats/nd_tests.json before committing the coding.
+
+**D3j. Changes after this record.**
+- This replaces Deviation 2's clause "The author can revise this choice before results are reported".
+- Any further change to the design, estimands or decision rules counts as pre-specified only if it is recorded here before the relevant estimate is computed. Otherwise it is labelled post hoc.
+
+**Authorisation.**
+- D3a–D3c and D3f–D3g record what was done.
+- D3d, D3e and D3h–D3j are design decisions made by the coordinating assistant under the author's standing instructions, following the two reviews, before the estimates they govern.
+- The author is told of them in chat on 17 Oct. Under D3j, any change the author makes is pre-specified only if recorded before the relevant estimate is computed.
