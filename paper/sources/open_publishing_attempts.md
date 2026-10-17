@@ -2,6 +2,8 @@
 
 *Research note for the PLOS ONE article, compiled 17 October 2026 (sources opened that day unless stated). Not yet read by the author.*
 
+*Independent spot-check by the coordinator (17 October 2026, 14:40 UTC), against the primary sources: eLife's submission counts (2,853 in 2025, 6,396 in 2024; 1,013 and 1,719 sent for review); Brodeur et al. 2026 (Nature 652(8108):151–156, 347 authors on Crossref); and AAAI-26 (reviews for "all 22,977 full-review papers in less than a day", arXiv abstract). All three match.*
+
 **Labels.** **V**: checked in the primary source (for an initiative's own statistics, V means "checked as its own claim", not audited). **R**: reported by a named secondary source. **NV**: not verified. **Own**: my count from public metadata, method stated. Inferences are marked "(inference)". Every quotation was checked against the saved source text.
 
 ## 1. Verdict
