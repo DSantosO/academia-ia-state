@@ -17,6 +17,9 @@ Sections (each writes its own key of data/processed/stats/round1_tests.json; run
               September 2026 spike in mathematics, October 2026 under the cap, C1 and arXiv vs bioRxiv by dating
   inspire_dating  round 2: INSPIRE-HEP records dated by submission against arXiv's statistics pages
   hepex_crosslists  round 2: cross-lists of hep-ex papers by month (OAI), for the 2025-2026 change in composition
+  genre_round2  round 2: the keyword genres validated against INSPIRE's types, revised rules, revision sensitivity
+  c2_ai_split  round 2 (exploratory): C2 without papers on AI or machine learning as a topic (D3m list)
+  biorxiv_sum_check  round 2: bioRxiv's /sum statistics against the record-level and per-category counts
   placebos_matched  round 2: in-space placebos matched to the structure of C1 and C2, with their floors
   funding_round2  round 2: bioRxiv and medRxiv by the corresponding author's institution (US or elsewhere),
               against a prediction stated first; PubMed's US/non-US ratio calibrated in time
@@ -857,6 +860,53 @@ def classify(r):
     return "research"
 
 
+# Round 2 (item 11; R2 N1): the rule above matches journal names ("Physical Review", "Proc. Amer. Math. Soc.") and
+# research papers "accepted at" a conference, and finds "review" anywhere in the comments. The revised rule removes
+# journal names and acceptance notes (unless they name proceedings, a talk or a poster) before matching, and accepts
+# "review" in the title or as an explicit phrase in the comments.
+JOURNAL_NAMES = re.compile(
+    r"Phys(?:ical|\.)?\s*Rev(?:iew|\.)?(?:\s*(?:Lett(?:ers|\.)?|[A-EX]\b|Research|Applied|Materials|Fluids|"
+    r"Accelerators and Beams|Special Topics))*|Rev(?:iews|\.)\s*(?:of\s+)?Mod(?:ern|\.)\s*Phys(?:ics|\.)?|"
+    r"Proc(?:eedings|\.)\s*(?:of\s+the\s+)?(?:Amer(?:ican|\.)\s*Math(?:ematical|\.)\s*Soc(?:iety|\.)?|"
+    r"Natl\.?\s*Acad\.?\s*Sci\.?(?:\s*U\.?\s*S\.?\s*A\.?)?|National\s+Academy\s+of\s+Sciences|"
+    r"(?:[A-Z][\w.'-]*\s+){1,4}(?:Soc(?:iety|\.)|Acad(?:emy|\.)))|\bPNAS\b|Annual\s+Reviews?\s+of\s+[A-Z][\w ]+|"
+    r"Living\s+Reviews\s+in\s+[A-Z][\w ]+|Rev(?:iew|\.)\s+(?:of\s+)?Sci(?:entific|\.)\s+Instrum(?:ents|\.)?|"
+    r"Rev(?:iews|\.)\s+(?:in\s+)?Math(?:ematical|\.)\s+Phys(?:ics|\.)?|Phys(?:ics|\.)\s+Rep(?:orts|\.)?")
+ACCEPTED = re.compile(r"accepted\s+(?:at|to|for|in|by)\b[^.;]*", re.I)
+PROC_WORDS = re.compile(r"proceedings|\bPoS\b|talk|poster|contribution", re.I)
+REVIEW_EXPLICIT = re.compile(r"review article|invited review|\ba review\b|review paper|survey article|lecture notes|"
+                             r"lectures? (?:given|delivered)|book chapter|chapter (?:in|of|for)\b|encyclop(?:a)?edia|"
+                             r"handbook", re.I)
+REVIEW_TITLE = re.compile(r"\breview\b|\bsurvey\b|lecture notes|\blectures on\b|\btutorial\b|\bprimer\b|"
+                          r"encyclop(?:a)?edia|handbook", re.I)
+
+
+def clean_comments(text):
+    text = JOURNAL_NAMES.sub(" ", text or "")
+    return ACCEPTED.sub(lambda m: m.group(0) if PROC_WORDS.search(m.group(0)) else " ", text)
+
+
+def classify2(r):
+    title, comments = r.get("title") or "", clean_comments(r.get("comments"))
+    text = {"title": JOURNAL_NAMES.sub(" ", title), "abstract": r.get("abstract") or "", "comments": comments}
+    for name, rx, fields in GENRES:
+        if name == "review":
+            if REVIEW_TITLE.search(text["title"]) or REVIEW_EXPLICIT.search(comments):
+                return name
+        elif any(rx.search(text[f]) for f in fields):
+            return name
+    return "research"
+
+
+def classify_title(r):
+    """Title only, a field that rarely changes at revision (R2 N1, revision sensitivity)."""
+    title = JOURNAL_NAMES.sub(" ", r.get("title") or "")
+    for name, rx, _ in GENRES:
+        if (REVIEW_TITLE if name == "review" else rx).search(title):
+            return name
+    return "research"
+
+
 def load_v1_dates(repo):
     path = os.path.join(repo, "data/raw/arxiv_v1_dates.csv.gz")
     if not os.path.exists(path):
@@ -895,7 +945,8 @@ def load_oai(oai_dir, v1=None):
                                                                            r.get("comments")])))),
                     "espp": bool(ESPP.search(" ".join(filter(None, [r.get("title"), r.get("abstract"),
                                                                    r.get("comments")])))),
-                    "genre": classify(r)}
+                    "genre": classify(r), "genre2": classify2(r), "genre_title": classify_title(r),
+                    "revised": bool(created) and created[:7] > idm}
     return list(papers.values())
 
 
@@ -1051,6 +1102,135 @@ def section_hepex_crosslists(repo, oai_dir):
             "cross_listed_into_hep-ex_by_month": {m: {"all": sum(c.values()), "physics.ins-det": c["physics.ins-det"]}
                                                   for m, c in sorted(into.items())}}
 
+def section_genre_round2(repo, oai_dir):
+    """Round 2 (item 11; R2 N1): validation of the keyword genres. (i) Precision and recall by year against INSPIRE's
+    curated types (proceedings: document type conference paper or proceedings; review: publication type review,
+    lectures or introductory), for the five archives in both tables (hep-th, hep-ph, nucl-th, hep-ex, nucl-ex),
+    January-September 2019-2026, for the original rule, the revised rule (journal names and acceptance notes removed;
+    review only in titles or explicit phrases) and a title-only rule; (ii) genre shares by year for revised and
+    unrevised papers (a later version submitted after the identifier month); (iii) the 2026 departures of all papers
+    and of research papers from their 2019-2022 trends under each rule."""
+    papers = load_oai(oai_dir, load_v1_dates(repo))
+    rules = ("genre", "genre2", "genre_title")
+    ins = {}
+    path = os.path.join(repo, "data/raw/inspire_hep_records.csv.gz")
+    for r in csv.DictReader(gzip.open(path, "rt")):
+        docs = set(filter(None, r["document_type"].split(";")))
+        pubs = set(filter(None, r["publication_type"].split(";")))
+        ins[r["arxiv_id"]] = {"proceedings": bool(docs & {"conference paper", "proceedings"}),
+                              "review": bool(pubs & {"review", "lectures", "introductory"})}
+    five = {"hep-th", "hep-ph", "nucl-th", "hep-ex", "nucl-ex"}
+    val = {}
+    for rule in rules:
+        for cls in ("proceedings", "review"):
+            by = {}
+            for y in range(2019, 2027):
+                sel = [p for p in papers if p["archive"] in five and p["id_month"][:4] == str(y) and
+                       p["id_month"][5:] <= "09" and p["id"] in ins]
+                kw = [p for p in sel if p[rule] == cls]
+                ref = [p for p in sel if ins[p["id"]][cls]]
+                both = sum(1 for p in kw if ins[p["id"]][cls])
+                by[str(y)] = {"matched": len(sel), "keyword": len(kw), "inspire": len(ref),
+                              "precision": both / len(kw) if kw else None, "recall": both / len(ref) if ref else None}
+            val[f"{rule}|{cls}"] = by
+    out = {"validation_against_inspire": val}
+    groups = {"maths": ["math"], "hep_nucl_6": HEP6, "theory": THEORY, "experiment": EXPERIMENT}
+    shares = {}
+    for g, arch in groups.items():
+        for rev in (False, True):
+            by = {}
+            for y in range(2019, 2027):
+                sel = [p for p in papers if p["archive"] in arch and p["revised"] == rev and p["id_month"][:4] == str(y)
+                       and p["id_month"][5:] <= "09"]
+                c = Counter(p["genre2"] for p in sel)
+                by[str(y)] = {"papers": len(sel)} | {k: v / len(sel) for k, v in c.items()} if sel else {"papers": 0}
+            shares[f"{g}|{'revised' if rev else 'unrevised'}"] = by
+    out["genre2_shares_by_revision"] = shares
+    ms = ym_range("2019-01", LAST)
+    dep = {}
+    for g, arch in groups.items():
+        allc = monthly(papers, "id_month", archives=arch)
+        res = {"all": field_model([allc.get(m, 0) for m in ms], ms)["2026"]}
+        for rule in rules:
+            rc = monthly(papers, "id_month", keep=lambda p, rule=rule: p[rule] == "research", archives=arch)
+            res[f"research_{rule}"] = field_model([rc.get(m, 0) for m in ms], ms)["2026"]
+        dep[g] = res
+    out["departure_2026_from_2019_2022_trend"] = dep
+    return out
+
+def section_c2_ai_split(repo):
+    """Round 2 (item 12; R4 P1, R3 #5; exploratory): C2 with papers whose title or abstract names AI or machine
+    learning as a topic (the list of Deviation 3, D3m, in nd_frames.py) removed from both groups, from bioinformatics
+    only, or kept; bioinformatics papers with the AI topic against those without; and the AI-topic share by year. All
+    series from data/processed/nd_category_monthly_biorxiv.csv (version-1 records with text), so the 'all papers' row
+    shows how far that source differs from the category counts used for C2."""
+    path = os.path.join(repo, "data/processed/nd_category_monthly_biorxiv.csv")
+    if not os.path.exists(path):
+        return None
+    allp, noai = defaultdict(Counter), defaultdict(Counter)
+    for r in csv.DictReader(open(path)):
+        allp[r["category"]][r["month"]] += int(r["papers"])
+        noai[r["category"]][r["month"]] += int(r["papers_without_ai_topic"])
+    ms = ym_range("2019-01", LAST)
+
+    def tot(src, cats):
+        return np.array([sum(src[c].get(m, 0) for c in cats) for m in ms], float)
+    ai = {c: Counter({m: allp[c][m] - noai[c][m] for m in allp[c]}) for c in allp}
+    comp_no_bioinf_ai = tot(allp, COMPUTATIONAL) - tot(ai, ["bioinformatics"])
+    variants = {"all_papers": (tot(allp, COMPUTATIONAL), tot(allp, WET_LAB)),
+                "without_ai_topic_papers": (tot(noai, COMPUTATIONAL), tot(noai, WET_LAB)),
+                "without_bioinformatics_ai_topic_papers": (comp_no_bioinf_ai, tot(allp, WET_LAB)),
+                "bioinformatics_ai_vs_wet_lab": (tot(ai, ["bioinformatics"]), tot(allp, WET_LAB)),
+                "bioinformatics_without_ai_vs_wet_lab": (tot(noai, ["bioinformatics"]), tot(allp, WET_LAB)),
+                "bioinformatics_ai_vs_without_ai": (tot(ai, ["bioinformatics"]), tot(noai, ["bioinformatics"]))}
+    out = {"contrasts": {}}
+    for name, (ya, yb) in variants.items():
+        res = {}
+        for bname, bset in (("2022", {2022}), ("2019+2022", {2019, 2022})):
+            ev = event_study(ya, yb, ms, bset)
+            res[bname] = {k: ev[k] for k in ("2025", "2026", "2026_vs_2025")}
+        out["contrasts"][name] = res
+    share = {}
+    for g, cats in (("bioinformatics", ["bioinformatics"]), ("systems biology", ["systems biology"]),
+                    ("genomics", ["genomics"]), ("wet_lab", WET_LAB)):
+        share[g] = {}
+        for y in range(2019, 2027):
+            sel = [m for m in ms if m[:4] == str(y) and m[5:] <= "09"]
+            n = sum(allp[c].get(m, 0) for c in cats for m in sel)
+            k = n - sum(noai[c].get(m, 0) for c in cats for m in sel)
+            share[g][str(y)] = {"papers": n, "ai_topic_share": k / n if n else None}
+    out["ai_topic_share_jan_sep"] = share
+    return out
+
+def section_biorxiv_sum_check(repo):
+    """Round 2 (item 13): bioRxiv's own monthly statistics (/sum, new papers) against the record-level harvest (unique
+    version-1 DOIs, data/raw/biorxiv_records_monthly.csv) and against the per-category counts used for C2
+    (data/raw/biorxiv_category_monthly.csv), January 2019 to the last month; the categories behind any difference, and
+    whether the categories of C2 differ in any month."""
+    sm = {r["month"]: int(r["new_papers"]) for r in
+          json.load(open(os.path.join(repo, "data/raw/biorxiv_sum_m.json")))["bioRxiv content statistics"]}
+    rec, cat = defaultdict(Counter), defaultdict(Counter)
+    for r in csv.DictReader(open(os.path.join(repo, "data/raw/biorxiv_records_monthly.csv"))):
+        rec[r["month"]][r["category"]] += int(r["new_papers"])
+    for r in csv.DictReader(open(os.path.join(repo, "data/raw/biorxiv_category_monthly.csv"))):
+        cat[r["month"]][r["category"]] += int(r["new_papers"])
+    ms = ym_range("2019-01", LAST)
+    c2 = set(COMPUTATIONAL) | set(WET_LAB)
+    out = {"months": len(ms), "records_total": sum(sum(rec[m].values()) for m in ms),
+           "sum_total": sum(sm[m] for m in ms), "category_file_total": sum(sum(cat[m].values()) for m in ms),
+           "records_vs_sum": {m: sum(rec[m].values()) - sm[m] for m in ms if sum(rec[m].values()) != sm[m]},
+           "category_file_vs_sum": {m: sum(cat[m].values()) - sm[m] for m in ms if sum(cat[m].values()) != sm[m]},
+           "category_file_vs_records_by_category": {}, "c2_categories_differ_in_months": []}
+    gaps = Counter()
+    for m in ms:
+        for c in set(rec[m]) | set(cat[m]):
+            if cat[m][c] != rec[m][c]:
+                gaps[c] += cat[m][c] - rec[m][c]
+                if c in c2:
+                    out["c2_categories_differ_in_months"].append(m)
+    out["category_file_vs_records_by_category"] = dict(gaps)
+    return out
+
 def section_inspire_dating(repo):
     """Round 2 (item 6): INSPIRE-HEP records dated by first-version submission (preprint_date) against arXiv's
     statistics pages (announced new submissions): growth from 2025 to 2026 in January-September and January-August by
@@ -1165,8 +1345,8 @@ def main():
     repo = args[0] if args else "."
     sections = args[1:] or ["estimands", "planned", "calibration", "breaks", "crosslists", "funding",
                             "funding_round2", "medrxiv_flags", "inspire", "inspire_dating", "inspire_round2",
-                            "placebos_matched"] + (
-                                ["oai", "dating", "hepex_crosslists"] if oai else [])
+                            "placebos_matched", "c2_ai_split", "biorxiv_sum_check"] + (
+                                ["oai", "dating", "hepex_crosslists", "genre_round2"] if oai else [])
     path = os.path.join(repo, f"data/processed/stats/round1_tests{SUFFIX}.json")
     out = json.load(open(path)) if os.path.exists(path) else {}
     funcs = {"estimands": section_estimands, "breaks": section_breaks, "crosslists": section_crosslists,
@@ -1174,7 +1354,9 @@ def main():
              "medrxiv_flags": section_medrxiv_flags, "inspire": section_inspire, "planned": section_planned,
              "calibration": section_calibration, "inspire_dating": section_inspire_dating,
              "placebos_matched": section_placebos_matched, "inspire_round2": section_inspire_round2,
-             "funding_round2": section_funding_round2, "hepex_crosslists": lambda r: section_hepex_crosslists(r, oai)}
+             "funding_round2": section_funding_round2, "hepex_crosslists": lambda r: section_hepex_crosslists(r, oai),
+             "genre_round2": lambda r: section_genre_round2(r, oai), "c2_ai_split": section_c2_ai_split,
+             "biorxiv_sum_check": section_biorxiv_sum_check}
     for s in sections:
         print("section", s, flush=True)
         out[s] = funcs[s](repo)

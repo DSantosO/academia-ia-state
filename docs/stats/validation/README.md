@@ -19,3 +19,15 @@ The sheet holds DOIs and DOI links only, no titles or abstracts. **How to code.*
 A passing mention does not count. Precision per rule is the mean of `true_positive`.
 
 `coder` and `note` are free text.
+
+# Country classifier spot check (round-2 item 10)
+
+`country_spot_check_sheet.csv` holds 100 version-1 preprints of 2025–2026, drawn with a fixed seed by
+`scripts/sample_country_check.py`: per server (bioRxiv, medRxiv), 20 that `scripts/classify_country.py` assigned to the
+US, 20 assigned elsewhere (`non-US`) and 10 with no country (`unknown`). The classifier reads the corresponding author's
+institution string from the bioRxiv/medRxiv API; so far it was checked by an AI agent only.
+
+The sheet holds DOIs and DOI links only. **How to code.** Open each preprint (`link`), find the corresponding author's
+institution and enter `US`, `non-US` or `unclear` in `true_country`. Precision per class is the share of rows whose
+`true_country` equals `assigned`; for `unknown` rows, record the true country to estimate what the missing group holds.
+`coder` and `note` are free text.

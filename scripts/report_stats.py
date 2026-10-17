@@ -576,6 +576,65 @@ def h2_round2(lines, d):
     lines.append("")
 
 
+def genre_c2_sum(lines, r):
+    """Round 2, items 11-13: genre validation, the C2 AI-topic split and the bioRxiv /sum check."""
+    g = r.get("genre_round2")
+    if g:
+        lines += ["### Round 2. Keyword genres validated against INSPIRE-HEP's curated types", "",
+                  "Papers in hep-th, hep-ph, nucl-th, hep-ex and nucl-ex matched to INSPIRE, January–September of each "
+                  "year. Reference: INSPIRE document type conference paper or proceedings ('proceedings'); publication "
+                  "type review, lectures or introductory ('review'). Rules: original; revised (journal names and "
+                  "acceptance notes removed, 'review' only in titles or explicit phrases); title only. Cells: precision "
+                  "/ recall.", ""]
+        val = g["validation_against_inspire"]
+        years = list(next(iter(val.values())))
+        lines += ["| Rule | Class | " + " | ".join(years) + " |", "|---|---|" + "---|" * len(years)]
+        for k, by in val.items():
+            rule, cls = k.split("|")
+            lines.append(f"| {rule} | {cls} | " + " | ".join(
+                ("–" if v["precision"] is None else f"{v['precision']:.2f}") + " / " +
+                ("–" if v["recall"] is None else f"{v['recall']:.2f}") for v in by.values()) + " |")
+        lines += ["", "Shares under the revised rule, January–September, unrevised against revised papers (a later "
+                  "version submitted after the identifier month): proceedings; review; research.", ""]
+        for key, by in g["genre2_shares_by_revision"].items():
+            lines.append(f"- {key}: " + "; ".join(
+                f"{y} ({v['papers']:,}) {v.get('proceedings', 0):.3f} / {v.get('review', 0):.3f} / "
+                f"{v.get('research', 0):.3f}" for y, v in by.items() if y in ("2019", "2022", "2024", "2025", "2026")))
+        lines += ["", "2026 departure from the 2019–2022 trend, all papers and research papers under each rule:", "",
+                  "| Group | All papers | Research, original rule | Research, revised rule | Research, title only |",
+                  "|---|---|---|---|---|"]
+        for grp, v in g["departure_2026_from_2019_2022_trend"].items():
+            lines.append(f"| {grp} | {ci3(v['all'])} | {ci3(v['research_genre'])} | {ci3(v['research_genre2'])} | "
+                         f"{ci3(v['research_genre_title'])} |")
+        lines.append("")
+    c = r.get("c2_ai_split")
+    if c:
+        lines += ["### Round 2. C2 and papers on AI or machine learning as a topic (exploratory)", "",
+                  "AI topic: the list of Deviation 3, D3m, in the title or abstract. Event study as in P1c; all series "
+                  "from the version-1 records with text (`nd_category_monthly_biorxiv.csv`).", "",
+                  "| Contrast | 2026 vs 2022 | 2026 vs 2019 + 2022 | 2026 / 2025 |", "|---|---|---|---|"]
+        for name, v in c["contrasts"].items():
+            lines.append(f"| {name.replace('_', ' ')} | {ci3(v['2022']['2026'])} | {ci3(v['2019+2022']['2026'])} | "
+                         f"{ci3(v['2022']['2026_vs_2025'])} |")
+        lines += ["", "AI-topic share, January–September: " + "; ".join(
+            f"{grp} " + ", ".join(f"{y} {x['ai_topic_share']:.3f}" for y, x in by.items() if y in ("2019", "2022", "2024",
+                                                                                               "2025", "2026"))
+            for grp, by in c["ai_topic_share_jan_sep"].items()) + ".", ""]
+    b = r.get("biorxiv_sum_check")
+    if b:
+        lines += ["### Round 2. bioRxiv's /sum statistics against the record-level and per-category counts", "",
+                  f"January 2019 to September 2026 ({b['months']} months): /sum {b['sum_total']:,} new papers; record-level "
+                  f"harvest (unique version-1 DOIs) {b['records_total']:,}; per-category counts used for C2 "
+                  f"{b['category_file_total']:,}. Record-level minus /sum, months that differ: " +
+                  (", ".join(f"{m} {d:+d}" for m, d in b["records_vs_sum"].items()) or "none") +
+                  ". Per-category counts minus /sum: " +
+                  (", ".join(f"{m} {d:+d}" for m, d in b["category_file_vs_sum"].items()) or "none") +
+                  "; by category (against the record-level harvest): " +
+                  ", ".join(f"{k} {v:+d}" for k, v in b["category_file_vs_records_by_category"].items()) +
+                  ". Categories of C2 differing in any month: " +
+                  (", ".join(sorted(set(b["c2_categories_differ_in_months"]))) or "none") + ".", ""]
+
+
 def jan_aug(lines, d):
     """Round 2, item 6: every 2026 estimate with the data ending in August 2026 beside the main (January-September)
     estimate."""
@@ -661,6 +720,7 @@ def main(repo):
         inspire_round2(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
         funding_round2(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
         h2_round2(lines, d)
+        genre_c2_sum(lines, json.load(open(os.path.join(d, "round1_tests.json"))))
         jan_aug(lines, d)
     os.makedirs(os.path.join(repo, "docs/stats"), exist_ok=True)
     open(os.path.join(repo, "docs/stats/results.md"), "w").write("\n".join(lines) + "\n")

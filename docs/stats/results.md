@@ -599,6 +599,58 @@ Uniform-scaling simulation (all names): a pool of names with Gamma or lognormal 
 | theory_max50_authors | 2025-JanAug → 2026-JanAug | +17% | +0.72 pp; +2.13 pp | gamma (0.01; 5.59% vs 7.41%, 30.9% vs 33.3%) | +0.20 (0.14) pp; +0.71 pp | 0.28; 0.33 | +10%; +11% |
 | theory_max50_authors | 2025-JanAug → 2026-JanAug | +17% | +0.72 pp; +2.13 pp | lognormal (1.25; 7.21% vs 7.41%, 32.7% vs 33.3%) | +0.36 (0.20) pp; +0.88 pp | 0.50; 0.41 | +10%; +11% |
 
+### Round 2. Keyword genres validated against INSPIRE-HEP's curated types
+
+Papers in hep-th, hep-ph, nucl-th, hep-ex and nucl-ex matched to INSPIRE, January–September of each year. Reference: INSPIRE document type conference paper or proceedings ('proceedings'); publication type review, lectures or introductory ('review'). Rules: original; revised (journal names and acceptance notes removed, 'review' only in titles or explicit phrases); title only. Cells: precision / recall.
+
+| Rule | Class | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 |
+|---|---|---|---|---|---|---|---|---|---|
+| genre | proceedings | 0.97 / 0.85 | 0.94 / 0.80 | 0.89 / 0.79 | 0.92 / 0.63 | 0.93 / 0.83 | 0.92 / 0.82 | 0.89 / 0.85 | 0.95 / 0.87 |
+| genre | review | 0.21 / 0.36 | 0.19 / 0.42 | 0.15 / 0.28 | 0.10 / 0.39 | 0.13 / 0.36 | 0.11 / 0.34 | 0.07 / 0.31 | 0.04 / 0.35 |
+| genre2 | proceedings | 0.97 / 0.85 | 0.94 / 0.79 | 0.89 / 0.79 | 0.92 / 0.63 | 0.93 / 0.82 | 0.92 / 0.82 | 0.89 / 0.85 | 0.95 / 0.87 |
+| genre2 | review | 0.57 / 0.27 | 0.56 / 0.38 | 0.45 / 0.21 | 0.20 / 0.28 | 0.29 / 0.27 | 0.34 / 0.31 | 0.17 / 0.25 | 0.11 / 0.32 |
+| genre_title | proceedings | 0.32 / 0.01 | 0.14 / 0.01 | 0.18 / 0.01 | 0.11 / 0.00 | 0.33 / 0.02 | 0.37 / 0.02 | 0.10 / 0.00 | 0.27 / 0.01 |
+| genre_title | review | 0.48 / 0.13 | 0.60 / 0.15 | 0.36 / 0.10 | 0.13 / 0.11 | 0.20 / 0.10 | 0.19 / 0.09 | 0.20 / 0.11 | 0.14 / 0.19 |
+
+Shares under the revised rule, January–September, unrevised against revised papers (a later version submitted after the identifier month): proceedings; review; research.
+
+- maths|unrevised: 2019 (13,140) 0.015 / 0.005 / 0.975; 2022 (13,792) 0.011 / 0.004 / 0.980; 2024 (16,543) 0.013 / 0.005 / 0.978; 2025 (18,707) 0.010 / 0.004 / 0.981; 2026 (36,229) 0.007 / 0.003 / 0.987
+- maths|revised: 2019 (11,527) 0.012 / 0.004 / 0.983; 2022 (11,639) 0.011 / 0.003 / 0.984; 2024 (12,807) 0.013 / 0.004 / 0.981; 2025 (12,320) 0.009 / 0.003 / 0.986; 2026 (8,228) 0.009 / 0.002 / 0.987
+- hep_nucl_6|unrevised: 2019 (4,446) 0.180 / 0.008 / 0.799; 2022 (4,947) 0.139 / 0.009 / 0.796; 2024 (5,067) 0.106 / 0.011 / 0.864; 2025 (5,700) 0.102 / 0.011 / 0.864; 2026 (10,587) 0.058 / 0.008 / 0.924
+- hep_nucl_6|revised: 2019 (5,637) 0.023 / 0.006 / 0.969; 2022 (6,034) 0.019 / 0.010 / 0.948; 2024 (6,502) 0.014 / 0.007 / 0.977; 2025 (6,585) 0.017 / 0.007 / 0.969; 2026 (4,051) 0.019 / 0.007 / 0.972
+- theory|unrevised: 2019 (3,948) 0.148 / 0.007 / 0.832; 2022 (4,431) 0.126 / 0.010 / 0.821; 2024 (4,591) 0.085 / 0.010 / 0.886; 2025 (5,146) 0.090 / 0.010 / 0.885; 2026 (9,647) 0.047 / 0.007 / 0.937
+- theory|revised: 2019 (5,179) 0.022 / 0.006 / 0.970; 2022 (5,485) 0.018 / 0.010 / 0.956; 2024 (5,917) 0.012 / 0.006 / 0.979; 2025 (5,982) 0.016 / 0.007 / 0.973; 2026 (3,712) 0.016 / 0.006 / 0.975
+- experiment|unrevised: 2019 (498) 0.434 / 0.012 / 0.536; 2022 (516) 0.256 / 0.004 / 0.587; 2024 (476) 0.309 / 0.019 / 0.655; 2025 (554) 0.218 / 0.020 / 0.673; 2026 (940) 0.173 / 0.014 / 0.793
+- experiment|revised: 2019 (458) 0.031 / 0.007 / 0.961; 2022 (549) 0.031 / 0.004 / 0.869; 2024 (585) 0.032 / 0.009 / 0.957; 2025 (603) 0.027 / 0.007 / 0.932; 2026 (339) 0.044 / 0.018 / 0.932
+
+2026 departure from the 2019–2022 trend, all papers and research papers under each rule:
+
+| Group | All papers | Research, original rule | Research, revised rule | Research, title only |
+|---|---|---|---|---|
+| maths | 1.69 [1.46, 1.96] | 1.71 [1.47, 1.98] | 1.70 [1.46, 1.97] | 1.69 [1.46, 1.97] |
+| hep_nucl_6 | 1.20 [1.12, 1.29] | 1.28 [1.20, 1.38] | 1.27 [1.19, 1.37] | 1.24 [1.15, 1.32] |
+| theory | 1.22 [1.13, 1.32] | 1.30 [1.20, 1.40] | 1.29 [1.19, 1.39] | 1.25 [1.16, 1.35] |
+| experiment | 1.01 [0.80, 1.28] | 1.10 [0.93, 1.31] | 1.11 [0.94, 1.31] | 1.07 [0.86, 1.34] |
+
+### Round 2. C2 and papers on AI or machine learning as a topic (exploratory)
+
+AI topic: the list of Deviation 3, D3m, in the title or abstract. Event study as in P1c; all series from the version-1 records with text (`nd_category_monthly_biorxiv.csv`).
+
+| Contrast | 2026 vs 2022 | 2026 vs 2019 + 2022 | 2026 / 2025 |
+|---|---|---|---|
+| all papers | 1.08 [1.03, 1.14] | 0.99 [0.80, 1.22] | 1.10 [1.06, 1.15] |
+| without ai topic papers | 0.95 [0.90, 1.02] | 0.84 [0.64, 1.11] | 1.09 [1.03, 1.15] |
+| without bioinformatics ai topic papers | 0.96 [0.90, 1.01] | 0.85 [0.65, 1.11] | 1.07 [1.02, 1.12] |
+| bioinformatics ai vs wet lab | 1.78 [1.55, 2.04] | 1.90 [1.60, 2.26] | 1.23 [1.12, 1.34] |
+| bioinformatics without ai vs wet lab | 0.99 [0.90, 1.09] | 0.91 [0.75, 1.11] | 1.18 [1.08, 1.28] |
+| bioinformatics ai vs without ai | 1.81 [1.55, 2.10] | 2.08 [1.49, 2.91] | 1.04 [0.92, 1.17] |
+
+AI-topic share, January–September: bioinformatics 2019 0.205, 2022 0.266, 2024 0.358, 2025 0.395, 2026 0.399; systems biology 2019 0.065, 2022 0.090, 2024 0.137, 2025 0.182, 2026 0.158; genomics 2019 0.032, 2022 0.052, 2024 0.078, 2025 0.096, 2026 0.096; wet_lab 2019 0.016, 2022 0.022, 2024 0.031, 2025 0.040, 2026 0.043.
+
+### Round 2. bioRxiv's /sum statistics against the record-level and per-category counts
+
+January 2019 to September 2026 (93 months): /sum 313,165 new papers; record-level harvest (unique version-1 DOIs) 313,161; per-category counts used for C2 312,587. Record-level minus /sum, months that differ: 2023-11 -1, 2024-01 -1, 2024-10 -1, 2024-11 -1. Per-category counts minus /sum: 2019-01 -95, 2019-02 -98, 2019-03 -89, 2019-04 -106, 2019-05 -102, 2019-06 -75, 2019-07 -9, 2021-07 -1, 2026-06 -3; by category (against the record-level harvest): clinical trials -30, epidemiology -545, genetics +1, genomics +1, bioengineering +1, neuroscience +1, unknown -3. Categories of C2 differing in any month: 2024-01.
+
 ### Round 2. January–August versions of the 2026 estimates
 
 Every estimate re-run with the data ending in August 2026 (`STATS_LAST=2026-08`; files `*_to_2026-08.json`), leaving out September 2026, the month before arXiv's submission cap, when mathematics submissions doubled. In the event studies the 2026 effect is then January–August against whole earlier years, with calendar-month effects; PubMed, which is quarterly, ends in the second quarter.
